@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { Pagination, Navigation } from 'swiper/modules';
@@ -107,6 +107,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <SpeedInsights />
     </div>
   );
 }
