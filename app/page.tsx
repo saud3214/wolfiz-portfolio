@@ -11,9 +11,9 @@ import { Pagination, Navigation } from 'swiper/modules';
 SwiperCore.use([Navigation, Pagination]);
 
 export default function Home() {
-  useEffect(() => {
-    gsap.from('.my-element', { duration: 1, opacity: 1, y: -50 });
-  }, []);
+  // useEffect(() => {
+  //   gsap.from('.my-element', { duration: 1, opacity: 1, y: -50 });
+  // }, []);
   return (
     <div className="  h-full w-full flex-col items-center p-12 ">
       <div className="background-images-wrapper">
@@ -47,7 +47,7 @@ export default function Home() {
           src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
         />
 
-        <div className="flex w-11/12 items-center justify-between">
+        <div className="flex w-11/12 items-center justify-between   ">
           <ul className="link-list">
             <li data-index="1" id="showWebproject">
               <Link href="/webprojects" passHref prefetch={true}>
