@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { useEffect } from 'react';
-
+import Link from 'next/link';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { Pagination, Mousewheel, EffectFade } from 'swiper/modules';
@@ -26,8 +26,10 @@ export default function Webprojects() {
           speed={1000}
           className=" w-full h-full items-center p-2 slideclas "
         >
-          <SwiperSlide className=" border border-red-400 slideclas bg-lime-200  text-2xl font-bold">
-            Slide 1
+          <SwiperSlide className=" border border-red-400 slideclas bg-lime-200  text-2xl font-bold text-black">
+            <Link href="/nht" passHref prefetch={true}>
+              <span>NHT</span>
+            </Link>
           </SwiperSlide>
           <SwiperSlide className=" border border-red-400 slideclas  bg-green-200 text-2xl font-bold">
             Slide 2
