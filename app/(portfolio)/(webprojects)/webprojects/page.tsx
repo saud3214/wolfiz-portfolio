@@ -26,9 +26,9 @@ export default function Webprojects() {
           speed={1000}
           className=" w-full h-full items-center p-2 slideclas "
         >
-          <SwiperSlide className=" border border-red-400 slideclas bg-lime-200  text-2xl font-bold text-black">
-            <Link href="/nht" passHref prefetch={true}>
-              <span>NHT</span>
+          <SwiperSlide className=" border border-red-400 slideclas bg-lime-200  text-2xl font-bold ">
+            <Link href="/nht" passHref prefetch={true} className="text-black">
+              <span className="text-black">NHT</span>
             </Link>
           </SwiperSlide>
           <SwiperSlide className=" border border-red-400 slideclas  bg-green-200 text-2xl font-bold">
