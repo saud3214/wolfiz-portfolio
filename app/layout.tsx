@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Wolfiz Portfolio',
@@ -17,14 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className={inter.className}>
+      <body>
         <header className=" flex items-end justify-start fixed h-28 z-[9]">
-          <div className=" font-bold fixed z-[1111] flex items-center justify-center  w-[12%]">
+          <div className=" font-bold fixed z-[1111] flex items-center justify-center  w-[14%]">
             <Link href={'/'}>
               <Image
                 alt="logo"
-                height={90}
-                width={90}
+                height={100}
+                width={100}
                 src="/svg/wolfizlogo.svg"
               />
             </Link>

@@ -11,6 +11,7 @@ const config: Config = {
       'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       'linear-gradient': 'linear-gradient(var(--tw-gradient-stops))',
       'nht-card': "url('/nhtcard.png')",
+      'lp-card': "url('/leadpadlerscards.png')",
     },
   },
   plugins: [],

@@ -21,6 +21,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  font-family: 'Poppins', 'Times', serif;
 }
 
 @layer utilities {
@@ -195,18 +196,6 @@ a span {
   display: flex;
 }
 
-.titledisplay {
-  display: grid;
-}
-.titledisplay text {
-  text-decoration: none;
-  color: #040505;
-  font-size: 5.23em;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-}
-
 .swiper-container {
   width: 100%;
   height: 100vh;
@@ -226,7 +215,7 @@ a span {
   align-items: center;
 }
 .swiper-container .swiper-wrapper .swiper-slide .slide-inner {
-  width: 90%;
+  width: 87%;
   height: 90vh;
   align-items: center;
   justify-content: center;
@@ -283,5 +272,41 @@ a span {
 }
 
 .imgcontainer {
-  transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
+  transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
+  -webkit-transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
+  -moz-transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
+  -ms-transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
+  -o-transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1500px) {
+  .imgcontainer {
+    height: 450px;
+    transform: perspective(1500px) rotate3D(0, 1, 0, -30deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imgcontainer {
+    transform: none;
+    height: 250px;
+  }
+}
+.titlendis {
+  margin-top: 10%;
+  padding-top: 8%;
+}
+
+.titledisplay {
+  display: grid;
+}
+.titledisplay text {
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.lpgrad {
+  background: linear-gradient(to bottom right, #000, #df5745);
 }
