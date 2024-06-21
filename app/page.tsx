@@ -8,19 +8,22 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { Pagination, Navigation } from 'swiper/modules';
-SwiperCore.use([Navigation, Pagination]);
 
+SwiperCore.use([Navigation, Pagination]);
+import { Poppins } from '@next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '700', '500', '600'],
+});
 export default function Home() {
-  // useEffect(() => {
-  //   gsap.from('.my-element', { duration: 1, opacity: 1, y: -50 });
-  // }, []);
   return (
     <div className="  h-full w-full flex-col items-center p-12 ">
       <div className="background-images-wrapper">
         <div className="layer layer--default"></div>
         <Image
           alt="image"
-          className="layer"
+          className="layer w-full"
           width={100}
           height={100}
           src="https://images.unsplash.com/photo-1626427223333-183395267453?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80"
@@ -36,7 +39,7 @@ export default function Home() {
           width={100}
           height={100}
           alt="image"
-          className="layer"
+          className="layer w-full"
           src="https://images.unsplash.com/photo-1618005198920-f0cb6201c115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
         />
         <Image
@@ -50,19 +53,34 @@ export default function Home() {
         <div className="flex w-11/12 items-center justify-between   ">
           <ul className="link-list">
             <li data-index="1" id="showWebproject">
-              <Link href="/webprojects" passHref prefetch={true}>
-                <span>Web Apps</span>
+              <Link
+                href="/webprojects"
+                passHref
+                prefetch={true}
+                className={poppins.className}
+              >
+                <span>Websites</span>
               </Link>
             </li>
             <li data-index="2">
-              <a href="#" rel="preload">
-                Mobile Apps
-              </a>
+              <Link
+                href="/webprojects"
+                passHref
+                prefetch={true}
+                className={poppins.className}
+              >
+                <span>Mobile Apps</span>
+              </Link>
             </li>
             <li data-index="3">
-              <a href="#" rel="preload">
-                Websites
-              </a>
+              <Link
+                href="/webprojects"
+                passHref
+                prefetch={true}
+                className={poppins.className}
+              >
+                <span> Web Apps</span>
+              </Link>
             </li>
           </ul>
 

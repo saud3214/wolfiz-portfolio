@@ -6,14 +6,17 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'swiper/swiper-bundle.css';
+import { backgroundimages } from '../(webprojects)/webprojects/animation';
+
 import SwiperCore from 'swiper';
 import { Pagination, Navigation } from 'swiper/modules';
 SwiperCore.use([Navigation, Pagination]);
 
 export default function Home() {
-  // useEffect(() => {
-  //   gsap.from('.my-element', { duration: 1, opacity: 1, y: -50 });
-  // }, []);
+  useEffect(() => {
+    backgroundimages();
+  }, []);
+
   return (
     <div className="  h-full w-full flex-col items-center p-12 ">
       <div className="background-images-wrapper">

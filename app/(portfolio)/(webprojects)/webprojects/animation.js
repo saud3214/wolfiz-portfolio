@@ -30,4 +30,40 @@ export const animateImageContainer = () => {
   // });
 };
 
-//
+export const backgroundimages = () => {
+  var links = document.querySelectorAll('ul.link-list li');
+  var images = document.querySelectorAll('.background-images-wrapper .layer');
+  var oldImage;
+
+  function addListeners(el) {
+    el.addEventListener('mouseover', function () {
+      var index = el.dataset.index;
+      changeImage(images[index]);
+    });
+    el.addEventListener('mouseout', function () {
+      gsap.to(oldImage, {
+        opacity: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: 'power2.outIn',
+      });
+      oldImage = null;
+    });
+  }
+
+  function changeImage(el) {
+    if (el != oldImage) {
+      var tl = gsap.timeline();
+      tl.to(oldImage, { opacity: 0, scale: 1 }).to(
+        el,
+        { opacity: 1, scale: 1.1, duration: 0.6, ease: 'power2.outIn' },
+        '<',
+      );
+      oldImage = el;
+    }
+  }
+
+  window.onload = function () {
+    links.forEach((el) => addListeners(el));
+  };
+};

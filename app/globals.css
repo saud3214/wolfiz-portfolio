@@ -17,11 +17,9 @@
 }
 
 body {
-  background-color: honeydew;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  font-family: 'Poppins', 'Times', serif;
 }
 
 @layer utilities {
@@ -53,8 +51,8 @@ body {
   margin: 0;
 }
 .background-images-wrapper .layer {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
   max-height: 100vh;
   opacity: 0;
   object-fit: cover;
@@ -112,7 +110,6 @@ ul.link-list li a {
   font-size: 50px;
   font-weight: 700;
   margin: 5px 0;
-  font-family: 'Poppins';
   color: white;
   opacity: 0.8;
   width: fit-content;
@@ -235,7 +232,6 @@ a span {
 }
 .swiper-container .swiper-pagination span {
   margin-bottom: 1rem !important;
-  font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.07em;
   color: #000;
@@ -243,12 +239,13 @@ a span {
 .swiper-container .swiper-pagination span:focus {
   outline: none;
 }
-
 .arrow {
   color: #ffffff;
+  font-family: 'Poppins', 'Times', serif;
   background-color: transparent;
   font-weight: 600;
-  border-radius: 20px;
+  border: 1px solid white;
+  border-radius: 25px;
   padding: 10px;
   &::after {
     display: inline-block;
@@ -272,11 +269,7 @@ a span {
 }
 
 .imgcontainer {
-  transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
-  -webkit-transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
-  -moz-transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
-  -ms-transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
-  -o-transform: perspective(1800px) rotate3D(-6, 15, -1, -47deg);
+  transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1500px) {
@@ -303,10 +296,19 @@ a span {
 .titledisplay text {
   text-decoration: none;
   font-weight: 600;
+  letter-spacing: 4px;
   position: relative;
   overflow: hidden;
+}
+.__className_afe0d0 {
+  align-items: start;
+  display: flex;
 }
 
 .lpgrad {
   background: linear-gradient(to bottom right, #000, #df5745);
+}
+
+.revert-layer {
+  inset: revert;
 }
