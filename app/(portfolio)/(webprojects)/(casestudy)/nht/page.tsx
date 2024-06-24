@@ -3,114 +3,122 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Urbanist } from 'next/font/google';
+
+const urbanist = Urbanist({
+  subsets: ['latin'],
+  weight: ['400', '700', '500', '600'],
+});
 
 export default function Nht() {
-  useEffect(() => {
-    const links = document.querySelectorAll<HTMLLIElement>('ul.link-list li');
-    const images = document.querySelectorAll<HTMLImageElement>(
-      '.background-images-wrapper .layer',
-    );
-    let oldImage: HTMLImageElement | null = null;
-
-    function addListeners(el: HTMLLIElement) {
-      el.addEventListener('mouseover', () => {
-        const index = el.dataset.index;
-        if (index) {
-          changeImage(images[parseInt(index)]);
-        }
-      });
-      el.addEventListener('mouseout', () => {
-        if (oldImage) {
-          gsap.to(oldImage, {
-            inset: 'revert-layer',
-            opacity: 0,
-            scale: 1,
-            duration: 0.6,
-            ease: 'power2.outIn',
-          });
-        }
-        oldImage = null;
-      });
-    }
-
-    function changeImage(el: HTMLImageElement) {
-      if (el !== oldImage) {
-        const tl = gsap.timeline();
-
-        tl.to(oldImage, { opacity: 0, scale: 1 }).to(
-          el,
-          { opacity: 1, scale: 1.1, duration: 0.6, ease: 'power2.outIn' },
-          '<',
-        );
-        oldImage = el;
-      }
-    }
-
-    links.forEach((el) => addListeners(el));
-  }, []);
-
   return (
-    <div>
-      <Head>
-        <title>Project list</title>
-        <link
-          href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-          rel="stylesheet"
-        />
-      </Head>
-      <div className="background-images-wrapper">
-        <div className="layer layer--default"></div>
-        <Image
-          className="layer"
-          src="https://images.unsplash.com/photo-1626427223333-183395267453?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          alt="Background 1"
-        />
-        <Image
-          className="layer"
-          src="https://images.unsplash.com/photo-1627037558426-c2d07beda3af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          alt="Background 2"
-        />
-        <Image
-          className="layer"
-          src="https://images.unsplash.com/photo-1618005198920-f0cb6201c115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          alt="Background 3"
-        />
-        <Image
-          className="layer"
-          src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          alt="Background 4"
-        />
-
-        <ul className="link-list">
-          <li data-index="1">
-            <Link href="/webprojects">
-              <span>Web Apps</span>
-            </Link>
-          </li>
-          <li data-index="2">
-            <Link href="/webprojects">
-              <span>Mobile Apps</span>
-            </Link>
-          </li>
-          <li data-index="3">
-            <Link href="/webprojects">
-              <span>Websites</span>
-            </Link>
-          </li>
-        </ul>
+    <div
+      className={` w-full items-center justify-center flex flex-col ${urbanist.className}`}
+    >
+      <div className="bg-rzfx-bg1 bg-cover bg-center bg-no-repeat   w-full items-center justify-center flex">
+        <div className="grid grid-cols-12 w-full  items-center justify-center ">
+          <div className="col-span-3  items-center flex justify-center h-full w-full ps-10">
+            <div className=" items-start flex justify-center  w-[80%]  flex-col ps-5  gap-11">
+              <span className="text-6xl font-semibold">Rockzfx</span>
+              <span className="text-5xl font-medium">
+                Forex Trading <br /> Website
+              </span>
+              <span className="text-4xl font-medium">UI Case Study</span>
+              <div className="items-start flex   w-full  gap-5 justify-center">
+                <span className="text-3xl font-medium mr-10">Tool’s Used</span>
+                <div className="flex gap-4">
+                  <Image
+                    width={50}
+                    height={50}
+                    alt="image"
+                    src="/csimages/adobe.png"
+                    className=""
+                  />
+                  <Image
+                    width={50}
+                    height={50}
+                    alt="image"
+                    src="/csimages/figma.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-9 w-full h-[90%] items-center justify-center flex  mt-5">
+            <Image
+              className="relativepos "
+              src="/csimages/rzfxbg2.png"
+              alt="Background 1"
+              layout="fill"
+              objectFit="contains" // Ensure the image covers the container without stretching
+            />
+          </div>
+        </div>
+      </div>
+      <div className="bg-rzfx-bg3 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex ">
+        <div className="grid grid-cols-12 w-full ">
+          <div className="col-span-6 flex items-start justify-center w-full  ">
+            <div className="flex items-start  ps-3 w-[80%] flex-col">
+              <div className="flex flex-col">
+                <span className="text-[150px] text-[#D9D8D3]">01</span>
+                <span className="text-6xl text-[#22CADB] font-semibold">
+                  About Project
+                </span>
+                <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
+                <span className="text-2xl my-5">
+                  A young family man, stuck in the rat race, earned a good
+                  salary but still found myself in debt. I decided to change
+                  things around. I dabbled in online blogging, multi level
+                  marketing, online gambling and buying a selling cars. I done
+                  well but it was not something I enjoyed doing all of the time.
+                  My time was owned and I wanted to own my time.I found trading
+                  at 24 when a friend introduced hyper scalping to me. We used
+                  indicators to trade the 1 minute timeframe and would on
+                  average catch 3- 10 pips at a time. The adrenaline rush was
+                  unex plainable. But it eventually led to blown accounts due to
+                  greed.
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[150px] text-[#D9D8D3]">02</span>
+                <span className="text-6xl text-[#22CADB] font-semibold">
+                  Objectives & Goals
+                </span>
+                <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
+                <div className="flex gap-5">
+                  <span className="text-2xl my-5 ps-10">
+                    <ul className="list-disc">
+                      <li> Access to Market Data</li>
+                      <li> Trading Tools and Features</li>
+                      <li>Security and Reliability</li>
+                      <li> Compliance and Transparency</li>
+                      <li> User-Friendly Interface</li>
+                    </ul>
+                  </span>
+                  <span className="text-2xl my-5 ps-10">
+                    <ul className="list-disc">
+                      <li> Access to Market Data</li>
+                      <li> Trading Tools and Features</li>
+                      <li>Security and Reliability</li>
+                      <li> Compliance and Transparency</li>
+                      <li> User-Friendly Interface</li>
+                    </ul>
+                  </span>{' '}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-6 w-full  items-center justify-end flex  mt-5">
+            <Image
+              className="relativepos w-[70%] "
+              src="/csimages/rzfxmobiles.png"
+              alt="Background 1"
+              width={5000}
+              height={5000}
+              // Ensure the image covers the container without stretching
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export const animateImageContainer = () => {
     },
     {
       duration: 3,
-      y: 20, // Move the div 20 pixels down
+      y: 30, // Move the div 20 pixels down
       ease: 'power1.inOut', // Easing function for smooth animation
     },
   );
