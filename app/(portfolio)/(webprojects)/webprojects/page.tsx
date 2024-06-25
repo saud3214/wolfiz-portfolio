@@ -118,7 +118,7 @@ export default function Webprojects() {
             </div>
             <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
               <Link href="/nht" className="h-full grid items-center">
-                <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer"></div>
+                <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer   shadow-xl"></div>
               </Link>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function Webprojects() {
             </div>
             <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
               <div className="h-full grid items-center">
-                <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-nht-card ">
+                <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-nht-card shadow-2xl drop-shadow-2xl ">
                   {/* <div className="border-[40px] border-[#2FEDCB] w-full h-full imgcontainer2 "></div> */}
                 </div>
               </div>

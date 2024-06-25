@@ -44,6 +44,15 @@ export default function RootLayout({
         </header>
         <main>{children}</main>
         <SpeedInsights />
+
+        <footer className="bg-black h-16 p-10 flex text-white text-center justify-between">
+          <span>© 2013 – 2024 All Rights Reserved by Wolfiz Solutions</span>
+
+          <div className="flex gap-10 text-center">
+            <span>Life at Wolfiz </span> <span> Privacy Policy </span>{' '}
+            <span> Terms & Conditions</span>
+          </div>
+        </footer>
       </body>
     </html>
   );

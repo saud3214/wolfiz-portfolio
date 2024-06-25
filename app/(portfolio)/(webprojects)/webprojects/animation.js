@@ -10,13 +10,13 @@ export const animateImageContainer = () => {
       y: 10, // Initial position
     },
     {
-      duration: 3,
+      duration: 2,
       y: 30, // Move the div 20 pixels down
       ease: 'power1.inOut', // Easing function for smooth animation
     },
   );
   tl2.to('.imgcontainer', {
-    duration: 3,
+    duration: 2,
     y: 10, // Move the div back to its initial position
     ease: 'power1.inOut', // Easing function for smooth animation
   });
