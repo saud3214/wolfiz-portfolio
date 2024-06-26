@@ -117,9 +117,9 @@ export default function Webprojects() {
               </div>
             </div>
             <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-              <Link href="/nht" className="h-full grid items-center">
+              <div className="h-full grid items-center">
                 <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer   shadow-xl"></div>
-              </Link>
+              </div>
             </div>
           </div>
         </SwiperSlide>

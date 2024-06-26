@@ -15,10 +15,10 @@ export default function Nht() {
     <div
       className={` w-full items-center justify-center flex flex-col ${urbanist.className}`}
     >
-      <div className="bg-rzfx-bg1 bg-cover bg-center bg-no-repeat   w-full items-center justify-center flex">
+      <div className="bg-rzfx-bg1 bg-cover bg-center bg-no-repeat   w-full items-center justify-center flex h-[100vh]">
         <div className="grid grid-cols-12 w-full  items-center justify-center ">
-          <div className="col-span-3  items-center flex justify-center h-full w-full ps-10">
-            <div className=" items-start flex justify-center  w-[80%]  flex-col ps-5  gap-11">
+          <div className="col-span-12 lg:col-span-3  items-center flex justify-center h-full w-full lg:ps-10">
+            <div className=" items-start flex justify-center  w-[80%]  flex-col lg:ps-5  gap-11">
               <span className="text-6xl font-semibold">Rockzfx</span>
               <span className="text-5xl font-medium">
                 Forex Trading <br /> Website
@@ -44,7 +44,7 @@ export default function Nht() {
               </div>
             </div>
           </div>
-          <div className="col-span-9 w-full h-[90%] items-center justify-center flex  mt-5">
+          <div className="col-span-9 w-full h-[90%] items-center justify-center lg:flex hidden  mt-5">
             <Image
               className="relativepos "
               src="/csimages/rzfxbg2.png"
@@ -57,7 +57,7 @@ export default function Nht() {
       </div>
       <div className="bg-rzfx-bg3 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex ">
         <div className="grid grid-cols-12 w-full ">
-          <div className="col-span-6 flex items-start justify-center w-full  ">
+          <div className="lg:col-span-6 col-span-12 flex items-start justify-center w-full  ">
             <div className="flex items-start  ps-3 2xl:w-[80%] w-full flex-col">
               <div className="flex flex-col">
                 <span className="text-[120px] text-[#D9D8D3]">01</span>
@@ -85,7 +85,7 @@ export default function Nht() {
                   Objectives & Goals
                 </span>
                 <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
-                <div className="flex gap-5">
+                <div className="flex flex-col lg:flex-row gap-5">
                   <span className="text-2xl my-3 ps-10">
                     <ul className="list-disc">
                       <li> Access to Market Data</li>
@@ -108,13 +108,12 @@ export default function Nht() {
               </div>
             </div>
           </div>
-          <div className="col-span-6 w-full  items-center justify-end flex  mt-5">
+          <div className="lg:col-span-6 col-span-12 w-full  items-center justify-end lg:flex  mt-5  hidden ">
             <Image
-              className="relativepos 2xl:w-[70%] "
+              className="relativepos  "
               src="/csimages/rzfxmobiles.png"
               alt="Background 1"
-              width={3000}
-              height={3000}
+              fill
               // Ensure the image covers the container without stretching
             />
           </div>
@@ -122,7 +121,7 @@ export default function Nht() {
       </div>
       <div className="bg-rzfx-bg4 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex flex-col ">
         <div className="w-[88%] grid grid-cols-12 items-start justify-center mb-5 ">
-          <div className="col-span-6 flex items-center justify-start w-full  ">
+          <div className="lg:col-span-6 col-span-12 flex items-center justify-start w-full  ">
             <div className="flex flex-col">
               <span className="text-[120px] text-[#D9D8D3]">03</span>
               <span className="text-5xl text-[#22CADB] font-semibold">
@@ -130,8 +129,8 @@ export default function Nht() {
               </span>
               <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
               <div className="border-b-[10px] border-r-[10px] border-[#22CADB] bg-white w-full rounded-3xl drop-shadow-xl  bg-opacity-5 mt-10">
-                <div className="text-xl  bg-white  bg-opacity-40  rounded-2xl  px-5 pt-10 pb-5 gap-10  shadow-xl  flex  items-center">
-                  <ul className="list-disc pl-10 gap-2 flex flex-col">
+                <div className="text-xl  bg-white  bg-opacity-40  rounded-2xl  px-5 pt-10 pb-5 gap-10  shadow-xl  flex flex-col lg:flex-row  items-center">
+                  <ul className="list-disc pl-10 gap-2 flex flex-col order-2 lg:order-1  ">
                     <li> Limited Access to Information</li>
                     <li> Complexity of Financial Markets</li>
                     <li>Technical Barriers</li>
@@ -141,7 +140,7 @@ export default function Nht() {
                     <li> Security Concerns.</li>
                     <li> Customer Support and Service</li>
                   </ul>
-                  <div className="flex  ">
+                  <div className="flex  lg:w-[40%]  w-5/6   order-1 lg:order-2 ">
                     <Image
                       className=" relativepos "
                       src="/csimages/undraw_access_denied_re_awnf 1.png"
@@ -154,16 +153,18 @@ export default function Nht() {
               </div>
             </div>
           </div>
-          <div className="col-span-6 flex items-center justify-start w-full  ">
+          <div className="lg:col-span-6 col-span-12 flex items-center justify-start w-full  ">
             <div className="flex flex-col">
-              <span className="text-[120px] text-[#D9D8D3] opacity-0">03</span>
+              <span className="text-[120px] text-[#D9D8D3] opacity-0 hidden lg:block">
+                03
+              </span>
               <span className="text-5xl text-[#22CADB] font-semibold">
                 Solution Statement
               </span>
               <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
               <div className="border-l-[10px] border-t-[10px] border-[#22CADB] bg-white w-full rounded-3xl drop-shadow-xl   bg-opacity-5 mt-10">
-                <div className="text-xl  bg-white  bg-opacity-40  rounded-2xl  px-5 pt-10 pb-5 gap-5    flex  items-center">
-                  <ul className="list-disc pl-10 gap-2 flex flex-col">
+                <div className="text-xl  bg-white  bg-opacity-40  rounded-2xl  px-5 pt-10 pb-5 gap-5  flex  flex-col lg:flex-row  items-center">
+                  <ul className="list-disc pl-10 gap-2 flex flex-col  order-2 lg:order-1 ">
                     <li>Enhanced Market Information Access.</li>
                     <li> Advance Trading Platform.</li>
                     <li>Enhanced Security Measures. </li>
@@ -173,7 +174,7 @@ export default function Nht() {
                     <li> Continuous Improvement.</li>
                     <li> Proactive Customer Support</li>
                   </ul>
-                  <div className="flex mr-5  ">
+                  <div className="flex mr-5 lg:w-[40%]  w-5/6  order-1 lg:order-2 ">
                     <Image
                       className=" relativepos "
                       src="/csimages/Group 2.png"
@@ -187,7 +188,7 @@ export default function Nht() {
             </div>
           </div>
         </div>
-        <div className="w-[88%] grid grid-cols-12 items-start justify-center  my-10 ">
+        <div className="lg:w-[88%] w-full grid grid-cols-12 items-start justify-center  my-10 ">
           <div className="flex flex-col col-span-12 items-center">
             <div className="flex flex-col items-start justify-start w-full">
               <span className="text-[120px] text-[#D9D8D3]">04</span>
@@ -225,7 +226,7 @@ export default function Nht() {
             </div>
 
             <div className="flex flex-col justify-between w-[85%] mt-10 ">
-              <div className="flex justify-between w-full">
+              <div className="lg:flex hidden justify-between w-full">
                 <div className="flex  items-center w-60 h-60 ">
                   <Image
                     className=" relativepos "
@@ -257,7 +258,7 @@ export default function Nht() {
                   />
                 </div>
               </div>
-              <div className="flex justify-around w-full">
+              <div className="lg:flex hidden justify-around w-full">
                 <div className="flex  items-center w-60 h-60 ">
                   <Image
                     className=" relativepos "
@@ -268,7 +269,7 @@ export default function Nht() {
                   />
                 </div>
 
-                <div className="flex items-center w-60 h-60">
+                <div className="lg:flex hidden items-center w-60 h-60  ">
                   <Image
                     className=" relativepos "
                     src="/csimages/dp5.png"
@@ -310,7 +311,7 @@ export default function Nht() {
               </span>
               <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
             </div>
-            <div className="p-20 flex w-full items-center justify-center">
+            <div className="lg:p-20 flex flex-col md:flex-row w-full items-center justify-center">
               <div className="flex items-center flex-col justify-center  ">
                 <Image
                   className=" relativepos w-64 "
@@ -323,8 +324,8 @@ export default function Nht() {
                   Urbanist
                 </span>
               </div>
-              <div className="flex w-2/3 items-center justify-center">
-                <div className=" bg-white  w-2/3">
+              <div className="flex lg:w-2/3  w-full items-center justify-center">
+                <div className=" bg-white  lg:w-2/3 w-full">
                   <table className="w-full text-left ">
                     <thead>
                       <tr className="text-xl ">
@@ -434,25 +435,25 @@ export default function Nht() {
               </div>
             </div>
             <div className=" h-52 w-full flex justify-between">
-              <div className="bg-[#22CADB]  rounded-xl w-[30%] flex items-center justify-center text-white h-full font-semibold text-3xl">
+              <div className="bg-[#22CADB]  rounded-xl lg:w-[30%] w-[40%] flex items-center justify-center text-white h-full font-semibold lg:text-3xl text-xl">
                 22CADB <br /> Primary Color
               </div>
-              <div className="bg-[#E6F8FA]  rounded-xl w-[5%] flex items-center justify-center text-black h-full  font-semibold text-3xl">
+              <div className="bg-[#E6F8FA]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-black h-full  font-semibold lg:text-3xl text-xl">
                 <span className="-rotate-90">E6F8FA </span>
               </div>
-              <div className="bg-[#000]  rounded-xl w-[5%] flex items-center justify-center text-white h-full  font-semibold text-3xl">
+              <div className="bg-[#000]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
                 <span className="-rotate-90">00000 </span>
               </div>
-              <div className="bg-[#222]  rounded-xl w-[5%] flex items-center justify-center text-white h-full  font-semibold text-3xl">
+              <div className="bg-[#222]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
                 <span className="-rotate-90">22222 </span>
               </div>
-              <div className="bg-[#AEAEAE]  rounded-xl w-[5%] flex items-center justify-center text-white h-full  font-semibold text-3xl">
+              <div className="bg-[#AEAEAE]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
                 <span className="-rotate-90">AEAEAE </span>
               </div>
-              <div className="bg-[#616161]  rounded-xl w-[5%] flex items-center justify-center text-white h-full  font-semibold text-3xl">
+              <div className="bg-[#616161]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
                 <span className="-rotate-90">616161 </span>
               </div>
-              <div className="bg-[#2C2C2C]  rounded-xl w-[5%] flex items-center justify-center text-white h-full  font-semibold text-3xl">
+              <div className="bg-[#2C2C2C]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
                 <span className="-rotate-90">2C2C2C </span>
               </div>
             </div>
@@ -470,8 +471,8 @@ export default function Nht() {
               <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
             </div>
 
-            <div className="flex items-center justify-center gap-5 w-full ">
-              <div className="flex items-center w-1/2   ">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-5 w-full ">
+              <div className="flex items-center lg:w-1/2  w-11/12 ">
                 <Image
                   className=" relativepos "
                   src="/csimages/ps1.png"
@@ -481,7 +482,7 @@ export default function Nht() {
                   // Ensure the image covers the container without stretching
                 />
               </div>
-              <div className="flex items-center w-1/2 ">
+              <div className="flex items-center lg:w-1/2  w-11/12 ">
                 <Image
                   className=" relativepos "
                   src="/csimages/ps2.png"
@@ -627,7 +628,7 @@ export default function Nht() {
               </div>
             </div>
             <div className="flex items-center justify-center  w-full bg-rzfx-bg10 bg-cover bg-center bg-no-repeat p-10 flex-col md:flex-row gap-10">
-              <div className="flex items-center  w-[20%]    ">
+              <div className="flex items-center  lg:w-[20%]  w-1/2   ">
                 <Image
                   className=" relativepos  w-full"
                   src="/csimages/mu1.png"
@@ -635,7 +636,7 @@ export default function Nht() {
                   fill
                 />
               </div>
-              <div className="flex items-center   w-[20%] lg:pb-20 lg:mb-20  ">
+              <div className="flex items-center  lg:w-[20%]  w-1/2  lg:pb-20 lg:mb-20  ">
                 <Image
                   className=" relativepos w-full"
                   src="/csimages/mu2.png"
@@ -643,7 +644,7 @@ export default function Nht() {
                   fill
                 />
               </div>
-              <div className="flex items-center  w-[20%]    ">
+              <div className="flex items-center lg:w-[20%]  w-1/2  ">
                 <Image
                   className=" relativepos w-full "
                   src="/csimages/mu3.png"
