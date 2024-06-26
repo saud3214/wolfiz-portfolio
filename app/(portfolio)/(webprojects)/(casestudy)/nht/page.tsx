@@ -16,7 +16,7 @@ export default function Nht() {
       className={` w-full items-center justify-center flex flex-col ${urbanist.className}`}
     >
       <div className="bg-nht-bg1 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex flex-col ">
-        <div className=" grid grid-cols-12 items-start justify-center mb-5 ">
+        <div className=" grid grid-cols-12 items-start justify-center mb-5  w-[80%] ">
           <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
             <div className="flex items-center  w-10/12 p-10   ">
               <Image
@@ -33,7 +33,7 @@ export default function Nht() {
       </div>
 
       <div className="bg-nht-bg2 bg-contain bg-right bg-no-repeat   w-full  items-center justify-center flex flex-col ">
-        <div className=" grid grid-cols-12 items-start justify-center mb-5  ">
+        <div className=" grid grid-cols-12 items-start justify-center mb-5  w-[80%]  ">
           <div className="flex flex-col  col-span-12 items-center justify-center  gap-3">
             <div className="flex flex-col items-center justify-center pt-10">
               <span className=" font-semibold text-5xl text-nht mb-4">
