@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .clippath {
+    clip-path: polygon(89% 29%, 100% 48%, 88% 65%, 11% 65%, 0 47%, 12% 29%);
+  }
+  .clippath2 {
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 57% 100%, 83% 51%, 56% 0);
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

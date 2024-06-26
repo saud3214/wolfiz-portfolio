@@ -89,7 +89,7 @@ export default function Webprojects() {
                   prostheses to forget about baldness, receding hairline and
                   thinning.
                 </span>
-                <Link href={'/nht'} className="mt-8 ">
+                <Link href={'/rockzfx'} className="mt-8 ">
                   <button className="button arrow">Open Case Study</button>
                 </Link>
                 <div className="h-[10vh]"></div>
