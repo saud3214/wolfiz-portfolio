@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+'use client';
 import './globals.css';
 import React from 'react';
 import Image from 'next/image';
@@ -6,11 +6,7 @@ import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Pridi } from 'next/font/google';
 import Head from 'next/head';
-
-export const metadata: Metadata = {
-  title: 'Wolfiz Portfolio',
-  description: 'Portfolio Projects',
-};
+import { ReactNode } from 'react';
 
 const pridi = Pridi({
   subsets: ['latin'], // Adjust the subsets according to your needs
@@ -30,8 +26,13 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <body className={pridi.className}>
-        <header className="flex items-end justify-start fixed h-28 z-[9]">
-          <div className="font-bold fixed z-[1111] flex items-center justify-center w-[15%]">
+        <style jsx>{`
+          .zindex {
+            z-index: 9;
+          }
+        `}</style>
+        <header className="flex items-end justify-start fixed h-28 zindex">
+          <div className="font-bold fixed  flex items-center justify-center w-[15%]">
             <Link href="/">
               <Image
                 alt="logo"
@@ -47,9 +48,8 @@ export default function RootLayout({
 
         <footer className="bg-black h-16 p-10 flex text-white text-center justify-between">
           <span>© 2013 – 2024 All Rights Reserved by Wolfiz Solutions</span>
-
           <div className="flex gap-10 text-center">
-            <span>Life at Wolfiz </span> <span> Privacy Policy </span>{' '}
+            <span>Life at Wolfiz </span> <span> Privacy Policy </span>
             <span> Terms & Conditions</span>
           </div>
         </footer>

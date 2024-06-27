@@ -4,6 +4,12 @@ import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Head from 'next/head';
 import Image from 'next/image';
+import {
+  AnimatedText,
+  AnimatedText2,
+  GradientFlowTextRzfx,
+  BounceSpinText,
+} from '../../../components/animatedtext';
 export default function CasestudyLayout({
   children,
 }: Readonly<{
@@ -30,15 +36,10 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="flex items-end justify-start fixed h-28 z-[9]">
-        <div className="font-bold fixed z-[1111] flex items-center justify-center w-[15%]">
-          <Link href="/webprojects">
-            <Image
-              alt="logo"
-              height={100}
-              width={100}
-              src="/svg/wolfizlogoblack.svg"
-            />
+      <header className="flex items-center justify-center fixed h-28 z-[2] w-full">
+        <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right">
+          <Link href="/webprojects" className="w-full text-2xl ">
+            <GradientFlowTextRzfx text="Back" />
           </Link>
         </div>
       </header>

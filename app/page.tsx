@@ -8,7 +8,15 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { Pagination, Navigation } from 'swiper/modules';
+import {
+  RotateFade,
+  FadeScale,
+  SlideFromSide,
+  StaggeredChildren,
+  BlurFade,
+} from './components/pagetransition';
 
+import { AnimatedText, AnimatedText2 } from './components/animatedtext';
 SwiperCore.use([Navigation, Pagination]);
 import { Poppins } from 'next/font/google';
 
@@ -113,7 +121,7 @@ export default function Home() {
                 prefetch={true}
                 className={poppins.className}
               >
-                <span>Websites</span>
+                <AnimatedText text="Websites" />
               </Link>
             </li>
             <li data-index="2">
@@ -123,7 +131,7 @@ export default function Home() {
                 prefetch={true}
                 className={poppins.className}
               >
-                <span>Mobile Apps</span>
+                <AnimatedText text="Mobile Apps" />
               </Link>
             </li>
             <li data-index="3">
@@ -133,7 +141,7 @@ export default function Home() {
                 prefetch={true}
                 className={poppins.className}
               >
-                <span> Web Apps</span>
+                <AnimatedText text="Web Apps" />
               </Link>
             </li>
           </ul>
