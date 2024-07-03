@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { PageTransition } from '../../../../components/pagetransition';
+import { csimages, backgroundimages } from '../../webprojects/animation';
 
 const urbanist = Inter({
   subsets: ['latin'],
@@ -12,6 +13,10 @@ const urbanist = Inter({
 });
 
 export default function Nht() {
+  useEffect(() => {
+    csimages();
+  });
+
   return (
     <PageTransition>
       <div
@@ -22,7 +27,7 @@ export default function Nht() {
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
               <div className="flex  items-center  lg:w-10/12 lg:p-10 w-full   ">
                 <Image
-                  className=" relativepos "
+                  className=" relativepos csimg "
                   src="/nht/nhtlaptop1.png"
                   alt="Background 1"
                   fill

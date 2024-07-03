@@ -84,56 +84,6 @@ export default function Webprojects() {
           speed={1000}
           className=" w-full h-full items-center  slideclas swiper-container "
         >
-          <SwiperSlide className="swiper-slide  flex items-center justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#E6F8FA] via-[#7cd9e3] to-[#22CADB]">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
-                  <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem] text-5xl ">
-                      <AnimatedText2 text="Rockzfx" />
-                    </text>
-                  </div>
-                  <span className="text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
-                    In Ticino we offer you state-of-the-art skin patches and
-                    prostheses to forget about baldness, receding hairline and
-                    thinning.
-                  </span>
-                  <Link href={'/rockzfx'} className="mt-8 ">
-                    <motion.button className="button arrow">
-                      Open Case Study
-                    </motion.button>
-                  </Link>
-                  <div className="h-[10vh]"></div>
-                  <div className=" relative border-4 rounded-sm border-[#7cd9e3] h-[24vh]">
-                    <div
-                      id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
-                    >
-                      <video
-                        id="roundvideo"
-                        autoPlay
-                        muted
-                        loop
-                        preload="yes"
-                        playsInline
-                        className="h-[23.3vh]"
-                      >
-                        <source
-                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down-sunny-day-austria-alps-europe-filmed-on-high.webm"
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer   shadow-xl"></div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
           <SwiperSlide className=" swiper-slide bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#2FEDCB] via-[#00A081] to-[#006360] flex items-center justify-center">
             <div className="slide-inner grid grid-cols-12    ">
               <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
@@ -183,6 +133,56 @@ export default function Webprojects() {
                   <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-nht-card shadow-2xl drop-shadow-2xl ">
                     {/* <div className="border-[40px] border-[#2FEDCB] w-full h-full imgcontainer2 "></div> */}
                   </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="swiper-slide  flex items-center justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#E6F8FA] via-[#7cd9e3] to-[#22CADB]">
+            <div className="slide-inner grid grid-cols-12    ">
+              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+                <div className="titlendis flex flex-col items-start">
+                  <div className="titledisplay">
+                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem] text-5xl ">
+                      <AnimatedText2 text="Rockzfx" />
+                    </text>
+                  </div>
+                  <span className="text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
+                    In Ticino we offer you state-of-the-art skin patches and
+                    prostheses to forget about baldness, receding hairline and
+                    thinning.
+                  </span>
+                  <Link href={'/rockzfx'} className="mt-8 ">
+                    <motion.button className="button arrow">
+                      Open Case Study
+                    </motion.button>
+                  </Link>
+                  <div className="h-[10vh]"></div>
+                  <div className=" relative border-4 rounded-sm border-[#7cd9e3] h-[24vh]">
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh]"
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-[23.3vh]"
+                      >
+                        <source
+                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down-sunny-day-austria-alps-europe-filmed-on-high.webm"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+                <div className="h-full grid items-center">
+                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer   shadow-xl"></div>
                 </div>
               </div>
             </div>

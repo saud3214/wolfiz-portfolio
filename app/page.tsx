@@ -70,8 +70,23 @@ export default function Home() {
   }, []);
   return (
     <div className="  h-full w-full flex-col items-center p-12 ">
+      <div className="videoContainer">
+        <video
+          className="roundvideo"
+          autoPlay
+          muted
+          loop
+          preload="auto"
+          playsInline
+        >
+          <source
+            src="https://tympanus.net/Development/HoverGrid/media/bg-video.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
       <div className="background-images-wrapper">
-        <div className="layer layer--default"></div>
+        {/* <div className="layer layer--default"></div> */}
         <div className="relative w-full h-full">
           <Image
             className="layer w-full h-full"
