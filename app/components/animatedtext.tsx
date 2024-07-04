@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
 // 1. Wave Effect
 export const AnimatedText = ({ text }: { text: string }) => {
@@ -118,12 +120,38 @@ export const AnimatedText2 = ({ text }: { text: string }) => {
     },
   };
 
+  const controls = useAnimation();
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start('visible');
+          observer.unobserve(containerRef.current); // Unobserve after animation starts
+        }
+      },
+      { threshold: 0.1 }, // Trigger when 10% of the element is visible
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [controls]);
+
   return (
     <motion.div
+      ref={containerRef}
       className="titledisplay"
       variants={container}
       initial="hidden"
-      animate="visible"
+      animate={controls}
     >
       {text.split('').map((letter, index) => (
         <motion.span

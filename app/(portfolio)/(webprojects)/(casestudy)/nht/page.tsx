@@ -7,6 +7,7 @@ import { Inter } from 'next/font/google';
 import { PageTransition } from '../../../../components/pagetransition';
 import { csimages, backgroundimages } from '../../webprojects/animation';
 
+import { AnimatedText2 } from '../../../../components/animatedtext';
 const urbanist = Inter({
   subsets: ['latin'],
   weight: ['400', '700', '500', '600'],
@@ -44,7 +45,7 @@ export default function Nht() {
             <div className="flex flex-col  col-span-12 items-center justify-center  gap-3">
               <div className="flex flex-col items-center justify-center pt-10">
                 <span className=" font-semibold text-5xl text-nht mb-4">
-                  Project Overview
+                  <AnimatedText2 text=" Project Overview" />
                 </span>
                 <span className="lg:w-2/5 text-center flex">
                   In Ticino we offer you state-of-the-art skin patches and

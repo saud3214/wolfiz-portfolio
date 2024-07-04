@@ -32,9 +32,13 @@ const config: Config = {
         'nht-bg6': "url('/nht/nhtbg6.png')",
         'nht-bg7': "url('/nht/bgps.png')",
         'nht-bg8': "url('/nht/nhtabc.png')",
+        lp1: "url('/lp/bg1.png')",
+        lp2: "url('/lp/bg2.png')",
+        lp3: "url('/lp/bg3.png')",
       },
       colors: {
         nht: '#006360',
+        lp: '#792C21',
       },
       clipPath: {
         'custom-polygon':

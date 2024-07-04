@@ -1,17 +1,16 @@
 'use client';
-// import './globals.css';
+import './globals.css';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Pridi } from 'next/font/google';
 import Head from 'next/head';
-import { ReactNode } from 'react';
 
-// const pridi = Pridi({
-//   subsets: ['latin'], // Adjust the subsets according to your needs
-//   weight: ['400', '700', '600'], // Add the weights you need
-// });
+const pridi = Pridi({
+  subsets: ['latin'], // Adjust the subsets according to your needs
+  weight: ['400', '700', '600'], // Add the weights you need
+});
 
 export default function RootLayout({
   children,
@@ -25,8 +24,7 @@ export default function RootLayout({
         <meta name="description" content="Portfolio Projects" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
-      {/* className={pridi.className} */}
-      <body>
+      <body className={pridi.className}>
         <style jsx>{`
           .zindex {
             z-index: 9;
@@ -47,13 +45,13 @@ export default function RootLayout({
         <main>{children}</main>
         <SpeedInsights />
 
-        {/* <footer className="bg-black h-16 p-10 flex text-white text-center justify-between">
+        <footer className="bg-black h-16 p-10 flex text-white text-center justify-between">
           <span>© 2013 – 2024 All Rights Reserved by Wolfiz Solutions</span>
           <div className="flex gap-10 text-center">
             <span>Life at Wolfiz </span> <span> Privacy Policy </span>
             <span> Terms & Conditions</span>
           </div>
-        </footer> */}
+        </footer>
       </body>
     </html>
   );

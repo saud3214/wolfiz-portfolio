@@ -90,7 +90,7 @@ export default function Webprojects() {
                 <div className="titlendis flex flex-col items-start">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <BounceSpinText text="NHT" />
+                      <AnimatedText2 text="NHT" />
                     </text>
                   </div>
                   <div className={archivo.className}>
@@ -202,9 +202,11 @@ export default function Webprojects() {
                     prostheses to forget about baldness, receding hairline and
                     thinning.
                   </span>
-                  <div className="mt-8 ">
-                    <button className="button arrow">Open Case Study</button>
-                  </div>
+                  <Link href={'/leadspeddllers'} className="mt-8 ">
+                    <motion.button className="button arrow">
+                      Open Case Study
+                    </motion.button>
+                  </Link>
                   <div className="h-[10vh]"></div>
                   <div className=" relative border-4 rounded-sm border-[#df5745] h-[24vh]">
                     <div
