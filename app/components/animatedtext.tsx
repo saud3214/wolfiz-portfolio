@@ -121,14 +121,16 @@ export const AnimatedText2 = ({ text }: { text: string }) => {
   };
 
   const controls = useAnimation();
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           controls.start('visible');
-          observer.unobserve(containerRef.current); // Unobserve after animation starts
+          if (containerRef.current) {
+            observer.unobserve(containerRef.current); // Unobserve after animation starts
+          }
         }
       },
       { threshold: 0.1 }, // Trigger when 10% of the element is visible
@@ -169,7 +171,6 @@ export const AnimatedText2 = ({ text }: { text: string }) => {
     </motion.div>
   );
 };
-
 // 3. Gradient Flow Effect
 export const GradientFlowText = ({ text }: { text: string }) => {
   return (
