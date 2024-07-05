@@ -35,6 +35,7 @@ const config: Config = {
         lp1: "url('/lp/bg1.png')",
         lp2: "url('/lp/bg2.png')",
         lp3: "url('/lp/bg3.png')",
+        lp4: "url('/lp/bg4.png')",
       },
       colors: {
         nht: '#006360',

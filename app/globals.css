@@ -389,3 +389,13 @@ a > span:nth-child(2):hover .char {
   text-align: center;
   padding: 20px;
 }
+
+.relativepos2 {
+  right: 14% !important;
+  left: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  position: absolute;
+  height: auto !important;
+  width: 100%;
+}
