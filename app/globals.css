@@ -225,10 +225,11 @@ a > span:nth-child(2):hover .char {
   height: 90vh;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease; /* This ensures smooth transition */
 }
-.swiper-container .swiper-pagination-bullet {
+/* .swiper-container .swiper-pagination-bullet {
   background-color: rgba(0, 0, 0, 0);
-}
+} */
 .swiper-container .swiper-pagination {
   display: flex;
   flex-direction: column;
@@ -398,4 +399,21 @@ a > span:nth-child(2):hover .char {
   position: absolute;
   height: auto !important;
   width: 100%;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ead375, #b67a29, #ead375);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text2 {
+  background: linear-gradient(to right, #f9e96e, #ed6bf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text3 {
+  background: linear-gradient(to bottom, #f7bcf4, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

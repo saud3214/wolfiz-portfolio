@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
@@ -10,6 +10,7 @@ import { animateImageContainer, backgroundimages } from './animation';
 import { Archivo } from 'next/font/google';
 import { motion } from 'framer-motion';
 import { SlideFromSide } from '../../../components/pagetransition';
+
 import {
   AnimatedText,
   AnimatedText2,
@@ -17,69 +18,87 @@ import {
   BounceSpinText,
 } from '../../../components/animatedtext';
 
-import { Mousewheel, EffectFade } from 'swiper/modules';
-SwiperCore.use([Mousewheel, EffectFade]);
+import { Mousewheel, EffectFade, Pagination } from 'swiper/modules';
+SwiperCore.use([Mousewheel, EffectFade, Pagination]);
 
 const archivo = Archivo({
   subsets: ['latin'],
   weight: ['400', '700', '500', '600'],
 });
 export default function Webprojects() {
+  const swiperRef = useRef<SwiperCore | null>(null);
+  const interleaveOffset = 0.85; // Adjust this value as needed
+
   useEffect(() => {
-    animateImageContainer();
-    const links = document.querySelectorAll<HTMLLIElement>('ul.link-list li');
-    const images = document.querySelectorAll<HTMLImageElement>(
-      '.background-images-wrapper .layer',
-    );
-    let oldImage: HTMLImageElement | null = null;
+    const handleProgress = () => {
+      const swiper = swiperRef.current;
+      if (swiper) {
+        swiper.slides.forEach((slide) => {
+          const slideProgress = slide.progress;
+          const innerOffset = swiper.height * interleaveOffset;
+          const innerTranslate = slideProgress * innerOffset;
 
-    function addListeners(el: HTMLLIElement) {
-      el.addEventListener('mouseover', () => {
-        const index = el.dataset.index;
-        if (index) {
-          changeImage(images[parseInt(index)]);
-        }
-      });
-      el.addEventListener('mouseout', () => {
-        if (oldImage) {
-          gsap.to(oldImage, {
-            inset: 'revert-layer',
-            opacity: 0,
-            scale: 1,
-            duration: 0.6,
-            ease: 'power2.outIn',
+          gsap.set(slide.querySelector('.slide-inner'), {
+            y: innerTranslate,
           });
-        }
-        oldImage = null;
-      });
-    }
-
-    function changeImage(el: HTMLImageElement) {
-      if (el !== oldImage) {
-        const tl = gsap.timeline();
-
-        tl.to(oldImage, { opacity: 0, scale: 1 }).to(
-          el,
-          { opacity: 1, scale: 1.1, duration: 0.6, ease: 'power2.outIn' },
-          '<',
-        );
-        oldImage = el;
+        });
       }
-    }
+    };
+    const handleSetTransition = (slider: any, speed: number) => {
+      const swiper = swiperRef.current;
+      if (swiper) {
+        swiper.slides.forEach((slide) => {
+          slide.style.transition = `${speed}ms`;
+          const innerElement = slide.querySelector(
+            '.slide-inner',
+          ) as HTMLElement;
+          if (innerElement) {
+            innerElement.style.transition = `${speed}ms`;
+          }
+        });
+      }
+    };
 
-    links.forEach((el) => addListeners(el));
+    const handleMouseEnter = (index: number) => {
+      if (swiperRef.current) {
+        swiperRef.current.slideTo(index);
+      }
+    };
+
+    const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+    bullets.forEach((bullet, index) => {
+      const mouseEnterHandler = () => handleMouseEnter(index);
+      bullet.addEventListener('mouseenter', mouseEnterHandler);
+
+      const swiper = swiperRef.current;
+
+      if (swiper) {
+        swiper.on('progress', handleProgress);
+        swiper.on('setTransition', handleSetTransition);
+
+        // Cleanup function to remove event listeners
+        return () => {
+          swiper.off('progress', handleProgress);
+          swiper.off('setTransition', handleSetTransition);
+          bullet.removeEventListener('mouseenter', mouseEnterHandler);
+        };
+      }
+    });
   }, []);
 
   return (
     <SlideFromSide>
       <div className="  h-full w-full flex items-center  ">
         <Swiper
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
           loop={true}
           direction="vertical"
           mousewheel={true}
           spaceBetween={0}
           slidesPerView={1}
-          pagination={true}
+          pagination={{ clickable: true }}
           effect="fade"
           speed={1000}
           className=" w-full h-full items-center  slideclas swiper-container "
@@ -120,7 +139,7 @@ export default function Webprojects() {
                         className="h-[23.3vh]"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down-sunny-day-austria-alps-europe-filmed-on-high.webm"
+                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
                           type="video/mp4"
                         />
                       </video>
@@ -157,7 +176,7 @@ export default function Webprojects() {
                     </motion.button>
                   </Link>
                   <div className="h-[10vh]"></div>
-                  <div className=" relative border-4 rounded-sm border-[#7cd9e3] h-[24vh]">
+                  <div className=" relative border-4 rounded-sm border-[#7cd9e3] h-[24vh] shadow-lg drop-shadow-lg">
                     <div
                       id="videoDiv"
                       className="video-container flex flex-col h-[24vh]"
@@ -182,7 +201,61 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer   shadow-xl"></div>
+                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer   shadow-xl drop-shadow-xl"></div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide className=" swiper-slide bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#C2F1FC] via-[#F9E96E] to-[#C18E3A] flex items-center justify-center">
+            <div className="slide-inner grid grid-cols-12    ">
+              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+                <div className="titlendis flex flex-col items-start">
+                  <div className="titledisplay">
+                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                      <AnimatedText2 text="Scantifix" />
+                    </text>
+                  </div>
+                  <div className={archivo.className}>
+                    <span className="  text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
+                      In Ticino we offer you state-of-the-art skin patches and
+                      prostheses to forget about baldness, receding hairline and
+                      thinning – without ever having to take them off, not even
+                      for washing and playing sports!
+                    </span>
+                  </div>
+                  <Link href={'/scantifix'} className="mt-8 ">
+                    <button className="button arrow">Open Case Study</button>
+                  </Link>
+                  <div className="h-[10vh]"></div>
+                  <div className=" relative border-4 rounded-sm border-[#F9E96E] h-[24vh]  drop-shadow-lg shadow-lg">
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh]"
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-[23.3vh]"
+                      >
+                        <source
+                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down-sunny-day-austria-alps-europe-filmed-on-high.webm"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+                <div className="h-full grid items-center">
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl ">
+                    {/* <div className="border-[40px] border-[#2FEDCB] w-full h-full imgcontainer2 "></div> */}
+                  </div>
                 </div>
               </div>
             </div>
@@ -233,7 +306,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <Link href="/nht" className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-lp-card  cursor-pointer"></div>
+                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-lp-card  cursor-pointer shadow-2xl drop-shadow-2xl"></div>
                 </Link>
               </div>
             </div>

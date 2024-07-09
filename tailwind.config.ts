@@ -36,6 +36,9 @@ const config: Config = {
         lp2: "url('/lp/bg2.png')",
         lp3: "url('/lp/bg3.png')",
         lp4: "url('/lp/bg4.png')",
+        sfcard: "url('/scantifix/card.png')",
+        sf1: "url('/scantifix/bg1.png')",
+        sf2: "url('/scantifix/bg2.png')",
       },
       colors: {
         nht: '#006360',
