@@ -522,7 +522,6 @@ export default function Rockzfx() {
                 </span>
                 <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
               </div>
-
               <div className="flex items-center justify-center  w-full">
                 <div className="flex items-center w-full   ">
                   <Image

@@ -27,14 +27,14 @@ const archivo = Archivo({
 });
 export default function Webprojects() {
   const swiperRef = useRef<SwiperCore | null>(null);
-  const interleaveOffset = 0.85; // Adjust this value as needed
+  const interleaveOffset = 0.75; // Adjust this value as needed
 
   useEffect(() => {
     const handleProgress = () => {
       const swiper = swiperRef.current;
       if (swiper) {
-        swiper.slides.forEach((slide) => {
-          const slideProgress = slide.progress;
+        swiper.slides.forEach((slide: HTMLElement) => {
+          const slideProgress = (slide as any).progress; // Type casting here
           const innerOffset = swiper.height * interleaveOffset;
           const innerTranslate = slideProgress * innerOffset;
 

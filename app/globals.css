@@ -225,7 +225,6 @@ a > span:nth-child(2):hover .char {
   height: 90vh;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease; /* This ensures smooth transition */
 }
 /* .swiper-container .swiper-pagination-bullet {
   background-color: rgba(0, 0, 0, 0);

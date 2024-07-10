@@ -39,6 +39,12 @@ const config: Config = {
         sfcard: "url('/scantifix/card.png')",
         sf1: "url('/scantifix/bg1.png')",
         sf2: "url('/scantifix/bg2.png')",
+        sf3: "url('/scantifix/bg3.png')",
+        sf4: "url('/scantifix/bg4.png')",
+        sf5: "url('/scantifix/bg5.png')",
+        sf6: "url('/scantifix/bg6.png')",
+        sf7: "url('/scantifix/bg7.png')",
+        sf8: "url('/scantifix/bg8.png')",
       },
       colors: {
         nht: '#006360',
