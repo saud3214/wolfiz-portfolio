@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
+
 import { Pridi } from 'next/font/google';
 import Head from 'next/head';
 
@@ -44,6 +46,7 @@ export default function RootLayout({
         </header>
         <main>{children}</main>
         <SpeedInsights />
+        <Analytics />
 
         <footer className="bg-black h-16 p-10 flex text-white text-center justify-between">
           <span>© 2013 – 2024 All Rights Reserved by Wolfiz Solutions</span>
