@@ -8,7 +8,7 @@ import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { animateImageContainer, backgroundimages } from './animation';
 import { Archivo } from 'next/font/google';
-import { motion } from 'framer-motion';
+import { easeIn, motion } from 'framer-motion';
 import { SlideFromSide } from '../../../components/pagetransition';
 
 import {
@@ -27,7 +27,7 @@ const archivo = Archivo({
 });
 export default function Webprojects() {
   const swiperRef = useRef<SwiperCore | null>(null);
-  const interleaveOffset = 0.75; // Adjust this value as needed
+  const interleaveOffset = 0.8; // Adjust this value as needed
 
   useEffect(() => {
     const handleProgress = () => {
@@ -149,14 +149,12 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-nht-card shadow-2xl drop-shadow-2xl ">
-                    {/* <div className="border-[40px] border-[#2FEDCB] w-full h-full imgcontainer2 "></div> */}
-                  </div>
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-nht-card shadow-2xl drop-shadow-2xl "></div>
                 </div>
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide className="swiper-slide  flex items-center justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#E6F8FA] via-[#7cd9e3] to-[#22CADB]">
+          <SwiperSlide className="swiper-slide  flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#E6F8FA] via-[#7cd9e3] to-[#22CADB]">
             <div className="slide-inner grid grid-cols-12    ">
               <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
                 <div className="titlendis flex flex-col items-start">
@@ -253,9 +251,58 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl ">
-                    {/* <div className="border-[40px] border-[#2FEDCB] w-full h-full imgcontainer2 "></div> */}
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl "></div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#4580AE] via-[#26267F] to-[#000] flex items-center justify-center">
+            <div className="slide-inner grid grid-cols-12    ">
+              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+                <div className="titlendis flex flex-col items-start">
+                  <div className="titledisplay">
+                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                      <AnimatedText2 text="Naeem Apparel" />
+                    </text>
                   </div>
+                  <div className={archivo.className}>
+                    <span className="  text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
+                      In Ticino we offer you state-of-the-art skin patches and
+                      prostheses to forget about baldness, receding hairline and
+                      thinning – without ever having to take them off, not even
+                      for washing and playing sports!
+                    </span>
+                  </div>
+                  <Link href={'/naeemapparel'} className="mt-8 ">
+                    <button className="button arrow">Open Case Study</button>
+                  </Link>
+                  <div className="h-[10vh]"></div>
+                  <div className=" relative border-4 rounded-sm border-[#F9E96E] h-[24vh]  drop-shadow-lg shadow-lg">
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh]"
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-[23.3vh]"
+                      >
+                        <source
+                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down-sunny-day-austria-alps-europe-filmed-on-high.webm"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+                <div className="h-full grid items-center">
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl "></div>
                 </div>
               </div>
             </div>

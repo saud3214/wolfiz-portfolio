@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { Urbanist } from 'next/font/google';
-import { PageTransition } from '../../../../components/pagetransition';
+import { SlideFromRight } from '../../../../components/pagetransition';
 import { csimages, backgroundimages } from '../../webprojects/animation';
 
 import { AnimatedText2 } from '../../../../components/animatedtext';
@@ -19,12 +19,12 @@ export default function Scantifix() {
   });
 
   return (
-    <PageTransition>
+    <SlideFromRight>
       <div
         className={` w-full items-center justify-center flex flex-col    ${urbanist.className} `}
       >
         <div className=" bg-sf1 bg-cover bg-center bg-no-repeat  w-full  items-center justify-center flex flex-col  h-[100vh] ">
-          <div className=" grid grid-cols-12 items-start justify-center  py-10   ">
+          <div className=" grid grid-cols-12 items-start justify-center  py-10  w-full ">
             <div className="flex  col-span-5 items-center justify-end flex-col   gap-3 w-full h-full ">
               <div className="flex flex-col w-1/2 items-start justify-start gap-4">
                 <div className="flex items-center justify-center gap-2  ">
@@ -33,7 +33,6 @@ export default function Scantifix() {
                     src="/scantifix/logo.png"
                     alt="Background 1"
                     fill
-                    priority
                   />
                   <span className="gradient-text font-semibold text-5xl">
                     Scantifix
@@ -46,7 +45,7 @@ export default function Scantifix() {
               </div>
             </div>
             <div className="flex  col-span-7 items-center justify-center flex-col  md:flex-row gap-3">
-              <div className="flex  items-center      ">
+              <div className="flex  items-center  w-4/5     ">
                 <Image
                   className=" relativepos  "
                   src="/scantifix/laptop1.png"
@@ -450,8 +449,6 @@ export default function Scantifix() {
                     src="/scantifix/vd.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
-                    // Ensure the image covers the container without stretching
                   />
                 </div>
               </div>
@@ -460,25 +457,22 @@ export default function Scantifix() {
         </div>
 
         <div className="bg-sf7 bg-contain bg-bottom bg-no-repeat   w-full  items-center justify-center flex flex-col ">
-          <div className="w-[100%] grid grid-cols-12 items-start justify-center mb-5 ">
+          <div className="w-full grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
-              <div className="flex items-center  pt-20   ">
+              <div className="flex items-center  pt-20 w-[45%]   ">
                 <Image
                   className=" relativepos "
                   src="/scantifix/vd2.png"
                   alt="Background 1"
                   fill
-                  objectFit="contains"
-                  // Ensure the image covers the container without stretching
                 />
               </div>
-              <div className="lg:flex items-center  hidden    ">
+              <div className="lg:flex items-center  hidden  w-[45%]   ">
                 <Image
                   className=" relativepos "
                   src="/scantifix/vd3.png"
                   alt="Background 1"
                   fill
-                  objectFit="contains"
                   // Ensure the image covers the container without stretching
                 />
               </div>
@@ -486,12 +480,88 @@ export default function Scantifix() {
           </div>
         </div>
 
-        <div className="bg-sf7 bg-contain bg-bottom bg-no-repeat   w-full  items-center justify-center flex flex-col ">
-          <div className="w-[100%] grid grid-cols-12 items-start justify-center mb-5 ">
-            <div className="flex  col-span-12 items-center justify-center flex-col   gap-3"></div>
+        <div className="bg-sf8 bg-contain bg-left-top bg-no-repeat   w-full  items-center justify-center flex flex-col pt-10 ">
+          <div className="w-full grid grid-cols-12 items-start justify-center mb-5 ">
+            <div className="flex  col-span-12 items-center justify-center flex-col   gap-3  w-full">
+              <div className="flex items-start justify-start  flex-col   w-[88%] ">
+                <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                  09
+                </span>
+                <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                  <div className="h-10 w-1 bg-pink-300"></div>
+                  Mockup
+                </span>
+              </div>
+
+              <div className="lg:flex items-center  w-1/2     ">
+                <Image
+                  className=" relativepos "
+                  src="/scantifix/iphone2.png"
+                  alt="Background 1"
+                  fill
+                  // Ensure the image covers the container without stretching
+                />
+              </div>
+              <div className=" flex items-center justify-start w-full">
+                <div className="lg:flex items-center   w-10/12     ">
+                  <Image
+                    className=" relativepos "
+                    src="/scantifix/laptop2.png"
+                    alt="Background 1"
+                    fill
+                    // Ensure the image covers the container without stretching
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-sf8 bg-contain bg-left-top bg-no-repeat   w-full  items-center justify-center flex flex-col pt-10 ">
+          <div className="w-full grid grid-cols-12 items-start justify-center mb-5 ">
+            <div className="flex  col-span-12 items-center justify-center flex-col   gap-3  w-full">
+              <div className="flex items-start justify-start  flex-col   w-[88%] ">
+                <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                  10
+                </span>
+                <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                  <div className="h-10 w-1 bg-pink-300"></div>
+                  Testing
+                </span>
+              </div>
+
+              <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-10 py-10">
+                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                    Test Planning & Control
+                  </p>
+                </div>
+                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                    Test Analysis & Design
+                  </p>
+                </div>
+                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                    Test Implement& Execution
+                  </p>
+                </div>
+                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                    Evaluate Exit Criteria & Reporting
+                  </p>
+                </div>
+
+                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                    Test Closure Activities
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </PageTransition>
+    </SlideFromRight>
   );
 }

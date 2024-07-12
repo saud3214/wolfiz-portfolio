@@ -45,10 +45,15 @@ const config: Config = {
         sf6: "url('/scantifix/bg6.png')",
         sf7: "url('/scantifix/bg7.png')",
         sf8: "url('/scantifix/bg8.png')",
+        na1: "url('/na/bg1.png')",
+        pg1: "url('/pg/bg1.png')",
+        pg2: "url('/pg/bg2.png')",
+        pg3: "url('/pg/bg3.png')",
       },
       colors: {
         nht: '#006360',
         lp: '#792C21',
+        na: '#4580AE',
       },
       clipPath: {
         'custom-polygon':

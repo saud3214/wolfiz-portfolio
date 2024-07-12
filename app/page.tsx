@@ -79,10 +79,7 @@ export default function Home() {
           preload="auto"
           playsInline
         >
-          <source
-            src="https://tympanus.net/Development/HoverGrid/media/bg-video.mp4"
-            type="video/mp4"
-          />
+          <source src="../bg-video.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="background-images-wrapper">

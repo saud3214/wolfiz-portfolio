@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import { PageTransition } from '../../../../components/pagetransition';
+import { SlideFromRight } from '../../../../components/pagetransition';
 import { csimages, backgroundimages } from '../../webprojects/animation';
 
 import { AnimatedText2 } from '../../../../components/animatedtext';
@@ -19,7 +19,7 @@ export default function Nht() {
   });
 
   return (
-    <PageTransition>
+    <SlideFromRight>
       <div
         className={` w-full items-center justify-center flex flex-col ${urbanist.className}`}
       >
@@ -194,7 +194,6 @@ export default function Nht() {
                 src="/nht/nhtwf1.png"
                 alt="Background 1"
                 fill
-                // Ensure the image covers the container without stretching
               />
             </div>
           </div>
@@ -208,7 +207,6 @@ export default function Nht() {
                     src="/nht/nhtwf3.png"
                     alt="Background 1"
                     fill
-                    // Ensure the image covers the container without stretching
                   />
                 </div>
                 <div className="w-full  flex items-center pt-40">
@@ -317,6 +315,6 @@ export default function Nht() {
           </div>
         </div>
       </div>
-    </PageTransition>
+    </SlideFromRight>
   );
 }
