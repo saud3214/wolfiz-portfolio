@@ -29,7 +29,7 @@ export default function NaeemApparel() {
               <div className=" items-start flex justify-center  w-[80%]  flex-col lg:ps-5  gap-11">
                 <div className="  flex items-center ">
                   <Image
-                    className=" relativepos "
+                    className=" relativepos w-1/4"
                     src="/na/logo.png"
                     alt="Background 1"
                     fill
@@ -69,6 +69,7 @@ export default function NaeemApparel() {
                   src="/na/laptop.png"
                   alt="Background 1"
                   fill
+                  priority
                   // Ensure the image covers the container without stretching
                 />
               </div>

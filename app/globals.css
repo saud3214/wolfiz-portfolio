@@ -404,7 +404,26 @@ a > span:nth-child(2):hover .char {
   height: auto !important;
   width: 100%;
 }
+.relativepos4 {
+  right: auto !important;
+  left: 5% !important;
+  top: auto !important;
+  bottom: auto !important;
+  position: absolute;
+  height: auto !important;
+  width: 100%;
+}
 
+.relativepos3 {
+  right: auto !important;
+  left: 5% !important;
+  top: auto !important;
+  bottom: auto !important;
+  position: absolute;
+  height: auto !important;
+  width: 100%;
+  z-index: 2;
+}
 .gradient-text {
   background: linear-gradient(to right, #ead375, #b67a29, #ead375);
   -webkit-background-clip: text;

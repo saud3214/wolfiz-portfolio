@@ -49,11 +49,17 @@ const config: Config = {
         pg1: "url('/pg/bg1.png')",
         pg2: "url('/pg/bg2.png')",
         pg3: "url('/pg/bg3.png')",
+        ippc1: "url('/ippc/bg1.png')",
+        ippc2: "url('/ippc/bg2.png')",
+        ippc3: "url('/ippc/bg3.png')",
       },
       colors: {
         nht: '#006360',
         lp: '#792C21',
         na: '#4580AE',
+        pg: '#00E0C5',
+        pgc2: '#3E638F',
+        ippc_pc: '#283E62',
       },
       clipPath: {
         'custom-polygon':
