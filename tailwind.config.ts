@@ -52,6 +52,12 @@ const config: Config = {
         ippc1: "url('/ippc/bg1.png')",
         ippc2: "url('/ippc/bg2.png')",
         ippc3: "url('/ippc/bg3.png')",
+        ippc4: "url('/ippc/text.png')",
+        ippc5: "url('/ippc/bg5.png')",
+        ippc6: "url('/ippc/bg6.png')",
+        ippc7: "url('/ippc/bg7.png')",
+        ippc8: "url('/ippc/bg8.png')",
+        ippc9: "url('/ippc/bg9.png')",
       },
       colors: {
         nht: '#006360',
@@ -60,6 +66,7 @@ const config: Config = {
         pg: '#00E0C5',
         pgc2: '#3E638F',
         ippc_pc: '#283E62',
+        ippc_pc2: '#243A5F',
       },
       clipPath: {
         'custom-polygon':
