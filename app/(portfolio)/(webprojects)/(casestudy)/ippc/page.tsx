@@ -42,6 +42,7 @@ export default function Ippc() {
                   src="/ippc/laptop1.png"
                   alt="Background 1"
                   fill
+                  priority
                 />
               </div>
             </div>

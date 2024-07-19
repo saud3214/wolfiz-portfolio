@@ -58,6 +58,8 @@ const config: Config = {
         ippc7: "url('/ippc/bg7.png')",
         ippc8: "url('/ippc/bg8.png')",
         ippc9: "url('/ippc/bg9.png')",
+        apollo2: "url('/apollo/bg2.png')",
+        apollo1: "url('/apollo/bg1.png')",
       },
       colors: {
         nht: '#006360',
@@ -71,6 +73,13 @@ const config: Config = {
       clipPath: {
         'custom-polygon':
           'polygon(83% 23%, 100% 47%, 85% 69%, 25% 69%, 0% 50%, 21% 23%)',
+      },
+
+      boxShadow: {
+        'glow-white': '0 0 10px 5px rgba(255, 255, 255, 0.6)',
+        'glow-yellow': '0 0 10px 5px rgba(238, 173, 4, 0.6)',
+        'glow-blue': '0 0 10px 5px rgba(9, 24, 75, 0.6)',
+        'glow-gray': '0 0 10px 5px rgba(190, 190, 190, 0.6)',
       },
     },
   },
