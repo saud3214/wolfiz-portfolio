@@ -302,7 +302,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl "></div>
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl  bg-clip text-transparent"></div>
                 </div>
               </div>
             </div>

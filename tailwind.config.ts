@@ -60,6 +60,11 @@ const config: Config = {
         ippc9: "url('/ippc/bg9.png')",
         apollo2: "url('/apollo/bg2.png')",
         apollo1: "url('/apollo/bg1.png')",
+        pfb1: "url('/pfb/bg1.png')",
+        pfb2: "url('/pfb/cake.png')",
+        pfb3: "url('/pfb/bg3.png')",
+        pfb4: "url('/pfb/bg4.png')",
+        pfb5: "url('/pfb/bg5.png')",
       },
       colors: {
         nht: '#006360',
