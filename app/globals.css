@@ -484,3 +484,31 @@ a > span:nth-child(2):hover .char {
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: white;
 }
+
+.clipPath-block {
+  perspective: 1000px;
+}
+
+img.clipPath-img {
+  width: 600px;
+  max-width: 100%;
+  clip-path: polygon(0% 7%, 50% 5%, 100% 7%, 100% 95%, 50% 93%, 0% 95%);
+  transform: rotateX(15deg) rotateY(-40deg) rotateZ(10deg);
+  animation: clipPath 3s ease-in-out infinite alternate;
+  transition: all 0.2s ease 0.2s;
+}
+
+img.clipPath-img.active {
+  animation: none;
+  clip-path: polygon(5% 7%, 50% 5%, 95% 7%, 95% 95%, 50% 93%, 5% 95%);
+}
+
+@keyframes clipPath {
+  0% {
+    clip-path: polygon(0% 2%, 50% 0%, 100% 2%, 100% 95%, 50% 93%, 0% 95%);
+  }
+
+  100% {
+    clip-path: polygon(0% 7%, 50% 5%, 100% 7%, 100% 100%, 50% 98%, 0% 100%);
+  }
+}

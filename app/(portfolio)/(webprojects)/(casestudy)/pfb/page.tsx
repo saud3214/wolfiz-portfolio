@@ -30,7 +30,7 @@ export default function PFB() {
         <div className="bg-pfb1 bg-cover bg-center bg-no-repeat   w-full items-center justify-center flex h-[100vh]">
           <div className="grid grid-cols-12 w-full  items-center justify-center  ">
             <div className="col-span-12 w-full flex flex-col  items-center justify-center bg-pfb2 bg-contain bg-center bg-no-repeat h-[560px] text-6xl">
-              <div className="flex 2xl:w-[73%] w-full gap-16 items-center ">
+              <div className="flex 2xl:w-[73%] w-full gap-16 items-center flex-wrap ">
                 <AnimatedText2 text="Passion"></AnimatedText2>
                 <div className="ht text-transparent">
                   <AnimatedText2 text="for Backing"></AnimatedText2>
@@ -196,8 +196,8 @@ export default function PFB() {
                   fill
                 />
               </div>
-              <div className="items-start justify-around w-full flex pt-20 space-x-20">
-                <div className="flex flex-col items-center justify-center">
+              <div className="items-start justify-around w-full flex flex-col lg:flex-row pt-20 space-x-20">
+                <div className="flex flex-col  items-center justify-center">
                   <span className="text-4xl">Problem Statement</span>
                   <span
                     className={` text-xl my-3 ps-10 ${poppins.className} flex  items-center justify-center`}

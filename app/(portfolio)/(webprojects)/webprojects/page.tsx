@@ -148,8 +148,15 @@ export default function Webprojects() {
                 </div>
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-nht-card shadow-2xl drop-shadow-2xl "></div>
+                <div className="h-full grid items-center ">
+                  <div className=" w-1/2   ">
+                    <Image
+                      className="clipPath-img"
+                      src="https://images.unsplash.com/photo-1627896157734-4d7d4388f28b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Mt. Everest"
+                      fill
+                    ></Image>
+                  </div>
                 </div>
               </div>
             </div>
@@ -277,7 +284,7 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="h-[10vh]"></div>
-                  <div className=" relative border-4 rounded-sm border-[#F9E96E] h-[24vh]  drop-shadow-lg shadow-lg">
+                  <div className=" relative border-4 rounded-sm border-[#26267F] h-[24vh]  drop-shadow-lg shadow-lg">
                     <div
                       id="videoDiv"
                       className="video-container flex flex-col h-[24vh]"
@@ -308,7 +315,58 @@ export default function Webprojects() {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#4580AE] via-[#26267F] to-[#000] flex items-center justify-center">
+          <SwiperSlide className=" swiper-slide bg-gradient-to-tl from-[#CAE8F3] via-[#f1dcdc] to-[#ffc7c7] flex items-center justify-center">
+            <div className="slide-inner grid grid-cols-12    ">
+              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+                <div className="titlendis flex flex-col items-start">
+                  <div className="titledisplay">
+                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                      <AnimatedText2 text="PFB" />
+                    </text>
+                  </div>
+                  <div className={archivo.className}>
+                    <span className="  text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
+                      In Ticino we offer you state-of-the-art skin patches and
+                      prostheses to forget about baldness, receding hairline and
+                      thinning – without ever having to take them off, not even
+                      for washing and playing sports!
+                    </span>
+                  </div>
+                  <Link href={'/pfb'} className="mt-8 ">
+                    <button className="button arrow">Open Case Study</button>
+                  </Link>
+                  <div className="h-[10vh]"></div>
+                  <div className=" relative border-4 rounded-sm border-[#ffc7c7] h-[24vh]  drop-shadow-lg shadow-lg">
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh]"
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-[23.3vh]"
+                      >
+                        <source
+                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down-sunny-day-austria-alps-europe-filmed-on-high.webm"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+                <div className="h-full grid items-center">
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-pfbcard shadow-2xl drop-shadow-2xl "></div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className=" swiper-slide bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#00E0C5] via-[#365C89] to-[#000] flex items-center justify-center">
             <div className="slide-inner grid grid-cols-12    ">
               <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
                 <div className="titlendis flex flex-col items-start">
@@ -329,7 +387,7 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="h-[10vh]"></div>
-                  <div className=" relative border-4 rounded-sm border-[#F9E96E] h-[24vh]  drop-shadow-lg shadow-lg">
+                  <div className=" relative border-4 rounded-sm border-[#365C89] h-[24vh]  drop-shadow-lg shadow-lg">
                     <div
                       id="videoDiv"
                       className="video-container flex flex-col h-[24vh]"
