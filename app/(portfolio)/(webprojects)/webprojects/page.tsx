@@ -148,15 +148,8 @@ export default function Webprojects() {
                 </div>
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center ">
-                  <div className=" w-1/2   ">
-                    <Image
-                      className="clipPath-img"
-                      src="https://images.unsplash.com/photo-1627896157734-4d7d4388f28b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      alt="Mt. Everest"
-                      fill
-                    ></Image>
-                  </div>
+                <div className="h-full grid items-center">
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-nht-card shadow-2xl drop-shadow-2xl "></div>
                 </div>
               </div>
             </div>
