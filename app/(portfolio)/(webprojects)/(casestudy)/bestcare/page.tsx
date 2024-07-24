@@ -23,7 +23,7 @@ export default function Bestcare() {
       <div
         className={` w-full  flex flex-col items-center justify-center p-5  ${urbanist.className}`}
       >
-        <div className="grid grid-cols-12 w-full   items-start justify-center   bg-bc1 bg-cover bg-center bg-no-repeat rounded-3xl h-[250vh]   ">
+        <div className="grid grid-cols-12 w-full   items-start justify-center   bg-bc1 bg-cover bg-center bg-no-repeat rounded-3xl lg:h-[200vh]   h-[100vh] ">
           <div className="col-span-12 w-full flex flex-col  items-center justify-center ">
             <div className="flex items-center pt-20 w-20  ">
               <Image
@@ -59,7 +59,7 @@ export default function Bestcare() {
                 </span>
               </div>
 
-              <div className="flex items-center pt-20  justify-center w-3/4">
+              <div className="flex items-center lg:pt-20  justify-center lg:w-3/4 w-full">
                 <Image
                   className=" relativepos "
                   src="/bc/img.png"
@@ -73,11 +73,11 @@ export default function Bestcare() {
 
         <div className="w-full items-start justify-center flex py-10  bg-bc2 bg-cover bg-center bg-no-repeat rounded-3xl    ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
-            <div className="flex flex-col w-11/12 items-start justify-center col-span-12  text-white ">
-              <span className="text-5xl font-bold pt-10">
+            <div className="flex flex-col lg:w-11/12  w-full items-start justify-center col-span-12  text-white ">
+              <span className="lg:text-5xl text-3xl font-bold lg:pt-10">
                 Problem Statatement
               </span>
-              <span className="text-3xl py-10">
+              <span className="lg:text-3xl text-2xl py-10">
                 The inadequate representation of our product is caused by the
                 outdated design and lack of essential features on our current
                 website, resulting in hindered user engagement and reduced sales
@@ -89,13 +89,13 @@ export default function Bestcare() {
           </div>
         </div>
 
-        <div className="w-full items-start justify-center flex pt-10   ">
+        <div className="w-full items-start justify-center flex lg:pt-10   ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-start justify-center col-span-12  text-[#0066A5] ">
-              <span className="text-5xl font-bold pt-10">
+              <span className="lg:text-5xl text-3xl font-bold pt-10">
                 Solution Statement
               </span>
-              <span className="text-3xl py-10 text-[#6A7B95]">
+              <span className="lg:text-3xl text-2xl py-10 text-[#6A7B95]">
                 The inadequate representation of our product is caused by the
                 outdated design and lack of essential features on our current
                 website, resulting in hindered user engagement and reduced sales
@@ -103,7 +103,7 @@ export default function Bestcare() {
                 enhance user experience, align with our brand image, and drive
                 business growth
               </span>
-              <div className="lg:grid flex flex-col  grid-cols-12  w-full items-center justify-center gap-5 py-10">
+              <div className="lg:grid flex flex-col  grid-cols-12  w-full items-center justify-center gap-5 lg:py-10">
                 <div className="border-4 border-[#0066A5] rounded-xl p-5 flex flex-col pt-10 col-span-3  h-full ">
                   <div className="w-10 h-10 rounded-full  border border-[#0066A5] font-bold items-center justify-center flex">
                     <span>01</span>
@@ -170,10 +170,12 @@ export default function Bestcare() {
         <div className="w-full items-start justify-center flex pt-10   ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-start justify-center col-span-12  text-[#0066A5] ">
-              <span className="text-5xl font-bold">Design Process</span>
+              <span className="lg:text-5xl text-2xl font-bold">
+                Design Process
+              </span>
 
-              <div className="flex items-center justify-between pt-10  w-full gap-5 ">
-                <div className="flex items-center  w-1/2">
+              <div className="flex flex-col lg:flex-row items-center justify-between pt-10  w-full gap-5 ">
+                <div className="flex items-center  lg:w-1/2 w-full">
                   <Image
                     className=" relativepos "
                     src="/bc/dp1.png"
@@ -181,7 +183,7 @@ export default function Bestcare() {
                     fill
                   />
                 </div>
-                <div className="flex items-center   w-1/2">
+                <div className="flex items-center   lg:w-1/2 w-full">
                   <Image
                     className=" relativepos "
                     src="/bc/dp2.png"
@@ -197,11 +199,11 @@ export default function Bestcare() {
         <div className="w-full items-start justify-center flex pt-10   ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-start justify-center col-span-12  text-[#0066A5] ">
-              <span className="text-5xl font-bold pt-10">
+              <span className="lg:text-5xl text-3xl font-bold pt-10">
                 Colors & Typography
               </span>
               <div className="flex flex-col w-full items-center justify-center py-10">
-                <div className="flex items-center  w-9/12">
+                <div className="flex items-center  lg:w-9/12 w-full">
                   <Image
                     className=" relativepos "
                     src="/bc/p.png"
@@ -209,8 +211,8 @@ export default function Bestcare() {
                     fill
                   />
                 </div>
-                <div className="flex w-full items-center justify-between py-10">
-                  <div className="flex items-center w-1/4 ">
+                <div className="flex flex-col lg:flex-row w-full items-center justify-between py-10">
+                  <div className="flex items-center lg:w-1/4 w-full ">
                     <Image
                       className=" relativepos "
                       src="/bc/aa.png"
@@ -219,7 +221,7 @@ export default function Bestcare() {
                     />
                   </div>
 
-                  <div className="flex lg:w-2/3  w-full items-center justify-center">
+                  <div className="flex lg:w-2/3  w-full items-center justify-center pt-10 lg:pt-0">
                     <div className=" bg-white  lg:w-2/3 w-full">
                       <table className="w-full text-left ">
                         <thead>
@@ -236,7 +238,7 @@ export default function Bestcare() {
                         <tbody>
                           <tr>
                             <td className="py-2">
-                              <span className="text-cyan-500 font-bold text-5xl">
+                              <span className="text-cyan-500 font-bold lg:text-5xl text-3xl">
                                 Heading 1
                               </span>
                             </td>
@@ -253,7 +255,7 @@ export default function Bestcare() {
                           </tr>
                           <tr>
                             <td className="py-2">
-                              <span className="text-cyan-500 font-semibold text-4xl">
+                              <span className="text-cyan-500 font-semibold lg:text-4xl text-3xl">
                                 Heading 2
                               </span>
                             </td>
@@ -360,10 +362,12 @@ export default function Bestcare() {
         <div className="w-full items-start justify-center flex lg:pt-10   ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-start justify-center col-span-12  text-[#0066A5] ">
-              <span className="text-5xl font-bold pt-10">Wire Frames</span>
+              <span className="lg:text-5xl text-3xl  font-bold lg:pt-10">
+                Wire Frames
+              </span>
               <div className="w-full flex items-center justify-center">
                 <div className=" flex w-full items-center justify-center mt-10 gap-5">
-                  <div className="flex items-center  mt-20 lg:w-[45%] w-1/2 ">
+                  <div className="flex items-center  lg:mt-20 lg:w-[45%] w-full ">
                     <Image
                       className=" relativepos "
                       src="/bc/wf.png"
@@ -371,7 +375,7 @@ export default function Bestcare() {
                       fill
                     />
                   </div>
-                  <div className="flex items-center lg:w-[45%] w-1/2 ">
+                  <div className="lg:flex items-center lg:w-[45%] w-1/2 hidden  ">
                     <Image
                       className=" relativepos "
                       src="/bc/wf.png"
@@ -385,10 +389,12 @@ export default function Bestcare() {
           </div>
         </div>
 
-        <div className="w-full items-start justify-center flex lg:pt-10   ">
+        <div className="w-full items-start justify-center flex pt-10   ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-start justify-center col-span-12  text-[#0066A5] ">
-              <span className="text-5xl font-bold py-10">Virtual Design</span>
+              <span className="lg:text-5xl text-3xl  font-bold lg:py-10 ">
+                Virtual Design
+              </span>
               <div className="w-full flex items-center justify-center">
                 <div className="flex items-center  lg:w-3/4 w-full  ">
                   <Image
@@ -405,11 +411,11 @@ export default function Bestcare() {
         <div className="w-full items-start justify-center flex lg:pt-10   bg-bc3 bg-cover bg-center bg-no-repeat rounded-3xl mt-10">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-start justify-center col-span-12  ">
-              <span className="text-5xl font-bold py-10 text-white">
+              <span className="lg:text-5xl text-3xl  font-bold py-10  text-white">
                 Mock Up
               </span>
               <div className="w-full flex items-center justify-center">
-                <div className="flex items-center  lg:w-3/4 w-10/12  ">
+                <div className="flex items-center  lg:w-3/4 w-full  ">
                   <Image
                     className=" relativepos "
                     src="/bc/iphone.png"
@@ -425,7 +431,7 @@ export default function Bestcare() {
         <div className="w-full items-start justify-center flex lg:pt-10  ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-start justify-center col-span-12  ">
-              <span className="text-5xl font-bold py-10  text-[#0066A5]">
+              <span className="lg:text-5xl text-3xl  font-bold pt-10  pb-5 text-[#0066A5]">
                 Testing
               </span>
               <div className="w-full flex items-center justify-center">

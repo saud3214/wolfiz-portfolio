@@ -31,7 +31,12 @@ export default function PFB() {
           <div className="grid grid-cols-12 w-full  items-center justify-center  ">
             <div className="col-span-12 w-full flex flex-col  items-center justify-center bg-pfb2 bg-contain bg-center bg-no-repeat h-[560px] lg:text-6xl text-5xl ps-5 ">
               <div className="flex 2xl:w-[73%] w-full lg:gap-16 gap-2 items-center flex-wrap  ">
-                <AnimatedText2 text="Passion"></AnimatedText2>
+                <div className="hidden lg:block">
+                  <AnimatedText2 text="Passion"></AnimatedText2>
+                </div>
+                <div className="ht text-transparent block lg:hidden">
+                  <AnimatedText2 text="Passion"></AnimatedText2>
+                </div>
                 <div className="ht text-transparent">
                   <AnimatedText2 text="for Backing"></AnimatedText2>
                 </div>
@@ -88,7 +93,7 @@ export default function PFB() {
                 />
               </div>
 
-              <div className="flex items-center w-96 py-20   ">
+              <div className="flex items-center w-96 lg:py-20   ">
                 <Image
                   className=" relativepos "
                   src="/pfb/logo.png"
@@ -98,7 +103,7 @@ export default function PFB() {
               </div>
 
               <div className="flex flex-col items-start w-11/12 ">
-                <div className="flex   items-center justify-center gap-5 pb-5 pt-16">
+                <div className="flex   items-center justify-center gap-5 pb-5 lg:pt-16">
                   <div className="flex items-center  w-10 ">
                     <Image
                       className=" relativepos "
@@ -109,7 +114,7 @@ export default function PFB() {
                   </div>
                   <span className="lg:text-5xl text-3xl">Introduction</span>
                 </div>
-                <div className=" text-xl font-light w-full flex items-start justify-start ps-16 ">
+                <div className=" text-xl font-light w-full flex items-start justify-start lg:ps-16 ">
                   <span
                     className={` lg:w-3/4 items-center justify-center flex  ${poppins.className} `}
                   >
@@ -136,7 +141,7 @@ export default function PFB() {
                     About The project
                   </span>
                 </div>
-                <div className=" text-xl font-light w-full flex flex-col items-start justify-start ps-16">
+                <div className=" text-xl font-light w-full flex flex-col items-start justify-start lg:ps-16">
                   <span
                     className={` lg:w-3/4 items-center justify-center flex  ${poppins.className} `}
                   >
@@ -173,7 +178,7 @@ export default function PFB() {
                   <span className="lg:text-5xl text-3xl">Design Process</span>
                 </div>
 
-                <div className="flex w-full items-center justify-start ps-14 pt-10 lg:pb-20">
+                <div className="flex w-full items-center justify-start lg:ps-14 lg:pt-10 lg:pb-20">
                   <div className="flex items-center  lg:w-2/3    w-full">
                     <Image
                       className=" relativepos "
@@ -198,7 +203,7 @@ export default function PFB() {
                   fill
                 />
               </div>
-              <div className="items-start justify-around w-full flex flex-col lg:flex-row pt-20 lg:space-x-20">
+              <div className="items-start justify-around w-full flex flex-col lg:flex-row lg:pt-20 pt-5 lg:space-x-20">
                 <div className="flex flex-col  items-center justify-center">
                   <span className="lg:text-5xl text-3xl ps-10 lg:ps-0">
                     Problem Statement
@@ -344,7 +349,7 @@ export default function PFB() {
         <div className="w-full items-start justify-center flex pt-10  ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="col-span-12  flex flex-col  items-start justify-start ">
-              <div className="flex   items-center justify-start gap-5 pb-5 pt-10">
+              <div className="flex   items-center justify-start gap-5 pb-5 lg:pt-10">
                 <div className="flex items-center  w-10 ">
                   <Image
                     className=" relativepos "
@@ -374,7 +379,7 @@ export default function PFB() {
         <div className="w-full items-start justify-center flex pt-10   ">
           <div className="grid grid-cols-12 w-full  items-center justify-center relative  ">
             <div className="col-span-12  flex flex-col  items-start justify-start ">
-              <div className="flex   items-center justify-start gap-5 pb-5 pt-10 lg:ps-20 ps-5">
+              <div className="flex   items-center justify-start gap-5 pb-5 lg:pt-10 lg:ps-20 ps-5">
                 <div className="flex items-center  w-10 ">
                   <Image
                     className=" relativepos "

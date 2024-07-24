@@ -37,7 +37,7 @@ export default function NaeemApparel() {
                   />
                 </div>
 
-                <div className="text-6xl font-semibold">
+                <div className="lg:text-6xl text-4xl font-semibold flex flex-wrap">
                   <AnimatedText2 text="Naeem Apparel "></AnimatedText2>
                 </div>
 
@@ -62,8 +62,8 @@ export default function NaeemApparel() {
                 </div>
               </div>
             </div>
-            <div className="flex  col-span-6 items-center justify-end flex-col   gap-3 ">
-              <div className="w-full  flex items-center ">
+            <div className="flex  lg:col-span-6 items-center justify-end flex-col   gap-3 col-span-12 py-5 lg:py-0 ">
+              <div className="w-full  flex items-center  ">
                 <Image
                   className=" relativepos "
                   src="/na/laptop.png"
@@ -78,9 +78,9 @@ export default function NaeemApparel() {
         </div>
 
         <div className="   w-full  items-center  flex flex-col ">
-          <div className=" grid grid-cols-12 items-start justify-center  py-10  w-11/12 ">
+          <div className=" grid grid-cols-12 items-start justify-center  lg:.py-10  w-11/12 ">
             <div className="col-span-12    flex flex-col items-center justify-center h-full w-full  text-white pt-10">
-              <span className="text-[#4580AE] font-bold text-6xl">
+              <span className="text-[#4580AE] font-bold lg:text-6xl text-3xl">
                 Project Overview
               </span>
               <div className=" w-44 border-2 my-3 border-[#4580AE]"></div>
@@ -94,12 +94,12 @@ export default function NaeemApparel() {
                 of apparel solutions.
               </span>
             </div>
-            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full pt-10 mt-10">
-              <span className="text-[#4580AE] font-bold text-6xl ps-10">
+            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full pt-10 lg:mt-10">
+              <span className="text-[#4580AE] font-bold lg:text-6xl text-3xl lg:ps-10">
                 Design Process
               </span>
               <div className=" w-44 border-2 my-3 border-[#4580AE] lg:ms-10"></div>
-              <div className="w-full  flex items-center mt-10 ">
+              <div className="w-full  flex items-center lg:mt-10 ">
                 <Image
                   className=" relativepos "
                   src="/na/dp.png"
@@ -113,8 +113,8 @@ export default function NaeemApparel() {
 
         <div className="   w-full  items-center  flex flex-col   ">
           <div className=" grid grid-cols-12 items-start justify-center  py-10  w-11/12 ">
-            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full pt-10 mt-10">
-              <span className="text-[#4580AE] font-bold text-6xl ">
+            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full lg:pt-10 lg:mt-10">
+              <span className="text-[#4580AE] font-bold lg:text-6xl text-3xl  ">
                 Problem Statement
               </span>
               <div className="flex w-full gap-10 pt-10 flex-col lg:flex-row">
@@ -125,7 +125,7 @@ export default function NaeemApparel() {
                         01
                       </div>
                     </div>
-                    <h2 className=" font-semibold mb-2 pt-10 text-2xl">
+                    <h2 className=" font-semibold mb-2 lg:pt-10 text-2xl">
                       Complex Navigation
                     </h2>
                     <p className="font-medium">
@@ -142,7 +142,7 @@ export default function NaeemApparel() {
                         02
                       </div>
                     </div>
-                    <h2 className=" font-semibold mb-2 pt-10 text-2xl">
+                    <h2 className=" font-semibold mb-2 lg:pt-10 text-2xl">
                       Checkout Friction
                     </h2>
                     <p className="font-medium">
@@ -160,7 +160,7 @@ export default function NaeemApparel() {
                         03
                       </div>
                     </div>
-                    <h2 className=" font-semibold mb-2 pt-10 text-2xl">
+                    <h2 className=" font-semibold mb-2 lg:pt-10 text-2xl">
                       Mobile Usability
                     </h2>
                     <p className="font-medium">
@@ -177,19 +177,19 @@ export default function NaeemApparel() {
 
         <div className="   w-full  items-center  flex flex-col   ">
           <div className=" grid grid-cols-12 items-start justify-center  py-10  w-11/12 ">
-            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full pt-10 mt-10">
-              <span className="text-[#4580AE] font-bold text-6xl ">
+            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full lg:pt-10 lg:mt-10">
+              <span className="text-[#4580AE] font-bold lg:text-6xl text-3xl ">
                 Solution Statement
               </span>
               <div className="flex w-full gap-10 pt-10 flex-col lg:flex-row">
                 <div className="flex items-center justify-center lg:w-[32%] ">
-                  <div className="bg-na text-white rounded-r-3xl rounded-bl-3xl p-10 w-full h-[280px] ">
+                  <div className="bg-na text-white rounded-r-3xl rounded-bl-3xl p-10 w-full lg:h-[280px] ">
                     <div className="flex items-center mb-4">
                       <div className="flex items-center justify-center w-10 h-10 text-white rounded-full border border-white font-bold">
                         01
                       </div>
                     </div>
-                    <h2 className=" font-semibold mb-2 pt-10 text-2xl">
+                    <h2 className=" font-semibold mb-2 lg:pt-10 text-2xl">
                       Difficult Navigation
                     </h2>
                     <p className="font-medium">
@@ -202,13 +202,13 @@ export default function NaeemApparel() {
                 </div>
 
                 <div className="flex items-center justify-center   lg:w-[32%]  ">
-                  <div className="bg-na text-white rounded-r-3xl rounded-bl-3xl p-10 w-full h-[280px] ">
+                  <div className="bg-na text-white rounded-r-3xl rounded-bl-3xl p-10 w-full lg:h-[280px] ">
                     <div className="flex items-center mb-4">
                       <div className="flex items-center justify-center w-10 h-10 text-white rounded-full border border-white font-bold">
                         02
                       </div>
                     </div>
-                    <h2 className=" font-semibold mb-2 pt-10 text-2xl">
+                    <h2 className=" font-semibold mb-2 lg:pt-10 lg:text-2xl text-xl">
                       Complicated Checkout Process
                     </h2>
                     <p className="font-medium">
@@ -220,13 +220,13 @@ export default function NaeemApparel() {
                 </div>
 
                 <div className="flex items-center justify-center lg:w-[32%] ">
-                  <div className="bg-na text-white rounded-r-3xl rounded-bl-3xl p-10 w-full h-[280px] ">
+                  <div className="bg-na text-white rounded-r-3xl rounded-bl-3xl p-10 w-full lg:h-[280px] ">
                     <div className="flex items-center mb-4">
                       <div className="flex items-center justify-center w-10 h-10 text-white rounded-full border border-white font-bold">
                         03
                       </div>
                     </div>
-                    <h2 className=" font-semibold mb-2 pt-10 text-2xl">
+                    <h2 className=" font-semibold mb-2 lg:pt-10 text-2xl">
                       Mobile Compatibility Issues
                     </h2>
                     <p className="font-medium">
@@ -243,9 +243,11 @@ export default function NaeemApparel() {
 
         <div className="   w-full  items-center  flex flex-col   ">
           <div className=" grid grid-cols-12 items-start justify-center  py-10  w-11/12 ">
-            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full pt-10 mt-10">
-              <span className="text-na font-bold text-6xl ">Style Guide</span>
-              <div className="flex w-full items-center justify-end py-5">
+            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full lg:pt-10 lg:mt-10">
+              <span className="text-na font-bold lg:text-6xl text-3xl ">
+                Style Guide
+              </span>
+              <div className="flex w-full items-center ;lg:justify-end py-5">
                 <span className="text-na  font-medium text-3xl ">
                   Typography
                 </span>
@@ -263,11 +265,9 @@ export default function NaeemApparel() {
               </div>
             </div>
 
-            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full pt-10 mt-10">
-              <span className="text-na font-bold text-6xl lg:py-10 ">
-                Colors
-              </span>
-              <div className=" flex  items-center justify-start  w-full">
+            <div className="col-span-12    flex flex-col items-start justify-start h-full w-full pt-10 lg:mt-10">
+              <span className="text-na font-bold text-6xl py-10 ">Colors</span>
+              <div className=" flex lg:flex-row flex-col  items-center justify-start  w-full">
                 <div className="flex lg:w-2/3  w-full items-start justify-start">
                   <div className=" bg-white  lg:w-2/3 w-full">
                     <table className="w-full text-left ">
@@ -351,7 +351,7 @@ export default function NaeemApparel() {
                   </div>
                 </div>
 
-                <div className="  flex items-center ">
+                <div className="  flex items-center justify-center w-full lg:w-1/2 pt-5 lg:pt-0 ">
                   <Image
                     className=" relativepos "
                     src="/na/color.png"
@@ -366,13 +366,13 @@ export default function NaeemApparel() {
 
         <div className="   w-full  items-center  flex flex-col   ">
           <div className=" grid grid-cols-12 items-start justify-center  py-10 w-full    ">
-            <div className="col-span-12    flex flex-col items-center justify-start h-full w-full pt-10 mt-10">
+            <div className="col-span-12    flex flex-col items-center justify-start h-full w-full lg:pt-10 lg:mt-10">
               <div className="w-11/12 mb-5">
-                <span className="text-[#4580AE] font-bold text-6xl  ">
+                <span className="text-[#4580AE] font-bold lg:text-6xl text-3xl  ">
                   Wire Frames
                 </span>
               </div>
-              <div className="  flex items-center w-full  ">
+              <div className="  flex items-center w-full   ">
                 <Image
                   className=" relativepos "
                   src="/na/wf.png"
@@ -386,9 +386,9 @@ export default function NaeemApparel() {
 
         <div className="   w-full  items-center  flex flex-col   ">
           <div className=" grid grid-cols-12 items-start justify-center  py-10 w-full    ">
-            <div className="col-span-12    flex flex-col items-center justify-start h-full w-full pt-10 mt-10">
+            <div className="col-span-12    flex flex-col items-center justify-start h-full w-full lg:pt-10 lg:mt-10">
               <div className="w-11/12 mb-5">
-                <span className="text-[#4580AE] font-bold text-6xl  ">
+                <span className="text-[#4580AE] font-bold lg:text-6xl text-3xl  ">
                   Visual Design
                 </span>
               </div>
@@ -405,13 +405,13 @@ export default function NaeemApparel() {
         </div>
         <div className="   w-full  items-center  flex flex-col   ">
           <div className=" grid grid-cols-12 items-start justify-center  py-10 w-11/12    ">
-            <div className="col-span-12    flex flex-col items-center justify-start h-full w-full pt-10 mt-10">
+            <div className="col-span-12    flex flex-col items-center justify-start h-full w-full lg:-10 lg:mt-10">
               <div className=" mb-5 w-full text-start">
-                <span className="text-[#4580AE] font-bold text-6xl  ">
+                <span className="text-[#4580AE] font-bold lg:text-6xl text-3xl  ">
                   Visual Design
                 </span>
               </div>
-              <div className="  flex items-center w-11/12 py-5 ">
+              <div className="  flex items-center lg:w-11/12 py-5 w-full ">
                 <Image
                   className=" relativepos "
                   src="/na/testing.png"
