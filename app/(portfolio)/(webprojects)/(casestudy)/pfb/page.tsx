@@ -29,8 +29,8 @@ export default function PFB() {
       >
         <div className="bg-pfb1 bg-cover bg-center bg-no-repeat   w-full items-center justify-center flex h-[100vh]">
           <div className="grid grid-cols-12 w-full  items-center justify-center  ">
-            <div className="col-span-12 w-full flex flex-col  items-center justify-center bg-pfb2 bg-contain bg-center bg-no-repeat h-[560px] text-6xl">
-              <div className="flex 2xl:w-[73%] w-full gap-16 items-center flex-wrap ">
+            <div className="col-span-12 w-full flex flex-col  items-center justify-center bg-pfb2 bg-contain bg-center bg-no-repeat h-[560px] lg:text-6xl text-5xl ps-5 ">
+              <div className="flex 2xl:w-[73%] w-full lg:gap-16 gap-2 items-center flex-wrap  ">
                 <AnimatedText2 text="Passion"></AnimatedText2>
                 <div className="ht text-transparent">
                   <AnimatedText2 text="for Backing"></AnimatedText2>
@@ -107,11 +107,11 @@ export default function PFB() {
                       fill
                     />
                   </div>
-                  <span className="text-5xl">Introduction</span>
+                  <span className="lg:text-5xl text-3xl">Introduction</span>
                 </div>
-                <div className=" text-xl font-light w-full flex items-start justify-start ps-16">
+                <div className=" text-xl font-light w-full flex items-start justify-start ps-16 ">
                   <span
-                    className={` w-3/4 items-center justify-center flex  ${poppins.className} `}
+                    className={` lg:w-3/4 items-center justify-center flex  ${poppins.className} `}
                   >
                     If you have been missing updates on this blog for a few
                     years, it’s because I started a baking app back in 2020.I
@@ -132,11 +132,13 @@ export default function PFB() {
                       fill
                     />
                   </div>
-                  <span className="text-5xl">About The project</span>
+                  <span className="lg:text-5xl text-3xl">
+                    About The project
+                  </span>
                 </div>
                 <div className=" text-xl font-light w-full flex flex-col items-start justify-start ps-16">
                   <span
-                    className={` w-3/4 items-center justify-center flex  ${poppins.className} `}
+                    className={` lg:w-3/4 items-center justify-center flex  ${poppins.className} `}
                   >
                     I am a Norwegian full-time blogger, author, lecturer,
                     photographer and home baker. I started blogging in 2010,
@@ -168,11 +170,11 @@ export default function PFB() {
                       fill
                     />
                   </div>
-                  <span className="text-5xl">Design Process</span>
+                  <span className="lg:text-5xl text-3xl">Design Process</span>
                 </div>
 
-                <div className="flex w-full items-center justify-start ps-14 pt-10 pb-20">
-                  <div className="flex items-center  w-2/3   ">
+                <div className="flex w-full items-center justify-start ps-14 pt-10 lg:pb-20">
+                  <div className="flex items-center  lg:w-2/3    w-full">
                     <Image
                       className=" relativepos "
                       src="/pfb/dp.png"
@@ -196,9 +198,11 @@ export default function PFB() {
                   fill
                 />
               </div>
-              <div className="items-start justify-around w-full flex flex-col lg:flex-row pt-20 space-x-20">
+              <div className="items-start justify-around w-full flex flex-col lg:flex-row pt-20 lg:space-x-20">
                 <div className="flex flex-col  items-center justify-center">
-                  <span className="text-4xl">Problem Statement</span>
+                  <span className="lg:text-5xl text-3xl ps-10 lg:ps-0">
+                    Problem Statement
+                  </span>
                   <span
                     className={` text-xl my-3 ps-10 ${poppins.className} flex  items-center justify-center`}
                   >
@@ -220,10 +224,10 @@ export default function PFB() {
                     />
                   </div>
                 </div>
-                <div className="h-36 bg-pink-200 w-1 lg:mt-20"></div>
+                <div className="h-36 bg-pink-200 w-1 lg:mt-20 hidden lg:block"></div>
 
                 <div className="flex flex-col items-center justify-center">
-                  <span className="text-4xl">Problem Solution</span>
+                  <span className="lg:text-5xl text-3xl">Problem Solution</span>
                   <span
                     className={` text-xl my-3 ps-10 ${poppins.className} flex  items-center justify-center`}
                   >
@@ -251,7 +255,7 @@ export default function PFB() {
         <div className="w-full items-start justify-center flex pt-10 bg-[#FFE4E4] ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="col-span-12  flex flex-col  items-start justify-start ">
-              <div className="flex   items-center justify-start gap-5 pb-5 pt-10">
+              <div className="flex   items-center justify-start gap-5 pb-5 lg:pt-10">
                 <div className="flex items-center  w-10 ">
                   <Image
                     className=" relativepos "
@@ -260,11 +264,11 @@ export default function PFB() {
                     fill
                   />
                 </div>
-                <span className="text-5xl">Project Overview </span>
+                <span className="lg:text-5xl text-3xl">Project Overview </span>
               </div>
               <div className="flex w-full items-center justify-center py-5">
-                <div className="flex w-11/12 items-center justify-between ">
-                  <div className="flex items-center w-3/5   ">
+                <div className="flex w-11/12 items-center lg:justify-between justify-center ">
+                  <div className="flex items-center lg:w-3/5 w-full   ">
                     <Image
                       className=" relativepos "
                       src="/pfb/po1.png"
@@ -272,7 +276,7 @@ export default function PFB() {
                       fill
                     />
                   </div>
-                  <div className="flex items-center  w-1/4  ">
+                  <div className="lg:flex items-center  w-1/4  hidden  ">
                     <Image
                       className=" relativepos "
                       src="/pfb/po.png"
@@ -298,11 +302,13 @@ export default function PFB() {
                     fill
                   />
                 </div>
-                <span className="text-5xl">Typography & Colors</span>
+                <span className="lg:text-5xl text-3xl">
+                  Typography & Colors
+                </span>
               </div>
               <div className="flex w-full items-center justify-center py-5">
-                <div className="flex w-11/12 items-center justify-center ">
-                  <div className="flex items-center  w-9/12  ">
+                <div className="flex lg:w-11/12 w-full items-center justify-center ">
+                  <div className="flex items-center  lg:w-9/12 w-full  ">
                     <Image
                       className=" relativepos "
                       src="/pfb/abc.png"
@@ -313,8 +319,8 @@ export default function PFB() {
                 </div>
               </div>
 
-              <div className="flex w-full items-center justify-center py-10 ">
-                <div className="flex w-11/12 items-center justify-center gap-5">
+              <div className="flex  w-full items-center justify-center py-10 ">
+                <div className="flex  flex-col lg:flex-row w-11/12 items-center justify-center gap-5">
                   <div className=" flex w-72 h-72 rounded-full p-3 border border-[#6BC3C3]">
                     <div className="w-full h-full flex bg-[#CAE8F3] rounded-full "></div>
                   </div>
@@ -347,11 +353,11 @@ export default function PFB() {
                     fill
                   />
                 </div>
-                <span className="text-5xl">Project images </span>
+                <span className="lg:text-5xl text-3xl">Project images </span>
               </div>
               <div className="flex w-full items-center justify-center py-5 bg-pfb3 bg-cover ">
                 <div className="flex w-11/12 items-center justify-center ">
-                  <div className="flex items-center   w-11/12  ">
+                  <div className="flex items-center   lg:w-11/12  w-full ">
                     <Image
                       className=" relativepos "
                       src="/pfb/ig.png"
@@ -368,7 +374,7 @@ export default function PFB() {
         <div className="w-full items-start justify-center flex pt-10   ">
           <div className="grid grid-cols-12 w-full  items-center justify-center relative  ">
             <div className="col-span-12  flex flex-col  items-start justify-start ">
-              <div className="flex   items-center justify-start gap-5 pb-5 pt-10 ps-20">
+              <div className="flex   items-center justify-start gap-5 pb-5 pt-10 lg:ps-20 ps-5">
                 <div className="flex items-center  w-10 ">
                   <Image
                     className=" relativepos "
@@ -377,10 +383,10 @@ export default function PFB() {
                     fill
                   />
                 </div>
-                <span className="text-5xl">Wire frame </span>
+                <span className="lg:text-5xl text-3xl">Wire frame </span>
               </div>
               <div className="flex w-full items-center justify-center  ">
-                <div className="flex items-center   w-full h-[100vh]  ">
+                <div className="flex items-center   w-full   ">
                   <Image
                     className=" relativepos "
                     src="/pfb/wf.png"
@@ -396,7 +402,7 @@ export default function PFB() {
         <div className="w-full items-start justify-center flex pt-10 bg-pfb4 bg-cover  ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="col-span-12  flex flex-col  items-start justify-start ">
-              <div className="flex   items-center justify-start gap-5 pb-5 pt-10 ">
+              <div className="flex   items-center justify-start gap-5 pb-5 lg:pt-10 ">
                 <div className="flex items-center  w-10 ">
                   <Image
                     className=" relativepos "
@@ -405,10 +411,10 @@ export default function PFB() {
                     fill
                   />
                 </div>
-                <span className="text-5xl">Visual Design </span>
+                <span className="lg:text-5xl text-3xl">Visual Design </span>
               </div>
               <div className="flex w-full items-center justify-center  ">
-                <div className="flex items-center   w-7/12  ">
+                <div className="flex items-center   lg:w-7/12 w-full  ">
                   <Image
                     className=" relativepos "
                     src="/pfb/laptop2.png"
@@ -424,7 +430,7 @@ export default function PFB() {
         <div className="w-full items-start justify-center flex pt-10 bg-pfb5 bg-cover bg-center  ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-center justify-center col-span-12  ">
-              <div className="flex items-center  w-10/12      ">
+              <div className="flex items-center  lg:w-10/12     w-full  ">
                 <Image
                   className=" relativepos "
                   src="/pfb/wd.png"
@@ -441,10 +447,10 @@ export default function PFB() {
                     fill
                   />
                 </div>
-                <span className="text-5xl">Mock up </span>
+                <span className="lg:text-5xl text-3xl">Mock up </span>
               </div>
               <div className="flex w-full items-center justify-around py-10">
-                <div className="flex items-center  w-[30%] ">
+                <div className="flex items-center  lg:w-[30%] w-1/2 ">
                   <Image
                     className=" relativepos "
                     src="/pfb/1.png"
@@ -452,7 +458,7 @@ export default function PFB() {
                     fill
                   />
                 </div>
-                <div className="flex items-center  w-1/3 ">
+                <div className="flex items-center  lg:w-1/3  w-1/2">
                   <Image
                     className=" relativepos "
                     src="/pfb/iphone3.png"
@@ -468,7 +474,7 @@ export default function PFB() {
         <div className="w-full items-start justify-center flex pt-10   ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center relative  ">
             <div className="flex flex-col w-full items-center justify-center col-span-12  ">
-              <div className="flex   items-center justify-start gap-5 pb-5 pt-10 w-full ">
+              <div className="flex   items-center justify-start gap-5 pb-5 lg:pt-10 w-full ">
                 <div className="flex items-center  w-10 ">
                   <Image
                     className=" relativepos "
@@ -477,7 +483,7 @@ export default function PFB() {
                     fill
                   />
                 </div>
-                <span className="text-5xl">Usability Testing </span>
+                <span className="lg:text-5xl text-3xl">Usability Testing </span>
               </div>
               <div className="flex w-11/12 flex-col items-start text-2xl  ">
                 <span
