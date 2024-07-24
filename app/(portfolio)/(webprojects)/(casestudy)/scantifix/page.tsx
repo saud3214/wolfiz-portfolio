@@ -25,8 +25,8 @@ export default function Scantifix() {
       >
         <div className=" bg-sf1 bg-cover bg-center bg-no-repeat  w-full  items-center justify-center flex flex-col  h-[100vh] ">
           <div className=" grid grid-cols-12 items-start justify-center  py-10  w-full ">
-            <div className="flex  col-span-5 items-center justify-end flex-col   gap-3 w-full h-full ">
-              <div className="flex flex-col w-1/2 items-start justify-start gap-4">
+            <div className="flex  lg:col-span-5 col-span-12 items-center justify-end flex-col   gap-3 w-full h-full ">
+              <div className="flex flex-col lg:w-1/2 w-11/12 items-start justify-start gap-4">
                 <div className="flex items-center justify-center gap-2  ">
                   <Image
                     className=" relativepos  "
@@ -44,8 +44,8 @@ export default function Scantifix() {
                 </span>
               </div>
             </div>
-            <div className="flex  col-span-7 items-center justify-center flex-col  md:flex-row gap-3">
-              <div className="flex  items-center  w-4/5     ">
+            <div className="flex  lg:col-span-7 col-span-12 items-center justify-center  gap-3 pt-10 lg:pt-0">
+              <div className="flex  items-center  lg:w-4/5 w-full    ">
                 <Image
                   className=" relativepos  "
                   src="/scantifix/laptop1.png"
@@ -60,13 +60,13 @@ export default function Scantifix() {
 
         <div className="   w-full  items-center justify-center flex flex-col bg-sf2 bg-contain bg-left-top bg-no-repeat   ">
           <div className=" grid grid-cols-12 items-start justify-center w-[90%]  py-10  ">
-            <div className="flex  col-span-6 items-start  flex-col   gap-10  h-full ">
+            <div className="flex  lg:col-span-6 col-span-12 items-start  flex-col   gap-10  h-full ">
               <div className="flex flex-col items-start justify-start gap-4 py-10 h-1/2">
                 <div className="flex items-start justify-start  flex-col   t ">
-                  <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                  <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                     01
                   </span>
-                  <span className="font-bold text-6xl text-[#2D2D2D]">
+                  <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D]">
                     About Project
                   </span>
                 </div>
@@ -79,13 +79,13 @@ export default function Scantifix() {
                 </span>
               </div>
 
-              <div className="flex flex-col items-start justify-start gap-4 py-10">
+              <div className="flex flex-col items-start justify-start gap-4 lg:py-10">
                 <div className="flex items-center justify-center gap-2  ">
-                  <div className="flex items-start justify-start  flex-col   t ">
-                    <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                  <div className="flex items-start justify-start  flex-col    ">
+                    <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                       02
                     </span>
-                    <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1">
+                    <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1">
                       <div className="h-10 w-1 bg-pink-300"></div>
                       Objective & Goals
                     </span>
@@ -109,8 +109,8 @@ export default function Scantifix() {
                 </span>
               </div>
             </div>
-            <div className="flex  col-span-6 items-center justify-center flex-col  md:flex-row gap-3">
-              <div className="flex  items-center    w-10/12   ">
+            <div className="flex  lg:col-span-6 col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
+              <div className="flex  items-center    lg:w-10/12 w-8/12 pt-10 lg:pt-0   ">
                 <Image
                   className=" relativepos  "
                   src="/scantifix/iphone.png"
@@ -124,7 +124,7 @@ export default function Scantifix() {
 
         <div className="   w-full  items-center justify-center flex flex-col bg-sf3 bg-cover bg-center bg-no-repeat   ">
           <div className=" grid grid-cols-12 items-center justify-center w-[90%]  py-10  ">
-            <div className="flex  col-span-6 items-center justify-center flex-col  md:flex-row gap-3">
+            <div className="flex  lg:col-span-6 col-span-12 items-center justify-center  gap-3">
               <div className="flex  items-center    2xl:w-2/3 w-3/4   ">
                 <Image
                   className=" relativepos  "
@@ -135,13 +135,13 @@ export default function Scantifix() {
               </div>
             </div>
 
-            <div className="flex  col-span-6 items-start  flex-col   gap-10  h-full ">
+            <div className="flex  col-span-12 lg:col-span-6 items-start  flex-col   gap-10  h-full ">
               <div className="flex flex-col items-start justify-start gap-4 py-10 h-1/2">
-                <div className="flex items-start justify-start  flex-col   t ">
-                  <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                <div className="flex items-start justify-start  flex-col  ">
+                  <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                     03
                   </span>
-                  <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                  <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                     <div className="h-10 w-1 bg-pink-300"></div>
                     Problem statement
                   </span>
@@ -156,10 +156,10 @@ export default function Scantifix() {
                 </span>
               </div>
 
-              <div className="flex flex-col items-start justify-start gap-4 py-10">
+              <div className="flex flex-col items-start justify-start gap-4 lg:py-10">
                 <div className="flex items-center justify-center gap-2  ">
                   <div className="flex items-start justify-start  flex-col    ">
-                    <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 pt-20">
+                    <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 lg:pt-20">
                       <div className="h-10 w-1 bg-pink-300"></div>
                       Solution statement
                     </span>
@@ -179,10 +179,10 @@ export default function Scantifix() {
 
             <div className="flex flex-col w-full col-span-12">
               <div className="flex items-start justify-start  flex-col   w-full ">
-                <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                   04
                 </span>
-                <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
                   Design Process
                 </span>
@@ -201,21 +201,23 @@ export default function Scantifix() {
         </div>
 
         <div className="   w-full  items-center justify-center flex flex-col bg-sf4 bg-contain bg-right-top bg-no-repeat   ">
-          <div className=" grid grid-cols-12 items-center justify-center w-[90%]  py-10  ">
+          <div className=" grid grid-cols-12 items-center justify-center w-[90%]  lg:py-10  ">
             <div className="flex  col-span-12 items-center justify-center flex-col  gap-3">
               <div className="flex items-start justify-start  flex-col   w-full ">
-                <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                   05
                 </span>
-                <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
                   Colors & Typography
                 </span>
               </div>
 
               <div className="flex  w-10/12 items-center justify-start gap-10 mt-10">
-                <span className="font-bold text-7xl ">Urbanist</span>
-                <div className="flex  items-center    ">
+                <span className="font-bold lg:text-7xl  text-2xl ">
+                  Urbanist
+                </span>
+                <div className="flex  items-center  lg:w-1/4  w-1/2   ">
                   <Image
                     className=" relativepos  "
                     src="/scantifix/aa.png"
@@ -226,7 +228,7 @@ export default function Scantifix() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-start w-full py-10">
+              <div className="flex flex-col lg:flex-row items-center justify-start w-full py-10">
                 <div className="flex lg:w-2/3  w-full items-center justify-center">
                   <div className="   lg:w-2/3 w-full">
                     <table className="w-full text-left ">
@@ -341,7 +343,7 @@ export default function Scantifix() {
                   </div>
                 </div>
 
-                <div className="flex  items-center    ">
+                <div className="flex  items-center  lg:w-1/4  w-2/5    ">
                   <Image
                     className=" relativepos  "
                     src="/scantifix/color.png"
@@ -359,10 +361,10 @@ export default function Scantifix() {
           <div className="w-[88%] grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex items-start justify-start  flex-col   w-full ">
-                <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                   06
                 </span>
-                <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
                   Project Timeline
                 </span>
@@ -397,18 +399,18 @@ export default function Scantifix() {
         <div className="bg-sf6 bg-contain bg-right-bottom bg-no-repeat   w-full h-full  items-center justify-center flex flex-col ">
           <div className="w-[88%] grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex flex-col col-span-12 items-center">
-              <div className="flex  items-center   flex-col  w-full mt-10">
+              <div className="flex  items-center   flex-col  w-full lg:mt-10">
                 <div className="flex items-start justify-start  flex-col   w-full ">
-                  <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                  <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                     07
                   </span>
-                  <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                  <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                     <div className="h-10 w-1 bg-pink-300"></div>
                     Wire Frames
                   </span>
                 </div>
-                <div className="flex w-full items-center justify-center px-20 pt-10">
-                  <div className="flex  items-center  w-1/2 mb-3  h-full relative ">
+                <div className="flex w-full items-center justify-center lg:px-20 pt-10">
+                  <div className="flex  items-center  lg:w-1/2 mb-3  w-full relative ">
                     <Image
                       className="  relativepos "
                       src="/scantifix/wf1.png"
@@ -416,7 +418,7 @@ export default function Scantifix() {
                       fill
                     />
                   </div>
-                  <div className="flex  items-center  w-1/2 mb-3  h-full relative  ">
+                  <div className="flex  items-center  lg:w-1/2 mb-3  w-full relative  ">
                     <Image
                       className="  relativepos2 "
                       src="/scantifix/wf2.png"
@@ -434,10 +436,10 @@ export default function Scantifix() {
           <div className="w-[100%] grid grid-cols-12 items-start justify-center  ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex items-start justify-start  flex-col   w-[88%] ">
-                <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                   08
                 </span>
-                <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
                   Virtual Design
                 </span>
@@ -459,7 +461,7 @@ export default function Scantifix() {
         <div className="bg-sf7 bg-contain bg-bottom bg-no-repeat   w-full  items-center justify-center flex flex-col ">
           <div className="w-full grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
-              <div className="flex items-center  pt-20 w-[45%]   ">
+              <div className="flex items-center  lg:pt-20 lg:w-[45%]  w-9/12  ">
                 <Image
                   className=" relativepos "
                   src="/scantifix/vd2.png"
@@ -484,10 +486,10 @@ export default function Scantifix() {
           <div className="w-full grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col   gap-3  w-full">
               <div className="flex items-start justify-start  flex-col   w-[88%] ">
-                <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                   09
                 </span>
-                <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
                   Mockup
                 </span>
@@ -521,10 +523,10 @@ export default function Scantifix() {
           <div className="w-full grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col   gap-3  w-full">
               <div className="flex items-start justify-start  flex-col   w-[88%] ">
-                <span className=" font-bold text-9xl gradient-text3 leading-[95px]">
+                <span className=" font-bold lg:text-9xl text-6xl gradient-text3 leading-[95px]">
                   10
                 </span>
-                <span className="font-bold text-6xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
+                <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
                   Testing
                 </span>

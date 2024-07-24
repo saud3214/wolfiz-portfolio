@@ -43,7 +43,7 @@ export default function PFB() {
               </div>
             </div>
             <div className="flex col-span-12 items-center justify-center">
-              <div className="flex items-center   w-20  ">
+              <div className="flex items-center   lg:w-20 w-12  ">
                 <Image
                   className=" relativepos "
                   src="/pfb/arrow.png"
@@ -93,7 +93,7 @@ export default function PFB() {
                 />
               </div>
 
-              <div className="flex items-center w-96 lg:py-20   ">
+              <div className="flex items-center lg:w-96 lg:py-20 w-56   ">
                 <Image
                   className=" relativepos "
                   src="/pfb/logo.png"
@@ -220,7 +220,7 @@ export default function PFB() {
                     </ul>
                   </span>
 
-                  <div className="flex items-center  w-[80%]  ">
+                  <div className="flex items-center  lg:w-[80%] w-1/2  ">
                     <Image
                       className=" relativepos "
                       src="/pfb/ps2.png"
@@ -244,7 +244,7 @@ export default function PFB() {
                       <li>Compliance and Data Protection.</li>
                     </ul>
                   </span>
-                  <div className="flex items-center  w-3/4  ">
+                  <div className="flex items-center  lg:w-3/4  w-1/2 ">
                     <Image
                       className=" relativepos "
                       src="/pfb/ps.png"

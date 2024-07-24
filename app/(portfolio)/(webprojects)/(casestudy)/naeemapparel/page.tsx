@@ -266,7 +266,9 @@ export default function NaeemApparel() {
             </div>
 
             <div className="col-span-12    flex flex-col items-start justify-start h-full w-full pt-10 lg:mt-10">
-              <span className="text-na font-bold text-6xl py-10 ">Colors</span>
+              <span className="text-na font-bold lg:text-6xl text-3xl py-10 ">
+                Colors
+              </span>
               <div className=" flex lg:flex-row flex-col  items-center justify-start  w-full">
                 <div className="flex lg:w-2/3  w-full items-start justify-start">
                   <div className=" bg-white  lg:w-2/3 w-full">
