@@ -40,6 +40,7 @@ export default function RootLayout({
                 height={100}
                 width={100}
                 src="/svg/wolfizlogo.svg"
+                priority
               />
             </Link>
           </div>

@@ -24,7 +24,7 @@ export default function Nht() {
         className={` w-full items-center justify-center flex flex-col ${urbanist.className}`}
       >
         <div className="bg-nht-bg1 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex flex-col h-[100vh] ">
-          <div className=" grid grid-cols-12 items-start justify-center mb-5  w-[80%] ">
+          <div className=" grid grid-cols-12 items-start justify-center mb-5  lg:w-[80%] ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
               <div className="flex  items-center  lg:w-10/12 lg:p-10 w-full   ">
                 <Image
@@ -41,10 +41,10 @@ export default function Nht() {
         </div>
 
         <div className="bg-nht-bg2 bg-contain bg-right bg-no-repeat   w-full  items-center justify-center flex flex-col ">
-          <div className=" grid grid-cols-12 items-start justify-center mb-5  w-[80%]  ">
+          <div className=" grid grid-cols-12 items-start justify-center mb-5  lg:w-[80%] w-11/12  ">
             <div className="flex flex-col  col-span-12 items-center justify-center  gap-3">
               <div className="flex flex-col items-center justify-center pt-10">
-                <span className=" font-semibold text-5xl text-nht mb-4">
+                <span className=" font-semibold lg:text-5xl text-3xl text-nht mb-4">
                   <AnimatedText2 text=" Project Overview" />
                 </span>
                 <span className="lg:w-2/5 text-center flex">
@@ -55,9 +55,9 @@ export default function Nht() {
                 </span>
               </div>
 
-              <div className="flex  items-start justify-between pt-10 pr-10 w-full">
-                <div className="bg-nht-bg7 bg-contain bg-bottom bg-no-repeat flex flex-col h-[480px]">
-                  <span className=" font-semibold text-5xl text-nht mb-4">
+              <div className="flex lg:flex-row flex-col items-start justify-between lg:pt-10 lg:pr-10 w-full">
+                <div className="bg-nht-bg7 bg-contain bg-bottom bg-no-repeat flex flex-col h-[480px] w-full order-2 lg:order-1">
+                  <span className=" font-semibold lg:text-5xl text-3xl text-nht mb-4">
                     Problem Statement
                   </span>
                   <ul className="list-disc text-xl ps-5">
@@ -68,7 +68,7 @@ export default function Nht() {
                     <li>Scalability and Performance.</li>
                   </ul>
                 </div>
-                <div className="flex items-center  w-1/4 p-10   ">
+                <div className="flex items-center  lg:w-1/4 p-10  w-full  order-1 lg:order-2 ">
                   <Image
                     className=" relativepos "
                     src="/nht/ps1.png"
@@ -80,8 +80,8 @@ export default function Nht() {
                 </div>
               </div>
 
-              <div className="flex items-end flex-col w-full">
-                <span className=" font-semibold text-5xl text-nht mb-4">
+              <div className="flex lg:items-end items-start flex-col w-full pt-5 lg:pt-0">
+                <span className=" font-semibold lg:text-5xl text-3xl text-nht mb-4">
                   Solution Statement
                 </span>
                 <ul className="list-disc text-xl ps-5">
@@ -93,18 +93,17 @@ export default function Nht() {
                 </ul>
               </div>
 
-              <div className="flex flex-col items-start   gap-5 w-full">
-                <div className="flex items-center  w-full gap-4 my-5">
-                  <span className=" font-semibold text-5xl text-nht  mb-1">
+              <div className="flex flex-col items-start   gap-5 w-full pt-10 lg:pt-0">
+                <div className="flex items-center  w-full gap-4 lg:my-5">
+                  <span className=" font-semibold lg:text-5xl text-3xl text-nht  mb-1">
                     Design Process
                   </span>
-                  <div className="w-[6%] h-fit ">
+                  <div className="w-[6%] ">
                     <Image
                       className=" relativepos "
                       src="/nht/dp1.png"
                       alt="Background 1"
                       fill
-                      // Ensure the image covers the container without stretching
                     />
                   </div>
                 </div>
@@ -114,7 +113,6 @@ export default function Nht() {
                     src="/nht/dp2.png"
                     alt="Background 1"
                     fill
-                    // Ensure the image covers the container without stretching
                   />
                 </div>
               </div>
@@ -123,16 +121,16 @@ export default function Nht() {
         </div>
 
         <div className="bg-nht-bg3 bg-contain bg-right bg-no-repeat   w-full  items-center justify-center flex flex-col ">
-          <div className=" grid grid-cols-12 items-start justify-center mb-5 w-[80%] ">
+          <div className=" grid grid-cols-12 items-start justify-center mb-5 lg:w-[80%] w-11/12 ">
             <div className="flex   col-span-12 items-center justify-center flex-col gap-3">
               <div className="flex items-center  w-full gap-4 my-5 ">
-                <span className=" font-semibold text-5xl text-nht  mb-1">
+                <span className=" font-semibold lg:text-5xl text-3xl text-nht  mb-1">
                   Color Theory
                 </span>
               </div>
 
-              <div className=" bg-nht-bg8 bg-contain bg-right bg-no-repeat flex items-start  w-full h-[500px] p-10 ">
-                <span className=" font-semibold text-5xl text-nht  mb-1 ps-20 ms-20">
+              <div className=" bg-nht-bg8 bg-contain bg-right bg-no-repeat flex items-start  w-full lg:h-[500px] h-[250px] lg:p-10 ">
+                <span className=" font-semibold text-5xl text-nht  mb-1 ps-20 lg:ms-20">
                   Inter
                 </span>
               </div>
@@ -141,9 +139,9 @@ export default function Nht() {
         </div>
 
         <div className="w-full  items-center justify-center flex flex-col ">
-          <div className=" grid grid-cols-12 items-start justify-center mb-5 w-[80%] ">
+          <div className=" grid grid-cols-12 items-start justify-center mb-5 lg:w-[80%]  w-11/12">
             <div className="flex   col-span-12 items-center justify-center flex-col gap-3">
-              <div className="flex items-center  w-full gap-4 my-5">
+              <div className="flex items-center  w-full gap-4 lg:my-5">
                 <div className="w-full h-fit ">
                   <Image
                     className=" relativepos "
@@ -159,15 +157,15 @@ export default function Nht() {
         </div>
 
         <div className="   w-full  items-center justify-center flex flex-col  ">
-          <div className=" grid grid-cols-12 items-start justify-center mb-5 w-[80%] ">
+          <div className=" grid grid-cols-12 items-start justify-center mb-5 lg:w-[80%] w-11/12 ">
             <div className="flex   col-span-12 items-center justify-center flex-col gap-3">
               <div className="flex items-center  w-full gap-4 my-5 ">
-                <span className=" font-semibold text-5xl text-nht  mb-4">
+                <span className=" font-semibold lg:text-5xl text-3xl text-nht  mb-4">
                   Project Timeline
                 </span>
               </div>
               <div className=" bg-nht-bg4 bg-contain bg-left bg-no-repeat w-full flex items-center justify-center">
-                <div className="w-full h-[90vh] flex items-center ">
+                <div className="w-full lg:h-[90vh] flex items-center ">
                   <Image
                     className=" relativepos "
                     src="/nht/nhttl.png"
@@ -182,13 +180,13 @@ export default function Nht() {
         </div>
 
         <div className="   w-full  items-center justify-center flex flex-col   ">
-          <div className="flex items-center  w-[80%] gap-4 my-5 ">
-            <span className=" font-semibold text-5xl text-nht  mb-4">
+          <div className="flex items-center  lg:w-[80%] w-11/12 gap-4 my-5 ">
+            <span className=" font-semibold lg:text-5xl text-3xl text-nht  mb-4">
               Wire Frames
             </span>
           </div>
           <div className="  w-full flex items-center justify-center">
-            <div className="w-full h-[95vh] flex items-center ">
+            <div className="w-full lg:h-[95vh] flex items-center ">
               <Image
                 className=" relativepos "
                 src="/nht/nhtwf1.png"
@@ -200,7 +198,7 @@ export default function Nht() {
 
           <div className="bg-nht-bg5 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex flex-col ">
             <div className=" grid grid-cols-12 items-start justify-center mb-5 ">
-              <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-5 p-20">
+              <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-5 lg:p-20">
                 <div className="w-full  flex items-center  ">
                   <Image
                     className=" relativepos "
@@ -209,7 +207,7 @@ export default function Nht() {
                     fill
                   />
                 </div>
-                <div className="w-full  flex items-center pt-40">
+                <div className="w-full  flex items-center lg:pt-40">
                   <Image
                     className=" relativepos "
                     src="/nht/nhtwf2.png"
@@ -223,8 +221,8 @@ export default function Nht() {
           </div>
         </div>
         <div className="   w-full  items-center justify-center flex flex-col   ">
-          <div className="flex items-center  w-[80%] gap-4 my-5 ">
-            <span className=" font-semibold text-5xl text-nht  mb-4">
+          <div className="flex items-center  lg:w-[80%] gap-4 my-5  w-11/12">
+            <span className=" font-semibold lg:text-5xl text-3xl text-nht  mb-4">
               Virtual Design
             </span>
           </div>
@@ -232,7 +230,7 @@ export default function Nht() {
         <div className="bg-nht-bg6 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex flex-col ">
           <div className=" grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-5 ">
-              <div className="w-full h-[100vh] flex items-center  ">
+              <div className="w-full lg:h-[100vh] flex items-center  ">
                 <Image
                   className=" relativepos "
                   src="/nht/nhtlaptop2.png"
@@ -246,7 +244,7 @@ export default function Nht() {
         </div>
         <div className="bg-nht-bg4 bg-conain bg-left-bottom bg-no-repeat   w-full  items-center justify-center flex flex-col ">
           <div className=" grid grid-cols-12 items-start justify-center mb-5 ">
-            <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-5 p-20">
+            <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-5 lg:p-20">
               <div className="w-full  flex items-center  ">
                 <Image
                   className=" relativepos "
@@ -256,7 +254,7 @@ export default function Nht() {
                   // Ensure the image covers the container without stretching
                 />
               </div>
-              <div className="w-full  flex items-center pt-40">
+              <div className="w-full  flex items-center lg:pt-40">
                 <Image
                   className=" relativepos "
                   src="/nht/nhtvd2.png"
@@ -270,8 +268,8 @@ export default function Nht() {
         </div>
 
         <div className="   w-full  items-center justify-center flex flex-col   ">
-          <div className="flex items-center  w-[80%] gap-4 my-5 ">
-            <span className=" font-semibold text-5xl text-nht  mb-4">
+          <div className="flex items-center  lg:w-[80%] w-11/12 gap-4 my-5 ">
+            <span className=" font-semibold lg:text-5xl text-3xl text-nht  mb-4">
               Mock Up
             </span>
           </div>
@@ -279,7 +277,7 @@ export default function Nht() {
         <div className=" w-full  items-center justify-center flex flex-col ">
           <div className=" grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-5 ">
-              <div className="w-full h-[80vh] flex items-center  ">
+              <div className="w-11/12 lg:w-full  lg:h-[80vh] flex items-center  ">
                 <Image
                   className=" relativepos "
                   src="/nht/nhtiphone.png"
@@ -294,7 +292,7 @@ export default function Nht() {
 
         <div className="   w-full  items-center justify-center flex flex-col   ">
           <div className="flex items-center  w-[80%] gap-4 my-5 ">
-            <span className=" font-semibold text-5xl text-nht  mb-4">
+            <span className=" font-semibold lg:text-5xl text-3xl text-nht  mb-4">
               Testing
             </span>
           </div>
@@ -302,7 +300,7 @@ export default function Nht() {
         <div className=" w-full  items-center justify-center flex flex-col ">
           <div className=" grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-5 ">
-              <div className="w-full  flex items-center  ">
+              <div className="lg:w-full  flex items-center  w-11/12 ">
                 <Image
                   className=" relativepos "
                   src="/nht/testing.png"

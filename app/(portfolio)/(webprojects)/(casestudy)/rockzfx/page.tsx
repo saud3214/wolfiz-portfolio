@@ -60,8 +60,7 @@ export default function Rockzfx() {
                 className="relativepos "
                 src="/csimages/rzfxbg2.png"
                 alt="Background 1"
-                layout="fill"
-                objectFit="contains" // Ensure the image covers the container without stretching
+                fill
               />
             </div>
           </div>
@@ -69,14 +68,16 @@ export default function Rockzfx() {
         <div className="bg-rzfx-bg3 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex ">
           <div className="grid grid-cols-12 w-full ">
             <div className="lg:col-span-6 col-span-12 flex items-start justify-center w-full  ">
-              <div className="flex items-start  ps-3 2xl:w-[80%] w-full flex-col">
+              <div className="flex items-start  ps-3 2xl:w-[80%] w-11/12 flex-col">
                 <div className="flex flex-col">
-                  <span className="text-[120px] text-[#D9D8D3]">01</span>
-                  <span className="text-5xl text-[#22CADB] font-semibold">
+                  <span className="lg:text-[120px] text-7xl  text-[#D9D8D3]">
+                    01
+                  </span>
+                  <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                     About Project
                   </span>
                   <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
-                  <span className="text-2xl my-3">
+                  <span className="lg:text-2xl my-3 text-xl">
                     A young family man, stuck in the rat race, earned a good
                     salary but still found myself in debt. I decided to change
                     things around. I dabbled in online blogging, multi level
@@ -91,8 +92,10 @@ export default function Rockzfx() {
                   </span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[120px] text-[#D9D8D3]">02</span>
-                  <span className="text-5xl text-[#22CADB] font-semibold">
+                  <span className=" lg:text-[120px] text-7xl text-[#D9D8D3]">
+                    02
+                  </span>
+                  <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                     Objectives & Goals
                   </span>
                   <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
@@ -125,7 +128,6 @@ export default function Rockzfx() {
                 src="/csimages/rzfxmobiles.png"
                 alt="Background 1"
                 fill
-                // Ensure the image covers the container without stretching
               />
             </div>
           </div>
@@ -134,8 +136,10 @@ export default function Rockzfx() {
           <div className="w-[88%] grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="lg:col-span-6 col-span-12 flex items-center justify-start w-full  ">
               <div className="flex flex-col">
-                <span className="text-[120px] text-[#D9D8D3]">03</span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3] pt-10 lg:pt-0">
+                  03
+                </span>
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Problem Statement
                 </span>
                 <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
@@ -166,14 +170,14 @@ export default function Rockzfx() {
             </div>
             <div className="lg:col-span-6 col-span-12 flex items-center justify-start w-full  ">
               <div className="flex flex-col">
-                <span className="text-[120px] text-[#D9D8D3] opacity-0 hidden lg:block">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3] opacity-0 hidden lg:block">
                   03
                 </span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold pt-10 lg:pt-0">
                   Solution Statement
                 </span>
                 <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
-                <div className="border-l-[10px] border-t-[10px] border-[#22CADB] bg-white w-full rounded-3xl drop-shadow-xl   bg-opacity-5 mt-10">
+                <div className="border-l-[10px] border-t-[10px] border-[#22CADB] bg-white w-full rounded-3xl drop-shadow-xl   bg-opacity-5 lg:mt-10">
                   <div className="text-xl  bg-white  bg-opacity-40  rounded-2xl  px-5 pt-10 pb-5 gap-5  flex  flex-col lg:flex-row  items-center">
                     <ul className="list-disc pl-10 gap-2 flex flex-col  order-2 lg:order-1 ">
                       <li>Enhanced Market Information Access.</li>
@@ -199,16 +203,18 @@ export default function Rockzfx() {
               </div>
             </div>
           </div>
-          <div className="lg:w-[88%] w-full grid grid-cols-12 items-start justify-center  my-10 ">
+          <div className="lg:w-[88%] w-11/12 grid grid-cols-12 items-start justify-center  my-10 ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex flex-col items-start justify-start w-full">
-                <span className="text-[120px] text-[#D9D8D3]">04</span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3]">
+                  04
+                </span>
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Design Process
                 </span>
-                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
+                <div className="h-1 w-44 border-2 my-3 lg:mb-10 border-[#22CADB]"></div>
               </div>
-              <div className="flex justify-between w-[80%] ">
+              <div className="flex lg:flex-row flex-col justify-between lg:w-[80%] w-11/12 gap-5 lg:gap-0 ">
                 <div className="flex flex-col items-center gap-2">
                   <span className="text-2xl">Empathize</span>
                   <ul className="list-disc text-xl">
@@ -244,7 +250,6 @@ export default function Rockzfx() {
                       src="/csimages/dp1.png"
                       alt="Background 1"
                       fill
-                      // Ensure the image covers the container without stretching
                     />
                   </div>
 
@@ -254,7 +259,6 @@ export default function Rockzfx() {
                       src="/csimages/dp2.png"
                       alt="Background 1"
                       fill
-                      objectFit="contains"
                       // Ensure the image covers the container without stretching
                     />
                   </div>
@@ -264,7 +268,6 @@ export default function Rockzfx() {
                       src="/csimages/dp3.png"
                       alt="Background 1"
                       fill
-                      objectFit="contains"
                       // Ensure the image covers the container without stretching
                     />
                   </div>
@@ -286,12 +289,12 @@ export default function Rockzfx() {
                       src="/csimages/dp5.png"
                       alt="Background 1"
                       fill
-                      objectFit="contains"
+
                       // Ensure the image covers the container without stretching
                     />
                   </div>
                 </div>
-                <div className="flex justify-around w-full">
+                <div className="flex lg:flex-row flex-col gap-5 lg:gap-0 justify-around w-full">
                   <div className="flex flex-col items-center gap-2">
                     <span className="text-2xl">Define</span>
                     <ul className="list-disc text-xl">
@@ -313,29 +316,30 @@ export default function Rockzfx() {
           </div>
         </div>
         <div className="bg-rzfx-bg5 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex flex-col ">
-          <div className="w-[88%] grid grid-cols-12 items-start justify-center mb-5 ">
+          <div className="lg:w-[88%] w-11/12 grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex flex-col items-start justify-start w-full ">
-                <span className="text-[120px] text-[#D9D8D3]">05</span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3]">
+                  05
+                </span>
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Typography & Colors
                 </span>
                 <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
               </div>
               <div className="lg:p-20 flex flex-col md:flex-row w-full items-center justify-center">
-                <div className="flex items-center flex-col justify-center  ">
+                <div className="flex items-center flex-col justify-center  w-full lg:w-2/5 ">
                   <Image
-                    className=" relativepos w-64 "
+                    className=" relativepos  "
                     src="/csimages/Patterns.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
                   />
-                  <span className="font-bold text-5xl text-[#22CADB]">
+                  <span className="font-bold lg:text-5xl text-4xl text-[#22CADB]">
                     Urbanist
                   </span>
                 </div>
-                <div className="flex lg:w-2/3  w-full items-center justify-center">
+                <div className="flex lg:w-2/3  w-full items-center justify-center pt-5 lg:pt-0">
                   <div className=" bg-white  lg:w-2/3 w-full">
                     <table className="w-full text-left ">
                       <thead>
@@ -352,7 +356,7 @@ export default function Rockzfx() {
                       <tbody>
                         <tr>
                           <td className="py-2">
-                            <span className="text-cyan-500 font-bold text-5xl">
+                            <span className="text-cyan-500 font-bold lg:text-5xl text-4xl">
                               Heading 1
                             </span>
                           </td>
@@ -479,31 +483,33 @@ export default function Rockzfx() {
           <div className="w-[88%] grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex flex-col items-start justify-start w-full ">
-                <span className="text-[120px] text-[#D9D8D3]">06</span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3]">
+                  06
+                </span>
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Project scheduling
                 </span>
                 <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
               </div>
 
               <div className="flex flex-col lg:flex-row items-center justify-center gap-5 w-full ">
-                <div className="flex items-center lg:w-1/2  w-11/12 ">
+                <div className="flex items-center lg:w-1/2 w-full ">
                   <Image
                     className=" relativepos "
                     src="/csimages/ps1.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
+
                     // Ensure the image covers the container without stretching
                   />
                 </div>
-                <div className="flex items-center lg:w-1/2  w-11/12 ">
+                <div className="flex items-center lg:w-1/2  w-full ">
                   <Image
                     className=" relativepos "
                     src="/csimages/ps2.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
+
                     // Ensure the image covers the container without stretching
                   />
                 </div>
@@ -516,8 +522,10 @@ export default function Rockzfx() {
           <div className="w-[100%] grid grid-cols-12 items-start justify-center  ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex flex-col items-start justify-start w-[88%] ">
-                <span className="text-[120px] text-[#D9D8D3]">07</span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3]">
+                  07
+                </span>
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Wire Frames
                 </span>
                 <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
@@ -529,7 +537,7 @@ export default function Rockzfx() {
                     src="/csimages/wf1.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
+
                     // Ensure the image covers the container without stretching
                   />
                 </div>
@@ -547,8 +555,6 @@ export default function Rockzfx() {
                   src="/csimages/wf2.png"
                   alt="Background 1"
                   fill
-                  objectFit="contains"
-                  // Ensure the image covers the container without stretching
                 />
               </div>
               <div className="lg:flex items-center  hidden    ">
@@ -557,8 +563,6 @@ export default function Rockzfx() {
                   src="/csimages/wf2.png"
                   alt="Background 1"
                   fill
-                  objectFit="contains"
-                  // Ensure the image covers the container without stretching
                 />
               </div>
             </div>
@@ -569,8 +573,10 @@ export default function Rockzfx() {
           <div className="w-[100%] grid grid-cols-12 items-start justify-center  ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex flex-col items-start justify-start w-[88%] ">
-                <span className="text-[120px] text-[#D9D8D3]">08</span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3]">
+                  08
+                </span>
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Visual Design
                 </span>
                 <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
@@ -583,8 +589,6 @@ export default function Rockzfx() {
                     src="/csimages/Overview.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
-                    // Ensure the image covers the container without stretching
                   />
                 </div>
               </div>
@@ -600,8 +604,6 @@ export default function Rockzfx() {
                   src="/csimages/vd2.png"
                   alt="Background 1"
                   fill
-                  objectFit="contains"
-                  // Ensure the image covers the container without stretching
                 />
               </div>
             </div>
@@ -612,37 +614,35 @@ export default function Rockzfx() {
           <div className="w-[100%] grid grid-cols-12 items-start justify-center  ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex flex-col items-start justify-start w-[88%] ">
-                <span className="text-[120px] text-[#D9D8D3]">09</span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3]">
+                  09
+                </span>
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Mock Up
                 </span>
                 <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
               </div>
 
               <div className="flex items-center justify-center  w-full bg-rzfx-bg9 bg-cover bg-center bg-no-repeat p-10 flex-col md:flex-row">
-                <div className="flex items-center    ">
+                <div className="flex items-center lg:w-1/3  w-11/12   ">
                   <Image
                     className=" relativepos "
                     src="/csimages/iphonerzfx.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
-                    // Ensure the image covers the container without stretching
                   />
                 </div>
-                <div className="flex items-center    ">
+                <div className="flex items-center  lg:w-1/2 w-full pt-10 lg:pt-0 ">
                   <Image
                     className=" relativepos "
                     src="/csimages/laptopmu.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
-                    // Ensure the image covers the container without stretching
                   />
                 </div>
               </div>
               <div className="flex items-center justify-center  w-full bg-rzfx-bg10 bg-cover bg-center bg-no-repeat p-10 flex-col md:flex-row gap-10">
-                <div className="flex items-center  lg:w-[20%]  w-1/2   ">
+                <div className="flex items-center  lg:w-[20%]  w-8/12   ">
                   <Image
                     className=" relativepos  w-full"
                     src="/csimages/mu1.png"
@@ -650,7 +650,7 @@ export default function Rockzfx() {
                     fill
                   />
                 </div>
-                <div className="flex items-center  lg:w-[20%]  w-1/2  lg:pb-20 lg:mb-20  ">
+                <div className="flex items-center  lg:w-[20%]  w-8/12 lg:pb-20 lg:mb-20  ">
                   <Image
                     className=" relativepos w-full"
                     src="/csimages/mu2.png"
@@ -658,14 +658,12 @@ export default function Rockzfx() {
                     fill
                   />
                 </div>
-                <div className="flex items-center lg:w-[20%]  w-1/2  ">
+                <div className="flex items-center lg:w-[20%]  w-8/12  ">
                   <Image
                     className=" relativepos w-full "
                     src="/csimages/mu3.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
-                    // Ensure the image covers the container without stretching
                   />
                 </div>
               </div>
@@ -677,22 +675,22 @@ export default function Rockzfx() {
           <div className="w-[100%] grid grid-cols-12 items-start justify-center  ">
             <div className="flex flex-col col-span-12 items-center">
               <div className="flex flex-col items-start justify-start w-[88%] ">
-                <span className="text-[120px] text-[#D9D8D3]">10</span>
-                <span className="text-5xl text-[#22CADB] font-semibold">
+                <span className=" lg:text-[120px] text-7xl text-[#D9D8D3]">
+                  10
+                </span>
+                <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Testing
                 </span>
                 <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
               </div>
 
-              <div>
-                <div className="flex items-center  pt-20   ">
+              <div className="flex items-center justify-center">
+                <div className="flex items-center  lg:pt-20  lg:w-full  w-11/12  ">
                   <Image
                     className=" relativepos "
                     src="/csimages/step10.png"
                     alt="Background 1"
                     fill
-                    objectFit="contains"
-                    // Ensure the image covers the container without stretching
                   />
                 </div>
               </div>
