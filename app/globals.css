@@ -116,66 +116,12 @@ ul.link-list li {
 }
 ul.link-list li a {
   cursor: pointer;
-  font-size: 60px;
   font-weight: 700;
   margin: 5px 0;
   color: white;
   opacity: 0.8;
   width: fit-content;
 }
-/* 
-ul.link-list li a:hover {
-  opacity: 1;
-  font-size: 54px;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-} */
-
-/* a {
-  font-size: 1em;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-} */
-
-/* a > span:nth-child(2) {
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: black;
-} */
-/* a > span:nth-child(2) .char {
-  transform: translateY(2em);
-  -webkit-transform: translateY(2em);
-  -moz-transform: translateY(2em);
-  -ms-transform: translateY(2em);
-  -o-transform: translateY(2em);
-}
-a > span:nth-child(2):hover .char {
-  transform: translateY(0);
-  color: rgb(252, 252, 252);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-} */
-
-/* a:hover > span:nth-child(1) .char {
-  transform: translateY(-2em);
-  color: red;
-  -webkit-transform: translateY(-2em);
-  -moz-transform: translateY(-2em);
-  -ms-transform: translateY(-2em);
-  -o-transform: translateY(-2em);
-} */
-
-/* a span {
-  transition-duration: 0.3s;
-  transition-delay: calc(40ms * var(--char-index));
-} */
 
 .video-container {
   position: relative;
@@ -244,6 +190,13 @@ a > span:nth-child(2):hover .char {
   z-index: 3;
   right: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .swiper-container .swiper-pagination {
+    width: 3em;
+  }
+}
+
 .swiper-container .swiper-pagination span {
   margin-bottom: 1rem !important;
   font-size: 0.9rem;
@@ -304,6 +257,13 @@ a > span:nth-child(2):hover .char {
   padding-top: 8%;
 }
 
+@media screen and (max-width: 768px) {
+  .titlendis {
+    margin-top: 0%;
+    padding-top: 0%;
+  }
+}
+
 .titledisplay {
   display: flex;
 }
@@ -318,6 +278,7 @@ a > span:nth-child(2):hover .char {
 @media screen and (max-width: 768px) {
   .titledisplay text {
     font-size: 4em;
+    line-height: 90px;
   }
 }
 .__className_afe0d0 {

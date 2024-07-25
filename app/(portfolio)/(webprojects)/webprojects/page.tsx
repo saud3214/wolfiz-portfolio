@@ -123,7 +123,7 @@ export default function Webprojects() {
                   <Link href={'/nht'} className="mt-8 ">
                     <button className="button arrow">Open Case Study</button>
                   </Link>
-                  <div className="h-[10vh]"></div>
+                  <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-4 rounded-sm border-[#00A081] h-[24vh]">
                     <div
                       id="videoDiv"
@@ -173,7 +173,7 @@ export default function Webprojects() {
                       Open Case Study
                     </motion.button>
                   </Link>
-                  <div className="h-[10vh]"></div>
+                  <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-4 rounded-sm border-[#7cd9e3] h-[24vh] shadow-lg drop-shadow-lg">
                     <div
                       id="videoDiv"
@@ -225,7 +225,7 @@ export default function Webprojects() {
                   <Link href={'/scantifix'} className="mt-8 ">
                     <button className="button arrow">Open Case Study</button>
                   </Link>
-                  <div className="h-[10vh]"></div>
+                  <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-4 rounded-sm border-[#F9E96E] h-[24vh]  drop-shadow-lg shadow-lg">
                     <div
                       id="videoDiv"
@@ -276,7 +276,7 @@ export default function Webprojects() {
                   <Link href={'/naeemapparel'} className="mt-8 ">
                     <button className="button arrow">Open Case Study</button>
                   </Link>
-                  <div className="h-[10vh]"></div>
+                  <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-4 rounded-sm border-[#26267F] h-[24vh]  drop-shadow-lg shadow-lg">
                     <div
                       id="videoDiv"
@@ -328,7 +328,7 @@ export default function Webprojects() {
                   <Link href={'/pfb'} className="mt-8 ">
                     <button className="button arrow">Open Case Study</button>
                   </Link>
-                  <div className="h-[10vh]"></div>
+                  <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-4 rounded-sm border-[#ffc7c7] h-[24vh]  drop-shadow-lg shadow-lg">
                     <div
                       id="videoDiv"
@@ -379,7 +379,7 @@ export default function Webprojects() {
                   <Link href={'/preceptorsguide'} className="mt-8 ">
                     <button className="button arrow">Open Case Study</button>
                   </Link>
-                  <div className="h-[10vh]"></div>
+                  <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-4 rounded-sm border-[#365C89] h-[24vh]  drop-shadow-lg shadow-lg">
                     <div
                       id="videoDiv"
@@ -430,7 +430,7 @@ export default function Webprojects() {
                       Open Case Study
                     </motion.button>
                   </Link>
-                  <div className="h-[10vh]"></div>
+                  <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-4 rounded-sm border-[#df5745] h-[24vh]">
                     <div
                       id="videoDiv"

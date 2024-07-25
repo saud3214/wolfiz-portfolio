@@ -125,7 +125,7 @@ export default function Home() {
           />
         </div>
         <div className="flex w-11/12 items-center justify-between   ">
-          <ul className="link-list">
+          <ul className="link-list lg:text-6xl text-4xl">
             <li data-index="1" id="showWebproject">
               <Link
                 href="/webprojects"
