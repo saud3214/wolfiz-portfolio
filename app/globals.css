@@ -441,6 +441,12 @@ ul.link-list li a {
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-text4 {
+  background: linear-gradient(to bottom, #d40000, #770505, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .ht {
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: white;

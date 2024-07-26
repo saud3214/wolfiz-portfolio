@@ -1,12 +1,9 @@
 'use client';
-import Head from 'next/head';
 import { useEffect } from 'react';
-import gsap from 'gsap';
 import Image from 'next/image';
 import { Montserrat } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
 
-import { AnimatedText2 } from '../../../../components/animatedtext';
 const urbanist = Montserrat({
   subsets: ['latin'],
   weight: ['400', '700', '500', '600'],
