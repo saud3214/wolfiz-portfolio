@@ -8,13 +8,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { Pagination, Navigation } from 'swiper/modules';
-import {
-  RotateFade,
-  FadeScale,
-  SlideFromSide,
-  StaggeredChildren,
-  BlurFade,
-} from './components/pagetransition';
 
 import { AnimatedText, AnimatedText2 } from './components/animatedtext';
 SwiperCore.use([Navigation, Pagination]);
@@ -86,31 +79,25 @@ export default function Home() {
         {/* <div className="layer layer--default"></div> */}
         <div className="relative w-full h-full">
           <Image
-            className="layer w-full h-full"
+            className="layer "
             src="https://images.unsplash.com/photo-1626427223333-183395267453?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill
             alt="Background 1"
           />
         </div>
         <div className="relative w-full h-full">
           <Image
-            className="layer w-full h-full"
+            className="layer"
             src="https://images.unsplash.com/photo-1627037558426-c2d07beda3af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill
             alt="Background 1"
           />
         </div>
         <div className="relative w-full h-full">
           <Image
-            className="layer w-full h-full"
+            className="layer "
             src="https://images.unsplash.com/photo-1618005198920-f0cb6201c115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill
             alt="Background 1"
           />
         </div>
@@ -118,9 +105,7 @@ export default function Home() {
           <Image
             className="layer w-full h-full"
             src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+            fill
             alt="Background 1"
           />
         </div>
@@ -163,7 +148,7 @@ export default function Home() {
               <Image
                 width={20}
                 height={20}
-                alt="image"
+                alt="Facebook"
                 src="/svg/facebook-f.svg"
                 className=" cursor-pointer"
               />
@@ -188,6 +173,7 @@ export default function Home() {
                 src="/svg/twitter.svg"
                 className="h-6 cursor-pointer"
               />
+
               <Image
                 width={20}
                 height={20}
