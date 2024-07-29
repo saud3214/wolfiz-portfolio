@@ -70,8 +70,8 @@ const config: Config = {
         bc2: "url('/bc/bg2.png')",
         bc3: "url('/bc/bg3.png')",
         bengal1: "url('/bengal/bg1.png')",
-        bengal2: "url('/bengal/bg1-min.png')",
-        bengal3: "url('/bengal/bg2-min.png')",
+        bengal2: "url('/bengal/bg2.png')",
+        bengal3: "url('/bengal/bg3.png')",
       },
       colors: {
         nht: '#006360',
