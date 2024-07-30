@@ -24,8 +24,6 @@ export const animateImageContainer = () => {
 
 export const csimages = () => {
   const tl2 = gsap.timeline({ repeat: -1 });
-
-  // Add tweens to the timeline
   tl2.fromTo(
     '.csimg',
     {
@@ -33,14 +31,14 @@ export const csimages = () => {
     },
     {
       duration: 3,
-      y: 30, // Move the div 20 pixels down
-      ease: 'power1.inOut', // Easing function for smooth animation
+      y: 30,
+      ease: 'power1.inOut',
     },
   );
   tl2.to('.csimg', {
     duration: 3,
-    y: 10, // Move the div back to its initial position
-    ease: 'power1.inOut', // Easing function for smooth animation
+    y: 10,
+    ease: 'power1.inOut',
   });
 };
 

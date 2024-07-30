@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
-import { animateImageContainer, backgroundimages } from './animation';
+import { csimages, backgroundimages } from '../webprojects/animation';
 import { Archivo } from 'next/font/google';
 import { easeIn, motion } from 'framer-motion';
 import { SlideFromSide } from '../../../components/pagetransition';
@@ -30,6 +30,8 @@ export default function Webprojects() {
   const interleaveOffset = 0.8; // Adjust this value as needed
 
   useEffect(() => {
+    csimages();
+
     const handleProgress = () => {
       const swiper = swiperRef.current;
       if (swiper) {
@@ -149,7 +151,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-nht-card shadow-2xl drop-shadow-2xl "></div>
+                  <div className="bg-center bg-no-repeat bg-fit imgcontainer  h-[65vh] bg-nht-card  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
                 </div>
               </div>
             </div>
@@ -199,7 +201,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer   shadow-xl drop-shadow-xl"></div>
+                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-rzfx-card  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
                 </div>
               </div>
             </div>
@@ -251,7 +253,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl "></div>
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl csimg "></div>
                 </div>
               </div>
             </div>
@@ -302,7 +304,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl  bg-clip text-transparent"></div>
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl  csimg"></div>
                 </div>
               </div>
             </div>
@@ -354,7 +356,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-pfbcard shadow-2xl drop-shadow-2xl "></div>
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-pfbcard shadow-2xl drop-shadow-2xl csimg "></div>
                 </div>
               </div>
             </div>
@@ -405,7 +407,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl "></div>
+                  <div className="bg-center bg-contains bg-cover bg-no-repeat imgcontainer h-[65vh] bg-sfcard shadow-2xl drop-shadow-2xl csimg "></div>
                 </div>
               </div>
             </div>
@@ -456,7 +458,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <Link href="/nht" className="h-full grid items-center">
-                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-lp-card  cursor-pointer shadow-2xl drop-shadow-2xl"></div>
+                  <div className="bg-center bg-contains bg-no-repeat bg-cover imgcontainer h-[65vh] bg-lp-card  cursor-pointer shadow-2xl drop-shadow-2xl csimg"></div>
                 </Link>
               </div>
             </div>

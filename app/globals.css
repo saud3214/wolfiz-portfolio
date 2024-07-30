@@ -237,12 +237,20 @@ ul.link-list li a {
 
 .imgcontainer {
   transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
+  -webkit-transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
+  -moz-transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
+  -ms-transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
+  -o-transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1500px) {
   .imgcontainer {
     height: 450px;
     transform: perspective(1500px) rotate3D(0, 1, 0, -30deg);
+    -webkit-transform: perspective(1500px) rotate3D(0, 1, 0, -30deg);
+    -moz-transform: perspective(1500px) rotate3D(0, 1, 0, -30deg);
+    -ms-transform: perspective(1500px) rotate3D(0, 1, 0, -30deg);
+    -o-transform: perspective(1500px) rotate3D(0, 1, 0, -30deg);
   }
 }
 
@@ -424,6 +432,15 @@ ul.link-list li a {
   width: 20vw !important;
 }
 
+.relativepos9 {
+  right: auto !important;
+  left: 13% !important;
+  top: 0% !important;
+  bottom: auto !important;
+  position: relative !important;
+  height: auto !important;
+}
+
 .gradient-text {
   background: linear-gradient(to right, #ead375, #b67a29, #ead375);
   -webkit-background-clip: text;
@@ -453,16 +470,23 @@ ul.link-list li a {
 }
 
 .clipPath-block {
-  perspective: 1000px;
+  perspective: 1800px;
 }
 
 img.clipPath-img {
-  width: 600px;
   max-width: 100%;
   clip-path: polygon(0% 7%, 50% 5%, 100% 7%, 100% 95%, 50% 93%, 0% 95%);
   transform: rotateX(15deg) rotateY(-40deg) rotateZ(10deg);
   animation: clipPath 3s ease-in-out infinite alternate;
   transition: all 0.2s ease 0.2s;
+  -webkit-transition: all 0.2s ease 0.2s;
+  -moz-transition: all 0.2s ease 0.2s;
+  -ms-transition: all 0.2s ease 0.2s;
+  -o-transition: all 0.2s ease 0.2s;
+  -webkit-transform: rotateX(15deg) rotateY(-40deg) rotateZ(10deg);
+  -moz-transform: rotateX(15deg) rotateY(-40deg) rotateZ(10deg);
+  -ms-transform: rotateX(15deg) rotateY(-40deg) rotateZ(10deg);
+  -o-transform: rotateX(15deg) rotateY(-40deg) rotateZ(10deg);
 }
 
 img.clipPath-img.active {

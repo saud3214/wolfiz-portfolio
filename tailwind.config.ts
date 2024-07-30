@@ -72,6 +72,10 @@ const config: Config = {
         bengal1: "url('/bengal/bg1.png')",
         bengal2: "url('/bengal/bg2.png')",
         bengal3: "url('/bengal/bg3.png')",
+        sccard: "url('/mobileapps/sc/card.png')",
+        scbg1: "url('/mobileapps/sc/bg1.png')",
+        scbg2: "url('/mobileapps/sc/bg2.png')",
+        scbg3: "url('/mobileapps/sc/bg3.png')",
       },
       colors: {
         nht: '#006360',
