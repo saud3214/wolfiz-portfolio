@@ -17,10 +17,10 @@ export default function BengalTire() {
       <div
         className={` w-full items-center justify-center flex flex-col text-white ${urbanist.className}`}
       >
-        <div className=" bg-bengal1 bg-cover bg-center bg-no-repeat w-full items-end  justify-end flex  lg:h-[140vh] h-[100vh] lg:p-20 p-10">
+        <div className=" bg-bengal1 bg-cover bg-center bg-no-repeat w-[100vw] flex items-end  justify-end   lg:h-[140vh] h-[100vh] lg:p-20 ">
           <div className="grid grid-cols-12 w-full  items-end justify-end  ">
-            <div className="flex flex-col col-span-12 items-end   justify-end  ">
-              <div className="flex items-center lg:w-[60%] ">
+            <div className="flex flex-col col-span-12 items-end   justify-center  ">
+              <div className="flex items-center lg:w-[60%] w-11/12 ">
                 <Image
                   className=" relativepos "
                   src="/bengal/text.png"
