@@ -21,7 +21,7 @@ export default function SueChef() {
           <div className="grid grid-cols-12 w-full   bg-scbg1 bg-cover bg-center bg-no-repeat 2xl:h-[120vh] h-[70vh] lg:pb-20 pb-10 ">
             <div className="flex col-span-12   ">
               <div className="flex lg:flex-row flex-col items-center lg:justify-between justify-center w-full">
-                <div className="flex items-center  lg:w-[30%] lg:ps-20  ">
+                <div className="flex items-center  lg:w-[30%] lg:ps-20 w-1/2  ">
                   <Image
                     className=" relativepos "
                     src="/mobileapps/sc/logo.png"
@@ -69,7 +69,6 @@ export default function SueChef() {
                   src="/mobileapps/sc/mobile2.png"
                   alt="Background 1"
                   fill
-                  priority
                 />
               </div>
 
@@ -96,7 +95,6 @@ export default function SueChef() {
                     src="/mobileapps/sc/ps.png"
                     alt="Background 1"
                     fill
-                    priority
                   />
                 </div>
               </div>
@@ -133,7 +131,6 @@ export default function SueChef() {
                     src="/mobileapps/sc/dp.png"
                     alt="Background 1"
                     fill
-                    priority
                   />
                 </div>
 
@@ -144,7 +141,6 @@ export default function SueChef() {
                       src="/mobileapps/sc/dp2.png"
                       alt="Background 1"
                       fill
-                      priority
                     />
                   </div>
                   <div className="flex flex-col  items-start   lg:absolute lg:text-white text-black lg:bottom-[5%]  lg:left-[30%] lg:w-1/2   ">
@@ -176,7 +172,6 @@ export default function SueChef() {
                         src="/mobileapps/sc/abc.png"
                         alt="Background 1"
                         fill
-                        priority
                       />
                     </div>
                     <div className="flex items-center  relative lg:w-[60%] w-10/12 pt-10 lg:pt-0">
@@ -185,7 +180,6 @@ export default function SueChef() {
                         src="/mobileapps/sc/colors.png"
                         alt="Background 1"
                         fill
-                        priority
                       />
                     </div>
                   </div>
@@ -208,7 +202,6 @@ export default function SueChef() {
                   src="/mobileapps/sc/iphnes2.png"
                   alt="Background 1"
                   fill
-                  priority
                 />
               </div>
               <div className="flex items-center  relative  lg:w-2/3 w-full">
@@ -217,7 +210,6 @@ export default function SueChef() {
                   src="/mobileapps/sc/iphones.png"
                   alt="Background 1"
                   fill
-                  priority
                 />
               </div>
             </div>
@@ -236,7 +228,6 @@ export default function SueChef() {
                   src="/mobileapps/sc/testing.png"
                   alt="Background 1"
                   fill
-                  priority
                 />
               </div>
             </div>
