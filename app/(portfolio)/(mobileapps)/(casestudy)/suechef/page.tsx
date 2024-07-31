@@ -39,15 +39,23 @@ export default function SueChef() {
                     priority
                   />
                 </div>
+                <div className="lg:hidden items-center  relative  flex pt-10">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/sc/mobile.png"
+                    alt="Background 1"
+                    fill
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div className="col-span-12  flex flex-col py-10 w-11/12 gap-4 lg:pt-20">
-            <span className="lg:text-5xl text-3xl font-extrabold">
-              {' '}
+            <span className="lg:text-5xl text-2xl font-extrabold">
               Overview
             </span>
-            <span className="text-2xl  lg:w-1/2 ">
+            <span className="lg:text-2xl text-lg   lg:w-1/2 ">
               Welcome to Suechef, your ultimate kitchen companion! Whether youre
               a culinary novice or a seasoned chef, our app is designed to make
               your cooking experience seamless and enjoyable. Discover delicious
@@ -74,10 +82,10 @@ export default function SueChef() {
 
               <div className=" flex flex-col  items-start lg:w-1/2 w-11/12 ">
                 <div className="flex flex-col  items-start  ">
-                  <span className="lg:text-5xl text-3xl font-extrabold pb-10">
+                  <span className="lg:text-5xl text-2xl font-extrabold pb-10">
                     Problem Statement
                   </span>
-                  <span className="text-2xl pb-10 lg:pe-20  ">
+                  <span className="lg:text-2xl text-lg pb-10 lg:pe-20  ">
                     Welcome to Suechef, your ultimate kitchen companion! Whether
                     youre a culinary novice or a seasoned chef, our app is
                     designed to make your cooking experience seamless and
@@ -102,13 +110,13 @@ export default function SueChef() {
           </div>
         </div>
         <div className="  flex flex-col   w-full  items-center justify-center  ">
-          <div className="grid grid-cols-12 w-full   items-end  justify-center  bg-scbg3 bg-cover bg-top  bg-no-repeat  h-[100vh]  pb-10  ">
+          <div className="grid grid-cols-12 w-full   items-end  justify-center  lg:bg-scbg3 bg-scbg5 bg-cover bg-top  bg-no-repeat  lg:h-[100vh] h-[60vh]  pb-10  ">
             <div className="flex col-span-12 lg:items-end justify-center w-full  ">
               <div className="flex flex-col  items-start  w-11/12  ">
-                <span className="lg:text-5xl text-3xl font-extrabold pb-10">
+                <span className="lg:text-5xl text-2xl font-extrabold pb-10">
                   Solution Statement
                 </span>
-                <span className="text-2xl lg:pb-10 lg:pe-20  lg:w-1/2 ">
+                <span className="lg:text-2xl text-lg lg:pb-10 lg:pe-20  lg:w-1/2 ">
                   Our app helps users discover recipes based on available
                   ingredients, easily track calories, and receive real-time
                   assistance via voice and chat. This simplifies meal planning,
@@ -119,10 +127,10 @@ export default function SueChef() {
           </div>
         </div>
         <div className="  flex flex-col   w-full  items-center justify-center  ">
-          <div className="grid grid-cols-12 w-full   items-center  justify-center   lg:py-10  ">
+          <div className="grid grid-cols-12 w-full   items-center  justify-center   py-10  ">
             <div className="flex col-span-12 items-center justify-center w-full  ">
               <div className="flex flex-col  items-center  w-11/12  ">
-                <span className="lg:text-5xl text-3xl font-extrabold pb-10">
+                <span className="lg:text-5xl text-2xl font-extrabold pb-10">
                   Design Process
                 </span>
                 <div className="flex items-center  relative  lg:w-10/12 w-full ">
@@ -147,7 +155,7 @@ export default function SueChef() {
                     <span className="lg:text-5xl text-2xl font-extrabold pb-10 pt-10 lg:pt-0">
                       Lifetime Pro Membership!
                     </span>
-                    <span className="lg:text-2xl text-sm pb-10  lg:text-[#D9D9D9]   text-black ">
+                    <span className="lg:text-2xl text-lg pb-10  lg:text-[#D9D9D9]   text-black ">
                       Experience the ultimate culinary journey with our Lifetime
                       Pro Membership! Unlock exclusive features, including
                       unlimited recipe discoveries, advanced calorie tracking,
@@ -160,8 +168,8 @@ export default function SueChef() {
                 </div>
 
                 <div className="flex flex-col items-center  justify-center  w-full   lg:py-10 ">
-                  <div className="flex items-start justify-start w-11/12">
-                    <span className="lg:text-5xl text-3xl font-extrabold lg:py-10 ">
+                  <div className="flex items-start justify-start w-full lg:w-11/12">
+                    <span className="lg:text-5xl text-2xl font-extrabold lg:py-10 ">
                       Style Guide
                     </span>
                   </div>
@@ -191,7 +199,7 @@ export default function SueChef() {
         <div className="  flex flex-col   w-full  items-center justify-center  ">
           <div className="grid grid-cols-12 w-full   items-end  justify-center    pb-10 pt-10 lg:pt-0  ">
             <div className="flex col-span-12 items-end justify-end w-11/12  lg:pb-20 ">
-              <span className="text-5xl font-extrabold lg:pb-20 mb-10 ">
+              <span className="lg:text-5xl text-2xl font-extrabold lg:pb-20 mb-10 ">
                 Mockups
               </span>
             </div>

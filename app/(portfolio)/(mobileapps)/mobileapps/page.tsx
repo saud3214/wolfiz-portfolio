@@ -154,7 +154,7 @@ export default function Mobileapps() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-fit imgcontainer  h-[65vh] bg-sccard  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
+                  <div className="bg-center bg-no-repeat bg-contain imgcontainer  h-[65vh] bg-sccard  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
                 </div>
               </div>
             </div>
