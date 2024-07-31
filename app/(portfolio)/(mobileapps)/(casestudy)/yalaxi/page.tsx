@@ -99,6 +99,33 @@ export default function Yalaxi() {
                   fill
                 />
               </div>
+
+              <div className="flex w-full items-center justify-center">
+                <div className="flex items-center  relative   ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/yalaxi/img1.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+                <div className="flex items-center  relative   ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/yalaxi/img2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+              </div>
+              <div className="flex items-center  relative   ">
+                <Image
+                  className=" relativepos "
+                  src="/mobileapps/yalaxi/iphone1.png"
+                  alt="Background 1"
+                  fill
+                />
+              </div>
             </div>
           </div>
         </div>
