@@ -227,7 +227,7 @@ export default function SueChef() {
         <div className="  flex flex-col   w-full  items-center justify-center xl:pt-20 ">
           <div className="grid grid-cols-12 w-full   items-center  justify-center    pb-10 lg:pt-10  ">
             <div className="flex  flex-col col-span-12 items-center justify-center w-full  ">
-              <span className="lg:text-5xl text-4xl font-extrabold xl:pt-20  pb-10">
+              <span className="lg:text-5xl text-2xl font-extrabold xl:pt-20  pb-10">
                 Testing
               </span>
               <div className="flex items-center  relative lg:w-10/12 w-11/12">

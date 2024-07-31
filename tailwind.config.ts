@@ -78,6 +78,7 @@ const config: Config = {
         scbg3: "url('/mobileapps/sc/bg3.png')",
         scbg4: "url('/mobileapps/sc/bg4.png')",
         scbg5: "url('/mobileapps/sc/bg5.png')",
+        ylbg1: "url('/mobileapps/yalaxi/bg1.png')",
       },
       colors: {
         nht: '#006360',
