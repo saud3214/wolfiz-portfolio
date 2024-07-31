@@ -441,6 +441,22 @@ ul.link-list li a {
   height: auto !important;
 }
 
+.relativepos10 {
+  right: auto !important;
+  left: 0% !important;
+  top: -40% !important;
+  bottom: auto !important;
+  position: relative !important;
+  height: auto !important;
+}
+.relativepos11 {
+  right: auto !important;
+  left: 0% !important;
+  top: 30% !important;
+  bottom: auto !important;
+  position: relative !important;
+  height: auto !important;
+}
 .gradient-text {
   background: linear-gradient(to right, #ead375, #b67a29, #ead375);
   -webkit-background-clip: text;

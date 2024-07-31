@@ -76,6 +76,7 @@ const config: Config = {
         scbg1: "url('/mobileapps/sc/bg1.png')",
         scbg2: "url('/mobileapps/sc/bg2.png')",
         scbg3: "url('/mobileapps/sc/bg3.png')",
+        scbg4: "url('/mobileapps/sc/bg4.png')",
       },
       colors: {
         nht: '#006360',
