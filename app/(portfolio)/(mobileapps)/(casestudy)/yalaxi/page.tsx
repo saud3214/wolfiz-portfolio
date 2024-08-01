@@ -101,7 +101,7 @@ export default function Yalaxi() {
               </div>
 
               <div className="flex w-full items-center justify-center">
-                <div className="flex items-center  relative   ">
+                <div className="flex items-center  relative  w-1/2  ">
                   <Image
                     className=" relativepos "
                     src="/mobileapps/yalaxi/img1.png"
@@ -109,7 +109,7 @@ export default function Yalaxi() {
                     fill
                   />
                 </div>
-                <div className="flex items-center  relative   ">
+                <div className="flex items-center  relative  w-1/2  ">
                   <Image
                     className=" relativepos "
                     src="/mobileapps/yalaxi/img2.png"
@@ -118,13 +118,275 @@ export default function Yalaxi() {
                   />
                 </div>
               </div>
-              <div className="flex items-center  relative   ">
+              <div className="flex items-center  relative  w-full  ">
                 <Image
                   className=" relativepos "
                   src="/mobileapps/yalaxi/iphone1.png"
                   alt="Background 1"
                   fill
                 />
+              </div>
+
+              <div className=" flex flex-col items-center justify-center w-full pt-10 relative">
+                <span className="font-semibold text-[15vw] absolute  top-[10%]">
+                  Poppins
+                </span>
+                <div className="flex items-start justify-between w-full ">
+                  <div className=" flex gap-5 items-center justify-center pb-20">
+                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                      TypeFace
+                    </div>
+                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                      Yalaxi Mobile App
+                    </div>
+                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                      Colors
+                    </div>
+                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                      Icons
+                    </div>
+                  </div>
+                  <div className="flex flex-col w-1/4 ">
+                    <div className="bg-[#FE4B10] w-full h-40 flex text-end items-end justify-end text-3xl p-5">
+                      <span> #FE4B10</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-end justify-between w-full ">
+                  <div className="flex flex-col w-1/4 pt-10  ">
+                    <div className="bg-[#FE9900] w-full h-40 flex text-end items-end justify-end text-3xl p-5">
+                      <span> #FE9900</span>
+                    </div>
+                    <div className="bg-[#E5E5E5] w-full h-40 flex text-end items-end justify-end text-3xl p-5">
+                      <span> #E5E5E5</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col w-2/3 items-end justify-start ">
+                    <div className="bg-[#131313] w-[37.5%] h-40 flex text-end items-end justify-end text-3xl p-5">
+                      <span> #131313</span>
+                    </div>
+                    <div className=" flex w-1/2 items-start justify-start ps-5 pt-10">
+                      <span>
+                        123456789.!@#$% <br></br>
+                        ABCDEFGHIJKLMNOPQRS<br></br>
+                        TUVWXYZ
+                        <br></br>abcdefghijkimnopqr<br></br> stuvw xyz
+                      </span>
+                    </div>
+                    <div className=" flex w-10/12 items-center justify-between  pt-10">
+                      <div className="flex flex-col gap-3 ">
+                        <span className="text-xl font-bold">Menu</span>
+                        <div className="flex items-center  relative w-full    ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/yalaxi/micon.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-col ">
+                        <span>Chat</span>
+                        <div className="flex items-center  relative  w-full   ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/yalaxi/chat.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-col ">
+                        <span>Navigation</span>
+                        <div className="flex items-center  relative  w-full  ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/yalaxi/nav.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-start justify-start w-full pt-20">
+                <div className=" flex gap-5 items-start justify-start ">
+                  <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                    TypeFace
+                  </div>
+                  <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                    Yalaxi Mobile App
+                  </div>
+                </div>
+                <div className="flex items-center  relative  w-2/3   ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/yalaxi/is.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+              </div>
+              <div className="bg-[#2E2C2D] rounded-2xl flex items-center justify- w-full p-10">
+                <div className="flex  items-start justify-center ">
+                  <div className=" flex flex-col gap-5 items-start justify-start w-1/2">
+                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                      Jump To Design
+                    </div>
+                    <div className="flex items-center  relative  pt-20 w-11/12   ">
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/yalaxi/fb.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                    <span className="text-5xl font-bold pt-20 ">
+                      Main Screen
+                    </span>
+                    <span className="pe-20">
+                      Yalaxi App provides a reliable, affordable, and efficient
+                      transportation platform, addressing congestion, unreliable
+                      transit, and high costs. It enhances urban mobility and
+                      accessibility through innovative features and strategic
+                      implementation.
+                    </span>
+                  </div>
+                  <div className="flex items-center  relative w-1/2    ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/iphone2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-12 items-start pt-10 w-full ">
+                <div className="col-span-3 flex items-center justify-center ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip1.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center pt-20 ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip3.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center pt-20 ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip4.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center  ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip5.png"
+                      alt="Backgrounde"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center pt-20 ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip6.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center  ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip7.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center pt-20 ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip8.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip8.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center pt-20 ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip9.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+
+                <div className="col-span-3 flex items-center justify-center ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip10.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className="col-span-3 flex items-center justify-center pt-20 ">
+                  <div className="flex items-center  relative w-full     ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/yalaxi/ip11.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
