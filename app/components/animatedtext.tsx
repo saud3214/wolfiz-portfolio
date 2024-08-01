@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-import { useEffect, useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 // 1. Wave Effect
 export const AnimatedText = ({ text }: { text: string }) => {
@@ -56,20 +56,48 @@ export const AnimatedText = ({ text }: { text: string }) => {
 // 2. Typewriter Effect
 export const TypewriterText = ({ text }: { text: string }) => {
   const sentences = text.split('. ');
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      const totalAnimationTime =
+        sentences.length * 2 + sentences.join('').length * 0.05;
+
+      controls.start('visible');
+
+      const timeout = setTimeout(() => {
+        controls.stop(); // Stop the animation after it completes
+      }, totalAnimationTime * 1000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [isInView, sentences, controls]);
+
   return (
-    <div>
+    <div ref={ref}>
       {sentences.map((sentence, index) => (
         <motion.p
           key={index}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: index * 2, duration: 1 }}
+          animate={controls}
+          variants={{
+            visible: { opacity: 1 },
+          }}
+          transition={{
+            delay: index * 2,
+            duration: 1,
+          }}
         >
           {sentence.split('').map((char, charIndex) => (
             <motion.span
               key={charIndex}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={controls}
+              variants={{
+                visible: { opacity: 1 },
+              }}
               transition={{
                 delay: index * 2 + charIndex * 0.05,
                 duration: 0.1,
@@ -83,7 +111,30 @@ export const TypewriterText = ({ text }: { text: string }) => {
     </div>
   );
 };
+export const AnimatedText3 = ({ text }: { text: string }) => {
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: 'easeInOut',
+      },
+    },
+  };
 
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.8 }}
+      variants={variants}
+    >
+      {text}
+    </motion.div>
+  );
+};
 export const AnimatedText2 = ({ text }: { text: string }) => {
   // Variants for Container
   const container = {
