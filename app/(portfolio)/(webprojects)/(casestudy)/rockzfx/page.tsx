@@ -2,13 +2,13 @@
 import gsap from 'gsap';
 import Image from 'next/image';
 import { Urbanist } from 'next/font/google';
-import { SlideFromRight } from '../../../../components/pagetransition';
+import { SlideFromRight } from '@/app/components/pagetransition';
+import { AnimatedText2, AnimatedText3 } from '@/app/components/animatedtext';
 import {
-  AnimatedText,
-  AnimatedText2,
-  GradientFlowText,
-  BounceSpinText,
-} from '../../../../components/animatedtext';
+  RevealOnScroll,
+  RevealOnScrollX,
+  RevealOnScrollLeft,
+} from '@/app/components/revealelement';
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -56,12 +56,15 @@ export default function Rockzfx() {
               </div>
             </div>
             <div className="col-span-9 w-full h-[90%] items-center justify-center lg:flex hidden  mt-5">
-              <Image
-                className="relativepos "
-                src="/csimages/rzfxbg2.png"
-                alt="Background 1"
-                fill
-              />
+              <RevealOnScrollX>
+                <Image
+                  className="relativepos "
+                  src="/csimages/rzfxbg2.png"
+                  alt="Background 1"
+                  fill
+                  priority
+                />
+              </RevealOnScrollX>
             </div>
           </div>
         </div>
@@ -73,10 +76,10 @@ export default function Rockzfx() {
                   <span className="lg:text-[120px] text-7xl  text-[#D9D8D3]">
                     01
                   </span>
-                  <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
-                    About Project
+                  <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold ">
+                    <AnimatedText3 text="About Project"></AnimatedText3>
                   </span>
-                  <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
+                  <div className="h-1 w-44 border-2 my-3 border-[#22CADB] bg-[#22CADB] "></div>
                   <span className="lg:text-2xl my-3 text-xl">
                     A young family man, stuck in the rat race, earned a good
                     salary but still found myself in debt. I decided to change
@@ -96,9 +99,9 @@ export default function Rockzfx() {
                     02
                   </span>
                   <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
-                    Objectives & Goals
+                    <AnimatedText3 text="Objectives & Goals"></AnimatedText3>
                   </span>
-                  <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
+                  <div className="h-1 w-44 border-2 my-3 border-[#22CADB]  bg-[#22CADB]"></div>
                   <div className="flex flex-col lg:flex-row gap-5">
                     <span className="text-2xl my-3 ps-10">
                       <ul className="list-disc">
@@ -123,12 +126,14 @@ export default function Rockzfx() {
               </div>
             </div>
             <div className="lg:col-span-6 col-span-12 w-full  items-center justify-end lg:flex  mt-5  hidden ">
-              <Image
-                className="relativepos  "
-                src="/csimages/rzfxmobiles.png"
-                alt="Background 1"
-                fill
-              />
+              <RevealOnScroll>
+                <Image
+                  className="relativepos  "
+                  src="/csimages/rzfxmobiles.png"
+                  alt="Background 1"
+                  fill
+                />
+              </RevealOnScroll>
             </div>
           </div>
         </div>
@@ -140,11 +145,11 @@ export default function Rockzfx() {
                   03
                 </span>
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
-                  Problem Statement
+                  <AnimatedText3 text="Problem Statement"></AnimatedText3>
                 </span>
-                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
-                <div className="border-b-[10px] border-r-[10px] border-[#22CADB] bg-white w-full rounded-3xl drop-shadow-xl  bg-opacity-5 mt-10">
-                  <div className="text-xl  bg-white  bg-opacity-40  rounded-2xl  px-5 pt-10 pb-5 gap-10  shadow-xl  flex flex-col lg:flex-row  items-center">
+                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]  bg-[#22CADB]"></div>
+                <div className="border-b-[10px] border-r-[10px] border-[#22CADB] bg-white w-full rounded-3xl drop-shadow-xl  bg-opacity-5 mt-10 h-full ">
+                  <div className="text-lg  bg-white  bg-opacity-40  rounded-2xl  px-5 pt-10 pb-5 gap-5  shadow-xl  flex flex-col lg:flex-row  items-center">
                     <ul className="list-disc pl-10 gap-2 flex flex-col order-2 lg:order-1  ">
                       <li> Limited Access to Information</li>
                       <li> Complexity of Financial Markets</li>
@@ -174,10 +179,10 @@ export default function Rockzfx() {
                   03
                 </span>
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold pt-10 lg:pt-0">
-                  Solution Statement
+                  <AnimatedText3 text="Solution Statement"></AnimatedText3>
                 </span>
-                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
-                <div className="border-l-[10px] border-t-[10px] border-[#22CADB] bg-white w-full rounded-3xl drop-shadow-xl   bg-opacity-5 lg:mt-10">
+                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]  bg-[#22CADB]"></div>
+                <div className="border-l-[10px] border-t-[10px] border-[#22CADB] bg-white w-full rounded-3xl drop-shadow-xl   bg-opacity-5 lg:mt-10 h-full">
                   <div className="text-xl  bg-white  bg-opacity-40  rounded-2xl  px-5 pt-10 pb-5 gap-5  flex  flex-col lg:flex-row  items-center">
                     <ul className="list-disc pl-10 gap-2 flex flex-col  order-2 lg:order-1 ">
                       <li>Enhanced Market Information Access.</li>
@@ -212,7 +217,7 @@ export default function Rockzfx() {
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Design Process
                 </span>
-                <div className="h-1 w-44 border-2 my-3 lg:mb-10 border-[#22CADB]"></div>
+                <div className="h-1 w-44 border-2 my-3 lg:mb-10 border-[#22CADB]  bg-[#22CADB]"></div>
               </div>
               <div className="flex lg:flex-row flex-col justify-between lg:w-[80%] w-11/12 gap-5 lg:gap-0 ">
                 <div className="flex flex-col items-center gap-2">
@@ -245,53 +250,60 @@ export default function Rockzfx() {
               <div className="flex flex-col justify-between w-[85%] mt-10 ">
                 <div className="lg:flex hidden justify-between w-full">
                   <div className="flex  items-center w-60 h-60 ">
-                    <Image
-                      className=" relativepos "
-                      src="/csimages/dp1.png"
-                      alt="Background 1"
-                      fill
-                    />
+                    <RevealOnScroll>
+                      <Image
+                        className=" relativepos "
+                        src="/csimages/dp1.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </RevealOnScroll>
                   </div>
 
                   <div className="flex items-center w-60 h-60">
-                    <Image
-                      className=" relativepos "
-                      src="/csimages/dp2.png"
-                      alt="Background 1"
-                      fill
-                      // Ensure the image covers the container without stretching
-                    />
+                    <RevealOnScroll>
+                      <Image
+                        className=" relativepos "
+                        src="/csimages/dp2.png"
+                        alt="Background 1"
+                        fill
+                        // Ensure the image covers the container without stretching
+                      />
+                    </RevealOnScroll>
                   </div>
                   <div className="flex items-center w-60 h-60">
-                    <Image
-                      className=" relativepos "
-                      src="/csimages/dp3.png"
-                      alt="Background 1"
-                      fill
-                      // Ensure the image covers the container without stretching
-                    />
+                    <RevealOnScroll>
+                      <Image
+                        className=" relativepos "
+                        src="/csimages/dp3.png"
+                        alt="Background 1"
+                        fill
+                        // Ensure the image covers the container without stretching
+                      />
+                    </RevealOnScroll>
                   </div>
                 </div>
                 <div className="lg:flex hidden justify-around w-full">
                   <div className="flex  items-center w-60 h-60 ">
-                    <Image
-                      className=" relativepos "
-                      src="/csimages/dp4.png"
-                      alt="Background 1"
-                      fill
-                      // Ensure the image covers the container without stretching
-                    />
+                    <RevealOnScroll>
+                      <Image
+                        className=" relativepos "
+                        src="/csimages/dp4.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </RevealOnScroll>
                   </div>
 
                   <div className="lg:flex hidden items-center w-60 h-60  ">
-                    <Image
-                      className=" relativepos "
-                      src="/csimages/dp5.png"
-                      alt="Background 1"
-                      fill
-
-                      // Ensure the image covers the container without stretching
-                    />
+                    <RevealOnScroll>
+                      <Image
+                        className=" relativepos "
+                        src="/csimages/dp5.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </RevealOnScroll>
                   </div>
                 </div>
                 <div className="flex lg:flex-row flex-col gap-5 lg:gap-0 justify-around w-full">
@@ -323,18 +335,20 @@ export default function Rockzfx() {
                   05
                 </span>
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
-                  Typography & Colors
+                  <AnimatedText3 text="Typography & Colors"></AnimatedText3>
                 </span>
-                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
+                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]  bg-[#22CADB]"></div>
               </div>
               <div className="lg:p-20 flex flex-col md:flex-row w-full items-center justify-center">
                 <div className="flex items-center flex-col justify-center  w-full lg:w-2/5 ">
-                  <Image
-                    className=" relativepos  "
-                    src="/csimages/Patterns.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos  "
+                      src="/csimages/Patterns.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                   <span className="font-bold lg:text-5xl text-4xl text-[#22CADB]">
                     Urbanist
                   </span>
@@ -453,29 +467,32 @@ export default function Rockzfx() {
                   </div>
                 </div>
               </div>
-              <div className=" h-52 w-full flex justify-between">
-                <div className="bg-[#22CADB]  rounded-xl lg:w-[30%] w-[40%] flex items-center justify-center text-white h-full font-semibold lg:text-3xl text-xl">
-                  22CADB <br /> Primary Color
+              <RevealOnScroll>
+                <div className=" h-52 w-full flex justify-between">
+                  <div className="bg-[#22CADB]  rounded-xl lg:w-[30%] w-[40%] flex items-center justify-center text-white h-full font-semibold lg:text-3xl text-xl">
+                    22CADB <br /> Primary Color
+                  </div>
+
+                  <div className="bg-[#E6F8FA]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-black h-full  font-semibold lg:text-3xl text-xl">
+                    <span className="-rotate-90">E6F8FA </span>
+                  </div>
+                  <div className="bg-[#000]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
+                    <span className="-rotate-90">00000 </span>
+                  </div>
+                  <div className="bg-[#222]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
+                    <span className="-rotate-90">22222 </span>
+                  </div>
+                  <div className="bg-[#AEAEAE]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
+                    <span className="-rotate-90">AEAEAE </span>
+                  </div>
+                  <div className="bg-[#616161]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
+                    <span className="-rotate-90">616161 </span>
+                  </div>
+                  <div className="bg-[#2C2C2C]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
+                    <span className="-rotate-90">2C2C2C </span>
+                  </div>
                 </div>
-                <div className="bg-[#E6F8FA]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-black h-full  font-semibold lg:text-3xl text-xl">
-                  <span className="-rotate-90">E6F8FA </span>
-                </div>
-                <div className="bg-[#000]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
-                  <span className="-rotate-90">00000 </span>
-                </div>
-                <div className="bg-[#222]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
-                  <span className="-rotate-90">22222 </span>
-                </div>
-                <div className="bg-[#AEAEAE]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
-                  <span className="-rotate-90">AEAEAE </span>
-                </div>
-                <div className="bg-[#616161]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
-                  <span className="-rotate-90">616161 </span>
-                </div>
-                <div className="bg-[#2C2C2C]  rounded-xl lg:w-[5%] w-[9%] flex items-center justify-center text-white h-full  font-semibold lg:text-3xl text-xl">
-                  <span className="-rotate-90">2C2C2C </span>
-                </div>
-              </div>
+              </RevealOnScroll>
             </div>
           </div>
         </div>
@@ -489,29 +506,29 @@ export default function Rockzfx() {
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
                   Project scheduling
                 </span>
-                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
+                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]  bg-[#22CADB]"></div>
               </div>
 
               <div className="flex flex-col lg:flex-row items-center justify-center gap-5 w-full ">
                 <div className="flex items-center lg:w-1/2 w-full ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/ps1.png"
-                    alt="Background 1"
-                    fill
-
-                    // Ensure the image covers the container without stretching
-                  />
+                  <RevealOnScrollLeft>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/ps1.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScrollLeft>
                 </div>
                 <div className="flex items-center lg:w-1/2  w-full ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/ps2.png"
-                    alt="Background 1"
-                    fill
-
-                    // Ensure the image covers the container without stretching
-                  />
+                  <RevealOnScrollX>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/ps2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScrollX>
                 </div>
               </div>
             </div>
@@ -526,20 +543,20 @@ export default function Rockzfx() {
                   07
                 </span>
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
-                  Wire Frames
+                  <AnimatedText3 text="Wire Frames"></AnimatedText3>
                 </span>
-                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
+                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]  bg-[#22CADB]"></div>
               </div>
               <div className="flex items-center justify-center  w-full">
                 <div className="flex items-center w-full   ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/wf1.png"
-                    alt="Background 1"
-                    fill
-
-                    // Ensure the image covers the container without stretching
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/wf1.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                 </div>
               </div>
             </div>
@@ -550,20 +567,24 @@ export default function Rockzfx() {
           <div className="w-[100%] grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
               <div className="flex items-center  pt-20   ">
-                <Image
-                  className=" relativepos "
-                  src="/csimages/wf2.png"
-                  alt="Background 1"
-                  fill
-                />
+                <RevealOnScrollLeft>
+                  <Image
+                    className=" relativepos "
+                    src="/csimages/wf2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </RevealOnScrollLeft>
               </div>
               <div className="lg:flex items-center  hidden    ">
-                <Image
-                  className=" relativepos "
-                  src="/csimages/wf2.png"
-                  alt="Background 1"
-                  fill
-                />
+                <RevealOnScrollX>
+                  <Image
+                    className=" relativepos "
+                    src="/csimages/wf2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </RevealOnScrollX>
               </div>
             </div>
           </div>
@@ -577,19 +598,21 @@ export default function Rockzfx() {
                   08
                 </span>
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
-                  Visual Design
+                  <AnimatedText3 text="Visual Design"></AnimatedText3>
                 </span>
-                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
+                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]  bg-[#22CADB]"></div>
               </div>
 
               <div className="flex items-center justify-center  w-full">
                 <div className="flex items-center w-full   ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/Overview.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/Overview.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                 </div>
               </div>
             </div>
@@ -599,12 +622,14 @@ export default function Rockzfx() {
           <div className="w-[100%] grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
               <div className="flex items-center  pt-20   ">
-                <Image
-                  className=" relativepos "
-                  src="/csimages/vd2.png"
-                  alt="Background 1"
-                  fill
-                />
+                <RevealOnScroll>
+                  <Image
+                    className=" relativepos "
+                    src="/csimages/vd2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </RevealOnScroll>
               </div>
             </div>
           </div>
@@ -618,53 +643,63 @@ export default function Rockzfx() {
                   09
                 </span>
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
-                  Mock Up
+                  <AnimatedText3 text="Mock Up"></AnimatedText3>
                 </span>
-                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]"></div>
+                <div className="h-1 w-44 border-2 my-3 mb-10 border-[#22CADB]  bg-[#22CADB]"></div>
               </div>
 
               <div className="flex items-center justify-center  w-full bg-rzfx-bg9 bg-cover bg-center bg-no-repeat p-10 flex-col md:flex-row">
                 <div className="flex items-center lg:w-1/3  w-11/12   ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/iphonerzfx.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScrollLeft>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/iphonerzfx.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScrollLeft>
                 </div>
                 <div className="flex items-center  lg:w-1/2 w-full pt-10 lg:pt-0 ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/laptopmu.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/laptopmu.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                 </div>
               </div>
               <div className="flex items-center justify-center  w-full bg-rzfx-bg10 bg-cover bg-center bg-no-repeat p-10 flex-col md:flex-row gap-10">
                 <div className="flex items-center  lg:w-[20%]  w-8/12   ">
-                  <Image
-                    className=" relativepos  w-full"
-                    src="/csimages/mu1.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos  w-full"
+                      src="/csimages/mu1.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                 </div>
                 <div className="flex items-center  lg:w-[20%]  w-8/12 lg:pb-20 lg:mb-20  ">
-                  <Image
-                    className=" relativepos w-full"
-                    src="/csimages/mu2.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos w-full"
+                      src="/csimages/mu2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                 </div>
                 <div className="flex items-center lg:w-[20%]  w-8/12  ">
-                  <Image
-                    className=" relativepos w-full "
-                    src="/csimages/mu3.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos w-full "
+                      src="/csimages/mu3.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                 </div>
               </div>
             </div>
@@ -679,19 +714,21 @@ export default function Rockzfx() {
                   10
                 </span>
                 <span className="lg:text-5xl text-4xl text-[#22CADB] font-semibold">
-                  Testing
+                  <AnimatedText3 text="Testing"></AnimatedText3>
                 </span>
-                <div className="h-1 w-44 border-2 my-3 border-[#22CADB]"></div>
+                <div className="h-1 w-44 border-2 my-3 border-[#22CADB]  bg-[#22CADB]"></div>
               </div>
 
               <div className="flex items-center justify-center">
                 <div className="flex items-center  lg:pt-20  lg:w-full  w-11/12  ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/step10.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/step10.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                 </div>
               </div>
             </div>

@@ -113,12 +113,12 @@ export const TypewriterText = ({ text }: { text: string }) => {
 };
 export const AnimatedText3 = ({ text }: { text: string }) => {
   const variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.9,
         ease: 'easeInOut',
       },
     },

@@ -4,15 +4,14 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
-import { SlideFromRight } from '../../../../components/pagetransition';
-import { csimages, backgroundimages } from '../../webprojects/animation';
+import { SlideFromRight } from '@/app/components/pagetransition';
 
 import {
   AnimatedText2,
   AnimatedText3,
   TypewriterText,
-} from '../../../../components/animatedtext';
-import RevealOnScroll from '@/app/components/revealelement';
+} from '@/app/components/animatedtext';
+import { RevealOnScroll } from '@/app/components/revealelement';
 
 const urbanist = Inter({
   subsets: ['latin'],
@@ -20,9 +19,7 @@ const urbanist = Inter({
 });
 
 export default function Nht() {
-  useEffect(() => {
-    csimages();
-  });
+  useEffect(() => {});
 
   return (
     <SlideFromRight>
