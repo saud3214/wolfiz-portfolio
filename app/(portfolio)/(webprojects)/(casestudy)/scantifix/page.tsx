@@ -4,19 +4,21 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { Urbanist } from 'next/font/google';
-import { SlideFromRight } from '../../../../components/pagetransition';
-import { csimages, backgroundimages } from '../../webprojects/animation';
+import { SlideFromRight } from '@/app/components/pagetransition';
 
-import { AnimatedText2 } from '../../../../components/animatedtext';
+import { AnimatedText2, AnimatedText3 } from '@/app/components/animatedtext';
+import {
+  RevealOnScroll,
+  RevealOnScrollX,
+  RevealOnScrollLeft,
+} from '@/app/components/revealelement';
 const urbanist = Urbanist({
   subsets: ['latin'],
   weight: ['400', '700', '500', '600'],
 });
 
 export default function Scantifix() {
-  useEffect(() => {
-    csimages();
-  });
+  useEffect(() => {});
 
   return (
     <SlideFromRight>
@@ -46,13 +48,15 @@ export default function Scantifix() {
             </div>
             <div className="flex  lg:col-span-7 col-span-12 items-center justify-center  gap-3 pt-10 lg:pt-0">
               <div className="flex  items-center  lg:w-4/5 w-full    ">
-                <Image
-                  className=" relativepos  "
-                  src="/scantifix/laptop1.png"
-                  alt="Background 1"
-                  fill
-                  priority
-                />
+                <RevealOnScrollX>
+                  <Image
+                    className=" relativepos  "
+                    src="/scantifix/laptop1.png"
+                    alt="Background 1"
+                    fill
+                    priority
+                  />
+                </RevealOnScrollX>
               </div>
             </div>
           </div>
@@ -67,7 +71,7 @@ export default function Scantifix() {
                     01
                   </span>
                   <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D]">
-                    About Project
+                    <AnimatedText3 text="About Project"></AnimatedText3>
                   </span>
                 </div>
                 <span className=" text-gray-400 lg:pr-20">
@@ -87,7 +91,8 @@ export default function Scantifix() {
                     </span>
                     <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1">
                       <div className="h-10 w-1 bg-pink-300"></div>
-                      Objective & Goals
+
+                      <AnimatedText3 text="Objective & Goals"></AnimatedText3>
                     </span>
                   </div>
                 </div>
@@ -111,12 +116,14 @@ export default function Scantifix() {
             </div>
             <div className="flex  lg:col-span-6 col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
               <div className="flex  items-center    lg:w-10/12 w-8/12 pt-10 lg:pt-0   ">
-                <Image
-                  className=" relativepos  "
-                  src="/scantifix/iphone.png"
-                  alt="Background 1"
-                  fill
-                />
+                <RevealOnScroll>
+                  <Image
+                    className=" relativepos  "
+                    src="/scantifix/iphone.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </RevealOnScroll>
               </div>
             </div>
           </div>
@@ -143,7 +150,8 @@ export default function Scantifix() {
                   </span>
                   <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                     <div className="h-10 w-1 bg-pink-300"></div>
-                    Problem statement
+
+                    <AnimatedText3 text="Problem statement"></AnimatedText3>
                   </span>
                 </div>
                 <span className=" text-gray-400 lg:w-10/12 2xl:pr-5">
@@ -161,7 +169,8 @@ export default function Scantifix() {
                   <div className="flex items-start justify-start  flex-col    ">
                     <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 lg:pt-20">
                       <div className="h-10 w-1 bg-pink-300"></div>
-                      Solution statement
+
+                      <AnimatedText3 text="Solution statement"></AnimatedText3>
                     </span>
                   </div>
                 </div>
@@ -188,13 +197,15 @@ export default function Scantifix() {
                 </span>
               </div>
               <div className="flex  items-center py-10     ">
-                <Image
-                  className=" relativepos  "
-                  src="/scantifix/dp.png"
-                  alt="Background 1"
-                  fill
-                  priority
-                />
+                <RevealOnScroll>
+                  <Image
+                    className=" relativepos  "
+                    src="/scantifix/dp.png"
+                    alt="Background 1"
+                    fill
+                    priority
+                  />
+                </RevealOnScroll>
               </div>
             </div>
           </div>
@@ -209,7 +220,8 @@ export default function Scantifix() {
                 </span>
                 <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
-                  Colors & Typography
+
+                  <AnimatedText3 text="Colors & Typography"></AnimatedText3>
                 </span>
               </div>
 
@@ -344,13 +356,15 @@ export default function Scantifix() {
                 </div>
 
                 <div className="flex  items-center  lg:w-1/4  w-2/5    ">
-                  <Image
-                    className=" relativepos  "
-                    src="/scantifix/color.png"
-                    alt="Background 1"
-                    fill
-                    priority
-                  />
+                  <RevealOnScrollX>
+                    <Image
+                      className=" relativepos  "
+                      src="/scantifix/color.png"
+                      alt="Background 1"
+                      fill
+                      priority
+                    />
+                  </RevealOnScrollX>
                 </div>
               </div>
             </div>
@@ -372,24 +386,26 @@ export default function Scantifix() {
 
               <div className="flex flex-col lg:flex-row items-center justify-center gap-5 w-full py-10 ">
                 <div className="flex items-center lg:w-1/2  w-11/12 ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/ps1.png"
-                    alt="Background 1"
-                    fill
-                    objectFit="contains"
-                    // Ensure the image covers the container without stretching
-                  />
+                  <RevealOnScrollLeft>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/ps1.png"
+                      alt="Background 1"
+                      fill
+                      objectFit="contains"
+                    />
+                  </RevealOnScrollLeft>
                 </div>
                 <div className="flex items-center lg:w-1/2  w-11/12 ">
-                  <Image
-                    className=" relativepos "
-                    src="/csimages/ps2.png"
-                    alt="Background 1"
-                    fill
-                    objectFit="contains"
-                    // Ensure the image covers the container without stretching
-                  />
+                  <RevealOnScrollX>
+                    <Image
+                      className=" relativepos "
+                      src="/csimages/ps2.png"
+                      alt="Background 1"
+                      fill
+                      objectFit="contains"
+                    />
+                  </RevealOnScrollX>
                 </div>
               </div>
             </div>
@@ -406,27 +422,30 @@ export default function Scantifix() {
                   </span>
                   <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                     <div className="h-10 w-1 bg-pink-300"></div>
-                    Wire Frames
+
+                    <AnimatedText3 text="Wire Frames"></AnimatedText3>
                   </span>
                 </div>
-                <div className="flex w-full items-center justify-center lg:px-20 pt-10">
-                  <div className="flex  items-center  lg:w-1/2 mb-3  w-full relative ">
-                    <Image
-                      className="  relativepos "
-                      src="/scantifix/wf1.png"
-                      alt="Background 1"
-                      fill
-                    />
+                <RevealOnScroll>
+                  <div className="flex w-full items-center justify-center lg:px-20 pt-10">
+                    <div className="flex  items-center  lg:w-1/2 mb-3  w-full relative ">
+                      <Image
+                        className="  relativepos "
+                        src="/scantifix/wf1.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                    <div className="flex  items-center  lg:w-1/2 mb-3  w-full relative  ">
+                      <Image
+                        className="  relativepos2 "
+                        src="/scantifix/wf2.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
                   </div>
-                  <div className="flex  items-center  lg:w-1/2 mb-3  w-full relative  ">
-                    <Image
-                      className="  relativepos2 "
-                      src="/scantifix/wf2.png"
-                      alt="Background 1"
-                      fill
-                    />
-                  </div>
-                </div>
+                </RevealOnScroll>
               </div>
             </div>
           </div>
@@ -441,17 +460,20 @@ export default function Scantifix() {
                 </span>
                 <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
-                  Virtual Design
+
+                  <AnimatedText3 text="Virtual Design"></AnimatedText3>
                 </span>
               </div>
               <div className="flex items-center justify-center  w-full">
                 <div className="flex items-center w-full   ">
-                  <Image
-                    className=" relativepos "
-                    src="/scantifix/vd.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos "
+                      src="/scantifix/vd.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
                 </div>
               </div>
             </div>
@@ -462,21 +484,25 @@ export default function Scantifix() {
           <div className="w-full grid grid-cols-12 items-start justify-center mb-5 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
               <div className="flex items-center  lg:pt-20 lg:w-[45%]  w-9/12  ">
-                <Image
-                  className=" relativepos "
-                  src="/scantifix/vd2.png"
-                  alt="Background 1"
-                  fill
-                />
+                <RevealOnScrollLeft>
+                  <Image
+                    className=" relativepos "
+                    src="/scantifix/vd2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </RevealOnScrollLeft>
               </div>
               <div className="lg:flex items-center  hidden  w-[45%]   ">
-                <Image
-                  className=" relativepos "
-                  src="/scantifix/vd3.png"
-                  alt="Background 1"
-                  fill
-                  // Ensure the image covers the container without stretching
-                />
+                <RevealOnScrollX>
+                  <Image
+                    className=" relativepos "
+                    src="/scantifix/vd3.png"
+                    alt="Background 1"
+                    fill
+                    // Ensure the image covers the container without stretching
+                  />
+                </RevealOnScrollX>
               </div>
             </div>
           </div>
@@ -491,28 +517,31 @@ export default function Scantifix() {
                 </span>
                 <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
-                  Mockup
+
+                  <AnimatedText3 text="Mockup"></AnimatedText3>
                 </span>
               </div>
 
               <div className="lg:flex items-center  w-1/2     ">
-                <Image
-                  className=" relativepos "
-                  src="/scantifix/iphone2.png"
-                  alt="Background 1"
-                  fill
-                  // Ensure the image covers the container without stretching
-                />
+                <RevealOnScroll>
+                  <Image
+                    className=" relativepos "
+                    src="/scantifix/iphone2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </RevealOnScroll>
               </div>
               <div className=" flex items-center justify-start w-full">
                 <div className="lg:flex items-center   w-10/12     ">
-                  <Image
-                    className=" relativepos "
-                    src="/scantifix/laptop2.png"
-                    alt="Background 1"
-                    fill
-                    // Ensure the image covers the container without stretching
-                  />
+                  <RevealOnScrollLeft>
+                    <Image
+                      className=" relativepos "
+                      src="/scantifix/laptop2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScrollLeft>
                 </div>
               </div>
             </div>
@@ -528,38 +557,40 @@ export default function Scantifix() {
                 </span>
                 <span className="font-bold lg:text-6xl text-4xl text-[#2D2D2D] flex items-center justify-center gap-1 ">
                   <div className="h-10 w-1 bg-pink-300"></div>
-                  Testing
+
+                  <AnimatedText3 text="Testing"></AnimatedText3>
                 </span>
               </div>
+              <RevealOnScroll>
+                <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-10 py-10">
+                  <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                    <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                      Test Planning & Control
+                    </p>
+                  </div>
+                  <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                    <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                      Test Analysis & Design
+                    </p>
+                  </div>
+                  <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                    <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                      Test Implement& Execution
+                    </p>
+                  </div>
+                  <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                    <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                      Evaluate Exit Criteria & Reporting
+                    </p>
+                  </div>
 
-              <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-10 py-10">
-                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
-                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
-                    Test Planning & Control
-                  </p>
+                  <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
+                    <p className="text-center text-gray-800 font-medium text-3xl px-4">
+                      Test Closure Activities
+                    </p>
+                  </div>
                 </div>
-                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
-                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
-                    Test Analysis & Design
-                  </p>
-                </div>
-                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
-                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
-                    Test Implement& Execution
-                  </p>
-                </div>
-                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
-                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
-                    Evaluate Exit Criteria & Reporting
-                  </p>
-                </div>
-
-                <div className="w-60 h-60 rounded-full bg-gradient-to-br from-[#F9E96E]  to-[#ED6BF8] flex items-center justify-center shadow-lg">
-                  <p className="text-center text-gray-800 font-medium text-3xl px-4">
-                    Test Closure Activities
-                  </p>
-                </div>
-              </div>
+              </RevealOnScroll>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
   width = '100%',
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { margin: '-5% 0px -15% 0px' });
+  const isInView = useInView(ref, { margin: '-10% 0px -15% 0px' });
   const mainControls = useAnimation();
   const slideControls = useAnimation();
 
