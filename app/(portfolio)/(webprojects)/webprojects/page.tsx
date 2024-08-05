@@ -10,7 +10,6 @@ import { csimages, backgroundimages } from '../webprojects/animation';
 import { Archivo } from 'next/font/google';
 import { easeIn, motion } from 'framer-motion';
 import { SlideFromSide } from '../../../components/pagetransition';
-
 import {
   AnimatedText,
   AnimatedText2,
@@ -38,7 +37,7 @@ export default function Webprojects() {
         swiper.slides.forEach((slide: HTMLElement) => {
           const slideProgress = (slide as any).progress; // Type casting here
           const innerOffset = swiper.height * interleaveOffset;
-          const innerTranslate = slideProgress * innerOffset;
+          const innerTranslate = slideProgress * innerOffset * -1;
 
           gsap.set(slide.querySelector('.slide-inner'), {
             y: innerTranslate,

@@ -5,14 +5,14 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { SlideFromRight } from '@/app/components/pagetransition';
-
+import useSmoothScroll from '@/app/components/ss';
 import {
   AnimatedText2,
   AnimatedText3,
   TypewriterText,
 } from '@/app/components/animatedtext';
 import { RevealOnScroll } from '@/app/components/revealelement';
-
+import CursorDot from '@/app/components/cursordot';
 const urbanist = Inter({
   subsets: ['latin'],
   weight: ['400', '700', '500', '600'],
@@ -20,12 +20,14 @@ const urbanist = Inter({
 
 export default function Nht() {
   useEffect(() => {});
-
+  useSmoothScroll();
   return (
     <SlideFromRight>
       <div
         className={` w-full items-center justify-center flex flex-col ${urbanist.className}`}
       >
+        <CursorDot />
+
         <div className="bg-nht-bg1 bg-cover bg-center bg-no-repeat   w-full  items-center justify-center flex flex-col h-[100vh] ">
           <div className=" grid grid-cols-12 items-start justify-center mb-5  lg:w-[80%] ">
             <div className="flex  col-span-12 items-center justify-center flex-col  md:flex-row gap-3">
@@ -45,7 +47,7 @@ export default function Nht() {
           </div>
         </div>
 
-        <div className="bg-nht-bg2 bg-contain bg-right bg-no-repeat   w-full  items-center justify-center flex flex-col ">
+        <div className="bg-nhtbg1 bg-cover bg-right bg-no-repeat   w-full  items-center justify-center flex flex-col ">
           <div className=" grid grid-cols-12 items-start justify-center mb-5  lg:w-[80%] w-11/12  ">
             <div className="flex flex-col  col-span-12 items-center justify-center  gap-3">
               <div className="flex flex-col items-center justify-center pt-10">
