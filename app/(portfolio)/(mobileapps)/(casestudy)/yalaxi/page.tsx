@@ -3,6 +3,16 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { Poppins } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
+import {
+  textColor,
+  largeImage,
+} from '@/app/(portfolio)/(webprojects)/webprojects/animation';
+import useSmoothScroll from '@/app/components/ss';
+import {
+  RevealOnScroll,
+  RevealOnScrollX,
+  RevealOnScrollLeft,
+} from '@/app/components/revealelement';
 
 const urbanist = Poppins({
   subsets: ['latin'],
@@ -10,33 +20,74 @@ const urbanist = Poppins({
 });
 
 export default function Yalaxi() {
-  useEffect(() => {});
+  useSmoothScroll();
+  useEffect(() => {
+    textColor();
+    largeImage();
+  });
 
   return (
     <SlideFromRight>
       <div
-        className={` w-full items-center justify-center flex flex-col text-white ${urbanist.className}`}
+        className={` w-full items-center justify-center flex flex-col bg-[#282727]   ${urbanist.className}`}
       >
-        <div className=" bg-ylbg1 bg-cover bg-center bg-no-repeat w-full items-center justify-center flex h-[100vh]   ">
-          <div className="grid grid-cols-12 w-11/12   items-start justify-center  ">
-            <div className="flex flex-col col-span-6 items-start justify-s pt-10 text-center gap-5">
-              <div className="w-full flex gap-5 items-center justify-center ">
-                <div className="px-10 py-3 border border-white rounded-3xl">
-                  UI Casestudy
-                </div>
-                <div className="px-10 py-3 border border-white rounded-3xl">
-                  Yalaxi Mobile App
-                </div>
+        <div className=" w-full items-start justify-center flex    ">
+          <div className="grid grid-cols-12 w-11/12   items-start justify-center   ">
+            <div className="col-span-12 items-center justify-center  flex flex-col  pt-20 cursor-default ">
+              <div className="flex items-center  relative   pb-10  ">
+                <RevealOnScrollLeft>
+                  <Image
+                    className=" relativepos"
+                    src="/mobileapps/yalaxi/logoorng.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </RevealOnScrollLeft>
               </div>
-            </div>
-            <div className="flex flex-col col-span-6 items-center justify-center  text-center gap-5">
-              <div className="flex items-center  relative w-2/3  ">
+              <RevealOnScroll>
+                <div className=" flex flex-col w-full items-center justify-center  text-[7vw] leading-[120px] text-[#4a4848] imgtrig font-bold">
+                  <span className="hover-text ">YALAXI IS </span>
+                  <span className="hover-text">FAST. SAFE. SIMPLE.</span>
+                </div>
+              </RevealOnScroll>
+              <div className="flex items-center  relative  mt-10  ">
                 <Image
-                  className=" relativepos"
-                  src="/mobileapps/yalaxi/iphone.png"
+                  className=" relativepos  "
+                  src="/mobileapps/yalaxi/down.png"
                   alt="Background 1"
                   fill
                 />
+              </div>
+
+              <div className="flex items-center  relative   mt-10 image-container  ">
+                <Image
+                  className=" relativepos rounded-3xl responsive-image"
+                  src="/mobileapps/yalaxi/bg1.png"
+                  alt="Background 1"
+                  fill
+                />
+              </div>
+
+              <div className="grid grid-cols-12 items-center justify-center w-full py-10">
+                <div className="col-span-6 items-start justify-center ">
+                  <RevealOnScrollLeft>
+                    <div className="flex flex-col items-start justify-center">
+                      <div className=" flex flex-col w-full items-start justify-center  text-6xl  text-[#4a4848] font-bold">
+                        <span className="hover-text capitalize ">Project </span>
+                        <span className="hover-text capitalize"> overview</span>
+                      </div>
+
+                      <span className="text-white pt-5 w-8/12">
+                        Efficient urban transportation is crucial for growing
+                        cities. This case study explores Yalaxi App, enhancing
+                        mobility through reliable and affordable solutions. We
+                        examine its strategies, innovations, challenges, and
+                        impacts, providing insights into the transport sectors
+                        evolution and technologys role.
+                      </span>
+                    </div>
+                  </RevealOnScrollLeft>
+                </div>
               </div>
             </div>
           </div>

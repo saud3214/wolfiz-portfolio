@@ -537,3 +537,17 @@ img.clipPath-img.active {
   transform: scale(3);
   opacity: 0.7;
 }
+
+.hover-text span {
+  height: auto !important;
+  display: inline-block;
+}
+
+.image-container {
+  width: 10%;
+  overflow: hidden;
+}
+
+.responsive-image {
+  height: auto; /* Maintain aspect ratio */
+}

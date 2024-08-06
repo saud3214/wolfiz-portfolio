@@ -2,7 +2,7 @@
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-
+import gsap from 'gsap';
 // 1. Wave Effect
 export const AnimatedText = ({ text }: { text: string }) => {
   const container = {
@@ -351,6 +351,52 @@ export const FlipText = ({ text }: { text: string }) => {
           {letter === ' ' ? '\u00A0' : letter}
         </motion.span>
       ))}
+    </div>
+  );
+};
+
+interface GradientHoverTextProps {
+  text: string;
+  initialGradient: string;
+  hoverGradient: string;
+}
+
+export const GradientHoverText: React.FC<GradientHoverTextProps> = ({
+  text,
+  initialGradient,
+  hoverGradient,
+}) => {
+  const textRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseEnter = () => {
+    gsap.to(textRef.current, {
+      backgroundImage: hoverGradient,
+      backgroundClip: 'text',
+      textFillColor: 'transparent',
+      duration: 0.5,
+      ease: 'power2.inOut',
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(textRef.current, {
+      backgroundImage: initialGradient,
+      backgroundClip: 'text',
+      textFillColor: 'transparent',
+      duration: 0.5,
+      ease: 'power2.inOut',
+    });
+  };
+
+  return (
+    <div
+      ref={textRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="text-4xl font-bold text-transparent bg-clip-text"
+      style={{ backgroundImage: initialGradient }}
+    >
+      {text}
     </div>
   );
 };

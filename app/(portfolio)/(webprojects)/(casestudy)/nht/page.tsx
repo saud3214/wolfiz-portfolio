@@ -47,7 +47,7 @@ export default function Nht() {
           </div>
         </div>
 
-        <div className="bg-nhtbg1 bg-cover bg-right bg-no-repeat   w-full  items-center justify-center flex flex-col ">
+        <div className="bg-nht-bg2 bg-contain bg-right bg-no-repeat   w-full  items-center justify-center flex flex-col ">
           <div className=" grid grid-cols-12 items-start justify-center mb-5  lg:w-[80%] w-11/12  ">
             <div className="flex flex-col  col-span-12 items-center justify-center  gap-3">
               <div className="flex flex-col items-center justify-center pt-10">
