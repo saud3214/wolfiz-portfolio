@@ -156,15 +156,60 @@ export const largeImage = () => {
 
   // Set up the scroll-triggered animation
   gsap.to('.image-container', {
-    width: '80%', // Scale the image to 1.5 times its original size
+    width: '90%', // Scale the image to 1.5 times its original size
     ease: 'none', // No easing
-
     scrollTrigger: {
-      trigger: '.cursor-default', // Trigger animation when scrolling within this container
-      start: 'top 20%', // Start when the top of the container reaches the top of the viewport
-      end: 'bottom 60%', // End when the bottom of the container reaches the top of the viewport
+      trigger: '.imgtrig ', // Trigger animation when scrolling within this container
+      start: 'top 40%', // Start when the top of the container reaches the top of the viewport
+      end: 'bottom 10%', // End when the bottom of the container reaches the top of the viewport
       scrub: true, // Link the animation progress to the scroll position
-      // markers: true, // Enable markers for debugging (optional)
     },
   });
+};
+
+export const movingText = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('.moving-text-1', {
+    xPercent: -100,
+    repeat: -1,
+    delay: 1,
+    duration: 40,
+    ease: 'power1.in',
+    modifiers: {
+      xPercent: gsap.utils.unitize((x) => parseFloat(x) % 100),
+    },
+  });
+
+  gsap.to('.moving-text-2', {
+    xPercent: 100,
+    repeat: -1,
+    delay: 1,
+    duration: 40,
+    ease: 'power1.in',
+    modifiers: {
+      xPercent: gsap.utils.unitize((x) => parseFloat(x) % 100),
+    },
+  });
+
+  gsap.fromTo(
+    '.card:not(:first-child)',
+    {
+      x: () => window.innerWidth / 2 + 100,
+      rotate: -90,
+    },
+    {
+      x: 0,
+      stagger: 0.5,
+      rotate: 0,
+      scrollTrigger: {
+        pin: '.container',
+        markers: true,
+        scrub: true,
+        start: 'top top',
+        end: '+=10000',
+        invalidateOnRefresh: true,
+      },
+    },
+  );
 };

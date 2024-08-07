@@ -3,16 +3,23 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { Poppins } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap-trial/ScrollTrigger';
 import {
   textColor,
   largeImage,
+  movingText,
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 import useSmoothScroll from '@/app/components/ss';
 import {
   RevealOnScroll,
   RevealOnScrollX,
   RevealOnScrollLeft,
+  RevealOnScrollLeftText,
+  RevealOnScrollLeftImage,
+  RevealOnScrollXImage,
 } from '@/app/components/revealelement';
+import AnimatedCards from '@/app/components/cards';
 
 const urbanist = Poppins({
   subsets: ['latin'],
@@ -24,6 +31,7 @@ export default function Yalaxi() {
   useEffect(() => {
     textColor();
     largeImage();
+    movingText();
   });
 
   return (
@@ -32,7 +40,7 @@ export default function Yalaxi() {
         className={` w-full items-center justify-center flex flex-col bg-[#282727]   ${urbanist.className}`}
       >
         <div className=" w-full items-start justify-center flex    ">
-          <div className="grid grid-cols-12 w-11/12   items-start justify-center   ">
+          <div className="grid grid-cols-12 w-full   items-start justify-center   ">
             <div className="col-span-12 items-center justify-center  flex flex-col  pt-20 cursor-default ">
               <div className="flex items-center  relative   pb-10  ">
                 <RevealOnScrollLeft>
@@ -68,13 +76,15 @@ export default function Yalaxi() {
                 />
               </div>
 
-              <div className="grid grid-cols-12 items-center justify-center w-full py-10">
+              <div className="grid grid-cols-12 items-center justify-center w-11/12 pt-20 ">
                 <div className="col-span-6 items-start justify-center ">
-                  <RevealOnScrollLeft>
-                    <div className="flex flex-col items-start justify-center">
+                  <RevealOnScrollLeftText>
+                    <div className="flex flex-col items-start justify-center ">
                       <div className=" flex flex-col w-full items-start justify-center  text-6xl  text-[#4a4848] font-bold">
-                        <span className="hover-text capitalize ">Project </span>
-                        <span className="hover-text capitalize"> overview</span>
+                        <span className="hover-text capitalize  ">
+                          Project{' '}
+                        </span>
+                        <span className="hover-text capitalize"> Overview</span>
                       </div>
 
                       <span className="text-white pt-5 w-8/12">
@@ -86,9 +96,74 @@ export default function Yalaxi() {
                         evolution and technologys role.
                       </span>
                     </div>
-                  </RevealOnScrollLeft>
+                  </RevealOnScrollLeftText>
+                </div>
+                <div className="col-span-6 items-end justify-end flex ">
+                  <div className="flex items-end  relative     ">
+                    <RevealOnScrollXImage>
+                      <Image
+                        className=" relativepos rounded-3xl responsive-image -rotate-[9deg]"
+                        src="/mobileapps/yalaxi/iOS app dock.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </RevealOnScrollXImage>
+                  </div>
                 </div>
               </div>
+              <div className="grid grid-cols-12 items-center justify-center w-11/12  ">
+                <div className="col-span-6 items-start justify-start flex ">
+                  <div className="flex items-start justify-start  relative     ">
+                    <RevealOnScrollLeftImage>
+                      <Image
+                        className=" relativepos rounded-3xl responsive-image rotate-[9deg]"
+                        src="/mobileapps/yalaxi/iOS app dock 2.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </RevealOnScrollLeftImage>
+                  </div>
+                </div>
+                <div className="col-span-6 items-start justify-center ">
+                  <RevealOnScrollXImage>
+                    <div className="flex flex-col items-end justify-end ps-5 text-end">
+                      <div className=" flex flex-col w-full items-end justify-end  text-6xl  text-[#4a4848] font-bold">
+                        <span className="hover-text capitalize  ">
+                          Solution{' '}
+                        </span>
+                        <span className="hover-text capitalize">
+                          {' '}
+                          statement
+                        </span>
+                      </div>
+
+                      <span className="text-white pt-5 w-8/12">
+                        Efficient urban transportation is crucial for growing
+                        cities. This case study explores Yalaxi App, enhancing
+                        mobility through reliable and affordable solutions. We
+                        examine its strategies, innovations, challenges, and
+                        impacts, providing insights into the transport sectors
+                        evolution and technologys role.
+                      </span>
+                    </div>
+                  </RevealOnScrollXImage>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex items-center justify-center py-10 overflow-hidden">
+          <div className="moving-text-container flex flex-col items-center space-y-4">
+            <div className="moving-text-1 text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#FE4B10] to-[#FE9900] uppercase whitespace-nowrap">
+              UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
+              UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
+              UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
+            </div>
+
+            <div className="moving-text-2 text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#FE4B10] to-[#FE9900] uppercase whitespace-nowrap">
+              UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
+              UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
+              UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
             </div>
           </div>
         </div>
@@ -96,97 +171,7 @@ export default function Yalaxi() {
         <div className=" bg-black w-full items-start justify-center flex    ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center  ">
             <div className="flex flex-col col-span-12 items-center justify-center pt-10 text-left ">
-              <div className="flex flex-col items-start justify-center w-10/12">
-                <div className="flex flex-col items-start justify-center border-b border-[#979797] pb-10">
-                  <span className="font-semibold text-4xl pb-10">
-                    Project Overview
-                  </span>
-                  <span className="text-normal w-9/12">
-                    Efficient urban transportation is crucial for growing
-                    cities. This case study explores Yalaxi App, enhancing
-                    mobility through reliable and affordable solutions. We
-                    examine its strategies, innovations, challenges, and
-                    impacts, providing insights into the transport sectors
-                    evolution and technologys role.
-                  </span>
-                </div>
-                <div className="flex flex-col items-start justify-center border-b border-[#979797] pb-10">
-                  <span className="font-semibold text-4xl py-10">
-                    Problem Statement
-                  </span>
-                  <span className="text-normal  w-9/12 text-[#FFFFFF]">
-                    Urban areas face congestion, unreliable transit, and high
-                    costs, limiting accessibility and efficiency. There is a
-                    need for reliable, affordable, and efficient transportation
-                    solutions to enhance urban mobility.
-                  </span>
-                </div>
-                <div className="flex flex-col items-start justify-center border-b border-[#979797] pb-10">
-                  <span className="font-semibold text-4xl py-10">
-                    Solution Statement
-                  </span>
-                  <span className="text-normal w-9/12 text-[#FFFFFF]">
-                    Yalaxi App provides a reliable, affordable, and efficient
-                    transportation platform, addressing congestion, unreliable
-                    transit, and high costs. It enhances urban mobility and
-                    accessibility through innovative features and strategic
-                    implementation.
-                  </span>
-                </div>
-              </div>
-
-              <div className="w-full grid grid-cols-12 items-center justify-center pt-16">
-                <div className="col-span-6 items-center justify-center relative h-full w-full">
-                  <div id="videoDiv" className="video-container w-full h-full ">
-                    <video
-                      id="roundvideo"
-                      autoPlay
-                      muted
-                      loop
-                      preload="yes"
-                      playsInline
-                      className=" w-full h-full"
-                    >
-                      <source
-                        src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down-sunny-day-austria-alps-europe-filmed-on-high.webm"
-                        type="video/mp4"
-                      />
-                    </video>
-                  </div>
-                </div>
-                <div className="col-span-6 items-center justify-center">
-                  <div className="flex items-center  relative   ">
-                    <Image
-                      className=" relativepos"
-                      src="/mobileapps/yalaxi/logo1.png"
-                      alt="Background 1"
-                      fill
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center  relative   w-full ">
-                <Image
-                  className=" relativepos "
-                  src="/mobileapps/yalaxi/banner.png"
-                  alt="Background 1"
-                  fill
-                />
-              </div>
-
-              <span className="lg:text-5xl text-2xl font-extrabold py-10 mt-10">
-                Design Process
-              </span>
-              <div className="flex items-center  relative  lg:w-10/12 w-full ">
-                <Image
-                  className=" relativepos "
-                  src="/mobileapps/sc/dp.png"
-                  alt="Background 1"
-                  fill
-                />
-              </div>
-
-              <div className=" flex flex-col items-center justify-center w-full pt-20 relative mt-10">
+              <div className=" flex flex-col items-center justify-center w-full pt-20 relative mt-10 text-white">
                 <span className="font-semibold text-[15vw] absolute  top-[10%]">
                   Poppins
                 </span>
@@ -534,6 +519,7 @@ export default function Yalaxi() {
             </div>
           </div>
         </div>
+        <div className="w-full relative "></div>
       </div>
     </SlideFromRight>
   );

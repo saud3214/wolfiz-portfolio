@@ -551,3 +551,40 @@ img.clipPath-img.active {
 .responsive-image {
   height: auto; /* Maintain aspect ratio */
 }
+
+.moving-text-container {
+  white-space: nowrap;
+}
+
+.spacer {
+  height: 60vh;
+  opacity: 0.2;
+}
+
+.cards {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: grey;
+}
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: plum;
+}
+
+.card:nth-child(odd) {
+  background: #a9a0dd;
+}
+
+.container {
+  background-color: grey;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
