@@ -191,25 +191,4 @@ export const movingText = () => {
       xPercent: gsap.utils.unitize((x) => parseFloat(x) % 100),
     },
   });
-
-  gsap.fromTo(
-    '.card:not(:first-child)',
-    {
-      x: () => window.innerWidth / 2 + 100,
-      rotate: -90,
-    },
-    {
-      x: 0,
-      stagger: 0.5,
-      rotate: 0,
-      scrollTrigger: {
-        pin: '.container',
-        markers: true,
-        scrub: true,
-        start: 'top top',
-        end: '+=10000',
-        invalidateOnRefresh: true,
-      },
-    },
-  );
 };
