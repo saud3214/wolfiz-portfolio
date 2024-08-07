@@ -191,9 +191,11 @@ export default function Yalaxi() {
                     </div>
                   </div>
                   <div className="flex flex-col w-1/4 ">
-                    <div className="bg-[#FE4B10] w-full h-40 flex text-end items-end justify-end text-3xl p-5">
-                      <span> #FE4B10</span>
-                    </div>
+                    <RevealOnScrollXImage>
+                      <div className="bg-[#FE4B10] w-full h-40 flex text-end items-end justify-end text-3xl p-5">
+                        <span> #FE4B10</span>
+                      </div>
+                    </RevealOnScrollXImage>
                   </div>
                 </div>
                 <div className="flex items-end justify-between w-full  ">
