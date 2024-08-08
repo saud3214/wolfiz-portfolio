@@ -197,9 +197,9 @@ export const movingText = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: card,
-        start: 'top 60%',
-        end: 'bottom 10%', // Adjust the end point for better visibility
-        toggleActions: 'play none none reverse',
+        start: 'top 1%',
+        end: 'bottom -50%', // Adjust the end point for better visibility
+        toggleActions: 'play reverse none reverse',
         markers: true, // Use markers to debug
       },
     });
@@ -213,7 +213,7 @@ export const movingText = () => {
         opacity: 1,
         duration: 0.7,
         ease: 'power2.out',
-        delay: i * 0.4, // Staggering with timeline delay
+        delay: i * 0.6, // Staggering with timeline delay
       },
     );
 
