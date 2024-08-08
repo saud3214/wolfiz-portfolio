@@ -567,3 +567,9 @@ img.clipPath-img.active {
   opacity: 0;
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
+.imgcard1 {
+  rotate: -7deg !important;
+}
+.imgcard2 {
+  rotate: 7deg !important;
+}

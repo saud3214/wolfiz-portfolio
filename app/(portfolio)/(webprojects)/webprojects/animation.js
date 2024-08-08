@@ -83,32 +83,28 @@ export const backgroundimages = () => {
 export const textColor = () => {
   const hoverTexts = document.querySelectorAll('.hover-text');
 
-  // Loop through each element with the 'hover-text' class
   hoverTexts.forEach((hoverText) => {
-    // Get the text content of the element
     const text = hoverText.textContent;
 
-    // Split the text into individual letters and wrap each letter in a <span>
+    // Split the text into individual characters, including spaces
     hoverText.innerHTML = text
       .split('')
-      .map((letter) => `<span>${letter}</span>`)
+      .map((letter) =>
+        letter === ' ' ? `<span>&nbsp;</span>` : `<span>${letter}</span>`,
+      )
       .join('');
 
-    // Select all <span> elements (each letter) inside the hoverText element
     const letters = hoverText.querySelectorAll('span');
 
-    // Add a mousemove event listener to the entire hoverText container
     hoverText.addEventListener('mousemove', (e) => {
       const mouseX = e.clientX; // Get the X coordinate of the mouse pointer
       const mouseY = e.clientY; // Get the Y coordinate of the mouse pointer
 
-      const maxDistance = 100; // Define the radius of the circle (100px diameter, so 50px radius)
+      const maxDistance = 100;
 
-      // Loop through each letter (span element)
       letters.forEach((letter) => {
         const rect = letter.getBoundingClientRect(); // Get the position of the letter on the screen
 
-        // Calculate the distance between the mouse pointer and the center of the letter
         const distance = Math.sqrt(
           Math.pow(mouseX - (rect.left + rect.width / 2), 2) +
             Math.pow(mouseY - (rect.top + rect.height / 2), 2),
@@ -116,10 +112,8 @@ export const textColor = () => {
 
         const proximity = Math.max(0, (maxDistance - distance) / maxDistance); // Calculate proximity factor
 
-        // Set the color based on proximity to the mouse pointer
         const startColor = { r: 254, g: 75, b: 16 }; // #FE4B10
         const endColor = { r: 254, g: 153, b: 0 }; // #FE9900
-
         const color =
           proximity > 0
             ? `rgb(${Math.round(
@@ -134,15 +128,11 @@ export const textColor = () => {
                               (endColor.b - startColor.b) * proximity,
                           )})`
             : '#555';
-
-        // Apply the color change using GSAP
         gsap.to(letter, { duration: 0.3, color: color, ease: 'power2.Out' });
       });
     });
 
-    // Add a mouseleave event listener to reset the color when the mouse leaves the text
     hoverText.addEventListener('mouseleave', () => {
-      // Reset each letter's color to the default color (#555)
       letters.forEach((letter) => {
         gsap.to(letter, { duration: 0.3, color: '#555', ease: 'power1.Out' });
       });
@@ -198,9 +188,10 @@ export const movingText = () => {
       scrollTrigger: {
         trigger: card,
         start: 'top 1%',
+        delay: 1,
         end: 'bottom -50%', // Adjust the end point for better visibility
-        toggleActions: 'play reverse none reverse',
-        markers: true, // Use markers to debug
+        toggleActions: 'play none none reverse',
+        // Use markers to debug
       },
     });
 
@@ -213,21 +204,25 @@ export const movingText = () => {
         opacity: 1,
         duration: 0.7,
         ease: 'power2.out',
-        delay: i * 0.6, // Staggering with timeline delay
+        delay: i * 0.7, // Staggering with timeline delay
       },
     );
-
-    // // Reverse animation (when scrolling back up)
-    // tl.to(
-    //   card,
-    //   {
-    //     y: 100,
-    //     opacity: 0,
-    //     duration: 0.7,
-    //     ease: 'power2.out',
-    //     delay: (4 - i) * 0.4, // Reverse stagger to hide cards one by one
-    //   },
-    //   1, // Start this part at the beginning of the timeline for smooth reverse
-    // );
   });
+
+  gsap.fromTo(
+    '.fontpopins', // Target the element with the class "font-semibold"
+    { scale: 0.5 }, // Start from half the size
+    {
+      scale: 1, // Animate to the original size
+      duration: 1,
+      delay: 0.5, // Duration of the animation (adjust as needed)
+      ease: 'power2.out', // Easing function for a smooth effect
+      scrollTrigger: {
+        trigger: '.fontpopins', // Trigger animation when this element enters the viewport
+        start: 'top 10%', // When to start the animation
+        end: 'bottom 80%', // When to end the animation
+        toggleActions: 'play none none reverse', // Play the animation forward and reverse on scroll back
+      },
+    },
+  );
 };
