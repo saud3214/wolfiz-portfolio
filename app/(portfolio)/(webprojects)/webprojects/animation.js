@@ -191,4 +191,43 @@ export const movingText = () => {
       xPercent: gsap.utils.unitize((x) => parseFloat(x) % 100),
     },
   });
+
+  gsap.utils.toArray('.image-card').forEach((card, i) => {
+    // Create a timeline for each card
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 60%',
+        end: 'bottom 10%', // Adjust the end point for better visibility
+        toggleActions: 'play none none reverse',
+        markers: true, // Use markers to debug
+      },
+    });
+
+    // Forward animation (when the card enters the viewport)
+    tl.fromTo(
+      card,
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: 'power2.out',
+        delay: i * 0.4, // Staggering with timeline delay
+      },
+    );
+
+    // // Reverse animation (when scrolling back up)
+    // tl.to(
+    //   card,
+    //   {
+    //     y: 100,
+    //     opacity: 0,
+    //     duration: 0.7,
+    //     ease: 'power2.out',
+    //     delay: (4 - i) * 0.4, // Reverse stagger to hide cards one by one
+    //   },
+    //   1, // Start this part at the beginning of the timeline for smooth reverse
+    // );
+  });
 };

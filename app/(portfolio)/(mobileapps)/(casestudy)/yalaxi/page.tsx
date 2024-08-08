@@ -167,6 +167,54 @@ export default function Yalaxi() {
             </div>
           </div>
         </div>
+        <div className="w-full flex items-center justify-center h-[60vh] py-10 ">
+          <div className=" flex flex-col w-full items-center justify-center  text-6xl  text-[#4a4848] font-bold  h-full ">
+            <div className="flex items-center justify-center w-11/12 h-full image-row relative  ">
+              <span className=" uppercase relative ">Design Process</span>
+
+              <div className="flex items-center justify-center absolute top-0 bottom-0  h-full left-[5%] image-card    ">
+                <Image
+                  className=" relativepos"
+                  src="/mobileapps/yalaxi/dp1.png"
+                  alt="Background 1"
+                  fill
+                />
+              </div>
+              <div className="flex items-center justify-center absolute top-0 bottom-0  h-full left-[18%] image-card">
+                <Image
+                  className=" relativepos"
+                  src="/mobileapps/yalaxi/dp2.png"
+                  alt="Background 1"
+                  fill
+                />
+              </div>
+              <div className="flex items-center justify-center absolute top-0 bottom-0  h-full  right-[42%]  image-card  ">
+                <Image
+                  className=" relativepos"
+                  src="/mobileapps/yalaxi/dp3.png"
+                  alt="Background 1"
+                  fill
+                />
+              </div>
+              <div className="flex items-center justify-center absolute top-0 bottom-0  h-full right-[23%]   image-card  ">
+                <Image
+                  className=" relativepos"
+                  src="/mobileapps/yalaxi/dp4.png"
+                  alt="Background 1"
+                  fill
+                />
+              </div>
+              <div className="flex items-center justify-center absolute top-0 bottom-0 right-[5%]  h-full  image-card   ">
+                <Image
+                  className=" relativepos"
+                  src="/mobileapps/yalaxi/dp5.png"
+                  alt="Background 1"
+                  fill
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className=" bg-black w-full items-start justify-center flex    ">
           <div className="grid grid-cols-12 w-11/12  items-center justify-center  ">

@@ -556,35 +556,14 @@ img.clipPath-img.active {
   white-space: nowrap;
 }
 
-.spacer {
-  height: 60vh;
-  opacity: 0.2;
-}
-
-.cards {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  background-color: grey;
-}
-.card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: plum;
-}
-
-.card:nth-child(odd) {
-  background: #a9a0dd;
-}
-
-.container {
-  background-color: grey;
-  height: 100vh;
+.image-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  opacity: 1; /* Initial state */
+}
+
+.image-card {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
