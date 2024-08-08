@@ -37,24 +37,23 @@ export default function Yalaxi() {
 
   return (
     <SlideFromRight>
-      <Canvas
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          height: '100%',
-          width: '100vw',
-          background: '#282727',
-        }}
-      >
-        <EffectComposer>
-          <Fluid />
-        </EffectComposer>
-      </Canvas>
-      ;
       <div
         className={` w-full items-center justify-center flex flex-col bg-[#282727]   ${urbanist.className}`}
       >
+        <Canvas
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            height: '200vh',
+            width: '100vw',
+            background: '#000000',
+          }}
+        >
+          <EffectComposer>
+            <Fluid />
+          </EffectComposer>
+        </Canvas>
         <div className=" w-full items-start justify-center flex    ">
           <div className="grid grid-cols-12 w-full   items-start justify-center   ">
             <div className="col-span-12 items-center justify-center  flex flex-col  pt-20 cursor-default ">
