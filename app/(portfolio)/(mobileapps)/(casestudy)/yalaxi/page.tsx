@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { Poppins } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap-trial/ScrollTrigger';
+import { Fluid } from '@whatisjery/react-fluid-distortion';
+import { EffectComposer } from '@react-three/postprocessing';
+import { Canvas } from '@react-three/fiber';
 import {
   textColor,
   largeImage,
@@ -36,6 +37,21 @@ export default function Yalaxi() {
 
   return (
     <SlideFromRight>
+      <Canvas
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          height: '100vh',
+          width: '100vw',
+          background: '#000000',
+        }}
+      >
+        <EffectComposer>
+          <Fluid />
+        </EffectComposer>
+      </Canvas>
+      ;
       <div
         className={` w-full items-center justify-center flex flex-col bg-[#282727]   ${urbanist.className}`}
       >
