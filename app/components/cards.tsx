@@ -1,49 +1,40 @@
-// components/AnimatedCards.tsx
-import { useEffect } from 'react';
+import React, { useEffect, useRef, ReactNode } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+interface ParallaxWrapperProps {
+  children: ReactNode;
+}
 
-const AnimatedCards: React.FC = () => {
+const ParallaxWrapper: React.FC<ParallaxWrapperProps> = ({ children }) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    gsap.fromTo(
-      '.card:not(:first-child)',
-      {
-        x: () => window.innerWidth / 2 + 100,
-        rotate: -90,
-      },
-      {
-        x: 0,
-        stagger: 0.5,
-        rotate: 0,
-        scrollTrigger: {
-          pin: '.container',
-          markers: true,
-          scrub: true,
-          start: 'top ]center',
-          end: '+=10000',
-          invalidateOnRefresh: true,
-        },
-      },
-    );
+    const handleMouseMove = (e: MouseEvent) => {
+      if (wrapperRef.current) {
+        const moveinX = (e.pageX * -1) / 100;
+        const moveinY = (e.pageY * -1) / 100;
+
+        gsap.to(wrapperRef.current, {
+          backgroundPosition: `${moveinX}px ${moveinY}px`,
+          duration: 0.3,
+          ease: 'power3.out',
+        });
+      }
+    };
+
+    const wrapperElement = wrapperRef.current;
+    if (wrapperElement) {
+      wrapperElement.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (wrapperElement) {
+        wrapperElement.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
   }, []);
 
-  return (
-    <>
-      <div className="h-[60vh] opacity-20"></div>
-      <div className="container bg-gray-500 h-screen flex items-center justify-center w-full">
-        <div className="cards relative w-[200px] h-[200px] mx-auto overflow-hidden">
-          <div className="card absolute top-0 left-0 w-full h-full bg-[#dda0dd]"></div>
-          <div className="card absolute top-0 left-0 w-full h-full bg-[#a9a0dd]"></div>
-          <div className="card absolute top-0 left-0 w-full h-full bg-[#dda0dd]"></div>
-          <div className="card absolute top-0 left-0 w-full h-full bg-[#a9a0dd]"></div>
-          <div className="card absolute top-0 left-0 w-full h-full bg-[#dda0dd]"></div>
-        </div>
-      </div>
-      <div className="h-[60vh] opacity-20"></div>
-    </>
-  );
+  return <div ref={wrapperRef}>{children}</div>;
 };
 
-export default AnimatedCards;
+export default ParallaxWrapper;

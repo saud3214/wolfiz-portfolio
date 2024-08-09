@@ -141,6 +141,13 @@ export const textColor = () => {
 };
 
 export const largeImage = () => {
+  document
+    .querySelector('.content1')
+    .addEventListener('mousemove', function (e) {
+      var moveinX = (e.pageX * -1) / 200;
+      var moveinY = (e.pageY * -1) / 200;
+      this.style.backgroundPosition = moveinX + 'px ' + moveinY + 'px';
+    });
   // Ensure GSAP and ScrollTrigger are registered
   gsap.registerPlugin(ScrollTrigger);
 

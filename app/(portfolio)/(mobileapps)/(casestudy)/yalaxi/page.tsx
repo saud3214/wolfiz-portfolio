@@ -3,9 +3,6 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { Poppins } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
-import { Fluid } from '@whatisjery/react-fluid-distortion';
-import { EffectComposer } from '@react-three/postprocessing';
-import { Canvas } from '@react-three/fiber';
 import {
   textColor,
   largeImage,
@@ -20,7 +17,6 @@ import {
   RevealOnScrollLeftImage,
   RevealOnScrollXImage,
 } from '@/app/components/revealelement';
-import AnimatedCards from '@/app/components/cards';
 
 const urbanist = Poppins({
   subsets: ['latin'],
@@ -309,7 +305,7 @@ export default function Yalaxi() {
                 </div>
               </div>
               <div className="flex items-center  justify-center relative  w-11/12 py-10  mt-20   ">
-                <div className="flex items-center  relative  rounded-3xl    ">
+                <div className="flex items-center  relative  rounded-3xl w-7/12    ">
                   <Image
                     className=" relativepos rounded-3xl "
                     src="/mobileapps/yalaxi/screens.gif"
@@ -722,7 +718,6 @@ export default function Yalaxi() {
             </div>
           </div>
         </div>
-        <div className="w-full relative "></div>
       </div>
     </SlideFromRight>
   );
