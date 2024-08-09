@@ -100,7 +100,7 @@ export default function Simireizen() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-end flex flex-col  bg-srbg3 bg-cover bg-center   bg-no-repeat relative h-full">
+              <div className="w-full items-center justify-end flex flex-col  bg-srbg3 bg-cover bg-top   bg-no-repeat relative h-full">
                 <div className="h-96 p-2 bg-red-800 "></div>
                 <div className="w-11/12 items-center justify-center flex flex-col text-center gap-5  p-10 mt-20">
                   <span className="text-6xl uppercase font-semibold">
@@ -118,30 +118,134 @@ export default function Simireizen() {
                     defines Simi Reizen.
                   </span>
                 </div>
-                <div className="w-full flex items-center justify-center pt-10">
-                  <div className=" flex items-center   ">
-                    <Image
-                      className=" relativepos "
-                      src="/mobileapps/sr/Component 8.png"
-                      alt="Background 1"
-                      fill
-                    />
+                <div className=" w-11/12 grid grid-cols-12 items-center justify-center py-10 h-full">
+                  <div className="col-span-3 items-end justify-center h-full flex ">
+                    <div className=" flex items-center w-7/12  ">
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/sr/Component 8.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
                   </div>
-                  <div className=" flex items-center   ">
-                    <Image
-                      className=" relativepos "
-                      src="/mobileapps/sr/iphone2.png"
-                      alt="Background 1"
-                      fill
-                    />
+                  <div className="col-span-6 items-end justify-end h-full">
+                    <div className=" flex items-center  w-full  ">
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/sr/iphone2.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
                   </div>
-                  <div className=" flex items-center   ">
-                    <Image
-                      className=" relativepos "
-                      src="/mobileapps/sr/Component 8.png"
-                      alt="Background 1"
-                      fill
-                    />
+
+                  <div className="col-span-3 items-center justify-center flex  ">
+                    <div className=" flex items-center w-7/12  ">
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/sr/Component 8.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-11/12  grid grid-cols-12  items-center  ">
+                  <div className="col-span-4 ">
+                    <div className=" flex items-center w-11/12   ">
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/sr/iphone3.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-8 flex flex-col items-start justify-center ">
+                    <div className="p-8 rounded-lg  mx-auto">
+                      <h2 className="text-xl font-medium mb-2 ">
+                        Problem Statement
+                      </h2>
+                      <h1 className="text-6xl font-bold  mb-8">
+                        Let’s go deeper with places and routes
+                      </h1>
+                      <p className=" mb-6 text-xl font-medium">
+                        Simi Reizen, a renowned adventure travel agency,
+                        recognized the need to modernize its customer engagement
+                        and booking processes.
+                        <br></br> <br></br>Users faced difficulties navigating
+                        the website, booking trips, and managing their
+                        itineraries, which resulted in a suboptimal user
+                        experience.
+                      </p>
+
+                      <h3 className="text-4xl font-medium mb-4">
+                        Problem Include
+                      </h3>
+
+                      <div className="flex gap-10 items-center">
+                        <div className="flex gap-3 items-center">
+                          <div className=" flex items-center  ">
+                            <Image
+                              className=" relativepos "
+                              src="/mobileapps/sr/location.png"
+                              alt="Background 1"
+                              fill
+                            />
+                          </div>
+                          <h4 className="font-medium text-2xl">
+                            Navigating The <br></br> Website
+                          </h4>
+                        </div>
+                        <div className="flex gap-3 items-center">
+                          <div className=" flex items-center  ">
+                            <Image
+                              className=" relativepos "
+                              src="/mobileapps/sr/clickicon.png"
+                              alt="Background 1"
+                              fill
+                            />
+                          </div>
+                          <h4 className="font-medium text-2xl">
+                            Booking Trips
+                          </h4>
+                        </div>
+                        <div className="flex gap-3 items-center">
+                          <div className=" flex items-center  ">
+                            <Image
+                              className=" relativepos "
+                              src="/mobileapps/sr/clickicon.png"
+                              alt="Background 1"
+                              fill
+                            />
+                          </div>
+                          <h4 className="font-medium text-2xl">
+                            Need For Modernization
+                          </h4>
+                        </div>
+                      </div>
+                      <div className="flex gap-5 pt-10 w-full items-center justify-between">
+                        <div className=" flex items-center   ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/sr/Frame 6.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+
+                        <div className=" flex items-center  ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/sr/Frame 6 (1).png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
