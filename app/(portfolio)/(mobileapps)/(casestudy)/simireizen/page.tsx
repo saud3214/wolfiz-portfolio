@@ -92,7 +92,7 @@ export default function Simireizen() {
                     <div className=" absolute  left-[38%]    w-1/4  ">
                       <Image
                         className=" relativepos "
-                        src="/mobileapps/sr/iphone.png"
+                        src="/mobileapps/sr/iPhone.png"
                         alt="Background 1"
                         fill
                       />
@@ -101,7 +101,7 @@ export default function Simireizen() {
                 </div>
               </div>
               <div className="w-full items-center justify-end flex flex-col  bg-srbg3 bg-cover bg-top   bg-no-repeat relative h-full">
-                <div className="h-96 p-2 bg-red-800 "></div>
+                <div className="h-96   "></div>
                 <div className="w-11/12 items-center justify-center flex flex-col text-center gap-5  p-10 mt-20">
                   <span className="text-6xl uppercase font-semibold">
                     welcome
@@ -157,7 +157,7 @@ export default function Simireizen() {
                     <div className=" flex items-center w-11/12   ">
                       <Image
                         className=" relativepos "
-                        src="/mobileapps/sr/iphone3.png"
+                        src="/mobileapps/sr/iPhone3.png"
                         alt="Background 1"
                         fill
                       />
