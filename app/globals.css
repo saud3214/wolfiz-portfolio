@@ -573,3 +573,20 @@ img.clipPath-img.active {
 .imgcard2 {
   rotate: 7deg !important;
 }
+ol {
+  list-style: decimal-leading-zero;
+}
+
+.color-loop {
+  animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+  0%,
+  100% {
+    background-color: #07aaf6;
+  }
+  50% {
+    background-color: #ef23a1;
+  }
+}

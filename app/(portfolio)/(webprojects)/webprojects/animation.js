@@ -141,13 +141,6 @@ export const textColor = () => {
 };
 
 export const largeImage = () => {
-  document
-    .querySelector('.content1')
-    .addEventListener('mousemove', function (e) {
-      var moveinX = (e.pageX * -1) / 200;
-      var moveinY = (e.pageY * -1) / 200;
-      this.style.backgroundPosition = moveinX + 'px ' + moveinY + 'px';
-    });
   // Ensure GSAP and ScrollTrigger are registered
   gsap.registerPlugin(ScrollTrigger);
 
@@ -232,4 +225,109 @@ export const movingText = () => {
       },
     },
   );
+};
+
+export const simiReizen = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  document
+    .querySelector('.content1')
+    .addEventListener('mousemove', function (e) {
+      var moveinX = (e.pageX * -1) / 200;
+      var moveinY = (e.pageY * -1) / 200;
+      this.style.backgroundPosition = moveinX + 'px ' + moveinY + 'px';
+    });
+
+  // gsap.fromTo(
+  //   '.svg2', // Target the element with the class "font-semibold"
+  //   { x: -200, opacity: 0 }, // Start from half the size
+  //   {
+  //     x: 0,
+  //     opacity: 1,
+  //     duration: 1,
+
+  //     ease: 'power2.out', // Easing function for a smooth effect
+  //     scrollTrigger: {
+  //       trigger: '.svgcontainer', // Trigger animation when this element enters the viewport
+  //       start: 'top 50%', // When to start the animation
+  //       end: 'bottom 80%', // When to end the animation
+  //       toggleActions: 'play none none reverse', // Play the animation forward and reverse on scroll back
+  //       markers: true,
+  //     },
+  //   },
+  // );
+};
+
+export const setupSvgInteractions = () => {
+  const svgs = document.querySelectorAll('.svg');
+
+  svgs.forEach((svg) => {
+    const handleMouseOver = () => {
+      const box = svg.closest('div.box');
+      const paths = box.querySelectorAll('svg path');
+
+      if (paths.length > 2) {
+        paths[0].setAttribute('fill', '#0C648D');
+        paths[1].setAttribute('fill', '#07AAF6');
+        paths[2].setAttribute('fill', '#0C648D');
+      }
+    };
+
+    const handleMouseOut = () => {
+      const box = svg.closest('div.box');
+      const paths = box.querySelectorAll('svg path');
+
+      if (paths.length > 2) {
+        paths[0].setAttribute('fill', '#A2A2A3');
+        paths[1].setAttribute('fill', '#D2D2D2');
+        paths[2].setAttribute('fill', '#A2A2A3');
+      }
+    };
+
+    svg.addEventListener('mouseover', handleMouseOver);
+    svg.addEventListener('mouseout', handleMouseOut);
+
+    // Cleanup event listeners
+    return () => {
+      svg.removeEventListener('mouseover', handleMouseOver);
+      svg.removeEventListener('mouseout', handleMouseOut);
+    };
+  });
+};
+
+export const setupScrollAnimation = () => {
+  gsap.utils.toArray('.svg').forEach((svg, index) => {
+    gsap.fromTo(
+      svg,
+      { opacity: 0, x: -100 }, // Starting state
+      {
+        opacity: 1, // Ending state
+        x: 0,
+        duration: 1,
+        delay: index * 0.2, // Adjust the delay for the wave effect
+        scrollTrigger: {
+          trigger: '.svgcontainer',
+          start: 'top 40%', // Start animation when the top of the element hits the bottom of the viewport
+          end: 'bottom 40%', // End animation when the bottom of the element hits the top of the viewport
+          scrub: true, // Smooth animation based on scroll
+        },
+      },
+    );
+  });
+};
+
+import { useState } from 'react';
+
+export const ColorBlocks = () => {
+  <div className="flex justify-center items-center min-h-screen bg-white">
+    <div className="relative w-96 h-96 group">
+      {/* Pink Div */}
+      <div className="absolute inset-0 bg-[#EF23A1] transition-all duration-300 group-hover:bg-[#000000] rounded-lg"></div>
+
+      {/* Blue Div */}
+      <div className="absolute inset-4 bg-[#07AAF6] transition-all duration-300 group-hover:bg-[#FFFFFF] rounded-lg"></div>
+
+      {/* Yellow Div */}
+      <div className="absolute inset-8 bg-[#F7D239] transition-all duration-300 group-hover:bg-[#CCCBC7] rounded-lg"></div>
+    </div>
+  </div>;
 };

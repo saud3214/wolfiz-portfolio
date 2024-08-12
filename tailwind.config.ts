@@ -84,6 +84,7 @@ const config: Config = {
         srbg1: "url('/mobileapps/sr/bg1.png')",
         srbg2: "url('/mobileapps/sr/bg2.png')",
         srbg3: "url('/mobileapps/sr/bg3.png')",
+        srbg4: "url('/mobileapps/sr/bg4.png')",
       },
       colors: {
         nht: '#006360',
