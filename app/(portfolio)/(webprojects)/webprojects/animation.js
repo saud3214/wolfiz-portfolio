@@ -306,8 +306,8 @@ export const setupScrollAnimation = () => {
         delay: index * 0.2, // Adjust the delay for the wave effect
         scrollTrigger: {
           trigger: '.svgcontainer',
-          start: 'top 40%', // Start animation when the top of the element hits the bottom of the viewport
-          end: 'bottom 40%', // End animation when the bottom of the element hits the top of the viewport
+          start: 'top 70%', // Start animation when the top of the element hits the bottom of the viewport
+          end: 'bottom 60%', // End animation when the bottom of the element hits the top of the viewport
           scrub: true, // Smooth animation based on scroll
         },
       },

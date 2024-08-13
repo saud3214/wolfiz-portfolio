@@ -108,67 +108,82 @@ export default function Simireizen() {
                 </div>
               </div>
               <div className="w-full items-center justify-end flex flex-col  bg-srbg3 bg-cover bg-top   bg-no-repeat relative h-full">
-                <div className="h-96   "></div>
+                <div className="h-[40vh]  "></div>
+
                 <div className="w-11/12 items-center justify-center flex flex-col text-center gap-5  p-10 mt-20">
-                  <span className="text-6xl uppercase font-semibold">
-                    welcome
-                  </span>
-                  <span className="w-1/2 text-xl">
-                    Simi Reizen, a leading travel agency known for its adventure
-                    trips and unique travel experiences, aimed to enhance its
-                    digital presence by launching a dedicated mobile app. The
-                    goal was to provide a seamless, user-friendly interface for
-                    booking trips, managing itineraries, and accessing travel
-                    information on the go. <br></br> <br></br> Our task was to
-                    design a UI/UX that would meet these requirements while
-                    embodying the spirit of adventure and exploration that
-                    defines Simi Reizen.
-                  </span>
+                  <SrTop>
+                    <div className="w-full items-center justify-center flex flex-col">
+                      <span className="text-6xl uppercase font-semibold">
+                        welcome
+                      </span>
+
+                      <span className="w-1/2 text-xl">
+                        Simi Reizen, a leading travel agency known for its
+                        adventure trips and unique travel experiences, aimed to
+                        enhance its digital presence by launching a dedicated
+                        mobile app. The goal was to provide a seamless,
+                        user-friendly interface for booking trips, managing
+                        itineraries, and accessing travel information on the go.
+                        <br></br> <br></br> Our task was to design a UI/UX that
+                        would meet these requirements while embodying the spirit
+                        of adventure and exploration that defines Simi Reizen.
+                      </span>
+                    </div>
+                  </SrTop>
                 </div>
+
                 <div className=" w-11/12 grid grid-cols-12 items-center justify-center py-10 h-full">
                   <div className="col-span-3 items-end justify-center h-full flex ">
-                    <div className=" flex items-center w-7/12  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/Component 8.png"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
+                    <SrLeft>
+                      <div className=" flex items-center w-7/12  ">
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/Component 8.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SrLeft>
                   </div>
                   <div className="col-span-6 items-end justify-end h-full">
-                    <div className=" flex items-center  w-full  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/iphone2.png"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
+                    <SrBottom>
+                      <div className=" flex items-center  w-full  ">
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/iphone2.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SrBottom>
                   </div>
 
                   <div className="col-span-3 items-center justify-center flex  ">
-                    <div className=" flex items-center w-7/12  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/Component 8.png"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
+                    <SrRight>
+                      <div className=" flex items-center w-7/12  ">
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/Component 8.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SrRight>
                   </div>
                 </div>
 
                 <div className="w-11/12  grid grid-cols-12  items-center  ">
                   <div className="col-span-4 ">
-                    <div className=" flex items-center w-11/12   ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/iPhone3.png"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
+                    <SrLeft>
+                      <div className=" flex items-center w-11/12   ">
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/iPhone3.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SrLeft>
                   </div>
                   <div className="col-span-8 flex flex-col items-start justify-center ">
                     <div className="p-8 rounded-lg  mx-auto">
@@ -234,23 +249,26 @@ export default function Simireizen() {
                         </div>
                       </div>
                       <div className="flex gap-5 2xl:pt-10 pt-5 w-full items-center justify-between">
-                        <div className=" flex items-center   ">
-                          <Image
-                            className=" relativepos "
-                            src="/mobileapps/sr/Frame 6.png"
-                            alt="Background 1"
-                            fill
-                          />
-                        </div>
-
-                        <div className=" flex items-center  ">
-                          <Image
-                            className=" relativepos "
-                            src="/mobileapps/sr/Frame 6 (1).png"
-                            alt="Background 1"
-                            fill
-                          />
-                        </div>
+                        <SrRight>
+                          <div className=" flex items-center   ">
+                            <Image
+                              className=" relativepos "
+                              src="/mobileapps/sr/Frame 6.png"
+                              alt="Background 1"
+                              fill
+                            />
+                          </div>
+                        </SrRight>
+                        <SrRight>
+                          <div className=" flex items-center  ">
+                            <Image
+                              className=" relativepos "
+                              src="/mobileapps/sr/Frame 6 (1).png"
+                              alt="Background 1"
+                              fill
+                            />
+                          </div>
+                        </SrRight>
                       </div>
                     </div>
                   </div>
