@@ -9,15 +9,12 @@ import {
   setupScrollAnimation,
   ColorBlocks,
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
-import ParallaxWrapper from '@/app/components/cards';
 import useSmoothScroll from '@/app/components/ss';
 import {
-  RevealOnScroll,
-  RevealOnScrollX,
-  RevealOnScrollLeft,
-  RevealOnScrollLeftText,
-  RevealOnScrollLeftImage,
-  RevealOnScrollXImage,
+  SrLeft,
+  SrRight,
+  SrBottom,
+  SrTop,
 } from '@/app/components/revealelement';
 
 const urbanist = Lexend({
@@ -42,61 +39,70 @@ export default function Simireizen() {
           <div className="col-span-12 items-center justify-center flex ">
             <div className="flex flex-col items-center justify-center w-full ">
               <div className="h-[100vh] bg-srbg1 bg-top bg-cover bg-no-repeat  p-10 flex flex-col  w-full justify-between items-center content1  ">
-                <div className="w-full items-center justify-start flex flex-col text-white pt-5 gap-3">
-                  <div className="flex items-center  relative      ">
-                    <Image
-                      className=" relativepos "
-                      src="/mobileapps/sr/logo.png"
-                      alt="Background 1"
-                      fill
-                    />
+                <SrTop>
+                  <div className="w-full items-center justify-start flex flex-col text-white pt-5 gap-3">
+                    <div className="flex items-center  relative      ">
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/sr/logo.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                    <span className="text-6xl text-white font-semibold">
+                      Simi Reizen
+                    </span>
+                    <span className="text-sm font-medium w-1/2 2xl:w-1/3 text-center 2xl:px-10">
+                      Simi Reizen is a specialized travel agency offering
+                      adventure and group travel experiences for young adults.
+                    </span>
                   </div>
-                  <span className="text-6xl text-white font-semibold">
-                    Simi Reizen
-                  </span>
-                  <span className="text-sm font-medium w-1/2 2xl:w-1/3 text-center 2xl:px-10">
-                    Simi Reizen is a specialized travel agency offering
-                    adventure and group travel experiences for young adults.
-                  </span>
-                </div>
-
+                </SrTop>
                 <div className="w-11/12 items-center justify-between flex rounded-3xl 2xl:pb-10  pb-10  relative ">
-                  <div className="bg-white/30 backdrop-blur-sm 2xl:w-96 w-80 flex items-center justify-center text-center gap-7 flex-col  text-white 2xl:p-10 p-5 rounded-3xl">
-                    <div className="flex items-center  relative  w-14    ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/icon1.png"
-                        alt="Background 1"
-                        fill
-                      />
+                  <SrLeft>
+                    <div className="bg-white/30 backdrop-blur-sm 2xl:w-96 w-80 flex items-center justify-center text-center gap-7 flex-col  text-white 2xl:p-10 p-5 rounded-3xl">
+                      <div className="flex items-center  relative  w-14    ">
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/icon1.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                      <span className="text-sm font-medium ">
+                        Our solution streamlined trip booking, making it quick
+                        and effortless for users.
+                      </span>
                     </div>
-                    <span className="text-sm font-medium ">
-                      Our solution streamlined trip booking, making it quick and
-                      effortless for users.
-                    </span>
-                  </div>
-                  <div className="bg-white/30 backdrop-blur-sm 2xl:w-96 w-80 flex items-center justify-center text-center gap-7 flex-col  text-white 2xl:p-10 p-5 rounded-3xl">
-                    <div className="flex items-center  relative  w-14    ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/icon2.png"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
-                    <span className="text-sm font-medium ">
-                      Our solution streamlined trip booking, making it quick and
-                      effortless for users.
-                    </span>
+                  </SrLeft>
+                  <div>
+                    <SrRight>
+                      <div className="bg-white/30 backdrop-blur-sm 2xl:w-96 w-80 flex items-center justify-center text-center gap-7 flex-col  text-white 2xl:p-10 p-5 rounded-3xl">
+                        <div className="flex items-center  relative  w-14    ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/sr/icon2.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                        <span className="text-sm font-medium ">
+                          Our solution streamlined trip booking, making it quick
+                          and effortless for users.
+                        </span>
+                      </div>
+                    </SrRight>
                   </div>
                   <div className="absolute w-full 2xl:top-[-60%]   xl:top-[-20%] z-10">
                     <div className=" absolute  left-[38%]    w-1/4  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/iPhone.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <SrBottom>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/iPhone.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </SrBottom>
                     </div>
                   </div>
                 </div>
@@ -520,7 +526,7 @@ export default function Simireizen() {
                   </div>
                   <div className="col-span-6 items-center justify-center group overflow-hidden">
                     <div
-                      className="w-full items-end justify-end flex relative bg-[#EF23A1] h-[95vh] ps-20 pt-20  overflow-hidden transition-all
+                      className="w-full items-end justify-end flex relative bg-[#EF23A1] h-[100vh] ps-20 pt-20  overflow-hidden transition-all
                      duration-300 group-hover:bg-[#000000] group-hover:transition-all  group-hover:duration-[2500ms] "
                     >
                       <div className="w-full items-start justify-start ps-10 absolute top-0  text-3xl font-bold  ">
@@ -568,8 +574,8 @@ export default function Simireizen() {
                   </div>
                 </div>
               </div>
-              <div className=" flex flex-col items-center justify-center w-full bg-[#CCCCCC] p-10 ">
-                <div className="grid grid-cols-12 items-center justify-between w-11/12  gap-5">
+              <div className=" flex flex-col items-center justify-center w-full bg-[#CCCCCC]  ">
+                <div className="grid grid-cols-12 items-center justify-between w-11/12  gap-5 p-10">
                   <div
                     className="col-span-8 flex flex-col items-start justify-center gap-5
                   "
@@ -587,7 +593,6 @@ export default function Simireizen() {
                       Heres a detailed look at the process:
                     </span>
                     <span className="text-5xl font-bold mt-4">
-                      {' '}
                       Main Elemenets
                     </span>
                     <div className=" w-full flex items-center justify-between">
@@ -617,7 +622,7 @@ export default function Simireizen() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-4">
+                  <div className="col-span-4 flex items-center justify-center">
                     <div className=" flex items-center   w-10/12  ">
                       <Image
                         className=" relativepos "
@@ -627,7 +632,121 @@ export default function Simireizen() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-12 items-center justify-center"></div>
+                </div>
+                <div className="w-full items-center justify-center flex">
+                  <div className=" flex items-center   w-10/12    ">
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/sr/mu12.gif"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className=" flex flex-col items-center justify-center w-full">
+                <div className="grid grid-cols-12 w-11/12  items-center justify-center gap-10 py-10">
+                  <div className="col-span-6 flex items-center justify-center h-full rounded-3xl">
+                    <div className=" flex items-center   h-full w-full  ">
+                      <Image
+                        className=" relativepos  rounded-3xl "
+                        src="/mobileapps/sr/f12.gif"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 flex items-center justify-center">
+                    <div className=" flex items-center  rounded-3xl  w-full   ">
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/sr/f1.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-12 flex items-center justify-center">
+                    <div className=" flex items-center  rounded-3xl w-full     ">
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/sr/f3.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-12 flex items-center justify-center">
+                    <div className=" flex items-center   w-full     ">
+                      <Image
+                        className=" relativepos rounded-3xl "
+                        src="/mobileapps/sr/f4.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-span-12 flex items-center justify-center relative py-10">
+                    <div className="w-full items-center justify-end absolute flex top-0">
+                      <div className="w-2/3 flex flex-col  gap-5 pe-10">
+                        <span className="text-5xl font-bold"> User Flow</span>
+                        <span className="text-3xl font-normal">
+                          Upon launching the app, users are greeted with a
+                          welcome message on the Home Screen, featuring a quick
+                          access search bar and a selection of popular
+                          destinations. From here, users can navigate to the
+                          Search Trips section, where they enter their desired
+                          destination, travel dates, and preferences. The app
+                          then displays search results, which can be filtered by
+                          price, activity type, and duration.s
+                        </span>
+                      </div>
+                    </div>
+                    <div className=" flex items-center   w-11/12  relative  ">
+                      <Image
+                        className=" relativepos  object-fill"
+                        src="/mobileapps/sr/uf.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-full items-center justify-center relative  ">
+                  <div className="relative  flex items-center justify-center h-[70vh] ">
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-full absolute z-0 w-full"
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-full"
+                      >
+                        <source
+                          src="/mobileapps/sr/Sequence2.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                    <div className=" flex items-center absolute w-full top-[0%] h-full z-10    ">
+                      <Image
+                        className=" relativepos  "
+                        src="/mobileapps/sr/jahaz.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                    <div className=" flex items-center absolute w-auto bottom-[65%]  z-10  text-white font-bold text-[5vw] left-[4%]   ">
+                      <span> Discover Your</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

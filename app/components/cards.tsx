@@ -1,40 +1,23 @@
-import React, { useEffect, useRef, ReactNode } from 'react';
-import { gsap } from 'gsap';
+import React from 'react';
 
-interface ParallaxWrapperProps {
-  children: ReactNode;
-}
-
-const ParallaxWrapper: React.FC<ParallaxWrapperProps> = ({ children }) => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (wrapperRef.current) {
-        const moveinX = (e.pageX * -1) / 100;
-        const moveinY = (e.pageY * -1) / 100;
-
-        gsap.to(wrapperRef.current, {
-          backgroundPosition: `${moveinX}px ${moveinY}px`,
-          duration: 0.3,
-          ease: 'power3.out',
-        });
-      }
-    };
-
-    const wrapperElement = wrapperRef.current;
-    if (wrapperElement) {
-      wrapperElement.addEventListener('mousemove', handleMouseMove);
-    }
-
-    return () => {
-      if (wrapperElement) {
-        wrapperElement.removeEventListener('mousemove', handleMouseMove);
-      }
-    };
-  }, []);
-
-  return <div ref={wrapperRef}>{children}</div>;
+const HeroSection: React.FC = () => {
+  return (
+    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black bg-clip-text">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/mobileapps/sr/Sequence 02.mp4"
+        autoPlay
+        loop
+        muted
+      />
+      <div className=""></div>
+      <div className="relative z-10 txtclass flex items-center justify-center bg-black">
+        <h1 className=" text-[25vw] font-bold uppercase      text-white ">
+          WORLD
+        </h1>
+      </div>
+    </div>
+  );
 };
 
-export default ParallaxWrapper;
+export default HeroSection;
