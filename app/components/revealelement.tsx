@@ -349,7 +349,7 @@ export const SrLeft: React.FC<RevealOnScrollProps> = ({
   }, [isInView, mainControls, slideControls]);
 
   return (
-    <div ref={ref} style={{ position: 'relative', width, overflow: 'hidden' }}>
+    <div ref={ref} style={{ position: 'relative', width }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, x: -200 },
@@ -362,7 +362,7 @@ export const SrLeft: React.FC<RevealOnScrollProps> = ({
           delay: 0.3,
           ease: 'easeOut',
           type: 'spring',
-          bounce: 0.4, // Adjust the bounce value as needed
+          bounce: 0.3, // Adjust the bounce value as needed
         }}
       >
         {children}
@@ -378,7 +378,7 @@ export const SrLeft: React.FC<RevealOnScrollProps> = ({
           duration: 1.5,
           ease: 'easeIn',
           type: 'spring',
-          bounce: 0.4, // Apply bounce to this transition as well
+          bounce: 0.3, // Apply bounce to this transition as well
         }}
         style={{
           position: 'absolute',
@@ -427,7 +427,7 @@ export const SrRight: React.FC<RevealOnScrollProps> = ({
           delay: 0.3,
           ease: 'easeOut',
           type: 'spring',
-          bounce: 0.4, // Adjust the bounce value as needed
+          bounce: 0.3, // Adjust the bounce value as needed
         }}
       >
         {children}
@@ -443,7 +443,7 @@ export const SrRight: React.FC<RevealOnScrollProps> = ({
           duration: 1.5,
           ease: 'easeIn',
           type: 'spring',
-          bounce: 0.4, // Apply bounce to this transition as well
+          bounce: 0.3, // Apply bounce to this transition as well
         }}
         style={{
           position: 'absolute',
@@ -492,7 +492,7 @@ export const SrTop: React.FC<RevealOnScrollProps> = ({
           delay: 0.3,
           ease: 'easeOut',
           type: 'spring',
-          bounce: 0.4, // Adjust the bounce value as needed
+          bounce: 0.3, // Adjust the bounce value as needed
         }}
       >
         {children}
@@ -508,7 +508,7 @@ export const SrTop: React.FC<RevealOnScrollProps> = ({
           duration: 1.5,
           ease: 'easeIn',
           type: 'spring',
-          bounce: 0.4, // Apply bounce to this transition as well
+          bounce: 0.3, // Apply bounce to this transition as well
         }}
         style={{
           position: 'absolute',
@@ -557,7 +557,7 @@ export const SrBottom: React.FC<RevealOnScrollProps> = ({
           delay: 0.3,
           ease: 'easeOut',
           type: 'spring',
-          bounce: 0.4, // Adjust the bounce value as needed
+          bounce: 0.3, // Adjust the bounce value as needed
         }}
       >
         {children}
@@ -573,7 +573,7 @@ export const SrBottom: React.FC<RevealOnScrollProps> = ({
           duration: 1.5,
           ease: 'easeIn',
           type: 'spring',
-          bounce: 0.4, // Apply bounce to this transition as well
+          bounce: 0.3, // Apply bounce to this transition as well
         }}
         style={{
           position: 'absolute',

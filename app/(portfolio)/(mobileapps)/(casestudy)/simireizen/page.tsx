@@ -187,67 +187,69 @@ export default function Simireizen() {
                   </div>
                   <div className="col-span-8 flex flex-col items-start justify-center ">
                     <div className="p-8 rounded-lg  mx-auto">
-                      <h2 className="text-xl font-medium mb-2 ">
-                        Problem Statement
-                      </h2>
-                      <h1 className="text-[3vw] font-bold  2xl:mb-8 mb-2">
-                        Let’s go deeper with places and routes
-                      </h1>
-                      <p className=" 2xl:mb-6 mb-2 text-xl font-medium">
-                        Simi Reizen, a renowned adventure travel agency,
-                        recognized the need to modernize its customer engagement
-                        and booking processes.
-                        <br></br> <br></br>Users faced difficulties navigating
-                        the website, booking trips, and managing their
-                        itineraries, which resulted in a suboptimal user
-                        experience.
-                      </p>
+                      <SrBottom>
+                        <h2 className="text-xl font-medium mb-2 ">
+                          Problem Statement
+                        </h2>
+                        <h1 className="text-[3vw] font-bold  2xl:mb-8 mb-2">
+                          Let’s go deeper with places and routes
+                        </h1>
+                        <p className=" 2xl:mb-6 mb-2 text-xl font-medium">
+                          Simi Reizen, a renowned adventure travel agency,
+                          recognized the need to modernize its customer
+                          engagement and booking processes.
+                          <br></br> <br></br>Users faced difficulties navigating
+                          the website, booking trips, and managing their
+                          itineraries, which resulted in a suboptimal user
+                          experience.
+                        </p>
 
-                      <h3 className="2xl:text-4xl text-2xl font-medium mb-4">
-                        Problem Include
-                      </h3>
+                        <h3 className="2xl:text-4xl text-2xl font-medium mb-4">
+                          Problem Include
+                        </h3>
 
-                      <div className="flex gap-10 items-center">
-                        <div className="flex gap-3 items-center">
-                          <div className=" flex items-center  ">
-                            <Image
-                              className=" relativepos "
-                              src="/mobileapps/sr/location.png"
-                              alt="Background 1"
-                              fill
-                            />
+                        <div className="flex gap-10 items-center">
+                          <div className="flex gap-3 items-center">
+                            <div className=" flex items-center  ">
+                              <Image
+                                className=" relativepos "
+                                src="/mobileapps/sr/location.png"
+                                alt="Background 1"
+                                fill
+                              />
+                            </div>
+                            <h4 className="font-medium 2xl:text-2xl text-xl">
+                              Navigating The Website
+                            </h4>
                           </div>
-                          <h4 className="font-medium 2xl:text-2xl text-xl">
-                            Navigating The Website
-                          </h4>
-                        </div>
-                        <div className="flex gap-3 items-center">
-                          <div className=" flex items-center  ">
-                            <Image
-                              className=" relativepos "
-                              src="/mobileapps/sr/clickicon.png"
-                              alt="Background 1"
-                              fill
-                            />
+                          <div className="flex gap-3 items-center">
+                            <div className=" flex items-center  ">
+                              <Image
+                                className=" relativepos "
+                                src="/mobileapps/sr/clickicon.png"
+                                alt="Background 1"
+                                fill
+                              />
+                            </div>
+                            <h4 className="font-medium 2xl:text-2xl text-xl">
+                              Booking Trips
+                            </h4>
                           </div>
-                          <h4 className="font-medium 2xl:text-2xl text-xl">
-                            Booking Trips
-                          </h4>
-                        </div>
-                        <div className="flex gap-3 items-center">
-                          <div className=" flex items-center  ">
-                            <Image
-                              className=" relativepos "
-                              src="/mobileapps/sr/clickicon.png"
-                              alt="Background 1"
-                              fill
-                            />
+                          <div className="flex gap-3 items-center">
+                            <div className=" flex items-center  ">
+                              <Image
+                                className=" relativepos "
+                                src="/mobileapps/sr/clickicon.png"
+                                alt="Background 1"
+                                fill
+                              />
+                            </div>
+                            <h4 className="font-medium 2xl:text-2xl text-xl">
+                              Need For Modernization
+                            </h4>
                           </div>
-                          <h4 className="font-medium 2xl:text-2xl text-xl">
-                            Need For Modernization
-                          </h4>
                         </div>
-                      </div>
+                      </SrBottom>
                       <div className="flex gap-5 2xl:pt-10 pt-5 w-full items-center justify-between">
                         <SrRight>
                           <div className=" flex items-center   ">
@@ -276,9 +278,12 @@ export default function Simireizen() {
 
                 <div className="w-11/12  grid grid-cols-12  items-start justify-center   pb-10 ps-10 svgcontainer">
                   <div className="col-span-12 items-center justify-center text-center flex flex-col relative -mb-20">
-                    <h2 className="text-3xl font-medium mb-2 ">
-                      Design Process
-                    </h2>
+                    <SrTop>
+                      <h2 className="text-3xl font-medium mb-2 ">
+                        Design Process
+                      </h2>
+                    </SrTop>
+
                     <h1 className="text-[3vw] font-bold w-1/2">
                       Crafting an Adventure Ready Experience
                     </h1>
@@ -480,45 +485,55 @@ export default function Simireizen() {
 
                 <div className="grid grid-cols-12 items-center justify-center w-11/12 py-10 ">
                   <div className="col-span-6 flex flex-col items-center justify-center gap-5 h-full">
-                    <div className="p-10 bg-[#07AAF6]  flex flex-col items-start justify-center rounded-3xl text-white w-11/12 h-full color-loop">
-                      <h2 className="text-2xl font-medium mb-2 ">
-                        Solution Statement
-                      </h2>
-                      <h1 className="text-[3vw] font-bold ">
-                        Modernizing the Travel Experience
-                      </h1>
-                      <span className="text-2xl font-medium mb-2 ">
-                        To enhance the customer experience and address the
-                        challenges faced by Simi Reizen, we developed a modern
-                        mobile app featuring a deep dive into historic places
-                        and routes.
-                      </span>
-                    </div>
+                    <SrLeft>
+                      <div className="w-full flex  items-center justify-center">
+                        <div className="p-10 bg-[#07AAF6]  flex flex-col items-start justify-center rounded-3xl text-white w-11/12 h-full color-loop">
+                          <h2 className="text-2xl font-medium mb-2 ">
+                            Solution Statement
+                          </h2>
+                          <h1 className="text-[3vw] font-bold ">
+                            Modernizing the Travel Experience
+                          </h1>
+                          <span className="text-2xl font-medium mb-2 ">
+                            To enhance the customer experience and address the
+                            challenges faced by Simi Reizen, we developed a
+                            modern mobile app featuring a deep dive into
+                            historic places and routes.
+                          </span>
+                        </div>
+                      </div>
+                    </SrLeft>
                     <div className=" flex items-center  w-11/12 h-full  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/ss1.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <SrBottom>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/ss1.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </SrBottom>
                     </div>
                   </div>
                   <div className="col-span-6 items-center justify-center flex flex-col gap-5">
                     <div className=" flex items-center  w-11/12  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/ss2.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <SrTop>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/ss2.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </SrTop>
                     </div>
                     <div className=" flex items-center  w-11/12  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/ss3.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <SrRight>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/ss3.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </SrRight>
                     </div>
                   </div>
                 </div>
@@ -530,9 +545,11 @@ export default function Simireizen() {
                       <span className="text-4xl font-normal">Lexend</span>
                     </div>
                     <div className="flex w-full items-center justify-center   ">
-                      <span className="text-[9vw] font-light justify-self-center w-10/12 ">
-                        Aa1
-                      </span>
+                      <SrLeft>
+                        <span className="text-[9vw] font-light justify-self-center w-10/12 ">
+                          Aa1
+                        </span>
+                      </SrLeft>
                     </div>
                     <div className="flex w-full items-start justify-end ">
                       <span className=" font-bold text-2xl justify-self-end">
@@ -543,52 +560,54 @@ export default function Simireizen() {
                     </div>
                   </div>
                   <div className="col-span-6 items-center justify-center group overflow-hidden">
-                    <div
-                      className="w-full items-end justify-end flex relative bg-[#EF23A1] h-[100vh] ps-20 pt-20  overflow-hidden transition-all
-                     duration-300 group-hover:bg-[#000000] group-hover:transition-all  group-hover:duration-[2500ms] "
-                    >
-                      <div className="w-full items-start justify-start ps-10 absolute top-0  text-3xl font-bold  ">
-                        <div className="relative mt-6">
-                          <span className="text-white text-4xl font-bold group-hover:hidden group-hover:transition-all  group-hover:duration-[1500ms]">
-                            #EF23A1
-                          </span>
-                          <span className="text-white text-4xl font-bold hidden group-hover:flex group-hover:transition-all  group-hover:duration-[1500ms]">
-                            #000000
-                          </span>
-                        </div>
-                      </div>
+                    <SrRight>
                       <div
-                        className="bg-[#07AAF6]  items-end justify-end ps-10 pt-40 w-full h-full relative -rotate-[20deg] rounded-3xl top-[4%] left-[20%] 
-                       transition-all duration-700 group-hover:bg-[#FFFFFF]  group-hover:rotate-[340deg]   group-hover:transition-all  group-hover:duration-[2500ms] "
+                        className="w-full items-end justify-end flex relative bg-[#EF23A1] h-[100vh] ps-20 pt-20  overflow-hidden transition-all
+                     duration-300 group-hover:bg-[#000000] group-hover:transition-all  group-hover:duration-[2500ms] "
                       >
                         <div className="w-full items-start justify-start ps-10 absolute top-0  text-3xl font-bold  ">
                           <div className="relative mt-6">
-                            <span className="text-white text-4xl font-bold group-hover:hidden mt-10 group-hover:delay-1000 group-hover:transition-all  group-hover:duration-[1500ms]">
-                              #07AAF6
+                            <span className="text-white text-4xl font-bold group-hover:hidden group-hover:transition-all  group-hover:duration-[1500ms]">
+                              #EF23A1
                             </span>
-                            <span className="text-black text-4xl font-bold hidden group-hover:flex group-hover:delay-1000 group-hover:transition-all  group-hover:duration-[1500ms]">
-                              #FFFFFF
+                            <span className="text-white text-4xl font-bold hidden group-hover:flex group-hover:transition-all  group-hover:duration-[1500ms]">
+                              #000000
                             </span>
                           </div>
                         </div>
                         <div
-                          className="bg-[#F7D239]  items-end justify-end ps-10 pt-10 w-full h-full relative rounded-3xl 
-                        -rotate-[20deg] top-[15%] left-[10%] transition-all duration-700 group-hover:bg-[#CCCBC7]   group-hover:rotate-[340deg] 
-                         group-hover:transition-all  group-hover:duration-[1500ms]"
+                          className="bg-[#07AAF6]  items-end justify-end ps-10 pt-40 w-full h-full relative -rotate-[20deg] rounded-3xl top-[4%] left-[20%] 
+                       transition-all duration-700 group-hover:bg-[#FFFFFF]  group-hover:rotate-[340deg]   group-hover:transition-all  group-hover:duration-[2500ms] "
                         >
                           <div className="w-full items-start justify-start ps-10 absolute top-0  text-3xl font-bold  ">
                             <div className="relative mt-6">
-                              <span className="text-black text-4xl font-bold group-hover:hidden">
-                                #F7D239
+                              <span className="text-white text-4xl font-bold group-hover:hidden mt-10 group-hover:delay-1000 group-hover:transition-all  group-hover:duration-[1500ms]">
+                                #07AAF6
                               </span>
-                              <span className="text-black text-4xl font-bold hidden group-hover:flex">
-                                #CCCBC7
+                              <span className="text-black text-4xl font-bold hidden group-hover:flex group-hover:delay-1000 group-hover:transition-all  group-hover:duration-[1500ms]">
+                                #FFFFFF
                               </span>
+                            </div>
+                          </div>
+                          <div
+                            className="bg-[#F7D239]  items-end justify-end ps-10 pt-10 w-full h-full relative rounded-3xl 
+                        -rotate-[20deg] top-[15%] left-[10%] transition-all duration-700 group-hover:bg-[#CCCBC7]   group-hover:rotate-[340deg] 
+                         group-hover:transition-all  group-hover:duration-[1500ms]"
+                          >
+                            <div className="w-full items-start justify-start ps-10 absolute top-0  text-3xl font-bold  ">
+                              <div className="relative mt-6">
+                                <span className="text-black text-4xl font-bold group-hover:hidden">
+                                  #F7D239
+                                </span>
+                                <span className="text-black text-4xl font-bold hidden group-hover:flex">
+                                  #CCCBC7
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </SrRight>
                   </div>
                 </div>
               </div>
@@ -598,57 +617,65 @@ export default function Simireizen() {
                     className="col-span-8 flex flex-col items-start justify-center gap-5
                   "
                   >
-                    <span className="text-5xl font-bold"> Wireframing</span>
-                    <span className="text-3xl font-normal">
-                      During the wireframing and prototyping phase, our primary
-                      focus was on mapping out the app’s structure and user
-                      journey to ensure a seamless and intuitive experience. We
-                      began by creating detailed wireframes for each screen,
-                      outlining the placement of elements such as buttons,
-                      menus, and content areas.
-                    </span>
-                    <span className="text-3xl font-bold">
-                      Heres a detailed look at the process:
-                    </span>
-                    <span className="text-5xl font-bold mt-4">
-                      Main Elemenets
-                    </span>
-                    <div className=" w-full flex items-center justify-between">
-                      <div className=" flex items-center    ">
-                        <Image
-                          className=" relativepos "
-                          src="/mobileapps/sr/me1.png"
-                          alt="Background 1"
-                          fill
-                        />
+                    <SrTop>
+                      <div className="flex flex-col w-full items-start justify-center gap-5">
+                        <span className="text-5xl font-bold"> Wireframing</span>
+                        <span className="text-3xl font-normal">
+                          During the wireframing and prototyping phase, our
+                          primary focus was on mapping out the app’s structure
+                          and user journey to ensure a seamless and intuitive
+                          experience. We began by creating detailed wireframes
+                          for each screen, outlining the placement of elements
+                          such as buttons, menus, and content areas.
+                        </span>
+                        <span className="text-3xl font-bold">
+                          Heres a detailed look at the process:
+                        </span>
+                        <span className="text-5xl font-bold mt-4">
+                          Main Elemenets
+                        </span>
                       </div>
-                      <div className=" flex items-center    ">
-                        <Image
-                          className=" relativepos "
-                          src="/mobileapps/sr/me2.png"
-                          alt="Background 1"
-                          fill
-                        />
-                      </div>
-                      <div className=" flex items-center    ">
-                        <Image
-                          className=" relativepos "
-                          src="/mobileapps/sr/me3.png"
-                          alt="Background 1"
-                          fill
-                        />
-                      </div>
-                    </div>
+                    </SrTop>
+                    <SrLeft>
+                      <div className=" w-full flex items-center justify-between">
+                        <div className=" flex items-center    ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/sr/me1.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                        <div className=" flex items-center    ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/sr/me2.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                        <div className=" flex items-center    ">
+                          <Image
+                            className=" relativepos "
+                            src="/mobileapps/sr/me3.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                      </div>{' '}
+                    </SrLeft>
                   </div>
                   <div className="col-span-4 flex items-center justify-center">
-                    <div className=" flex items-center   w-10/12  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/wf1.png"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
+                    <SrBottom>
+                      <div className=" flex items-center   w-10/12  ">
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/wf1.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SrBottom>
                   </div>
                 </div>
                 <div className="w-full items-center justify-center flex">
@@ -665,60 +692,75 @@ export default function Simireizen() {
               <div className=" flex flex-col items-center justify-center w-full">
                 <div className="grid grid-cols-12 w-11/12  items-center justify-center gap-10 py-10">
                   <div className="col-span-6 flex items-center justify-center h-full rounded-3xl">
-                    <div className=" flex items-center   h-full w-full  ">
-                      <Image
-                        className=" relativepos  rounded-3xl "
-                        src="/mobileapps/sr/f12.gif"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
+                    <SrLeft>
+                      <div className=" flex items-center   h-full w-full  ">
+                        <Image
+                          className=" relativepos  rounded-3xl "
+                          src="/mobileapps/sr/f12.gif"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SrLeft>
                   </div>
                   <div className="col-span-6 flex items-center justify-center">
-                    <div className=" flex items-center  rounded-3xl  w-full   ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/f1.png"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
+                    <SrRight>
+                      <div className=" flex items-center  rounded-3xl  w-full   ">
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/f1.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SrRight>
                   </div>
                   <div className="col-span-12 flex items-center justify-center">
-                    <div className=" flex items-center  rounded-3xl w-full     ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/sr/f3.png"
-                        alt="Background 1"
-                        fill
-                      />
-                    </div>
+                    <SrBottom>
+                      <div className=" flex items-center  rounded-3xl w-full     ">
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sr/f3.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SrBottom>
                   </div>
                   <div className="col-span-12 flex items-center justify-center">
                     <div className=" flex items-center   w-full     ">
-                      <Image
-                        className=" relativepos rounded-3xl "
-                        src="/mobileapps/sr/f4.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <SrBottom>
+                        <Image
+                          className=" relativepos rounded-3xl "
+                          src="/mobileapps/sr/f4.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </SrBottom>
                     </div>
                   </div>
 
                   <div className="col-span-12 flex items-center justify-center relative py-10">
                     <div className="w-full items-center justify-end absolute flex top-0">
-                      <div className="w-2/3 flex flex-col  gap-5 pe-10">
-                        <span className="text-5xl font-bold"> User Flow</span>
-                        <span className="text-3xl font-normal">
-                          Upon launching the app, users are greeted with a
-                          welcome message on the Home Screen, featuring a quick
-                          access search bar and a selection of popular
-                          destinations. From here, users can navigate to the
-                          Search Trips section, where they enter their desired
-                          destination, travel dates, and preferences. The app
-                          then displays search results, which can be filtered by
-                          price, activity type, and duration.s
-                        </span>
+                      <div className="w-2/3 flex flex-col   pe-10">
+                        <SrTop>
+                          <div className="w-full flex flex-col gap-5">
+                            <span className="text-5xl font-bold">
+                              User Flow
+                            </span>
+                            <span className="text-3xl font-normal">
+                              Upon launching the app, users are greeted with a
+                              welcome message on the Home Screen, featuring a
+                              quick access search bar and a selection of popular
+                              destinations. From here, users can navigate to the
+                              Search Trips section, where they enter their
+                              desired destination, travel dates, and
+                              preferences. The app then displays search results,
+                              which can be filtered by price, activity type, and
+                              duration.s
+                            </span>
+                          </div>
+                        </SrTop>
                       </div>
                     </div>
                     <div className=" flex items-center   w-11/12  relative  ">
@@ -733,7 +775,7 @@ export default function Simireizen() {
                 </div>
 
                 <div className="w-full items-center justify-center relative  ">
-                  <div className="relative  flex items-center justify-center h-[70vh] ">
+                  <div className="relative  flex items-center justify-center h-[80vh] ">
                     <div
                       id="videoDiv"
                       className="video-container flex flex-col h-full absolute z-0 w-full"
@@ -762,7 +804,9 @@ export default function Simireizen() {
                       />
                     </div>
                     <div className=" flex items-center absolute w-auto bottom-[65%]  z-10  text-white font-bold text-[5vw] left-[4%]   ">
-                      <span> Discover Your</span>
+                      <SrLeft>
+                        <span> Discover Your</span>
+                      </SrLeft>
                     </div>
                   </div>
                 </div>
