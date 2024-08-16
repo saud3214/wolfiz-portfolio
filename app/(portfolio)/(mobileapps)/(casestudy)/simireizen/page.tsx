@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { Lexend } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
@@ -7,7 +7,6 @@ import {
   simiReizen,
   setupSvgInteractions,
   setupScrollAnimation,
-  ColorBlocks,
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 import useSmoothScroll from '@/app/components/ss';
 import {
