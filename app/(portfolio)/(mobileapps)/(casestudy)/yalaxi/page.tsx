@@ -124,12 +124,9 @@ export default function Yalaxi() {
                     <div className="flex flex-col items-end justify-end ps-5 text-end">
                       <div className=" flex flex-col w-full items-end justify-end  text-6xl  text-[#4a4848] font-bold">
                         <span className="hover-text capitalize  ">
-                          Solution{' '}
+                          Solution
                         </span>
-                        <span className="hover-text capitalize">
-                          {' '}
-                          statement
-                        </span>
+                        <span className="hover-text capitalize">statement</span>
                       </div>
 
                       <span className="text-white pt-5 w-8/12">

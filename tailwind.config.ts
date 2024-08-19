@@ -87,6 +87,8 @@ const config: Config = {
         srbg4: "url('/mobileapps/sr/bg4.png')",
         drbg1: "url('/mobileapps/doroos/bg1.png')",
         drbg2: "url('/mobileapps/doroos/bg2.png')",
+        drbg3: "url('/mobileapps/doroos/bg3.png')",
+        drbg4: "url('/mobileapps/doroos/bg4.png')",
       },
       colors: {
         nht: '#006360',

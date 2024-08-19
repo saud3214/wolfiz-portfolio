@@ -226,7 +226,26 @@ export const movingText = () => {
     },
   );
 };
+export const movingText2 = () => {
+  gsap.registerPlugin(ScrollTrigger);
 
+  gsap.fromTo(
+    '.fontpopins2', // Target the element with the class "font-semibold"
+    { scale: 0.5 }, // Start from half the size
+    {
+      scale: 1, // Animate to the original size
+      duration: 1,
+      delay: 0.5, // Duration of the animation (adjust as needed)
+      ease: 'power2.out', // Easing function for a smooth effect
+      scrollTrigger: {
+        trigger: '.fontpopins2', // Trigger animation when this element enters the viewport
+        start: 'top 70%', // When to start the animation
+        end: 'bottom 70%', // When to end the animation
+        toggleActions: 'play none none reverse', // Play the animation forward and reverse on scroll back
+      },
+    },
+  );
+};
 export const simiReizen = () => {
   gsap.registerPlugin(ScrollTrigger);
   document

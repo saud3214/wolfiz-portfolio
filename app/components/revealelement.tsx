@@ -1,5 +1,74 @@
 import React, { useEffect, useRef, ReactNode } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
+interface CommonProps {
+  children: ReactNode;
+}
+
+interface RotateImageProps extends CommonProps {}
+interface RotateTextProps extends CommonProps {}
+
+export const RotateText: React.FC<RotateTextProps> = ({ children }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    margin: '-15% 0px -15% 0px', // Similar to scroll margins or thresholds in GSAP
+  });
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        scale: 1,
+        transition: {
+          duration: 1,
+          delay: 0.2,
+          ease: 'easeInOut',
+        },
+      });
+    } else {
+      controls.start({
+        scale: 0.5,
+      });
+    }
+  }, [isInView, controls]);
+
+  return (
+    <motion.div ref={ref} animate={controls} initial={{ scale: 0.5 }}>
+      {children}
+    </motion.div>
+  );
+};
+export const RotateImage: React.FC<RotateImageProps> = ({ children }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    margin: '-15% 0px -30% 0px', // Similar to scroll margins or thresholds in GSAP
+  });
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        rotate: 0,
+        transition: {
+          duration: 1,
+          delay: 0.5,
+          ease: 'easeInOut',
+        },
+      });
+    } else {
+      controls.start({
+        rotate: 90,
+      });
+    }
+  }, [isInView, controls]);
+
+  return (
+    <motion.div ref={ref} animate={controls} initial={{ rotate: 90 }}>
+      {children}
+    </motion.div>
+  );
+};
 
 interface RevealOnScrollProps {
   children: ReactNode;
