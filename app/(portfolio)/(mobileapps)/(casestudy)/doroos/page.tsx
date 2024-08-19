@@ -17,6 +17,7 @@ import {
   RevealOnScroll,
   RotateImage,
   RotateText,
+  RevealOnScrollXImage,
 } from '@/app/components/revealelement';
 import { AnimatedText2, AnimatedText3 } from '@/app/components/animatedtext';
 const urbanist = Urbanist({
@@ -46,6 +47,7 @@ export default function Doroos() {
                       <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
                         Case Study
                       </div>
+
                       <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
                         UI/UX Design
                       </div>
@@ -169,7 +171,7 @@ export default function Doroos() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-center flex flex-col bg-drbg2 bg-contain bg-no-repeat bg-right-top py-20 ">
+              <div className="w-full items-center justify-center flex flex-col bg-drbg2 bg-contain bg-no-repeat bg-right-top py-20 gap-5 ">
                 <div className="flex  items-center  relative  w-4/12   ">
                   <RevealOnScroll>
                     <Image
@@ -181,11 +183,11 @@ export default function Doroos() {
                   </RevealOnScroll>
                 </div>
                 <div className=" w-full items-center justify-center flex gap-5 ">
-                  <div className="grid grid-cols-12 items-center justify-center w-full ">
+                  <div className="grid grid-cols-12 items-center justify-center w-full gap-5">
                     <div className="col-span-4 items-center justify-center flex">
                       <SrLeft>
                         <div className="w-full items-center justify-center flex">
-                          <div className="h-80 w-96 bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
+                          <div className="h-80 w-full bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
                             <div className=" w-full items-end justify-end flex">
                               <div className="flex  items-center  relative     ">
                                 <Image
@@ -209,7 +211,7 @@ export default function Doroos() {
                         </div>
                       </SrLeft>
                     </div>
-                    <div className="col-span-8 items-center justify-center flex">
+                    <div className="col-span-8 items-start justify-start flex">
                       <span className="font-medium text-xl text-white 2xl:w-7/12">
                         The design process for the learning app starts with
                         audience research and competitor analysis. Initial
@@ -224,11 +226,11 @@ export default function Doroos() {
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-12 items-center justify-center w-full pt-10 ">
+                <div className="grid grid-cols-12 items-center justify-center w-full  gap-5 ">
                   <div className="col-span-4 items-center justify-center flex">
                     <SrLeft>
                       <div className="w-full items-center justify-center flex">
-                        <div className="h-80 w-96 bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
+                        <div className="h-80 w-full bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
                           <div className=" w-full items-end justify-end flex">
                             <div className="flex  items-center  relative     ">
                               <Image
@@ -239,7 +241,7 @@ export default function Doroos() {
                               />
                             </div>
                           </div>
-                          <div className="flex flex-col text-white gap-3 ">
+                          <div className="flex flex-col text-white gap-3  text-start w-full">
                             <span className="font-bold text-5xl"> Define</span>
                             <span className="font-semibold text-2xl">
                               User Persona, Empathy Mapping
@@ -252,7 +254,7 @@ export default function Doroos() {
                   <div className="col-span-4 items-center justify-center flex">
                     <SrBottom>
                       <div className="w-full items-center justify-center flex">
-                        <div className="h-80 w-96 bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
+                        <div className="h-80 w-full bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
                           <div className=" w-full items-end justify-end flex">
                             <div className="flex  items-center  relative     ">
                               <Image
@@ -263,7 +265,7 @@ export default function Doroos() {
                               />
                             </div>
                           </div>
-                          <div className="flex flex-col text-white gap-3 ">
+                          <div className="flex flex-col text-white gap-3  text-start w-full">
                             <span className="font-bold text-5xl"> Ideat</span>
                             <span className="font-semibold text-2xl">
                               User Flow, Information Architecture
@@ -276,7 +278,7 @@ export default function Doroos() {
                   <div className="col-span-4 items-center justify-center flex">
                     <SrRight>
                       <div className="w-full items-center justify-center flex">
-                        <div className="h-80 w-96 bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
+                        <div className="h-80 w-full bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
                           <div className=" w-full items-end justify-end flex">
                             <div className="flex  items-center  relative     ">
                               <Image
@@ -287,7 +289,7 @@ export default function Doroos() {
                               />
                             </div>
                           </div>
-                          <div className="flex flex-col text-white gap-3 ">
+                          <div className="flex flex-col text-white gap-3  text-start w-full">
                             <span className="font-bold text-5xl"> Design</span>
                             <span className="font-semibold text-2xl">
                               Low/High Fidelity Wireframes, Prototyping
