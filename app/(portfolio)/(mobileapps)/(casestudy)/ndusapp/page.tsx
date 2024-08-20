@@ -245,7 +245,7 @@ export default function Ndusapp() {
               </div>
 
               <div className="w-full items-center justify-center flex  ">
-                <div className="flex  items-center    ">
+                <div className="flex  items-center w-full   ">
                   <Image
                     className=" relativepos    "
                     src="/mobileapps/ndusapp/screens.gif"
