@@ -89,6 +89,12 @@ const config: Config = {
         drbg2: "url('/mobileapps/doroos/bg2.png')",
         drbg3: "url('/mobileapps/doroos/bg3.png')",
         drbg4: "url('/mobileapps/doroos/bg4.png')",
+        ndubg1: "url('/mobileapps/ndusapp/bg1.png')",
+        ndubg2: "url('/mobileapps/ndusapp/bg2.png')",
+        ndubg3: "url('/mobileapps/ndusapp/bg3.png')",
+        ndubg4: "url('/mobileapps/ndusapp/bg4.png')",
+        ndubg5: "url('/mobileapps/ndusapp/bg5.png')",
+        ndubg6: "url('/mobileapps/ndusapp/box42.png')",
       },
       colors: {
         nht: '#006360',
