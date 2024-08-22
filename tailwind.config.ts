@@ -95,6 +95,7 @@ const config: Config = {
         ndubg4: "url('/mobileapps/ndusapp/bg4.png')",
         ndubg5: "url('/mobileapps/ndusapp/bg5.png')",
         ndubg6: "url('/mobileapps/ndusapp/box42.png')",
+        peptidebg1: "url('/mobileapps/peptide/bg1.png')",
       },
       colors: {
         nht: '#006360',

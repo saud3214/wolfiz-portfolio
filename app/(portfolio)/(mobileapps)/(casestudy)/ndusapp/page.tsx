@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
@@ -13,13 +13,9 @@ import {
   SrLeft,
   SrRight,
   SrBottom,
-  SrTop,
   RevealOnScroll,
-  RotateImage,
-  RotateText,
-  RevealOnScrollXImage,
 } from '@/app/components/revealelement';
-import { AnimatedText2, AnimatedText3 } from '@/app/components/animatedtext';
+import { AnimatedText2 } from '@/app/components/animatedtext';
 const urbanist = Inter({
   subsets: ['latin'],
   weight: ['400', '300', '500', '600', '900'],
