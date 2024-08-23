@@ -334,8 +334,6 @@ export const setupScrollAnimation = () => {
   });
 };
 
-import { useState } from 'react';
-
 export const ColorBlocks = () => {
   <div className="flex justify-center items-center min-h-screen bg-white">
     <div className="relative w-96 h-96 group">
@@ -349,4 +347,88 @@ export const ColorBlocks = () => {
       <div className="absolute inset-8 bg-[#F7D239] transition-all duration-300 group-hover:bg-[#CCCBC7] rounded-lg"></div>
     </div>
   </div>;
+};
+
+export const animation1 = () => {
+  gsap.utils.toArray('.rite').forEach((rite, index) => {
+    gsap.fromTo(
+      rite,
+      { opacity: 0, x: -200 }, // Starting state
+      {
+        opacity: 1, // Ending state
+        x: 0,
+        duration: 1,
+        delay: index * 0.3, // Adjust the delay for the wave effect
+        scrollTrigger: {
+          trigger: '.animationcontainer',
+          start: 'top 80%', // Start animation when the top of the element hits the bottom of the viewport
+          end: 'bottom 60%', // End animation when the bottom of the element hits the top of the viewport
+          scrub: true, // Smooth animation based on scroll
+        },
+      },
+    );
+  });
+};
+
+export const animation2 = () => {
+  gsap.utils.toArray('.lift').forEach((lift, index) => {
+    gsap.fromTo(
+      lift,
+      { opacity: 0, x: 200 }, // Starting state
+      {
+        opacity: 1, // Ending state
+        x: 0,
+        duration: 1,
+        delay: index * 0.3, // Adjust the delay for the wave effect
+        scrollTrigger: {
+          trigger: '.animationcontainer',
+          start: 'top 80%', // Start animation when the top of the element hits the bottom of the viewport
+          end: 'bottom 60%', // End animation when the bottom of the element hits the top of the viewport
+          scrub: true, // Smooth animation based on scroll
+        },
+      },
+    );
+  });
+};
+
+export const animation3 = () => {
+  gsap.utils.toArray('.lift2').forEach((lift2, index) => {
+    gsap.fromTo(
+      lift2,
+      { opacity: 0, x: -200 }, // Starting state
+      {
+        opacity: 1, // Ending state
+        x: 0,
+        duration: 1,
+        delay: index * 0.4, // Adjust the delay for the wave effect
+        scrollTrigger: {
+          trigger: '.animationcontainer2',
+          start: 'top 80%', // Start animation when the top of the element hits the bottom of the viewport
+          end: 'bottom 30%', // End animation when the bottom of the element hits the top of the viewport
+          scrub: true, // Smooth animation based on scroll
+        },
+      },
+    );
+  });
+};
+
+export const animation4 = () => {
+  gsap.utils.toArray('.rite2').forEach((rite2, index) => {
+    gsap.fromTo(
+      rite2,
+      { opacity: 0, x: 200 }, // Starting state
+      {
+        opacity: 1, // Ending state
+        x: 0,
+        duration: 1,
+        delay: index * 0.3, // Adjust the delay for the wave effect
+        scrollTrigger: {
+          trigger: '.animationcontainer2',
+          start: 'top 80%', // Start animation when the top of the element hits the bottom of the viewport
+          end: 'bottom 30%', // End animation when the bottom of the element hits the top of the viewport
+          scrub: true, // Smooth animation based on scroll
+        },
+      },
+    );
+  });
 };
