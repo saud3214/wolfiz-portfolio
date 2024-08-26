@@ -1,5 +1,11 @@
 import React, { useEffect, useRef, ReactNode } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import {
+  motion,
+  useAnimation,
+  useInView,
+  useScroll,
+  useTransform,
+} from 'framer-motion';
 interface CommonProps {
   children: ReactNode;
 }
@@ -655,5 +661,47 @@ export const SrBottom: React.FC<RevealOnScrollProps> = ({
         }}
       />
     </div>
+  );
+};
+
+interface TopImageProps {
+  children: React.ReactNode;
+}
+
+export const TopImage: React.FC<TopImageProps> = ({ children }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end 30%'], // Maps scroll position to the animation
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [150, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+
+  return (
+    <motion.div ref={ref} style={{ y, opacity }}>
+      {children}
+    </motion.div>
+  );
+};
+
+interface BottomImageProps {
+  children: React.ReactNode;
+}
+
+export const BottomImage: React.FC<BottomImageProps> = ({ children }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end 30%'],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-150, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+
+  return (
+    <motion.div ref={ref} style={{ y, opacity }}>
+      {children}
+    </motion.div>
   );
 };

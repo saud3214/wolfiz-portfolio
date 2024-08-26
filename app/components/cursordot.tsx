@@ -44,7 +44,7 @@ const CursorDot: React.FC = () => {
       gsap.to(dotRef.current, {
         scale: 3,
         opacity: 1,
-        borderColor: 'blue',
+        borderColor: 'green',
         backgroundColor: '',
       });
     };

@@ -23,6 +23,8 @@ import {
   RotateImage,
   RotateText,
   RevealOnScrollXImage,
+  TopImage,
+  BottomImage,
 } from '@/app/components/revealelement';
 import { AnimatedText2, AnimatedText3 } from '@/app/components/animatedtext';
 const urbanist = Inter({
@@ -39,7 +41,6 @@ export default function Peptide() {
     animation2();
     animation3();
     animation4();
-    ScrollOnTop();
   });
 
   return (
@@ -59,6 +60,7 @@ export default function Peptide() {
                         src="/mobileapps/peptide/iphone.png"
                         alt="Background 1"
                         fill
+                        priority
                       />
                     </SrBottom>
                   </div>
@@ -99,6 +101,7 @@ export default function Peptide() {
                         src="/mobileapps/peptide/ep1.png"
                         alt="Background 1"
                         fill
+                        priority
                       />
                     </div>
                   </SrLeft>
@@ -601,89 +604,105 @@ export default function Peptide() {
                   </div>
                 </div>
               </div>
-              <div className="w-11/12 flex flex-col items-center justify-center py-10 topimgcon">
+              <div className="w-11/12 flex flex-col items-center justify-center py-10 relative ">
                 <span className=" text-6xl font-semibold py-10">
                   App Screens
                 </span>
-                <div className=" grid grid-cols-12 w-full items-start justify-start gap-10 pt-10 ">
-                  <div className="col-span-3 flex pt-20  items-center justify-center">
+                <div className=" grid grid-cols-12 w-full items-start justify-start gap-10 pt-10  topimgcon">
+                  <div className="col-span-3 flex pt-10  items-center justify-center topimgcon">
                     <div className="flex  items-center  relative   w-10/12  topimg ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/peptide/s1.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <TopImage>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/peptide/s1.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </TopImage>
                     </div>
                   </div>
                   <div className="col-span-3 flex items-center justify-center ">
-                    <div className="flex  items-center  relative   w-10/12  botmimg">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/peptide/s2.png"
-                        alt="Background 1"
-                        fill
-                      />
+                    <div className="flex  items-center justify-center  relative   w-10/12  botmimg">
+                      <BottomImage>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/peptide/s2.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </BottomImage>
                     </div>
                   </div>
-                  <div className="col-span-3 flex pt-20 items-center justify-center">
+                  <div className="col-span-3 flex pt-10 items-center justify-center">
                     <div className="flex  items-center  relative   w-10/12  topimg">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/peptide/s3.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <TopImage>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/peptide/s3.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </TopImage>
                     </div>
                   </div>
-                  <div className="col-span-3 flex items-center justify-center  ">
+                  <div className="col-span-3  flex items-center justify-center  ">
                     <div className="flex  items-center  relative   w-10/12  botmimg">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/peptide/s4.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <BottomImage>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/peptide/s4.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </BottomImage>
                     </div>
                   </div>
-                  <div className="col-span-3 flex pt-20 items-center justify-center">
+                  <div className="col-span-3 flex pt-10 items-center justify-center">
                     <div className="flex  items-center  relative     w-10/12 topimg ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/peptide/s5.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <TopImage>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/peptide/s5.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </TopImage>
                     </div>
                   </div>
-                  <div className="col-span-3 flex items-center justify-center">
-                    <div className="flex  items-center  relative    w-10/12 botmimg ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/peptide/s6.png"
-                        alt="Background 1"
-                        fill
-                      />
+                  <div className="col-span-3 pt-10 flex items-center justify-center">
+                    <div className="flex  items-center justify-center  relative    w-10/12 botmimg ">
+                      <BottomImage>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/peptide/s6.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </BottomImage>
                     </div>
                   </div>
-                  <div className="col-span-3 flex pt-20 items-center justify-center">
+                  <div className="col-span-3 flex pt-10 items-center justify-center">
                     <div className="flex  items-center  relative     w-10/12 topimg ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/peptide/s7.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <TopImage>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/peptide/s7.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </TopImage>
                     </div>
                   </div>
-                  <div className="col-span-3 flex items-center justify-center">
+                  <div className="col-span-3 pt-10 flex items-center justify-center">
                     <div className="flex  items-center  relative    w-10/12 botmimg  ">
-                      <Image
-                        className=" relativepos "
-                        src="/mobileapps/peptide/s8.png"
-                        alt="Background 1"
-                        fill
-                      />
+                      <BottomImage>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/peptide/s8.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </BottomImage>
                     </div>
                   </div>
                 </div>

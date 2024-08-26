@@ -517,7 +517,7 @@ img.clipPath-img.active {
 .cursor-dot {
   width: 30px;
   height: 30px;
-  background-color: #30eecb;
+  background-color: #0fb19b;
   border-radius: 50%;
   pointer-events: none;
   z-index: 500;
@@ -527,7 +527,7 @@ img.clipPath-img.active {
 
 .hover-target span:hover ~ .cursor-dot {
   background-color: transparent;
-  border: 2px solid rgb(9, 9, 109);
+  border: 2px solid rgb(233, 6, 6);
   transform: scale(3);
   opacity: 0.7;
 }

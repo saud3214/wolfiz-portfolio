@@ -448,6 +448,7 @@ export const ScrollOnTop = () => {
           start: 'top 80%', // Start animation when the top of the element hits the bottom of the viewport
           end: 'bottom 50%', // End animation when the bottom of the element hits the top of the viewport
           scrub: true, // Smooth animation based on scroll
+          markers: true,
         },
       },
     );
