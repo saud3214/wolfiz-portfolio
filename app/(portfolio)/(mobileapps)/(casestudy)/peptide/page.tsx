@@ -10,6 +10,7 @@ import {
   animation2,
   animation3,
   animation4,
+  ScrollOnTop,
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 
 import useSmoothScroll from '@/app/components/ss';
@@ -38,6 +39,7 @@ export default function Peptide() {
     animation2();
     animation3();
     animation4();
+    ScrollOnTop();
   });
 
   return (
@@ -102,16 +104,25 @@ export default function Peptide() {
                   </SrLeft>
                 </div>
                 <div className="col-span-6 flex items-center justify-center">
-                  <SrRight>
-                    <div className="flex  items-center  relative  w-full h-[60vh]       ">
-                      <Image
-                        className=" relativepos object-cover rounded-3xl"
-                        src="/mobileapps/peptide/logo.png"
-                        alt="Background 1"
-                        fill
+                  <div
+                    id="videoDiv"
+                    className="video-container flex flex-col h-[60vh] rounded-3xl w-full"
+                  >
+                    <video
+                      id="roundvideo"
+                      autoPlay
+                      muted
+                      loop
+                      preload="yes"
+                      playsInline
+                      className="h-[60vh] rounded-3xl"
+                    >
+                      <source
+                        src="/mobileapps/peptide/Peptide logo.mp4"
+                        type="video/mp4"
                       />
-                    </div>
-                  </SrRight>
+                    </video>
+                  </div>
                 </div>
               </div>
               <div className="grid grid-cols-12 items-center justify-center w-10/12 py-10 2xl:mt-10 gap-10">
@@ -549,20 +560,26 @@ export default function Peptide() {
                 </div>
               </div>
               <div className="w-full items-center justify-center flex flex-col bg-peptidebg2 bg-cover bg-center bg-no-repeat text-center pt-10 relative">
-                <span className="text-6xl font-bold text-white  ">
-                  Take Right Measurement <br></br> With Peptide Calculator
-                </span>
-                <span className="text-3xl font-medium text-white pt-4">
-                  Download Exploring Peptide Now
-                </span>
+                <RevealOnScroll>
+                  <div className="flex flex-col items-center justify-center w-full">
+                    <span className="text-6xl font-bold text-white  ">
+                      Take Right Measurement <br></br> With Peptide Calculator
+                    </span>
+                    <span className="text-3xl font-medium text-white pt-4">
+                      Download Exploring Peptide Now
+                    </span>
+                  </div>
+                </RevealOnScroll>
                 <div className="flex items-center justify-between w-11/12">
                   <div className="flex  items-center  relative  w-[29%]   ">
-                    <Image
-                      className=" relativepos "
-                      src="/mobileapps/peptide/dl.png"
-                      alt="Background 1"
-                      fill
-                    />
+                    <SrLeft>
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/peptide/dl.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </SrLeft>
                   </div>
                   <div className="flex  items-center  absolute  w-[29%] bottom-0 right-[35%]   ">
                     <Image
@@ -573,22 +590,24 @@ export default function Peptide() {
                     />
                   </div>
                   <div className="flex  items-center  relative  w-[26%]   ">
-                    <Image
-                      className=" relativepos "
-                      src="/mobileapps/peptide/dr.png"
-                      alt="Background 1"
-                      fill
-                    />
+                    <SrRight>
+                      <Image
+                        className=" relativepos "
+                        src="/mobileapps/peptide/dr.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </SrRight>
                   </div>
                 </div>
               </div>
-              <div className="w-11/12 flex flex-col items-center justify-center py-10 ">
+              <div className="w-11/12 flex flex-col items-center justify-center py-10 topimgcon">
                 <span className=" text-6xl font-semibold py-10">
                   App Screens
                 </span>
-                <div className=" grid grid-cols-12 w-full items-start justify-start gap-10 pt-10">
+                <div className=" grid grid-cols-12 w-full items-start justify-start gap-10 pt-10 ">
                   <div className="col-span-3 flex pt-20  items-center justify-center">
-                    <div className="flex  items-center  relative   w-10/12   ">
+                    <div className="flex  items-center  relative   w-10/12  topimg ">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/peptide/s1.png"
@@ -598,7 +617,7 @@ export default function Peptide() {
                     </div>
                   </div>
                   <div className="col-span-3 flex items-center justify-center ">
-                    <div className="flex  items-center  relative   w-10/12  ">
+                    <div className="flex  items-center  relative   w-10/12  botmimg">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/peptide/s2.png"
@@ -608,7 +627,7 @@ export default function Peptide() {
                     </div>
                   </div>
                   <div className="col-span-3 flex pt-20 items-center justify-center">
-                    <div className="flex  items-center  relative   w-10/12  ">
+                    <div className="flex  items-center  relative   w-10/12  topimg">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/peptide/s3.png"
@@ -617,8 +636,8 @@ export default function Peptide() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-3 flex items-center justify-center ">
-                    <div className="flex  items-center  relative   w-10/12  ">
+                  <div className="col-span-3 flex items-center justify-center  ">
+                    <div className="flex  items-center  relative   w-10/12  botmimg">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/peptide/s4.png"
@@ -628,7 +647,7 @@ export default function Peptide() {
                     </div>
                   </div>
                   <div className="col-span-3 flex pt-20 items-center justify-center">
-                    <div className="flex  items-center  relative     w-10/12 ">
+                    <div className="flex  items-center  relative     w-10/12 topimg ">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/peptide/s5.png"
@@ -638,7 +657,7 @@ export default function Peptide() {
                     </div>
                   </div>
                   <div className="col-span-3 flex items-center justify-center">
-                    <div className="flex  items-center  relative    w-10/12  ">
+                    <div className="flex  items-center  relative    w-10/12 botmimg ">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/peptide/s6.png"
@@ -648,7 +667,7 @@ export default function Peptide() {
                     </div>
                   </div>
                   <div className="col-span-3 flex pt-20 items-center justify-center">
-                    <div className="flex  items-center  relative     w-10/12 ">
+                    <div className="flex  items-center  relative     w-10/12 topimg ">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/peptide/s7.png"
@@ -658,7 +677,7 @@ export default function Peptide() {
                     </div>
                   </div>
                   <div className="col-span-3 flex items-center justify-center">
-                    <div className="flex  items-center  relative    w-10/12  ">
+                    <div className="flex  items-center  relative    w-10/12 botmimg  ">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/peptide/s8.png"
@@ -669,8 +688,8 @@ export default function Peptide() {
                   </div>
                 </div>
               </div>
-              <div className="w-full flex  items-center justify-center ">
-                <div className="flex  items-center  relative    w-1/2  ">
+              <div className="w-full flex  items-center justify-center h-[70vh] relative ">
+                <div className="flex  items-center  relative    w-1/2 h-full  ">
                   <Image
                     className=" relativepos "
                     src="/mobileapps/peptide/mu2.png"
@@ -678,39 +697,55 @@ export default function Peptide() {
                     fill
                   />
                 </div>
-                <div className="flex  items-center  relative    w-1/2  ">
-                  <Image
-                    className=" relativepos "
-                    src="/mobileapps/peptide/mu2.png"
-                    alt="Background 1"
-                    fill
-                  />
+                <div className="flex  items-center justify-center  relative    w-1/2 h-full  ">
+                  <div id="videoDiv" className="video-container   w-full">
+                    <video
+                      id="roundvideo"
+                      autoPlay
+                      muted
+                      loop
+                      preload="yes"
+                      playsInline
+                      className=" h-[70vh] object-cover "
+                    >
+                      <source
+                        src="/mobileapps/peptide/Two Phones 3D Animated Mockup (2).mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
                 </div>
               </div>
               <div className="w-10/12 flex  items-center justify-center  ">
                 <div className="flex  items-center  relative    w-2/5 ">
-                  <Image
-                    className=" relativepos "
-                    src="/mobileapps/peptide/insta1.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <SrLeft>
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/peptide/insta1.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrLeft>
                 </div>
                 <div className="flex  items-center  relative    w-2/5  ">
-                  <Image
-                    className=" relativepos "
-                    src="/mobileapps/peptide/insta2.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <SrBottom>
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/peptide/insta2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrBottom>
                 </div>
                 <div className="flex  items-center  relative     w-2/5 ">
-                  <Image
-                    className=" relativepos "
-                    src="/mobileapps/peptide/insta3.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <SrRight>
+                    <Image
+                      className=" relativepos "
+                      src="/mobileapps/peptide/insta3.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrRight>
                 </div>
               </div>
 

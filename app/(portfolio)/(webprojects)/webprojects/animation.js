@@ -432,3 +432,43 @@ export const animation4 = () => {
     );
   });
 };
+
+export const ScrollOnTop = () => {
+  gsap.utils.toArray('.topimg').forEach((topimg, index) => {
+    gsap.fromTo(
+      topimg,
+      { opacity: 0, y: 200 }, // Starting state
+      {
+        opacity: 1, // Ending state
+        y: 0,
+        duration: 0.9,
+        delay: index * 0.3, // Adjust the delay for the wave effect
+        scrollTrigger: {
+          trigger: '.topimgcon',
+          start: 'top 80%', // Start animation when the top of the element hits the bottom of the viewport
+          end: 'bottom 50%', // End animation when the bottom of the element hits the top of the viewport
+          scrub: true, // Smooth animation based on scroll
+        },
+      },
+    );
+  });
+
+  gsap.utils.toArray('.botmimg').forEach((botmimg, index) => {
+    gsap.fromTo(
+      botmimg,
+      { opacity: 0, y: -200 }, // Starting state
+      {
+        opacity: 1, // Ending state
+        y: 0,
+        duration: 0.9,
+        delay: index * 0.3, // Adjust the delay for the wave effect
+        scrollTrigger: {
+          trigger: '.topimgcon',
+          start: 'top 80%', // Start animation when the top of the element hits the bottom of the viewport
+          end: 'bottom 50%', // End animation when the bottom of the element hits the top of the viewport
+          scrub: true, // Smooth animation based on scroll
+        },
+      },
+    );
+  });
+};
