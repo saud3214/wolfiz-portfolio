@@ -562,11 +562,11 @@ export default function Simireizen() {
                     <SrRight>
                       <div
                         className="w-full items-end justify-end flex relative bg-[#EF23A1] h-[100vh] ps-20 pt-20  overflow-hidden transition-all
-                     duration-300 group-hover:bg-[#000000] group-hover:transition-all  group-hover:duration-[2500ms] "
+                     duration-100 group-hover:bg-[#000000] group-hover:transition-all  group-hover:duration-1000 "
                       >
                         <div className="w-full items-start justify-start ps-10 absolute top-0  text-3xl font-bold  ">
                           <div className="relative mt-6">
-                            <span className="text-white text-4xl font-bold group-hover:hidden group-hover:transition-all  group-hover:duration-[1500ms]">
+                            <span className="text-white text-4xl font-bold group-hover:hidden group-hover:transition-all  group-hover:duration-1000">
                               #EF23A1
                             </span>
                             <span className="text-white text-4xl font-bold hidden group-hover:flex group-hover:transition-all  group-hover:duration-[1500ms]">
@@ -576,11 +576,11 @@ export default function Simireizen() {
                         </div>
                         <div
                           className="bg-[#07AAF6]  items-end justify-end ps-10 pt-40 w-full h-full relative -rotate-[20deg] rounded-3xl top-[4%] left-[20%] 
-                       transition-all duration-700 group-hover:bg-[#FFFFFF]  group-hover:rotate-[340deg]   group-hover:transition-all  group-hover:duration-[2500ms] "
+                       transition-all duration-1000 group-hover:bg-[#FFFFFF]  group-hover:rotate-[340deg]   group-hover:transition-all  group-hover:duration-1000 "
                         >
                           <div className="w-full items-start justify-start ps-10 absolute top-0  text-3xl font-bold  ">
                             <div className="relative mt-6">
-                              <span className="text-white text-4xl font-bold group-hover:hidden mt-10 group-hover:delay-1000 group-hover:transition-all  group-hover:duration-[1500ms]">
+                              <span className="text-white text-4xl font-bold group-hover:hidden mt-10 group-hover:delay-1000 group-hover:transition-all  group-hover:duration-1000">
                                 #07AAF6
                               </span>
                               <span className="text-black text-4xl font-bold hidden group-hover:flex group-hover:delay-1000 group-hover:transition-all  group-hover:duration-[1500ms]">
@@ -590,8 +590,8 @@ export default function Simireizen() {
                           </div>
                           <div
                             className="bg-[#F7D239]  items-end justify-end ps-10 pt-10 w-full h-full relative rounded-3xl 
-                        -rotate-[20deg] top-[15%] left-[10%] transition-all duration-700 group-hover:bg-[#CCCBC7]   group-hover:rotate-[340deg] 
-                         group-hover:transition-all  group-hover:duration-[1500ms]"
+                        -rotate-[20deg] top-[15%] left-[10%] transition-all duration-1000 group-hover:bg-[#CCCBC7]   group-hover:rotate-[340deg] 
+                         group-hover:transition-all  group-hover:duration-1000"
                           >
                             <div className="w-full items-start justify-start ps-10 absolute top-0  text-3xl font-bold  ">
                               <div className="relative mt-6">

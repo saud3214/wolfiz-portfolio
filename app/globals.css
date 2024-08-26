@@ -517,7 +517,7 @@ img.clipPath-img.active {
 .cursor-dot {
   width: 30px;
   height: 30px;
-  background-color: #0fb19b;
+  background-color: #30eecb;
   border-radius: 50%;
   pointer-events: none;
   z-index: 500;
@@ -527,7 +527,7 @@ img.clipPath-img.active {
 
 .hover-target span:hover ~ .cursor-dot {
   background-color: transparent;
-  border: 2px solid rgb(233, 6, 6);
+  border: 2px solid rgb(9, 9, 109);
   transform: scale(3);
   opacity: 0.7;
 }
@@ -562,6 +562,45 @@ img.clipPath-img.active {
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 .imgcard1 {
+  rotate: -7deg !important;
+}
+.imgcard2 {
+  rotate: 7deg !important;
+}
+ol {
+  list-style: decimal-leading-zero;
+}
+
+.color-loop {
+  animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+  0%,
+  100% {
+    background-color: #07aaf6;
+  }
+  50% {
+    background-color: #ef23a1;
+  }
+}
+
+@layer utilities {
+  .bg-video {
+    position: relative;
+    background-clip: text !important;
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+}
+
+.txtclass {
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+}
+card1 {
   rotate: -7deg !important;
 }
 .imgcard2 {
