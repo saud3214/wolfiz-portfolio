@@ -49,45 +49,49 @@ export default function Avcons() {
 
               <div className="w-11/12 flex items-start justify-between gap-10 pb-10 h-[30vh] ">
                 <div className="flex  items-center  absolute    w-8/12  top-[45%]  ">
-                  <Image
-                    className=" relativepos  "
-                    src="/mobileapps/avcons/truck.png"
-                    alt="Background 1"
-                    fill
-                    priority
-                  />
+                  <SrLeft>
+                    <Image
+                      className=" relativepos  "
+                      src="/mobileapps/avcons/truck.png"
+                      alt="Background 1"
+                      fill
+                      priority
+                    />
+                  </SrLeft>
                 </div>
                 <div className="flex  items-center    absolute  w-[15%]   right-[8%] top-[30%]">
-                  <Image
-                    className=" relativepos  "
-                    src="/mobileapps/avcons/mobie.png"
-                    alt="Background 1"
-                    fill
-                    priority
-                  />
+                  <SrBottom>
+                    <Image
+                      className=" relativepos  "
+                      src="/mobileapps/avcons/mobie.png"
+                      alt="Background 1"
+                      fill
+                      priority
+                    />
+                  </SrBottom>
                 </div>
               </div>
             </div>
 
-            <div className="w-full items-center justify-center flex flex-col">
+            <div className="w-full items-center justify-center flex flex-col mt-10">
               <div className="w-full items-center justify-center h-36 mt-10">
                 <GradualSpacing
                   className="text-[#263C51] text-7xl font-bold uppercase  "
-                  text=" get your stuff  "
+                  text="get your stuff"
                 />
                 <GradualSpacing
                   className="text-[#263C51] text-7xl font-bold uppercase"
-                  text=" delivered today"
+                  text="delivered today"
                 />
               </div>
 
-              <span className="text-[#263C51] text-3xl font-medium w-9/12 py-10">
+              <span className="text-[#263C51] text-3xl font-medium w-9/12 py-10 text-center">
                 We connect shippers and carriers to haul together. Find and book
                 loads for you and your fleet, easily upload documents, and get
                 paid quickly with the tap of a button.
               </span>
             </div>
-            <div className="w-11/12 items-center justify-around flex py-10">
+            <div className="w-11/12 items-center justify-center flex py-10 gap-20">
               <div className="flex  items-center    relative w-3/12">
                 <Image
                   className=" relativepos  "
@@ -112,14 +116,14 @@ export default function Avcons() {
                 imageSrc="/mobileapps/avcons/Vector.png" // Provide the path to your image
                 imageAlt="Description of the image"
                 default_velocity={5}
-                className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-6xl md:leading-[5rem] uppercase items-center justify-center"
+                className="font-display text-center text-3xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-6xl md:leading-[5rem] uppercase items-center justify-center"
               />
             </div>
             <div className=" w-full items-center justify-start flex flex-col py-10 ">
               <div className="w-full items-center justify-center h-24 ">
                 <GradualSpacing
                   className="text-[#263C51] text-7xl font-bold uppercase"
-                  text="desing process"
+                  text="design process"
                 />
               </div>
               <div className="grid grid-cols-12  items-start justify-start  w-11/12 pt-10">
@@ -171,9 +175,9 @@ export default function Avcons() {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-12   w-11/12 py-10 ">
-              <div className="col-span-7 flex items- justify-start">
-                <div className="flex  items-center    relative h-[100vh] w-9/12 ">
+            <div className="grid grid-cols-12   w-11/12 py-10  gap-10">
+              <div className="col-span-6 flex items- justify-start">
+                <div className="flex  items-center    relative w-full ">
                   <Image
                     className=" relativepos  "
                     src="/mobileapps/avcons/shrt.png"
@@ -182,8 +186,8 @@ export default function Avcons() {
                   />
                 </div>
               </div>
-              <div className="col-span-5 flex items-center justify-end">
-                <div className="flex  items-center    relative  h-[100vh] w-9/12">
+              <div className="col-span-6 flex items-center justify-end">
+                <div className="flex  items-center    relative  w-full ">
                   <Image
                     className=" relativepos  "
                     src="/mobileapps/avcons/shrt2.png"
@@ -192,10 +196,10 @@ export default function Avcons() {
                   />
                 </div>
               </div>
-              <div className="col-span-12 flex items-center justify-center pt-10">
-                <div className="flex  items-center    relative  w-full">
+              <div className="col-span-12 flex items-start justify-start h-[85%] relative">
+                <div className="flex  items-center    relative  w-full h-[99%] ">
                   <Image
-                    className=" relativepos  "
+                    className=" relativepos  object-cover rounded-3xl"
                     src="/mobileapps/avcons/logo2.png"
                     alt="Background 1"
                     fill
@@ -271,17 +275,17 @@ export default function Avcons() {
                     text="revenue screens  "
                   />
                 </div>
-                <div className="flex  items-center    relative pt-10 w-10/12 ">
+                <div className="flex  items-center    relative pt-10 w-full ">
                   <Image
                     className=" relativepos   rounded-3xl "
-                    src="/mobileapps/avcons/re.gif"
+                    src="/mobileapps/avcons/re2.gif"
                     alt="Background 1"
                     fill
                   />
                 </div>
               </div>
               <div className="col-span-6  items-center justify-center flex pt-20">
-                <div className="flex  items-center    relative w-11/12 h-full">
+                <div className="flex  items-center    relative w-11/12 h-[90vh]">
                   <Image
                     className=" relativepos   rounded-3xl "
                     src="/mobileapps/avcons/logo6.gif"
@@ -291,7 +295,7 @@ export default function Avcons() {
                 </div>
               </div>
               <div className="col-span-6  items-center justify-center flex pt-20">
-                <div className="flex  items-center    relative  w-11/12 ">
+                <div className="flex  items-center    relative  w-11/12 h-[90vh] ">
                   <Image
                     className=" relativepos   rounded-3xl "
                     src="/mobileapps/avcons/Row.png"
@@ -304,7 +308,7 @@ export default function Avcons() {
             <div className="w-full items-center justify-center flex">
               <div className="flex  items-center    relative  w-full h-[100vh] ">
                 <Image
-                  className=" relativepos    "
+                  className=" relativepos   object-cover  "
                   src="/mobileapps/avcons/last.png"
                   alt="Background 1"
                   fill

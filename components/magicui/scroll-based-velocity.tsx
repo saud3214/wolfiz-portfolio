@@ -113,7 +113,7 @@ export function DualTextVelocityScroll({
   }
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full items-center justify-center">
       <ParallaxContent baseVelocity={default_velocity} className={className}>
         <span>{text1}</span>
         <Image
