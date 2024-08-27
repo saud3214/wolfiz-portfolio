@@ -10,17 +10,21 @@ import {
   useTransform,
   useVelocity,
 } from 'framer-motion';
+import Image from 'next/image'; // Import Image component from Next.js
 
 import { cn } from '@/lib/utils';
 
-interface VelocityScrollProps {
-  text: string;
+interface DualTextVelocityScrollProps {
+  text1: string;
+  text2: string;
+  imageSrc: string;
+  imageAlt: string;
   default_velocity?: number;
   className?: string;
 }
 
 interface ParallaxProps {
-  children: string;
+  children: React.ReactNode;
   baseVelocity: number;
   className?: string;
 }
@@ -30,12 +34,15 @@ export const wrap = (min: number, max: number, v: number) => {
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
 
-export function VelocityScroll({
-  text,
+export function DualTextVelocityScroll({
+  text1,
+  text2,
+  imageSrc,
+  imageAlt,
   default_velocity = 5,
   className,
-}: VelocityScrollProps) {
-  function ParallaxText({
+}: DualTextVelocityScrollProps) {
+  function ParallaxContent({
     children,
     baseVelocity = 100,
     className,
@@ -107,9 +114,24 @@ export function VelocityScroll({
 
   return (
     <section className="relative w-full">
-      <ParallaxText baseVelocity={default_velocity} className={className}>
-        {text}
-      </ParallaxText>
+      <ParallaxContent baseVelocity={default_velocity} className={className}>
+        <span>{text1}</span>
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={200} // Adjust size as needed
+          height={200}
+          className="inline-block mx-2"
+        />
+        <span>{text2}</span>
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={200} // Adjust size as needed
+          height={200}
+          className="inline-block mx-2"
+        />
+      </ParallaxContent>
     </section>
   );
 }

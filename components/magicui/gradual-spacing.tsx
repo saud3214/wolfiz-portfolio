@@ -1,6 +1,7 @@
 'use client';
 
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { AnimatePresence, motion, useInView, Variants } from 'framer-motion';
+import { useRef } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -14,30 +15,34 @@ interface GradualSpacingProps {
 
 export default function GradualSpacing({
   text,
-  duration = 0.8,
-  delayMultiple = 0.05,
+  duration = 0.7,
+  delayMultiple = 0.07,
   framerProps = {
-    hidden: { opacity: 0, x: -30 },
+    hiddens: { opacity: 0, x: -30 },
     visible: { opacity: 1, x: 0 },
   },
   className,
 }: GradualSpacingProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: '-3% 0px -3% 0px' }); // Customize the margin as needed
+
   return (
-    <div className="flex justify-center ">
+    <div ref={ref} className="flex justify-center">
       <AnimatePresence>
-        {text.split('').map((char, i) => (
-          <motion.h1
-            key={i}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={framerProps}
-            transition={{ duration, delay: i * delayMultiple }}
-            className={cn('drop-shadow-sm ', className)}
-          >
-            {char === ' ' ? <span>&nbsp;</span> : char}
-          </motion.h1>
-        ))}
+        {isInView &&
+          text.split('').map((char, i) => (
+            <motion.h1
+              key={i}
+              initial="hiddens"
+              animate="visible"
+              exit="hiddens"
+              variants={framerProps}
+              transition={{ duration, delay: i * delayMultiple }}
+              className={cn('drop-shadow-sm', className)}
+            >
+              {char === ' ' ? <span>&nbsp;</span> : char}
+            </motion.h1>
+          ))}
       </AnimatePresence>
     </div>
   );
