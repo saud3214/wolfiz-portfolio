@@ -278,7 +278,7 @@ export default function Avcons() {
                 <div className="flex  items-center    relative pt-10 w-full ">
                   <Image
                     className=" relativepos   rounded-3xl "
-                    src="/mobileapps/avcons/re2.gif"
+                    src="/mobileapps/avcons/Re2.gif"
                     alt="Background 1"
                     fill
                   />
