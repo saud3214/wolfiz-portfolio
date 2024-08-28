@@ -93,20 +93,24 @@ export default function Avcons() {
             </div>
             <div className="w-11/12 items-center justify-center flex py-10 gap-20">
               <div className="flex  items-center    relative w-3/12">
-                <Image
-                  className=" relativepos  "
-                  src="/mobileapps/avcons/ps.png"
-                  alt="Background 1"
-                  fill
-                />
+                <SrLeft>
+                  <Image
+                    className=" relativepos  "
+                    src="/mobileapps/avcons/ps.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </SrLeft>
               </div>
               <div className="flex  items-center    relative  w-3/12">
-                <Image
-                  className=" relativepos  "
-                  src="/mobileapps/avcons/ss.png"
-                  alt="Background 1"
-                  fill
-                />
+                <SrRight>
+                  <Image
+                    className=" relativepos  "
+                    src="/mobileapps/avcons/ss.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </SrRight>
               </div>
             </div>
             <div className=" w-full items-center justify-center flex py-5 bg-[#20B4E3] my-10">
@@ -178,33 +182,39 @@ export default function Avcons() {
             <div className="grid grid-cols-12   w-11/12 py-10  gap-10">
               <div className="col-span-6 flex items- justify-start">
                 <div className="flex  items-center    relative w-full ">
-                  <Image
-                    className=" relativepos  "
-                    src="/mobileapps/avcons/shrt.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <SrLeft>
+                    <Image
+                      className=" relativepos  "
+                      src="/mobileapps/avcons/shrt.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrLeft>
                 </div>
               </div>
               <div className="col-span-6 flex items-center justify-end">
                 <div className="flex  items-center    relative  w-full ">
-                  <Image
-                    className=" relativepos  "
-                    src="/mobileapps/avcons/shrt2.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <SrRight>
+                    <Image
+                      className=" relativepos  "
+                      src="/mobileapps/avcons/shrt2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrRight>
                 </div>
               </div>
               <div className="col-span-12 flex items-start justify-start h-[85%] relative">
-                <div className="flex  items-center    relative  w-full h-[99%] ">
-                  <Image
-                    className=" relativepos  object-cover rounded-3xl"
-                    src="/mobileapps/avcons/logo2.png"
-                    alt="Background 1"
-                    fill
-                  />
-                </div>
+                <SrBottom>
+                  <div className="flex  items-center    relative  w-full h-[99%] ">
+                    <Image
+                      className=" relativepos  object-cover rounded-3xl"
+                      src="/mobileapps/avcons/logo2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </SrBottom>
               </div>
               <div className="col-span-12 flex flex-col items-center justify-center py-10">
                 <div className="w-full items-center justify-center h-36 ">
@@ -235,28 +245,34 @@ export default function Avcons() {
                 </div>
                 <div className="w-10/12 items-center justify-between flex">
                   <div className="flex  items-center    relative  ">
-                    <Image
-                      className=" relativepos  "
-                      src="/mobileapps/avcons/logo3.png"
-                      alt="Background 1"
-                      fill
-                    />
+                    <SrBottom>
+                      <Image
+                        className=" relativepos  "
+                        src="/mobileapps/avcons/logo3.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </SrBottom>
                   </div>
                   <div className="flex  items-center    relative  ">
-                    <Image
-                      className=" relativepos  "
-                      src="/mobileapps/avcons/logo4.png"
-                      alt="Background 1"
-                      fill
-                    />
+                    <SrBottom>
+                      <Image
+                        className=" relativepos  "
+                        src="/mobileapps/avcons/logo4.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </SrBottom>
                   </div>
                   <div className="flex  items-center    relative  ">
-                    <Image
-                      className=" relativepos  "
-                      src="/mobileapps/avcons/logo5.png"
-                      alt="Background 1"
-                      fill
-                    />
+                    <SrBottom>
+                      <Image
+                        className=" relativepos  "
+                        src="/mobileapps/avcons/logo5.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </SrBottom>
                   </div>
                 </div>
                 <div className="flex  items-center    relative pt-10 ">
@@ -285,34 +301,40 @@ export default function Avcons() {
                 </div>
               </div>
               <div className="col-span-6  items-center justify-center flex pt-20">
-                <div className="flex  items-center    relative w-11/12 h-[90vh]">
-                  <Image
-                    className=" relativepos   rounded-3xl "
-                    src="/mobileapps/avcons/logo6.gif"
-                    alt="Background 1"
-                    fill
-                  />
-                </div>
+                <SrLeft>
+                  <div className="flex  items-center    relative w-11/12  h-[70vh] ">
+                    <Image
+                      className=" relativepos   rounded-3xl "
+                      src="/mobileapps/avcons/logo6.gif"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </SrLeft>
               </div>
               <div className="col-span-6  items-center justify-center flex pt-20">
-                <div className="flex  items-center    relative  w-11/12 h-[90vh] ">
-                  <Image
-                    className=" relativepos   rounded-3xl "
-                    src="/mobileapps/avcons/Row.png"
-                    alt="Background 1"
-                    fill
-                  />
-                </div>
+                <SrRight>
+                  <div className="flex  items-center    relative  w-11/12  h-[70vh] ">
+                    <Image
+                      className=" relativepos   rounded-3xl "
+                      src="/mobileapps/avcons/Row2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </SrRight>
               </div>
             </div>
             <div className="w-full items-center justify-center flex">
-              <div className="flex  items-center    relative  w-full h-[100vh] ">
-                <Image
-                  className=" relativepos   object-cover  "
-                  src="/mobileapps/avcons/last.png"
-                  alt="Background 1"
-                  fill
-                />
+              <div className="flex  items-center    relative  w-full  ">
+                <SrBottom>
+                  <Image
+                    className=" relativepos    "
+                    src="/mobileapps/avcons/last2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </SrBottom>
               </div>
             </div>
           </div>

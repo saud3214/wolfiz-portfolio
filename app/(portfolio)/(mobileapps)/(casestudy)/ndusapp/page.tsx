@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
@@ -7,6 +7,10 @@ import {
   setupScrollAnimation,
   movingText2,
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import SwiperCore from 'swiper';
 
 import useSmoothScroll from '@/app/components/ss';
 import {
@@ -16,12 +20,17 @@ import {
   RevealOnScroll,
 } from '@/app/components/revealelement';
 import { AnimatedText2 } from '@/app/components/animatedtext';
+import { Mousewheel, EffectFade, Autoplay } from 'swiper/modules';
+
 const urbanist = Inter({
   subsets: ['latin'],
   weight: ['400', '300', '500', '600', '900'],
 });
+SwiperCore.use([Mousewheel, EffectFade, Autoplay]);
 
 export default function Ndusapp() {
+  const swiperRef = useRef<SwiperCore | null>(null);
+
   useSmoothScroll();
   useEffect(() => {
     setupScrollAnimation();
@@ -36,25 +45,35 @@ export default function Ndusapp() {
         <div className="  w-full  items-center justify-center flex   ">
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex  col-span-12 items-center justify-center flex-col w-full  ">
-              <div className="flex w-full items-center justify-center h-[100vh]">
-                <div className="flex  items-center  relative  w-full h-[100vh]     ">
+              <div className="flex flex-col w-full items-center justify-end p-10 h-[100vh] bg-gradient-to-b from-black to-[#115811]">
+                {/* <div className="flex  items-center  relative w-[20%]    ">
                   <Image
                     className=" relativepos  "
-                    src="/mobileapps/ndusapp/home2.gif"
+                    src="/mobileapps/ndusapp/logo2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div> */}
+                <div className="flex  items-center  relative  w-2/3   ">
+                  <Image
+                    className=" relativepos  "
+                    src="/mobileapps/ndusapp/home3.gif"
                     alt="Background 1"
                     fill
                   />
                 </div>
               </div>
               <div className="flex flex-col w-full items-center justify-center ">
-                <div className="grid grid-cols-12 w-full items-center justify-center  h-[60vh]">
-                  <div className=" col-span-6 flex text-start bg-ndubg1 bg-cover bg-center bg-no-repeat p-10 h-full items-center justify-start">
-                    <SrBottom>
-                      <span className="text-white 2xl:text-5xl text-4xl font-bold uppercase 2xl:leading-[60px]">
-                        national<br></br> defense<br></br> university <br></br>
-                        scheduler app
-                      </span>
-                    </SrBottom>
+                <div className="grid grid-cols-12 w-full items-center justify-center  ">
+                  <div className=" col-span-6 flex ">
+                    <div className="flex  items-center  relative w-full h-[50vh]   ">
+                      <Image
+                        className=" relativepos  object-cover "
+                        src="/mobileapps/ndusapp/ps.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
                   </div>
                   <div className=" col-span-6 flex  flex-col text-start bg-ndubg2 bg-cover bg-center bg-no-repeat p-10 h-full items-start justify-center">
                     <span className="text-white text-3xl font-semibold">
@@ -73,7 +92,7 @@ export default function Ndusapp() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="grid grid-cols-12 w-full items-center justify-center  h-[60vh]">
+                <div className="grid grid-cols-12 w-full items-center justify-center  ">
                   <div className=" col-span-6 flex  flex-col text-start bg-ndubg2 bg-cover bg-center bg-no-repeat p-10 h-full items-start justify-center">
                     <span className="text-white text-3xl font-semibold uppercase">
                       solution statement:
@@ -89,23 +108,23 @@ export default function Ndusapp() {
                       </span>
                     </RevealOnScroll>
                   </div>
-                  <div className=" col-span-6 flex items-center justify-center  bg-ndubg6 bg-cover bg-center bg-no-repeat  w-full h-full   "></div>
+                  <div className=" col-span-6 flex items-center justify-center  bg-ndubg6 bg-cover bg-center bg-no-repeat  w-full h-[50vh]   "></div>
                 </div>
               </div>
 
               <div className="w-full flex flex-col items-start justify-start bg-ndubg4 bg-center bg-cover bg-no-repeat  p-10">
                 <RevealOnScroll>
-                  <span className="bg-gradient-to-r from-[#82D674] to-[#205532] bg-clip-text text-transparent 2xl:text-[5vw] text-[3vw] font-bold uppercase">
+                  <span className="bg-gradient-to-r from-[#82D674] to-[#205532] bg-clip-text text-transparent 2xl:text-[4vw] text-[3vw] font-bold uppercase">
                     colors & typography
                   </span>
                 </RevealOnScroll>
                 <SrBottom>
-                  <span className="text-white 2xl:text-[5vw] text-[3vw] font-bold uppercase 2xl:leading-[90px] mt-5">
+                  <span className="text-white 2xl:text-[4vw] text-[3vw] font-bold uppercase 2xl:leading-[90px] mt-5">
                     Inter <br></br> helvatica
                   </span>
                 </SrBottom>
-                <div className="w-full items-center justify-center flex flex-col pt-10">
-                  <div className="flex  items-center  relative   w-2/5    ">
+                <div className="w-full items-center justify-center flex flex-col ">
+                  <div className="flex  items-center  relative   w-[25%]  -mt-10 ">
                     <SrBottom>
                       <Image
                         className=" relativepos  "
@@ -115,12 +134,13 @@ export default function Ndusapp() {
                       />
                     </SrBottom>
                   </div>
-                  <div className="w-full flex items-end justify-end text-white 2xl:text-4xl text-2xl font-bold px-5 py-10">
+
+                  <div className="w-full flex items-end justify-end text-white 2xl:text-4xl text-2xl font-bold px-5 pt-10">
                     <span>
                       ABCDEFGHIJKLMNOPQRSTUVWXYZ <br></br>
                       1234567890!@#$%^&*()_+-=
                     </span>
-                    <div className="flex  items-center  absolute  left-[10%]  w-1/4  ">
+                    <div className="flex  items-center  absolute  left-[10%]  w-[22%]  ">
                       <SrLeft>
                         <Image
                           className=" relativepos  "
@@ -134,20 +154,20 @@ export default function Ndusapp() {
                 </div>
               </div>
 
-              <div className="w-10/12 items-center justify-center py-20">
+              <div className="w-11/12 items-center justify-center pb-10">
                 <div className="flex  items-center w-full  ">
                   <SrBottom>
                     <Image
                       className=" relativepos  "
-                      src="/mobileapps/ndusapp/color.png"
+                      src="/mobileapps/ndusapp/color2.png"
                       alt="Background 1"
                       fill
                     />
                   </SrBottom>
                 </div>
               </div>
-              <div className="w-full items-center justify-center flex bg-ndubg5 bg-cover bg-center bg-no-repeat">
-                <div className="flex  items-center w-10/12   ">
+              <div className="w-full items-center justify-center flex bg-ndubg5 bg-cover bg-center bg-no-repeat p-10">
+                <div className="flex  items-center w-1/2  justify-center  ">
                   <SrBottom>
                     <Image
                       className=" relativepos  "
@@ -157,109 +177,75 @@ export default function Ndusapp() {
                     />
                   </SrBottom>
                 </div>
+                <div className="flex  items-center  w-1/2 justify-center ">
+                  <SrLeft>
+                    <Image
+                      className=" relativepos    "
+                      src="/mobileapps/ndusapp/mu3new.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrLeft>
+                </div>
               </div>
 
               <div className="w-full bg-white flex items-center justify-center p-10">
                 <div className="w-11/12 flex flex-col items-center justify-center">
-                  <span className="uppercase  text-8xl font-bold text-[#072507]">
+                  <span className="uppercase  text-6xl font-bold text-[#072507]">
                     <AnimatedText2 text="design process"></AnimatedText2>
                   </span>
 
-                  <div className="w-full items-center justify-between flex">
-                    <div className="flex  items-center w-1/2    ">
-                      <SrLeft>
-                        <Image
-                          className=" relativepos  "
-                          src="/mobileapps/ndusapp/dp1.png"
-                          alt="Background 1"
-                          fill
-                        />
-                      </SrLeft>
-                    </div>
-                    <div className="flex  items-center   w-1/2  ">
-                      <SrRight>
-                        <Image
-                          className=" relativepos  "
-                          src="/mobileapps/ndusapp/dp2.png"
-                          alt="Background 1"
-                          fill
-                        />
-                      </SrRight>
-                    </div>
-                  </div>
-                  <div className="w-full items-center justify-between flex">
-                    <div className="flex  items-center w-1/2    ">
-                      <SrLeft>
-                        <Image
-                          className=" relativepos  "
-                          src="/mobileapps/ndusapp/dp3.png"
-                          alt="Background 1"
-                          fill
-                        />
-                      </SrLeft>
-                    </div>
-                    <div className="flex  items-center   w-1/2  ">
-                      <SrRight>
-                        <Image
-                          className=" relativepos  "
-                          src="/mobileapps/ndusapp/dp4.png"
-                          alt="Background 1"
-                          fill
-                        />
-                      </SrRight>
+                  <div className="w-full items-start  flex  pt-10 ">
+                    <div className="w-[80%] flex items-end justify-between">
+                      <div className="flex  items-center w-5/12    ">
+                        <SrLeft>
+                          <Image
+                            className=" relativepos  "
+                            src="/mobileapps/ndusapp/dp2n.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </SrLeft>
+                      </div>
+                      <div className="flex  items-center  w-5/12  ">
+                        <SrRight>
+                          <Image
+                            className=" relativepos  "
+                            src="/mobileapps/ndusapp/dp1n.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </SrRight>
+                      </div>
                     </div>
                   </div>
+                  <div className="w-full items-end justify-end  flex">
+                    <div className="w-[80%] flex items-start justify-between">
+                      <div className="flex  items-center w-[50%]     ">
+                        <SrLeft>
+                          <Image
+                            className=" relativepos  "
+                            src="/mobileapps/ndusapp/dp3n.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </SrLeft>
+                      </div>
+                      <div className="flex  items-center   w-[35%] ">
+                        <SrRight>
+                          <Image
+                            className=" relativepos  "
+                            src="/mobileapps/ndusapp/dp4n.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </SrRight>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="w-full flex   ">
-                <div className="flex  items-center   w-1/2   ">
-                  <SrLeft>
-                    <Image
-                      className=" relativepos  "
-                      src="/mobileapps/ndusapp/mu1.png"
-                      alt="Background 1"
-                      fill
-                    />
-                  </SrLeft>
-                </div>
-                <div className="flex  items-center   w-1/2  ">
-                  <SrRight>
-                    <Image
-                      className=" relativepos  "
-                      src="/mobileapps/ndusapp/mu2.png"
-                      alt="Background 1"
-                      fill
-                    />
-                  </SrRight>
-                </div>
-              </div>
-              <div className="w-full items-center justify-center flex flex-col bg-gradient-to-r from-[#00582F] to-[#00BE65] p-20">
-                <span className=" 2xl:text-[5vw] text-[3vw] font-bold uppercase py-10 text-[#82D674]">
-                  <AnimatedText2 text="information architecture"></AnimatedText2>
-                </span>
-                <div className="flex  items-center w-11/12 pb-10   ">
-                  <RevealOnScroll>
-                    <Image
-                      className=" relativepos    "
-                      src="/mobileapps/ndusapp/ia.png"
-                      alt="Background 1"
-                      fill
-                    />
-                  </RevealOnScroll>
-                </div>
-              </div>
-              <div className="w-full items-center justify-center flex p-10">
-                <div className="flex  items-center  w-11/12  ">
-                  <SrLeft>
-                    <Image
-                      className=" relativepos    "
-                      src="/mobileapps/ndusapp/mu3.png"
-                      alt="Background 1"
-                      fill
-                    />
-                  </SrLeft>
-                </div>
-              </div>
+
               <div className="w-full items-center justify-center flex flex-col bg-gradient-to-b from-[#000000] to-[#023019] ">
                 <RevealOnScroll>
                   <div className="flex w-full items-center justify-center">
@@ -277,6 +263,67 @@ export default function Ndusapp() {
                       fill
                     />
                   </SrBottom>
+                </div>
+              </div>
+              <div className="w-full h-full flex ">
+                <Swiper
+                  autoplay={{ delay: 2000, disableOnInteraction: false }}
+                  loop={true}
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  pagination={{ clickable: false }}
+                  effect="slide"
+                  speed={1000}
+                  className="w-full h-full items-center"
+                >
+                  <SwiperSlide className="flex items-center justify-center w-full">
+                    <div className="flex items-center w-full h-[100vh]">
+                      <Image
+                        className="relativepos"
+                        src="/mobileapps/ndusapp/ia.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="flex items-center justify-center w-full">
+                    <div className="flex items-center w-full h-[100vh]">
+                      <Image
+                        className="relativepos"
+                        src="/mobileapps/ndusapp/bg1.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+
+              <div className="w-full items-center justify-center flex flex-col bg-gradient-to-r from-[#00582F] to-[#00BE65] ">
+                <span className=" 2xl:text-[4vw] text-[3vw] font-bold uppercase py-10 text-[#82D674]">
+                  <AnimatedText2 text="information architecture"></AnimatedText2>
+                </span>
+                <div className="flex  items-center w-9/12 pb-10   ">
+                  <RevealOnScroll>
+                    <Image
+                      className=" relativepos    h-[100vh] "
+                      src="/mobileapps/ndusapp/ia.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </RevealOnScroll>
+                </div>
+              </div>
+              <div className="w-full items-center justify-center flex p-10">
+                <div className="flex  items-center  w-11/12  ">
+                  <SrLeft>
+                    <Image
+                      className=" relativepos    "
+                      src="/mobileapps/ndusapp/mu3.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrLeft>
                 </div>
               </div>
 

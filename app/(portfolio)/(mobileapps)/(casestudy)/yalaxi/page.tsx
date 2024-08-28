@@ -67,7 +67,7 @@ export default function Yalaxi() {
               <div className="flex items-center  relative   mt-10 image-container  ">
                 <Image
                   className=" relativepos rounded-3xl responsive-image"
-                  src="/mobileapps/yalaxi/bg1.png"
+                  src="/mobileapps/yalaxi/bg12.png"
                   alt="Background 1"
                   fill
                 />
@@ -123,9 +123,7 @@ export default function Yalaxi() {
                   <RevealOnScrollXImage>
                     <div className="flex flex-col items-end justify-end ps-5 text-end">
                       <div className=" flex flex-col w-full items-end justify-end  text-6xl  text-[#4a4848] font-bold">
-                        <span className="hover-text capitalize  ">
-                          Solution
-                        </span>
+                        <span className="hover-text capitalize  ">Problem</span>
                         <span className="hover-text capitalize">statement</span>
                       </div>
 
@@ -139,6 +137,41 @@ export default function Yalaxi() {
                       </span>
                     </div>
                   </RevealOnScrollXImage>
+                </div>
+              </div>
+              <div className="grid grid-cols-12 items-center justify-center w-11/12 pt-20 ">
+                <div className="col-span-6 items-start justify-center ">
+                  <RevealOnScrollLeftText>
+                    <div className="flex flex-col items-start justify-center ">
+                      <div className=" flex flex-col w-full items-start justify-center  text-6xl  text-[#4a4848] font-bold">
+                        <span className="hover-text capitalize  ">
+                          solution
+                        </span>
+                        <span className="hover-text capitalize">statement</span>
+                      </div>
+
+                      <span className="text-white pt-5 w-8/12">
+                        Efficient urban transportation is crucial for growing
+                        cities. This case study explores Yalaxi App, enhancing
+                        mobility through reliable and affordable solutions. We
+                        examine its strategies, innovations, challenges, and
+                        impacts, providing insights into the transport sectors
+                        evolution and technologys role.
+                      </span>
+                    </div>
+                  </RevealOnScrollLeftText>
+                </div>
+                <div className="col-span-6 items-end justify-end flex ">
+                  <div className="flex items-end  relative  w-9/12    ">
+                    <RevealOnScrollXImage>
+                      <Image
+                        className=" relativepos rounded-3xl responsive-image -rotate-[9deg]"
+                        src="/mobileapps/yalaxi/ss2.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </RevealOnScrollXImage>
+                  </div>
                 </div>
               </div>
             </div>
