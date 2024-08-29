@@ -280,7 +280,7 @@ export default function Ndusapp() {
                     <div className="flex items-center w-full h-[100vh]">
                       <Image
                         className="relativepos"
-                        src="/mobileapps/ndusapp/ia.png"
+                        src="/mobileapps/ndusapp/s1.png"
                         alt="Background 1"
                         fill
                       />
@@ -290,7 +290,37 @@ export default function Ndusapp() {
                     <div className="flex items-center w-full h-[100vh]">
                       <Image
                         className="relativepos"
-                        src="/mobileapps/ndusapp/bg1.png"
+                        src="/mobileapps/ndusapp/s2.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="flex items-center justify-center w-full">
+                    <div className="flex items-center w-full h-[100vh]">
+                      <Image
+                        className="relativepos"
+                        src="/mobileapps/ndusapp/s3.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="flex items-center justify-center w-full">
+                    <div className="flex items-center w-full h-[100vh]">
+                      <Image
+                        className="relativepos"
+                        src="/mobileapps/ndusapp/s4.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide className="flex items-center justify-center w-full">
+                    <div className="flex items-center w-full h-[100vh]">
+                      <Image
+                        className="relativepos"
+                        src="/mobileapps/ndusapp/s5.png"
                         alt="Background 1"
                         fill
                       />
@@ -299,42 +329,19 @@ export default function Ndusapp() {
                 </Swiper>
               </div>
 
-              <div className="w-full items-center justify-center flex flex-col bg-gradient-to-r from-[#00582F] to-[#00BE65] ">
-                <span className=" 2xl:text-[4vw] text-[3vw] font-bold uppercase py-10 text-[#82D674]">
+              <div className="w-full items-center justify-center flex flex-col  ">
+                <span className=" 2xl:text-[4vw] text-[3vw] font-bold uppercase pt-10 text-[#82D674]">
                   <AnimatedText2 text="information architecture"></AnimatedText2>
                 </span>
-                <div className="flex  items-center w-9/12 pb-10   ">
+                <div className="flex  items-center w-11/12 pb-10   ">
                   <RevealOnScroll>
                     <Image
-                      className=" relativepos    h-[100vh] "
-                      src="/mobileapps/ndusapp/ia.png"
+                      className=" relativepos    "
+                      src="/mobileapps/ndusapp/ia2.png"
                       alt="Background 1"
                       fill
                     />
                   </RevealOnScroll>
-                </div>
-              </div>
-              <div className="w-full items-center justify-center flex p-10">
-                <div className="flex  items-center  w-11/12  ">
-                  <SrLeft>
-                    <Image
-                      className=" relativepos    "
-                      src="/mobileapps/ndusapp/mu3.png"
-                      alt="Background 1"
-                      fill
-                    />
-                  </SrLeft>
-                </div>
-              </div>
-
-              <div className="w-full items-center justify-center flex  ">
-                <div className="flex  items-center w-full   ">
-                  <Image
-                    className=" relativepos    "
-                    src="/mobileapps/ndusapp/screens.gif"
-                    alt="Background 1"
-                    fill
-                  />
                 </div>
               </div>
             </div>

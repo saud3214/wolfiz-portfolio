@@ -98,6 +98,7 @@ const config = {
         ndubg6: "url('/mobileapps/ndusapp/box42.png')",
         peptidebg1: "url('/mobileapps/peptide/bg1.png')",
         peptidebg2: "url('/mobileapps/peptide/bg2.png')",
+        viennabg1: "url('/mobileapps/vienna/bg1.png')",
       },
       colors: {
         nht: '#006360',
@@ -169,6 +170,8 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'slow-spin': 'spin 5s linear infinite', // Adjust the duration (e.g., 5s)
+        'slow-bounce': 'bounce 2s linear infinite', // Adjust the duration (e.g., 5s)
       },
     },
   },
