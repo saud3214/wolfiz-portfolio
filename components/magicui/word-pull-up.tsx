@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
-
+import { motion, Variants, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 interface WordPullUpProps {
@@ -29,11 +29,15 @@ export default function WordPullUp({
   },
   className,
 }: WordPullUpProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: '-15% 0px -15% 0px' }); // Adjust the margin as needed
+
   return (
     <motion.h1
+      ref={ref}
       variants={wrapperFramerProps}
       initial="hidden"
-      animate="show"
+      animate={isInView ? 'show' : 'hidden'}
       className={cn(
         'font-display text-center text-4xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm',
         className,

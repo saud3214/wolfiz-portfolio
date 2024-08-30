@@ -172,6 +172,7 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'slow-spin': 'spin 5s linear infinite', // Adjust the duration (e.g., 5s)
         'slow-bounce': 'bounce 2s linear infinite', // Adjust the duration (e.g., 5s)
+        'bounce-once': 'bounce 2s linear once', // Adjust the duration (e.g., 5s)
       },
     },
   },
