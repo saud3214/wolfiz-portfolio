@@ -371,19 +371,19 @@ export const animation1 = () => {
 };
 
 export const animation2 = () => {
-  gsap.utils.toArray('.lift').forEach((lift, index) => {
+  gsap.utils.toArray('.lift2').forEach((lift2, index) => {
     gsap.fromTo(
-      lift,
-      { opacity: 0, x: 200 }, // Starting state
+      lift2,
+      { opacity: 0, x: -200 }, // Starting state
       {
         opacity: 1, // Ending state
         x: 0,
         duration: 1,
-        delay: index * 0.3, // Adjust the delay for the wave effect
+        delay: index * 0.4, // Adjust the delay for the wave effect
         scrollTrigger: {
-          trigger: '.animationcontainer',
+          trigger: '.animationcontainer2',
           start: 'top 80%', // Start animation when the top of the element hits the bottom of the viewport
-          end: 'bottom 60%', // End animation when the bottom of the element hits the top of the viewport
+          end: 'bottom 30%', // End animation when the bottom of the element hits the top of the viewport
           scrub: true, // Smooth animation based on scroll
         },
       },

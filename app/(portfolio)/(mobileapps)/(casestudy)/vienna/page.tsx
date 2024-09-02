@@ -1,5 +1,6 @@
 'use client';
-import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { PT_Serif, Poppins } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
@@ -14,7 +15,7 @@ import {
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
 import WordPullUp from '@/components/magicui/word-pull-up';
-
+import { motion, useScroll, useTransform } from 'framer-motion';
 import useSmoothScroll from '@/app/components/ss';
 import {
   SrLeft,
@@ -39,6 +40,16 @@ const urbanist = Poppins({
 });
 export default function Vienna() {
   const [activeImage, setActiveImage] = useState(1);
+  const containerRef = useRef(null);
+
+  // Get the scroll position
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start'],
+  });
+
+  // Map the scrollYProgress to a horizontal scroll
+  const x = useTransform(scrollYProgress, [0.5, 0.67], ['0%', '-200%']);
 
   useSmoothScroll();
   useEffect(() => {
@@ -52,11 +63,17 @@ export default function Vienna() {
 
   return (
     <SlideFromRight>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css"
+        />
+      </Head>
       <div
         className={` w-full items-center justify-center flex  ${urbanist.className} `}
       >
         <div className="  w-full  items-center justify-center flex   ">
-          <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
+          <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] overflow-auto ">
             <div className="flex  col-span-12 items-center justify-center flex-col w-full  ">
               <div className="flex flex-col items-center justify-between h-[100vh]  w-full relative ">
                 <div className="bg-gradient-to-r from-transparent      to-black absolute  w-full h-full  "></div>
@@ -371,14 +388,14 @@ export default function Vienna() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-center flex h-[100vh] my-10">
+              <div className="w-full items-center justify-center flex h-[100vh]">
                 <div className="grid grid-cols-12 w-full ">
                   <div className="col-span-6 items-center justify-center flex flex-col bg-[#EA0000] text-white group overflow-hidden">
                     <div className="w-full h-[50vh] bg-[#EA0000] flex flex-col justify-center items-center relative cursor-pointer p-10">
-                      <span className="text-white text-8xl transform transition-all duration-300 group-hover:translate-y-36 group-hover:scale-50 group-hover:translate-x-96">
+                      <span className="text-white text-8xl transform transition-all duration-300 group-hover:translate-y-36 group-hover:scale-50 group-hover:translate-x-[20vw]">
                         Aa
                       </span>
-                      <span className="text-white text-2xl absolute bottom-10 right-10 transform transition-all duration-300 group-hover:-translate-y-36 group-hover:scale-[2.5] group-hover:-translate-x-96">
+                      <span className="text-white text-2xl absolute bottom-10 right-10 transform transition-all duration-300 group-hover:-translate-y-36 group-hover:scale-[2.5] group-hover:-translate-x-[20vw]">
                         Roboto
                       </span>
                     </div>
@@ -393,7 +410,53 @@ export default function Vienna() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-6 items-center justify-center flex "></div>
+                  <div className="col-span-6 items-center justify-center flex flex-col p-10 bg-viennabg2 bg-cover bg-center bg-no-repeat hover:bg-viennabg3 transition-all duration-300 gap-10">
+                    <div className=" h-40 w-1/2 bg-white font-medium text-3xl flex items-center justify-center">
+                      FFFFF
+                    </div>
+                    <div className=" h-40 w-1/2 bg-[#EA0000] font-medium text-3xl flex items-center justify-center text-white">
+                      EA0000
+                    </div>
+                    <div className=" h-40 w-1/2 bg-black font-medium text-3xl flex items-center justify-center text-white">
+                      00000
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#EA0000] w-full items-center justify-center relative  mb-10 overflow-hidden  ">
+                <div className="grid grid-cols-12 w-full text-white">
+                  <div className="col-span-6 p-10 flex flex-col ">
+                    <span className="font-semibold text-4xl">
+                      From Imperial Glory to<br></br> Modern Marvel:<br></br>
+                      Vienna’s Historical <br></br>Odyssey
+                    </span>
+                    <div className="flex  w-1/6 absolute -bottom-[10%] left-1">
+                      <Image
+                        className=" relativepos    "
+                        src="/mobileapps/vienna/vw.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                    <div className="flex  w-1/4 absolute -bottom-[15%] -left-[6%] animate-slow-spin">
+                      <Image
+                        className=" relativepos    "
+                        src="/mobileapps/vienna/logo1.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6  flex items-end justify-end h-full pt-5">
+                    <div className="flex   relative w-full ">
+                      <Image
+                        className=" relativepos    "
+                        src="/mobileapps/vienna/frame5.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
