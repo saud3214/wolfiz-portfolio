@@ -1,123 +1,107 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
+import { useEffect, useRef } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import Image from 'next/image';
 
-const HorizontalPinningSection: React.FC = () => {
-  const sectionPinRef = useRef<HTMLDivElement>(null);
-  const imageWrapperRefs = useRef<HTMLDivElement[]>([]);
+interface AnimatedImageProps {
+  src: string;
+  alt: string;
+  initialScale?: number;
+  finalScale?: number;
+  duration?: number;
+  className?: string;
+  initialWidth?: number; // Initial width in pixels
+  initialHeight?: number; // Initial height in pixels
+}
+
+const AnimatedImage: React.FC<AnimatedImageProps> = ({
+  src,
+  alt,
+  initialScale = 0.5,
+  finalScale = 1,
+  duration = 1,
+  className = '',
+  initialWidth = 500, // Default initial width
+  initialHeight = 500, // Default initial height
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
+  const isInView = useInView(ref, { margin: '-15% 0px -45% 0px' }); // Custom margin settings
 
   useEffect(() => {
-    const initialiseGSAPScrollTriggerPinningHorizontal = () => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const sectionPin = sectionPinRef.current;
-
-      if (sectionPin) {
-        const containerAnimation = gsap.to(sectionPin, {
-          scrollTrigger: {
-            trigger: '#section_to-pin',
-            start: 'top top',
-            end: () => `+=${sectionPin.offsetWidth}`,
-            pin: true,
-            scrub: true,
-          },
-          x: () =>
-            `-${
-              sectionPin.scrollWidth - document.documentElement.clientWidth
-            }px`,
-          ease: 'none',
-        });
-
-        imageWrapperRefs.current.forEach((imageWrapper) => {
-          if (imageWrapper) {
-            gsap.to(imageWrapper, {
-              scrollTrigger: {
-                trigger: imageWrapper,
-                start: 'left center',
-                end: 'right center',
-                containerAnimation: containerAnimation,
-                toggleClass: {
-                  targets: `.${imageWrapper.id}`,
-                  className: 'active',
-                },
-              },
-            });
-          }
-        });
-      }
-    };
-
-    const initialiseLenisScroll = () => {
-      const lenis = new Lenis({
-        smoothWheel: true,
-        duration: 1.2,
+    if (isInView) {
+      controls.start({
+        scale: finalScale,
+        borderRadius: '0%', // Rectangular shape when in view
+        width: '100%', // Full width when in view
+        height: '100%', // Full height when in view
+        transition: { duration },
       });
-
-      lenis.on('scroll', ScrollTrigger.update);
-
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
+    } else {
+      controls.start({
+        scale: initialScale,
+        borderRadius: '50%', // Fully rounded shape when out of view
+        width: initialWidth, // Initial width in pixels
+        height: initialHeight, // Initial height in pixels
+        transition: { duration },
       });
-
-      gsap.ticker.lagSmoothing(0);
-    };
-
-    initialiseGSAPScrollTriggerPinningHorizontal();
-    initialiseLenisScroll();
-  }, []);
-
-  const handleImageWrapperRef = (el: HTMLDivElement | null) => {
-    if (el) {
-      imageWrapperRefs.current.push(el);
     }
-  };
+  }, [
+    isInView,
+    controls,
+    finalScale,
+    initialScale,
+    duration,
+    initialWidth,
+    initialHeight,
+  ]);
 
   return (
-    <section
-      id="section_to-pin"
-      className="grid-container full section section_to-pin four"
+    <motion.div
+      ref={ref}
+      className={`relative overflow-hidden ${className}`}
+      initial={{
+        scale: initialScale,
+        borderRadius: '50%',
+        width: initialWidth, // Set initial width in pixels
+        height: initialHeight, // Set initial height in pixels
+      }}
+      animate={controls}
+      style={{
+        width: '100%', // Ensure the container takes full width
+        height: '100%', // Ensure the container takes full height
+      }}
     >
-      <div id="section_pin" ref={sectionPinRef} className="section_pin">
-        <div className="content_wrapper">
-          <h1>Lorem Horizontal.</h1>
-        </div>
-        <div
-          id="image_wrapper_1"
-          ref={handleImageWrapperRef}
-          className="image_wrapper image_wrapper_1"
+      <motion.div
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'hidden',
+        }}
+      >
+        <motion.div
+          style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%', // Ensure initial roundness
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
         >
-          <img
-            className="image"
-            src="https://images.unsplash.com/photo-1516647768-31ff0cef8821?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-            alt="Lil' Image"
+          <Image
+            className="object-cover"
+            src={src}
+            alt={alt}
+            layout="fill"
+            objectFit="cover"
           />
-        </div>
-        <div
-          id="image_wrapper_2"
-          ref={handleImageWrapperRef}
-          className="image_wrapper image_wrapper_2"
-        >
-          <img
-            className="image"
-            src="https://images.unsplash.com/photo-1516648064-ee10acfa64db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=863&q=80"
-            alt="Lil' Image"
-          />
-        </div>
-        <div
-          id="image_wrapper_3"
-          ref={handleImageWrapperRef}
-          className="image_wrapper image_wrapper_3"
-        >
-          <img
-            className="image"
-            src="https://images.unsplash.com/photo-1516647072-a39e59e34b97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
-            alt="Lil' Image"
-          />
-        </div>
-      </div>
-    </section>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
-export default HorizontalPinningSection;
+export default AnimatedImage;

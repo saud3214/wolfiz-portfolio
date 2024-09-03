@@ -4,6 +4,11 @@ import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { PT_Serif, Poppins } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import SwiperCore from 'swiper';
+import { Mousewheel, EffectFade, Autoplay } from 'swiper/modules';
+
 import {
   setupScrollAnimation,
   movingText2,
@@ -12,6 +17,7 @@ import {
   animation3,
   animation4,
   ScrollOnTop,
+  vienna,
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
 import WordPullUp from '@/components/magicui/word-pull-up';
@@ -30,6 +36,7 @@ import {
   BottomImage,
 } from '@/app/components/revealelement';
 import { AnimatedText2, AnimatedText3 } from '@/app/components/animatedtext';
+import AnimatedImage from '@/app/components/text';
 const ptserif = PT_Serif({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -38,6 +45,8 @@ const urbanist = Poppins({
   subsets: ['latin'],
   weight: ['400', '700', '600'],
 });
+SwiperCore.use([Mousewheel, EffectFade, Autoplay]);
+
 export default function Vienna() {
   const [activeImage, setActiveImage] = useState(1);
   const containerRef = useRef(null);
@@ -59,6 +68,7 @@ export default function Vienna() {
     animation2();
     animation3();
     animation4();
+    vienna();
   });
 
   return (
@@ -76,7 +86,7 @@ export default function Vienna() {
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] overflow-auto ">
             <div className="flex  col-span-12 items-center justify-center flex-col w-full  ">
               <div className="flex flex-col items-center justify-between h-[100vh]  w-full relative ">
-                <div className="bg-gradient-to-r from-transparent      to-black absolute  w-full h-full  "></div>
+                {/* <div className="bg-gradient-to-r from-transparent      to-black absolute  w-full h-full  "></div> */}
                 <div className="videoContainer w-full ">
                   <video
                     className="roundvideo"
@@ -87,7 +97,7 @@ export default function Vienna() {
                     playsInline
                   >
                     <source
-                      src="../../../../../mobileapps/vienna/4 video.mp4"
+                      src="../../../../../mobileapps/vienna/video.mp4"
                       type="video/mp4"
                     />
                   </video>
@@ -311,7 +321,7 @@ export default function Vienna() {
                         playsInline
                       >
                         <source
-                          src="../../../../../mobileapps/vienna/4 video.mp4"
+                          src="../../../../../mobileapps/vienna/video.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -423,7 +433,7 @@ export default function Vienna() {
                   </div>
                 </div>
               </div>
-              <div className="bg-[#EA0000] w-full items-center justify-center relative  mb-10 overflow-hidden  ">
+              <div className="bg-[#EA0000] w-full items-center justify-center relative   overflow-hidden  ">
                 <div className="grid grid-cols-12 w-full text-white">
                   <div className="col-span-6 p-10 flex flex-col ">
                     <span className="font-semibold text-4xl">
@@ -457,6 +467,218 @@ export default function Vienna() {
                       />
                     </div>
                   </div>
+                </div>
+              </div>
+              <div className="w-full bg-viennabg4 bg-cover bg-center bg-no-repeat h-[190vh] items-center justify-start flex flex-col  py-10 relative">
+                <div className="w-11/12 items-start justify-between flex ">
+                  <span
+                    className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                  >
+                    Refining<br></br>Vienna’s<br></br>Digital<br></br>Journey.
+                  </span>
+                  <div className="flex flex-col w-1/2 items-end justify-end text-end">
+                    <span className="text-2xl font-semibold text-[#EA0000]">
+                      Discover Vienna’s Iconic Landmarks
+                    </span>
+                    <span className="text-xl ">
+                      From the grandeur of Schönbrunn Palace to the vibrant
+                      streets of the Naschmarkt, Vienna invites you to uncover
+                      its rich history, stunning architecture, and unforgettable
+                      cultural experiences.
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center justify-center  text-white text-3xl font-semibold capitalize absolute top-[25%] right-[10%]">
+                  <span>
+                    user testing: walking in<br></br>the travelers shoes
+                  </span>
+                </div>
+                <div className="flex   absolute w-[12%]    top-[30%] right-[22%] ">
+                  <Image
+                    className=" relativepos    "
+                    src="/mobileapps/vienna/t1.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+              </div>
+              <div className="w-full h-[100vh] items-center justify-center flex relative overflow-hidden content1 ">
+                <div className="flex flex-col items-start justify-start ">
+                  <span
+                    className={`text-[6vw] font-bold text-[#E5E5E5] capitalize ${ptserif.className} leading-[100px]`}
+                  >
+                    Secrets of vienna <br></br> unwrapped
+                  </span>
+                  <span className="text-[#EA0000] text-xl font-semibold mt-5">
+                    Vienna Unwrapped: Explore, Experience, Enjoy
+                  </span>
+                </div>
+                <span className="text-xl font-semibold absolute left-[10%] top-[13%]">
+                  Your Personal Guide to Austrian Charm
+                </span>
+                <span className="text-xl font-semibold absolute left-[10%] bottom-[13%]">
+                  The Art of Exploring Austria
+                </span>
+                <span className="text-xl font-semibold absolute right-[20%] bottom-[27%]">
+                  The Art of Exploring Austria
+                </span>
+                <div className="flex  items-center  absolute w-2/12 -left-[10%]  bottom-[10%] ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f1.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+                <div className="flex  items-center  absolute w-[15%] bottom-[10%]   ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+
+                <div className="flex  items-center  absolute w-[15%] top-[7%]   ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f4.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+                <div className="flex  items-center  absolute w-[15%]  -right-[2%] bottom-[30%] ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f4.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+                <div className="flex  items-center  absolute w-[15%]  -right-[2%] top-[12%] ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f5.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+                <div className="flex  items-center  absolute w-[15%]  left-0 -top-[7%] ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f7.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+                <div className="flex  items-center  absolute w-[15%]  left-[10%] top-[17%] ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f8.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+                <div className="flex  items-center  absolute w-[15%]  right-[20%] -top-[10%] ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f9.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+                <div className="flex  items-center  absolute w-[15%]  right-[20%] bottom-1 ">
+                  <Image
+                    className=" relativepos "
+                    src="/mobileapps/vienna/f10.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </div>
+              </div>
+              <div className="w-full h-[100vh] flex  bg-[#EA0000] items-center justify-center ">
+                <div className="w-11/12 flex items-center justify-center h-[85vh]">
+                  <Swiper
+                    autoplay={{ delay: 1000, disableOnInteraction: false }}
+                    loop={true}
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    pagination={{ clickable: false }}
+                    effect="fade"
+                    speed={1000}
+                    className="w-full h-full items-center"
+                  >
+                    <SwiperSlide className="flex items-center justify-center w-full">
+                      <div className="flex items-center w-full ">
+                        <Image
+                          className="relativepos"
+                          src="/mobileapps/vienna/s1.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="flex items-center justify-center w-full">
+                      <div className="flex items-center w-full h-[100vh]">
+                        <Image
+                          className="relativepos"
+                          src="/mobileapps/vienna/s2.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="flex items-center justify-center w-full">
+                      <div className="flex items-center w-full ">
+                        <Image
+                          className="relativepos"
+                          src="/mobileapps/vienna/s3.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="flex items-center justify-center w-full">
+                      <div className="flex items-center w-full ">
+                        <Image
+                          className="relativepos"
+                          src="/mobileapps/vienna/s4.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </div>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+              </div>
+              <div className="w-full h-[100vh] items-center justify-center flex relative">
+                <div className="flex w-full h-full items-center justify-center group">
+                  <div className="flex items-center w-2/3 relative z-10  group-hover:hidden transition-all duration-700 ">
+                    <Image
+                      className="relativepos"
+                      src="/mobileapps/vienna/logolastw.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                  <div className="hidden group-hover:flex items-center w-2/3 relative z-10 transition-all duration-700   ">
+                    <Image
+                      className="relativepos"
+                      src="/mobileapps/vienna/logolastw.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </div>
+                <div className=" w-full h-full absolute flex items-center justify-center ">
+                  <AnimatedImage
+                    src="/mobileapps/vienna/last.png"
+                    alt="Background 1"
+                    initialScale={0.5}
+                    finalScale={1}
+                    duration={1}
+                    className="rounded-full"
+                  />
                 </div>
               </div>
             </div>

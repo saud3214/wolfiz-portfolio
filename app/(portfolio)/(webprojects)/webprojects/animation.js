@@ -473,3 +473,29 @@ export const ScrollOnTop = () => {
     );
   });
 };
+
+export const vienna = () => {
+  document
+    .querySelector('.content1')
+    .addEventListener('mousemove', function (e) {
+      const rect = this.getBoundingClientRect(); // Get the position of the container
+      const mouseX = e.clientX - rect.left; // Mouse position relative to container
+      const mouseY = e.clientY - rect.top;
+
+      const images = this.querySelectorAll('img');
+
+      images.forEach((image, index) => {
+        const depth = index + 1;
+        const moveinX = (-1 * (mouseX - rect.width / 2)) / (10 + depth * 10); // Invert movement by multiplying by -1
+        const moveinY = (-1 * (mouseY - rect.height / 2)) / (10 + depth * 10);
+
+        gsap.to(image, {
+          x: moveinX,
+          y: moveinY,
+          // rotation: moveinX / 5, // Consistent rotation effect
+          duration: 0.6, // Faster response for a more dynamic feel
+          ease: 'power3.out',
+        });
+      });
+    });
+};
