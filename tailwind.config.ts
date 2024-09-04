@@ -102,7 +102,16 @@ const config = {
         viennabg2: "url('/mobileapps/vienna/cbg1.png')",
         viennabg3: "url('/mobileapps/vienna/cbg2.png')",
         viennabg4: "url('/mobileapps/vienna/bg3.png')",
+        avconscard: "url('/mobileapps/avcons/card.png')",
+        dorooscard: "url('/mobileapps/doroos/card.png')",
+        yalaxicard: "url('/mobileapps/yalaxi/card.png')",
+        nducard: "url('/mobileapps/ndusapp/card.png')",
+        peptidecard: "url('/mobileapps/peptide/card.png')",
+        apployeebg1: "url('/mobileapps/apployee/bg1.png')",
+        apployeebg2: "url('/mobileapps/apployee/bg2.png')",
+        apployeebg3: "url('/mobileapps/apployee/bg3n.png')",
       },
+
       colors: {
         nht: '#006360',
         lp: '#792C21',
@@ -170,12 +179,28 @@ const config = {
           to: { height: '0' },
         },
       },
+      'zoom-in': {
+        '0%': {
+          opacity: '0',
+          transform: 'scale3d(0.3, 0.3, 0.3)',
+        },
+        '80%': {
+          opacity: '0.8',
+          transform: 'scale3d(1.1, 1.1, 1.1)',
+        },
+        '100%': {
+          opacity: '1',
+          transform: 'scale3d(1, 1, 1)',
+        },
+      },
+
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'slow-spin': 'spin 5s linear infinite', // Adjust the duration (e.g., 5s)
         'slow-bounce': 'bounce 2s linear infinite', // Adjust the duration (e.g., 5s)
         'bounce-once': 'bounce 2s linear once', // Adjust the duration (e.g., 5s)
+        'zoom-in': 'zoom-in 1s ease-in-out forwards',
       },
     },
   },

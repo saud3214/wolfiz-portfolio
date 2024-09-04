@@ -185,7 +185,7 @@ export default function Vienna() {
                             playsInline
                           >
                             <source
-                              src="/mobileapps/vienna/laptop.mp4"
+                              src="/mobileapps/vienna/Laptop2.mp4"
                               type="video/mp4"
                             />
                           </video>
@@ -321,7 +321,7 @@ export default function Vienna() {
                         playsInline
                       >
                         <source
-                          src="../../../../../mobileapps/vienna/video.mp4"
+                          src="../../../../../mobileapps/vienna/vienna.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -458,24 +458,45 @@ export default function Vienna() {
                     </div>
                   </div>
                   <div className="col-span-6  flex items-end justify-end h-full pt-5">
-                    <div className="flex   relative w-full ">
-                      <Image
-                        className=" relativepos    "
-                        src="/mobileapps/vienna/frame5.png"
-                        alt="Background 1"
-                        fill
-                      />
+                    <div className=" w-full h-[90%] object-cover object-top ">
+                      <video
+                        className="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="auto"
+                        playsInline
+                      >
+                        <source
+                          src="../../../../../mobileapps/vienna/mobile.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="w-full bg-viennabg4 bg-cover bg-center bg-no-repeat h-[190vh] items-center justify-start flex flex-col  py-10 relative">
+              <div className="w-full bg-viennabg4 bg-cover bg-center bg-no-repeat h-[200vh] items-center justify-start flex flex-col  py-10 relative">
                 <div className="w-11/12 items-start justify-between flex ">
-                  <span
-                    className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
-                  >
-                    Refining<br></br>Vienna’s<br></br>Digital<br></br>Journey.
-                  </span>
+                  <div className="flex flex-col h-[400px]">
+                    <GradualSpacing
+                      className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                      text="Refining"
+                    />
+                    <GradualSpacing
+                      className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                      text="Vienna’s"
+                    />
+                    <GradualSpacing
+                      className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                      text="Digital  "
+                    />
+                    <GradualSpacing
+                      className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                      text="Journey."
+                    />
+                  </div>
+
                   <div className="flex flex-col w-1/2 items-end justify-end text-end">
                     <span className="text-2xl font-semibold text-[#EA0000]">
                       Discover Vienna’s Iconic Landmarks
@@ -489,26 +510,109 @@ export default function Vienna() {
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-center  text-white text-3xl font-semibold capitalize absolute top-[25%] right-[10%]">
-                  <span>
-                    user testing: walking in<br></br>the travelers shoes
-                  </span>
+                  <SrRight>
+                    <span>
+                      user testing: walking in<br></br>the travelers shoes
+                    </span>
+                  </SrRight>
                 </div>
                 <div className="flex   absolute w-[12%]    top-[30%] right-[22%] ">
-                  <Image
-                    className=" relativepos    "
-                    src="/mobileapps/vienna/t1.png"
-                    alt="Background 1"
-                    fill
-                  />
+                  <SrRight>
+                    <Image
+                      className=" relativepos    "
+                      src="/mobileapps/vienna/t1.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrRight>
+                </div>
+
+                <div className="flex flex-col items-center justify-center  text-white text-3xl font-semibold capitalize absolute top-[40%] left-[10%]">
+                  <SrLeft>
+                    <span>
+                      Cross-device consistency:<br></br>vienna on every screen
+                    </span>
+                  </SrLeft>
+                </div>
+                <div className="flex   absolute w-[12%]    top-[45%] left-[22%] ">
+                  <SrLeft>
+                    <Image
+                      className=" relativepos    "
+                      src="/mobileapps/vienna/t2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrLeft>
+                </div>
+
+                <div className="flex flex-col items-center justify-center  text-white text-3xl font-semibold capitalize absolute top-[50%] right-[10%]">
+                  <SrRight>
+                    <span>
+                      accessibility assurance:<br></br>vienna for everyone
+                    </span>
+                  </SrRight>
+                </div>
+                <div className="flex   absolute w-[12%]    top-[55%] right-[22%] ">
+                  <SrRight>
+                    <Image
+                      className=" relativepos    "
+                      src="/mobileapps/vienna/t1.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrRight>
+                </div>
+
+                <div className="flex flex-col items-center justify-center  text-white text-3xl font-semibold capitalize absolute top-[65%] left-[10%]">
+                  <SrLeft>
+                    <span>
+                      speeding up viennas<br></br>digital avenue
+                    </span>
+                  </SrLeft>
+                </div>
+                <div className="flex   absolute w-[12%]    top-[70%] left-[22%] ">
+                  <SrLeft>
+                    <Image
+                      className=" relativepos    "
+                      src="/mobileapps/vienna/t2.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrLeft>
+                </div>
+
+                <div className="flex flex-col items-center justify-center  text-white text-3xl font-semibold capitalize absolute top-[80%] right-[10%]">
+                  <SrRight>
+                    <span>
+                      accessibility assurance:<br></br>vienna for everyone
+                    </span>
+                  </SrRight>
+                </div>
+                <div className="flex   absolute w-[12%]    top-[85%] right-[22%] ">
+                  <SrRight>
+                    {' '}
+                    <Image
+                      className=" relativepos    "
+                      src="/mobileapps/vienna/t1.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </SrRight>
                 </div>
               </div>
               <div className="w-full h-[100vh] items-center justify-center flex relative overflow-hidden content1 ">
-                <div className="flex flex-col items-start justify-start ">
-                  <span
-                    className={`text-[6vw] font-bold text-[#E5E5E5] capitalize ${ptserif.className} leading-[100px]`}
-                  >
-                    Secrets of vienna <br></br> unwrapped
-                  </span>
+                <div className="flex flex-col items-start justify-start  h-64">
+                  <div className="flex flex-col items-start justify-start  ">
+                    <GradualSpacing
+                      className={`text-[6vw] font-bold text-[#E5E5E5] capitalize ${ptserif.className} leading-[100px]`}
+                      text="Secrets of vienna"
+                    />
+                    <GradualSpacing
+                      className={`text-[6vw] font-bold text-[#E5E5E5] capitalize ${ptserif.className} leading-[100px]`}
+                      text="unwrapped"
+                    />
+                  </div>
+
                   <span className="text-[#EA0000] text-xl font-semibold mt-5">
                     Vienna Unwrapped: Explore, Experience, Enjoy
                   </span>

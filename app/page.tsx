@@ -133,7 +133,7 @@ export default function Home() {
             </li>
             <li data-index="3">
               <Link
-                href="/webprojects"
+                href="/webapps"
                 passHref
                 prefetch={true}
                 className={poppins.className}
