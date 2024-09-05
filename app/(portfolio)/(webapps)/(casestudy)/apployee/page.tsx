@@ -63,11 +63,11 @@ export default function Apployee() {
                   </div>
                   <div className="flex flex-col items-center justify-center  h-32 2xl:mt-10">
                     <GradualSpacing
-                      className="text-[4vw] font-semibold text-white uppercase  2xl:leading-[90px] leading-[50px]"
+                      className="text-[4vw] font-semibold text-white uppercase  leading-[84%]"
                       text="TRACK & MANAGE"
                     />
                     <GradualSpacing
-                      className="text-[4vw] font-semibold text-white uppercase  2xl:leading-[90px] leading-[50px]"
+                      className="text-[4vw] font-semibold text-white uppercase  leading-[84%]"
                       text="DRIVERS PERFORMACE"
                     />
                   </div>
