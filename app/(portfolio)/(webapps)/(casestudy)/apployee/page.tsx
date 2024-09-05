@@ -91,7 +91,7 @@ export default function Apployee() {
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center w-full  ">
-                <div className="2xl:w-1/2 w-2/3 text-center text-3xl pb-16 pt-5">
+                <div className="2xl:w-1/2 w-2/3 text-center text-3xl py-16">
                   <span>
                     Apployee coaching portal simplifies Driver management system
                     with a revolutionary platform that streamlines HR, enhances
