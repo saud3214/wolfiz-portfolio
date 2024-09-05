@@ -104,13 +104,13 @@ export default function Webprojects() {
           speed={1000}
           className=" w-full h-full items-center  slideclas swiper-container "
         >
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#2FEDCB] via-[#00A081] to-[#006360] flex items-center justify-center">
+          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#ffff] via-[#EA0000] to-black flex items-center justify-center">
             <div className="slide-inner grid grid-cols-12    ">
               <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
                 <div className="titlendis flex flex-col items-start">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="NHT" />
+                      <AnimatedText2 text="VIENNA" />
                     </text>
                   </div>
                   <div className={archivo.className}>
@@ -121,11 +121,11 @@ export default function Webprojects() {
                       for washing and playing sports!
                     </span>
                   </div>
-                  <Link href={'/nht'} className="mt-8 ">
+                  <Link href={'/vienna'} className="mt-8 ">
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#00A081] h-[24vh]">
+                  <div className=" relative border-4 rounded-sm border-[#EA0000] h-[24vh]">
                     <div
                       id="videoDiv"
                       className="video-container flex flex-col h-[24vh]"
@@ -155,7 +155,7 @@ export default function Webprojects() {
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide className="swiper-slide  flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#E6F8FA] via-[#7cd9e3] to-[#22CADB]">
+          {/* <SwiperSlide className="swiper-slide  flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#E6F8FA] via-[#7cd9e3] to-[#22CADB]">
             <div className="slide-inner grid grid-cols-12    ">
               <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
                 <div className="titlendis flex flex-col items-start">
@@ -461,7 +461,7 @@ export default function Webprojects() {
                 </Link>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </SlideFromSide>

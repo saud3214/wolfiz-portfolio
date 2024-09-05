@@ -110,6 +110,8 @@ const config = {
         apployeebg1: "url('/mobileapps/apployee/bg1.png')",
         apployeebg2: "url('/mobileapps/apployee/bg2.png')",
         apployeebg3: "url('/mobileapps/apployee/bg3n.png')",
+        srcard: "url('/mobileapps/sr/card.png')",
+        apployeecard: "url('/mobileapps/apployee/card.png')",
       },
 
       colors: {
