@@ -26,14 +26,14 @@ export const RotateText: React.FC<RotateTextProps> = ({ children }) => {
       controls.start({
         scale: 1,
         transition: {
-          duration: 1,
+          duration: 0.9,
           delay: 0.2,
-          ease: 'easeInOut',
+          ease: 'anticipate',
         },
       });
     } else {
       controls.start({
-        scale: 0.5,
+        scale: 0.3,
       });
     }
   }, [isInView, controls]);
