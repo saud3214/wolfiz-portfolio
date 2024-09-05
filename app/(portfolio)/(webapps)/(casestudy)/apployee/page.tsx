@@ -47,7 +47,7 @@ export default function Apployee() {
         <div className="  w-full  items-center justify-center flex   ">
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex  col-span-12 items-center justify-center flex-col w-full  ">
-              <div className="flex flex-col items-center justify-start w-full p-10  relative h-[120vh] ">
+              <div className="flex flex-col items-center justify-start w-full p-10  relative h-[130vh] ">
                 <div className="bg-apployeebg1 bg-cover bg-center bg-no-repeat w-full h-[80vh] rounded-3xl p-10 flex flex-col ">
                   <div className="flex text-white items-center justify-between font-semibold text-sm">
                     <span>2024</span>
@@ -71,7 +71,7 @@ export default function Apployee() {
                       text="DRIVERS PERFORMACE"
                     />
                   </div>
-                  <div className="w-10/12 flex rounded-3xl h-[70vh] absolute bottom-[4%] right-[8%] ">
+                  <div className="w-10/12 flex rounded-3xl h-[90vh] absolute -bottom-[1%] right-[8%] ">
                     <div className=" w-full  rounded-3xl ">
                       <video
                         className="roundvideo rounded-3xl "
