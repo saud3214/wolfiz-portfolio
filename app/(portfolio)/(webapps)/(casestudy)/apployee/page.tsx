@@ -63,15 +63,15 @@ export default function Apployee() {
                   </div>
                   <div className="flex flex-col items-center justify-center  h-32 2xl:mt-10">
                     <GradualSpacing
-                      className="text-[5vw] font-semibold text-white uppercase  2xl:leading-[90px] leading-[50px]"
+                      className="text-[4vw] font-semibold text-white uppercase  2xl:leading-[90px] leading-[50px]"
                       text="TRACK & MANAGE"
                     />
                     <GradualSpacing
-                      className="text-[5vw] font-semibold text-white uppercase  2xl:leading-[90px] leading-[50px]"
+                      className="text-[4vw] font-semibold text-white uppercase  2xl:leading-[90px] leading-[50px]"
                       text="DRIVERS PERFORMACE"
                     />
                   </div>
-                  <div className="w-10/12 flex rounded-3xl h-[70vh] absolute bottom-[3%] right-[8%] ">
+                  <div className="w-10/12 flex rounded-3xl h-[70vh] absolute bottom-[4%] right-[8%] ">
                     <div className=" w-full  rounded-3xl ">
                       <video
                         className="roundvideo rounded-3xl "
