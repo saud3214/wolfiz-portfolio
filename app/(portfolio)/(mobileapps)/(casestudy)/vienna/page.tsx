@@ -35,8 +35,7 @@ import {
   TopImage,
   BottomImage,
 } from '@/app/components/revealelement';
-import { AnimatedText2, AnimatedText3 } from '@/app/components/animatedtext';
-import AnimatedImage from '@/app/components/text';
+import AnimatedImage from '@/app/components/animatedimage';
 const ptserif = PT_Serif({
   subsets: ['latin'],
   weight: ['400', '700'],
