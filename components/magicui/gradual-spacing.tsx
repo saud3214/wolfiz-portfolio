@@ -27,7 +27,7 @@ export default function GradualSpacing({
   const isInView = useInView(ref, { margin: '-3% 0px -3% 0px' }); // Customize the margin as needed
 
   return (
-    <div ref={ref} className="flex justify-center">
+    <div ref={ref} className="flex justify-center ">
       <AnimatePresence>
         {isInView &&
           text.split('').map((char, i) => (

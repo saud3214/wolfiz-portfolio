@@ -195,7 +195,7 @@ export default function Mobileapps() {
                         className="h-[23.3vh]"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/3494067845/preview/stock-footage-neon-orange-color-clear-waving-flag-d-vivid-flag-waving-colorful-neon-orange-seamless-loop.webm"
+                          src="/mobileapps/yalaxi/yalaxivideo.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -349,7 +349,7 @@ export default function Mobileapps() {
                         className="h-[23.3vh]"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/3494067845/preview/stock-footage-neon-orange-color-clear-waving-flag-d-vivid-flag-waving-colorful-neon-orange-seamless-loop.webm"
+                          src="/mobileapps/yalaxi/yalaxivideo.mp4"
                           type="video/mp4"
                         />
                       </video>

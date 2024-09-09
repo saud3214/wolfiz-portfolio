@@ -10,8 +10,8 @@ interface ImageData {
 const images: ImageData[] = [
   { id: 1, src: '/mobileapps/sc/img1.png', alt: 'Burger' },
   { id: 2, src: '/mobileapps/sc/img2.png', alt: 'Rice' },
-  { id: 3, src: '/mobileapps/sc/img3.png', alt: 'Fries' },
-  { id: 4, src: '/mobileapps/sc/img4.png', alt: 'Salad' },
+  { id: 3, src: '/mobileapps/sc/img4.png', alt: 'Fries' },
+  { id: 4, src: '/mobileapps/sc/img3.png', alt: 'Salad' },
 ];
 
 export default function ImageCarousel() {
@@ -51,25 +51,27 @@ export default function ImageCarousel() {
         handleClick(nextId);
         return nextId;
       });
-    }, 2500); // 500ms interval
+    }, 3000); // 500ms interval
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
 
   return (
-    <div className="flex items-start justify-start space-x-8 pt-10 w-full ">
+    <div className="flex items-start justify-start gap-10 2xl:mt-10   ">
       {/* Thumbnails */}
-      <div className="flex space-y-6 items-center justify-center gap-5  ">
+      <div className="flex space-y-6 items-center justify-center gap-5 h-44 ">
         {images.map((image) => (
           <button
             key={image.id}
             onClick={() => handleClick(image.id)}
             className={`relative transition-transform duration-300 ${
-              selectedId === image.id ? 'border-b-2 border-yellow-400' : ''
+              selectedId === image.id
+                ? 'border-b-2 border-yellow-400 border-glow-yellow'
+                : ''
             }`}
           >
             <div
-              className={`relative w-40 h-40 rounded-full overflow-hidden transition-transform duration-300 `}
+              className={`relative w-[11vw] h-[22vh] rounded-full overflow-hidden transition-transform duration-300  `}
             >
               <Image
                 src={image.src}
