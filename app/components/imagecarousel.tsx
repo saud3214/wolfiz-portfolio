@@ -71,7 +71,7 @@ export default function ImageCarousel() {
             }`}
           >
             <div
-              className={`relative w-[11vw] h-[22vh] rounded-full overflow-hidden transition-transform duration-300  `}
+              className={`relative w-[9vw] h-[18vh] rounded-full overflow-hidden transition-transform duration-300  `}
             >
               <Image
                 src={image.src}

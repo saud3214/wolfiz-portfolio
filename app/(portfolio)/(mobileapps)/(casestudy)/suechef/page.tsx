@@ -35,7 +35,7 @@ import {
   TopImage,
   BottomImage,
 } from '@/app/components/revealelement';
-import ImageCarousel from '@/app/components/text copy';
+import ImageCarousel from '@/app/components/imagecarousel';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Ripple from '@/components/magicui/ripple';
 const urbanist = Open_Sans({
@@ -74,7 +74,7 @@ export default function SueChef() {
     animation4();
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -95,13 +95,16 @@ export default function SueChef() {
                     fill
                   />
                 </div>
-
-                <span className="font-semibold text-[3vw] t text-[#E33A24]">
-                  Take a taste come join us.
-                </span>
-                <span className="text-2xl">
-                  Life is so endlessly delicious.
-                </span>
+                <RevealOnScroll>
+                  <span className="font-semibold text-[3vw] t text-[#E33A24]">
+                    Take a taste come join us.
+                  </span>{' '}
+                </RevealOnScroll>
+                <RevealOnScroll>
+                  <span className="text-2xl">
+                    Life is so endlessly delicious.
+                  </span>
+                </RevealOnScroll>
                 <span className="text-xl w-1/2 pt-5">
                   Download Sue Chef today and elevate your dining experiences.
                   Whether you’re hosting a party, planning a special dinner, or
@@ -229,8 +232,8 @@ export default function SueChef() {
                   </div>
                 </div>
               </div>
-              <div className="w-11/12 flex items-center justify-center h-[80vh] rounded-3xl my-10">
-                <div className=" w-full ">
+              <div className="w-11/12 flex items-center justify-center h-[95vh] rounded-3xl my-10">
+                <div className=" w-full flex items-center justify-center ">
                   <video
                     id="roundvideo"
                     autoPlay
@@ -238,24 +241,23 @@ export default function SueChef() {
                     loop
                     preload="yes"
                     playsInline
-                    className="w-full h-[80vh] object-cover rounded-3xl p-1 object-center"
+                    className=" object-cover rounded-3xl p-1 w-11/12 h-[92vh] "
                   >
-                    <source
-                      src="https://www.shutterstock.com/shutterstock/videos/3494067845/preview/stock-footage-neon-orange-color-clear-waving-flag-d-vivid-flag-waving-colorful-neon-orange-seamless-loop.webm"
-                      type="video/mp4"
-                    />
+                    <source src="/mobileapps/sc/video1.mp4" type="video/mp4" />
                   </video>
                 </div>
               </div>
-              <div className="w-full">
-                <div className="  relative w-full  h-[100vh] ">
-                  <Image
-                    className=" relativepos  object-cover"
-                    src="/mobileapps/sc/img5.png"
-                    alt="Background 1"
-                    fill
-                  />
-                </div>
+              <div className="w-full flex ">
+                <SrBottom>
+                  <div className="  relative w-full h-[90vh]   ">
+                    <Image
+                      className=" relativepos  object-cover object-center"
+                      src="/mobileapps/sc/img5.png"
+                      alt="Background 1"
+                      fill
+                    />
+                  </div>
+                </SrBottom>
               </div>
               <div className="w-11/12 flex flex-col items-center justify-center my-10 2xl:pt-10">
                 <div className=" flex  items-center justify-between w-full gap-10">
@@ -398,7 +400,7 @@ export default function SueChef() {
                   </div>
                 </div>
 
-                <div className="w-11/12 flex items-center justify-center h-[80vh] rounded-3xl my-10">
+                <div className="w-full flex items-center justify-center h-[80vh] rounded-3xl my-10">
                   <div className=" w-full ">
                     <video
                       id="roundvideo"
@@ -410,7 +412,7 @@ export default function SueChef() {
                       className="w-full h-[80vh] object-cover rounded-3xl p-1 object-center"
                     >
                       <source
-                        src="https://www.shutterstock.com/shutterstock/videos/3494067845/preview/stock-footage-neon-orange-color-clear-waving-flag-d-vivid-flag-waving-colorful-neon-orange-seamless-loop.webm"
+                        src="/mobileapps/sc/video2.mp4"
                         type="video/mp4"
                       />
                     </video>
@@ -418,8 +420,8 @@ export default function SueChef() {
                 </div>
 
                 <div className="bg-[#FEAB16]  w-full items-center justify-center p-10 rounded-3xl grid grid-cols-12">
-                  <div className="col-span-6 bg-white p-5  rounded-3xl">
-                    <div className="flex  items-center  relative  w-1/2">
+                  <div className="col-span-6 bg-white p-5  rounded-3xl flex flex-col gap-5">
+                    <div className="flex  items-center  relative  w-full h-[45vh]">
                       <Image
                         className=" relativepos "
                         src="/mobileapps/sc/img6.png"
@@ -427,28 +429,142 @@ export default function SueChef() {
                         fill
                       />
                     </div>
+                    <div className=" w-full ">
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="w-full h-[45vh] object-cover rounded-3xl p-1 object-center"
+                      >
+                        <source
+                          src="/mobileapps/sc/video3.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
                   </div>
 
                   <div className="flex  items-center  justify-center  col-span-6  ">
                     <div className="flex w-1/2 relative">
+                      <SrBottom>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sc/watch.png"
+                          alt="Background 1"
+                          fill
+                        />
+                      </SrBottom>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full flex flex-col items-start justify-center">
+                  <div className="  flex items-center justify-center h-20 mt-10">
+                    <GradualSpacing
+                      className="text-[3vw] font-bold text-[#FEAB16] "
+                      text="Project Timeline"
+                    />
+                  </div>
+                  <div className=" w-full flex items-center justify-center">
+                    <div className="flex  relative">
+                      <SrBottom>
+                        <Image
+                          className=" relativepos "
+                          src="/mobileapps/sc/ptl.gif"
+                          alt="Background 1"
+                          fill
+                        />
+                      </SrBottom>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-full flex items-center justify-between  mt-10 gap-10">
+                  <div className="w-1/2 bg-[#FEAB16]  flex rounded-3xl ">
+                    <div className="relative flex h-[60vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg  bg-background md:shadow-xl">
+                      <div className="bg-white p-2 rounded-full h-48 w-48 flex items-center justify-center">
+                        <div className="flex  items-center   justify-center  relative w-full ">
+                          <Image
+                            className=" relativepos    "
+                            src="/mobileapps/sc/logo.png"
+                            alt="Background 1"
+                            fill
+                          />
+                        </div>
+                      </div>
+                      <Ripple />
+                    </div>
+                  </div>
+                  <div className="flex  items-center   justify-center  relative w-5/12  ">
+                    <SrRight>
                       <Image
-                        className=" relativepos "
-                        src="/mobileapps/sc/watch.png"
+                        className=" relativepos    "
+                        src="/mobileapps/sc/logo2.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </SrRight>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-11/12 flex items-center justify-center h-[90vh] rounded-3xl my-10">
+                <div className=" w-full ">
+                  <video
+                    id="roundvideo"
+                    autoPlay
+                    muted
+                    loop
+                    preload="yes"
+                    playsInline
+                    className="w-full h-[90vh] object-cover rounded-3xl p-1 object-center"
+                  >
+                    <source src="/mobileapps/sc/video4.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+
+              <div className="w-full items-center justify-between gap-10 flex  ">
+                <div className="flex  items-center   justify-center  relative w-1/2  ">
+                  <SrLeft>
+                    <div className="flex  items-center   justify-center  relative w-full h-[80vh] ">
+                      <Image
+                        className=" relativepos   object-cover object-top "
+                        src="/mobileapps/sc/img7.png"
                         alt="Background 1"
                         fill
                       />
                     </div>
-                  </div>
+                  </SrLeft>
                 </div>
-                <div className="w-full flex items-center justify-center ">
-                  <div className="w-1/2 bg-[#FEAB16]  flex ">
-                    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-                      <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-white">
-                        Ripple
-                      </p>
-                      <Ripple />
+                <div className="flex  items-center   justify-center  relative w-1/2  ">
+                  <SrRight>
+                    <div className="flex  items-center   justify-center  relative w-full h-[80vh] ">
+                      <Image
+                        className=" relativepos  object-cover  object-center "
+                        src="/mobileapps/sc/img8.png"
+                        alt="Background 1"
+                        fill
+                      />
                     </div>
-                  </div>
+                  </SrRight>
+                </div>
+              </div>
+              <div className="w-11/12 flex items-center justify-center h-[90vh] rounded-3xl mt-10">
+                <div className=" w-full ">
+                  <video
+                    id="roundvideo"
+                    autoPlay
+                    muted
+                    loop
+                    preload="yes"
+                    playsInline
+                    className="w-full h-[90vh] object-cover rounded-3xl p-1 object-center"
+                  >
+                    <source src="/mobileapps/sc/video5.mp4" type="video/mp4" />
+                  </video>
                 </div>
               </div>
             </div>
