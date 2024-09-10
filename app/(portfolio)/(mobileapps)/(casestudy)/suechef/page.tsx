@@ -552,7 +552,10 @@ export default function SueChef() {
                   </SrRight>
                 </div>
               </div>
-              <div className="w-11/12 flex items-center justify-center h-[90vh] rounded-3xl mt-10">
+              <div className="w-11/12 flex items-center justify-center h-[90vh] rounded-3xl mt-10 relative">
+                <span className="text-[3vw] font-bold text-[#FEAB16] absolute right-10 ">
+                  &quot;Dig in and delight !&quot;
+                </span>
                 <div className=" w-full ">
                   <video
                     id="roundvideo"
