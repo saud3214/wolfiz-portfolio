@@ -264,7 +264,12 @@ ul.link-list li a {
   margin-top: 10%;
   padding-top: 8%;
 }
-
+@media screen and (max-width: 1280px) {
+  .titlendis {
+    margin-top: 0%;
+    padding-top: 8%;
+  }
+}
 @media screen and (max-width: 768px) {
   .titlendis {
     margin-top: 0%;
