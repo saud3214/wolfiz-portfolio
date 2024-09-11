@@ -32,7 +32,7 @@ export default function RootLayout({
             z-index: 9;
           }
         `}</style>
-        <header className="flex items-end justify-start fixed lg:h-28 h-24 zindex">
+        <header className="fixed flex items-end justify-start h-24 zindex">
           <div className="font-bold fixed  flex items-center justify-center lg:w-[15%] w-[30%]">
             <Link href="/">
               <Image
@@ -49,9 +49,9 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
 
-        <footer className="bg-black lg:h-16 lg:p-10 p-2 flex flex-wrap text-white text-center lg:justify-between justify-center text-sm lg:text-base">
+        <footer className="flex flex-wrap justify-center p-2 text-sm text-center text-white bg-black lg:h-16 lg:p-10 lg:justify-between lg:text-base">
           <span>© 2013 – 2024 All Rights Reserved by Wolfiz Solutions</span>
-          <div className="flex lg:gap-10 gap-3 text-center items-center justify-center pt-1 lg:p-0">
+          <div className="flex items-center justify-center gap-3 pt-1 text-center lg:gap-10 lg:p-0">
             <span>Life at Wolfiz </span> <span> Privacy Policy </span>
             <span> Terms & Conditions</span>
           </div>
