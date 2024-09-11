@@ -114,7 +114,7 @@ export default function Webapps() {
                 <div className="titlendis flex flex-col items-start">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="NDUSA" />
+                      <AnimatedText2 text="NDU" />
                     </text>
                   </div>
                   <div className={archivo.className}>
@@ -129,10 +129,10 @@ export default function Webapps() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#DF2826] h-[24vh]">
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
                     <div
                       id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
                     >
                       <video
                         id="roundvideo"
@@ -141,10 +141,10 @@ export default function Webapps() {
                         loop
                         preload="yes"
                         playsInline
-                        className="h-[23.3vh]"
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/3494067845/preview/stock-footage-neon-orange-color-clear-waving-flag-d-vivid-flag-waving-colorful-neon-orange-seamless-loop.webm"
+                          src="/mobileapps/ndusapp/ndu.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -180,10 +180,10 @@ export default function Webapps() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#DF2826] h-[24vh]">
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
                     <div
                       id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
                     >
                       <video
                         id="roundvideo"
@@ -192,10 +192,10 @@ export default function Webapps() {
                         loop
                         preload="yes"
                         playsInline
-                        className="h-[23.3vh]"
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/3494067845/preview/stock-footage-neon-orange-color-clear-waving-flag-d-vivid-flag-waving-colorful-neon-orange-seamless-loop.webm"
+                          src="/mobileapps/apployee/apployee.mp4"
                           type="video/mp4"
                         />
                       </video>
