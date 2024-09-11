@@ -34,7 +34,7 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="flex items-center justify-center fixed lg:h-28 h-24 z-[2] w-full">
+      <header className="flex items-center justify-center fixed h-24 z-[2] w-full">
         <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right">
           <Link href="/mobileapps" className="w-full text-2xl ">
             <GradientFlowTextRzfx text="Back" />
