@@ -35,7 +35,7 @@ export default function Avcons() {
         <div className="grid grid-cols-12 w-full  items-center justify-center    ">
           <div className="col-span-12 items-center justify-center flex flex-col w-full ">
             <div className="w-full items-center justify-center flex flex-col relative">
-              <div className="w-full flex flex-col lg:items-start  items-center justify-center bg-[#20B4E3]  lg:h-[60vh] h-[60vh] lg:pt-10 relative">
+              <div className="w-full flex flex-col lg:flex-row lg:items-start  items-center justify-center bg-[#20B4E3]   h-[60vh] lg:pt-10 relative">
                 <div className="flex  items-center  relative    lg:w-3/5  w-11/12  ">
                   <Image
                     className=" relativepos  "
