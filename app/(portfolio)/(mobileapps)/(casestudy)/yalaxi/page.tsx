@@ -16,6 +16,8 @@ import {
   RevealOnScrollLeftText,
   RevealOnScrollLeftImage,
   RevealOnScrollXImage,
+  SrLeft,
+  SrRight,
 } from '@/app/components/revealelement';
 
 const urbanist = Poppins({
@@ -178,7 +180,7 @@ export default function Yalaxi() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:flex hidden items-center justify-center py-10 overflow-hidden">
+        <div className="w-full flex  items-center justify-center py-10 overflow-hidden">
           <div className="moving-text-container flex flex-col items-center space-y-4">
             <div className="moving-text-1 lg:text-7xl text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#FE4B10] to-[#FE9900] uppercase whitespace-nowrap">
               UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
@@ -193,7 +195,7 @@ export default function Yalaxi() {
             </div>
           </div>
         </div>
-        <div className="w-full flex items-center justify-center lg:h-[60vh] h-auto lg:py-10 py-0  ">
+        <div className="w-full flex items-center justify-center lg:h-[60vh] h-auto py-10   ">
           <div className=" flex flex-col w-full items-center justify-center  lg:text-6xl text-4xl  text-[#4a4848] font-bold  h-full ">
             <div className="flex flex-col items-center justify-center w-11/12 h-full image-row relative  ">
               <span className=" uppercase relative ">Design Process</span>
@@ -240,44 +242,54 @@ export default function Yalaxi() {
               </div>
               {/* mobile images */}
               <div className="flex lg:hidden items-center justify-center  relative   h-full   w-4/5  py-5  ">
-                <Image
-                  className=" relativepos"
-                  src="/mobileapps/yalaxi/dp1.png"
-                  alt="Background 1"
-                  fill
-                />
+                <SrRight>
+                  <Image
+                    className=" relativepos"
+                    src="/mobileapps/yalaxi/dp1.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </SrRight>
               </div>
               <div className="flex lg:hidden items-center justify-center  relative   h-full  w-4/5  py-5  ">
-                <Image
-                  className=" relativepos"
-                  src="/mobileapps/yalaxi/dp2.png"
-                  alt="Background 1"
-                  fill
-                />
+                <SrLeft>
+                  <Image
+                    className=" relativepos"
+                    src="/mobileapps/yalaxi/dp2.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </SrLeft>
               </div>
               <div className="flex lg:hidden items-center justify-center  relative   h-full   w-4/5 py-5   ">
-                <Image
-                  className=" relativepos"
-                  src="/mobileapps/yalaxi/dp3.png"
-                  alt="Background 1"
-                  fill
-                />
+                <SrRight>
+                  <Image
+                    className=" relativepos"
+                    src="/mobileapps/yalaxi/dp3.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </SrRight>
               </div>
               <div className="flex lg:hidden items-center justify-center  relative   h-full   w-4/5 py-5   ">
-                <Image
-                  className=" relativepos"
-                  src="/mobileapps/yalaxi/dp4.png"
-                  alt="Background 1"
-                  fill
-                />
+                <SrLeft>
+                  <Image
+                    className=" relativepos"
+                    src="/mobileapps/yalaxi/dp4.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </SrLeft>
               </div>
               <div className="flex lg:hidden items-center justify-center  relative   h-full   w-4/5 py-5   ">
-                <Image
-                  className=" relativepos"
-                  src="/mobileapps/yalaxi/dp5.png"
-                  alt="Background 1"
-                  fill
-                />
+                <SrRight>
+                  <Image
+                    className=" relativepos"
+                    src="/mobileapps/yalaxi/dp5.png"
+                    alt="Background 1"
+                    fill
+                  />
+                </SrRight>
               </div>
             </div>
           </div>

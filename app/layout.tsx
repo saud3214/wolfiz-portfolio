@@ -32,7 +32,7 @@ export default function RootLayout({
             z-index: 9;
           }
         `}</style>
-        <header className="flex items-end justify-start fixed h-28 zindex">
+        <header className="flex items-end justify-start fixed lg:h-28 h-24 zindex">
           <div className="font-bold fixed  flex items-center justify-center lg:w-[15%] w-[30%]">
             <Link href="/">
               <Image
