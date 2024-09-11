@@ -126,7 +126,7 @@ export default function Avcons() {
               </span>
             </div>
             <div className="w-11/12 items-center justify-center flex lg:flex-row flex-col lg:py-10 lg:gap-20 gap-5">
-              <div className="flex  items-center    relative lg:w-3/12 w-11/12">
+              <div className="flex  items-center    relative lg:w-3/12 w-11/12 pt-10 lg:pt-0">
                 <SrLeft>
                   <Image
                     className=" relativepos  "
@@ -220,7 +220,7 @@ export default function Avcons() {
               </div>
             </div>
             <div className="grid grid-cols-12   w-11/12 py-10  lg:gap-10">
-              <div className="col-span-6 flex items- justify-start">
+              <div className="col-span-6 lg:flex hidden items- justify-start">
                 <div className="flex  items-center    relative w-full ">
                   <SrLeft>
                     <Image
@@ -232,7 +232,7 @@ export default function Avcons() {
                   </SrLeft>
                 </div>
               </div>
-              <div className="col-span-6 flex items-center justify-end">
+              <div className="col-span-6 lg:flex hidden items-center justify-end">
                 <div className="flex  items-center    relative  w-full ">
                   <SrRight>
                     <Image
@@ -244,7 +244,7 @@ export default function Avcons() {
                   </SrRight>
                 </div>
               </div>
-              <div className="col-span-12 flex items-start justify-start h-[85%] relative">
+              <div className="col-span-12 lg:flex hidden items-start justify-start h-[85%] relative">
                 <SrBottom>
                   <div className="flex  items-center    relative  w-full h-[99%] ">
                     <Image
@@ -256,7 +256,7 @@ export default function Avcons() {
                   </div>
                 </SrBottom>
               </div>
-              <div className="col-span-12 flex flex-col items-center justify-center py-10">
+              <div className="col-span-12 flex flex-col items-center justify-center lg:py-10">
                 <div className="w-full items-center justify-center h-36 lg:block hidden ">
                   <GradualSpacing
                     className="text-[#263C51] text-7xl font-bold uppercase  "
