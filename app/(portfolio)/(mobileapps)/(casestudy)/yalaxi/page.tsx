@@ -38,9 +38,9 @@ export default function Yalaxi() {
       <div
         className={` w-full items-center justify-center flex flex-col bg-[#282727]   ${urbanist.className}`}
       >
-        <div className=" w-full items-start justify-center flex    ">
-          <div className="grid grid-cols-12 w-full   items-start justify-center   ">
-            <div className="col-span-12 items-center justify-center  flex flex-col  lg:pt-20 cursor-default ">
+        <div className="flex items-start justify-center w-full ">
+          <div className="grid items-start justify-center w-full grid-cols-12 ">
+            <div className="flex flex-col items-center justify-center col-span-12 cursor-default lg:pt-20 ">
               <div className="flex items-center justify-center flex-col h-[90vh] lg:h-auto">
                 <div className="flex items-center  relative   pb-10 lg:w-[12%] w-1/2  ">
                   <RevealOnScrollLeft>
@@ -58,16 +58,16 @@ export default function Yalaxi() {
                     <span className="hover-text">FAST. SAFE. SIMPLE.</span>
                   </div>
                 </RevealOnScroll>
-                <div className="flex items-center  relative  mt-10  w-12 ">
+                <div className="relative flex items-center w-12 mt-10 ">
                   <Image
-                    className=" relativepos  "
+                    className=" relativepos"
                     src="/mobileapps/yalaxi/down.png"
                     alt="Background 1"
                     fill
                   />
                 </div>
 
-                <div className="flex items-center  relative   mt-10 image-container  ">
+                <div className="relative flex items-center mt-10 image-container ">
                   <Image
                     className=" relativepos rounded-3xl responsive-image"
                     src="/mobileapps/yalaxi/bg12.png"
@@ -76,16 +76,16 @@ export default function Yalaxi() {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-12 items-center justify-center w-11/12 lg:pt-20 ">
-                <div className="lg:col-span-6 col-span-12 items-start justify-center ">
+              <div className="grid items-center justify-center w-11/12 grid-cols-12 lg:pt-20 ">
+                <div className="items-start justify-center col-span-12 lg:col-span-6 ">
                   <RevealOnScrollLeftText>
                     <div className="flex flex-col items-start justify-center ">
                       <div className=" flex flex-col w-full items-start justify-center  lg:text-6xl text-5xl  text-[#4a4848] font-bold">
-                        <span className="hover-text capitalize  ">Project</span>
-                        <span className="hover-text capitalize">Overview</span>
+                        <span className="capitalize hover-text ">Project</span>
+                        <span className="capitalize hover-text">Overview</span>
                       </div>
 
-                      <span className="text-white pt-5 lg:w-8/12 w-full text-base ">
+                      <span className="w-full pt-5 text-base text-white lg:w-8/12 ">
                         Efficient urban transportation is crucial for growing
                         cities. This case study explores Yalaxi App, enhancing
                         mobility through reliable and affordable solutions. We
@@ -96,8 +96,8 @@ export default function Yalaxi() {
                     </div>
                   </RevealOnScrollLeftText>
                 </div>
-                <div className="lg:col-span-6 col-span-12 items-end justify-end flex pt-5 lg:pt-0">
-                  <div className="flex items-end  relative  lg:w-9/12  w-full  ">
+                <div className="flex items-end justify-end col-span-12 pt-5 lg:col-span-6 lg:pt-0">
+                  <div className="relative flex items-end w-full lg:w-9/12 ">
                     <RevealOnScrollXImage>
                       <Image
                         className=" relativepos rounded-3xl responsive-image -rotate-[9deg]"
@@ -109,9 +109,9 @@ export default function Yalaxi() {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-12 items-center justify-center w-11/12 pt-10 ">
-                <div className="lg:col-span-6 col-span-12 items-start justify-start flex  lg:order-1 order-2  pt-5 lg:pt-0 ">
-                  <div className="flex items-start justify-start  relative lg:w-9/12  w-full    ">
+              <div className="grid items-center justify-center w-11/12 grid-cols-12 pt-10 ">
+                <div className="flex items-start justify-start order-2 col-span-12 pt-5 lg:col-span-6 lg:order-1 lg:pt-0 ">
+                  <div className="relative flex items-start justify-start w-full lg:w-9/12 ">
                     <RevealOnScrollLeftImage>
                       <Image
                         className=" relativepos rounded-3xl responsive-image rotate-[9deg]"
@@ -122,15 +122,15 @@ export default function Yalaxi() {
                     </RevealOnScrollLeftImage>
                   </div>
                 </div>
-                <div className="lg:col-span-6 col-span-12 items-start justify-center  lg:order-2 order-1 ">
+                <div className="items-start justify-center order-1 col-span-12 lg:col-span-6 lg:order-2 ">
                   <RevealOnScrollXImage>
                     <div className="flex flex-col items-end justify-end ps-5 text-end">
                       <div className=" flex flex-col w-full items-end justify-end lg:text-6xl text-5xl  text-[#4a4848] font-bold">
-                        <span className="hover-text capitalize  ">Problem</span>
-                        <span className="hover-text capitalize">statement</span>
+                        <span className="capitalize hover-text ">Problem</span>
+                        <span className="capitalize hover-text">statement</span>
                       </div>
 
-                      <span className="text-white pt-5 lg:w-8/12 w-full">
+                      <span className="w-full pt-5 text-white lg:w-8/12">
                         Efficient urban transportation is crucial for growing
                         cities. This case study explores Yalaxi App, enhancing
                         mobility through reliable and affordable solutions. We
@@ -142,18 +142,18 @@ export default function Yalaxi() {
                   </RevealOnScrollXImage>
                 </div>
               </div>
-              <div className="grid grid-cols-12 items-center justify-center w-11/12 lg:pt-20 pt-10 ">
-                <div className="lg:col-span-6 col-span-12 items-start justify-center ">
+              <div className="grid items-center justify-center w-11/12 grid-cols-12 pt-10 lg:pt-20 ">
+                <div className="items-start justify-center col-span-12 lg:col-span-6 ">
                   <RevealOnScrollLeftText>
                     <div className="flex flex-col items-start justify-center ">
                       <div className=" flex flex-col w-full items-start justify-center  lg:text-6xl text-5xl  text-[#4a4848] font-bold">
-                        <span className="hover-text capitalize  ">
+                        <span className="capitalize hover-text ">
                           solution
                         </span>
-                        <span className="hover-text capitalize">statement</span>
+                        <span className="capitalize hover-text">statement</span>
                       </div>
 
-                      <span className="text-white pt-5 lg:w-8/12 w-full">
+                      <span className="w-full pt-5 text-white lg:w-8/12">
                         Efficient urban transportation is crucial for growing
                         cities. This case study explores Yalaxi App, enhancing
                         mobility through reliable and affordable solutions. We
@@ -164,8 +164,8 @@ export default function Yalaxi() {
                     </div>
                   </RevealOnScrollLeftText>
                 </div>
-                <div className="lg:col-span-6 col-span-12 items-end justify-end flex  pt-5 lg:pt-0">
-                  <div className="flex items-end  relative  lg:w-9/12   w-full  ">
+                <div className="flex items-end justify-end col-span-12 pt-5 lg:col-span-6 lg:pt-0">
+                  <div className="relative flex items-end w-full lg:w-9/12 ">
                     <RevealOnScrollXImage>
                       <Image
                         className=" relativepos rounded-3xl responsive-image -rotate-[9deg]"
@@ -180,8 +180,8 @@ export default function Yalaxi() {
             </div>
           </div>
         </div>
-        <div className="w-full flex  items-center justify-center py-10 overflow-hidden">
-          <div className="moving-text-container flex flex-col items-center space-y-4">
+        <div className="flex items-center justify-center w-full py-10 overflow-hidden">
+          <div className="flex flex-col items-center space-y-4 moving-text-container">
             <div className="moving-text-1 lg:text-7xl text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#FE4B10] to-[#FE9900] uppercase whitespace-nowrap">
               UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
               UNMATCHED SERVICE—UNMATCHED SERVICE—FOR EVERY RIDE—FOR EVERY RIDE
@@ -197,8 +197,8 @@ export default function Yalaxi() {
         </div>
         <div className="w-full flex items-center justify-center lg:h-[60vh] h-auto py-10   ">
           <div className=" flex flex-col w-full items-center justify-center  lg:text-6xl text-4xl  text-[#4a4848] font-bold  h-full ">
-            <div className="flex flex-col items-center justify-center w-11/12 h-full image-row relative  ">
-              <span className=" uppercase relative ">Design Process</span>
+            <div className="relative flex flex-col items-center justify-center w-11/12 h-full image-row ">
+              <span className="relative uppercase ">Design Process</span>
 
               <div className="lg:flex hidden items-center justify-center lg:absolute relative top-0 bottom-0  h-full left-[5%] image-card rotate-12 imgcard1 w-[25%]    ">
                 <Image
@@ -241,7 +241,7 @@ export default function Yalaxi() {
                 />
               </div>
               {/* mobile images */}
-              <div className="flex lg:hidden items-center justify-center  relative   h-full   w-4/5  py-5  ">
+              <div className="relative flex items-center justify-center w-4/5 h-full py-5 lg:hidden ">
                 <SrRight>
                   <Image
                     className=" relativepos"
@@ -251,7 +251,7 @@ export default function Yalaxi() {
                   />
                 </SrRight>
               </div>
-              <div className="flex lg:hidden items-center justify-center  relative   h-full  w-4/5  py-5  ">
+              <div className="relative flex items-center justify-center w-4/5 h-full py-5 lg:hidden ">
                 <SrLeft>
                   <Image
                     className=" relativepos"
@@ -261,7 +261,7 @@ export default function Yalaxi() {
                   />
                 </SrLeft>
               </div>
-              <div className="flex lg:hidden items-center justify-center  relative   h-full   w-4/5 py-5   ">
+              <div className="relative flex items-center justify-center w-4/5 h-full py-5 lg:hidden ">
                 <SrRight>
                   <Image
                     className=" relativepos"
@@ -271,7 +271,7 @@ export default function Yalaxi() {
                   />
                 </SrRight>
               </div>
-              <div className="flex lg:hidden items-center justify-center  relative   h-full   w-4/5 py-5   ">
+              <div className="relative flex items-center justify-center w-4/5 h-full py-5 lg:hidden ">
                 <SrLeft>
                   <Image
                     className=" relativepos"
@@ -281,7 +281,7 @@ export default function Yalaxi() {
                   />
                 </SrLeft>
               </div>
-              <div className="flex lg:hidden items-center justify-center  relative   h-full   w-4/5 py-5   ">
+              <div className="relative flex items-center justify-center w-4/5 h-full py-5 lg:hidden ">
                 <SrRight>
                   <Image
                     className=" relativepos"
@@ -295,25 +295,25 @@ export default function Yalaxi() {
           </div>
         </div>
 
-        <div className=" w-full items-start justify-center flex   ">
-          <div className="grid grid-cols-12 w-full  items-center justify-center  ">
-            <div className="flex flex-col col-span-12 items-center justify-center lg:pt-10 text-left ">
-              <div className=" lg:flex hidden flex-col items-center justify-center w-11/12 lg:pt-20 relative lg:mt-10 text-white">
+        <div className="flex items-start justify-center w-full ">
+          <div className="grid items-center justify-center w-full grid-cols-12 ">
+            <div className="flex flex-col items-center justify-center col-span-12 text-left lg:pt-10 ">
+              <div className="relative flex-col items-center justify-center hidden w-11/12 text-white lg:flex lg:pt-20 lg:mt-10">
                 <span className="font-semibold text-[15vw] absolute  top-[10%] z-10 fontpopins">
                   Poppins
                 </span>
                 <div className="flex items-start justify-between w-full ">
-                  <div className=" flex gap-5 items-center justify-center pb-20">
-                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                  <div className="flex items-center justify-center gap-5 pb-20 ">
+                    <div className="px-10 py-3 text-sm border border-white rounded-3xl">
                       TypeFace
                     </div>
-                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                    <div className="px-10 py-3 text-sm border border-white rounded-3xl">
                       Yalaxi Mobile App
                     </div>
-                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                    <div className="px-10 py-3 text-sm border border-white rounded-3xl">
                       Colors
                     </div>
-                    <div className="px-10 py-3 border border-white rounded-3xl text-sm">
+                    <div className="px-10 py-3 text-sm border border-white rounded-3xl">
                       Icons
                     </div>
                   </div>
@@ -329,8 +329,8 @@ export default function Yalaxi() {
                     </RevealOnScrollX>
                   </div>
                 </div>
-                <div className="flex items-end justify-between w-full  ">
-                  <div className="flex flex-col w-1/4  ">
+                <div className="flex items-end justify-between w-full ">
+                  <div className="flex flex-col w-1/4 ">
                     <RevealOnScrollLeft>
                       <div className="bg-[#FE9900] w-full h-40 flex text-end items-end justify-end text-3xl p-5">
                         <span> #FE9900</span>
@@ -341,8 +341,8 @@ export default function Yalaxi() {
                       </div>
                     </RevealOnScrollLeft>
                   </div>
-                  <div className="flex flex-col w-2/3 items-end justify-start ">
-                    <div className=" flex w-1/2 items-start justify-start ps-5 pt-10">
+                  <div className="flex flex-col items-end justify-start w-2/3 ">
+                    <div className="flex items-start justify-start w-1/2 pt-10 ps-5">
                       <span>
                         123456789.!@#$% <br></br>
                         ABCDEFGHIJKLMNOPQRS<br></br>
@@ -350,12 +350,12 @@ export default function Yalaxi() {
                         <br></br>abcdefghijkimnopqr<br></br> stuvw xyz
                       </span>
                     </div>
-                    <div className=" flex w-10/12 items-center justify-between  pt-10">
+                    <div className="flex items-center justify-between w-10/12 pt-10 ">
                       <div className="flex flex-col gap-3 ">
                         <span className="text-xl ">Menu</span>
-                        <div className="flex items-center  relative w-full    ">
+                        <div className="relative flex items-center w-full ">
                           <Image
-                            className=" relativepos "
+                            className=" relativepos"
                             src="/mobileapps/yalaxi/micon.png"
                             alt="Background 1"
                             fill
@@ -364,9 +364,9 @@ export default function Yalaxi() {
                       </div>
                       <div className="flex flex-col ">
                         <span>Chat</span>
-                        <div className="flex items-center  relative  w-full   ">
+                        <div className="relative flex items-center w-full ">
                           <Image
-                            className=" relativepos "
+                            className=" relativepos"
                             src="/mobileapps/yalaxi/chat.png"
                             alt="Background 1"
                             fill
@@ -375,9 +375,9 @@ export default function Yalaxi() {
                       </div>
                       <div className="flex flex-col ">
                         <span>Navigation</span>
-                        <div className="flex items-center  relative  w-full  ">
+                        <div className="relative flex items-center w-full ">
                           <Image
-                            className=" relativepos "
+                            className=" relativepos"
                             src="/mobileapps/yalaxi/nav.png"
                             alt="Background 1"
                             fill
@@ -388,52 +388,52 @@ export default function Yalaxi() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center  justify-center relative  w-11/12 py-10  lg:mt-20   ">
-                <div className="flex items-center  relative  rounded-3xl lg:w-7/12   w-full  ">
+              <div className="relative flex items-center justify-center w-11/12 py-10 lg:mt-20 ">
+                <div className="relative flex items-center w-full rounded-3xl lg:w-7/12 ">
                   <Image
-                    className=" relativepos rounded-3xl "
+                    className=" relativepos rounded-3xl"
                     src="/mobileapps/yalaxi/screens.gif"
                     alt="Background 1"
                     fill
                   />
                 </div>
               </div>
-              <div className="flex flex-col w-full items-center justify-center lg:pt-20">
-                <div className="grid grid-cols-12  items-center justify-center w-full">
-                  <div className="flex col-span-6  items-center  relative  w-full h-full    ">
+              <div className="flex flex-col items-center justify-center w-full lg:pt-20">
+                <div className="grid items-center justify-center w-full grid-cols-12">
+                  <div className="relative flex items-center w-full h-full col-span-6 ">
                     <RevealOnScrollLeft>
                       <Image
-                        className=" relativepos  "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/shrt1.png"
                         alt="Background 1"
                         fill
                       />
                     </RevealOnScrollLeft>
                   </div>
-                  <div className="flex col-span-6 items-center  relative w-full h-full    ">
+                  <div className="relative flex items-center w-full h-full col-span-6 ">
                     <Image
-                      className=" relativepos  "
+                      className=" relativepos"
                       src="/mobileapps/yalaxi/shrt.png"
                       alt="Background 1"
                       fill
                     />
                   </div>
                 </div>
-                <div className="grid grid-cols-12  items-center justify-center w-full">
-                  <div className="flex col-span-6 items-center  relative  w-full h-full    ">
-                    <div className="flex  items-center  relative  w-full h-full    ">
+                <div className="grid items-center justify-center w-full grid-cols-12">
+                  <div className="relative flex items-center w-full h-full col-span-6 ">
+                    <div className="relative flex items-center w-full h-full ">
                       <Image
-                        className=" relativepos  "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/banner.png"
                         alt="Background 1"
                         fill
                       />
                     </div>
                   </div>
-                  <div className="flex col-span-6 items-center  relative  w-full h-full   ">
+                  <div className="relative flex items-center w-full h-full col-span-6 ">
                     <RevealOnScrollX>
                       <Image
-                        className=" relativepos  "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/logo1.png"
                         alt="Background 1"
                         fill
@@ -443,19 +443,19 @@ export default function Yalaxi() {
                 </div>
               </div>
 
-              <div className="flex flex-col items-center justify-center w-11/12 lg:pt-20 pt-10 text-white">
+              <div className="flex flex-col items-center justify-center w-11/12 pt-10 text-white lg:pt-20">
                 <RevealOnScroll>
                   <div className=" flex  w-full items-center justify-center  lg:text-6xl text-5xl  text-[#4a4848] font-bold">
-                    <span className="hover-text uppercase  ">
+                    <span className="uppercase hover-text ">
                       information process
                     </span>
                   </div>
                 </RevealOnScroll>
 
-                <div className="flex items-center  relative  lg:w-9/12  pt-10  w-full ">
+                <div className="relative flex items-center w-full pt-10 lg:w-9/12 ">
                   <RevealOnScrollX>
                     <Image
-                      className=" relativepos "
+                      className=" relativepos"
                       src="/mobileapps/yalaxi/is.png"
                       alt="Background 1"
                       fill
@@ -464,21 +464,21 @@ export default function Yalaxi() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-12 items-start pt-10 w-11/12  ">
-                <div className="col-span-12 flex items-center justify-center ">
+              <div className="grid items-start w-11/12 grid-cols-12 pt-10 ">
+                <div className="flex items-center justify-center col-span-12 ">
                   <RevealOnScroll>
                     <div className=" flex flex-col w-full items-center justify-center  lg:text-6xl text-4xl  text-[#4a4848] font-bold py-10">
-                      <span className=" uppercase hover-text  ">
+                      <span className="uppercase hover-text">
                         login screens
                       </span>
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3 ">
                   <div className="fle<x items-center  relative w-full     ">
                     <RevealOnScrollLeft>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip1.png"
                         alt="Background 1"
                         fill
@@ -486,11 +486,11 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center  ">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3 ">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip2.png"
                         alt="Background 1"
                         fill
@@ -498,11 +498,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center ">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3 ">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip3.png"
                         alt="Background 1"
                         fill
@@ -510,11 +510,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollX>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip4.png"
                         alt="Background 1"
                         fill
@@ -522,21 +522,21 @@ export default function Yalaxi() {
                     </RevealOnScrollX>
                   </div>
                 </div>
-                <div className="col-span-12 flex items-center justify-center  ">
+                <div className="flex items-center justify-center col-span-12 ">
                   <span className="text-4xl font-semibold"></span>
                   <RevealOnScroll>
                     <div className=" flex flex-col w-full items-center justify-center  lg:text-6xl text-4xl text-[#4a4848] font-bold py-10">
-                      <span className=" uppercase hover-text  ">
+                      <span className="uppercase hover-text">
                         New Rides & Chats
                       </span>
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center  ">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3 ">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollLeft>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip5.png"
                         alt="Backgrounde"
                         fill
@@ -544,11 +544,11 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center  ">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3 ">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip6.png"
                         alt="Background 1"
                         fill
@@ -556,11 +556,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center  ">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3 ">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip7.png"
                         alt="Background 1"
                         fill
@@ -568,11 +568,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollX>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip8.png"
                         alt="Background 1"
                         fill
@@ -580,18 +580,18 @@ export default function Yalaxi() {
                     </RevealOnScrollX>
                   </div>
                 </div>
-                <div className="col-span-12 flex items-center justify-center ">
+                <div className="flex items-center justify-center col-span-12 ">
                   <RevealOnScroll>
                     <div className=" flex flex-col w-full items-center justify-center  lg:text-6xl text-4xl text-[#4a4848] font-bold py-10">
-                      <span className=" uppercase hover-text  ">Payment</span>
+                      <span className="uppercase hover-text">Payment</span>
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center ">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3 ">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollLeft>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/p1.png"
                         alt="Background 1"
                         fill
@@ -599,11 +599,11 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/p2.png"
                         alt="Background 1"
                         fill
@@ -612,11 +612,11 @@ export default function Yalaxi() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center ">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3 ">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/p3.png"
                         alt="Background 1"
                         fill
@@ -624,11 +624,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollX>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/ip8.png"
                         alt="Background 1"
                         fill
@@ -636,20 +636,20 @@ export default function Yalaxi() {
                     </RevealOnScrollX>
                   </div>
                 </div>
-                <div className="col-span-12 flex items-center justify-center ">
+                <div className="flex items-center justify-center col-span-12 ">
                   <RevealOnScroll>
                     <div className=" flex flex-col w-full items-center justify-center  lg:text-6xl text-4xl  text-[#4a4848] font-bold py-10">
-                      <span className=" uppercase hover-text  ">
+                      <span className="uppercase hover-text">
                         Menu & Profile
                       </span>
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollLeft>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/mp1.png"
                         alt="Background 1"
                         fill
@@ -657,11 +657,11 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/mp2.png"
                         alt="Background 1"
                         fill
@@ -669,11 +669,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/mp3.png"
                         alt="Background 1"
                         fill
@@ -681,11 +681,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollX>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/mp4.png"
                         alt="Background 1"
                         fill
@@ -693,20 +693,20 @@ export default function Yalaxi() {
                     </RevealOnScrollX>
                   </div>
                 </div>
-                <div className="col-span-12 flex items-center justify-center">
+                <div className="flex items-center justify-center col-span-12">
                   <RevealOnScroll>
                     <div className=" flex flex-col w-full items-center justify-center  lg:text-6xl text-4xl  text-[#4a4848] font-bold py-10">
-                      <span className=" uppercase hover-text  ">
+                      <span className="uppercase hover-text">
                         History & Reviews
                       </span>
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollLeft>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/hr1.png"
                         alt="Background 1"
                         fill
@@ -714,11 +714,11 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/hr2.png"
                         alt="Background 1"
                         fill
@@ -726,11 +726,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScroll>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/hr3.png"
                         alt="Background 1"
                         fill
@@ -738,11 +738,11 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
-                  <div className="flex items-center  relative w-full     ">
+                <div className="flex items-center justify-center col-span-6 lg:col-span-3">
+                  <div className="relative flex items-center w-full ">
                     <RevealOnScrollX>
                       <Image
-                        className=" relativepos "
+                        className=" relativepos"
                         src="/mobileapps/yalaxi/hr4.png"
                         alt="Background 1"
                         fill
@@ -751,23 +751,23 @@ export default function Yalaxi() {
                   </div>
                 </div>
               </div>
-              <div className="w-full flex items-center justify-center">
-                <div className="grid grid-cols-12 items-center justify-center w-full lg:w-11/12 pb-10 pt-10 lg:pt-0 lg:gap-10 gap-5">
-                  <div className="col-span-12 items-center justify-center">
+              <div className="flex items-center justify-center w-full">
+                <div className="grid items-center justify-center w-full grid-cols-12 gap-5 pt-10 pb-10 lg:w-11/12 lg:pt-0 lg:gap-10 ">
+                  <div className="items-center justify-center col-span-12">
                     <RevealOnScroll>
                       <div className=" flex flex-col w-full items-center justify-center  lg:text-6xl text-4xl text-[#4a4848] font-bold lg:py-10">
-                        <span className=" uppercase hover-text  ">
+                        <span className="uppercase hover-text">
                           Social media
                         </span>
                       </div>
                     </RevealOnScroll>
                   </div>
 
-                  <div className="lg:col-span-4 col-span-12 flex items-center justify-center">
-                    <div className="flex items-center  relative lg:w-full  w-10/12    ">
+                  <div className="flex items-center justify-center col-span-12 lg:col-span-4">
+                    <div className="relative flex items-center w-10/12 lg:w-full ">
                       <RevealOnScrollLeft>
                         <Image
-                          className=" relativepos "
+                          className=" relativepos"
                           src="/mobileapps/yalaxi/sm1.png"
                           alt="Background 1"
                           fill
@@ -775,11 +775,11 @@ export default function Yalaxi() {
                       </RevealOnScrollLeft>
                     </div>
                   </div>
-                  <div className="lg:col-span-4 col-span-12 flex items-center justify-center">
-                    <div className="flex items-center  relative lg:w-full  w-10/12    ">
+                  <div className="flex items-center justify-center col-span-12 lg:col-span-4">
+                    <div className="relative flex items-center w-10/12 lg:w-full ">
                       <RevealOnScroll>
                         <Image
-                          className=" relativepos "
+                          className=" relativepos"
                           src="/mobileapps/yalaxi/sm2.png"
                           alt="Background 1"
                           fill
@@ -787,11 +787,11 @@ export default function Yalaxi() {
                       </RevealOnScroll>
                     </div>
                   </div>
-                  <div className="lg:col-span-4 col-span-12 flex items-center justify-center">
-                    <div className="flex items-center  relative lg:w-full  w-10/12    ">
+                  <div className="flex items-center justify-center col-span-12 lg:col-span-4">
+                    <div className="relative flex items-center w-10/12 lg:w-full ">
                       <RevealOnScrollX>
                         <Image
-                          className=" relativepos "
+                          className=" relativepos"
                           src="/mobileapps/yalaxi/sm3.png"
                           alt="Background 1"
                           fill

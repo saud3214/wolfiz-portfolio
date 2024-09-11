@@ -93,7 +93,7 @@ export default function Mobileapps() {
 
   return (
     <SlideFromSide>
-      <div className="  h-full w-full flex items-center  ">
+      <div className="flex items-center w-full h-full ">
         <Swiper
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -106,12 +106,12 @@ export default function Mobileapps() {
           pagination={{ clickable: true }}
           effect="fade"
           speed={1000}
-          className=" w-full h-full items-center  slideclas swiper-container "
+          className="items-center w-full h-full slideclas swiper-container"
         >
           {/* <SwiperSlide className=" swiper-slide bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#FEAB16] via-[#E84D21] to-[#DF2826] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
+            <div className="grid grid-cols-12 slide-inner ">
+              <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
+                <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="SUE CHEF" />
@@ -152,17 +152,17 @@ export default function Mobileapps() {
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
+              <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
+                <div className="grid items-center h-full">
                   <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-sccard  cursor-pointer   shadow-glow-gray  rounded-3xl csimg"></div>
                 </div>
               </div>
             </div>
           </SwiperSlide> */}
           <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#E5E5E5] via-[#FE9900] to-[#FE4B10] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
+            <div className="grid grid-cols-12 slide-inner ">
+              <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
+                <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="YALAXI" />
@@ -203,7 +203,7 @@ export default function Mobileapps() {
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+              <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
                 <div className="h-full grid items-center rounded-[100px]">
                   <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-yalaxicard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
                 </div>
@@ -211,9 +211,9 @@ export default function Mobileapps() {
             </div>
           </SwiperSlide>
           <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#fff] via-[#20B4E3] to-[#263C51] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
+            <div className="grid grid-cols-12 slide-inner ">
+              <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
+                <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="AVCONS" />
@@ -254,17 +254,17 @@ export default function Mobileapps() {
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
+              <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
+                <div className="grid items-center h-full">
                   <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-avconscard  cursor-pointer  shadow-glow-gray  rounded-3xl  csimg"></div>
                 </div>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#75DDDE] via-[#2CB1A9] to-[#053B3A] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
+            <div className="grid grid-cols-12 slide-inner ">
+              <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
+                <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="DOROOS" />
@@ -305,8 +305,8 @@ export default function Mobileapps() {
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
+              <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
+                <div className="grid items-center h-full">
                   <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-dorooscard  cursor-pointer shadow-glow-gray rounded-3xl   csimg"></div>
                 </div>
               </div>
@@ -314,9 +314,9 @@ export default function Mobileapps() {
           </SwiperSlide>
 
           <SwiperSlide className=" swiper-slide bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#cbf1f7] via-[#62B26B] to-[#00C2B7] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
+            <div className="grid grid-cols-12 slide-inner ">
+              <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
+                <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="PEPTIDE" />
@@ -357,7 +357,7 @@ export default function Mobileapps() {
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+              <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
                 <div className="h-full grid items-center rounded-[100px]">
                   <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-peptidecard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
                 </div>
@@ -366,9 +366,9 @@ export default function Mobileapps() {
           </SwiperSlide>
 
           <SwiperSlide className=" swiper-slide bg-gradient-to-tl from-[#F6DE07C2] via-[#EF23A1] to-[#07AAF6] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
+            <div className="grid grid-cols-12 slide-inner ">
+              <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
+                <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="Simi Riezen" />
@@ -409,7 +409,7 @@ export default function Mobileapps() {
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+              <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
                 <div className="h-full grid items-center rounded-[100px]">
                   <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-srcard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
                 </div>

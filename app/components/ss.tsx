@@ -9,10 +9,10 @@ const useSmoothScroll = () => {
   }
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 1.8,
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
-      gestureOrientation: 'vertical',
+      gestureOrientation: 'both',
       touchMultiplier: 2,
     });
 
