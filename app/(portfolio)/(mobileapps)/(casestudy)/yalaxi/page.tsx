@@ -474,7 +474,7 @@ export default function Yalaxi() {
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="col-span-3 flex items-center justify-center ">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center ">
                   <div className="fle<x items-center  relative w-full     ">
                     <RevealOnScrollLeft>
                       <Image
@@ -486,7 +486,7 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center  ">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center  ">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -498,7 +498,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center ">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center ">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -510,7 +510,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollX>
                       <Image
@@ -532,7 +532,7 @@ export default function Yalaxi() {
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="col-span-3 flex items-center justify-center  ">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center  ">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollLeft>
                       <Image
@@ -544,7 +544,7 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center  ">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center  ">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -556,7 +556,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center  ">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center  ">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -568,7 +568,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollX>
                       <Image
@@ -587,7 +587,7 @@ export default function Yalaxi() {
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="col-span-3 flex items-center justify-center ">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center ">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollLeft>
                       <Image
@@ -599,7 +599,7 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -612,7 +612,7 @@ export default function Yalaxi() {
                   </div>
                 </div>
 
-                <div className="col-span-3 flex items-center justify-center ">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center ">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -624,7 +624,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollX>
                       <Image
@@ -645,7 +645,7 @@ export default function Yalaxi() {
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollLeft>
                       <Image
@@ -657,7 +657,7 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -669,7 +669,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -681,7 +681,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollX>
                       <Image
@@ -702,7 +702,7 @@ export default function Yalaxi() {
                     </div>
                   </RevealOnScroll>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollLeft>
                       <Image
@@ -714,7 +714,7 @@ export default function Yalaxi() {
                     </RevealOnScrollLeft>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -726,7 +726,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScroll>
                       <Image
@@ -738,7 +738,7 @@ export default function Yalaxi() {
                     </RevealOnScroll>
                   </div>
                 </div>
-                <div className="col-span-3 flex items-center justify-center">
+                <div className="lg:col-span-3 col-span-6 flex items-center justify-center">
                   <div className="flex items-center  relative w-full     ">
                     <RevealOnScrollX>
                       <Image
