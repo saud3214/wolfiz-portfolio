@@ -17,9 +17,8 @@ import {
   RevealOnScroll,
   RotateImage,
   RotateText,
-  RevealOnScrollXImage,
 } from '@/app/components/revealelement';
-import { AnimatedText2, AnimatedText3 } from '@/app/components/animatedtext';
+import { AnimatedText2 } from '@/app/components/animatedtext';
 const urbanist = Urbanist({
   subsets: ['latin'],
   weight: ['400', '300', '500', '600', '900'],
@@ -29,7 +28,6 @@ export default function Doroos() {
   useSmoothScroll();
   useEffect(() => {
     setupScrollAnimation();
-    movingText2();
   });
 
   return (
@@ -40,7 +38,7 @@ export default function Doroos() {
         <div className="  w-full  items-center justify-center flex   ">
           <div className=" grid grid-cols-12 items-center justify-center   w-11/12 ">
             <div className="flex  col-span-12 items-center justify-center flex-col  gap-3 lg:p-10">
-              <div className="h-[90vh] bg-drbg1 bg-cover bg-center bg-no-repeat flex items-center justify-center w-full  rounded-3xl ">
+              <div className="h-[90vh] bg-drbg1 bg-cover bg-center bg-no-repeat flex items-center justify-center w-full  rounded-3xl  mt-10 lg:mt-0">
                 <div className=" w-11/12 flex lg:flex-row flex-col items-center lg:justify-between justify-center ">
                   <div className="lg:w-1/2  w-full flex flex-col lg:items-start items-center text-center lg:text-start   justify-center gap-5  pt-10 lg:pt-0">
                     <div className="flex items-center justify-start gap-3 w-full">
@@ -67,7 +65,7 @@ export default function Doroos() {
                     </SrBottom>
                   </div>
                   <div className="lg:w-1/2  w-full flex items-center justify-center pt-10 lg:pt-0">
-                    <div className="flex  items-center  relative  lg:w-7/12 w-3/4   ">
+                    <div className="flex  items-center relative  lg:w-7/12 w-3/4   ">
                       <SrTop>
                         <Image
                           className=" relativepos  "
@@ -452,7 +450,7 @@ export default function Doroos() {
                     />
                   </div>
                 </RotateImage>
-                <div className="flex  items-center  absolute top-[10%] left-[15%]      ">
+                <div className="flex  items-center  absolute top-[10%] lg:left-[15%]   left-[2%]    ">
                   <SrRight>
                     <Image
                       className=" relativepos  "
@@ -462,7 +460,7 @@ export default function Doroos() {
                     />
                   </SrRight>
                 </div>
-                <div className="flex  items-center  absolute top-[10%] right-[15%]      ">
+                <div className="flex  items-center  absolute top-[10%] lg:right-[15%]  right-[2%]     ">
                   <SrRight>
                     <Image
                       className=" relativepos  "
@@ -472,7 +470,7 @@ export default function Doroos() {
                     />
                   </SrRight>
                 </div>
-                <div className="flex  items-center  absolute bottom-[10%] right-[13%]      ">
+                <div className="flex  items-center  absolute bottom-[10%] lg:right-[13%] right-[1%]      ">
                   <SrRight>
                     <Image
                       className=" relativepos  "
@@ -493,7 +491,7 @@ export default function Doroos() {
               </div>
 
               <div className="flex items-center justify-center w-full mt-10">
-                <div className="flex  items-center      lg:w-1/2 w-full ">
+                <div className="flex  items-center      lg:w-1/2 w-full relative ">
                   <Image
                     className=" relativepos  "
                     src="/mobileapps/doroos/screen.gif"
