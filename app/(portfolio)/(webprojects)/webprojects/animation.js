@@ -350,6 +350,8 @@ export const ColorBlocks = () => {
 };
 
 export const animation1 = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   gsap.utils.toArray('.rite').forEach((rite, index) => {
     gsap.fromTo(
       rite,
@@ -371,6 +373,8 @@ export const animation1 = () => {
 };
 
 export const animation2 = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   gsap.utils.toArray('.lift2').forEach((lift2, index) => {
     gsap.fromTo(
       lift2,
@@ -392,6 +396,8 @@ export const animation2 = () => {
 };
 
 export const animation3 = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   gsap.utils.toArray('.lift2').forEach((lift2, index) => {
     gsap.fromTo(
       lift2,
@@ -413,6 +419,8 @@ export const animation3 = () => {
 };
 
 export const animation4 = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   gsap.utils.toArray('.rite2').forEach((rite2, index) => {
     gsap.fromTo(
       rite2,
