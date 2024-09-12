@@ -39,35 +39,35 @@ export default function Doroos() {
       >
         <div className="  w-full  items-center justify-center flex   ">
           <div className=" grid grid-cols-12 items-center justify-center   w-11/12 ">
-            <div className="flex  col-span-12 items-center justify-center flex-col  gap-3 p-10">
+            <div className="flex  col-span-12 items-center justify-center flex-col  gap-3 lg:p-10">
               <div className="h-[90vh] bg-drbg1 bg-cover bg-center bg-no-repeat flex items-center justify-center w-full  rounded-3xl ">
-                <div className=" w-11/12 flex items-center justify-between ">
-                  <div className="w-1/2  flex flex-col items-start justify-center gap-5">
-                    <div className="flex items-center justify-center gap-3">
-                      <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
+                <div className=" w-11/12 flex lg:flex-row flex-col items-center lg:justify-between justify-center ">
+                  <div className="lg:w-1/2  w-full flex flex-col lg:items-start items-center text-center lg:text-start   justify-center gap-5  pt-10 lg:pt-0">
+                    <div className="flex items-center justify-start gap-3 w-full">
+                      <div className="lg:py-5 py-2  lg:px-6 px-3 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  lg:text-2xl text-base font-bold">
                         Case Study
                       </div>
 
-                      <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
+                      <div className="lg:py-5 py-2  lg:px-6 px-3 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  lg:text-2xl text-base font-bold">
                         UI/UX Design
                       </div>
-                      <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
+                      <div className="lg:py-5 py-2  lg:px-6 px-3 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  lg:text-2xl text-base font-bold">
                         Learning App
                       </div>
                     </div>
 
-                    <span className="text-9xl font-bold uppercase text-white ">
+                    <span className="2xl:text-8xl xl:text-6xl text-5xl font-bold uppercase text-white ">
                       <AnimatedText2 text="doroos"></AnimatedText2>
                     </span>
 
                     <SrBottom>
-                      <span className="text-[45px] font-bold capitalize text-white ">
+                      <span className="2xl:text-[45px] text-xl font-bold capitalize text-white ">
                         learning app case study
                       </span>
                     </SrBottom>
                   </div>
-                  <div className="w-1/2 flex items-center justify-center">
-                    <div className="flex  items-center  relative  w-7/12   ">
+                  <div className="lg:w-1/2  w-full flex items-center justify-center pt-10 lg:pt-0">
+                    <div className="flex  items-center  relative  lg:w-7/12 w-3/4   ">
                       <SrTop>
                         <Image
                           className=" relativepos  "
@@ -81,37 +81,38 @@ export default function Doroos() {
                 </div>
               </div>
               <div className="w-full flex flex-col items-center justify-center bg-[#053B3A] mt-10 rounded-3xl">
-                <div className="flex  items-center   w-1/4  relative ">
+                <div className="flex  items-center   lg:w-1/4  relative w-9/12 ">
                   <Image
                     className=" relativepos  "
                     src="/mobileapps/doroos/logo.gif"
                     alt="Background 1"
                     fill
+                    unoptimized
                   />
                 </div>
                 <SrBottom>
-                  <div className="flex items-center justify-center gap-3">
-                    <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
+                  <div className="lg:flex items-center justify-center gap-3 hidden">
+                    <div className="lg:py-5 py-2  lg:px-6 px-3 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  lg:text-2xl text-base font-bold">
                       Case Study
                     </div>
 
-                    <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
+                    <div className="lg:py-5 py-2  lg:px-6 px-3 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  lg:text-2xl text-base font-bold">
                       UI/UX Design
                     </div>
-                    <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
+                    <div className="lg:py-5 py-2  lg:px-6 px-3 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  lg:text-2xl text-base font-bold">
                       Learning App
                     </div>
-                    <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
+                    <div className="lg:py-5 py-2  lg:px-6 px-3 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  lg:text-2xl text-base font-bold">
                       Branding
                     </div>
-                    <div className="py-5  px-6 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  text-2xl font-bold">
+                    <div className="lg:py-5 py-2  lg:px-6 px-3 rounded-3xl bg-[#95E4E6]  flex items-center justify-center  lg:text-2xl text-base font-bold">
                       Mobile App Design
                     </div>
                   </div>
                 </SrBottom>
-                <div className="grid grid-cols-12 items-center justify-center py-20">
-                  <div className="col-span-5 items-center justify-center flex">
-                    <div className="flex  items-center  relative  w-9/12   ">
+                <div className="grid grid-cols-12 items-center justify-center lg:py-20 px-2 lg:px-0 gap-5 lg:gap-0 ">
+                  <div className="lg:col-span-5 col-span-12 items-center justify-center flex order-2 lg:order-1">
+                    <div className="flex  items-center  relative  lg:w-9/12 w-11/12   ">
                       <SrLeft>
                         <Image
                           className=" relativepos  "
@@ -122,8 +123,8 @@ export default function Doroos() {
                       </SrLeft>
                     </div>
                   </div>
-                  <div className="col-span-7 items-start justify-center flex flex-col ">
-                    <div className="flex  items-center   relative  w-10/12  ">
+                  <div className="lg:col-span-7 col-span-12 lg:items-start items-center justify-center flex flex-col order-1 lg:order-2 gap-5 lg:gap-0 ">
+                    <div className="flex  items-center   relative  lg:w-10/12 w-full  ">
                       <RevealOnScroll>
                         <Image
                           className=" relativepos  "
@@ -133,15 +134,15 @@ export default function Doroos() {
                         />
                       </RevealOnScroll>
                     </div>
-                    <span className="text-white text-2xl font-medium w-10/12 ">
+                    <span className="text-white lg:text-2xl text-lg font-medium lg:w-10/12 w-full ">
                       Learners need personalized content, and educators struggle
                       to reach them. An intuitive app with diverse courses can
                       bridge this gap.
                     </span>
                   </div>
 
-                  <div className="col-span-7 items-end justify-end text-end flex flex-col ">
-                    <div className="flex  items-center   relative  w-10/12  ">
+                  <div className="lg:col-span-7 col-span-12 lg:items-end items-center justify-end lg:text-end flex flex-col  order-4 lg:order-3 gap-5 lg:gap-0 pt-10 lg:pt-0 ">
+                    <div className="flex  items-center   relative  lg:w-10/12  w-full ">
                       <RevealOnScroll>
                         <Image
                           className=" relativepos  "
@@ -151,14 +152,14 @@ export default function Doroos() {
                         />
                       </RevealOnScroll>
                     </div>
-                    <span className="text-white text-2xl font-medium w-10/12 ">
+                    <span className="text-white lg:text-2xl text-xl font-medium lg:w-10/12 w-full ">
                       Our app connects learners with diverse courses, offering
                       personalized recommendations and flexible learning, while
                       helping educators reach a wider audience.
                     </span>
                   </div>
-                  <div className="col-span-5 items-center justify-center flex">
-                    <div className="flex  items-center  relative  w-9/12   ">
+                  <div className="lg:col-span-5 col-span-12 items-center justify-center flex order-4 lg:order-3 pb-5 lg:pb-0">
+                    <div className="flex  items-center  relative  lg:w-9/12   w-11/12 ">
                       <SrRight>
                         <Image
                           className=" relativepos  "
@@ -172,7 +173,7 @@ export default function Doroos() {
                 </div>
               </div>
               <div className="w-full items-center justify-center flex flex-col bg-drbg2 bg-contain bg-no-repeat bg-right-top py-20 gap-5 ">
-                <div className="flex  items-center  relative  w-4/12   ">
+                <div className="flex  items-center  relative  lg:w-4/12 w-full  ">
                   <RevealOnScroll>
                     <Image
                       className=" relativepos  "
@@ -184,12 +185,12 @@ export default function Doroos() {
                 </div>
                 <div className=" w-full items-center justify-center flex gap-5 ">
                   <div className="grid grid-cols-12 items-center justify-center w-full gap-5">
-                    <div className="col-span-4 items-center justify-center flex">
+                    <div className="lg:col-span-4 col-span-12 items-center justify-center flex order-2 lg:order-1">
                       <SrLeft>
                         <div className="w-full items-center justify-center flex">
                           <div className="h-80 w-full bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
                             <div className=" w-full items-end justify-end flex">
-                              <div className="flex  items-center  relative     ">
+                              <div className="flex  items-center  relative  w-1/4 lg:w-1/6    ">
                                 <Image
                                   className=" relativepos  "
                                   src="/mobileapps/doroos/icon1.png"
@@ -211,7 +212,7 @@ export default function Doroos() {
                         </div>
                       </SrLeft>
                     </div>
-                    <div className="col-span-8 items-start justify-start flex">
+                    <div className="lg:col-span-8 col-span-12 items-start justify-start flex order-1 lg:order-2">
                       <span className="font-medium text-xl text-white 2xl:w-7/12">
                         The design process for the learning app starts with
                         audience research and competitor analysis. Initial
@@ -227,12 +228,12 @@ export default function Doroos() {
                   </div>
                 </div>
                 <div className="grid grid-cols-12 items-center justify-center w-full  gap-5 ">
-                  <div className="col-span-4 items-center justify-center flex">
+                  <div className="lg:col-span-4 col-span-12  items-center justify-center flex">
                     <SrLeft>
                       <div className="w-full items-center justify-center flex">
                         <div className="h-80 w-full bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
                           <div className=" w-full items-end justify-end flex">
-                            <div className="flex  items-center  relative     ">
+                            <div className="flex  items-center  relative w-1/4 lg:w-1/6    ">
                               <Image
                                 className=" relativepos  "
                                 src="/mobileapps/doroos/icon2.png"
@@ -251,12 +252,12 @@ export default function Doroos() {
                       </div>
                     </SrLeft>
                   </div>
-                  <div className="col-span-4 items-center justify-center flex">
+                  <div className="lg:col-span-4 col-span-12 items-center justify-center flex">
                     <SrBottom>
                       <div className="w-full items-center justify-center flex">
                         <div className="h-80 w-full bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
                           <div className=" w-full items-end justify-end flex">
-                            <div className="flex  items-center  relative     ">
+                            <div className="flex  items-center  relative   w-1/4 lg:w-1/6  ">
                               <Image
                                 className=" relativepos  "
                                 src="/mobileapps/doroos/icon3.png"
@@ -275,12 +276,12 @@ export default function Doroos() {
                       </div>
                     </SrBottom>
                   </div>
-                  <div className="col-span-4 items-center justify-center flex">
+                  <div className="lg:col-span-4 col-span-12  items-center justify-center flex">
                     <SrRight>
                       <div className="w-full items-center justify-center flex">
                         <div className="h-80 w-full bg-[#2CB1A9] rounded-3xl items-center justify-between flex flex-col p-6 ">
                           <div className=" w-full items-end justify-end flex">
-                            <div className="flex  items-center  relative     ">
+                            <div className="flex  items-center  relative  w-1/4 lg:w-1/6   ">
                               <Image
                                 className=" relativepos  "
                                 src="/mobileapps/doroos/icon4.png"
@@ -301,8 +302,8 @@ export default function Doroos() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-center flex flex-col bg-drbg2 bg-contain bg-no-repeat bg-left-top py-20 ">
-                <div className="flex  items-center  relative  w-4/12   ">
+              <div className="w-full items-center justify-center flex flex-col bg-drbg2 bg-contain bg-no-repeat bg-left-top lg:py-20 ">
+                <div className="flex  items-center  relative  lg:w-4/12  w-full ">
                   <RevealOnScroll>
                     <Image
                       className=" relativepos  "
@@ -323,9 +324,9 @@ export default function Doroos() {
                   </SrBottom>
                 </div>
               </div>
-              <div className="w-full grid grid-cols-12  bg-drbg2 bg-contain bg-no-repeat bg-left-top pb-10 gap-10">
-                <div className="col-span-4 flex flex-col items-start justify-start gap-10 h-full">
-                  <div className="flex  items-center  relative    pt-10 ">
+              <div className="w-full grid grid-cols-12  bg-drbg2 bg-contain bg-no-repeat bg-left-top pb-10 lg:gap-10 gap-5">
+                <div className="lg:col-span-4 col-span-12 flex flex-col lg:items-start items-center justify-start lg:gap-10 gap-5 h-full">
+                  <div className="flex  items-center justify-center  relative    pt-10  w-full">
                     <SrLeft>
                       <Image
                         className=" relativepos  "
@@ -337,7 +338,7 @@ export default function Doroos() {
                   </div>
                   <div className="bg-drbg3 bg-cover bg-no-repeat bg-center flex items-start justify-center w-full flex-col py-10  rounded-3xl px-5 h-full">
                     <SrLeft>
-                      <span className="font-black text-7xl text-white uppercase leading-[100px]">
+                      <span className="font-black lg:text-7xl text-5xl text-white uppercase 2xl:leading-[100px]">
                         Bringing<br></br>your<br></br>Vision to<br></br>life
                       </span>
                     </SrLeft>
@@ -353,10 +354,10 @@ export default function Doroos() {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-8 items-center justify-center flex flex-col ">
+                <div className="lg:col-span-8 col-span-12 items-center justify-center flex flex-col ">
                   <div className="flex items-center justify-between gap-5 w-full">
                     <div className=" flex flex-col items-end justify-end gap-5">
-                      <div className="flex  items-center  relative     ">
+                      <div className="flex  items-center  relative w-2/5    ">
                         <Image
                           className=" relativepos  "
                           src="/mobileapps/doroos/logo2.gif"
@@ -364,7 +365,7 @@ export default function Doroos() {
                           fill
                         />
                       </div>
-                      <div className="flex  items-center  relative     ">
+                      <div className="flex  items-center  relative   w-full  ">
                         <Image
                           className=" relativepos  "
                           src="/mobileapps/doroos/cap.png"
@@ -373,7 +374,7 @@ export default function Doroos() {
                         />
                       </div>
                     </div>
-                    <div className="flex  items-center  relative     ">
+                    <div className="flex  items-center  relative  lg:w-[45%] w-1/2    ">
                       <SrRight>
                         <Image
                           className=" relativepos  "
@@ -384,7 +385,7 @@ export default function Doroos() {
                       </SrRight>
                     </div>
                   </div>
-                  <div className="flex  items-center  relative    pt-10 w-full ">
+                  <div className="flex  items-center  relative    lg:pt-10 w-full pt-5 ">
                     <SrBottom>
                       <Image
                         className=" relativepos  "
@@ -397,7 +398,7 @@ export default function Doroos() {
                 </div>
               </div>
               <div className="w-full items-center justify-center flex flex-col relative">
-                <div className="flex  items-center  relative    pt-10  w-1/3 ">
+                <div className="flex  items-center  relative    lg:pt-10  lg:w-1/3 w-full">
                   <Image
                     className=" relativepos  "
                     src="/mobileapps/doroos/tft.png"
@@ -405,8 +406,8 @@ export default function Doroos() {
                     fill
                   />
                 </div>
-                <div className="flex  items-center  justify-between w-full   ">
-                  <span className="text-[18vw] text-[#2CB1A9] font-black leading-[350px] ">
+                <div className="flex  items-center  justify-between w-full   py-10 lg:py-0">
+                  <span className="2xl:text-[18vw] xl:text-[10vw] text-5xl text-[#2CB1A9] font-black 2xl:leading-[350px] ">
                     <RotateText>Urbanist</RotateText>
                   </span>
                   <div className="flex flex-col items-end justify-end h-full text-2xl gap-5">
@@ -419,7 +420,7 @@ export default function Doroos() {
                     <span className="  text-[#2CB1A9] font-bold">Bold</span>
                   </div>
                 </div>
-                <div className="w-full text-start text-white text-4xl font-medium">
+                <div className="w-full text-start text-white lg:text-4xl text-xl font-medium">
                   <span className="w-11/12">
                     <span className="font-black"> Urbanist</span> is a
                     low-contrast, geometric sans-serif inspired by Modernist
@@ -428,21 +429,21 @@ export default function Doroos() {
                   </span>
                 </div>
               </div>
-              <div className="bg-drbg4 bg-center  bg-cover bg-no-repeat w-full flex flex-col text-center mt-10  text-white p-16 rounded-3xl gap-10">
+              <div className="bg-drbg4 bg-center  bg-cover bg-no-repeat w-full flex flex-col text-center mt-10  text-white 2xl:p-16 xl:p-8 p-3 rounded-3xl gap-10">
                 <SrBottom>
-                  <span className="text-8xl ">
+                  <span className="2xl:text-8xl xl:text-6xl text-5xl ">
                     Put Your Course in the
                     <span className="text-[#2CB1A9] font-bold">Spotlight!</span>
                   </span>
                 </SrBottom>
-                <span className="text-5xl">
+                <span className="xl:text-5xl text-3xl pb-3 lg:pb-0">
                   Expand Your Reach and Impact with Targeted Advertising
                 </span>
               </div>
 
               <div className="w-full flex items-center justify-center pt-10 mt-10 relative">
                 <RotateImage>
-                  <div className="flex  items-center  relative      ">
+                  <div className="flex  items-center  relative  w-full     ">
                     <Image
                       className=" relativepos  "
                       src="/mobileapps/doroos/circle.png"
@@ -492,7 +493,7 @@ export default function Doroos() {
               </div>
 
               <div className="flex items-center justify-center w-full mt-10">
-                <div className="flex  items-center      w-1/2 ">
+                <div className="flex  items-center      lg:w-1/2 w-full ">
                   <Image
                     className=" relativepos  "
                     src="/mobileapps/doroos/screen.gif"
