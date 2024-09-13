@@ -180,12 +180,17 @@ const config = {
         'zoom-in': 'zoom-in 1s ease-in-out forwards',
         'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
         ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
+        marquee: 'marquee var(--duration) linear infinite',
       },
       keyframes: {
         'border-beam': {
           '100%': {
             'offset-distance': '100%',
           },
+        },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' },
         },
         ripple: {
           '0%, 100%': {

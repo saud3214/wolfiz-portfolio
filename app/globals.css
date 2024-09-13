@@ -329,14 +329,10 @@ ul.link-list li a {
   border-bottom: 4px solid transparent;
 }
 .right-0 {
-  right: -40px;
+  right: 0px;
 }
 .left-0 {
-  left: -40px;
-  background-color: black;
-}
-.left-0::before {
-  border-left: 10px solid black;
+  left: 0px;
 }
 
 .videoContainer {
