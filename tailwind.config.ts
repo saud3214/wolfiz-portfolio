@@ -112,6 +112,7 @@ const config = {
         apployeebg3: "url('/mobileapps/apployee/bg3n.png')",
         srcard: "url('/mobileapps/sr/card.png')",
         apployeecard: "url('/mobileapps/apployee/card.png')",
+        gnbg1: "url('/website/grammarnow/bg1n.png')",
       },
 
       colors: {

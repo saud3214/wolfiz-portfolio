@@ -474,9 +474,9 @@ export default function SixMortgage() {
                       fill
                     />
                   </div>
-                  <div className=" h-[50vh]">
+                  <div className=" h-[50vh] w-full">
                     <video
-                      className="roundvideo object-cover h-[50vh] "
+                      className="roundvideo object-cover h-[50vh] w-full "
                       autoPlay
                       muted
                       loop
