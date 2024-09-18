@@ -162,8 +162,8 @@ export default function GrammerNow() {
                 </div>
               </div>
 
-              <div className="w-11/12 pt-[5%] flex  ">
-                <div className="grid grid-cols-12 gap-10 my-10">
+              <div className="w-11/12 pt-[5%] flex flex-col  ">
+                <div className="grid grid-cols-12 gap-5 my-10">
                   <div className="col-span-6 my-10 h-[80vh] items-start justify-start flex flex-col ">
                     <div className="relative   w-full  ">
                       <Image
@@ -189,7 +189,7 @@ export default function GrammerNow() {
                       </video>
                     </div>
                   </div>
-                  <div className="col-span-6 my-10 h-[80vh]  flex items-start  ">
+                  <div className="col-span-6 my-10 h-[80vh]  flex items-start relative  ">
                     <div className="relative flex   w-full -mt-[12%]   h-[91vh]  ">
                       <Image
                         className=" relativepos  object-cover object-top rounded-3xl  h-[100vh] "
@@ -198,6 +198,292 @@ export default function GrammerNow() {
                         fill
                       />
                     </div>
+                    <div className=" flex   absolute top-[10%]  ">
+                      <SrTop>
+                        <Image
+                          className=" relativepos   "
+                          src="/website/grammarnow/access.png"
+                          alt="image"
+                          fill
+                        />
+                      </SrTop>
+                    </div>
+                    <div className=" flex   absolute top-[19%] right-[6%]  ">
+                      <SrTop>
+                        <Image
+                          className=" relativepos   "
+                          src="/website/grammarnow/sp.png"
+                          alt="image"
+                          fill
+                        />
+                      </SrTop>
+                    </div>
+                  </div>
+                  <div className="col-span-6 mb-10   flex  items-center justify-start relative group mt-10 ">
+                    <div className="relative flex   w-11/12   pt-5">
+                      <Image
+                        className=" relativepos  object-cover  "
+                        src="/website/grammarnow/aa2.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className="absolute flex  w-[20%] top-[-10%]  left-[5%] animate-slow-spin   ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/aal.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className="  flex group-hover:hidden   w-1/4  absolute left-[35%] top-[8%]  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/typo.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className=" group-hover:flex  hidden  w-1/4  absolute left-[35%] top-[8%]  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/typo2.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className="  flex group-hover:hidden   w-1/4  absolute left-[23%] bottom-[13%]  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/s2.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className="  group-hover:flex  hidden   w-1/4  absolute left-[23%] bottom-[13%]  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/s1.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 my-10   flex  items-center justify-center  gap-10 ">
+                    <div className=" w-[20%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-black text-white  rounded-3xl   flex items-center justify-center font-medium text-2xl ">
+                      E7B639
+                    </div>
+                    <div className=" w-[20%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#7CB862] text-white  rounded-3xl   flex items-center justify-center font-medium text-2xl">
+                      7CB862
+                    </div>
+                    <div className=" w-[20%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#E7B639] text-white  rounded-3xl   flex items-center justify-center font-medium text-2xl">
+                      E7B639
+                    </div>
+                    <div className=" w-[20%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#2188BB] text-white  rounded-3xl   flex items-center justify-center font-medium text-2xl ">
+                      2188BB
+                    </div>
+                  </div>
+                  <div className="col-span-6 items-center justify-center flex group my-10">
+                    <div className=" flex w-11/12 group-hover:hidden  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/re1.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className=" group-hover:flex hidden w-11/12  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/re2.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 items-center justify-center flex group my-10">
+                    <div className=" flex w-11/12 group-hover:hidden  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/di1.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className=" group-hover:flex hidden w-11/12  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/di2.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 items-center justify-center flex group my-10">
+                    <div className=" flex w-11/12 group-hover:hidden  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/ui1.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className=" group-hover:flex hidden w-11/12  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/u12.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 items-center justify-center flex group my-10">
+                    <div className=" flex w-11/12 group-hover:hidden  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/t1.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className=" group-hover:flex hidden w-11/12  ">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/t2.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-12 items-center justify-center flex ">
+                    <div className="w-full h-5/6 rounded-3xl">
+                      <video
+                        className="roundvideo object-cover h-full w-full rounded-3xl  "
+                        autoPlay
+                        muted
+                        loop
+                        preload="auto"
+                        playsInline
+                      >
+                        <source
+                          src="/6ixmortgage/cacacca.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
+                  <div className="col-span-12 items-start justify-center text-start flex  flex-col">
+                    <span className="uppercase text-8xl text-[#7CB862] font-black ">
+                      about this <br />
+                      project
+                    </span>
+                    <div className="w-full flex  mt-5 items-center  p-10 gap-10">
+                      <div className="  w-[6%] mx-10">
+                        <Image
+                          className=" relativepos  "
+                          src="/website/grammarnow/sf.png"
+                          alt="image"
+                          fill
+                        />
+                      </div>
+                      <span className="text-3xl">
+                        GrammarNow.ca is your go-to destination for instant and
+                        free content proofreading with a strong emphasis on
+                        CONFIDENTIALITY.<br></br>​Our platform uses advanced AI
+                        to mask vital information such as NAME and FIGURE,
+                        ensuring your privacy. ​
+                      </span>
+                    </div>
+                  </div>
+                  <div className="col-span-5 items-start justify-center h-fit">
+                    <div className=" w-full h-5/6 object-cover">
+                      <SrLeft>
+                        <Image
+                          className=" relativepos  object-cover h-full "
+                          src="/website/grammarnow/psl.png"
+                          alt="image"
+                          fill
+                        />
+                      </SrLeft>
+                    </div>
+                  </div>
+                  <div className="col-span-5 items-start justify-between flex flex-col ">
+                    <div className=" w-full">
+                      <SrTop>
+                        <Image
+                          className=" relativepos  "
+                          src="/website/grammarnow/pyg.png"
+                          alt="image"
+                          fill
+                        />
+                      </SrTop>
+                    </div>
+                    <div className=" w-full">
+                      <SrBottom>
+                        <Image
+                          className=" relativepos  "
+                          src="/website/grammarnow/pss.png"
+                          alt="image"
+                          fill
+                        />
+                      </SrBottom>
+                    </div>
+                  </div>
+                  <div className="col-span-2 items-center justify-center flex h-full ">
+                    <div className=" w-full h-full">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/cl.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full flex flex-col items-center justify-center my-10">
+                <div className="grid grid-cols-12  w-full  h-[90vh]">
+                  <div className="col-span-6 items-center justify-center flex  group ">
+                    <div className=" w-full    h-[90vh]   group-hover:hidden flex">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/green.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                    <div className=" w-full  h-[90vh]  group-hover:flex hidden">
+                      <Image
+                        className=" relativepos   "
+                        src="/website/grammarnow/blue2.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 items-center justify-center flex  group ">
+                    <div className=" w-full  h-[90vh]    flex">
+                      <Image
+                        className=" relativepos  "
+                        src="/website/grammarnow/mobile.png"
+                        alt="image"
+                        fill
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="w-11/12 items-center justify-center flex my-10 ">
+                  <div className="w-full h-[80vh] rounded-3xl">
+                    <video
+                      className="roundvideo object-cover  w-full rounded-3xl  "
+                      autoPlay
+                      muted
+                      loop
+                      preload="auto"
+                      playsInline
+                    >
+                      <source src="/6ixmortgage/cacacca.mp4" type="video/mp4" />
+                    </video>
                   </div>
                 </div>
               </div>
