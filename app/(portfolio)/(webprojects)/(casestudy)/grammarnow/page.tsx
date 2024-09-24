@@ -149,7 +149,7 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-3 flex flex-col items-end  h-full ">
+                  <div className="col-span-3 flex  items-end  h-full ">
                     <div className="relative   w-full  ">
                       <Image
                         className=" relativepos "
@@ -183,7 +183,7 @@ export default function GrammerNow() {
                         playsInline
                       >
                         <source
-                          src="/6ixmortgage/cacacca.mp4"
+                          src="/website/grammarnow/video1.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -355,7 +355,7 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-12 items-center justify-center flex ">
+                  <div className="col-span-12 items-center justify-center flex  ">
                     <div className="w-full h-5/6 rounded-3xl">
                       <video
                         className="roundvideo object-cover h-full w-full rounded-3xl  "
@@ -366,7 +366,7 @@ export default function GrammerNow() {
                         playsInline
                       >
                         <source
-                          src="/6ixmortgage/cacacca.mp4"
+                          src="/website/grammarnow/video2n.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -442,9 +442,9 @@ export default function GrammerNow() {
                 </div>
               </div>
               <div className="w-full flex flex-col items-center justify-center my-10">
-                <div className="grid grid-cols-12  w-full  h-[90vh]">
+                <div className="grid grid-cols-12  w-full  ">
                   <div className="col-span-6 items-center justify-center flex  group ">
-                    <div className=" w-full    h-[90vh]   group-hover:hidden flex">
+                    <div className=" w-full    h-[100vh]   group-hover:hidden flex">
                       <Image
                         className=" relativepos  "
                         src="/website/grammarnow/green.png"
@@ -452,17 +452,17 @@ export default function GrammerNow() {
                         fill
                       />
                     </div>
-                    <div className=" w-full  h-[90vh]  group-hover:flex hidden">
+                    <div className=" w-full  h-[100vh]  group-hover:flex hidden">
                       <Image
                         className=" relativepos   "
-                        src="/website/grammarnow/blue2.png"
+                        src="/website/grammarnow/blue2n.png"
                         alt="image"
                         fill
                       />
                     </div>
                   </div>
                   <div className="col-span-6 items-center justify-center flex  group ">
-                    <div className=" w-full  h-[90vh]    flex">
+                    <div className=" w-full  h-[100vh]    flex">
                       <Image
                         className=" relativepos  "
                         src="/website/grammarnow/mobile.png"
@@ -482,7 +482,10 @@ export default function GrammerNow() {
                       preload="auto"
                       playsInline
                     >
-                      <source src="/6ixmortgage/cacacca.mp4" type="video/mp4" />
+                      <source
+                        src="/website/grammarnow/videolasy.mp4"
+                        type="video/mp4"
+                      />
                     </video>
                   </div>
                 </div>

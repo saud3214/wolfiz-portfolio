@@ -113,6 +113,9 @@ const config = {
         srcard: "url('/mobileapps/sr/card.png')",
         apployeecard: "url('/mobileapps/apployee/card.png')",
         gnbg1: "url('/website/grammarnow/bg1n.png')",
+        zarbg1: "url('/website/zar/bg1.png')",
+        zarbg2: "url('/website/zar/bg2.png')",
+        zarbg3: "url('/website/zar/bg3.png')",
       },
 
       colors: {
