@@ -5,8 +5,7 @@ import { Urbanist } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
 import { setupScrollAnimation } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 import useSmoothScroll from '@/app/components/ss';
-import WordPullUp from '@/components/magicui/word-pull-up';
-import { DualTextVelocityScroll } from '@/components/magicui/scroll-based-velocity';
+import { DualTextVelocityScroll } from '@/components/magicui/dualltext';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
 import HoverCard from '@/app/components/cards';
 import {
