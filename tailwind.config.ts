@@ -117,6 +117,7 @@ const config = {
         zarbg2: "url('/website/zar/bg2.png')",
         zarbg3: "url('/website/zar/bg3.png')",
         kcbg1: "url('/website/kingdom/bg1.png')",
+        kcbg2: "url('/website/kingdom/bg2.png')",
       },
 
       colors: {
@@ -186,12 +187,17 @@ const config = {
         'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
         ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
         marquee: 'marquee var(--duration) linear infinite',
+        'slide-corner': 'slideToCorner 2s ease-in-out forwards infinite',
       },
       keyframes: {
         'border-beam': {
           '100%': {
             'offset-distance': '100%',
           },
+        },
+        slideToCorner: {
+          '0%': { transform: 'translate(0, 0)', opacity: '1' },
+          '100%': { transform: 'translate(100vw, -100vh)', opacity: '0' },
         },
         marquee: {
           from: { transform: 'translateX(0)' },
