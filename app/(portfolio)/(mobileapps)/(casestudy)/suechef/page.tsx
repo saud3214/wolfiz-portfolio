@@ -1,10 +1,8 @@
 'use client';
-import Head from 'next/head';
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { Open_Sans } from 'next/font/google';
 import { SlideFromRight } from '../../../../components/pagetransition';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { Mousewheel, EffectFade, Autoplay } from 'swiper/modules';
@@ -16,24 +14,15 @@ import {
   animation2,
   animation3,
   animation4,
-  ScrollOnTop,
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
-import { AnimatedBeamMultipleOutputDemo } from '@/app/components/animatedbeam';
-import WordPullUp from '@/components/magicui/word-pull-up';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
 import useSmoothScroll from '@/app/components/ss';
 import {
   SrLeft,
   SrRight,
   SrBottom,
-  SrTop,
   RevealOnScroll,
-  RotateImage,
-  RotateText,
-  RevealOnScrollXImage,
-  TopImage,
-  BottomImage,
 } from '@/app/components/revealelement';
 import ImageCarousel from '@/app/components/imagecarousel';
 import { BorderBeam } from '@/components/magicui/border-beam';
@@ -46,7 +35,6 @@ const urbanist = Open_Sans({
 SwiperCore.use([Mousewheel, EffectFade, Autoplay]);
 
 export default function SueChef() {
-  const [activeImage, setActiveImage] = useState(1);
   const containerRef = useRef(null);
 
   // Get the scroll position

@@ -12,6 +12,7 @@ import ExpandingCards from '@/app/components/cardsKC';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import useSmoothScroll from '@/app/components/ss';
+import AvatarCircles from '@/components/ui/avatar-circles';
 import {
   SrLeft,
   SrRight,
@@ -25,7 +26,8 @@ import {
   BottomImage,
   RevealOnScrollLeft,
 } from '@/app/components/revealelement';
-
+import { AnimatedText2 } from '@/app/components/animatedtext';
+import ImageStack from '@/app/components/imagecards';
 const urbanist = Inria_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
@@ -35,7 +37,12 @@ SwiperCore.use([Mousewheel, EffectFade, Autoplay]);
 
 export default function KingdomConnect() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const avatarUrls = [
+    'https://avatars.githubusercontent.com/u/16860528',
+    'https://avatars.githubusercontent.com/u/20110627',
+    'https://avatars.githubusercontent.com/u/106103625',
+    'https://avatars.githubusercontent.com/u/59228569',
+  ];
   useSmoothScroll();
   useEffect(() => {}, []);
 
@@ -47,7 +54,7 @@ export default function KingdomConnect() {
         <div className="flex items-center justify-center w-full ">
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex flex-col items-center justify-center  col-span-12 ">
-              <div className="w-full h-[100vh] flex items-center justify-center bg-kcbg1 bg-center bg-cover bg-no-repeat">
+              <div className="w-full h-[100vh] flex items-center justify-center bg-kcbg1 bg-center bg-cover bg-no-repeat relative">
                 <div className="w-11/12 h-5/6 items-start justify-start flex flex-col p-5 ">
                   <div className="relative w-[15%]    ">
                     <Image
@@ -61,15 +68,18 @@ export default function KingdomConnect() {
                     Welcom to
                   </span>
                   <span className="text-8xl font-bold text-white mt-2 uppercase">
-                    Kingdom
+                    <AnimatedText2 text="Kingdom" />
                   </span>
+
                   <div className="relative w-[85%]  pt-5  ">
-                    <Image
-                      className=" relativepos "
-                      src="/website/kingdom/Connect.png"
-                      alt="img"
-                      fill
-                    />
+                    <SrLeft>
+                      <Image
+                        className=" relativepos "
+                        src="/website/kingdom/Connect.png"
+                        alt="img"
+                        fill
+                      />
+                    </SrLeft>
                   </div>
                   <span className="text-4xl font-bold text-white mt-5">
                     Support whenever you need it
@@ -81,6 +91,9 @@ export default function KingdomConnect() {
                       alt="img"
                       fill
                     />
+                  </div>
+                  <div className="w-full  items-center justify-center my-10 flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <ImageStack />
                   </div>
                 </div>
               </div>
@@ -108,20 +121,24 @@ export default function KingdomConnect() {
               </div>
               <div className=" w-11/12 items-center justify-between flex py-10 gap-10">
                 <div className="relative w-1/3   ">
-                  <Image
-                    className=" relativepos "
-                    src="/website/kingdom/aa.png"
-                    alt="img"
-                    fill
-                  />
+                  <SrLeft>
+                    <Image
+                      className=" relativepos "
+                      src="/website/kingdom/aa.png"
+                      alt="img"
+                      fill
+                    />
+                  </SrLeft>
                 </div>
                 <div className="relative w-2/3    ">
-                  <Image
-                    className=" relativepos "
-                    src="/website/kingdom/t2.png"
-                    alt="img"
-                    fill
-                  />
+                  <SrRight>
+                    <Image
+                      className=" relativepos "
+                      src="/website/kingdom/t2.png"
+                      alt="img"
+                      fill
+                    />
+                  </SrRight>
                 </div>
               </div>
               <div className=" w-11/12 items-center justify-between flex my-10 gap-10   overflow-hidden">
@@ -130,12 +147,14 @@ export default function KingdomConnect() {
                 </div>
 
                 <div className="relative w-2/3   h-[65vh] object-cover  ">
-                  <Image
-                    className=" relativepos  object-cover"
-                    src="/website/kingdom/cpic2.png"
-                    alt="img"
-                    fill
-                  />
+                  <SrBottom>
+                    <Image
+                      className=" relativepos  object-cover"
+                      src="/website/kingdom/cpic2.png"
+                      alt="img"
+                      fill
+                    />
+                  </SrBottom>
                 </div>
               </div>
               <div className="w-full bg-orange-600 py-5 my-10">
@@ -158,7 +177,7 @@ export default function KingdomConnect() {
                         playsInline
                       >
                         <source
-                          src="/website/kingdom/video.mp4"
+                          src="/website/kingdom/video2.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -185,7 +204,7 @@ export default function KingdomConnect() {
                   <div className="col-span-12 flex items-center justify-center  my-10 overflow-hidden ">
                     <ExpandingCards />
                   </div>
-                  {/* <div className="col-span-12 items-center justify-center flex flex-col gap-10 my-10">
+                  <div className="col-span-12 items-center justify-center flex flex-col gap-10 my-10">
                     <span className="text-6xl font-bold capitalize text-[#6E3385]">
                       <span className="text-[#FF7f40]">kingdom</span> connect
                     </span>
@@ -215,7 +234,8 @@ export default function KingdomConnect() {
                         />
                       </div>
                     </div>
-                  </div> */}
+                  </div>
+
                   <div className="col-span-6 pb-10 mr-5">
                     <div className=" w-full h-full">
                       <Image
@@ -227,26 +247,36 @@ export default function KingdomConnect() {
                     </div>
                   </div>
 
-                  <div className="col-span-6 pb-10 flex flex-col ml-5">
+                  <div className="col-span-6 mb-10 flex flex-col ml-5 gap-10">
                     <div className=" w-full h-5/6">
-                      <Image
-                        className="object-cover relativepos h-5/6"
-                        src="/website/kingdom/c1.png"
-                        alt="img"
-                        fill
-                      />
+                      <SrRight>
+                        <Image
+                          className="object-cover relativepos h-5/6"
+                          src="/website/kingdom/c1.png"
+                          alt="img"
+                          fill
+                        />
+                      </SrRight>
                     </div>
-                    <div className=" w-full h-5/6">
-                      <Image
-                        className="object-cover relativepos h-5/6"
-                        src="/website/kingdom/c2.png"
-                        alt="img"
-                        fill
-                      />
+                    <div className=" w-full h-5/6 relative">
+                      <SrRight>
+                        <Image
+                          className="object-cover relativepos h-5/6"
+                          src="/website/kingdom/c2.png"
+                          alt="img"
+                          fill
+                        />
+                      </SrRight>
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <AvatarCircles
+                          numPeople={999}
+                          avatarUrls={avatarUrls}
+                        />{' '}
+                      </div>
                     </div>
                   </div>
-                  <div className="col-span-5 pb-10 flex flex-col mr-5 h-full">
-                    <div className="w-full  object-cover h-full">
+                  <div className="col-span-5 mb-10 flex flex-col mr-5 ">
+                    <div className="w-full  object-cover  h-full">
                       <video
                         className="roundvideo object-cover  w-full    "
                         autoPlay
@@ -256,13 +286,13 @@ export default function KingdomConnect() {
                         playsInline
                       >
                         <source
-                          src="/website/kingdom/video.mp4"
+                          src="/website/kingdom/logo.mp4"
                           type="video/mp4"
                         />
                       </video>
                     </div>
                   </div>
-                  <div className="col-span-7 bg-[#6E3385] hover:bg-[#FF7f40] mb-10 ml-5">
+                  <div className="col-span-7 bg-[#6E3385] hover:bg-[#FF7f40]  ml-5 mb-10">
                     <div className=" w-full ">
                       <Image
                         className="object-cover relativepos "
@@ -284,34 +314,11 @@ export default function KingdomConnect() {
                     preload="auto"
                     playsInline
                   >
-                    <source src="/website/kingdom/video.mp4" type="video/mp4" />
+                    <source
+                      src="/website/kingdom/video3n.mp4"
+                      type="video/mp4"
+                    />
                   </video>
-                </div>
-              </div>
-              <div className="w-full  items-center justify-center my-10 flex">
-                <div className="relative w-64 h-64 flex ">
-                  <Image
-                    src="/website/kingdom/c1.png"
-                    alt="Image 1"
-                    className="absolute top-0 left-0 w-full h-full border-4 border-orange-500 transform rotate-0"
-                    width={250}
-                    height={250}
-                  />
-                  <Image
-                    src="/website/kingdom/c1.png"
-                    alt="Image 2"
-                    className="absolute top-0 left-0 w-full h-full border-4 border-orange-500 transform rotate-12"
-                    width={250}
-                    height={250}
-                  />
-                  <Image
-                    src="/website/kingdom/c1.png"
-                    alt="Image 3"
-                    className="absolute top-0 left-0 w-full h-full border-4 border-orange-500 transform rotate-[24deg]"
-                    width={250}
-                    height={250}
-                  />
-                  {/* Add more images as needed */}
                 </div>
               </div>
             </div>
