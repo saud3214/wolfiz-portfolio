@@ -43,11 +43,9 @@ export default function PartitionArchive() {
                     className="absolute top-0 left-0 h-full w-full object-cover"
                     src="/website/1947pa/video.mp4"
                     autoPlay
-                    loop
                     muted
                   />
 
-                  {/* Overlay Content */}
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
                     <div className="absolute top-[5%] w-[10%] ">
                       <Image
@@ -59,12 +57,12 @@ export default function PartitionArchive() {
                     </div>
                     <div className="flex items-center justify-center w-full">
                       <h1
-                        className={`text-[7vw] font-bold leading-none  ${lcs.className} `}
+                        className={`text-[6vw] font-bold leading-none  ${lcs.className} `}
                       >
                         Parti
                       </h1>
                       <h1
-                        className={`text-[7vw] font-bold leading-none  ${lcs.className} `}
+                        className={`text-[6vw] font-bold leading-none  ${lcs.className} `}
                       >
                         tioned
                       </h1>
@@ -75,6 +73,70 @@ export default function PartitionArchive() {
                     </span>
                   </div>
                   {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
+                </div>
+              </div>
+              <div className="w-full items-start justify-center flex bg-pabg1 bg-center bg-cover bg-no-repeat h-[100vh] py-10 ">
+                <div className=" grid grid-cols-12 w-11/12 items-start justify-start gap-10">
+                  <div className="col-span-12 text-start flex flex-col ">
+                    <span className="text-[5vw] leading-none font-bold mt-5">
+                      Showcase Hub
+                    </span>
+                    <span className="text-2xl font-bold mt-3">
+                      Unearthing personal stories of loss, hope, and survival,
+                      this archive weaves together the lived experiences of
+                      millions displaced by the Partition. A collection of
+                      first-hand accounts from those who lived through the
+                      tumultuous Partition, capturing memories.
+                    </span>
+                  </div>
+                  <div className="col-span-4 flex items-center justify-center">
+                    <div className="relative w-3/4">
+                      <Image
+                        className="relativepos"
+                        src="/website/1947pa/c1.png"
+                        alt="img"
+                        fill
+                      />
+                    </div>
+                    <div className="absolute  z-10  w-full h-full  top-0 left-0">
+                      <Image
+                        className="relativepos"
+                        src="/website/1947pa/c1.png"
+                        alt="img"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-4 flex items-center justify-center">
+                    <div className="relative w-3/4">
+                      <Image
+                        className="relativepos"
+                        src="/website/1947pa/c1.png"
+                        alt="img"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-4 flex items-center justify-center">
+                    <div className="relative w-3/4">
+                      <Image
+                        className="relativepos"
+                        src="/website/1947pa/c1.png"
+                        alt="img"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-12 flex items-center justify-center">
+                    <div className="relative w-full">
+                      <Image
+                        className="relativepos "
+                        src="/website/1947pa/sm.png"
+                        alt="img"
+                        fill
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
