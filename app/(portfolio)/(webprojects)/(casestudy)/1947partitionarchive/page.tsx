@@ -98,14 +98,14 @@ export default function PartitionArchive() {
                         fill
                       />
                     </div>
-                    <div className="absolute  z-10  w-full h-full  top-0 left-0">
+                    {/* <div className="absolute  z-10  w-full h-full  top-0 left-0">
                       <Image
                         className="relativepos"
                         src="/website/1947pa/c1.png"
                         alt="img"
                         fill
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <div className="col-span-4 flex items-center justify-center">
                     <div className="relative w-3/4">
