@@ -9,23 +9,9 @@ import { Mousewheel, EffectFade, Autoplay } from 'swiper/modules';
 import { VelocityScroll } from '@/components/magicui/scroll-based-velocity';
 import AnimatedCardsKC from '@/app/components/animatedbeam';
 import ExpandingCards from '@/app/components/cardsKC';
-import GradualSpacing from '@/components/magicui/gradual-spacing';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import useSmoothScroll from '@/app/components/ss';
 import AvatarCircles from '@/components/ui/avatar-circles';
-import {
-  SrLeft,
-  SrRight,
-  SrBottom,
-  SrTop,
-  RevealOnScroll,
-  RotateImage,
-  RotateText,
-  RevealOnScrollXImage,
-  TopImage,
-  BottomImage,
-  RevealOnScrollLeft,
-} from '@/app/components/revealelement';
+import { SrLeft, SrRight, SrBottom } from '@/app/components/revealelement';
 import { AnimatedText2 } from '@/app/components/animatedtext';
 import ImageStack from '@/app/components/imagecards';
 const urbanist = Inria_Sans({
@@ -36,7 +22,6 @@ const urbanist = Inria_Sans({
 SwiperCore.use([Mousewheel, EffectFade, Autoplay]);
 
 export default function KingdomConnect() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const avatarUrls = [
     'https://avatars.githubusercontent.com/u/16860528',
     'https://avatars.githubusercontent.com/u/20110627',
@@ -217,7 +202,7 @@ export default function KingdomConnect() {
                       />
                     </div>
                     <div className="w-full flex items-center justify-between  group ">
-                      <div className="w-[40%] relative group-hover:scale-x-110   transition-all duration-300 ease-in-out  object-cover">
+                      <div className="w-[45%] relative group-hover:scale-x-110   transition-all duration-300 ease-in-out  object-cover">
                         <Image
                           className="object-cover relativepos"
                           src="/website/kingdom/img2.png"
@@ -225,7 +210,7 @@ export default function KingdomConnect() {
                           fill
                         />
                       </div>
-                      <div className="w-[40%] relative group-hover:scale-x-110   transition-all duration-300 ease-in-out  object-cover">
+                      <div className="w-[45%] relative group-hover:scale-x-110   transition-all duration-300 ease-in-out  object-cover">
                         <Image
                           className="object-cover relativepos"
                           src="/website/kingdom/img3.png"
