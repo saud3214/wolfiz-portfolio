@@ -14,6 +14,7 @@ import AvatarCircles from '@/components/ui/avatar-circles';
 import { SrLeft, SrRight, SrBottom } from '@/app/components/revealelement';
 import { AnimatedText2 } from '@/app/components/animatedtext';
 import ImageStack from '@/app/components/imagecards';
+import PopupScrollExample from '@/app/components/paImages';
 const urbanist = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
@@ -135,6 +136,11 @@ export default function PartitionArchive() {
                         alt="img"
                         fill
                       />
+                    </div>
+                  </div>
+                  <div className="col-span-12 flex items-center justify-center">
+                    <div className="flex items-center justify-center h-screen">
+                      <PopupScrollExample />
                     </div>
                   </div>
                 </div>
