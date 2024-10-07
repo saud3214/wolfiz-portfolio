@@ -1,76 +1,88 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-const PopupScrollExample: React.FC = () => {
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [showButton, setShowButton] = useState(false);
+const images = [
+  {
+    small: '/website/1947pa/c1.png',
+    large: '/website/1947pa/c1c.png',
+    alt: 'Image 1',
+  },
+  {
+    small: '/image2_small.jpg',
+    large: '/image2_large.jpg',
+    alt: 'Image 2',
+  },
+  {
+    small: '/image3_small.jpg',
+    large: '/image3_large.jpg',
+    alt: 'Image 3',
+  },
+];
 
+const ImageGallery: React.FC = () => {
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+
+  // Prevent body scroll when modal is open
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= window.innerHeight) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    if (fullscreenImage) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling on the main page
+    } else {
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+  }, [fullscreenImage]);
 
-  const openPopup = () => {
-    setIsPopupVisible(true);
-    document.body.style.overflow = 'hidden';
+  const openFullscreen = (largeImageUrl: string) => {
+    setFullscreenImage(largeImageUrl);
   };
 
-  const closePopup = () => {
-    setIsPopupVisible(false);
-    document.body.style.overflow = 'auto';
+  const closeFullscreen = () => {
+    setFullscreenImage(null);
   };
 
   return (
     <div className="relative">
-      {/* Page Content */}
-      <div className="h-[200vh] p-5">
-        <h1 className="text-3xl font-bold mb-5">Lorem Ipsum Content</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          vehicula orci ut malesuada congue...
-        </p>
-        {/* Repeat or add more lorem ipsum text to simulate page content */}
+      {/* Image Gallery */}
+      <div className="flex space-x-4">
+        {images.map((img, index) => (
+          <div key={index} className="cursor-pointer">
+            <Image
+              src={img.small}
+              alt={img.alt}
+              width={100}
+              height={100}
+              className="object-cover"
+              onClick={() => openFullscreen(img.large)}
+            />
+          </div>
+        ))}
       </div>
 
-      {/* Popup Button */}
-      {showButton && (
-        <button
-          className="fixed bottom-5 right-5 p-3 bg-blue-600 text-white rounded cursor-pointer"
-          onClick={openPopup}
-        >
-          Open Popup
-        </button>
-      )}
-
-      {/* Popup Overlay */}
-      {isPopupVisible && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
-          {/* Popup Container */}
-          <div className="bg-white w-3/4 h-3/4 overflow-y-auto p-5 rounded-lg">
+      {/* Fullscreen Modal */}
+      {fullscreenImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-auto">
+          {/* Scrollable Modal Container */}
+          <div className="relative w-full h-full max-h-screen p-4 flex flex-col items-center justify-center">
             {/* Close Button */}
-            <div className="text-right mb-3">
-              <button
-                className="p-2 bg-red-500 text-white rounded"
-                onClick={closePopup}
-              >
-                Close
-              </button>
+            <span
+              className="absolute top-4 right-4 text-white text-4xl cursor-pointer z-50"
+              onClick={closeFullscreen}
+            >
+              &times;
+            </span>
+
+            {/* Scrollable Image Container */}
+            <div
+              className="flex-grow w-full max-w-5xl  p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={fullscreenImage}
+                alt="Fullscreen Image"
+                width={1600}
+                height={900}
+                className=" w-full h-auto object-contain"
+              />
             </div>
-            <h2 className="text-2xl font-semibold mb-5">Popup Content</h2>
-            <Image
-              src="/website/1947pa/c1.png"
-              alt="Long Content"
-              width={800}
-              height={600}
-              className="w-full"
-            />
           </div>
         </div>
       )}
@@ -78,4 +90,4 @@ const PopupScrollExample: React.FC = () => {
   );
 };
 
-export default PopupScrollExample;
+export default ImageGallery;
