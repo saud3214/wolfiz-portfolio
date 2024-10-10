@@ -1,93 +1,62 @@
-import { useState, useEffect } from 'react';
+// pages/index.tsx
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-const images = [
-  {
-    small: '/website/1947pa/c1.png',
-    large: '/website/1947pa/c1c.png',
-    alt: 'Image 1',
-  },
-  {
-    small: '/image2_small.jpg',
-    large: '/image2_large.jpg',
-    alt: 'Image 2',
-  },
-  {
-    small: '/image3_small.jpg',
-    large: '/image3_large.jpg',
-    alt: 'Image 3',
-  },
-];
+const Home = () => {
+  const lightRef = useRef<HTMLDivElement | null>(null);
+  const imageRef = useRef<HTMLDivElement | null>(null);
 
-const ImageGallery: React.FC = () => {
-  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  const handleMouseMove = (e: MouseEvent) => {
+    if (lightRef.current && imageRef.current) {
+      // Get the bounding box of the image container
+      const imageBounds = imageRef.current.getBoundingClientRect();
 
-  // Prevent body scroll when modal is open
-  useEffect(() => {
-    if (fullscreenImage) {
-      document.body.style.overflow = 'hidden'; // Disable scrolling on the main page
-    } else {
-      document.body.style.overflow = 'auto'; // Re-enable scrolling
+      const { clientX, clientY } = e;
+
+      // Calculate the position of the light relative to the image container
+      const xPos = clientX - imageBounds.left - 230; // Offset to center the light
+      const yPos = clientY - imageBounds.top - 230; // Offset to center the light
+
+      lightRef.current.style.left = `${xPos}px`;
+      lightRef.current.style.top = `${yPos}px`;
     }
-  }, [fullscreenImage]);
-
-  const openFullscreen = (largeImageUrl: string) => {
-    setFullscreenImage(largeImageUrl);
   };
 
-  const closeFullscreen = () => {
-    setFullscreenImage(null);
-  };
+  useEffect(() => {
+    // Listen to mousemove within the image container
+    if (imageRef.current) {
+      imageRef.current.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (imageRef.current) {
+        imageRef.current.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+  }, []);
 
   return (
-    <div className="relative">
-      {/* Image Gallery */}
-      <div className="flex space-x-4">
-        {images.map((img, index) => (
-          <div key={index} className="cursor-pointer">
-            <Image
-              src={img.small}
-              alt={img.alt}
-              width={100}
-              height={100}
-              className="object-cover"
-              onClick={() => openFullscreen(img.large)}
-            />
-          </div>
-        ))}
+    <div className="flex items-center justify-center bg-gray-100 ">
+      <div
+        className="relative inline-block w-full  overflow-hidden"
+        ref={imageRef}
+      >
+        <Image
+          src="/website/1947pa/np.png" // Replace with your image path
+          alt="Timeless"
+          fill
+          className="object-cover relativepos"
+        />
+
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-70 pointer-events-none" />
+
+        <div
+          ref={lightRef}
+          className="absolute rounded-full pointer-events-none w-[25vw] h-[50vh] bg-white opacity-100 mix-blend-soft-light"
+        />
       </div>
-
-      {/* Fullscreen Modal */}
-      {fullscreenImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 overflow-auto">
-          {/* Scrollable Modal Container */}
-          <div className="relative w-full h-full max-h-screen p-4 flex flex-col items-center justify-center">
-            {/* Close Button */}
-            <span
-              className="absolute top-4 right-4 text-white text-4xl cursor-pointer z-50"
-              onClick={closeFullscreen}
-            >
-              &times;
-            </span>
-
-            {/* Scrollable Image Container */}
-            <div
-              className="flex-grow w-full max-w-5xl  p-4"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={fullscreenImage}
-                alt="Fullscreen Image"
-                width={1600}
-                height={900}
-                className=" w-full h-auto object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
 
-export default ImageGallery;
+export default Home;

@@ -119,6 +119,8 @@ const config = {
         kcbg1: "url('/website/kingdom/bg1.png')",
         kcbg2: "url('/website/kingdom/bg2.png')",
         pabg1: "url('/website/1947pa/bg1.png')",
+        pabg2: "url('/website/1947pa/bg2.png')",
+        pabg3: "url('/website/1947pa/bg3-min.jpg')",
       },
 
       colors: {
