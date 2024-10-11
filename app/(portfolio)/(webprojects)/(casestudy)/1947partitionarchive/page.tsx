@@ -16,6 +16,7 @@ import { AnimatedText2 } from '@/app/components/animatedtext';
 import ImageStack from '@/app/components/imagecards';
 import Home from '@/app/components/paImages';
 import { MarqueePA } from '@/app/components/cardsPA';
+import GradualSpacing from '@/components/magicui/gradual-spacing';
 
 const urbanist = Roboto({
   subsets: ['latin'],
@@ -89,7 +90,7 @@ export default function PartitionArchive() {
                     muted
                   />
 
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+                  <div className="relative z-10 flex flex-col items-center justify-center h-full text-white w-full">
                     <div className="absolute top-[5%] w-[10%] ">
                       <Image
                         className="relativepos object-cover"
@@ -98,22 +99,20 @@ export default function PartitionArchive() {
                         fill
                       />
                     </div>
-                    <div className="flex items-center justify-center w-full">
-                      <h1
-                        className={`text-[6vw] font-bold leading-none  ${lcs.className} `}
-                      >
-                        Parti
-                      </h1>
-                      <h1
-                        className={`text-[6vw] font-bold leading-none  ${lcs.className} `}
-                      >
-                        tioned
-                      </h1>
-                    </div>
 
-                    <span className="text-3xl font-bold">
-                      A Journey Through the 1947 Partition Archive
-                    </span>
+                    <div className="items-center justify-center hidden w-full h-28 lg:block">
+                      <GradualSpacing
+                        className={`text-[6vw] font-bold leading-none  ${lcs.className} `}
+                        text="Partitioned"
+                      />
+                    </div>
+                    <div className=" w-full  flex  text-center ">
+                      <SrBottom>
+                        <span className="text-3xl font-bold">
+                          A Journey Through the 1947 Partition Archive
+                        </span>
+                      </SrBottom>
+                    </div>
                   </div>
                   {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
                 </div>
@@ -121,9 +120,11 @@ export default function PartitionArchive() {
               <div className="w-full items-center justify-center flex flex-col bg-pabg1 bg-center bg-cover bg-no-repeat py-10 ">
                 <div className=" grid grid-cols-12 w-11/12 items-center justify-start gap-10">
                   <div className="col-span-12 text-start flex flex-col ">
-                    <span className="text-[5vw] leading-none font-bold mt-5">
-                      Showcase Hub
-                    </span>
+                    <SrBottom>
+                      <span className="text-[5vw] leading-none font-bold mt-5">
+                        Showcase Hub
+                      </span>
+                    </SrBottom>
                     <span className="text-2xl font-bold mt-3">
                       Unearthing personal stories of loss, hope, and survival,
                       this archive weaves together the lived experiences of
@@ -179,7 +180,7 @@ export default function PartitionArchive() {
 
                           {/* Scrollable Image Container */}
                           <div
-                            className="flex-grow w-full max-w-5xl overflow-auto p-4"
+                            className=" w-full max-w-5xl overflow-auto "
                             onClick={(e) => e.stopPropagation()}
                           >
                             <Image
@@ -273,7 +274,7 @@ export default function PartitionArchive() {
                 </div>
               </div>
               <div className="w-full items-center justify-center flex h-[100vh] relative">
-                <div className="w-full h-full items-center justify-center flex relative">
+                <div className="w-full h-full items-center justify-center flex flex-col align-text-top relative">
                   <video
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
                     autoPlay
@@ -287,7 +288,7 @@ export default function PartitionArchive() {
                     />
                     Your browser does not support the video tag.
                   </video>
-
+                  <span className="text-white relative">Typography</span>
                   <video
                     className="relative z-10 w-[300px] h-[200px]" // Set custom size for front video
                     autoPlay
@@ -298,6 +299,102 @@ export default function PartitionArchive() {
                     <source src="/website/1947pa/video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
+                </div>
+              </div>
+              <div className="w-full items-center justify-center flex ">
+                <div className="grid grid-cols-12 items-center justify-center w-11/12   pt-5 mb-10   ">
+                  <div className="col-span-6 items-center justify-center ">
+                    <div className="relative  w-10/12  ">
+                      <Image
+                        className=" relativepos"
+                        src="/website/1947pa/aa.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 items-center justify-center ">
+                    <div className="relative  w-11/12  ">
+                      <Image
+                        className=" relativepos"
+                        src="/website/1947pa/font.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full items-center justify-center flex  overflow-hidden relative">
+                <div className="grid grid-cols-12 items-center justify-center w-full group     ">
+                  <div className="col-span-6 items-center justify-center ">
+                    <div className="relative  w-full group-hover:-translate-y-full transform transition-all duration-1000  ">
+                      <Image
+                        className=" relativepos "
+                        src="/website/1947pa/dp.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 items-center justify-center flex flex-col h-full">
+                    <div className="relative  w-full h-full  group-hover:-translate-y-full transform transition-all duration-1000 ">
+                      <Image
+                        className=" relativepos"
+                        src="/website/1947pa/47.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                    <div className="relative  w-full h-full group-hover:translate-y-full transform transition-all duration-1000 ">
+                      <Image
+                        className=" relativepos"
+                        src="/website/1947pa/vm.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-3 items-center  justify-center  absolute  -translate-x-1/4 group-hover:-translate-x-[1%] transform transition-all duration-700 opacity-0 group-hover:opacity-100 z-40 h-full ">
+                    <div className="relative  w-[85%]  h-full   ">
+                      <Image
+                        className=" relativepos "
+                        src="/website/1947pa/dp1.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-3 items-center  justify-center  absolute  -translate-x-1/4 group-hover:translate-x-[110%] transform transition-all duration-700 opacity-0 group-hover:opacity-100 z-30 h-full">
+                    <div className="relative  w-full  h-full   ">
+                      <Image
+                        className=" relativepos object-contain"
+                        src="/website/1947pa/dp2.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-3 items-center  justify-center  absolute  -translate-x-1/4 group-hover:translate-x-[210%] transform transition-all duration-700 opacity-0 group-hover:opacity-100 z-20 h-full ">
+                    <div className="relative  w-full h-full   ">
+                      <Image
+                        className=" relativepos object-contain"
+                        src="/website/1947pa/dp3.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-3 items-center  justify-center  absolute  -translate-x-1/4 group-hover:translate-x-[310%] transform transition-all duration-700 opacity-0 group-hover:opacity-100 z-10 h-full">
+                    <div className="relative  w-full h-full   ">
+                      <Image
+                        className=" relativepos object-contain"
+                        src="/website/1947pa/dp4.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="w-full items-center justify-center flex">
