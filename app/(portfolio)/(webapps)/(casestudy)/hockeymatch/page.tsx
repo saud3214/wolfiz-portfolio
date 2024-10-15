@@ -17,7 +17,8 @@ import ImageStack from '@/app/components/imagecards';
 import Home from '@/app/components/paImages';
 import { MarqueePA } from '@/app/components/cardsPA';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
-
+import ImageGallery from '@/app/components/hmimages';
+import HoverImageComponent from '@/app/components/imgontext';
 const urbanist = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
@@ -28,9 +29,40 @@ const lcs = Libre_Caslon_Text({
 });
 SwiperCore.use([Mousewheel, EffectFade, Autoplay]);
 
+interface ImageSequenceProps {
+  images: { src: string; alt: string }[];
+}
+
 export default function HockeyMatch() {
+  const [visibleIndex, setVisibleIndex] = useState(0);
+
+  const images = [
+    { src: '/hockey/regular.png', alt: 'Image 1' },
+    { src: '/hockey/med.png', alt: 'Image 2' },
+    { src: '/hockey/semibold.png', alt: 'Image 3' },
+    { src: '/hockey/bold.png', alt: 'Image 4' },
+  ];
+  const images2 = [
+    { src: '/hockey/reg.png', alt: 'Image 1' },
+    { src: '/hockey/medi.png', alt: 'Image 2' },
+    { src: '/hockey/sb.png', alt: 'Image 3' },
+    { src: '/hockey/boldt.png', alt: 'Image 4' },
+  ];
+  const images3 = [
+    '/hockey/botl.png',
+    '/hockey/helmet.png',
+    '/hockey/player.png',
+    '/hockey/mobile.png',
+  ];
+
   useSmoothScroll();
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 2000); // 2 seconds delay
+
+    return () => clearInterval(interval);
+  });
 
   return (
     <SlideFromRight>
@@ -192,6 +224,105 @@ export default function HockeyMatch() {
                         Victory Comes to <br /> those prepared.
                       </span>
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-full h-full items-center justify-center flex">
+                <div className="grid grid-cols-12 items-center justify-center w-full">
+                  <div className="col-span-4 flex flex-col items-center justify-center bg-[#FE9A01] relative">
+                    <div className="relative  w-full h-[100vh]  object-cover ">
+                      <Image
+                        className=" relativepos object-cover"
+                        src="/hockey/aa.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                    <div>
+                      {images2.map((image, index) => (
+                        <div
+                          key={index}
+                          className={`absolute transition-opacity duration-1000 ease-in-out bottom-[20%] left-[25%] ${
+                            visibleIndex === index ? 'opacity-100' : 'opacity-0'
+                          } w-24 h-4`}
+                        >
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            priority={index === 0}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <span className="absolute bottom-[16%] left-[25%] text-xl font-semibold  lowercase">
+                      - 720 PLAYERS Registered
+                    </span>
+                    {images.map((image, index) => (
+                      <div
+                        key={index}
+                        className={`absolute transition-opacity duration-1000 ease-in-out top-[10%] left-[25%] ${
+                          visibleIndex === index ? 'opacity-100' : 'opacity-0'
+                        } w-[15vw] h-[15vh]`}
+                      >
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          priority={index === 0}
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="col-span-8 flex flex-col items-center justify-center relative w-full">
+                    <div>
+                      <ImageGallery images={images3} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full h-full items-center justify-center ">
+                <div className="grid grid-cols-12 w-full items-center justify-center pt-5 ">
+                  <div className="col-span-6 items-start justify-start flex">
+                    <div className="relative  w-full  ">
+                      <Image
+                        className=" relativepos "
+                        src="/hockey/img1.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6 items-center justify-center flex">
+                    <div className="relative  w-full p-[5%]  ">
+                      <Image
+                        className=" relativepos"
+                        src="/hockey/img2.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-12 items-center justify-center  font-bold text-3xl bg-yellow-600 py-3">
+                    <VelocityScroll text="Frozen Battle Arena"></VelocityScroll>
+                  </div>
+                  <div className="col-span-12 items-center justify-center">
+                    <HoverImageComponent />
+                  </div>
+                  <div className="col-span-12 relative group">
+                    <div className="relative  w-full   ">
+                      <Image
+                        className=" relativepos"
+                        src="/hockey/lastn.png" // Replace with your image path
+                        alt="Background 1"
+                        fill
+                      />
+                    </div>
+                    <span className="uppercase absolute text-[6vw] font-bold top-[40%] left-[10%] leading-none group-hover:text-yellow-600">
+                      Game <br></br>changer.
+                    </span>
                   </div>
                 </div>
               </div>

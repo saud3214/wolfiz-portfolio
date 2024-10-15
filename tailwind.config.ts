@@ -121,6 +121,7 @@ const config = {
         pabg1: "url('/website/1947pa/bg1.png')",
         pabg2: "url('/website/1947pa/bg2.png')",
         pabg3: "url('/website/1947pa/bg3-min.jpg')",
+        hmbg1: "url('/hockey/bg2.png')",
       },
 
       colors: {
