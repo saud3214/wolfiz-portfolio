@@ -80,10 +80,7 @@ export default function HockeyMatch() {
                   loop
                   playsInline
                 >
-                  <source
-                    src="/website/grammarnow/video1.mp4"
-                    type="video/mp4"
-                  />
+                  <source src="/hockey/first.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -189,9 +186,9 @@ export default function HockeyMatch() {
                   </div>
                 </div>
               </div>
-              <div className=" w-full h-full items-center justify-center flex">
+              <div className=" w-full h-full items-center justify-center flex py-10">
                 <div className="w-full items-center justify-center relative  ">
-                  <div className="relative  flex items-center justify-center h-[80vh] ">
+                  <div className="relative  flex items-center justify-center h-[40vh] ">
                     <div
                       id="videoDiv"
                       className="video-container flex flex-col h-full absolute z-0 w-full"
@@ -205,16 +202,13 @@ export default function HockeyMatch() {
                         playsInline
                         className="h-full"
                       >
-                        <source
-                          src="/mobileapps/sr/Sequence2.mp4"
-                          type="video/mp4"
-                        />
+                        <source src="/hockey/strongvid.mp4" type="video/mp4" />
                       </video>
                     </div>
                     <div className=" flex items-center absolute w-full top-[0%] h-full z-10    ">
                       <Image
                         className=" relativepos  "
-                        src="/mobileapps/sr/jahaz.png"
+                        src="/hockey/strong.png"
                         alt="Background 1"
                         fill
                       />
