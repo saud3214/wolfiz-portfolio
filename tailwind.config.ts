@@ -122,6 +122,12 @@ const config = {
         pabg2: "url('/website/1947pa/bg2.png')",
         pabg3: "url('/website/1947pa/bg3-min.jpg')",
         hmbg1: "url('/hockey/bg2.png')",
+        puanbg1: "url('/puan/bg1.png')",
+        card1947: "url('/1947card.png')",
+        gncard: "url('/gncard.png')",
+        kccard: "url('/kccard.png')",
+        vucard: "url('/vucard.png')",
+        zccard: "url('/zccard.png')",
       },
 
       colors: {
@@ -190,8 +196,10 @@ const config = {
         'zoom-in': 'zoom-in 1s ease-in-out forwards',
         'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
         ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
-        marquee: 'marquee var(--duration) linear infinite',
         'slide-corner': 'slideToCorner 2s ease-in-out forwards infinite',
+        marquee: 'marquee 25s linear infinite',
+        marquee2: 'marquee2 25s linear infinite',
+        'sequential-fall': 'sequential-fall 6s ease-in-out infinite', // Total animation time for each image
       },
       keyframes: {
         'border-beam': {
@@ -199,13 +207,21 @@ const config = {
             'offset-distance': '100%',
           },
         },
+        'sequential-fall': {
+          '0%, 20%': { transform: 'translateY(0)', opacity: '1' }, // Image stays in place for the first 20%
+          '25%, 100%': { transform: 'translateY(100vh)', opacity: '0' }, // Fall and disappear
+        },
         slideToCorner: {
           '0%': { transform: 'translate(0, 0)', opacity: '1' },
           '100%': { transform: 'translate(100vw, -100vh)', opacity: '0' },
         },
         marquee: {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(calc(-100% - var(--gap)))' },
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
         },
         ripple: {
           '0%, 100%': {
