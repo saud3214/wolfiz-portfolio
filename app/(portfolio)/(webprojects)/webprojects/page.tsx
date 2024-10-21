@@ -218,7 +218,7 @@ export default function Webprojects() {
                 <div className="titlendis flex flex-col items-start">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="Grammar Now" />
+                      <AnimatedText2 text="GRAMMAR" />
                     </text>
                   </div>
                   <div className={`text-left ${archivo.className}`}>
@@ -269,7 +269,7 @@ export default function Webprojects() {
                 <div className="titlendis flex flex-col items-start">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="Kingdom" />
+                      <AnimatedText2 text="KINGDOM" />
                     </text>
                   </div>
                   <div className={`text-left ${archivo.className}`}>
@@ -320,7 +320,7 @@ export default function Webprojects() {
                 <div className="titlendis flex flex-col items-start">
                   <div className="titledisplay">
                     <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="ZAR " />
+                      <AnimatedText2 text="ZAR" />
                     </text>
                   </div>
                   <div className={`text-left ${archivo.className}`}>

@@ -128,6 +128,9 @@ const config = {
         kccard: "url('/kccard.png')",
         vucard: "url('/vucard.png')",
         zccard: "url('/zccard.png')",
+        sixmgcard: "url('/6mgcard.png')",
+        pucard: "url('/pucard.jpg')",
+        hmcard: "url('/hmcard.png')",
       },
 
       colors: {
