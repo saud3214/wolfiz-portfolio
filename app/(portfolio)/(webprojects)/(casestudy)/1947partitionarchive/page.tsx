@@ -82,7 +82,6 @@ export default function PartitionArchive() {
             <div className="flex flex-col items-center justify-center  col-span-12 ">
               <div className="w-full h-full flex items-center justify-center">
                 <div className="relative h-screen w-full overflow-hidden">
-                  {/* Background Video */}
                   <video
                     className="absolute top-0 left-0 h-full w-full object-cover"
                     src="/website/1947pa/video.mp4"
@@ -91,7 +90,7 @@ export default function PartitionArchive() {
                   />
 
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-white w-full">
-                    <div className="absolute top-[5%] w-[10%] ">
+                    <div className="absolute top-[5%] lg:w-[10%] w-[35%] ">
                       <Image
                         className="relativepos object-cover"
                         src="/website/1947pa/logo.png"
@@ -100,15 +99,15 @@ export default function PartitionArchive() {
                       />
                     </div>
 
-                    <div className="items-center justify-center hidden w-full h-28 lg:block">
+                    <div className="items-center justify-center  w-full lg:h-28 h-20 block">
                       <GradualSpacing
-                        className={`text-[6vw] font-bold leading-none  ${lcs.className} `}
+                        className={`md:text-[6vw] text-[12vw] font-bold leading-none  ${lcs.className} `}
                         text="Partitioned"
                       />
                     </div>
                     <div className=" w-full  flex  text-center ">
                       <SrBottom>
-                        <span className="text-3xl font-bold">
+                        <span className="md:text-3xl text-xl font-bold">
                           A Journey Through the 1947 Partition Archive
                         </span>
                       </SrBottom>
@@ -118,14 +117,14 @@ export default function PartitionArchive() {
                 </div>
               </div>
               <div className="w-full items-center justify-center flex flex-col bg-pabg1 bg-center bg-cover bg-no-repeat py-10 ">
-                <div className=" grid grid-cols-12 w-11/12 items-center justify-start gap-10">
+                <div className=" grid grid-cols-12 w-11/12 items-center justify-start lg:gap-10 gap-5">
                   <div className="col-span-12 text-start flex flex-col ">
                     <SrBottom>
-                      <span className="text-[5vw] leading-none font-bold mt-5">
+                      <span className="md:text-[5vw] text-[8vw]  leading-none font-bold mt-5">
                         Showcase Hub
                       </span>
                     </SrBottom>
-                    <span className="text-2xl font-bold mt-3">
+                    <span className="md:text-2xl text-lg lg:font-bold font-semibold mt-3">
                       Unearthing personal stories of loss, hope, and survival,
                       this archive weaves together the lived experiences of
                       millions displaced by the Partition. A collection of
@@ -137,7 +136,7 @@ export default function PartitionArchive() {
                   {images.map((img, index) => (
                     <div
                       key={index}
-                      className="col-span-4 flex items-center justify-center w-full relative cursor-pointer group"
+                      className="lg:col-span-4 col-span-12 flex items-center justify-center w-full relative cursor-pointer group"
                     >
                       <Image
                         src={img.small}
@@ -168,17 +167,13 @@ export default function PartitionArchive() {
                   <div className="relative col-span-12">
                     {fullscreenImage && (
                       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
-                        {/* Scrollable Modal Container */}
                         <div className="relative w-full h-full max-h-screen p-4 flex flex-col items-center justify-center">
-                          {/* Close Button */}
                           <span
                             className="absolute top-4 right-4 text-white text-4xl cursor-pointer z-50"
                             onClick={closeFullscreen}
                           >
                             &times;
                           </span>
-
-                          {/* Scrollable Image Container */}
                           <div
                             className=" w-full max-w-5xl overflow-auto "
                             onClick={(e) => e.stopPropagation()}
@@ -197,23 +192,23 @@ export default function PartitionArchive() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-center flex bg-pabg2 bg-center bg-cover bg-no-repeat">
+              <div className="w-full items-center justify-center lg:flex hidden bg-pabg2 bg-center bg-cover bg-no-repeat">
                 <Home />
               </div>
-              <div className="w-full items-center justify-center flex bg-pabg3 bg-center bg-cover bg-no-repeat h-[100vh]">
-                <div className="grid grid-cols-12 items-center justify-center w-full h-full">
-                  <div className="col-span-6 items-center justify-center flex flex-col  font-semibold text-6xl relative h-full">
-                    <div className=" items-start justify-center flex flex-col w-[80%] relative ">
+              <div className="w-full items-center justify-center flex bg-pabg3 bg-center bg-cover bg-no-repeat lg:h-[100vh] h-auto">
+                <div className="grid grid-cols-12 items-center justify-center w-full h-full pt-5 lg:pt-0 ">
+                  <div className="md:col-span-6 col-span-12 items-center justify-center flex flex-col  font-semibold lg:text-6xl text-3xl p-3 lg:p-0 relative h-full">
+                    <div className=" items-start justify-center flex flex-col lg:w-[80%] w-11/12 relative ">
                       <span>
                         Unwritten <br /> Borders
                       </span>
-                      <span className=" font-bold  text-2xl pe-2 mt-2">
+                      <span className=" font-bold  lg:text-2xl text-xl pe-2 mt-2">
                         Unearthing personal stories of loss, hope, and survival,
                         this archive weaves together the lived experiences of
                         millions displaced by the Partition.
                       </span>
                     </div>
-                    <div className="absolute   w-[80%]  bottom-[10%]">
+                    <div className="absolute   w-[80%]  bottom-[10%] lg:flex hidden">
                       <Image
                         className=" relativepos"
                         src="/website/1947pa/st.png" // Replace with your image path
@@ -222,10 +217,10 @@ export default function PartitionArchive() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-6 items-center justify-start  flex flex-col h-full relative gap-5 ">
-                    <div className="w-full h-[50vh] pe-10">
+                  <div className="md:col-span-6 col-span-12 items-center justify-start  flex flex-col h-full relative gap-5 ">
+                    <div className="w-full h-[50vh] lg:pe-10">
                       <video
-                        className="roundvideo object-cover h-[50vh] w-full rounded-3xl mt-10  "
+                        className="roundvideo object-cover h-[50vh] w-full rounded-3xl lg:mt-10 p-2 lg:p-0    "
                         autoPlay
                         muted
                         loop
@@ -233,13 +228,13 @@ export default function PartitionArchive() {
                         playsInline
                       >
                         <source
-                          src="/website/grammarnow/video1.mp4"
+                          src="/website/1947pa/video2.mp4"
                           type="video/mp4"
                         />
                       </video>
                     </div>
-                    <div className="w-full bg-[#C2994C] p-10 absolute bottom-[5%] text-2xl flex-col font-bold flex gap-5">
-                      <div className="flex gap-10 ">
+                    <div className="w-full bg-[#C2994C] lg:p-10 p-5 lg:absolute bottom-[5%] lg:text-2xl text-lg flex-col font-bold flex gap-5">
+                      <div className="lg:flex hidden lg:gap-10  ">
                         <div className="relative   ">
                           <Image
                             className=" relativepos"
@@ -256,12 +251,12 @@ export default function PartitionArchive() {
                             fill
                           />
                         </div>
-                        <div className=" flex items-end h-[12vh] absolute right-0 top-[-8%]">
+                        <div className=" lg:flex hidden items-end h-[12vh] lg:absolute right-0 top-[-8%]">
                           <MarqueePA />
                         </div>
                       </div>
 
-                      <span className=" font-bold text-4xl pt-10">
+                      <span className=" font-bold lg:text-4xl text-xl lg:pt-10 pt-5">
                         1947 Timeline
                       </span>
                       <span>
@@ -273,7 +268,7 @@ export default function PartitionArchive() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-center flex h-[100vh] relative">
+              <div className="w-full items-center justify-center flex md:h-[100vh] h-[70vh] relative">
                 <div className="w-full h-full items-center justify-center flex flex-col align-text-top relative">
                   <video
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -282,29 +277,15 @@ export default function PartitionArchive() {
                     loop
                     playsInline
                   >
-                    <source
-                      src="/website/grammarnow/video1.mp4"
-                      type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                  </video>
-                  <span className="text-white relative">Typography</span>
-                  <video
-                    className="relative z-10 w-[300px] h-[200px]" // Set custom size for front video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  >
-                    <source src="/website/1947pa/video.mp4" type="video/mp4" />
+                    <source src="/website/1947pa/f1.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
               </div>
               <div className="w-full items-center justify-center flex ">
-                <div className="grid grid-cols-12 items-center justify-center w-11/12   pt-5 mb-10   ">
+                <div className="grid grid-cols-12 items-center justify-center w-11/12   pt-5 mb-10 gap-5 lg:gap-0  ">
                   <div className="col-span-6 items-center justify-center ">
-                    <div className="relative  w-10/12  ">
+                    <div className="relative  lg:w-9/12 w-full  ">
                       <Image
                         className=" relativepos"
                         src="/website/1947pa/aa.png" // Replace with your image path
@@ -314,7 +295,7 @@ export default function PartitionArchive() {
                     </div>
                   </div>
                   <div className="col-span-6 items-center justify-center ">
-                    <div className="relative  w-11/12  ">
+                    <div className="relative  lg:w-10/12  w-full ">
                       <Image
                         className=" relativepos"
                         src="/website/1947pa/font.png" // Replace with your image path
