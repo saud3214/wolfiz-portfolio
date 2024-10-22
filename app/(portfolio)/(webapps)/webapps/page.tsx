@@ -144,7 +144,7 @@ export default function Webapps() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="/mobileapps/ndusapp/ndu.mp4"
+                          src="/mobileapps/ndusapp/ndu3.mp4"
                           type="video/mp4"
                         />
                       </video>

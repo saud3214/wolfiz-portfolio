@@ -101,7 +101,7 @@ const config = {
         viennabg1: "url('/mobileapps/vienna/bg1.png')",
         viennabg2: "url('/mobileapps/vienna/cbg1.png')",
         viennabg3: "url('/mobileapps/vienna/cbg2.png')",
-        viennabg4: "url('/mobileapps/vienna/bg3.png')",
+        viennabg4: "url('/mobileapps/vienna/p.jpg')",
         avconscard: "url('/mobileapps/avcons/card.png')",
         dorooscard: "url('/mobileapps/doroos/card.png')",
         yalaxicard: "url('/mobileapps/yalaxi/card.png')",

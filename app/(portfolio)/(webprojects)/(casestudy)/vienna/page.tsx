@@ -11,30 +11,12 @@ import { Mousewheel, EffectFade, Autoplay } from 'swiper/modules';
 
 import {
   setupScrollAnimation,
-  movingText2,
-  animation1,
-  animation2,
-  animation3,
-  animation4,
-  ScrollOnTop,
   vienna,
 } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
 import WordPullUp from '@/components/magicui/word-pull-up';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import useSmoothScroll from '@/app/components/ss';
-import {
-  SrLeft,
-  SrRight,
-  SrBottom,
-  SrTop,
-  RevealOnScroll,
-  RotateImage,
-  RotateText,
-  RevealOnScrollXImage,
-  TopImage,
-  BottomImage,
-} from '@/app/components/revealelement';
+import { SrLeft, SrRight, SrBottom } from '@/app/components/revealelement';
 import AnimatedImage from '@/app/components/animatedimage';
 const ptserif = PT_Serif({
   subsets: ['latin'],
@@ -48,25 +30,15 @@ SwiperCore.use([Mousewheel, EffectFade, Autoplay]);
 
 export default function Vienna() {
   const [activeImage, setActiveImage] = useState(1);
-  const containerRef = useRef(null);
 
   // Get the scroll position
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start'],
-  });
 
   // Map the scrollYProgress to a horizontal scroll
-  const x = useTransform(scrollYProgress, [0.5, 0.67], ['0%', '-200%']);
 
   useSmoothScroll();
   useEffect(() => {
     setupScrollAnimation();
-    movingText2();
-    animation1();
-    animation2();
-    animation3();
-    animation4();
+
     vienna();
   });
 
@@ -96,37 +68,41 @@ export default function Vienna() {
                     playsInline
                   >
                     <source
-                      src="../../../../../mobileapps/vienna/video.mp4"
+                      src="../../../../../mobileapps/vienna/video2.mp4"
                       type="video/mp4"
                     />
                   </video>
                 </div>
-                <div className="flex items-center justify-end w-10/12 pt-20 2xl:pe-20">
-                  <div className="relative flex items-center justify-center w-1/2 ">
-                    <Image
-                      className=" relativepos"
-                      src="/mobileapps/vienna/ht1.png"
-                      alt="Background 1"
-                      fill
-                    />
+                <div className="flex items-center lg:justify-end justify-center w-10/12  pt-20 2xl:pe-20 h-full lg:h-auto">
+                  <div className="relative flex items-center justify-center lg:w-1/2 w-11/12 ">
+                    <SrRight>
+                      <Image
+                        className=" relativepos"
+                        src="/mobileapps/vienna/ht1.png"
+                        alt="Background 1"
+                        fill
+                      />
+                    </SrRight>
                   </div>
                 </div>
-                <div className="flex items-center justify-center w-full text-white bg-black/50 backdrop-blur-sm h-52">
+                <div className="flex items-center justify-center w-full text-white bg-black/50 backdrop-blur-sm lg:h-52 h-44">
                   <div className="grid items-center justify-center w-11/12 grid-cols-12 ">
                     <div className="flex flex-col items-start justify-start col-span-6 gap-2 ">
-                      <span className="text-2xl font-medium">
+                      <span className="lg:text-2xl text-lg font-medium">
                         Discover Vienna’s Iconic Landmarks
                       </span>
-                      <span className="text-xl">
+                      <span className="text-xl lg:block hidden">
                         From the grandeur of Schönbrunn Palace to the vibrant
                         streets of the Naschmarkt, Vienna invites you to uncover
                         its rich history, stunning architecture, and
                         unforgettable cultural experiences.
                       </span>
                     </div>
-                    <div className="flex flex-col items-center justify-center col-span-3 gap-2 animate-slow-bounce">
-                      <span className="text-2xl font-medium ">Scroll Down</span>
-                      <div className="relative flex items-center ">
+                    <div className=" flex  flex-col text-center items-center justify-center col-span-3 gap-2 animate-slow-bounce">
+                      <span className="lg:text-2xl text-lg font-medium ">
+                        Scroll Down
+                      </span>
+                      <div className="relative flex items-center w-[15%] lg:w-[5%] ">
                         <Image
                           className=" relativepos"
                           src="/mobileapps/vienna/Arrow.png"
@@ -136,7 +112,7 @@ export default function Vienna() {
                       </div>
                     </div>
                     <div className="relative flex flex-col items-center justify-center col-span-3 ">
-                      <div className="relative flex items-center w-5/12 animate-slow-spin ">
+                      <div className="relative flex items-center lg:w-5/12  w-full animate-slow-spin ">
                         <Image
                           className=" relativepos"
                           src="/mobileapps/vienna/logo1.png"
@@ -144,7 +120,7 @@ export default function Vienna() {
                           fill
                         />
                       </div>
-                      <div className="absolute flex items-center w-1/5 ">
+                      <div className="absolute flex items-center lg:w-1/5 w-1/2 ">
                         <Image
                           className=" relativepos"
                           src="/mobileapps/vienna/V.png"
@@ -157,22 +133,22 @@ export default function Vienna() {
                 </div>
               </div>
 
-              <div className=" w-full flex flex-col items-center justify-start  py-20 bg-[#F5F7FB] ">
-                <div className="flex items-center justify-center w-11/12 h-40">
+              <div className=" w-full flex flex-col items-center justify-start  lg:py-20 py-10 bg-[#F5F7FB] ">
+                <div className="flex items-center justify-center w-11/12 lg:h-40 h-24">
                   <GradualSpacing
                     className={`text-[8vw] font-bold text-[#E5E5E5] uppercase ${ptserif.className}`}
                     text="adventure awaits"
                   />
                 </div>
                 <div className="grid items-center justify-center w-11/12 grid-cols-12 ">
-                  <div className="items-center justify-center col-span-3 ">
-                    <span className="text-4xl font-semibold text-[#EA0000] capitalize ">
+                  <div className="items-center justify-center lg:col-span-3 col-span-12 flex lg:block text-center lg:text-start ">
+                    <span className="text-3xl font-semibold text-[#EA0000] capitalize pb-3 lg:pb-0">
                       vienna is not just a destination
                     </span>
                   </div>
-                  <div className="items-center justify-center col-span-6">
+                  <div className="items-center justify-center lg:col-span-6 col-span-12">
                     {/* Images */}
-                    <div className="flex items-center h-[60vh] w-full">
+                    <div className="flex items-center lg:h-[60vh] h-[28vh] w-full">
                       {activeImage === 1 && (
                         <div className="w-full h-full ">
                           <video
@@ -260,7 +236,7 @@ export default function Vienna() {
                     </div>
                   </div>
 
-                  <div className="items-center justify-center col-span-3">
+                  <div className="items-center justify-center lg:col-span-3 col-span-12 flex text-start lg:text-start p-5 lg:p-0">
                     <span className="text-xl ">
                       Vienna Unwrapped is a digital guide that invites travelers
                       to experience Vienna beyond the surface. The goal of this
@@ -272,21 +248,21 @@ export default function Vienna() {
                 </div>
               </div>
               <div className="flex items-start justify-center w-full py-10 bg-center bg-no-repeat bg-cover bg-viennabg1">
-                <div className="grid items-center justify-center w-11/12 grid-cols-12 gap-10">
-                  <div className="col-span-9 bg-[#EA0000] flex flex-col text-white p-5 items-start justify-start relative overflow-hidden">
+                <div className="grid items-center justify-center w-11/12 grid-cols-12 lg:gap-10 gap-5">
+                  <div className="lg:col-span-9 col-span-12 bg-[#EA0000] flex flex-col text-white lg:p-5 p-10 items-start justify-start relative overflow-hidden">
                     <span className="mb-10 text-xs">
                       www.vienna-unwrapped.com
                     </span>
                     <WordPullUp
-                      className="font-bold text-7xl text-start "
+                      className="font-bold lg:text-7xl text-3xl text-start "
                       words="Experience Vianna's"
                     />
                     <div className="flex items-center justify-center">
                       <WordPullUp
-                        className="font-bold text-7xl text-start "
+                        className="font-bold lg:text-7xl text-3xl text-start "
                         words="Authentic Spirit"
                       />
-                      <span className="font-black text-8xl animate-bounce">
+                      <span className="font-black lg:text-8xl text-3xl animate-bounce">
                         .
                       </span>
                       <div className="absolute flex items-center w-1/5 animate-slow-spin -right-28 top-10 ">
@@ -299,7 +275,7 @@ export default function Vienna() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-end col-span-3 ">
+                  <div className="flex lg:justify-end justify-center lg:col-span-3 col-span-12 ">
                     <div className="flex  items-center  w-[55%] ">
                       <Image
                         className=" relativepos"
@@ -326,26 +302,26 @@ export default function Vienna() {
                       </video>
                     </div>
                     <div className="w-full bg-[#EA0000] flex flex-col text-white p-3 items-center justify-center relative overflow-hidden">
-                      <span className="text-3xl font-bold">
+                      <span className=" lg:text-3xl text-lg font-bold">
                         Your Gateway to Imperial Splendor
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center w-full py-10 pt-20 ">
-                <div className="flex items-center justify-between w-11/12">
-                  <span className="text-[#EA0000] text-3xl font-semibold w-">
+              <div className="flex flex-col items-center justify-center w-full py-10 lg:pt-20 pt-10 ">
+                <div className="flex flex-col lg:flex-row items-center justify-between w-11/12">
+                  <span className="text-[#EA0000] text-3xl font-semibold ">
                     Highlighting Vienna’s <br></br> charm in travel guides
                   </span>
-                  <span className="w-1/3 text-base ">
+                  <span className="lg:w-1/3 w-11/12 text-base pt-5 lg:pt-0 ">
                     Travelers struggle to find Viennas authentic essence amidst
                     a flood of generic information. Many sites lack a cohesive,
                     inspiring design for discovering the city.
                   </span>
                 </div>
-                <div className="grid items-end justify-center w-11/12 grid-cols-12 gap-5 pt-20">
-                  <div className="flex items-center justify-center col-span-3">
+                <div className="grid items-end justify-center w-11/12 grid-cols-12 gap-5 md:pt-20 pt-10">
+                  <div className="flex items-center justify-center md:col-span-3 col-span-6">
                     <div className="relative flex items-center w-full">
                       <Image
                         className=" relativepos"
@@ -355,7 +331,7 @@ export default function Vienna() {
                       />
                     </div>
                   </div>
-                  <div className="flex items-center justify-center col-span-3">
+                  <div className="flex items-center justify-center md:col-span-3 col-span-6">
                     <div className="relative flex items-center w-full">
                       <Image
                         className=" relativepos"
@@ -365,7 +341,7 @@ export default function Vienna() {
                       />
                     </div>
                   </div>
-                  <div className="relative flex items-center justify-center col-span-3 overflow-hidden">
+                  <div className="relative flex items-center justify-center md:col-span-3 col-span-6 overflow-hidden">
                     <div className="relative flex items-center w-full">
                       <Image
                         className=" relativepos"
@@ -385,7 +361,7 @@ export default function Vienna() {
                       </SrBottom>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center col-span-3">
+                  <div className="flex items-center justify-center md:col-span-3 col-span-6">
                     <div className="relative flex items-center w-full">
                       <Image
                         className=" relativepos"
@@ -397,9 +373,9 @@ export default function Vienna() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-center flex h-[100vh]">
-                <div className="grid w-full grid-cols-12 ">
-                  <div className="col-span-6 items-center justify-center flex flex-col bg-[#EA0000] text-white group overflow-hidden">
+              <div className="w-full items-center justify-center flex lg:h-[100vh]">
+                <div className="grid w-full grid-cols-12 m-auto ">
+                  <div className="md:col-span-6 col-span-12 items-center justify-center flex flex-col bg-[#EA0000] text-white group overflow-hidden">
                     <div className="w-full h-[50vh] bg-[#EA0000] flex flex-col justify-center items-center relative cursor-pointer p-10">
                       <span className="text-white text-8xl transform transition-all duration-300 group-hover:translate-y-36 group-hover:scale-50 group-hover:translate-x-[20vw]">
                         Aa
@@ -419,7 +395,7 @@ export default function Vienna() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center col-span-6 gap-10 p-10 transition-all duration-300 bg-center bg-no-repeat bg-cover bg-viennabg2 hover:bg-viennabg3">
+                  <div className="flex flex-col items-center justify-center lg:col-span-6 col-span-12 gap-10 p-10 transition-all duration-300 bg-center bg-no-repeat bg-cover bg-viennabg2 hover:bg-viennabg3">
                     <div className="flex items-center justify-center w-1/2 h-40 text-3xl font-medium bg-white ">
                       FFFFF
                     </div>
@@ -432,14 +408,14 @@ export default function Vienna() {
                   </div>
                 </div>
               </div>
-              <div className="bg-[#EA0000] w-full items-center justify-center relative   overflow-hidden  ">
+              <div className="bg-[#EA0000] w-full items-center justify-center relative   overflow-hidden m-auto  ">
                 <div className="grid w-full grid-cols-12 text-white">
-                  <div className="flex flex-col col-span-6 p-10 ">
-                    <span className="text-4xl font-semibold">
+                  <div className="flex flex-col lg:col-span-6 col-span-12 p-10 ">
+                    <span className="lg:text-4xl text-3xl font-semibold">
                       From Imperial Glory to<br></br> Modern Marvel:<br></br>
                       Vienna’s Historical <br></br>Odyssey
                     </span>
-                    <div className="flex  w-1/6 absolute -bottom-[10%] left-1">
+                    <div className="lg:flex hidden  w-1/6 absolute lg:-bottom-[10%] bottom-[59%] lg:left-1 right-0">
                       <Image
                         className=" relativepos"
                         src="/mobileapps/vienna/vw.png"
@@ -447,7 +423,7 @@ export default function Vienna() {
                         fill
                       />
                     </div>
-                    <div className="flex  w-1/4 absolute -bottom-[15%] -left-[6%] animate-slow-spin">
+                    <div className="lg:flex hidden  w-1/4 absolute lg:-bottom-[15%] bottom-[57%] lg:-left-[6%] right-[1%] animate-slow-spin">
                       <Image
                         className=" relativepos"
                         src="/mobileapps/vienna/logo1.png"
@@ -456,7 +432,7 @@ export default function Vienna() {
                       />
                     </div>
                   </div>
-                  <div className="flex items-end justify-end h-full col-span-6 pt-5">
+                  <div className="flex items-end justify-end h-full lg:col-span-6 col-span-12 pt-5">
                     <div className=" w-full h-[90%] object-cover object-top ">
                       <video
                         className="roundvideo"
@@ -467,7 +443,7 @@ export default function Vienna() {
                         playsInline
                       >
                         <source
-                          src="../../../../../mobileapps/vienna/mobile.mp4"
+                          src="/mobileapps/vienna/mobile.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -475,32 +451,32 @@ export default function Vienna() {
                   </div>
                 </div>
               </div>
-              <div className="w-full bg-viennabg4 bg-cover bg-center bg-no-repeat h-[200vh] items-center justify-start flex flex-col  py-10 relative">
-                <div className="flex items-start justify-between w-11/12 ">
-                  <div className="flex flex-col h-[400px]">
+              <div className="w-full bg-viennabg4 lg:bg-cover bg-cover bg-bottom bg-no-repeat lg:h-[200vh] h-[100vh] items-center justify-start flex flex-col  py-10 relative">
+                <div className="flex flex-col md:flex-row items-start justify-between w-11/12 ">
+                  <div className="flex flex-col  h-[25vh]">
                     <GradualSpacing
-                      className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                      className={`lg:text-[6vw] text-[12vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-none `}
                       text="Refining"
                     />
                     <GradualSpacing
-                      className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                      className={`lg:text-[6vw] text-[12vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-none `}
                       text="Vienna’s"
                     />
                     <GradualSpacing
-                      className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                      className={`lg:text-[6vw] text-[12vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-none `}
                       text="Digital  "
                     />
                     <GradualSpacing
-                      className={`text-[6vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-[100px] `}
+                      className={`lg:text-[6vw] text-[12vw] font-bold text-[#EA0000] uppercase ${ptserif.className} leading-none `}
                       text="Journey."
                     />
                   </div>
 
-                  <div className="flex flex-col items-end justify-end w-1/2 text-end">
-                    <span className="text-2xl font-semibold text-[#EA0000]">
+                  <div className="flex flex-col md:items-end  md:justify-end lg:w-1/2 w-full md:text-end pt-5 lg:pt-0 ">
+                    <span className="lg:text-2xl text-lg font-semibold text-[#EA0000]">
                       Discover Vienna’s Iconic Landmarks
                     </span>
-                    <span className="text-xl ">
+                    <span className="lg:text-xl text-base ">
                       From the grandeur of Schönbrunn Palace to the vibrant
                       streets of the Naschmarkt, Vienna invites you to uncover
                       its rich history, stunning architecture, and unforgettable
@@ -508,7 +484,7 @@ export default function Vienna() {
                     </span>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center  text-white text-3xl font-semibold capitalize absolute top-[25%] right-[10%]">
+                {/* <div className="flex flex-col items-center justify-center  text-white text-3xl font-semibold capitalize absolute top-[25%] right-[10%]">
                   <SrRight>
                     <span>
                       user testing: walking in<br></br>the travelers shoes
@@ -589,7 +565,6 @@ export default function Vienna() {
                 </div>
                 <div className="flex   absolute w-[12%]    top-[85%] right-[22%] ">
                   <SrRight>
-                    {' '}
                     <Image
                       className=" relativepos"
                       src="/mobileapps/vienna/t1.png"
@@ -597,7 +572,7 @@ export default function Vienna() {
                       fill
                     />
                   </SrRight>
-                </div>
+                </div> */}
               </div>
               <div className="w-full h-[100vh] items-center justify-center flex relative overflow-hidden content1 ">
                 <div className="flex flex-col items-start justify-start h-64">
@@ -699,8 +674,8 @@ export default function Vienna() {
                   />
                 </div>
               </div>
-              <div className="w-full h-[100vh] flex  bg-[#EA0000] items-center justify-center ">
-                <div className="w-11/12 flex items-center justify-center h-[85vh]">
+              <div className="w-full lg:h-[100vh] flex  bg-[#EA0000] items-center justify-center ">
+                <div className="w-11/12 flex items-center justify-center lg:h-[85vh] py-5 lg:py-0">
                   <Swiper
                     autoplay={{ delay: 1000, disableOnInteraction: false }}
                     loop={true}
@@ -722,7 +697,7 @@ export default function Vienna() {
                       </div>
                     </SwiperSlide>
                     <SwiperSlide className="flex items-center justify-center w-full">
-                      <div className="flex items-center w-full h-[100vh]">
+                      <div className="flex items-center w-full lg:h-[100vh]">
                         <Image
                           className="relativepos"
                           src="/mobileapps/vienna/s2.png"
@@ -754,7 +729,7 @@ export default function Vienna() {
                   </Swiper>
                 </div>
               </div>
-              <div className="w-full h-[100vh] items-center justify-center flex relative">
+              <div className="w-full lg:h-[100vh] h-[50vh] items-center justify-center flex relative">
                 <div className="flex items-center justify-center w-full h-full group">
                   <div className="relative z-10 flex items-center w-2/3 transition-all duration-700 group-hover:hidden ">
                     <Image
