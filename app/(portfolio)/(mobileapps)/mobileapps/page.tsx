@@ -349,7 +349,7 @@ export default function Mobileapps() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="/mobileapps/peptide/peptide.mp4"
+                          src="/mobileapps/peptide/pepcard.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -401,7 +401,7 @@ export default function Mobileapps() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="/mobileapps/sr/simirizen.mp4"
+                          src="/mobileapps/sr/srcard.mp4"
                           type="video/mp4"
                         />
                       </video>

@@ -62,7 +62,7 @@ export default function Home() {
     links.forEach((el) => addListeners(el));
   }, []);
   return (
-    <div className="  h-full w-full flex-col items-center p-12 ">
+    <div className="  h-full w-full flex-col items-center lg:p-12 ">
       <div className="videoContainer">
         <video
           className="roundvideo"

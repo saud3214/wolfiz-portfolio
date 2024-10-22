@@ -220,7 +220,7 @@ export default function PartitionArchive() {
                   <div className="md:col-span-6 col-span-12 items-center justify-start  flex flex-col h-full relative gap-5 ">
                     <div className="w-full h-[50vh] lg:pe-10">
                       <video
-                        className="roundvideo object-cover h-[50vh] w-full rounded-3xl lg:mt-10 p-2 lg:p-0    "
+                        className="roundvideo  h-[50vh] w-9/12 rounded-3xl lg:mt-10 p-4 lg:p-0    "
                         autoPlay
                         muted
                         loop

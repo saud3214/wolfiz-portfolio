@@ -32,16 +32,18 @@ export default function RootLayout({
             z-index: 9;
           }
         `}</style>
-        <header className="fixed flex items-end justify-start h-24 zindex">
+        <header className="fixed flex items-end justify-start lg:h-24 h-16 zindex">
           <div className="font-bold fixed  flex items-center justify-center lg:w-[15%] w-[30%]">
             <Link href="/">
-              <Image
-                alt="logo"
-                height={100}
-                width={100}
-                src="/svg/wolfizlogo.svg"
-                priority
-              />
+              <div className="flex md:w-[90%] w-[60%]">
+                <Image
+                  alt="logo"
+                  fill
+                  src="/svg/wolfizlogo.svg"
+                  priority
+                  className="relativepos"
+                />
+              </div>
             </Link>
           </div>
         </header>

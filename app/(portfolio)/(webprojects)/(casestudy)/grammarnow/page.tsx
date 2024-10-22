@@ -82,9 +82,9 @@ export default function GrammerNow() {
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex flex-col items-center justify-center  col-span-12 ">
               <div className="w-11/12  flex fle items-start justify-end bg-gnbg1 bg-cover  bg-top bg-no-repeat  pt-10">
-                <div className="grid grid-cols-12 w-full  items-start  gap-10 ">
+                <div className="grid grid-cols-12 w-full  items-start  lg:gap-10 gap-5 ">
                   <div className="col-span-12 flex  items-start  ">
-                    <div className="relative  w-2/12   ">
+                    <div className="relative  md:w-2/12 w-1/2   ">
                       <Image
                         className=" relativepos object-cover"
                         src="/website/grammarnow/logo.png"
@@ -93,18 +93,18 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-6 flex  items-start  ">
+                  <div className=" lg:col-span-6 col-span-12 flex  items-start  ">
                     <div className="flex flex-col">
-                      <span className="2xl:text-8xl text-[#7CB862] font-black">
+                      <span className="2xl:text-8xl lg:text-7xl text-4xl text-[#7CB862] font-black">
                         Great Writing
                       </span>
-                      <span className="text-7xl font-medium">
+                      <span className="lg:text-7xl md:text-5xl text-4xl font-medium">
                         Write With <br />
                         Their Writing Clarity
                       </span>
                     </div>
                   </div>
-                  <div className="col-span-6 flex  items-start  ">
+                  <div className="lg:col-span-6 col-span-12 flex  items-start  ">
                     <div className="flex flex-col">
                       <span className="text-xl font-medium">
                         ProofSafely is a free online platform specializing in
@@ -114,13 +114,13 @@ export default function GrammerNow() {
                         information, such as names and numbers, prior to the
                         proofreading process.
                       </span>
-                      <div className="bg-[#E7B639] hover:bg-black  px-5  py-3 rounded-3xl text-sm w-[20%] text-white font-medium mt-5 flex items-center justify-center">
+                      <div className="bg-[#E7B639] hover:bg-black  px-5  py-3 rounded-3xl text-sm w-[20%] text-white font-medium mt-5 lg:flex hidden items-center justify-center">
                         Strategy
                       </div>
                     </div>
                   </div>
                   <div className="col-span-3 flex items-end  h-full">
-                    <div className="relative   w-full pt-5 ">
+                    <div className="relative   w-full lg:pt-5 ">
                       <Image
                         className=" relativepos object-cover"
                         src="/website/grammarnow/g1.png"
@@ -162,9 +162,9 @@ export default function GrammerNow() {
                 </div>
               </div>
 
-              <div className="w-11/12 pt-[5%] flex flex-col  ">
+              <div className="w-11/12 lg:pt-[5%] flex flex-col  ">
                 <div className="grid grid-cols-12 gap-5 my-10">
-                  <div className="col-span-6 my-10 h-[80vh] items-start justify-start flex flex-col ">
+                  <div className="lg:col-span-6 col-span-12 my-10 lg:h-[80vh] items-start justify-start flex flex-col ">
                     <div className="relative   w-full  ">
                       <Image
                         className=" relativepos "
@@ -189,8 +189,8 @@ export default function GrammerNow() {
                       </video>
                     </div>
                   </div>
-                  <div className="col-span-6 my-10 h-[80vh]  flex items-start relative  ">
-                    <div className="relative flex   w-full -mt-[12%]   h-[91vh]  ">
+                  <div className="lg:col-span-6 col-span-12 lg:my-10 lg:h-[80vh]  flex items-start relative  ">
+                    <div className="relative flex   w-full lg:-mt-[12%]   h-[91vh]  ">
                       <Image
                         className=" relativepos  object-cover object-top rounded-3xl  h-[100vh] "
                         src="/website/grammarnow/g5n.png"
@@ -219,7 +219,7 @@ export default function GrammerNow() {
                       </SrTop>
                     </div>
                   </div>
-                  <div className="col-span-6 mb-10   flex  items-center justify-start relative group mt-10 ">
+                  <div className="lg:col-span-6 col-span-12 mb-10   flex  items-center justify-start relative group mt-10 ">
                     <div className="relative flex   w-11/12   pt-5">
                       <Image
                         className=" relativepos  object-cover  "
@@ -269,22 +269,22 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-6 my-10   flex  items-center justify-center  gap-10 ">
-                    <div className=" w-[20%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-black text-white  rounded-3xl   flex items-center justify-center font-medium text-2xl ">
+                  <div className="lg:col-span-6 col-span-12 lg:my-10   flex  items-center justify-center  lg:gap-10 gap-2 ">
+                    <div className=" w-[25%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-black text-white  rounded-3xl   flex items-center justify-center font-medium lg:text-2xl text-xl p-2 ">
                       E7B639
                     </div>
-                    <div className=" w-[20%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#7CB862] text-white  rounded-3xl   flex items-center justify-center font-medium text-2xl">
+                    <div className=" w-[25%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#7CB862] text-white  rounded-3xl   flex items-center justify-center font-medium  lg:text-2xl p-2 text-xl">
                       7CB862
                     </div>
-                    <div className=" w-[20%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#E7B639] text-white  rounded-3xl   flex items-center justify-center font-medium text-2xl">
+                    <div className=" w-[25%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#E7B639] text-white  rounded-3xl   flex items-center justify-center font-medium  lg:text-2xl p-2 text-xl">
                       E7B639
                     </div>
-                    <div className=" w-[20%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#2188BB] text-white  rounded-3xl   flex items-center justify-center font-medium text-2xl ">
+                    <div className=" w-[25%] hover:w-[25%] transition-all duration-300 ease-in-out h-full bg-[#2188BB] text-white  rounded-3xl   flex items-center justify-center font-medium  lg:text-2xl p-2 text-xl ">
                       2188BB
                     </div>
                   </div>
                   <div className="col-span-6 items-center justify-center flex group my-10">
-                    <div className=" flex w-11/12 group-hover:hidden  ">
+                    <div className=" flex lg:w-11/12 w-full group-hover:hidden  ">
                       <Image
                         className=" relativepos  "
                         src="/website/grammarnow/re1.png"
@@ -319,7 +319,7 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-6 items-center justify-center flex group my-10">
+                  <div className="col-span-6 items-center justify-center flex group lg:my-10">
                     <div className=" flex w-11/12 group-hover:hidden  ">
                       <Image
                         className=" relativepos  "
@@ -337,7 +337,7 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-6 items-center justify-center flex group my-10">
+                  <div className="col-span-6 items-center justify-center flex group lg:my-10">
                     <div className=" flex w-11/12 group-hover:hidden  ">
                       <Image
                         className=" relativepos  "
@@ -373,12 +373,12 @@ export default function GrammerNow() {
                     </div>
                   </div>
                   <div className="col-span-12 items-start justify-center text-start flex  flex-col">
-                    <span className="uppercase text-8xl text-[#7CB862] font-black ">
+                    <span className="uppercase lg:text-8xl text-5xl text-[#7CB862] font-black ">
                       about this <br />
                       project
                     </span>
-                    <div className="w-full flex  mt-5 items-center  p-10 gap-10">
-                      <div className="  w-[6%] mx-10">
+                    <div className="w-full flex lg:flex-row flex-col  mt-5 items-center  lg:p-10 lg:gap-10 p-5">
+                      <div className="  lg:w-[6%] w-[15%] mx-10 ">
                         <Image
                           className=" relativepos  "
                           src="/website/grammarnow/sf.png"

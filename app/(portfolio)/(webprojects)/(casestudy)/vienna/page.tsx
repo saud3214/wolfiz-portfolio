@@ -255,7 +255,7 @@ export default function Vienna() {
                     </span>
                     <WordPullUp
                       className="font-bold lg:text-7xl text-3xl text-start "
-                      words="Experience Vianna's"
+                      words="Experience Vienna's"
                     />
                     <div className="flex items-center justify-center">
                       <WordPullUp

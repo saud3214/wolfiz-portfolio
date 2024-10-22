@@ -246,7 +246,7 @@ export default function Webapps() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="/mobileapps/apployee/apployee.mp4"
+                          src="/6ixmortgage/6mgcard.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -296,10 +296,7 @@ export default function Webapps() {
                         playsInline
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
-                        <source
-                          src="/mobileapps/apployee/apployee.mp4"
-                          type="video/mp4"
-                        />
+                        <source src="/hockey/hmcard.mp4" type="video/mp4" />
                       </video>
                     </div>
                   </div>
@@ -347,10 +344,7 @@ export default function Webapps() {
                         playsInline
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
-                        <source
-                          src="/mobileapps/apployee/apployee.mp4"
-                          type="video/mp4"
-                        />
+                        <source src="/puan/pucard.mp4" type="video/mp4" />
                       </video>
                     </div>
                   </div>
