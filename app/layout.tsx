@@ -35,7 +35,7 @@ export default function RootLayout({
         <header className="fixed flex items-end justify-start lg:h-24 h-16 zindex">
           <div className="font-bold fixed  flex items-center justify-center lg:w-[15%] w-[30%]">
             <Link href="/">
-              <div className="flex md:w-[90%] w-[60%]">
+              <div className="flex md:w-[80%] w-[60%]">
                 <Image
                   alt="logo"
                   fill

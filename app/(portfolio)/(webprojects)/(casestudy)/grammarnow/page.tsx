@@ -119,7 +119,7 @@ export default function GrammerNow() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-3 flex items-end  h-full">
+                  <div className="lg:col-span-3 col-span-4 flex items-end  h-full">
                     <div className="relative   w-full lg:pt-5 ">
                       <Image
                         className=" relativepos object-cover"
@@ -129,7 +129,7 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-3 flex items-end  h-full">
+                  <div className="col-span-3 lg:flex hidden items-end  h-full">
                     <div className="relative   w-full  ">
                       <Image
                         className=" relativepos object-cover"
@@ -139,7 +139,7 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-3 flex items-end  h-full">
+                  <div className="lg:col-span-3 col-span-4 flex items-end  h-full">
                     <div className="relative   w-full  ">
                       <Image
                         className=" relativepos object-cover"
@@ -149,7 +149,7 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-3 flex  items-end  h-full ">
+                  <div className="lg:col-span-3 col-span-4 flex  items-end  h-full ">
                     <div className="relative   w-full  ">
                       <Image
                         className=" relativepos "
@@ -395,7 +395,7 @@ export default function GrammerNow() {
                       </span>
                     </div>
                   </div>
-                  <div className="col-span-5 items-start justify-center h-fit">
+                  <div className="md:col-span-5 col-span-12  items-start justify-center h-fit">
                     <div className=" w-full h-5/6 object-cover">
                       <SrLeft>
                         <Image
@@ -407,7 +407,7 @@ export default function GrammerNow() {
                       </SrLeft>
                     </div>
                   </div>
-                  <div className="col-span-5 items-start justify-between flex flex-col ">
+                  <div className="md:col-span-5 col-span-12 items-start justify-between flex flex-col ">
                     <div className=" w-full">
                       <SrTop>
                         <Image
@@ -418,7 +418,7 @@ export default function GrammerNow() {
                         />
                       </SrTop>
                     </div>
-                    <div className=" w-full">
+                    <div className=" w-full pt-5 lg:pt-0">
                       <SrBottom>
                         <Image
                           className=" relativepos  "
@@ -429,7 +429,7 @@ export default function GrammerNow() {
                       </SrBottom>
                     </div>
                   </div>
-                  <div className="col-span-2 items-center justify-center flex h-full ">
+                  <div className="col-span-2 items-center justify-center md:flex hidden h-full ">
                     <div className=" w-full h-full">
                       <Image
                         className=" relativepos  "
@@ -443,8 +443,8 @@ export default function GrammerNow() {
               </div>
               <div className="w-full flex flex-col items-center justify-center my-10">
                 <div className="grid grid-cols-12  w-full  ">
-                  <div className="col-span-6 items-center justify-center flex  group ">
-                    <div className=" w-full    h-[100vh]   group-hover:hidden flex">
+                  <div className="lg:col-span-6 col-span-12 items-center justify-center flex  group ">
+                    <div className=" w-full    lg:h-[100vh]   group-hover:hidden flex">
                       <Image
                         className=" relativepos  "
                         src="/website/grammarnow/green.png"
@@ -452,7 +452,7 @@ export default function GrammerNow() {
                         fill
                       />
                     </div>
-                    <div className=" w-full  h-[100vh]  group-hover:flex hidden">
+                    <div className=" w-full  lg:h-[100vh]  group-hover:flex hidden">
                       <Image
                         className=" relativepos   "
                         src="/website/grammarnow/blue2n.png"
@@ -461,8 +461,8 @@ export default function GrammerNow() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-6 items-center justify-center flex  group ">
-                    <div className=" w-full  h-[100vh]    flex">
+                  <div className="lg:col-span-6 col-span-12 items-center justify-center flex  group ">
+                    <div className=" w-full  lg:h-[100vh]    flex">
                       <Image
                         className=" relativepos  "
                         src="/website/grammarnow/mobile.png"

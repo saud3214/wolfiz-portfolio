@@ -21,7 +21,7 @@ const AvatarCircles = ({
         // eslint-disable-next-line @next/next/no-img-element
         <img
           key={index}
-          className="size-20 rounded-full border-2 border-white dark:border-gray-800"
+          className="md:size-20 size-12 rounded-full border-2 border-white dark:border-gray-800"
           src={url}
           width={40}
           height={40}
@@ -29,7 +29,7 @@ const AvatarCircles = ({
         />
       ))}
       <a
-        className="flex size-20 items-center justify-center rounded-full border-2 border-white bg-orange-500 text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black"
+        className="flex md:size-20 size-10 items-center justify-center rounded-full border-2 border-white bg-orange-500 text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black"
         href=""
       >
         +{numPeople}

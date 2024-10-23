@@ -9,8 +9,6 @@ import SwiperCore from 'swiper';
 import { csimages, backgroundimages } from '../webprojects/animation';
 import { Archivo } from 'next/font/google';
 import { Pridi } from 'next/font/google';
-
-import { easeIn, motion } from 'framer-motion';
 import { SlideFromSide } from '../../../components/pagetransition';
 import {
   AnimatedText,
@@ -131,10 +129,10 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#EA0000] h-[24vh]">
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
                     <div
                       id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
                     >
                       <video
                         id="roundvideo"
@@ -143,7 +141,7 @@ export default function Webprojects() {
                         loop
                         preload="yes"
                         playsInline
-                        className="h-[23.3vh]"
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
                           src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
@@ -156,7 +154,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-fit imgcontainer  h-[65vh] bg-vucard  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
+                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-vucard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
                 </div>
               </div>
             </div>
@@ -182,10 +180,10 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#c29947] h-[24vh]">
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
                     <div
                       id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
                     >
                       <video
                         id="roundvideo"
@@ -194,7 +192,7 @@ export default function Webprojects() {
                         loop
                         preload="yes"
                         playsInline
-                        className="h-[23.3vh]"
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
                           src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
@@ -207,7 +205,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-fit imgcontainer  h-[65vh] bg-card1947  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
+                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-card1947  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
                 </div>
               </div>
             </div>
@@ -233,10 +231,10 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#2188BB] h-[24vh]">
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
                     <div
                       id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
                     >
                       <video
                         id="roundvideo"
@@ -245,7 +243,7 @@ export default function Webprojects() {
                         loop
                         preload="yes"
                         playsInline
-                        className="h-[23.3vh]"
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
                           src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
@@ -258,7 +256,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-fit imgcontainer  h-[65vh] bg-gncard  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
+                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-gncard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
                 </div>
               </div>
             </div>
@@ -284,10 +282,10 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#FF7F40] h-[24vh]">
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
                     <div
                       id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
                     >
                       <video
                         id="roundvideo"
@@ -296,7 +294,7 @@ export default function Webprojects() {
                         loop
                         preload="yes"
                         playsInline
-                        className="h-[23.3vh]"
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
                           src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
@@ -309,7 +307,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-fit imgcontainer  h-[65vh] bg-kccard  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
+                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-kccard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
                 </div>
               </div>
             </div>
@@ -335,10 +333,10 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#00a89f] h-[24vh]">
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
                     <div
                       id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
                     >
                       <video
                         id="roundvideo"
@@ -347,7 +345,7 @@ export default function Webprojects() {
                         loop
                         preload="yes"
                         playsInline
-                        className="h-[23.3vh]"
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
                           src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
@@ -360,7 +358,7 @@ export default function Webprojects() {
               </div>
               <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
                 <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-fit imgcontainer  h-[65vh] bg-zccard  cursor-pointer   shadow-xl drop-shadow-xl csimg"></div>
+                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-zccard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
                 </div>
               </div>
             </div>
