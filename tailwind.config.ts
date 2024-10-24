@@ -203,8 +203,17 @@ const config = {
         marquee: 'marquee 25s linear infinite',
         marquee2: 'marquee2 25s linear infinite',
         'sequential-fall': 'sequential-fall 6s ease-in-out infinite', // Total animation time for each image
+        revealX: 'revealX 2s forwards ease-out ',
       },
       keyframes: {
+        revealX: {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '100%': {
+            transform: 'translateX(55%)',
+          },
+        },
         'border-beam': {
           '100%': {
             'offset-distance': '100%',

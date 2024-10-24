@@ -39,7 +39,7 @@ export default function KingdomConnect() {
         <div className="flex items-center justify-center w-full ">
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex flex-col items-center justify-center  col-span-12 ">
-              <div className="w-full h-[100vh] flex items-center justify-center bg-kcbg1 bg-center bg-cover bg-no-repeat relative">
+              <div className="w-full md:h-[100vh] h-[70vh] flex items-center justify-center bg-kcbg1 bg-center bg-cover bg-no-repeat relative">
                 <div className="w-11/12 h-5/6 items-start lg:justify-start justify-center flex flex-col p-5 ">
                   <div className="relative md:w-[15%] w-2/3    ">
                     <Image
@@ -185,7 +185,7 @@ export default function KingdomConnect() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-12 flex items-center justify-center  my-10 overflow-hidden ">
+                  <div className="col-span-12 flex items-center justify-center  my-10 overflow-hidden rotate-9 ">
                     <ExpandingCards />
                   </div>
                   <div className="col-span-12 items-center justify-center md:flex flex-col gap-10 my-10 hidden ">

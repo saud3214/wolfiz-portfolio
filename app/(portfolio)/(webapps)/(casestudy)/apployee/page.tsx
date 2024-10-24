@@ -47,11 +47,11 @@ export default function Apployee() {
         <div className="  w-full  items-center justify-center flex   ">
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex  col-span-12 items-center justify-center flex-col w-full  ">
-              <div className="flex flex-col items-center justify-start w-full p-10  relative h-[130vh] ">
-                <div className="bg-apployeebg1 bg-cover bg-center bg-no-repeat w-full h-[80vh] rounded-3xl p-10 flex flex-col ">
-                  <div className="flex text-white items-center justify-between font-semibold text-sm">
+              <div className="flex flex-col items-center justify-start w-full lg:p-10 p-5  relative h-[130vh] ">
+                <div className="bg-apployeebg1 bg-cover bg-center bg-no-repeat w-full md:h-[80vh] h-[60vh] rounded-3xl md:p-10 p-5 pt-5 flex flex-col ">
+                  <div className="flex text-white items-center justify-between md:font-semibold md:text-sm text-base">
                     <span>2024</span>
-                    <div className="flex  items-center  relative w-[10%]   ">
+                    <div className="flex  items-center  relative md:w-[10%]  w-[20%]  ">
                       <Image
                         className=" relativepos  "
                         src="/mobileapps/apployee/logo.svg"
@@ -63,18 +63,18 @@ export default function Apployee() {
                   </div>
                   <div className="flex flex-col items-center justify-center  h-32 2xl:mt-10">
                     <GradualSpacing
-                      className="text-[4vw] font-semibold text-white uppercase  leading-[84%]"
+                      className="md:text-[4vw] text-[7vw] font-semibold text-white uppercase  leading-none"
                       text="TRACK & MANAGE"
                     />
                     <GradualSpacing
-                      className="text-[4vw] font-semibold text-white uppercase  leading-[84%]"
+                      className="md:text-[4vw] text-[7vw] font-semibold text-white uppercase  leading-none"
                       text="DRIVERS PERFORMACE"
                     />
                   </div>
-                  <div className="w-10/12 flex rounded-3xl h-[90vh] absolute -bottom-[1%] right-[8%] ">
-                    <div className=" w-full  rounded-3xl ">
+                  <div className="w-11/12 flex rounded-3xl md:h-[90vh] h-[60vh] absolute -bottom-[1%] lg::right-[8%]  right-[4%]  top-[20%] md:top-auto object-contain ">
+                    <div className=" w-full  rounded-3xl  object-contain">
                       <video
-                        className="roundvideo rounded-3xl "
+                        className="roundvideo rounded-3xl object-contain "
                         autoPlay
                         muted
                         loop
@@ -82,7 +82,7 @@ export default function Apployee() {
                         playsInline
                       >
                         <source
-                          src="../../../../../mobileapps/apployee/apployee.mp4"
+                          src="/mobileapps/apployee/apployee.mp4"
                           type="video/mp4"
                         />
                       </video>

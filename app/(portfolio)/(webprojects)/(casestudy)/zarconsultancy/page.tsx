@@ -15,6 +15,7 @@ import {
   SrBottom,
   RevealOnScroll,
 } from '@/app/components/revealelement';
+import { motion } from 'framer-motion';
 
 const urbanist = Poppins({
   subsets: ['latin'],
@@ -28,7 +29,27 @@ export default function ZarConsultancy() {
 
   useSmoothScroll();
   useEffect(() => {}, []);
-
+  const revealXAnimation = {
+    initial: { x: '0%' },
+    animate: {
+      x: '55%',
+      transition: { duration: 2, ease: 'easeOut', delay: 1 },
+    },
+  };
+  const revealXAnimation2 = {
+    initial: { x: '0%' },
+    animate: {
+      x: '-100%',
+      transition: { duration: 2, ease: 'easeOut' },
+    },
+  };
+  const revealXAnimation3 = {
+    initial: { x: '0%' },
+    animate: {
+      x: '100%',
+      transition: { duration: 2, ease: 'easeOut' },
+    },
+  };
   return (
     <SlideFromRight>
       <div
@@ -75,24 +96,76 @@ export default function ZarConsultancy() {
               </div>
               <div className="flex flex-col w-full mb-10">
                 <div className="relative w-full ">
-                  <RevealOnScroll>
+                  <Image
+                    className="object-cover relativepos"
+                    src="/website/zar/about.png"
+                    alt="img"
+                    fill
+                  />
+                  <motion.div
+                    className="absolute inset-0 z-10"
+                    variants={revealXAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true, amount: 0.5 }}
+                  >
                     <Image
-                      className="object-cover relativepos"
-                      src="/website/zar/about.png"
-                      alt="img"
+                      className="object-cover"
+                      src="/website/zar/about2n.jpg"
+                      alt="overlay"
                       fill
                     />
-                  </RevealOnScroll>
+                  </motion.div>
                 </div>
-                <div className="relative w-full ">
-                  <RevealOnScroll>
-                    <Image
-                      className="object-cover relativepos"
-                      src="/website/zar/ps.png"
-                      alt="img"
-                      fill
-                    />
-                  </RevealOnScroll>
+                <div className="grid grid-cols-12 items-center justify-center w-full">
+                  <div className="col-span-6 -mr-[10%] overflow-hidden ">
+                    <div className="relative w-full   ">
+                      <Image
+                        className="object-cover relativepos"
+                        src="/website/zar/psn2.png"
+                        alt="img"
+                        fill
+                      />
+                      <motion.div
+                        className="absolute inset-0 z-10"
+                        variants={revealXAnimation3}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true, amount: 0.3 }}
+                      >
+                        <Image
+                          className="object-cover"
+                          src="/website/zar/pso.png"
+                          alt="overlay"
+                          fill
+                        />
+                      </motion.div>
+                    </div>
+                  </div>
+                  <div className="col-span-6 h-full -ml-[10%]  overflow-hidden ">
+                    <div className="relative w-full   ">
+                      <Image
+                        className="object-cover relativepos"
+                        src="/website/zar/ss3.png"
+                        alt="img"
+                        fill
+                      />
+                      <motion.div
+                        className="absolute inset-0 z-10"
+                        variants={revealXAnimation2}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true, amount: 0.3 }}
+                      >
+                        <Image
+                          className="object-cover"
+                          src="/website/zar/sso.png"
+                          alt="overlay"
+                          fill
+                        />
+                      </motion.div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center justify-center w-11/12 mb-10 lg:py-10">
@@ -104,7 +177,7 @@ export default function ZarConsultancy() {
                       </span>
                     </SrLeft>
                   </div>
-                  <div className="flex items-end justify-center col-span-12 pt-10 md:col-span-6 md:justify-start md:pt-0">
+                  <div className="flex items-end justify-center col-span-12  md:col-span-6 md:justify-start md:pt-0">
                     <div className="relative w-11/12 md:w-3/4 ">
                       <SrLeft>
                         <Image
@@ -116,12 +189,20 @@ export default function ZarConsultancy() {
                       </SrLeft>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center col-span-12 md:col-span-6 md:items-end">
-                    <div className="relative w-11/12 mt-10 md:w-3/4 ">
+                  <div className="flex flex-col items-center justify-center col-span-12 md:col-span-6 md:items-end group ">
+                    <div className="relative w-11/12  md:w-2/3  ">
+                      <Image
+                        className="object-cover relativepos"
+                        src="/website/zar/clr.png"
+                        alt="img"
+                        fill
+                      />
+                    </div>
+                    <div className="relative w-11/12 mt-10 md:w-2/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
                       <SrRight>
                         <Image
                           className="object-cover relativepos"
-                          src="/website/zar/aa.png"
+                          src="/website/zar/aa3.png"
                           alt="img"
                           fill
                         />
