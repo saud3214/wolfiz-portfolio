@@ -47,7 +47,7 @@ export default function Apployee() {
         <div className="  w-full  items-center justify-center flex   ">
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex  col-span-12 items-center justify-center flex-col w-full  ">
-              <div className="flex flex-col items-center justify-start w-full lg:p-10 p-5  relative h-[130vh] ">
+              <div className="flex flex-col items-center justify-start w-full lg:p-10 p-5  relative md:h-[130vh] h-[80vh] ">
                 <div className="bg-apployeebg1 bg-cover bg-center bg-no-repeat w-full md:h-[80vh] h-[60vh] rounded-3xl md:p-10 p-5 pt-5 flex flex-col ">
                   <div className="flex text-white items-center justify-between md:font-semibold md:text-sm text-base">
                     <span>2024</span>
@@ -71,7 +71,7 @@ export default function Apployee() {
                       text="DRIVERS PERFORMACE"
                     />
                   </div>
-                  <div className="w-11/12 flex rounded-3xl md:h-[90vh] h-[60vh] absolute -bottom-[1%] lg::right-[8%]  right-[4%]  top-[20%] md:top-auto object-contain ">
+                  <div className="w-11/12 flex rounded-3xl md:h-[90vh] h-[60vh] absolute -bottom-[1%] lg::right-[8%]  right-[4%]  top-[30%] md:top-auto object-contain ">
                     <div className=" w-full  rounded-3xl  object-contain">
                       <video
                         className="roundvideo rounded-3xl object-contain "
@@ -91,7 +91,7 @@ export default function Apployee() {
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center w-full  ">
-                <div className="2xl:w-1/2 w-2/3 text-center text-3xl py-16">
+                <div className="2xl:w-1/2 md:w-2/3 w-10/12 text-center md:text-3xl text-2xl py-16">
                   <span>
                     Apployee coaching portal simplifies Driver management system
                     with a revolutionary platform that streamlines HR, enhances
@@ -99,8 +99,8 @@ export default function Apployee() {
                     intuitive, unified dashboard.
                   </span>
                 </div>
-                <div className="bg-apployeebg2 bg-cover bg-center bg-no-repeat w-[95%] flex items-start justify-center p-10 2xl:gap-20 gap-10 rounded-3xl mb-10">
-                  <div className="flex  items-center  relative  w-1/4 animate-zoom-in">
+                <div className="bg-apployeebg2 bg-cover bg-center bg-no-repeat w-[95%] flex flex-col md:flex-row md:items-start items-center justify-center md:p-10 p-5 2xl:gap-20 lg:gap-10 gap-5 rounded-3xl mb-10">
+                  <div className="flex  items-center  relative  md:w-1/4 w-3/4 animate-zoom-in">
                     <RotateText>
                       <Image
                         className=" relativepos  "
@@ -110,7 +110,7 @@ export default function Apployee() {
                       />
                     </RotateText>
                   </div>
-                  <div className="flex  items-center  relative  w-1/4 mt-[10%] ">
+                  <div className="flex  items-center  relative  md:w-1/4 w-3/4 mt-[10%] ">
                     <RotateText>
                       <Image
                         className=" relativepos  "
@@ -120,7 +120,7 @@ export default function Apployee() {
                       />
                     </RotateText>
                   </div>
-                  <div className="flex  items-center  relative  w-1/4 mt-[20%] ">
+                  <div className="flex  items-center  relative  md:w-1/4 w-3/4 mt-[20%] ">
                     <RotateText>
                       <Image
                         className=" relativepos  "
@@ -131,13 +131,13 @@ export default function Apployee() {
                     </RotateText>
                   </div>
                 </div>
-                <div className="flex  items-center justify-center  h-20 my-10">
+                <div className="flex  items-center justify-center  md:h-20 h-12 lg:my-10">
                   <GradualSpacing
-                    className="text-[4vw] font-semibold uppercase "
+                    className="md:text-[4vw] text-[6vw] font-semibold uppercase "
                     text="project timeline"
                   />
                 </div>
-                <div className="w-full items-start justify-center flex bg-apployeebg3 bg-contain  bg-no-repeat h-[100vh] bg-bottom relative">
+                <div className="w-full items-start justify-center flex bg-apployeebg3 bg-contain  bg-no-repeat md:h-[100vh] h-[35vh] bg-bottom relative">
                   <div className="flex  items-center    w-[20%] absolute  left-[15%] top-[10%]">
                     <SrLeft>
                       <Image
@@ -190,13 +190,13 @@ export default function Apployee() {
                   </div>
                 </div>
 
-                <div className="flex  items-center justify-center  h-20 my-10 2xl:pt-10">
+                <div className="flex  items-center justify-center  md:h-20 h-14 md:my-10 mt-10 ">
                   <GradualSpacing
-                    className="text-[4vw] font-semibold uppercase "
+                    className="md:text-[4vw] text-[6vw] font-semibold uppercase "
                     text="informtion architecture"
                   />
                 </div>
-                <span className=" w-2/3 text-center text-3xl pb-10">
+                <span className=" md:w-2/3 w-11/12 text-center md:text-3xl text-xl pb-10">
                   The information architecture of our product is meticulously
                   designed to create a seamless and intuitive user experience.
                   By organizing and structuring data logically, we ensure
@@ -205,8 +205,8 @@ export default function Apployee() {
                   enhances user efficiency and engagement, forming the backbone
                   of a user-friendly and efficient system.
                 </span>
-                <div className="bg-[#0F172A] items-center justify-center flex w-[95%] rounded-3xl p-10 mb-10 group relative transition-all duration-300">
-                  <div className="flex  items-center    w-[80%] group-hover:hidden transition-all duration-300 h-full">
+                <div className="bg-[#0F172A] items-center justify-center flex w-[95%] rounded-3xl md:p-10 p-5 md:mb-10 group relative transition-all duration-300">
+                  <div className="flex  items-center    md:w-[80%] w-full group-hover:hidden transition-all duration-300 h-full">
                     <Image
                       className=" relativepos  "
                       src="/mobileapps/apployee/iag.png"
@@ -215,7 +215,7 @@ export default function Apployee() {
                       priority
                     />
                   </div>
-                  <div className="hidden  items-center    w-[80%] group-hover:flex transition-all duration-300 h-full">
+                  <div className="hidden  items-center    md:w-[80%] w-full group-hover:flex transition-all duration-300 h-full">
                     <Image
                       className=" relativepos  "
                       src="/mobileapps/apployee/iar.png"
@@ -226,14 +226,14 @@ export default function Apployee() {
                   </div>
                 </div>
 
-                <div className="flex  items-center justify-center  h-20 my-10">
+                <div className="flex  items-center justify-center  md:h-20 h-14 md:my-10 mt-10 md:mt-0 ">
                   <GradualSpacing
-                    className="text-[4vw] font-semibold uppercase "
+                    className="md:text-[4vw] text-[6vw] font-semibold uppercase "
                     text="Style guidline"
                   />
                 </div>
-                <div className="flex  items-center justify-around pb-10 w-11/12">
-                  <div className="flex  items-center    w-[40%]">
+                <div className="flex  flex-col md:flex-row items-center md:justify-around justify-center pb-10 w-11/12">
+                  <div className="flex  items-center justify-center   md:w-[40%] w-10/12">
                     <SrLeft>
                       <Image
                         className=" relativepos  "
@@ -243,8 +243,8 @@ export default function Apployee() {
                       />
                     </SrLeft>
                   </div>
-                  <div className="w-[40%] text-start flex flex-col items-center ">
-                    <span className="2xl:text-3xl text-2xl ">
+                  <div className=" md:w-[40%] w-10/12 text-start flex flex-col items-center ">
+                    <span className="2xl:text-3xl md:text-2xl text-lg ">
                       <span className="font-semibold">
                         Appolyee elevates its visual appeal with the modern
                         Poppins fonts
@@ -253,7 +253,7 @@ export default function Apployee() {
                       interface.
                     </span>
                     <br></br>
-                    <span className="2xl:text-3xl text-2xl pt-10">
+                    <span className="2xl:text-3xl md:text-2xl text-lg md:pt-10 ">
                       Poppins’s overall user experience, making Apployee a
                       visually pleasing and user-friendly solution.
                     </span>
@@ -261,9 +261,9 @@ export default function Apployee() {
                 </div>
               </div>
 
-              <div className="w-full flex items-center justify-center py-10 relative my-10">
+              <div className="w-full flex items-center justify-center md:py-10 relative my-10">
                 <div className="w-1/4 flex relative -right-[8%] ">
-                  <div className="flex  items-center     w-full relative] ">
+                  <div className="flex  items-center     w-full relative">
                     <RotateText>
                       <Image
                         className=" relativepos  "
@@ -343,10 +343,10 @@ export default function Apployee() {
                   </div>
                 </div>
               </div>
-              <div className="w-11/12 flex items-center justify-center pb-10 gap-10 ">
-                <div className="flex  items-center    relative w-1/2 ">
+              <div className="w-11/12 flex md:flex-row flex-col  items-center justify-center pb-10 md:gap-10  gap-5">
+                <div className="flex  items-center    relative md:w-1/2 w-full ">
                   <SrLeft>
-                    <div className="flex  items-center    relative w-full h-[80vh] object-cover">
+                    <div className="flex  items-center    relative w-full md:h-[80vh] object-cover">
                       <Image
                         className=" relativepos object-cover rounded-3xl"
                         src="/mobileapps/apployee/img1n.png"
@@ -356,9 +356,9 @@ export default function Apployee() {
                     </div>
                   </SrLeft>
                 </div>
-                <div className="flex  items-center    relative w-1/2 ">
+                <div className="flex  items-center    relative md:w-1/2  w-full">
                   <SrRight>
-                    <div className="flex  items-center    relative w-full h-[80vh] object-cover">
+                    <div className="flex  items-center    relative w-full md:h-[80vh] object-cover">
                       <Image
                         className=" relativepos object-cover rounded-3xl"
                         src="/mobileapps/apployee/img2.png"
@@ -369,20 +369,20 @@ export default function Apployee() {
                   </SrRight>
                 </div>
               </div>
-              <div className="w-11/12 flex items-center justify-center pb-10 gap-10   h-[80vh] relative">
-                <div className="flex w-8/12 items-start flex-col justify-center">
-                  <span className="font-semibold text-[4vw] 2xl:leading-[100px] leading-[50px]">
+              <div className="w-11/12 flex md:flex-row flex-col items-center justify-center pb-10 md:gap-10  gap-5  md:h-[80vh] relative">
+                <div className="flex md:w-8/12 w-full items-start flex-col justify-center">
+                  <span className="font-semibold md:text-[4vw] text-[7vw] leading-none">
                     Get hold of your <br></br> driver’s Management<br></br>
                     system
                   </span>
-                  <span className="text-lg pt-5 w-10/12">
+                  <span className="text-lg pt-5 md:w-10/12 w-11/12">
                     Apployee coaching portal simplifies Driver management system
                     with a revolutionary platform that streamlines HR, enhances
                     contract and onboarding processes, and provides an
                     intuitive, unified dashboard.
                   </span>
                 </div>
-                <div className="w-4/12 relative">
+                <div className="md:w-4/12 w-9/12 relative items-center justify-center flex">
                   <div className="flex  items-center    relative w-10/12 ">
                     <Image
                       className=" relativepos "
@@ -411,7 +411,7 @@ export default function Apployee() {
                       />
                     </SrBottom>
                   </div>
-                  <div className="flex  items-center      absolute -left-[14%] bottom-[40%] w-1/3 ">
+                  <div className="flex  items-center      absolute md:-left-[14%] -left-[7%] bottom-[40%] w-1/3 ">
                     <SrTop>
                       <Image
                         className=" relativepos "
@@ -422,7 +422,7 @@ export default function Apployee() {
                     </SrTop>
                   </div>
 
-                  <div className="flex  items-center      absolute -left-[22%] bottom-[30%] w-2/5 ">
+                  <div className="flex  items-center      absolute md:-left-[14%] -left-[7%] bottom-[30%] w-2/5 ">
                     <SrLeft>
                       <Image
                         className=" relativepos "
@@ -434,11 +434,11 @@ export default function Apployee() {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-12 w-10/12 items-center justify-center gap-10 pb-10 mt-10">
+              <div className="grid grid-cols-12 w-10/12 items-center justify-center gap-10 pb-10 md:mt-10">
                 <div className="col-span-12 flex items-center justify-center">
-                  <div className="flex  items-center justify-center  h-20 ">
+                  <div className="flex  items-center justify-center  md:h-20 h-14 md:my-10   ">
                     <GradualSpacing
-                      className="text-[4vw] font-semibold uppercase "
+                      className="md:text-[4vw] text-[6vw] font-semibold uppercase "
                       text="Social Media posts"
                     />
                   </div>
