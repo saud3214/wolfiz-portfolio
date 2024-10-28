@@ -354,7 +354,7 @@ export default function Simireizen() {
                   </div>
                   <div className="flex flex-col items-start justify-center col-span-6 gap-2 p-2 md:col-span-3 md:gap-10 md:p-5">
                     <div className="box box1">
-                      <div className="svg">
+                      <div className="hidden svg md:block">
                         <svg
                           width="286"
                           height="309"
@@ -401,7 +401,7 @@ export default function Simireizen() {
                   </div>
                   <div className="flex flex-col items-start justify-start col-span-6 gap-2 p-2 md:col-span-3 md:gap-5 md:p-5 md:pt-20 md:mt-48">
                     <div className="box box2 rotate-[-40deg]">
-                      <div className="svg">
+                      <div className="hidden svg md:block">
                         <svg
                           width="286"
                           height="309"
@@ -447,9 +447,9 @@ export default function Simireizen() {
                       intuitive experience.
                     </span>
                   </div>
-                  <div className="flex flex-col items-start justify-end col-span-3 gap-2 p-2 pt-5 mt-5 md:gap-5 md:p-5 md:pt-20 md:mt-48">
+                  <div className="flex flex-col items-start justify-end col-span-6 gap-2 p-2 md:col-span-3 md:gap-5 md:p-5 md:pt-20 md:mt-48">
                     <div className="box box2  -rotate-[80deg]">
-                      <div className="svg">
+                      <div className="hidden svg md:block">
                         <svg
                           width="286"
                           height="309"
@@ -497,9 +497,9 @@ export default function Simireizen() {
                       using vibrant colors
                     </span>
                   </div>
-                  <div className="flex flex-col items-start justify-center col-span-3 gap-10 p-5">
+                  <div className="flex flex-col items-start justify-end col-span-6 gap-2 p-2 md:col-span-3 md:gap-5 md:p-5 ">
                     <div className="box box2 -rotate-[90deg]">
-                      <div className="svg">
+                      <div className="hidden svg md:block">
                         <svg
                           width="286"
                           height="309"
@@ -547,7 +547,7 @@ export default function Simireizen() {
                   </div>
                 </div>
 
-                <div className="grid items-center justify-center w-11/12 grid-cols-12 gap-5 py-10 md:gap-0 ">
+                <div className="grid items-center justify-center w-11/12 grid-cols-12 gap-5 md:py-10 md:gap-0 ">
                   <div className="flex flex-col items-center justify-center h-full col-span-12 gap-5 md:col-span-6">
                     <SrLeft>
                       <div className="flex items-center justify-center w-full">
