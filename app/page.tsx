@@ -63,20 +63,25 @@ export default function Home() {
   }, []);
   return (
     <div className="flex-col items-center w-full h-full lg:p-12">
-      <div className="videoContainer">
-        <iframe
-          className="absolute inset-0 w-full h-full"
-          src="https://player.vimeo.com/video/1023848873?autoplay=1&muted=1&loop=1&background=1"
-          allow="autoplay; fullscreen;"
-          allowFullScreen
-        ></iframe>
+      <div className="object-cover videoContainer">
+        <video
+          id="roundvideo"
+          autoPlay
+          muted
+          loop
+          preload="yes"
+          playsInline
+          className="object-cover w-full h-full"
+        >
+          <source src="/video.mp4" type="video/mp4" />
+        </video>
       </div>
       <div className="background-images-wrapper">
         {/* <div className="layer layer--default"></div> */}
         <div className="relative w-full h-full">
           <Image
             className="layer "
-            src="https://images.unsplash.com/photo-1626427223333-183395267453?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80"
+            src="/website1.jpg"
             fill
             alt="Background 1"
           />
@@ -84,7 +89,7 @@ export default function Home() {
         <div className="relative w-full h-full">
           <Image
             className="layer"
-            src="https://images.unsplash.com/photo-1627037558426-c2d07beda3af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+            src="/website1.jpg"
             fill
             alt="Background 1"
           />
@@ -92,7 +97,7 @@ export default function Home() {
         <div className="relative w-full h-full">
           <Image
             className="layer "
-            src="https://images.unsplash.com/photo-1618005198920-f0cb6201c115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+            src="/mobile1.jpg"
             fill
             alt="Background 1"
           />
@@ -100,7 +105,7 @@ export default function Home() {
         <div className="relative w-full h-full">
           <Image
             className="w-full h-full layer"
-            src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
+            src="/website2.jpg"
             fill
             alt="Background 1"
           />
