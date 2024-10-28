@@ -195,7 +195,7 @@ export default function Mobileapps() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="/mobileapps/yalaxi/yalaxivideo.mp4"
+                          src="/mobileapps/yalaxi/yalaxi.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -246,7 +246,7 @@ export default function Mobileapps() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="/mobileapps/avcons/avcons.mp4"
+                          src="/mobileapps/avcons/avcons2.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -297,7 +297,7 @@ export default function Mobileapps() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="/mobileapps/doroos/dooros.mp4"
+                          src="/mobileapps/doroos/doros.mp4"
                           type="video/mp4"
                         />
                       </video>
