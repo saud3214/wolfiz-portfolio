@@ -434,7 +434,7 @@ export default function Apployee() {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-12 w-10/12 items-center justify-center gap-10 pb-10 md:mt-10">
+              <div className="grid grid-cols-12 w-10/12 items-center justify-center lg:gap-10 gap-5 pb-10 md:mt-10">
                 <div className="col-span-12 flex items-center justify-center">
                   <div className="flex  items-center justify-center  md:h-20 h-14 md:my-10   ">
                     <GradualSpacing
@@ -480,10 +480,10 @@ export default function Apployee() {
                   </div>
                 </div>
               </div>
-              <div className="w-10/12 flex flex-col items-center justify-center gap-10 my-10">
-                <div className="flex  items-center justify-center  h-20 ">
+              <div className="w-10/12 flex flex-col items-center justify-center lg:gap-10 gap-5 md:my-10 ">
+                <div className="flex  items-center justify-center  md:h-20 h-14 md:my-10   ">
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[4vw] text-[6vw] font-semibold uppercase "
                     text="Buttons"
                   />
                 </div>
@@ -497,9 +497,11 @@ export default function Apployee() {
                     />
                   </SrBottom>
                 </div>
-                <div className="grid grid-cols-12 w-full items-start justify-center gap-10 pt-10 ">
-                  <div className="col-span-4 items-center justify-center flex flex-col gap-10">
-                    <span className="text-3xl font-semibold">Menu</span>
+                <div className="grid grid-cols-12 md:w-full w-11/12 items-start justify-center md:gap-10 gap-5 md:pt-10 ">
+                  <div className="md:col-span-4 col-span-12 items-center justify-center flex flex-col md:gap-10 gap-5">
+                    <span className="md:text-3xl text-2xl font-semibold">
+                      Menu
+                    </span>
                     <div className="flex  items-center    relative w-full">
                       <SrLeft>
                         <Image
@@ -511,8 +513,8 @@ export default function Apployee() {
                       </SrLeft>
                     </div>
                   </div>
-                  <div className="col-span-4 items-center justify-center flex flex-col gap-10">
-                    <span className="text-3xl font-semibold">
+                  <div className="md:col-span-4 col-span-12 items-center justify-center flex flex-col md:gap-10 gap-5 pt-5 md:pt-0">
+                    <span className="md:text-3xl text-2xl font-semibold">
                       Activities Icon
                     </span>
 
@@ -527,11 +529,10 @@ export default function Apployee() {
                       </SrBottom>
                     </div>
                   </div>
-                  <div className="col-span-4 items-center justify-center flex flex-col gap-10">
-                    <span className="text-3xl font-semibold">
+                  <div className="md:col-span-4 col-span-12 items-center justify-center flex flex-col md:gap-10 gap-5 pb-5 md:pb-0">
+                    <span className="md:text-3xl text-2xl font-semibold">
                       Dashboard Icons
                     </span>
-
                     <div className="flex  items-center    relative w-full">
                       <SrRight>
                         <Image
@@ -545,8 +546,8 @@ export default function Apployee() {
                   </div>
                 </div>
               </div>
-              <div className="w-11/12 bg-[#46AD77] flex items-center justify-center rounded-3xl mb-10">
-                <div className="flex  items-center    relative w-10/12">
+              <div className="w-11/12 bg-[#46AD77] flex items-center justify-center rounded-3xl md:mb-10">
+                <div className="flex  items-center    relative md:w-10/12 w-full">
                   <SrBottom>
                     <Image
                       className=" relativepos "
@@ -566,43 +567,43 @@ export default function Apployee() {
                     fill
                   />
                 </SrBottom>
-                <div className="flex flex-col  items-start justify-center  h-20 top-[5%] left-1 absolute ">
+                <div className="flex flex-col  items-start justify-center  md:h-20 h-16 top-[5%] left-1 absolute ">
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[3vw] text-[4vw] font-semibold uppercase "
                     text="Sign up/ sign in"
                   />
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[3vw] text-[4vw] font-semibold uppercase "
                     text="Screen"
                   />
                 </div>
-                <div className="flex flex-col  items-start justify-center  h-20 top-[24%] right-10 absolute ">
+                <div className="flex flex-col  items-start justify-center  md:h-20 h-16 md:top-[24%] top-[20%] right-10 absolute ">
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[3vw] text-[4vw] font-semibold uppercase "
                     text="performance"
                   />
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[3vw] text-[4vw] font-semibold uppercase "
                     text="dashboard"
                   />
                 </div>
-                <div className="flex flex-col  items-start justify-center  h-20 top-[40%] left-10 absolute ">
+                <div className="flex flex-col  items-start justify-center  md:h-20 h-16 md:top-[40%] top-[35%] md:left-10 left-1 absolute ">
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[3vw] text-[4vw] font-semibold uppercase "
                     text="Company, driver"
                   />
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[3vw] text-[4vw] font-semibold uppercase "
                     text="Behaviour, Module"
                   />
                 </div>
-                <div className="flex flex-col  items-start justify-center  h-20 bottom-[20%] right-10 absolute ">
+                <div className="flex flex-col  items-start justify-center  md:h-20 h-16 md:bottom-[20%] bottom-[23%] md:right-10 right-6 absolute ">
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[3vw] text-[4vw] font-semibold uppercase "
                     text="Notifications &"
                   />
                   <GradualSpacing
-                    className="text-[3vw] font-semibold uppercase "
+                    className="md:text-[3vw] text-[4vw] font-semibold uppercase "
                     text="settings"
                   />
                 </div>

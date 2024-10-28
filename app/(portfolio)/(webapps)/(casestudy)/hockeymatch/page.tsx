@@ -72,7 +72,7 @@ export default function HockeyMatch() {
         <div className="flex items-center justify-center w-full ">
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex flex-col items-center justify-center  col-span-12 w-full ">
-              <div className="w-full h-[70vh] items-center justify-center flex">
+              <div className="w-full md:h-[70vh] h- items-center justify-center flex">
                 <video
                   className=" w-full h-full object-cover z-0"
                   autoPlay
@@ -84,9 +84,9 @@ export default function HockeyMatch() {
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div className="w-full h-[100vh] items-center justify-center flex relative">
+              <div className="w-full md:h-[100vh] items-center justify-center flex relative">
                 <div className="grid grid-cols-12  items-center justify-center w-full h-full  ">
-                  <div className="col-span-6 bg-[#F59B08] items-center justify-center h-full w-full flex flex-col">
+                  <div className="md:col-span-6 col-span-12 bg-[#F59B08] items-center justify-center h-full w-full flex flex-col">
                     <div className=" w-1/4 absolute bottom-0  left-0   ">
                       <Image
                         className=" relativepos"
@@ -95,7 +95,7 @@ export default function HockeyMatch() {
                         fill
                       />
                     </div>
-                    <div className=" w-1/4 absolute top-[3%]  left-[37%]   ">
+                    <div className=" w-1/4 absolute top-[3%]  left-[37%] hidden md:flex   ">
                       <Image
                         className=" relativepos"
                         src="/hockey/logo.png" // Replace with your image path
@@ -103,8 +103,8 @@ export default function HockeyMatch() {
                         fill
                       />
                     </div>
-                    <div className="w-3/4 items-start justify-center flex flex-col gap-5">
-                      <span className="font-black text-white text-7xl uppercase">
+                    <div className="md:w-3/4 w-11/12 items-start justify-center flex flex-col gap-5 p-5">
+                      <span className="font-black text-white md:text-7xl text-3xl uppercase">
                         Victory <br /> comes to
                         <br /> those
                         <br /> prepared
@@ -112,7 +112,7 @@ export default function HockeyMatch() {
                       <span className="text-black  text-lg font-bold">
                         A Case Study in Hockey Mastery
                       </span>
-                      <span className="font-medium  w-9/12">
+                      <span className="font-medium  md:w-9/12 w-11/12">
                         This case study meticulously examines how these
                         intricate challenges were addressed, highlighting
                         pivotal moments where strategic decisions either
@@ -121,7 +121,7 @@ export default function HockeyMatch() {
                       </span>
                     </div>
                   </div>
-                  <div className="col-span-6 items-center justify-center h-full w-full flex">
+                  <div className="col-span-6 items-center justify-center h-full w-full md:flex hidden ">
                     <div className="w-full h-full flex items-center justify-center">
                       <video
                         className="relative z-10 w-11/12 " // Set custom size for front video
@@ -186,9 +186,9 @@ export default function HockeyMatch() {
                   </div>
                 </div>
               </div>
-              <div className=" w-full h-full items-center justify-center flex py-10">
+              <div className=" w-full h-full items-center justify-center flex pt-10">
                 <div className="w-full items-center justify-center relative  ">
-                  <div className="relative  flex items-center justify-center h-[40vh] ">
+                  <div className="relative  flex flex-col items-start justify-center md:h-[40vh] ">
                     <div
                       id="videoDiv"
                       className="video-container flex flex-col h-full absolute z-0 w-full"
@@ -213,18 +213,37 @@ export default function HockeyMatch() {
                         fill
                       />
                     </div>
-                    <div className=" flex items-center absolute w-auto bottom-[5%]  z-10  text-black font-bold text-[2vw] left-[4%]    ">
-                      <span>
-                        Victory Comes to <br /> those prepared.
-                      </span>
-                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-11/12 h-full items-start justify-start flex flex-col gap-5 pb-5">
+                <div className=" flex items-center relative w-auto   z-10  text-black font-bold text-[4vw]   leading-none uppercase  ">
+                  <span>
+                    Victory Comes to <br /> those prepared.
+                  </span>
+                </div>
+                <div className="w-full h-  items-center justify-between flex">
+                  <span className="md:w-1/2 w-11/12">
+                    This case study meticulously examines how these intricate
+                    challenges were addressed, highlighting pivotal moments
+                    where strategic decisions either elevated the teams
+                    performance to new heights or underscored areas needing
+                    improvement.
+                  </span>
+                  <div className=" w-1/6  md:flex hidden   ">
+                    <Image
+                      className=" relativepos"
+                      src="/hockey/hmy.png" // Replace with your image path
+                      alt="Background 1"
+                      fill
+                    />
                   </div>
                 </div>
               </div>
               <div className="w-full h-full items-center justify-center flex">
                 <div className="grid grid-cols-12 items-center justify-center w-full">
-                  <div className="col-span-4 flex flex-col items-center justify-center bg-[#FE9A01] relative">
-                    <div className="relative  w-full h-[100vh]  object-cover ">
+                  <div className="md:col-span-4 col-span-12 flex flex-col items-center justify-center bg-[#FE9A01] relative">
+                    <div className="relative  w-full md:h-[100vh]  object-cover ">
                       <Image
                         className=" relativepos object-cover"
                         src="/hockey/aa.png" // Replace with your image path
@@ -257,7 +276,7 @@ export default function HockeyMatch() {
                         key={index}
                         className={`absolute transition-opacity duration-1000 ease-in-out top-[10%] left-[25%] ${
                           visibleIndex === index ? 'opacity-100' : 'opacity-0'
-                        } w-[15vw] h-[15vh]`}
+                        } md:w-[15vw] w-[40vw]  h-[15vh]`}
                       >
                         <Image
                           src={image.src}
@@ -269,7 +288,7 @@ export default function HockeyMatch() {
                     ))}
                   </div>
 
-                  <div className="col-span-8 flex flex-col items-center justify-center relative w-full">
+                  <div className="md:col-span-8 col-span-12 flex flex-col items-center justify-center relative w-full">
                     <div>
                       <ImageGallery images={images3} />
                     </div>
@@ -302,7 +321,7 @@ export default function HockeyMatch() {
                   <div className="col-span-12 items-center justify-center  font-bold text-3xl bg-yellow-600 py-3">
                     <VelocityScroll text="Frozen Battle Arena"></VelocityScroll>
                   </div>
-                  <div className="col-span-12 items-center justify-center">
+                  <div className="col-span-12 items-center justify-center md:block hidden ">
                     <HoverImageComponent />
                   </div>
                   <div className="col-span-12 relative group">

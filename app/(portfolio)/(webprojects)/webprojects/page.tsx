@@ -144,7 +144,7 @@ export default function Webprojects() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
+                          src="/mobileapps/vienna/vcard.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -195,7 +195,7 @@ export default function Webprojects() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
+                          src="/website/1947pa/1947card.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -246,7 +246,7 @@ export default function Webprojects() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
+                          src="/website/grammarnow/pscard.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -297,7 +297,7 @@ export default function Webprojects() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
+                          src="/website/kingdom/kccard.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -348,7 +348,7 @@ export default function Webprojects() {
                         className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
                       >
                         <source
-                          src="https://www.shutterstock.com/shutterstock/videos/1106877901/preview/stock-footage-super-slow-motion-of-piste-skier-running-down--day-austria-alps-europe-filmed-on-high.webm"
+                          src="/website/zar/zarcard.mp4"
                           type="video/mp4"
                         />
                       </video>

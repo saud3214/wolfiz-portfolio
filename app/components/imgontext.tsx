@@ -13,7 +13,7 @@ const HoverImageComponent: React.FC = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen   bg-hmbg1 bg-center bg-cover bg-no-repeat">
+    <div className="relative flex flex-col items-center justify-center md:h-screen   bg-hmbg1 bg-center bg-cover bg-no-repeat">
       {/* Text Section (Column Layout) */}
       <div className="flex flex-col space-y-4 text-start text-[4vw] text-white    font-bold uppercase  w-8/12 ">
         <span

@@ -219,14 +219,14 @@ export default function SixMortgage() {
                   </span>
                 </div>
               </div>
-              <div className="w-full flex flex-col h-[100vh] items-center justify-center gap-10">
+              <div className="w-full flex flex-col h-[100vh] items-center justify-center md:gap-10 gap-5">
                 <div className="grid grid-cols-12 py-10 h-full ">
-                  <div className="col-span-5 flex flex-col items-start justify-center px-20">
-                    <span className="text-4xl font-bold text-[#887a31]">
+                  <div className="md:col-span-5 col-span-12 flex flex-col items-start justify-center md:px-20 px-5">
+                    <span className="md:text-4xl text-3xl font-bold text-[#887a31]">
                       Problem Statement
                     </span>
                     <RevealOnScroll>
-                      <span className="text-6xl font-bold pt-5">
+                      <span className="md:text-6xl text-4xl font-bold pt-5">
                         Expert Tailored <br />
                         Mortgage <br /> Solutions
                       </span>
@@ -248,18 +248,18 @@ export default function SixMortgage() {
                       their website.
                     </p>
                   </div>
-                  <div className="col-span-7 flex items-end h-full">
+                  <div className="md:col-span-7 col-span-12 flex items-end h-full px-5">
                     <MarqueeDemo />
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-center flex h-[100vh] ">
+              <div className="w-full items-center justify-center flex md:h-[100vh] h-[50vh] ">
                 <div className="flex h-full w-full flex-col relative">
                   <div className="w-full h-full bg-black"></div>
                   <div className="w-full h-full bg-white"></div>
 
-                  <div className="w-3/4 h-[50vh] absolute top-[10%] left-[20%] object-contain">
-                    <div className="  relative w-9/12  ">
+                  <div className="md:w-3/4 w-11/12 absolute md:top-[10%] top-[20%] md:left-[20%] left-[5%] object-contain">
+                    <div className="  relative md:w-9/12 w-full  ">
                       <Image
                         className=" relativepos"
                         src="/6ixmortgage/laptop.gif"
@@ -270,43 +270,45 @@ export default function SixMortgage() {
                   </div>
                 </div>
               </div>
-              <div className="w-11/12 items-start justify-start grid grid-cols-12  py-10  ">
+              <div className="w-11/12 items-start justify-start grid grid-cols-12  md:py-10  ">
                 <div className="col-span-6 flex  pb-10">
                   <RevealOnScroll>
-                    <span className="font-bold text-3xl">Roboto</span>
+                    <span className="md:font-bold font-semibold text-3xl">
+                      Roboto
+                    </span>
                   </RevealOnScroll>
                 </div>
                 <div className="col-span-6 pb-10 ">
                   <RevealOnScroll>
-                    <span className=" text-2xl">
+                    <span className=" md:text-2xl text-xl">
                       Using the Roboto font in a web app is a great choice due
                       to its readability and modern look.
                     </span>
                   </RevealOnScroll>
                 </div>
-                <div className=" col-span-12 h-1 rounded-3xl bg-[#887A31] mb-10"></div>
+                <div className=" col-span-12 h-1 rounded-3xl bg-[#887A31] md:mb-10"></div>
 
-                <div className="col-span-4 items-center justify-start flex flex-col py-10">
+                <div className="md:col-span-4 col-span-12 items-center justify-start flex flex-col md:py-10">
                   {words.map((word, index) => (
                     <span
                       key={index}
                       className={`${
                         ptserif.className
-                      } text-[25rem] font-bold leading-none ${
+                      } md:text-[25rem] text-[15rem] font-bold leading-none ${
                         index === currentIndex ? 'block' : 'hidden'
                       }`}
                     >
                       {word}
                     </span>
                   ))}
-                  <span className="font-bold text-4xl 2xl:px-20">
+                  <span className="md:font-bold md:text-4xl text-xl 2xl:px-20">
                     Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt
                     Uu Vv Ww Xx Yy Zz
                   </span>
                 </div>
-                <div className="col-span-8 flex flex-col items-center justify-center h-full">
+                <div className="md:col-span-8 col-span-12 flex flex-col items-center justify-center h-full py-5 md:py-0">
                   <div className="flex w-full items-start justify-center">
-                    <span className=" text-xl">
+                    <span className=" md:text-xl text-lg">
                       <span className="font-bold">1E1E1E:</span>
                       <br />A very dark shade of gray, almost black. Its often
                       used for backgrounds or as a base color to create a sleek,
@@ -325,7 +327,7 @@ export default function SixMortgage() {
                       stand out, or to create a clean, modern look in design.
                     </span>
                   </div>
-                  <div className="w-full flex items-center justify-around bg-[#887833] mt-10 hover:bg-black p-10 ">
+                  <div className="w-full md:flex hidden items-center justify-around bg-[#887833] mt-10 hover:bg-black p-10 ">
                     <div className="relative  rotate-90 ">
                       <Image
                         className=" relativepos"
@@ -340,7 +342,7 @@ export default function SixMortgage() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-start justify-start grid grid-cols-12  p-10  bg-[#887A31] gap-10">
+              <div className="w-full items-start justify-start grid grid-cols-12  md:p-10 p-5  bg-[#887A31] md:gap-10 gap-5">
                 <div className="col-span-5 flex flex-col items-center  justify-center gap-10">
                   <div className="relative  w-10/12 ">
                     <SrLeft>
@@ -376,8 +378,8 @@ export default function SixMortgage() {
                   </div>
                 </div>
               </div>
-              <div className="w-full items-center justify-cneter grid grid-cols-12 py-10 gap-10 ">
-                <div className=" col-span-6 flex flex-col items-start justify-start pe-10 gap-10">
+              <div className="md:w-full w-11/12 items-center justify-cneter grid grid-cols-12 py-10 md:gap-10 gap-5 ">
+                <div className=" md:col-span-6 col-span-12 flex flex-col items-start justify-start md:pe-10 md:gap-10 gap-5">
                   <div className="relative  w-11/12  ">
                     <Image
                       className=" relativepos"
@@ -386,9 +388,9 @@ export default function SixMortgage() {
                       fill
                     />
                   </div>
-                  <div className="w-full h-[90vh]">
+                  <div className="w-full md:h-[90vh]">
                     <video
-                      className="roundvideo object-cover h-[90vh] "
+                      className="roundvideo object-cover md:h-[90vh] "
                       autoPlay
                       muted
                       loop
@@ -399,12 +401,12 @@ export default function SixMortgage() {
                     </video>
                   </div>
                 </div>
-                <div className="col-span-6 flex flex-col items-start justify-start gap-10 h-full pe-20">
-                  <span className="text-[#887a31] font-bold text-4xl mt-4">
+                <div className="md:col-span-6 col-span-12 flex flex-col items-start justify-start md:gap-10 gap-5 h-full md:pe-20 pe-5">
+                  <span className="text-[#887a31] font-bold md:text-4xl text-2xl mt-4">
                     Solution Statement
                   </span>
                   <RevealOnScroll>
-                    <span className="font-bold text-7xl">
+                    <span className="font-bold md:text-7xl text-4xl">
                       Blueprints for <br />
                       Sustainable <br />
                       Financial Success
@@ -437,10 +439,10 @@ export default function SixMortgage() {
                   </span>
                 </div>
               </div>
-              <div className="w-11/12 items-center justify-center grid grid-cols-12 py-10">
-                <div className="col-span-12 h-[90vh]">
+              <div className="w-11/12 items-center justify-center grid grid-cols-12 md:py-10">
+                <div className="col-span-12 md:h-[90vh]">
                   <video
-                    className="roundvideo object-cover h-[90vh] "
+                    className="roundvideo object-cover md:h-[90vh] "
                     autoPlay
                     muted
                     loop
@@ -450,14 +452,14 @@ export default function SixMortgage() {
                     <source src="/6ixmortgage/video.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <div className="col-span-6 items-start justify-center flex flex-col my-10">
+                <div className="md:col-span-6 col-span-12 items-start justify-center flex flex-col my-10">
                   <SrLeft>
-                    <span className="text-[#887a31] font-bold text-4xl ">
+                    <span className="text-[#887a31] font-bold md:text-4xl text-2xl ">
                       Finance Mastery
                     </span>
                   </SrLeft>
                   <SrLeft>
-                    <span className="font-bold text-7xl mt-5">
+                    <span className="font-bold md:text-7xl text-4xl mt-5">
                       Designing Financial <br />
                       Masterpieces
                       <br />
@@ -465,7 +467,7 @@ export default function SixMortgage() {
                     </span>
                   </SrLeft>
                 </div>
-                <div className="col-span-6 items-start justify-start flex h-full py-10">
+                <div className="md:col-span-6 col-span-12 items-start justify-start flex h-full md:py-10 pb-10 md:pb-10">
                   <div className="relative  h-[50vh] object-cover ">
                     <Image
                       className=" relativepos object-cover"
@@ -488,7 +490,7 @@ export default function SixMortgage() {
                   </div>
                 </div>
               </div>
-              <div className="w-full flex items-start justify-start h-[80vh] relative p-10 px-20">
+              <div className="w-full flex items-start justify-start md:h-[80vh] h-[60vh] relative p-10 md:px-20">
                 <video
                   className="h-full object-cover w-full absolute top-0 left-0"
                   autoPlay
@@ -499,17 +501,17 @@ export default function SixMortgage() {
                 >
                   <source src="/6ixmortgage/last.mp4" type="video/mp4" />
                 </video>
-                <div className="z-10 flex items-start justify-between flex-col h-full text-white">
+                <div className="z-10 flex items-start md:justify-between justify-center gap-5 md:gap-0 flex-col h-full text-white">
                   <SrLeft>
-                    <span className="font-bold text-6xl  text-white">
+                    <span className="font-bold md:text-6xl text-3xl  text-white">
                       Build Your financial <br />
                       future with precision
                       <br />
                       and vision
                     </span>
                   </SrLeft>
-                  <div className="w-full items-center justify-between flex">
-                    <span className="w-2/4">
+                  <div className="w-full items-center md:justify-between justify-center flex flex-col md:flex-row">
+                    <span className="md:w-2/4 w-11/12">
                       Just as every detail matters in your designs, so does
                       every financial decision. Precision in your architectural
                       work is mirrored by careful financial planning, ensuring
@@ -517,7 +519,7 @@ export default function SixMortgage() {
                       future. Treat your finances with the same dedication and
                       foresight that you bring to your projects.
                     </span>
-                    <div className="relative  w-1/4  ">
+                    <div className="relative  md:w-1/4 w-1/2  ">
                       <Image
                         className=" relativepos"
                         src="/6ixmortgage/logo2.png"

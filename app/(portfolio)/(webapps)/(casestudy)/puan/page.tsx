@@ -51,8 +51,8 @@ export default function Puan() {
         className={` w-full items-center justify-center flex flex-col max-w-[1920px]  ${urbanist.className} `}
       >
         <div className=" grid grid-cols-12 items-center justify-center   w-full   bg-puanbg1 bg-bottom bg-no-repeat bg-contain h-[80vh] mb-10">
-          <div className="col-span-6 bg-[#C4161C] bg-opacity-90 h-full w-full items-center justify-center flex p-3 relative">
-            <div className="relative  w-10/12  ">
+          <div className="md:col-span-6 col-span-12 bg-[#C4161C] bg-opacity-90 h-full w-full items-center justify-center flex p-3 relative">
+            <div className="relative w-10/12 ">
               <Image
                 className=" relativepos"
                 src="/puan/t1.png" // Replace with your image path
@@ -69,37 +69,41 @@ export default function Puan() {
               />
             </div>
           </div>
-          <div className="col-span-6  bg-opacity-25 h-full w-full">
+          <div className="w-full h-full col-span-12 bg-opacity-25 md:col-span-6">
             <MarqueePuan1 />
           </div>
         </div>
-        <div className=" grid grid-cols-12 items-center justify-center   w-11/12 py-10 ">
-          <div className="col-span-6 items-center justify-center w-full flex">
-            <div className="relative  w-3/5  ">
-              <Image
-                className=" relativepos"
-                src="/puan/loo2.png" // Replace with your image path
-                alt="Background 1"
-                fill
-              />
+        <div className="grid items-center justify-center w-11/12 grid-cols-12 gap-5 py-5 md:py-10 md:gap-0">
+          <div className="flex items-center justify-center w-full col-span-6">
+            <div className="relative w-full md:w-3/5 ">
+              <SrLeft>
+                <Image
+                  className=" relativepos"
+                  src="/puan/loo2.png" // Replace with your image path
+                  alt="Background 1"
+                  fill
+                />
+              </SrLeft>
             </div>
           </div>
-          <div className="col-span-6 items-center justify-center w-full flex">
-            <div className="relative  w-10/12  ">
-              <Image
-                className=" relativepos"
-                src="/puan/t3.png" // Replace with your image path
-                alt="Background 1"
-                fill
-              />
+          <div className="flex items-center justify-center w-full col-span-6">
+            <div className="relative w-full md:w-10/12 ">
+              <SrBottom>
+                <Image
+                  className=" relativepos"
+                  src="/puan/t3.png" // Replace with your image path
+                  alt="Background 1"
+                  fill
+                />
+              </SrBottom>
             </div>
           </div>
         </div>
-        <div className=" grid grid-cols-12 items-center justify-center   w-full py-10  ">
+        <div className="grid items-center justify-center w-full grid-cols-12 py-5 md:py-10">
           <div className="col-span-12 ">
-            <div className="w-full h-[80vh] items-center justify-center flex">
+            <div className="w-full md:h-[80vh] items-center justify-center flex">
               <video
-                className=" w-full h-full object-cover z-0"
+                className="z-0 object-cover w-full h-full "
                 autoPlay
                 muted
                 loop
@@ -111,9 +115,9 @@ export default function Puan() {
             </div>
           </div>
         </div>
-        <div className=" grid grid-cols-11 items-center justify-center   w-11/12 py-10  ">
-          <div className="col-span-11 items-start pb-10  ">
-            <div className="relative  w-1/4  ">
+        <div className="grid items-center justify-center w-11/12 grid-cols-12 py-5 md:grid-cols-11 md:py-10">
+          <div className="items-start col-span-12 pb-5 md:col-span-11 md:pb-10 ">
+            <div className="relative w-1/2 md:w-1/ ">
               <Image
                 className=" relativepos"
                 src="/puan/t4.png" // Replace with your image path
@@ -122,44 +126,44 @@ export default function Puan() {
               />
             </div>
           </div>
-          <div className="col-span-2 h-full">
-            <div className="flex justify-center items-end h-full">
+          <div className="md:col-span-2 col-span-3 md:h-full h-[20vh]">
+            <div className="flex items-end justify-center h-full">
               <div className="group relative w-10/12 bg-[#3B3B6D] transition-all duration-500 ease-in-out h-2/3 hover:h-full overflow-hidden">
-                <p className="absolute top-[15%] left-1/2 transform -translate-x-1/2 -translate-y-full group-hover:translate-y-0 -rotate-90 text-white text-2xl font-bold transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
+                <p className="absolute top-[15%] left-1/2 transform -translate-x-1/2 -translate-y-full group-hover:translate-y-0 -rotate-90 text-white md:text-2xl text-sm md:font-bold font-semibold transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
                   Bold Italic
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-span-2 h-full">
-            <div className="flex justify-center items-end h-full">
+          <div className="h-full col-span-3 md:col-span-2">
+            <div className="flex items-end justify-center h-full">
               <div className="group relative w-10/12 bg-[#C3072F] transition-all duration-500 ease-in-out h-2/3 hover:h-full overflow-hidden">
-                <p className="absolute top-[15%] left-1/2 transform -translate-x-1/2 -translate-y-full group-hover:translate-y-0 -rotate-90 text-white text-2xl font-bold transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
+                <p className="absolute top-[15%] left-1/2 transform -translate-x-1/2 -translate-y-full group-hover:translate-y-0 -rotate-90 text-white md:text-2xl text-sm md:font-bold font-semibold transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
                   Regular
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-span-2 h-full">
-            <div className="flex justify-center items-end h-full">
+          <div className="h-full col-span-3 md:col-span-2">
+            <div className="flex items-end justify-center h-full">
               <div className="group relative w-10/12 bg-[#090756] transition-all duration-500 ease-in-out h-2/3 hover:h-full overflow-hidden">
-                <p className="absolute top-[15%] left-1/2 transform -translate-x-1/2 -translate-y-full group-hover:translate-y-0 -rotate-90 text-white text-2xl font-bold transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
+                <p className="absolute top-[15%] left-1/2 transform -translate-x-1/2 -translate-y-full group-hover:translate-y-0 -rotate-90 text-white md:text-2xl text-base md:font-bold font-semibold transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
                   Bold
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-span-2 h-full">
-            <div className="flex justify-center items-end h-full">
+          <div className="h-full col-span-3 md:col-span-2 ">
+            <div className="flex items-end justify-center h-full">
               <div className="group relative w-10/12 bg-[#005B31] transition-all duration-500 ease-in-out h-2/3 hover:h-full overflow-hidden">
-                <p className="absolute top-[15%] left-1/2 transform -translate-x-1/2 -translate-y-full group-hover:translate-y-0 -rotate-90 text-white text-2xl font-bold transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
+                <p className="absolute top-[15%] left-1/2 transform -translate-x-1/2 -translate-y-full group-hover:translate-y-0 -rotate-90 text-white md:text-2xl text-base md:font-bold font-semibold transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
                   Inter
                 </p>
               </div>
             </div>
           </div>
-          <div className="col-span-3 p-3">
-            <div className="relative  w-full  ">
+          <div className="flex items-center justify-center col-span-12 p-3 md:col-span-3">
+            <div className="relative w-11/12 md:w-full ">
               <Image
                 className=" relativepos"
                 src="/puan/aa.png" // Replace with your image path
@@ -170,9 +174,9 @@ export default function Puan() {
           </div>
         </div>
 
-        <div className=" grid grid-cols-12 items-center justify-center   w-11/12 py-10  ">
-          <div className="col-span-12 items-start pb-10  ">
-            <div className="relative  w-1/4  ">
+        <div className="grid items-center justify-center w-11/12 grid-cols-12 py-5 md:py-10">
+          <div className="items-start col-span-12 pb-10 ">
+            <div className="relative w-1/2 md:w-1/4 ">
               <Image
                 className=" relativepos"
                 src="/puan/t5.png" // Replace with your image path
@@ -181,8 +185,8 @@ export default function Puan() {
               />
             </div>
           </div>
-          <div className="col-span-12 items-center justify-center flex  relative group ">
-            <div className="relative  w-9/12  ">
+          <div className="relative flex items-center justify-center col-span-12 group ">
+            <div className="relative w-full md:w-9/12 ">
               <Image
                 className=" relativepos"
                 src="/puan/lap2.png" // Replace with your image path
@@ -257,9 +261,9 @@ export default function Puan() {
           </div>
         </div>
 
-        <div className=" grid grid-cols-12 items-center justify-center   w-full h-[70vh] pt-10  ">
-          <div className="col-span-12 items-center justify-center flex w-full h-full">
-            <div className="flex justify-center items-center w-full h-full">
+        <div className=" grid grid-cols-12 items-center justify-center   w-full md:h-[70vh] h-[30vh] pt-10  ">
+          <div className="flex items-center justify-center w-full h-full col-span-12">
+            <div className="flex items-center justify-center w-full h-full">
               <div className="relative w-full h-full overflow-hidden">
                 {slides.map((slide, index) => (
                   <div
@@ -283,11 +287,11 @@ export default function Puan() {
           </div>
         </div>
 
-        <div className=" grid grid-cols-12 items-center justify-center   w-full h-[80vh]  ">
-          <div className="col-span-12 items-center justify-center flex w-full h-full">
-            <div className="relative flex overflow-x-hidden gap-5">
-              <div className="py-5 animate-marquee whitespace-nowrap flex gap-5">
-                <div className="relative  w-1/4  ">
+        <div className=" grid grid-cols-12 items-center justify-center   w-full md:h-[80vh] md:py-10  py-5 ">
+          <div className="flex items-center justify-center w-full h-full col-span-12">
+            <div className="relative flex gap-5 overflow-x-hidden">
+              <div className="flex gap-5 py-5 animate-marquee whitespace-nowrap">
+                <div className="relative w-1/2 md:w-1/4 ">
                   <Image
                     className=" relativepos"
                     src="/puan/m1.png" // Replace with your image path
@@ -295,7 +299,7 @@ export default function Puan() {
                     fill
                   />
                 </div>
-                <div className="relative  w-1/4  ">
+                <div className="relative w-1/2 md:w-1/4 ">
                   <Image
                     className=" relativepos"
                     src="/puan/m2.png" // Replace with your image path
@@ -303,7 +307,7 @@ export default function Puan() {
                     fill
                   />
                 </div>
-                <div className="relative  w-1/4  ">
+                <div className="relative w-1/2 md:w-1/4 ">
                   <Image
                     className=" relativepos"
                     src="/puan/m3.png" // Replace with your image path
@@ -311,7 +315,7 @@ export default function Puan() {
                     fill
                   />
                 </div>
-                <div className="relative  w-1/4  ">
+                <div className="relative w-1/2 md:w-1/4 ">
                   <Image
                     className=" relativepos"
                     src="/puan/m4.png" // Replace with your image path
@@ -321,8 +325,8 @@ export default function Puan() {
                 </div>
               </div>
 
-              <div className="absolute top-0 py-5 animate-marquee2 whitespace-nowrap flex gap-5 ml-6">
-                <div className="relative  w-1/4  ">
+              <div className="absolute top-0 flex h-full gap-5 py-5 ml-6 animate-marquee2 whitespace-nowrap">
+                <div className="relative w-1/2 h-full md:w-1/4 ">
                   <Image
                     className=" relativepos"
                     src="/puan/m1.png" // Replace with your image path
@@ -330,7 +334,7 @@ export default function Puan() {
                     fill
                   />
                 </div>
-                <div className="relative  w-1/4  ">
+                <div className="relative w-1/2 md:w-1/4 ">
                   <Image
                     className=" relativepos"
                     src="/puan/m2.png" // Replace with your image path
@@ -338,7 +342,7 @@ export default function Puan() {
                     fill
                   />
                 </div>
-                <div className="relative  w-1/4  ">
+                <div className="relative w-1/4 ">
                   <Image
                     className=" relativepos"
                     src="/puan/m3.png" // Replace with your image path
@@ -346,7 +350,7 @@ export default function Puan() {
                     fill
                   />
                 </div>
-                <div className="relative  w-1/4  ">
+                <div className="relative w-1/4 ">
                   <Image
                     className=" relativepos"
                     src="/puan/m4.png" // Replace with your image path
@@ -358,9 +362,9 @@ export default function Puan() {
             </div>
           </div>
         </div>
-        <div className=" grid grid-cols-12 items-center justify-center   w-full  pb-10 group relative  ">
-          <div className="col-span-12 items-center justify-center flex py-5 ">
-            <div className="relative  w-9/12  ">
+        <div className="relative grid items-center justify-center w-full grid-cols-12 pb-10 group">
+          <div className="flex items-center justify-center col-span-12 py-5 ">
+            <div className="relative w-9/12 ">
               <Image
                 className=" relativepos"
                 src="/puan/t6.png" // Replace with your image path

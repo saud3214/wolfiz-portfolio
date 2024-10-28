@@ -574,6 +574,9 @@ ol {
   list-style: decimal-leading-zero;
 }
 
+svg {
+  width: 20vw;
+}
 .color-loop {
   animation: colorChange 3s infinite;
 }

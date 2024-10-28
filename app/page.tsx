@@ -62,18 +62,14 @@ export default function Home() {
     links.forEach((el) => addListeners(el));
   }, []);
   return (
-    <div className="  h-full w-full flex-col items-center lg:p-12 ">
+    <div className="flex-col items-center w-full h-full lg:p-12">
       <div className="videoContainer">
-        <video
-          className="roundvideo"
-          autoPlay
-          muted
-          loop
-          preload="auto"
-          playsInline
-        >
-          <source src="../bg-video.mp4" type="video/mp4" />
-        </video>
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src="https://player.vimeo.com/video/1023848873?autoplay=1&muted=1&loop=1&background=1"
+          allow="autoplay; fullscreen;"
+          allowFullScreen
+        ></iframe>
       </div>
       <div className="background-images-wrapper">
         {/* <div className="layer layer--default"></div> */}
@@ -103,14 +99,14 @@ export default function Home() {
         </div>
         <div className="relative w-full h-full">
           <Image
-            className="layer w-full h-full"
+            className="w-full h-full layer"
             src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80"
             fill
             alt="Background 1"
           />
         </div>
-        <div className="flex w-11/12 items-center justify-between   ">
-          <ul className="link-list lg:text-6xl text-4xl">
+        <div className="flex items-center justify-between w-11/12 ">
+          <ul className="text-4xl link-list lg:text-6xl">
             <li data-index="1" id="showWebproject">
               <Link
                 href="/webprojects"
@@ -150,7 +146,7 @@ export default function Home() {
                 height={20}
                 alt="Facebook"
                 src="/svg/facebook-f.svg"
-                className=" cursor-pointer"
+                className="cursor-pointer "
               />
               <Image
                 width={20}

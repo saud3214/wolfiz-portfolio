@@ -6,7 +6,7 @@ const firstRow = images.slice(0, images.length / 2);
 
 const ImageCard = ({ img }: { img: string }) => {
   return (
-    <div className="w-[40vw] p-5">
+    <div className="md:w-[40vw] w-[60vw] md:p-5">
       <Image className=" object-contain" alt="" src={img} fill />
     </div>
   );

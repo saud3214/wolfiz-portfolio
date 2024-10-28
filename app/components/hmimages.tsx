@@ -9,10 +9,9 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
-    <div className="flex justify-center items-center ">
-      <div className="flex w-full items-center justify-center gap-6">
-        {/* Left: Large image */}
-        <div className=" flex justify-center items-center w-1/2">
+    <div className="flex justify-center items-center w-full pt-5 md:pt-0 ">
+      <div className="flex w-full items-center justify-center md:gap-6 gap-3">
+        <div className=" flex justify-center items-center md:w-1/2 w-2/3">
           <Image
             src={selectedImage}
             alt="Selected"
@@ -21,7 +20,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           />
         </div>
 
-        {/* Right: Small image column */}
         <div className="flex flex-col gap-6">
           {images.map((img, index) => (
             <div
