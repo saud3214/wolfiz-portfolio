@@ -16,6 +16,7 @@ import {
   GradientFlowText,
   BounceSpinText,
 } from '../../../components/animatedtext';
+import { motion } from 'framer-motion';
 
 import { Mousewheel, EffectFade, Pagination } from 'swiper/modules';
 SwiperCore.use([Mousewheel, EffectFade, Pagination]);
@@ -28,6 +29,10 @@ const pridi = Pridi({
   subsets: ['latin'], // Adjust the subsets according to your needs
   weight: ['400', '700', '600'], // Add the weights you need
 });
+const flipAnimation = {
+  initial: { rotateX: 180 },
+  animate: { rotateX: 360, transition: { duration: 1, ease: 'easeInOut' } },
+};
 export default function Webprojects() {
   const swiperRef = useRef<SwiperCore | null>(null);
   const interleaveOffset = 0.8; // Adjust this value as needed
@@ -129,26 +134,35 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                    <div
-                      id="videoDiv"
-                      className="video-container flex flex-col h-[24vh] w-full object-cover "
+
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%] ">
+                    <motion.div
+                      className="flip-container"
+                      variants={flipAnimation}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: false }}
                     >
-                      <video
-                        id="roundvideo"
-                        autoPlay
-                        muted
-                        loop
-                        preload="yes"
-                        playsInline
-                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      <div
+                        id="videoDiv"
+                        className="video-container flex flex-col h-[24vh] w-full object-cover   "
                       >
-                        <source
-                          src="/mobileapps/vienna/vcard.mp4"
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
+                        <video
+                          id="roundvideo"
+                          autoPlay
+                          muted
+                          loop
+                          preload="yes"
+                          playsInline
+                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                        >
+                          <source
+                            src="/mobileapps/vienna/vcard.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -181,25 +195,33 @@ export default function Webprojects() {
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                    <div
-                      id="videoDiv"
-                      className="video-container flex flex-col h-[24vh] w-full object-cover "
+                    <motion.div
+                      className="flip-container"
+                      variants={flipAnimation}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true }}
                     >
-                      <video
-                        id="roundvideo"
-                        autoPlay
-                        muted
-                        loop
-                        preload="yes"
-                        playsInline
-                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      <div
+                        id="videoDiv"
+                        className="video-container flex flex-col h-[24vh] w-full object-cover "
                       >
-                        <source
-                          src="/website/1947pa/1947card.mp4"
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
+                        <video
+                          id="roundvideo"
+                          autoPlay
+                          muted
+                          loop
+                          preload="yes"
+                          playsInline
+                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                        >
+                          <source
+                            src="/website/1947pa/1947card.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -231,26 +253,34 @@ export default function Webprojects() {
                     <button className="button arrow">Open Case Study</button>
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                    <div
-                      id="videoDiv"
-                      className="video-container flex flex-col h-[24vh] w-full object-cover "
+                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%] ">
+                    <motion.div
+                      className="flip-container"
+                      variants={flipAnimation}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: false }}
                     >
-                      <video
-                        id="roundvideo"
-                        autoPlay
-                        muted
-                        loop
-                        preload="yes"
-                        playsInline
-                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      <div
+                        id="videoDiv"
+                        className="video-container flex flex-col h-[24vh] w-full object-cover  "
                       >
-                        <source
-                          src="/website/grammarnow/pscard.mp4"
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
+                        <video
+                          id="roundvideo"
+                          autoPlay
+                          muted
+                          loop
+                          preload="yes"
+                          playsInline
+                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                        >
+                          <source
+                            src="/website/grammarnow/pscard.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -283,25 +313,33 @@ export default function Webprojects() {
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                    <div
-                      id="videoDiv"
-                      className="video-container flex flex-col h-[24vh] w-full object-cover "
+                    <motion.div
+                      className="flip-container"
+                      variants={flipAnimation}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: false }}
                     >
-                      <video
-                        id="roundvideo"
-                        autoPlay
-                        muted
-                        loop
-                        preload="yes"
-                        playsInline
-                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      <div
+                        id="videoDiv"
+                        className="video-container flex flex-col h-[24vh] w-full object-cover "
                       >
-                        <source
-                          src="/website/kingdom/kccard.mp4"
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
+                        <video
+                          id="roundvideo"
+                          autoPlay
+                          muted
+                          loop
+                          preload="yes"
+                          playsInline
+                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                        >
+                          <source
+                            src="/website/kingdom/kccard.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -334,25 +372,33 @@ export default function Webprojects() {
                   </Link>
                   <div className="lg:h-[10vh] h-[3vh] "></div>
                   <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                    <div
-                      id="videoDiv"
-                      className="video-container flex flex-col h-[24vh] w-full object-cover "
+                    <motion.div
+                      className="flip-container"
+                      variants={flipAnimation}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: false }}
                     >
-                      <video
-                        id="roundvideo"
-                        autoPlay
-                        muted
-                        loop
-                        preload="yes"
-                        playsInline
-                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      <div
+                        id="videoDiv"
+                        className="video-container flex flex-col h-[24vh] w-full object-cover "
                       >
-                        <source
-                          src="/website/zar/zarcard.mp4"
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
+                        <video
+                          id="roundvideo"
+                          autoPlay
+                          muted
+                          loop
+                          preload="yes"
+                          playsInline
+                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                        >
+                          <source
+                            src="/website/zar/zarcard.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>

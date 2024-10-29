@@ -269,19 +269,42 @@ export default function PartitionArchive() {
                 </div>
               </div>
               <div className="w-full items-center justify-center flex md:h-[100vh] h-[70vh] relative">
-                <div className="w-full h-full items-center justify-center flex flex-col align-text-top relative">
+                {/* Background Video */}
+                <div className="w-full h-full absolute top-0 left-0">
                   <video
-                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                    className="w-full h-full object-cover"
                     autoPlay
                     muted
                     loop
                     playsInline
                   >
-                    <source src="/website/1947pa/f1.mp4" type="video/mp4" />
+                    <source
+                      src="/website/1947pa/bgvideo2.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+
+                {/* Centered Video */}
+                <div className="flex flex-col items-center justify-center w-full h-full relative z-10">
+                  <span className="text-black text-6xl font-bold mb-10">
+                    TYPOGRAPHY
+                  </span>
+
+                  <video
+                    className="max-w-[40%] max-h-[40%]"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src="/website/1947pa/video2.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
               </div>
+
               <div className="w-full items-center justify-center flex ">
                 <div className="grid grid-cols-12 items-center justify-center w-11/12   pt-5 mb-10 gap-5 lg:gap-0  ">
                   <div className="col-span-6 items-center justify-center ">

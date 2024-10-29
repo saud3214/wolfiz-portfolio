@@ -9,20 +9,12 @@ import { Mousewheel, EffectFade, Autoplay } from 'swiper/modules';
 import { MarqueeDemo } from '@/app/components/cards6';
 
 import GradualSpacing from '@/components/magicui/gradual-spacing';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import useSmoothScroll from '@/app/components/ss';
 import {
   SrLeft,
   SrRight,
   SrBottom,
-  SrTop,
   RevealOnScroll,
-  RotateImage,
-  RotateText,
-  RevealOnScrollXImage,
-  TopImage,
-  BottomImage,
-  RevealOnScrollLeft,
 } from '@/app/components/revealelement';
 
 const urbanist = Roboto({
@@ -81,9 +73,9 @@ export default function SixMortgage() {
         <div className="flex items-center justify-center w-full ">
           <div className=" grid grid-cols-12 items-center justify-center   w-full  max-w-[1920px] ">
             <div className="flex flex-col items-center justify-center w-full col-span-12 ">
-              <div className="w-full h-[100vh] flex  items-start justify-center bg-[#887833]">
+              <div className="w-full md:h-[100vh] flex  items-start justify-center bg-[#887833]">
                 <div className="grid grid-cols-12  w-full ">
-                  <div className="col-span-1 flex items-center justify-center">
+                  <div className="md:col-span-1 col-span-12 flex items-center justify-center order-2 md:order-1">
                     {isExpanded && (
                       <div className="w-full flex items-center justify-center bg-black/20 backdrop-blur-lg h-full  relative ">
                         <span className="text-white font-bold text-5xl   ">
@@ -101,7 +93,7 @@ export default function SixMortgage() {
                     )}
                   </div>
 
-                  <div className="col-span-3 flex flex-col items-start justify-between py-[10%] ">
+                  <div className="md:col-span-3 col-span-12 flex flex-col items-start justify-between md:py-[10%] order-3 md:order-2 ">
                     <div className="relative  w-1/2  ">
                       <Image
                         className=" relativepos"
@@ -110,17 +102,17 @@ export default function SixMortgage() {
                         fill
                       />
                     </div>
-                    <div className="  flex flex-col  ">
+                    <div className="  flex flex-col h-[25vh]  md:h-auto ">
                       {!isExpanded && (
-                        <span className="font-bold text-4xl text-white py-5">
+                        <span className="font-bold md:text-4xl text-xl text-white py-5">
                           Architect
                         </span>
                       )}
                       {!isExpanded && (
-                        <div className="h-[16vh] flex items-center ">
-                          <div className="flex items-center justify-center  h-40 absolute">
+                        <div className="md:h-[16vh]  flex items-center ">
+                          <div className="flex items-center justify-center  md:h-40 absolute">
                             <GradualSpacing
-                              className={`text-[8vw] font-bold text-white  ${ptserif.className} leading-[10vh] `}
+                              className={`md:text-[8vw] text-6xl font-bold text-white  ${ptserif.className} leading-none `}
                               text="Mortgage"
                             />
                           </div>
@@ -143,7 +135,7 @@ export default function SixMortgage() {
 
                           <div
                             ref={cardRef} // Assign ref to card element
-                            className={`bg-white shadow-md overflow-hidden p-5 absolute bottom-[10%] left-[8.5%] gap-10 w-1/3 transform transition-all duration-500 ease-in-out ${
+                            className={`bg-white shadow-md overflow-hidden md:p-5 p-2 absolute bottom-[10%] left-[8.5%] md:gap-10 md:w-1/3 w-11/12 transform transition-all duration-500 ease-in-out ${
                               isExpanded
                                 ? 'opacity-100 translate-y-0 scale-100'
                                 : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
@@ -151,7 +143,7 @@ export default function SixMortgage() {
                           >
                             <div className="uppercase  text-[#887a31] font-semibold flex w-full items-center justify-between">
                               Case Study
-                              <div className="relative  size-12  ">
+                              <div className="relative  md:size-12 size-8  ">
                                 <Image
                                   className=" relativepos"
                                   src="/6ixmortgage/csl.png"
@@ -161,16 +153,16 @@ export default function SixMortgage() {
                               </div>
                             </div>
                             <h2
-                              className={` ${ptserif.className} block my-4 text-4xl font-bold text-black `}
+                              className={` ${ptserif.className} block md:my-4 my-2 md:text-4xl text-xl font-bold text-black `}
                             >
                               Tailored Mortgage Solutions with Expert Guidance
                               and Personalized Service
                             </h2>
-                            <span className="text-2xl mb-4 font-bold ">
+                            <span className="md:text-2xl  text-lg md:mb-4 mb-2 font-bold ">
                               Mortgage Architect
                             </span>
-                            <div className="h-1 w-2/3 bg-[#CFC1A7] my-4"></div>
-                            <p className="mt-4 text-gray-600">
+                            <div className="h-1 md:w-2/3 w-11/12 bg-[#CFC1A7] md:my-4 my-2"></div>
+                            <p className="md:mt-4  mt-2 text-gray-600 md:text-base text-sm">
                               Mortgage Architect is a leading mortgage brokerage
                               firm that offers customized mortgage solutions to
                               clients across various financial backgrounds.
@@ -185,10 +177,10 @@ export default function SixMortgage() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-8 flex items-center justify-center h-full ">
-                    <div className=" w-full  h-[100vh]">
+                  <div className="md:col-span-8 col-span-12 flex items-center justify-center h-full order-1 md:order-3 ">
+                    <div className=" w-full  md:h-[100vh] h-[50vh]">
                       <video
-                        className="roundvideo h-[100vh]"
+                        className="roundvideo md:h-[100vh]"
                         autoPlay
                         muted
                         loop

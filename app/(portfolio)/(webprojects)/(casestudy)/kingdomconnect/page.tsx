@@ -14,6 +14,7 @@ import AvatarCircles from '@/components/ui/avatar-circles';
 import { SrLeft, SrRight, SrBottom } from '@/app/components/revealelement';
 import { AnimatedText2 } from '@/app/components/animatedtext';
 import ImageStack from '@/app/components/imagecards';
+import ExpandingCardsVer from '@/app/components/cardsKCVer';
 const urbanist = Inria_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
@@ -149,7 +150,7 @@ export default function KingdomConnect() {
                 />
               </div>
               <div className="w-full items-center justify-center flex ">
-                <div className="grid grid-cols-12 w-11/12 ">
+                <div className="grid grid-cols-12 w-11/12 overflow-hidden ">
                   <div className="md:col-span-7 col-span-12 flex items-center justify-center bg-black ">
                     <div className="w-full  object-cover">
                       <video
@@ -185,8 +186,11 @@ export default function KingdomConnect() {
                       />
                     </div>
                   </div>
-                  <div className="col-span-12 flex items-center justify-center  my-10 overflow-hidden rotate-9 ">
+                  <div className="col-span-12 md:flex hidden items-center justify-center  my-10 overflow-hidden   ">
                     <ExpandingCards />
+                  </div>
+                  <div className="col-span-12 flex md:hidden items-center justify-center  my-10    ">
+                    <ExpandingCardsVer />
                   </div>
                   <div className="col-span-12 items-center justify-center md:flex flex-col gap-10 my-10 hidden ">
                     <span className="text-6xl font-bold capitalize text-[#6E3385]">
