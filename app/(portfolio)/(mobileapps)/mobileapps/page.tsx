@@ -10,7 +10,7 @@ import {
   csimages,
   backgroundimages,
 } from '../../(webprojects)/webprojects/animation';
-import { Archivo } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import { easeIn, motion } from 'framer-motion';
 import { SlideFromSide } from '../../../components/pagetransition';
 
@@ -24,7 +24,7 @@ import {
 import { Mousewheel, EffectFade, Pagination } from 'swiper/modules';
 SwiperCore.use([Mousewheel, EffectFade, Pagination]);
 
-const archivo = Archivo({
+const archivo = Poppins({
   subsets: ['latin'],
   weight: ['400', '700', '500', '600'],
 });
@@ -159,17 +159,17 @@ export default function Mobileapps() {
               </div>
             </div>
           </SwiperSlide> */}
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#E5E5E5] via-[#FE9900] to-[#FE4B10] flex items-center justify-center">
+          <SwiperSlide className=" swiper-slide bg-bg1 bg-center bg-cover bg-no-repeat flex items-center justify-center">
             <div className="grid grid-cols-12 slide-inner ">
               <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
                 <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                    <text className="target-text text-left text-black  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="YALAXI" />
                     </text>
                   </div>
                   <div className={archivo.className}>
-                    <span className="  text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
+                    <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
                       In Ticino we offer you state-of-the-art skin patches and
                       prostheses to forget about baldness, receding hairline and
                       thinning – without ever having to take them off, not even
@@ -210,17 +210,17 @@ export default function Mobileapps() {
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#fff] via-[#20B4E3] to-[#263C51] flex items-center justify-center">
+          <SwiperSlide className=" swiper-slide bg-bg2 bg-center bg-cover bg-no-repeat flex items-center justify-center">
             <div className="grid grid-cols-12 slide-inner ">
               <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
                 <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                    <text className="target-text text-left text-black  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="AVCONS" />
                     </text>
                   </div>
                   <div className={archivo.className}>
-                    <span className="  text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
+                    <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
                       In Ticino we offer you state-of-the-art skin patches and
                       prostheses to forget about baldness, receding hairline and
                       thinning – without ever having to take them off, not even
@@ -261,17 +261,17 @@ export default function Mobileapps() {
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#75DDDE] via-[#2CB1A9] to-[#053B3A] flex items-center justify-center">
+          <SwiperSlide className=" swiper-slide bg-bg3 bg-center bg-cover bg-no-repeat flex items-center justify-center">
             <div className="grid grid-cols-12 slide-inner ">
               <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
                 <div className="flex flex-col items-start titlendis">
                   <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                    <text className="target-text text-left text-black  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
                       <AnimatedText2 text="DOROOS" />
                     </text>
                   </div>
                   <div className={archivo.className}>
-                    <span className="  text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
+                    <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
                       In Ticino we offer you state-of-the-art skin patches and
                       prostheses to forget about baldness, receding hairline and
                       thinning – without ever having to take them off, not even

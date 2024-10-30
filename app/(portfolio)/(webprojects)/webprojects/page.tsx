@@ -7,8 +7,8 @@ import Link from 'next/link';
 import 'swiper/swiper-bundle.css';
 import SwiperCore from 'swiper';
 import { csimages, backgroundimages } from '../webprojects/animation';
-import { Archivo } from 'next/font/google';
-import { Pridi } from 'next/font/google';
+import { Poppins } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google';
 import { SlideFromSide } from '../../../components/pagetransition';
 import {
   AnimatedText,
@@ -21,11 +21,11 @@ import { motion } from 'framer-motion';
 import { Mousewheel, EffectFade, Pagination } from 'swiper/modules';
 SwiperCore.use([Mousewheel, EffectFade, Pagination]);
 
-const archivo = Archivo({
+const archivo = Poppins({
   subsets: ['latin'],
   weight: ['400', '700', '500', '600'],
 });
-const pridi = Pridi({
+const pridi = Playfair_Display({
   subsets: ['latin'], // Adjust the subsets according to your needs
   weight: ['400', '700', '600'], // Add the weights you need
 });
@@ -44,16 +44,29 @@ export default function Webprojects() {
       const swiper = swiperRef.current;
       if (swiper) {
         swiper.slides.forEach((slide: HTMLElement) => {
-          const slideProgress = (slide as any).progress; // Type casting here
+          const slideProgress = (slide as any).progress;
           const innerOffset = swiper.height * interleaveOffset;
-          const innerTranslate = slideProgress * innerOffset * -1;
+
+          // Restrict translation only for slides in the visible range
+          let innerTranslate = 0; // Default value for fully out-of-view slides
+
+          if (slideProgress >= -1 && slideProgress <= 1) {
+            innerTranslate = slideProgress * innerOffset * -1;
+          }
 
           gsap.set(slide.querySelector('.slide-inner'), {
             y: innerTranslate,
           });
+
+          if (slideProgress < -1 || slideProgress > 0) {
+            gsap.set(slide, { opacity: 0, visibility: 'hidden' });
+          } else {
+            gsap.set(slide, { opacity: 1, visibility: 'visible' });
+          }
         });
       }
     };
+
     const handleSetTransition = (slider: any, speed: number) => {
       const swiper = swiperRef.current;
       if (swiper) {
@@ -97,320 +110,328 @@ export default function Webprojects() {
   }, []);
 
   return (
-    <SlideFromSide>
-      <div className="  h-full w-full flex items-center  ">
-        <Swiper
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          loop={true}
-          direction="vertical"
-          mousewheel={true}
-          spaceBetween={0}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          effect="fade"
-          speed={1000}
-          className={`  w-full h-full items-center  slideclas swiper-container  ${pridi.className} `}
+    <div className="  h-full w-full flex items-center  ">
+      <div className="object-cover videoContainer">
+        <video
+          id="roundvideo"
+          autoPlay
+          muted
+          loop
+          preload="yes"
+          playsInline
+          className="object-cover w-full h-full"
         >
-          <SwiperSlide className=" swiper-slide bg-gradient-to-tl from-[#ffff] via-[#EA0000] to-black flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
-                  <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="VIENNA" />
-                    </text>
-                  </div>
-                  <div className={`text-left ${archivo.className}`}>
-                    <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
-                      In Ticino we offer you state-of-the-art skin patches and
-                      prostheses to forget about baldness, receding hairline and
-                      thinning – without ever having to take them off, not even
-                      for washing and playing sports!
-                    </span>
-                  </div>
-                  <Link href={'/vienna'} className="mt-8 ">
-                    <button className="button arrow">Open Case Study</button>
-                  </Link>
-                  <div className="lg:h-[10vh] h-[3vh] "></div>
-
-                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%] ">
-                    <motion.div
-                      className="flip-container"
-                      variants={flipAnimation}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: false }}
-                    >
-                      <div
-                        id="videoDiv"
-                        className="video-container flex flex-col h-[24vh] w-full object-cover   "
-                      >
-                        <video
-                          id="roundvideo"
-                          autoPlay
-                          muted
-                          loop
-                          preload="yes"
-                          playsInline
-                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                        >
-                          <source
-                            src="/mobileapps/vienna/vcard.mp4"
-                            type="video/mp4"
-                          />
-                        </video>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-vucard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#ffff] via-[#c29947] to-[#282c31] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
-                  <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="1947 PA" />
-                    </text>
-                  </div>
-                  <div className={`text-left ${archivo.className}`}>
-                    <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
-                      In Ticino we offer you state-of-the-art skin patches and
-                      prostheses to forget about baldness, receding hairline and
-                      thinning – without ever having to take them off, not even
-                      for washing and playing sports!
-                    </span>
-                  </div>
-                  <Link href={'/1947partitionarchive'} className="mt-8 ">
-                    <button className="button arrow">Open Case Study</button>
-                  </Link>
-                  <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                    <motion.div
-                      className="flip-container"
-                      variants={flipAnimation}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: true }}
-                    >
-                      <div
-                        id="videoDiv"
-                        className="video-container flex flex-col h-[24vh] w-full object-cover "
-                      >
-                        <video
-                          id="roundvideo"
-                          autoPlay
-                          muted
-                          loop
-                          preload="yes"
-                          playsInline
-                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                        >
-                          <source
-                            src="/website/1947pa/1947card.mp4"
-                            type="video/mp4"
-                          />
-                        </video>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-card1947  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#a2da8a] via-[#2188BB] to-[#7CB862] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
-                  <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="GRAMMAR" />
-                    </text>
-                  </div>
-                  <div className={`text-left ${archivo.className}`}>
-                    <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
-                      In Ticino we offer you state-of-the-art skin patches and
-                      prostheses to forget about baldness, receding hairline and
-                      thinning – without ever having to take them off, not even
-                      for washing and playing sports!
-                    </span>
-                  </div>
-                  <Link href={'/grammarnow'} className="mt-8 ">
-                    <button className="button arrow">Open Case Study</button>
-                  </Link>
-                  <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%] ">
-                    <motion.div
-                      className="flip-container"
-                      variants={flipAnimation}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: false }}
-                    >
-                      <div
-                        id="videoDiv"
-                        className="video-container flex flex-col h-[24vh] w-full object-cover  "
-                      >
-                        <video
-                          id="roundvideo"
-                          autoPlay
-                          muted
-                          loop
-                          preload="yes"
-                          playsInline
-                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                        >
-                          <source
-                            src="/website/grammarnow/pscard.mp4"
-                            type="video/mp4"
-                          />
-                        </video>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-gncard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-gray-400 via-[#FF7F40] to-[#6E3385] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
-                  <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="KINGDOM" />
-                    </text>
-                  </div>
-                  <div className={`text-left ${archivo.className}`}>
-                    <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
-                      In Ticino we offer you state-of-the-art skin patches and
-                      prostheses to forget about baldness, receding hairline and
-                      thinning – without ever having to take them off, not even
-                      for washing and playing sports!
-                    </span>
-                  </div>
-                  <Link href={'/kingdomconnect'} className="mt-8 ">
-                    <button className="button arrow">Open Case Study</button>
-                  </Link>
-                  <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                    <motion.div
-                      className="flip-container"
-                      variants={flipAnimation}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: false }}
-                    >
-                      <div
-                        id="videoDiv"
-                        className="video-container flex flex-col h-[24vh] w-full object-cover "
-                      >
-                        <video
-                          id="roundvideo"
-                          autoPlay
-                          muted
-                          loop
-                          preload="yes"
-                          playsInline
-                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                        >
-                          <source
-                            src="/website/kingdom/kccard.mp4"
-                            type="video/mp4"
-                          />
-                        </video>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-kccard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className=" swiper-slide bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-[#00a89f] to-[#066964] flex items-center justify-center">
-            <div className="slide-inner grid grid-cols-12    ">
-              <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
-                <div className="titlendis flex flex-col items-start">
-                  <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="ZAR" />
-                    </text>
-                  </div>
-                  <div className={`text-left ${archivo.className}`}>
-                    <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
-                      In Ticino we offer you state-of-the-art skin patches and
-                      prostheses to forget about baldness, receding hairline and
-                      thinning – without ever having to take them off, not even
-                      for washing and playing sports!
-                    </span>
-                  </div>
-                  <Link href={'/zarconsultancy'} className="mt-8 ">
-                    <button className="button arrow">Open Case Study</button>
-                  </Link>
-                  <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                    <motion.div
-                      className="flip-container"
-                      variants={flipAnimation}
-                      initial="initial"
-                      whileInView="animate"
-                      viewport={{ once: false }}
-                    >
-                      <div
-                        id="videoDiv"
-                        className="video-container flex flex-col h-[24vh] w-full object-cover "
-                      >
-                        <video
-                          id="roundvideo"
-                          autoPlay
-                          muted
-                          loop
-                          preload="yes"
-                          playsInline
-                          className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                        >
-                          <source
-                            src="/website/zar/zarcard.mp4"
-                            type="video/mp4"
-                          />
-                        </video>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
-                <div className="h-full grid items-center">
-                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-zccard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+          <source src="/video.mp4" type="video/mp4" />
+        </video>
       </div>
-    </SlideFromSide>
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        loop={true}
+        direction="vertical"
+        mousewheel={true}
+        spaceBetween={500}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        effect="fade"
+        speed={1000}
+        className={`  w-full h-full items-center  slideclas swiper-container  ${pridi.className} bg-black/50 backdrop-blur-sm `}
+      >
+        <SwiperSlide className=" swiper-slide  flex items-center justify-center  overflow-hidden">
+          <div className="slide-inner grid grid-cols-12  overflow-hidden   ">
+            <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+              <div className="titlendis flex flex-col items-start">
+                <div className="titledisplay leading-none">
+                  <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  lg:text-5xl  text-xl leading-none">
+                    <AnimatedText2 text="VIENNA" />
+                  </text>
+                </div>
+                <div className={`text-left ${archivo.className}`}>
+                  <span className="  md:text-xl text-base w-2/3 text-left  overflow-hidden text-white  md:h-[85px] h-16">
+                    Provided website services, design, SEO, and user experience
+                    enhancements to showcase their unique identity.
+                  </span>
+                </div>
+                <Link href={'/vienna'} className="mt-8 md:block hidden ">
+                  <button className="button arrow text-gray-600">
+                    Open Case Study
+                  </button>
+                </Link>
+                <div className="lg:h-[10vh] h-[3vh] "></div>
+
+                <div className=" relative border-1 rounded-sm  md:h-[24vh] h-[20vh] md:w-[60%] w-full ">
+                  <motion.div
+                    className="flip-container"
+                    variants={flipAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: false }}
+                  >
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover   "
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="md:h-[23.3vh] h-[20vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      >
+                        <source
+                          src="/mobileapps/vienna/vcard.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </motion.div>
+                </div>
+                <Link href={'/vienna'} className="mt-8 md:hidden block ">
+                  <button className="button arrow">Open Case Study</button>
+                </Link>
+              </div>
+            </div>
+            <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+              <div className="h-full grid items-center">
+                <div className="bg-center bg-no-repeat bg-cover imgcontainer  md:h-[65vh] h-[50vh] bg-vucard  cursor-pointer md:block hidden  csimg rounded-3xl shadow-glow-gray"></div>
+                <div className="bg-center bg-no-repeat bg-cover imgcontainer  md:h-[65vh] h-[50vh] bg-vucard  cursor-pointer md:hidden block    rounded-3xl shadow-glow-gray"></div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className=" swiper-slide flex items-center justify-center">
+          <div className="slide-inner grid grid-cols-12    ">
+            <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+              <div className="titlendis flex flex-col items-start">
+                <div className="titledisplay">
+                  <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                    <AnimatedText2 text="GRAMMAR" />
+                  </text>
+                </div>
+                <div className={`text-left ${archivo.className}`}>
+                  <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
+                    Created a professional website featuring custom design,
+                    optimization, and streamlined navigation.
+                  </span>
+                </div>
+                <Link href={'/grammarnow'} className="mt-8 ">
+                  <button className="button arrow">Open Case Study</button>
+                </Link>
+                <div className="lg:h-[10vh] h-[3vh] "></div>
+                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%] ">
+                  <motion.div
+                    className="flip-container"
+                    variants={flipAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: false }}
+                  >
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover  "
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      >
+                        <source
+                          src="/website/grammarnow/pscard.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+              <div className="h-full grid items-center">
+                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-gncard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className=" swiper-slide  flex items-center justify-center">
+          <div className="slide-inner grid grid-cols-12    ">
+            <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+              <div className="titlendis flex flex-col items-start">
+                <div className="titledisplay">
+                  <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                    <AnimatedText2 text="KINGDOM" />
+                  </text>
+                </div>
+                <div className={`text-left ${archivo.className}`}>
+                  <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
+                    Developed a robust website for Kingdom, integrating design
+                    and user-friendly features for their online presence.
+                  </span>
+                </div>
+                <Link href={'/kingdomconnect'} className="mt-8 ">
+                  <button className="button arrow">Open Case Study</button>
+                </Link>
+                <div className="lg:h-[10vh] h-[3vh] "></div>
+                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
+                  <motion.div
+                    className="flip-container"
+                    variants={flipAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: false }}
+                  >
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      >
+                        <source
+                          src="/website/kingdom/kccard.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+              <div className="h-full grid items-center">
+                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-kccard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className=" swiper-slide   flex items-center justify-center">
+          <div className="slide-inner grid grid-cols-12    ">
+            <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+              <div className="titlendis flex flex-col items-start">
+                <div className="titledisplay">
+                  <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                    <AnimatedText2 text="1947 PA" />
+                  </text>
+                </div>
+                <div className={`text-left ${archivo.className}`}>
+                  <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
+                    Executed a modern website design and responsive
+                    functionality for smooth user experience.
+                  </span>
+                </div>
+                <Link href={'/1947partitionarchive'} className="mt-8 ">
+                  <button className="button arrow">Open Case Study</button>
+                </Link>
+                <div className="lg:h-[10vh] h-[3vh] "></div>
+                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
+                  <motion.div
+                    className="flip-container"
+                    variants={flipAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                  >
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      >
+                        <source
+                          src="/website/1947pa/1947card.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+              <div className="h-full grid items-center">
+                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-card1947  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className=" swiper-slide  flex items-center justify-center">
+          <div className="slide-inner grid grid-cols-12    ">
+            <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
+              <div className="titlendis flex flex-col items-start">
+                <div className="titledisplay">
+                  <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
+                    <AnimatedText2 text="ZAR" />
+                  </text>
+                </div>
+                <div className={`text-left ${archivo.className}`}>
+                  <span className="  text-xl w-2/3 text-left  overflow-hidden text-white h-[85px]">
+                    Delivered a customized website solution; design and content
+                    strategy ensuring optimal engagement.
+                  </span>
+                </div>
+                <Link href={'/zarconsultancy'} className="mt-8 ">
+                  <button className="button arrow">Open Case Study</button>
+                </Link>
+                <div className="lg:h-[10vh] h-[3vh] "></div>
+                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
+                  <motion.div
+                    className="flip-container"
+                    variants={flipAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: false }}
+                  >
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover "
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      >
+                        <source
+                          src="/website/zar/zarcard.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+              <div className="h-full grid items-center">
+                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-zccard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
   );
 }

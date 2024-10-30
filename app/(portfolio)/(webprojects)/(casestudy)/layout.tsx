@@ -38,8 +38,18 @@ export default function CasestudyLayout({
     <>
       <header className="flex items-center justify-center fixed lg:h-24 h-16 z-[2] w-full">
         <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right">
-          <Link href="/webprojects" className="w-full text-2xl ">
-            <GradientFlowTextRzfx text="Back" />
+          <Link
+            href="/webprojects"
+            className="w-full flex items-end justify-end "
+          >
+            <div className=" relative w-[8%] ">
+              <Image
+                className=" relativepos"
+                src="/backn.png"
+                alt="move down arrow"
+                fill
+              />
+            </div>
           </Link>
         </div>
       </header>

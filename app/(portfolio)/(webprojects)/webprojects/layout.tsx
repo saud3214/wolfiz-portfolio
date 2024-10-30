@@ -2,8 +2,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
+import Head from 'next/head';
 import Image from 'next/image';
+import {
+  AnimatedText,
+  AnimatedText2,
+  GradientFlowTextRzfx,
+  BounceSpinText,
+} from '../../../components/animatedtext';
 export default function CasestudyLayout({
   children,
 }: Readonly<{
@@ -30,9 +36,9 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="flex items-center justify-center fixed h-24 z-[2] w-full ">
-        <div className="font-bold fixed  flex items-end justify-end w-[80%] text-right ">
-          <a href="/mobileapps" className="w-full flex items-end justify-end ">
+      <header className="flex items-center justify-center fixed lg:h-24 h-16 z-[2] w-full">
+        <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right">
+          <Link href="/" className="w-full flex items-end justify-end ">
             <div className=" relative w-[8%] ">
               <Image
                 className=" relativepos"
@@ -41,7 +47,7 @@ export default function CasestudyLayout({
                 fill
               />
             </div>
-          </a>
+          </Link>
         </div>
       </header>
       <main>{children}</main>

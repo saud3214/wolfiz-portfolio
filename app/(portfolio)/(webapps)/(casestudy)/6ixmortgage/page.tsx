@@ -75,7 +75,7 @@ export default function SixMortgage() {
             <div className="flex flex-col items-center justify-center w-full col-span-12 ">
               <div className="w-full md:h-[100vh] flex  items-start justify-center bg-[#887833]">
                 <div className="grid grid-cols-12  w-full ">
-                  <div className="md:col-span-1 col-span-12 flex items-center justify-center order-2 md:order-1">
+                  <div className="md:col-span-1 col-span-12 md:flex items-center justify-center order-2 md:order-1 hidden ">
                     {isExpanded && (
                       <div className="w-full flex items-center justify-center bg-black/20 backdrop-blur-lg h-full  relative ">
                         <span className="text-white font-bold text-5xl   ">
@@ -93,8 +93,8 @@ export default function SixMortgage() {
                     )}
                   </div>
 
-                  <div className="md:col-span-3 col-span-12 flex flex-col items-start justify-between md:py-[10%] order-3 md:order-2 ">
-                    <div className="relative  w-1/2  ">
+                  <div className="md:col-span-3 col-span-12 flex flex-col items-start justify-between md:py-[10%] order-3 md:order-2 p-4 ">
+                    <div className="relative  w-1/2  md:block hidden ">
                       <Image
                         className=" relativepos"
                         src="/6ixmortgage/logo2.png"
@@ -104,7 +104,7 @@ export default function SixMortgage() {
                     </div>
                     <div className="  flex flex-col h-[25vh]  md:h-auto ">
                       {!isExpanded && (
-                        <span className="font-bold md:text-4xl text-xl text-white py-5">
+                        <span className="font-bold md:text-4xl text-xl text-white py-5 mb-2 md:mb-0">
                           Architect
                         </span>
                       )}
@@ -112,7 +112,7 @@ export default function SixMortgage() {
                         <div className="md:h-[16vh]  flex items-center ">
                           <div className="flex items-center justify-center  md:h-40 absolute">
                             <GradualSpacing
-                              className={`md:text-[8vw] text-6xl font-bold text-white  ${ptserif.className} leading-none `}
+                              className={`md:text-[8vw] text-6xl font-bold text-white  ${ptserif.className} leading-normal `}
                               text="Mortgage"
                             />
                           </div>
@@ -124,9 +124,9 @@ export default function SixMortgage() {
                           {!isExpanded && (
                             <button
                               onClick={handleReadMoreClick}
-                              className=" text-white text-3xl font-bold flex gap-4 items-center"
+                              className=" text-white md:text-3xl text-xl font-bold flex gap-4 items-center"
                             >
-                              <div className="size-8 bg-white rounded-full flex items-center justify-center text-black">
+                              <div className="md:size-8 size-6 bg-white rounded-full flex items-center justify-center text-black">
                                 +
                               </div>
                               Read More
@@ -135,7 +135,7 @@ export default function SixMortgage() {
 
                           <div
                             ref={cardRef} // Assign ref to card element
-                            className={`bg-white shadow-md overflow-hidden md:p-5 p-2 absolute bottom-[10%] left-[8.5%] md:gap-10 md:w-1/3 w-11/12 transform transition-all duration-500 ease-in-out ${
+                            className={`bg-white shadow-md overflow-hidden md:p-5 z-20 p-2 absolute bottom-[10%] left-[8%] md:gap-10 md:w-1/3 w-11/12 transform transition-all duration-500 ease-in-out ${
                               isExpanded
                                 ? 'opacity-100 translate-y-0 scale-100'
                                 : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
@@ -178,7 +178,7 @@ export default function SixMortgage() {
                     </div>
                   </div>
                   <div className="md:col-span-8 col-span-12 flex items-center justify-center h-full order-1 md:order-3 ">
-                    <div className=" w-full  md:h-[100vh] h-[50vh]">
+                    <div className=" w-full  md:h-[100vh] h-[60vh]">
                       <video
                         className="roundvideo md:h-[100vh]"
                         autoPlay
@@ -195,7 +195,7 @@ export default function SixMortgage() {
                     </div>
                   </div>
 
-                  <div className="  w-[3%] absolute top-[25%] right-[3%] ">
+                  <div className="  w-[3%] absolute top-[25%] right-[3%] md:flex hidden ">
                     <SrRight>
                       <Image
                         className=" relativepos"
@@ -205,10 +205,28 @@ export default function SixMortgage() {
                       />
                     </SrRight>
                   </div>
+                  <div className="  w-[50%] absolute bottom-[45%] right-[25%] md:hidden flex z-10 ">
+                    <SrRight>
+                      <Image
+                        className=" relativepos"
+                        src="/6ixmortgage/logom.png"
+                        alt="logo"
+                        fill
+                      />
+                    </SrRight>
+                  </div>
                   <div className="w-[30%] absolute bottom-[8%] right-[10%] bg-white h-1 rounded-3xl"></div>
-                  <span className="text-xl absolute top-[8%] left-[28%] text-white">
+                  <span className=" md:text-xl text-base absolute md:top-[8%] bottom-[50%] md:left-[28%] left-[5%] text-white  text-center px-16 font-light">
                     Mortgage Architect is a leading mortgage brokerage firm
                   </span>
+                  <div className="  w-2/5  md:hidden block  absolute top-[2%] left-[35%]">
+                    <Image
+                      className=" relativepos"
+                      src="/6ixmortgage/logo2.png"
+                      alt="logo"
+                      fill
+                    />
+                  </div>
                 </div>
               </div>
               <div className="w-full flex flex-col h-[100vh] items-center justify-center md:gap-10 gap-5">

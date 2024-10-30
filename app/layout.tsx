@@ -6,10 +6,10 @@ import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 
-import { Pridi } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google';
 import Head from 'next/head';
 
-const pridi = Pridi({
+const pridi = Playfair_Display({
   subsets: ['latin'], // Adjust the subsets according to your needs
   weight: ['400', '700', '600'], // Add the weights you need
 });

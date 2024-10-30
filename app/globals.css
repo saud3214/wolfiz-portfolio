@@ -211,7 +211,7 @@ ul.link-list li a {
   font-family: 'Poppins', 'Times', serif;
   background-color: transparent;
   font-weight: 600;
-  border: 1px solid white;
+  /* border: 1px solid rgb(255, 255, 255); */
   border-radius: 25px;
   padding: 10px;
   &::after {
@@ -257,7 +257,7 @@ ul.link-list li a {
 @media screen and (max-width: 768px) {
   .imgcontainer {
     transform: none;
-    height: 250px;
+    height: 20vh;
   }
 }
 .titlendis {
@@ -290,8 +290,8 @@ ul.link-list li a {
 }
 @media screen and (max-width: 768px) {
   .titledisplay text {
-    font-size: 4em;
-    line-height: 90px;
+    font-size: 40px;
+    line-height: normal;
   }
 }
 .__className_afe0d0 {
@@ -311,23 +311,6 @@ ul.link-list li a {
   position: relative !important;
 }
 
-.connector {
-  position: absolute;
-  width: 40px;
-  height: 4px;
-  background-color: #22cadb;
-}
-.connector::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  width: 0;
-  height: 0;
-  border-left: 10px solid #22cadb;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-}
 .right-0 {
   right: 0px;
 }

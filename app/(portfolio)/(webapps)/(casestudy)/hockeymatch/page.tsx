@@ -131,7 +131,7 @@ export default function HockeyMatch() {
                         playsInline
                       >
                         <source
-                          src="/website/1947pa/video.mp4"
+                          src="/website/hockey/tab.mp4"
                           type="video/mp4"
                         />
                         Your browser does not support the video tag.

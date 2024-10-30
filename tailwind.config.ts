@@ -132,6 +132,9 @@ const config = {
         sixmgcard: "url('/6mgcard.png')",
         pucard: "url('/pucard.jpg')",
         hmcard: "url('/hmcard.png')",
+        bg1: "url('/mobileapps/grammer.jpg')",
+        bg2: "url('/mobileapps/veinna.jpg')",
+        bg3: "url('/mobileapps/1947.jpg')",
       },
 
       colors: {
