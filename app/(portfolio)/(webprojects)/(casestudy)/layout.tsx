@@ -42,7 +42,7 @@ export default function CasestudyLayout({
             href="/webprojects"
             className="w-full flex items-end justify-end "
           >
-            <div className=" relative w-[8%] ">
+            <div className=" relative w-[6%] ">
               <Image
                 className=" relativepos"
                 src="/backn.png"

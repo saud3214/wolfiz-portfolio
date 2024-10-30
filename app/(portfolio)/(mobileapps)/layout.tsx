@@ -38,7 +38,7 @@ export default function CasestudyLayout({
       <header className="flex items-center justify-center fixed h-24 z-[2] w-full ">
         <div className="font-bold fixed  flex items-end justify-end w-[80%] text-right ">
           <Link href="/" className="w-full flex items-end justify-end ">
-            <div className=" relative w-[8%] ">
+            <div className=" relative w-[6%] ">
               <Image
                 className=" relativepos"
                 src="/backn.png"
