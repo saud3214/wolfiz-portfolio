@@ -154,7 +154,7 @@ export default function Webprojects() {
                   </span>
                 </div>
                 <Link href={'/vienna'} className="mt-8 md:block hidden ">
-                  <button className="button arrow text-gray-600">
+                  <button className={`button arrow ${archivo.className}`}>
                     Open Case Study
                   </button>
                 </Link>
@@ -190,7 +190,9 @@ export default function Webprojects() {
                   </motion.div>
                 </div>
                 <Link href={'/vienna'} className="mt-8 md:hidden block ">
-                  <button className="button arrow">Open Case Study</button>
+                  <button className={`button arrow ${archivo.className}`}>
+                    Open Case Study
+                  </button>
                 </Link>
               </div>
             </div>
@@ -219,7 +221,9 @@ export default function Webprojects() {
                   </span>
                 </div>
                 <Link href={'/grammarnow'} className="mt-8 ">
-                  <button className="button arrow">Open Case Study</button>
+                  <button className={`button arrow ${archivo.className}`}>
+                    Open Case Study
+                  </button>
                 </Link>
                 <div className="lg:h-[10vh] h-[3vh] "></div>
                 <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%] ">
@@ -276,7 +280,9 @@ export default function Webprojects() {
                   </span>
                 </div>
                 <Link href={'/kingdomconnect'} className="mt-8 ">
-                  <button className="button arrow">Open Case Study</button>
+                  <button className={`button arrow ${archivo.className}`}>
+                    Open Case Study
+                  </button>
                 </Link>
                 <div className="lg:h-[10vh] h-[3vh] "></div>
                 <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
@@ -333,7 +339,9 @@ export default function Webprojects() {
                   </span>
                 </div>
                 <Link href={'/1947partitionarchive'} className="mt-8 ">
-                  <button className="button arrow">Open Case Study</button>
+                  <button className={`button arrow ${archivo.className}`}>
+                    Open Case Study
+                  </button>
                 </Link>
                 <div className="lg:h-[10vh] h-[3vh] "></div>
                 <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
@@ -390,7 +398,9 @@ export default function Webprojects() {
                   </span>
                 </div>
                 <Link href={'/zarconsultancy'} className="mt-8 ">
-                  <button className="button arrow">Open Case Study</button>
+                  <button className={`button arrow ${archivo.className}`}>
+                    Open Case Study
+                  </button>
                 </Link>
                 <div className="lg:h-[10vh] h-[3vh] "></div>
                 <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">

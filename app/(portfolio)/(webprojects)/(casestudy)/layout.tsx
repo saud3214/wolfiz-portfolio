@@ -45,10 +45,10 @@ export default function CasestudyLayout({
             className="w-full flex items-end justify-end "
           >
             <button
-              className={`flex  items-center justify-center gap-1 px-3 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
+              className={`flex  items-center justify-center gap-1 px-6 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-300 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
             >
               <ArrowLeft className="size-4" />
-              <span className="font-medium ">Back</span>
+              <span className="font-medium text-xl ">Back</span>
             </button>
           </Link>
         </div>

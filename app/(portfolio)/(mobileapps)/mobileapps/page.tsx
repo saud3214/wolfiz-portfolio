@@ -167,7 +167,7 @@ export default function Mobileapps() {
                     <AnimatedText2 text="YALAXI" />
                   </text>
                 </div>
-                <div className={archivo.className}>
+                <div className={`text-left ${archivo.className}`}>
                   <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
                     Developed an innovative mobile app with a user-friendly
                     design, functionality & integrated features.
@@ -218,7 +218,7 @@ export default function Mobileapps() {
                     <AnimatedText2 text="AVCONS" />
                   </text>
                 </div>
-                <div className={archivo.className}>
+                <div className={`text-left ${archivo.className}`}>
                   <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
                     Created a robust mobile application for Avcons with advanced
                     design & functionalities to streamline operations.
@@ -269,7 +269,7 @@ export default function Mobileapps() {
                     <AnimatedText2 text="DOROOS" />
                   </text>
                 </div>
-                <div className={archivo.className}>
+                <div className={`text-left ${archivo.className}`}>
                   <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
                     Designed and implemented a feature-rich mobile app for
                     Doroos, focusing on user experience and engagement.
@@ -321,7 +321,7 @@ export default function Mobileapps() {
                     <AnimatedText2 text="PEPTIDE" />
                   </text>
                 </div>
-                <div className={archivo.className}>
+                <div className={`text-left ${archivo.className}`}>
                   <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
                     Delivered a modern mobile application for Peptide with
                     user-friendly design & navigation to support customer needs.
@@ -373,7 +373,7 @@ export default function Mobileapps() {
                     <AnimatedText2 text="Simi Riezen" />
                   </text>
                 </div>
-                <div className={archivo.className}>
+                <div className={`text-left ${archivo.className}`}>
                   <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
                     Developed a dynamic mobile app for Simi Riezen, featuring a
                     visually appealing interface & performance optimization
