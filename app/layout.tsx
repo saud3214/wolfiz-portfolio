@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-
 import { Playfair_Display } from 'next/font/google';
 import Head from 'next/head';
 

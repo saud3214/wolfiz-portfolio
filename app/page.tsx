@@ -147,31 +147,25 @@ export default function Home() {
           <div className="flex items-center justify-end">
             <div className="flex flex-col gap-5">
               <Image
-                width={20}
-                height={20}
+                width={18}
+                height={18}
                 alt="Facebook"
                 src="/svg/facebook-f.svg"
                 className="cursor-pointer "
               />
+
               <Image
                 width={20}
                 height={20}
                 alt="image"
-                src="/svg/google.svg"
+                src="/svg/link.svg"
                 className="h-6 cursor-pointer"
               />
               <Image
                 width={20}
                 height={20}
                 alt="image"
-                src="/svg/tiktok.svg"
-                className="h-6 cursor-pointer"
-              />
-              <Image
-                width={20}
-                height={20}
-                alt="image"
-                src="/svg/twitter.svg"
+                src="/svg/instagram.svg"
                 className="h-6 cursor-pointer"
               />
 

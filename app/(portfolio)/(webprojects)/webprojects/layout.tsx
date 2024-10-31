@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Head from 'next/head';
 import Image from 'next/image';
-import {
-  AnimatedText,
-  AnimatedText2,
-  GradientFlowTextRzfx,
-  BounceSpinText,
-} from '../../../components/animatedtext';
+
+import { Poppins } from 'next/font/google';
+import { ArrowLeft } from 'lucide-react';
+
+const popins = Poppins({
+  subsets: ['latin'], // Adjust the subsets according to your needs
+  weight: ['400', '700', '600'], // Add the weights you need
+});
 export default function CasestudyLayout({
   children,
 }: Readonly<{
@@ -39,14 +41,12 @@ export default function CasestudyLayout({
       <header className="flex items-center justify-center fixed lg:h-24 h-16 z-[2] w-full">
         <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right">
           <Link href="/" className="w-full flex items-end justify-end ">
-            <div className=" relative w-[6%] ">
-              <Image
-                className=" relativepos"
-                src="/backn.png"
-                alt="move down arrow"
-                fill
-              />
-            </div>
+            <button
+              className={`flex  items-center justify-center gap-1 px-3 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
+            >
+              <ArrowLeft className="size-4" />
+              <span className="font-medium ">Back</span>
+            </button>
           </Link>
         </div>
       </header>

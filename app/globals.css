@@ -208,7 +208,6 @@ ul.link-list li a {
 }
 .arrow {
   color: #ffffff;
-  font-family: 'Poppins', 'Times', serif;
   background-color: transparent;
   font-weight: 600;
   /* border: 1px solid rgb(255, 255, 255); */
@@ -235,6 +234,33 @@ ul.link-list li a {
   }
 }
 
+.arrow2 {
+  color: #181818;
+  background-color: transparent;
+  font-weight: 500;
+  /* border: 1px solid rgb(255, 255, 255); */
+  border-radius: 25px;
+  padding: 10px;
+  &::after {
+    display: inline-block;
+    padding-left: 8px;
+    content: '\0279E';
+    -webkit-transition: transform 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out;
+    -ms-transition: transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+  }
+  &:hover {
+    &::after {
+      -webkit-transform: translateX(4px);
+      -moz-transform: translateX(4px);
+      -ms-transform: translateX(4px);
+      -o-transform: translateX(4px);
+      transform: translateX(4px);
+    }
+  }
+}
 .imgcontainer {
   transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
   -webkit-transform: perspective(1800px) rotate3D(0, 1, 0, -30deg);
