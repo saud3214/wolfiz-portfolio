@@ -1,421 +1,475 @@
 'use client';
+
+import { useRef, useEffect, useState, useMemo } from 'react';
 import Image from 'next/image';
-import { gsap } from 'gsap';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import 'swiper/swiper-bundle.css';
-import SwiperCore from 'swiper';
-import {
-  csimages,
-  backgroundimages,
-} from '../../(webprojects)/webprojects/animation';
-import { Poppins } from 'next/font/google';
-import { easeIn, motion } from 'framer-motion';
-import { SlideFromSide } from '../../../components/pagetransition';
+import { Canvas } from '@react-three/fiber';
+import ShaderBackground from '@/app/components/shadderplain';
+import useSmoothScroll from '@/app/components/ss';
+const MobileApps = () => {
+  const projects2 = useMemo(
+    () => [
+      {
+        name: 'aqua wave',
+        year: '2023',
+        number: '01',
+        type: 'image',
+        color1: '#E4F1F9', // Lighter Aqua (Light Version)
+        color2: '#7FDDF9', // Slightly lighter Intense Aqua
+        speed: 0.6,
+        Image: '/img/3.jpg',
+      },
+      {
+        name: 'solar flare',
+        year: '2024',
+        number: '02',
+        type: 'gradient',
+        color1: '#F9F1E4', // Lighter Orange (Light Version)
+        color2: '#F9BD90', // Slightly lighter Intense Orange
+        speed: 0.6,
+        Image: '/img/4.jpg',
+      },
+      {
+        name: 'mountain echo',
+        year: '2021',
+        number: '03',
+        type: 'image',
+        color1: '#F1FBEA', // Lighter Green (Light Version)
+        color2: '#A7FBA4', // Slightly lighter Intense Green
+        speed: 0.6,
+        Image: '/img/5.jpg',
+      },
+      {
+        name: 'nebula drift',
+        year: '2022',
+        number: '04',
+        type: 'gradient',
+        color1: '#FDEEEE', // Lighter Red (Light Version)
+        color2: '#FF8272', // Slightly lighter Intense Red
+        speed: 0.6,
+        Image: '/img/6.jpg',
+      },
+      {
+        name: 'city lights',
+        year: '2023',
+        number: '05',
+        type: 'image',
+        color1: '#E8F7FF', // Lighter Blue (Light Version)
+        color2: '#96CCF7', // Slightly lighter Intense Dark Blue
+        speed: 0.6,
+        Image: '/img/7.jpg',
+      },
+      {
+        name: 'golden horizon',
+        year: '2021',
+        number: '06',
+        type: 'gradient',
+        color1: '#FBF4DF', // Lighter Gold (Light Version)
+        color2: '#FDD6A1', // Slightly lighter Intense Gold
+        speed: 0.6,
+        Image: '/img/8.jpg',
+      },
+      {
+        name: 'lunar eclipse',
+        year: '2024',
+        number: '07',
+        type: 'image',
+        color1: '#FBF5FF', // Lighter Purple (Light Version)
+        color2: '#DC9FF9', // Slightly lighter Intense Purple
+        speed: 0.6,
+        Image: '/img/9.jpg',
+      },
+      {
+        name: 'ocean breeze',
+        year: '2022',
+        number: '08',
+        type: 'image',
+        color1: '#EEFBFF', // Lighter Ocean Blue (Light Version)
+        color2: '#A1E4F9', // Slightly lighter Intense Ocean Blue
+        speed: 0.6,
+        Image: '/img/10.jpg',
+      },
+    ],
+    [],
+  );
 
-import {
-  AnimatedText,
-  AnimatedText2,
-  GradientFlowText,
-  BounceSpinText,
-} from '../../../components/animatedtext';
+  const [shaderSettings, setShaderSettings] = useState({
+    color1: projects2[1].color1,
+    color2: projects2[1].color2,
+    speed: projects2[1].speed,
+  });
+  const [currentTime, setCurrentTime] = useState('');
+  const scrollUpRef = useRef<HTMLDivElement>(null);
+  const scrollDownRef = useRef<HTMLDivElement>(null);
+  const [scrollUpCounter, setScrollUpCounter] = useState(0);
+  const [scrollDownCounter, setScrollDownCounter] = useState(0);
+  const updateCounters = () => {
+    if (!scrollUpRef.current || !scrollDownRef.current) return;
 
-import { Mousewheel, EffectFade, Pagination } from 'swiper/modules';
-SwiperCore.use([Mousewheel, EffectFade, Pagination]);
+    const totalProjects = projects2.length;
+    const scrollStep = scrollUpRef.current.clientHeight; // Height of one project
 
-const archivo = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '700', '500', '600'],
-});
-export default function Mobileapps() {
-  const swiperRef = useRef<SwiperCore | null>(null);
-  const interleaveOffset = 0.8; // Adjust this value as needed
+    // Calculate the index of the visible project for scrollUpDiv
+    const currentIndexUp =
+      Math.round(scrollUpRef.current.scrollTop / scrollStep) % totalProjects;
 
+    // Calculate the reverse index for scrollDownDiv
+    const currentIndexDown = (totalProjects - currentIndexUp) % totalProjects;
+
+    // Update both counters (adding +1 for 1-based index display)
+    setScrollUpCounter(currentIndexUp + 1);
+    setScrollDownCounter(currentIndexDown + 1);
+  };
+  const scrollSpeed = 1;
   useEffect(() => {
-    csimages();
+    const updateTime = () => {
+      const now = new Date();
+      setCurrentTime(
+        now.toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+          timeZone: 'Asia/Karachi',
+        }),
+      );
+    };
+    updateTime();
+    const timer = setInterval(updateTime, 60000);
+    const scrollUpDiv = scrollUpRef.current;
+    const scrollDownDiv = scrollDownRef.current;
 
-    const handleProgress = () => {
-      const swiper = swiperRef.current;
-      if (swiper) {
-        swiper.slides.forEach((slide: HTMLElement) => {
-          const slideProgress = (slide as any).progress; // Type casting here
-          const innerOffset = swiper.height * interleaveOffset;
-          const innerTranslate = slideProgress * innerOffset * -1;
+    if (!scrollUpDiv || !scrollDownDiv) return;
 
-          gsap.set(slide.querySelector('.slide-inner'), {
-            y: innerTranslate,
-          });
-        });
+    // Duplicate content for infinite scroll
+    scrollUpDiv.innerHTML += scrollUpDiv.innerHTML;
+    scrollDownDiv.innerHTML += scrollDownDiv.innerHTML;
+
+    // Sync initial scroll position
+    const initialCenterPosition = scrollUpDiv.scrollHeight / 4;
+    scrollUpDiv.scrollTop = initialCenterPosition;
+    scrollDownDiv.scrollTop = initialCenterPosition;
+
+    // Function to handle scroll for up-div and sync down-div
+    const handleScrollUp = () => {
+      if (scrollUpDiv && scrollDownDiv) {
+        if (scrollUpDiv.scrollTop >= scrollUpDiv.scrollHeight / 2) {
+          scrollUpDiv.scrollTop = 0; // Reset position
+        }
+
+        // Sync scrollDownDiv
+        scrollDownDiv.scrollTop =
+          scrollUpDiv.scrollHeight -
+          scrollUpDiv.scrollTop -
+          scrollDownDiv.clientHeight;
+
+        // Update counters
+        updateCounters();
       }
     };
-    const handleSetTransition = (slider: any, speed: number) => {
-      const swiper = swiperRef.current;
-      if (swiper) {
-        swiper.slides.forEach((slide) => {
-          slide.style.transition = `${speed}ms`;
-          const innerElement = slide.querySelector(
-            '.slide-inner',
-          ) as HTMLElement;
-          if (innerElement) {
-            innerElement.style.transition = `${speed}ms`;
-          }
-        });
+
+    const handleScrollDown = () => {
+      if (scrollUpDiv && scrollDownDiv) {
+        if (scrollDownDiv.scrollTop <= 0) {
+          scrollDownDiv.scrollTop = scrollDownDiv.scrollHeight / 2; // Reset position
+        }
+
+        // Sync scrollUpDiv
+        scrollUpDiv.scrollTop =
+          scrollDownDiv.scrollHeight -
+          scrollDownDiv.scrollTop -
+          scrollUpDiv.clientHeight;
+
+        // Update counters
+        updateCounters();
       }
     };
+    // Event delegation for hover
+    const handleHover = (e) => {
+      const target = e.target.closest('.content1');
+      if (!target) return;
 
-    const handleMouseEnter = (index: number) => {
-      if (swiperRef.current) {
-        swiperRef.current.slideTo(index);
-      }
+      const index = target.dataset.index; // Use dataset to find original index
+      const isOriginal = target.dataset.original === 'true';
+
+      if (!isOriginal) return; // Only handle hover for original items
+
+      setShaderSettings({
+        color1: projects2[index].color1,
+        color2: projects2[index].color2,
+        speed: projects2[index].speed,
+      });
+      console.log('Hovering over project:', projects2[index].name);
     };
 
-    const bullets = document.querySelectorAll('.swiper-pagination-bullet');
-    bullets.forEach((bullet, index) => {
-      const mouseEnterHandler = () => handleMouseEnter(index);
-      bullet.addEventListener('mouseenter', mouseEnterHandler);
+    // Add event listeners
+    scrollUpDiv.addEventListener('scroll', handleScrollUp);
+    scrollDownDiv.addEventListener('scroll', handleScrollDown);
+    scrollUpDiv.addEventListener('mouseover', handleHover);
+    scrollDownDiv.addEventListener('mouseover', handleHover);
 
-      const swiper = swiperRef.current;
+    // Cleanup
+    return () => {
+      scrollUpDiv.removeEventListener('scroll', handleScrollUp);
+      scrollDownDiv.removeEventListener('scroll', handleScrollDown);
+      scrollUpDiv.removeEventListener('mouseover', handleHover);
+      scrollDownDiv.removeEventListener('mouseover', handleHover);
+      clearInterval(timer);
+    };
+  }, [projects2]);
 
-      if (swiper) {
-        swiper.on('progress', handleProgress);
-        swiper.on('setTransition', handleSetTransition);
+  const scrollWithAnimation = (direction) => {
+    const scrollStep = scrollUpRef.current.clientHeight / 40; // Smaller steps for smoothness
+    let steps = 40;
 
-        // Cleanup function to remove event listeners
-        return () => {
-          swiper.off('progress', handleProgress);
-          swiper.off('setTransition', handleSetTransition);
-          bullet.removeEventListener('mouseenter', mouseEnterHandler);
-        };
+    const interval = setInterval(() => {
+      if (steps === 0) {
+        clearInterval(interval); // Stop animation
+        updateCounters(); // Update counters after animation
+      } else {
+        scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
+        scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
+        steps--;
       }
-    });
-  }, []);
-
+    }, 20); // Adjust time interval for smoothness
+  };
+  const prevprojects = () => scrollWithAnimation(-1); // Scroll up
+  const nextprojects = () => scrollWithAnimation(1); // Scroll down
   return (
-    <div className="flex items-center w-full h-full ">
-      <Swiper
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        loop={true}
-        direction="vertical"
-        mousewheel={true}
-        spaceBetween={0}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-        effect="fade"
-        speed={1000}
-        className="items-center w-full h-full slideclas swiper-container"
+    <div
+      className="w-full flex items-center justify-center"
+      style={{ fontFamily: 'Safiro, sans-serif' }}
+    >
+      <Canvas
+        className="absolute top-0 left-0 w-full h-full -z-20"
+        style={{ position: 'absolute', pointerEvents: 'none' }}
       >
-        {/* <SwiperSlide className=" swiper-slide bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#FEAB16] via-[#E84D21] to-[#DF2826] flex items-center justify-center">
-            <div className="grid grid-cols-12 slide-inner ">
-              <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
-                <div className="flex flex-col items-start titlendis">
-                  <div className="titledisplay">
-                    <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                      <AnimatedText2 text="SUE CHEF" />
-                    </text>
+        <ShaderBackground
+          color1={shaderSettings.color1}
+          color2={shaderSettings.color2}
+          speed={shaderSettings.speed}
+        />
+      </Canvas>
+
+      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[1%] w-[95%]">
+        <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
+          <span>F</span>
+          <span className="text-gray-600 ">/</span>
+          <span>P</span>
+
+          <div className="text-sm ml-[8%] text-[#575757] font-light">
+            UDINE, {currentTime} PST
+          </div>
+        </div>
+        <div className="flex gap-3 text-sm items-center">
+          <a href="#projects" className="hover:opacity-70">
+            PROJECTS
+          </a>
+          <span className="text-gray-600 ">/</span>
+
+          <a href="#about" className="hover:opacity-70">
+            ABOUT
+          </a>
+        </div>
+      </header>
+      <div className="w-[93%] flex items-center justify-between fixed">
+        <span className="text-lg  text-black font-light">
+          Featured <br></br>Projects
+        </span>
+        <span className="text-lg  text-black">2023 / 2024</span>
+      </div>
+      <div className="scroll-row w-full">
+        <div
+          ref={scrollDownRef}
+          className="scroll-box items-end transition-all duration-700 ease-in-out "
+        >
+          {projects2.map((project, index) => (
+            <div
+              key={`up-${index}`}
+              className="content1 group relative"
+              data-index={index}
+              data-original="true"
+            >
+              <div className="relative aspect-square   w-[13vw] overflow-hidden rounded-full  ">
+                <Image
+                  src={project.Image}
+                  alt={project.name}
+                  width={250}
+                  height={250}
+                  className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
+                />
+              </div>
+
+              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2  ">
+                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                  <Image
+                    src="/ring2.png"
+                    alt="ring"
+                    fill
+                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                  />
+                </div>
+                <div className="flex h-full flex-col items-center justify-between">
+                  <div className=" text-[1.3rem] text-[#505050]">
+                    N. {project.number}
                   </div>
-                  <div className={archivo.className}>
-                    <span className="  text-xl w-2/3 text-left overflow-hidden text-white h-[85px]">
-                      In Ticino we offer you state-of-the-art skin patches and
-                      prostheses to forget about baldness, receding hairline and
-                      thinning – without ever having to take them off, not even
-                      for washing and playing sports!
+                  <span className="text-[2rem] font-medium leading-[70%] -tracking-normal text-[#27292b]">
+                    {project.name}
+                  </span>
+                  <p className="text-[1rem] text-[#505050]">
+                    Y. {project.year}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div
+          ref={scrollUpRef}
+          className="scroll-box items-start transition-all duration-700 ease-in-out "
+        >
+          {projects2.map((project, index) => (
+            <div
+              key={`down-${index}`}
+              className="content1 group relative"
+              data-index={index}
+              data-original="true"
+            >
+              <div className="relative aspect-square  w-[13vw] overflow-hidden rounded-full">
+                <Image
+                  src={project.Image}
+                  alt={project.name}
+                  width={250}
+                  height={250}
+                  className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
+                />
+              </div>
+
+              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/5 backdrop-blur-sm p-6 mt-2 ">
+                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                  <Image
+                    src="/ring2.png"
+                    alt="ring"
+                    fill
+                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                  />
+                </div>
+                <div className="flex h-full flex-col items-center justify-between">
+                  <div className=" text-[1.3rem] text-[#505050]">
+                    N. {project.number}
+                  </div>
+                  <span className="text-[2rem] font-medium leading-[69%] -tracking-normal text-[#27292b]">
+                    {project.name}
+                  </span>
+                  <p className="text-[1rem] text-[#505050]">
+                    Y. {project.year}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="w-[95%] flex items-center justify-between fixed z-50 ">
+          <div className="fixed left-[3%] bottom-[4%] ">
+            <div className="relative w-[13vw] aspect-square">
+              <div className="absolute inset-0 rounded-full border border-neutral-600">
+                {/* Top label */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                  PROJECT
+                </div>
+
+                {/* Central content */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative text-7xl font-light w-full">
+                    {/* Counter for scrollDown div */}
+                    <span className="absolute bottom-3 left-[40%] font-medium">
+                      {scrollDownCounter}
+                    </span>
+
+                    {/* Rotating line */}
+                    <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+
+                    {/* Counter for scrollUp div */}
+                    <span className="absolute top-4 left-1/2 font-medium">
+                      {scrollUpCounter}
                     </span>
                   </div>
-                  <Link href={'/suechef'} className="mt-8 ">
-                    <button className="button arrow2">Open Case Study</button>
-                  </Link>
-                  <div className="lg:h-[10vh] h-[3vh] "></div>
-                  <div className=" relative border-4 rounded-sm border-[#DF2826] h-[24vh]">
-                    <div
-                      id="videoDiv"
-                      className="video-container flex flex-col h-[24vh]"
-                    >
-                      <video
-                        id="roundvideo"
-                        autoPlay
-                        muted
-                        loop
-                        preload="yes"
-                        playsInline
-                        className="h-[23.3vh]"
-                      >
-                        <source
-                          src="https://www.shutterstock.com/shutterstock/videos/3494067845/preview/stock-footage-neon-orange-color-clear-waving-flag-d-vivid-flag-waving-colorful-neon-orange-seamless-loop.webm"
-                          type="video/mp4"
-                        />
-                      </video>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
-                <div className="grid items-center h-full">
-                  <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-sccard  cursor-pointer   shadow-glow-gray  rounded-3xl csimg"></div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide> */}
-        <SwiperSlide className=" swiper-slide bg-bg1 bg-center bg-cover bg-no-repeat flex items-center justify-center">
-          <div className="grid grid-cols-12 slide-inner ">
-            <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
-              <div className="flex flex-col items-start titlendis">
-                <div className="titledisplay">
-                  <text className="target-text text-left text-black  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                    <AnimatedText2 text="YALAXI" />
-                  </text>
-                </div>
-                <div className={`text-left ${archivo.className}`}>
-                  <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
-                    Developed an innovative mobile app with a user-friendly
-                    design, functionality & integrated features.
-                  </span>
-                </div>
-                <Link href={'/yalaxi'} className="mt-8 ">
-                  <button className={`button arrow2 ${archivo.className}`}>
-                    Open Case Study
-                  </button>
-                </Link>
-                <div className="lg:h-[10vh] h-[3vh] "></div>
-                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                  <div
-                    id="videoDiv"
-                    className="video-container flex flex-col h-[24vh] w-full object-cover "
-                  >
-                    <video
-                      id="roundvideo"
-                      autoPlay
-                      muted
-                      loop
-                      preload="yes"
-                      playsInline
-                      className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                    >
-                      <source
-                        src="/mobileapps/yalaxi/yalaxi.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
-              <div className="h-full grid items-center rounded-[100px]">
-                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-yalaxicard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className=" swiper-slide bg-bg2 bg-center bg-cover bg-no-repeat flex items-center justify-center">
-          <div className="grid grid-cols-12 slide-inner ">
-            <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
-              <div className="flex flex-col items-start titlendis">
-                <div className="titledisplay">
-                  <text className="target-text text-left text-black  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                    <AnimatedText2 text="AVCONS" />
-                  </text>
-                </div>
-                <div className={`text-left ${archivo.className}`}>
-                  <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
-                    Created a robust mobile application for Avcons with advanced
-                    design & functionalities to streamline operations.
-                  </span>
-                </div>
-                <Link href={'/avcons'} className="mt-8 ">
-                  <button className={`button arrow2 ${archivo.className}`}>
-                    Open Case Study
-                  </button>
-                </Link>
-                <div className="lg:h-[10vh] h-[3vh] "></div>
-                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                  <div
-                    id="videoDiv"
-                    className="video-container flex flex-col h-[24vh] w-full object-cover "
-                  >
-                    <video
-                      id="roundvideo"
-                      autoPlay
-                      muted
-                      loop
-                      preload="yes"
-                      playsInline
-                      className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                    >
-                      <source
-                        src="/mobileapps/avcons/avcons2.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
-              <div className="grid items-center h-full">
-                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-avconscard  cursor-pointer  shadow-glow-gray  rounded-3xl  csimg"></div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className=" swiper-slide bg-bg3 bg-center bg-cover bg-no-repeat flex items-center justify-center">
-          <div className="grid grid-cols-12 slide-inner ">
-            <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
-              <div className="flex flex-col items-start titlendis">
-                <div className="titledisplay">
-                  <text className="target-text text-left text-black  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                    <AnimatedText2 text="DOROOS" />
-                  </text>
-                </div>
-                <div className={`text-left ${archivo.className}`}>
-                  <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
-                    Designed and implemented a feature-rich mobile app for
-                    Doroos, focusing on user experience and engagement.
-                  </span>
-                </div>
-                <Link href={'/doroos'} className="mt-8 ">
-                  <button className={`button arrow2 ${archivo.className}`}>
-                    Open Case Study
-                  </button>
-                </Link>
-                <div className="lg:h-[10vh] h-[3vh] "></div>
-                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                  <div
-                    id="videoDiv"
-                    className="video-container flex flex-col h-[24vh] w-full object-cover "
-                  >
-                    <video
-                      id="roundvideo"
-                      autoPlay
-                      muted
-                      loop
-                      preload="yes"
-                      playsInline
-                      className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                    >
-                      <source
-                        src="/mobileapps/doroos/doros.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
-              <div className="grid items-center h-full">
-                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-dorooscard  cursor-pointer shadow-glow-gray rounded-3xl   csimg"></div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
 
-        <SwiperSlide className=" swiper-slide bg-bg4 bg-center bg-cover bg-no-repeat flex items-center justify-center">
-          <div className="grid grid-cols-12 slide-inner ">
-            <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
-              <div className="flex flex-col items-start titlendis">
-                <div className="titledisplay">
-                  <text className="target-text text-left text-black  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                    <AnimatedText2 text="PEPTIDE" />
-                  </text>
+                {/* Bottom label */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                  NUMBER
                 </div>
-                <div className={`text-left ${archivo.className}`}>
-                  <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
-                    Delivered a modern mobile application for Peptide with
-                    user-friendly design & navigation to support customer needs.
-                  </span>
-                </div>
-                <Link href={'/peptide'} className="mt-8 ">
-                  <button className={`button arrow2 ${archivo.className}`}>
-                    Open Case Study
-                  </button>
-                </Link>
-                <div className="lg:h-[10vh] h-[3vh] "></div>
-                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                  <div
-                    id="videoDiv"
-                    className="video-container flex flex-col h-[24vh] w-full object-cover "
-                  >
-                    <video
-                      id="roundvideo"
-                      autoPlay
-                      muted
-                      loop
-                      preload="yes"
-                      playsInline
-                      className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                    >
-                      <source
-                        src="/mobileapps/peptide/pepcard.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
-              <div className="h-full grid items-center rounded-[100px]">
-                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-peptidecard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
 
-        <SwiperSlide className=" swiper-slide bg-bg5 bg-center bg-cover bg-no-repeat flex items-center justify-center">
-          <div className="grid grid-cols-12 slide-inner ">
-            <div className="flex order-2 h-full col-span-12 lg:col-span-5 protitle lg:order-1">
-              <div className="flex flex-col items-start titlendis">
-                <div className="titledisplay">
-                  <text className="target-text text-left text-black  2xl:text-[6.4rem] xl:text-[4.5rem]  text-5xl">
-                    <AnimatedText2 text="Simi Riezen" />
-                  </text>
-                </div>
-                <div className={`text-left ${archivo.className}`}>
-                  <span className="  text-xl w-2/3 text-left overflow-hidden text-black h-[85px]">
-                    Developed a dynamic mobile app for Simi Riezen, featuring a
-                    visually appealing interface & performance optimization
-                  </span>
-                </div>
-                <Link href={'/simireizen'} className="mt-8 ">
-                  <button className={`button arrow2 ${archivo.className}`}>
-                    Open Case Study
-                  </button>
-                </Link>
-                <div className="lg:h-[10vh] h-[3vh] "></div>
-                <div className=" relative border-1 rounded-sm  h-[24vh] w-[60%]">
-                  <div
-                    id="videoDiv"
-                    className="video-container flex flex-col h-[24vh] w-full object-cover "
-                  >
-                    <video
-                      id="roundvideo"
-                      autoPlay
-                      muted
-                      loop
-                      preload="yes"
-                      playsInline
-                      className="h-[23.3vh]  shadow-glow-gray w-full object-cover rounded-2xl"
-                    >
-                      <source
-                        src="/mobileapps/sr/srcard.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative order-1 h-full col-span-12 lg:col-span-7 lg:order-2 ">
-              <div className="h-full grid items-center rounded-[100px]">
-                <div className="bg-center bg-no-repeat bg-cover imgcontainer  h-[65vh] bg-srcard  cursor-pointer   csimg rounded-3xl shadow-glow-gray"></div>
+                {/* Navigation buttons */}
+                <button
+                  onClick={prevprojects}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
+                  aria-label="Previous slide"
+                >
+                  ←
+                </button>
+                <button
+                  onClick={nextprojects}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
+                  aria-label="Next slide"
+                >
+                  →
+                </button>
               </div>
             </div>
           </div>
-        </SwiperSlide>
-      </Swiper>
+
+          <span className="fixed right-[3%] bottom-[4%] text-[#575757] text-lg uppercase font-medium leading-none not-italic ">
+            A Featured selection. <br />
+            the latest work
+            <br />
+            of the last 4 years
+          </span>
+        </div>
+      </div>
+      <style jsx>{`
+        .container {
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+        .scroll-row {
+          display: flex;
+          gap: 20px;
+          scroll-behavior: smooth;
+        }
+
+        .scroll-box {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          z-index: 20;
+          height: 100vh;
+          overflow-y: scroll;
+          position: relative;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        .scroll-box::-webkit-scrollbar {
+          display: none;
+        }
+
+        .content1 {
+          padding: 10px;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+        main {
+          justify-content: center;
+          display: flex;
+        }
+        .scroll-smooth {
+          scroll-behavior: smooth; /* Smooth scrolling only when this class is applied */
+        }
+      `}</style>
     </div>
   );
-}
+};
+
+export default MobileApps;

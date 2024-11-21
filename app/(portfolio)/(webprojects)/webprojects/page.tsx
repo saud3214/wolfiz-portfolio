@@ -142,6 +142,35 @@ export default function Webprojects() {
           <div className="slide-inner grid grid-cols-12  overflow-hidden   ">
             <div className="lg:col-span-5 col-span-12 protitle h-full order-2 lg:order-1 flex">
               <div className="titlendis flex flex-col items-start">
+                <div className=" relative border-1 rounded-sm  md:h-[24vh] h-[20vh] md:w-[60%] w-full md:hidden flex ">
+                  <motion.div
+                    className="flip-container"
+                    variants={flipAnimation}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: false }}
+                  >
+                    <div
+                      id="videoDiv"
+                      className="video-container flex flex-col h-[24vh] w-full object-cover   "
+                    >
+                      <video
+                        id="roundvideo"
+                        autoPlay
+                        muted
+                        loop
+                        preload="yes"
+                        playsInline
+                        className="md:h-[23.3vh] h-[20vh]  shadow-glow-gray w-full object-cover rounded-2xl"
+                      >
+                        <source
+                          src="/mobileapps/vienna/vcard.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </motion.div>
+                </div>
                 <div className="titledisplay leading-none">
                   <text className="target-text text-left text-white  2xl:text-[6.4rem] xl:text-[4.5rem]  lg:text-5xl  text-xl leading-none">
                     <AnimatedText2 text="VIENNA" />
@@ -160,7 +189,7 @@ export default function Webprojects() {
                 </Link>
                 <div className="lg:h-[10vh] h-[3vh] "></div>
 
-                <div className=" relative border-1 rounded-sm  md:h-[24vh] h-[20vh] md:w-[60%] w-full ">
+                <div className=" relative border-1 rounded-sm  md:h-[24vh] h-[20vh] md:w-[60%] w-full md:flex hidden ">
                   <motion.div
                     className="flip-container"
                     variants={flipAnimation}
@@ -196,10 +225,10 @@ export default function Webprojects() {
                 </Link>
               </div>
             </div>
-            <div className="lg:col-span-7  col-span-12 relative order-1 lg:order-2 h-full  ">
+            <div className="lg:col-span-7  col-span-12  order-1 lg:order-2 h-full  ">
               <div className="h-full grid items-center">
                 <div className="bg-center bg-no-repeat bg-cover imgcontainer  md:h-[65vh] h-[50vh] bg-vucard  cursor-pointer md:block hidden  csimg rounded-3xl shadow-glow-gray"></div>
-                <div className="bg-center bg-no-repeat bg-cover imgcontainer  md:h-[65vh] h-[50vh] bg-vucard  cursor-pointer md:hidden block    rounded-3xl shadow-glow-gray"></div>
+                <div className="bg-center bg-no-repeat bg-cover imgcontainer   h-[60vh] bg-vucard  cursor-pointer md:hidden block    rounded-3xl shadow-glow-gray"></div>
               </div>
             </div>
           </div>

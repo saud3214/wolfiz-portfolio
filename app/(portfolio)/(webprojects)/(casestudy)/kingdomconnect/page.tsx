@@ -42,13 +42,15 @@ export default function KingdomConnect() {
             <div className="flex flex-col items-center justify-center  col-span-12 ">
               <div className="w-full md:h-[100vh] h-[70vh] flex items-center justify-center bg-kcbg1 bg-center bg-cover bg-no-repeat relative">
                 <div className="w-11/12 h-5/6 items-start lg:justify-start justify-center flex flex-col p-5 ">
-                  <div className="relative md:w-[15%] w-2/3    ">
-                    <Image
-                      className=" relativepos "
-                      src="/website/kingdom/logo.png"
-                      alt="img"
-                      fill
-                    />
+                  <div className="w-full items-center justify-center flex">
+                    <div className="relative md:w-[15%] w-2/3    ">
+                      <Image
+                        className=" relativepos "
+                        src="/website/kingdom/logo.png"
+                        alt="img"
+                        fill
+                      />
+                    </div>
                   </div>
                   <span className="md:text-4xl text-2xl font-bold text-white mt-5">
                     Welcom to

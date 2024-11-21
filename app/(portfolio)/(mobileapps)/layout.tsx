@@ -35,7 +35,7 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="flex items-center justify-center fixed h-24 z-[2] w-full ">
+      <header className="hidden items-center justify-center fixed h-24 z-[2] w-full ">
         <div className="font-bold fixed  flex items-end justify-end w-[80%] text-right ">
           <Link href="/" className="w-full flex items-end justify-end ">
             {/* <div className=" relative w-[6%] ">
@@ -47,10 +47,10 @@ export default function CasestudyLayout({
               />
             </div> */}
             <button
-              className={`flex  items-center justify-center gap-1 px-3 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
+              className={`flex  items-center justify-center gap-1 px-6 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
             >
               <ArrowLeft className="size-4" />
-              <span className="font-medium ">Back</span>
+              <span className="font-medium text-xl ">Back</span>
             </button>
           </Link>
         </div>
