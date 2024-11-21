@@ -182,21 +182,21 @@ const Component = () => {
       }
     };
     // Event delegation for hover
-    const handleHover = (e) => {
-      const target = e.target.closest('.content1');
+    const handleHover = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('.content1');
       if (!target) return;
 
-      const index = target.dataset.index; // Use dataset to find original index
-      const isOriginal = target.dataset.original === 'true';
+      const index = (target as HTMLElement).dataset.index; // Use dataset to find original index
+      const isOriginal = (target as HTMLElement).dataset.original === 'true';
 
       if (!isOriginal) return; // Only handle hover for original items
 
       setShaderSettings({
-        color1: projects2[index].color1,
-        color2: projects2[index].color2,
-        speed: projects2[index].speed,
+        color1: projects2[Number(index)].color1,
+        color2: projects2[Number(index)].color2,
+        speed: projects2[Number(index)].speed,
       });
-      console.log('Hovering over project:', projects2[index].name);
+      console.log('Hovering over project:', projects2[Number(index)].name);
     };
 
     // Add event listeners
@@ -213,9 +213,11 @@ const Component = () => {
       scrollDownDiv.removeEventListener('mouseover', handleHover);
       clearInterval(timer);
     };
-  }, [projects2]);
+  });
 
-  const scrollWithAnimation = (direction) => {
+  const scrollWithAnimation = (direction: number) => {
+    if (!scrollUpRef.current || !scrollDownRef.current) return; // Check if refs are not null
+
     const scrollStep = scrollUpRef.current.clientHeight / 40; // Smaller steps for smoothness
     let steps = 40;
 
@@ -224,8 +226,11 @@ const Component = () => {
         clearInterval(interval); // Stop animation
         updateCounters(); // Update counters after animation
       } else {
-        scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
-        scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
+        if (scrollUpRef.current && scrollDownRef.current) {
+          // Check if refs are not null before accessing properties
+          scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
+          scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
+        }
         steps--;
       }
     }, 20); // Adjust time interval for smoothness

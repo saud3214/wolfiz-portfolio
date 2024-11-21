@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
 import useSmoothScroll from '@/app/components/ss';
-const MobileApps = () => {
+const Component = () => {
   const projects2 = useMemo(
     () => [
       {
@@ -13,8 +13,8 @@ const MobileApps = () => {
         year: '2023',
         number: '01',
         type: 'image',
-        color1: '#E4F1F9', // Lighter Aqua (Light Version)
-        color2: '#7FDDF9', // Slightly lighter Intense Aqua
+        color1: '#B9E1F3', // Lighter Aqua (Light Version)
+        color2: '#00799C', // Slightly lighter Intense Aqua
         speed: 0.6,
         Image: '/img/3.jpg',
       },
@@ -23,9 +23,9 @@ const MobileApps = () => {
         year: '2024',
         number: '02',
         type: 'gradient',
-        color1: '#F9F1E4', // Lighter Orange (Light Version)
-        color2: '#F9BD90', // Slightly lighter Intense Orange
-        speed: 0.6,
+        color1: '#FFD8A1', // Lighter Orange (Light Version)
+        color2: '#FF8F3B', // Slightly lighter Intense Orange
+        speed: 0.7,
         Image: '/img/4.jpg',
       },
       {
@@ -33,9 +33,9 @@ const MobileApps = () => {
         year: '2021',
         number: '03',
         type: 'image',
-        color1: '#F1FBEA', // Lighter Green (Light Version)
-        color2: '#A7FBA4', // Slightly lighter Intense Green
-        speed: 0.6,
+        color1: '#C9E6B4', // Lighter Green (Light Version)
+        color2: '#5C8E5A', // Slightly lighter Intense Green
+        speed: 0.7,
         Image: '/img/5.jpg',
       },
       {
@@ -43,9 +43,9 @@ const MobileApps = () => {
         year: '2022',
         number: '04',
         type: 'gradient',
-        color1: '#FDEEEE', // Lighter Red (Light Version)
-        color2: '#FF8272', // Slightly lighter Intense Red
-        speed: 0.6,
+        color1: '#F9C4C1', // Lighter Red (Light Version)
+        color2: '#B34A3D', // Slightly lighter Intense Red
+        speed: 0.7,
         Image: '/img/6.jpg',
       },
       {
@@ -53,9 +53,9 @@ const MobileApps = () => {
         year: '2023',
         number: '05',
         type: 'image',
-        color1: '#E8F7FF', // Lighter Blue (Light Version)
-        color2: '#96CCF7', // Slightly lighter Intense Dark Blue
-        speed: 0.6,
+        color1: '#A1B7C4', // Lighter Blue (Light Version)
+        color2: '#3B5264', // Slightly lighter Intense Dark Blue
+        speed: 0.7,
         Image: '/img/7.jpg',
       },
       {
@@ -63,9 +63,9 @@ const MobileApps = () => {
         year: '2021',
         number: '06',
         type: 'gradient',
-        color1: '#FBF4DF', // Lighter Gold (Light Version)
-        color2: '#FDD6A1', // Slightly lighter Intense Gold
-        speed: 0.6,
+        color1: '#F9E6A7', // Lighter Gold (Light Version)
+        color2: '#C5852F', // Slightly lighter Intense Gold
+        speed: 0.7,
         Image: '/img/8.jpg',
       },
       {
@@ -73,9 +73,9 @@ const MobileApps = () => {
         year: '2024',
         number: '07',
         type: 'image',
-        color1: '#FBF5FF', // Lighter Purple (Light Version)
-        color2: '#DC9FF9', // Slightly lighter Intense Purple
-        speed: 0.6,
+        color1: '#D1B9E4', // Lighter Purple (Light Version)
+        color2: '#8E6C9E', // Slightly lighter Intense Purple
+        speed: 0.7,
         Image: '/img/9.jpg',
       },
       {
@@ -83,9 +83,9 @@ const MobileApps = () => {
         year: '2022',
         number: '08',
         type: 'image',
-        color1: '#EEFBFF', // Lighter Ocean Blue (Light Version)
-        color2: '#A1E4F9', // Slightly lighter Intense Ocean Blue
-        speed: 0.6,
+        color1: '#A9E2F3', // Lighter Ocean Blue (Light Version)
+        color2: '#2C7B94', // Slightly lighter Intense Ocean Blue
+        speed: 0.7,
         Image: '/img/10.jpg',
       },
     ],
@@ -119,7 +119,6 @@ const MobileApps = () => {
     setScrollUpCounter(currentIndexUp + 1);
     setScrollDownCounter(currentIndexDown + 1);
   };
-  const scrollSpeed = 1;
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -183,21 +182,21 @@ const MobileApps = () => {
       }
     };
     // Event delegation for hover
-    const handleHover = (e) => {
-      const target = e.target.closest('.content1');
+    const handleHover = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('.content1');
       if (!target) return;
 
-      const index = target.dataset.index; // Use dataset to find original index
-      const isOriginal = target.dataset.original === 'true';
+      const index = (target as HTMLElement).dataset.index; // Use dataset to find original index
+      const isOriginal = (target as HTMLElement).dataset.original === 'true';
 
       if (!isOriginal) return; // Only handle hover for original items
 
       setShaderSettings({
-        color1: projects2[index].color1,
-        color2: projects2[index].color2,
-        speed: projects2[index].speed,
+        color1: projects2[Number(index)].color1,
+        color2: projects2[Number(index)].color2,
+        speed: projects2[Number(index)].speed,
       });
-      console.log('Hovering over project:', projects2[index].name);
+      console.log('Hovering over project:', projects2[Number(index)].name);
     };
 
     // Add event listeners
@@ -216,7 +215,9 @@ const MobileApps = () => {
     };
   }, [projects2]);
 
-  const scrollWithAnimation = (direction) => {
+  const scrollWithAnimation = (direction: number) => {
+    if (!scrollUpRef.current || !scrollDownRef.current) return; // Check if refs are not null
+
     const scrollStep = scrollUpRef.current.clientHeight / 40; // Smaller steps for smoothness
     let steps = 40;
 
@@ -225,8 +226,11 @@ const MobileApps = () => {
         clearInterval(interval); // Stop animation
         updateCounters(); // Update counters after animation
       } else {
-        scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
-        scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
+        if (scrollUpRef.current && scrollDownRef.current) {
+          // Check if refs are not null before accessing properties
+          scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
+          scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
+        }
         steps--;
       }
     }, 20); // Adjust time interval for smoothness
@@ -472,4 +476,4 @@ const MobileApps = () => {
   );
 };
 
-export default MobileApps;
+export default Component;

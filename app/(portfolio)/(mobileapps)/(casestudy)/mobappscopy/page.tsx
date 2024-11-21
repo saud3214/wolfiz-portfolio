@@ -9,7 +9,7 @@ const Component = () => {
   const projects2 = useMemo(
     () => [
       {
-        name: 'Aqua Wave',
+        name: 'aqua wave',
         year: '2023',
         number: '01',
         type: 'image',
@@ -19,7 +19,7 @@ const Component = () => {
         Image: '/img/3.jpg',
       },
       {
-        name: 'Solar Flare',
+        name: 'solar flare',
         year: '2024',
         number: '02',
         type: 'gradient',
@@ -29,7 +29,7 @@ const Component = () => {
         Image: '/img/4.jpg',
       },
       {
-        name: 'Mountain Echo',
+        name: 'mountain echo',
         year: '2021',
         number: '03',
         type: 'image',
@@ -39,7 +39,7 @@ const Component = () => {
         Image: '/img/5.jpg',
       },
       {
-        name: 'Nebula Drift',
+        name: 'nebula drift',
         year: '2022',
         number: '04',
         type: 'gradient',
@@ -49,7 +49,7 @@ const Component = () => {
         Image: '/img/6.jpg',
       },
       {
-        name: 'City Lights',
+        name: 'city lights',
         year: '2023',
         number: '05',
         type: 'image',
@@ -59,7 +59,7 @@ const Component = () => {
         Image: '/img/7.jpg',
       },
       {
-        name: 'Golden Horizon',
+        name: 'golden horizon',
         year: '2021',
         number: '06',
         type: 'gradient',
@@ -69,7 +69,7 @@ const Component = () => {
         Image: '/img/8.jpg',
       },
       {
-        name: 'Lunar Eclipse',
+        name: 'lunar eclipse',
         year: '2024',
         number: '07',
         type: 'image',
@@ -79,7 +79,7 @@ const Component = () => {
         Image: '/img/9.jpg',
       },
       {
-        name: 'Ocean Breeze',
+        name: 'ocean breeze',
         year: '2022',
         number: '08',
         type: 'image',
@@ -98,11 +98,41 @@ const Component = () => {
     speed: projects2[1].speed,
   });
   const [currentTime, setCurrentTime] = useState('');
-
   const scrollUpRef = useRef<HTMLDivElement>(null);
   const scrollDownRef = useRef<HTMLDivElement>(null);
+  const [scrollUpCounter, setScrollUpCounter] = useState(0);
+  const [scrollDownCounter, setScrollDownCounter] = useState(0);
+  const updateCounters = () => {
+    if (!scrollUpRef.current || !scrollDownRef.current) return;
 
+    const totalProjects = projects2.length;
+    const scrollStep = scrollUpRef.current.clientHeight; // Height of one project
+
+    // Calculate the index of the visible project for scrollUpDiv
+    const currentIndexUp =
+      Math.round(scrollUpRef.current.scrollTop / scrollStep) % totalProjects;
+
+    // Calculate the reverse index for scrollDownDiv
+    const currentIndexDown = (totalProjects - currentIndexUp) % totalProjects;
+
+    // Update both counters (adding +1 for 1-based index display)
+    setScrollUpCounter(currentIndexUp + 1);
+    setScrollDownCounter(currentIndexDown + 1);
+  };
   useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setCurrentTime(
+        now.toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false,
+          timeZone: 'Asia/Karachi',
+        }),
+      );
+    };
+    updateTime();
+    const timer = setInterval(updateTime, 60000);
     const scrollUpDiv = scrollUpRef.current;
     const scrollDownDiv = scrollDownRef.current;
 
@@ -119,43 +149,54 @@ const Component = () => {
 
     // Function to handle scroll for up-div and sync down-div
     const handleScrollUp = () => {
-      scrollDownDiv.scrollTop =
-        scrollUpDiv.scrollHeight -
-        scrollUpDiv.scrollTop -
-        scrollDownDiv.clientHeight;
+      if (scrollUpDiv && scrollDownDiv) {
+        if (scrollUpDiv.scrollTop >= scrollUpDiv.scrollHeight / 2) {
+          scrollUpDiv.scrollTop = 0; // Reset position
+        }
 
-      if (scrollUpDiv.scrollTop >= scrollUpDiv.scrollHeight / 2) {
-        scrollUpDiv.scrollTop = 0; // Reset to start of the content
+        // Sync scrollDownDiv
+        scrollDownDiv.scrollTop =
+          scrollUpDiv.scrollHeight -
+          scrollUpDiv.scrollTop -
+          scrollDownDiv.clientHeight;
+
+        // Update counters
+        updateCounters();
       }
     };
 
     const handleScrollDown = () => {
-      scrollUpDiv.scrollTop =
-        scrollDownDiv.scrollHeight -
-        scrollDownDiv.scrollTop -
-        scrollUpDiv.clientHeight;
+      if (scrollUpDiv && scrollDownDiv) {
+        if (scrollDownDiv.scrollTop <= 0) {
+          scrollDownDiv.scrollTop = scrollDownDiv.scrollHeight / 2; // Reset position
+        }
 
-      if (scrollDownDiv.scrollTop <= 0) {
-        scrollDownDiv.scrollTop = scrollDownDiv.scrollHeight / 2; // Reset to end of the content
+        // Sync scrollUpDiv
+        scrollUpDiv.scrollTop =
+          scrollDownDiv.scrollHeight -
+          scrollDownDiv.scrollTop -
+          scrollUpDiv.clientHeight;
+
+        // Update counters
+        updateCounters();
       }
     };
-
     // Event delegation for hover
-    const handleHover = (e) => {
-      const target = e.target.closest('.content1');
+    const handleHover = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('.content1');
       if (!target) return;
 
-      const index = target.dataset.index; // Use dataset to find original index
-      const isOriginal = target.dataset.original === 'true';
+      const index = (target as HTMLElement).dataset.index; // Use dataset to find original index
+      const isOriginal = (target as HTMLElement).dataset.original === 'true';
 
       if (!isOriginal) return; // Only handle hover for original items
 
       setShaderSettings({
-        color1: projects2[index].color1,
-        color2: projects2[index].color2,
-        speed: projects2[index].speed,
+        color1: projects2[Number(index)].color1,
+        color2: projects2[Number(index)].color2,
+        speed: projects2[Number(index)].speed,
       });
-      console.log('Hovering over project:', projects2[index].name);
+      console.log('Hovering over project:', projects2[Number(index)].name);
     };
 
     // Add event listeners
@@ -170,9 +211,32 @@ const Component = () => {
       scrollDownDiv.removeEventListener('scroll', handleScrollDown);
       scrollUpDiv.removeEventListener('mouseover', handleHover);
       scrollDownDiv.removeEventListener('mouseover', handleHover);
+      clearInterval(timer);
     };
-  }, [projects2]);
+  });
 
+  const scrollWithAnimation = (direction: number) => {
+    if (!scrollUpRef.current || !scrollDownRef.current) return; // Check if refs are not null
+
+    const scrollStep = scrollUpRef.current.clientHeight / 40; // Smaller steps for smoothness
+    let steps = 40;
+
+    const interval = setInterval(() => {
+      if (steps === 0) {
+        clearInterval(interval); // Stop animation
+        updateCounters(); // Update counters after animation
+      } else {
+        if (scrollUpRef.current && scrollDownRef.current) {
+          // Check if refs are not null before accessing properties
+          scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
+          scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
+        }
+        steps--;
+      }
+    }, 20); // Adjust time interval for smoothness
+  };
+  const prevprojects = () => scrollWithAnimation(-1); // Scroll up
+  const nextprojects = () => scrollWithAnimation(1); // Scroll down
   return (
     <div
       className="w-full flex items-center justify-center"
@@ -189,7 +253,7 @@ const Component = () => {
         />
       </Canvas>
 
-      <header className="p-6 flex justify-between items-center text-neutral-800 no-image-zone fixed top-[1%] w-[95%]">
+      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[1%] w-[95%]">
         <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
           <span>F</span>
           <span className="text-gray-600 ">/</span>
@@ -210,7 +274,7 @@ const Component = () => {
           </a>
         </div>
       </header>
-      <div className="w-[95%] flex items-center justify-between fixed">
+      <div className="w-[93%] flex items-center justify-between fixed">
         <span className="text-lg  text-black font-light">
           Featured <br></br>Projects
         </span>
@@ -219,7 +283,7 @@ const Component = () => {
       <div className="scroll-row w-full">
         <div
           ref={scrollDownRef}
-          className="scroll-box items-end justify-end flex w-1/2 flex-col"
+          className="scroll-box items-end transition-all duration-700 ease-in-out "
         >
           {projects2.map((project, index) => (
             <div
@@ -228,28 +292,7 @@ const Component = () => {
               data-index={index}
               data-original="true"
             >
-              <div className="absolute aspect-square  w-[92%] left-[0.6%] top-[0.3%] ">
-                <Image
-                  src="/ring.png"
-                  alt="ring"
-                  fill
-                  className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
-                />
-              </div>
-              <div className="relative aspect-square  w-[13vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mb-2  ">
-                <div className="flex h-full flex-col items-center justify-between">
-                  <div className=" text-[1.6rem] text-[#505050]">
-                    N. {project.number}
-                  </div>
-                  <span className="text-[2rem] font-medium leading-[70%] -tracking-normal text-[#17191A]">
-                    {project.name}
-                  </span>
-                  <p className="text-[1rem] text-[#505050]">
-                    Y. {project.year}
-                  </p>
-                </div>
-              </div>
-              <div className="relative aspect-square   w-[14vw] overflow-hidden rounded-full  ">
+              <div className="relative aspect-square   w-[13vw] overflow-hidden rounded-full  ">
                 <Image
                   src={project.Image}
                   alt={project.name}
@@ -258,12 +301,34 @@ const Component = () => {
                   className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
                 />
               </div>
+
+              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2  ">
+                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                  <Image
+                    src="/ring2.png"
+                    alt="ring"
+                    fill
+                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                  />
+                </div>
+                <div className="flex h-full flex-col items-center justify-between">
+                  <div className=" text-[1.3rem] text-[#505050]">
+                    N. {project.number}
+                  </div>
+                  <span className="text-[2rem] font-medium leading-[70%] -tracking-normal text-[#27292b]">
+                    {project.name}
+                  </span>
+                  <p className="text-[1rem] text-[#505050]">
+                    Y. {project.year}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
         <div
           ref={scrollUpRef}
-          className="scroll-box items-start flex flex-col w-1/2"
+          className="scroll-box items-start transition-all duration-700 ease-in-out "
         >
           {projects2.map((project, index) => (
             <div
@@ -272,28 +337,7 @@ const Component = () => {
               data-index={index}
               data-original="true"
             >
-              <div className="absolute aspect-square  w-[92%] left-[0.6%] top-[0.3%] ">
-                <Image
-                  src="/ring.png"
-                  alt="ring"
-                  fill
-                  className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
-                />
-              </div>
-              <div className="relative aspect-square  w-[13vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mb-2 ">
-                <div className="flex h-full flex-col items-center justify-between">
-                  <div className=" text-[1.6rem] text-[#505050]">
-                    N. {project.number}
-                  </div>
-                  <span className="text-[2rem] font-medium leading-[69%] -tracking-normal text-[#17191A]">
-                    {project.name}
-                  </span>
-                  <p className="text-[1rem] text-[#505050]">
-                    Y. {project.year}
-                  </p>
-                </div>
-              </div>
-              <div className="relative aspect-square  w-[14vw] overflow-hidden rounded-full">
+              <div className="relative aspect-square  w-[13vw] overflow-hidden rounded-full">
                 <Image
                   src={project.Image}
                   alt={project.name}
@@ -302,26 +346,108 @@ const Component = () => {
                   className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
                 />
               </div>
+
+              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/5 backdrop-blur-sm p-6 mt-2 ">
+                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                  <Image
+                    src="/ring2.png"
+                    alt="ring"
+                    fill
+                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                  />
+                </div>
+                <div className="flex h-full flex-col items-center justify-between">
+                  <div className=" text-[1.3rem] text-[#505050]">
+                    N. {project.number}
+                  </div>
+                  <span className="text-[2rem] font-medium leading-[69%] -tracking-normal text-[#27292b]">
+                    {project.name}
+                  </span>
+                  <p className="text-[1rem] text-[#505050]">
+                    Y. {project.year}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
+
+        <div className="w-[95%] flex items-center justify-between fixed z-50 ">
+          <div className="fixed left-[3%] bottom-[4%] ">
+            <div className="relative w-[13vw] aspect-square">
+              <div className="absolute inset-0 rounded-full border border-neutral-600">
+                {/* Top label */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                  PROJECT
+                </div>
+
+                {/* Central content */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative text-7xl font-light w-full">
+                    {/* Counter for scrollDown div */}
+                    <span className="absolute bottom-3 left-[40%] font-medium">
+                      {scrollDownCounter}
+                    </span>
+
+                    {/* Rotating line */}
+                    <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+
+                    {/* Counter for scrollUp div */}
+                    <span className="absolute top-4 left-1/2 font-medium">
+                      {scrollUpCounter}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom label */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                  NUMBER
+                </div>
+
+                {/* Navigation buttons */}
+                <button
+                  onClick={prevprojects}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
+                  aria-label="Previous slide"
+                >
+                  ←
+                </button>
+                <button
+                  onClick={nextprojects}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
+                  aria-label="Next slide"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <span className="fixed right-[3%] bottom-[4%] text-[#575757] text-lg uppercase font-medium leading-none not-italic ">
+            A Featured selection. <br />
+            the latest work
+            <br />
+            of the last 4 years
+          </span>
+        </div>
       </div>
       <style jsx>{`
-        /* Container settings */
         .container {
-          display: flex;
           justify-content: center;
           align-items: center;
           height: 100vh;
         }
 
-        /* Row layout for the scroll boxes */
         .scroll-row {
           display: flex;
           gap: 20px;
+          scroll-behavior: smooth;
         }
 
         .scroll-box {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
           z-index: 20;
           height: 100vh;
           overflow-y: scroll;
@@ -341,6 +467,9 @@ const Component = () => {
         main {
           justify-content: center;
           display: flex;
+        }
+        .scroll-smooth {
+          scroll-behavior: smooth; /* Smooth scrolling only when this class is applied */
         }
       `}</style>
     </div>
