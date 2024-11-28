@@ -71,28 +71,27 @@ const images = [
     '/img/w9.jpg',
   ],
   [
-    '/img/1.jpg',
-    '/img/4.jpg',
-    '/img/8.jpg',
-    '/img/7.jpg',
-    '/img/6.jpg',
-    '/img/5.jpg',
-    '/img/4.jpg',
-    '/img/3.jpg',
-    '/img/2.jpg',
-    '/img/1.jpg',
+    '/img/m1.jpg',
+    '/img/m2.jpg',
+    '/img/m3.jpg',
+    '/img/m4.jpg',
+    '/img/m5.jpg',
+    '/img/m6.jpg',
+    '/img/m7.jpg',
+    '/img/m8.jpg',
+    '/img/m9.jpg',
+    '/img/m10.jpg',
   ],
   [
-    '/img/1.jpg',
-    '/img/2.jpg',
-    '/img/2.jpg',
-    '/img/2.jpg',
-    '/img/3.jpg',
-    '/img/3.jpg',
-    '/img/4.jpg',
-    '/img/8.jpg',
-    '/img/5.jpg',
-    '/img/1.jpg',
+    '/img/a.jpg',
+    '/img/a2.jpg',
+    '/img/a3.jpg',
+    '/img/a4.jpg',
+    '/img/a6.jpg',
+    '/img/a7.jpg',
+    '/img/a8.jpg',
+    '/img/a9.jpg',
+    '/img/a10.jpg',
   ],
 ];
 
@@ -213,9 +212,7 @@ export default function Home() {
               {/* Header */}
               <header className="p-6 flex justify-between items-center text-neutral-800 no-image-zone">
                 <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
-                  <span>F</span>
-                  <span className="text-gray-600 ">/</span>
-                  <span>P</span>
+                  <Link href="/">WOLFIZ</Link>
 
                   <div className="text-sm ml-[8%] text-[#575757] font-light">
                     UDINE, {currentTime} PST

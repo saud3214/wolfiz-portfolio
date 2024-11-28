@@ -35,7 +35,7 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="hidden items-center justify-center fixed h-24 z-[2] w-full ">
+      <header className="hidden items-center justify-center fixed h-24  w-full ">
         <div className="font-bold fixed  flex items-end justify-end w-[80%] text-right ">
           <Link href="/" className="w-full flex items-end justify-end ">
             {/* <div className=" relative w-[6%] ">

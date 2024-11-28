@@ -5,38 +5,43 @@ import Image from 'next/image';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
 import Lenis from 'lenis';
+import Link from 'next/link';
+import { MoveUpLeft } from 'lucide-react';
 const Component = () => {
   const projects2 = useMemo(
     () => [
       {
-        name: 'yalaxi',
+        name: 'Yalaxi',
         year: '2023',
         number: '01',
         type: 'image',
-        color1: '#FBB79F', // Lighter Aqua (Light Version)
+        color1: '#fff5f2', // Lighter Aqua (Light Version)
         color2: '#FFA382', // Slightly lighter Intense Aqua
         speed: 0.6,
         Image: '/img/yalaxi.jpg',
+        link: '/yalaxi',
       },
       {
-        name: 'avacons',
+        name: 'Avacons',
         year: '2024',
         number: '02',
         type: 'gradient',
-        color1: '#C5C7C9     ', // Lighter Orange (Light Version)
-        color2: '#99A2AB', // Slightly lighter Intense Orange
+        color1: '#e0edf9     ', // Lighter Orange (Light Version)
+        color2: '#84c1f9', // Slightly lighter Intense Orange
         speed: 0.7,
         Image: '/img/avacon.jpg',
+        link: '/avacons',
       },
       {
         name: 'peptide',
         year: '2021',
         number: '03',
         type: 'image',
-        color1: '#C4DDBF', // Lighter Green (Light Version)
-        color2: '#94A7A1', // Slightly lighter Intense Green
+        color1: '#ebf9e8', // Lighter Green (Light Version)
+        color2: '#6cce56', // Slightly lighter Intense Green
         speed: 0.7,
         Image: '/img/medical.jpg',
+        link: '/yalaxi',
       },
 
       {
@@ -44,30 +49,22 @@ const Component = () => {
         year: '2023',
         number: '05',
         type: 'image',
-        color1: '#A6D9F0', // Lighter Blue (Light Version)
-        color2: '#6ED0FC', // Slightly lighter Intense Dark Blue
+        color1: '#f9edf7', // Lighter Blue (Light Version)
+        color2: '#ea5bcb', // Slightly lighter Intense Dark Blue
         speed: 0.7,
         Image: '/img/simi.jpg',
+        link: '/simireizen',
       },
       {
         name: 'doroos',
         year: '2022',
         number: '04',
         type: 'gradient',
-        color1: '#ABB8B4           ', // Lighter Red (Light Version)
-        color2: '#94A7A1', // Slightly lighter Intense Red
+        color1: '#d6fcf0           ', // Lighter Red (Light Version)
+        color2: '#5edbc8', // Slightly lighter Intense Red
         speed: 0.7,
         Image: '/img/peptide.jpg',
-      },
-      {
-        name: 'golden horizon',
-        year: '2021',
-        number: '06',
-        type: 'gradient',
-        color1: '#F9E6A7', // Lighter Gold (Light Version)
-        color2: '#C5852F', // Slightly lighter Intense Gold
-        speed: 0.7,
-        Image: '/img/8.jpg',
+        link: '/doroos',
       },
     ],
     [],
@@ -247,24 +244,20 @@ const Component = () => {
         />
       </Canvas>
 
-      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[1%] w-[95%]">
+      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-20">
         <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
-          <span>F</span>
-          <span className="text-gray-600 ">/</span>
-          <span>P</span>
+          <Link href="/" className="cursor-pointer">
+            WOLFIZ
+          </Link>
 
           <div className="text-sm ml-[8%] text-[#575757] font-light">
             UDINE, {currentTime} PST
           </div>
         </div>
-        <div className="flex gap-3 text-sm items-center">
-          <a href="#projects" className="hover:opacity-70">
-            PROJECTS
-          </a>
-          <span className="text-gray-600 ">/</span>
-
-          <a href="#about" className="hover:opacity-70">
-            ABOUT
+        <div className="flex gap-1 text-sm items-center cursor-pointer">
+          <MoveUpLeft className="size-4" />
+          <a href="/" className="hover:opacity-70 cu">
+            GO BACK
           </a>
         </div>
       </header>
@@ -282,11 +275,11 @@ const Component = () => {
           {projects2.map((project, index) => (
             <div
               key={`up-${index}`}
-              className="content1 group relative"
+              className="content1 group relative "
               data-index={index}
               data-original="true"
             >
-              <div className="relative aspect-square   w-[13vw] overflow-hidden rounded-full  ">
+              <div className="relative aspect-square   w-[13vw] overflow-hidden rounded-full cursor-pointer  ">
                 <Image
                   src={project.Image}
                   alt={project.name}
@@ -296,7 +289,7 @@ const Component = () => {
                 />
               </div>
 
-              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2  ">
+              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2 cursor-pointer  ">
                 <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
                   <Image
                     src="/ring2.png"

@@ -5,68 +5,59 @@ import Lenis from 'lenis';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
 import Image from 'next/image';
-
+import Link from 'next/link';
+import { MoveUpLeft } from 'lucide-react';
 const Home = () => {
   const projects = [
     {
-      name: 'aqua wave',
+      name: '6ix mortgage',
       year: '2023',
       number: '01',
       type: 'image',
       color1: '#def1f9', // Lighter Aqua (Light Version)
       color2: '#5fdafc', // Slightly lighter Intense Aqua
-      speed: 0.6,
-      Image: '/img/60.jpg',
+      speed: 1,
+      Image: '/img/6mgcard.png',
     },
     {
-      name: 'solar flare',
+      name: 'zar consultancy',
       year: '2024',
       number: '02',
       type: 'gradient',
       color1: '#fcedd9', // Lighter Orange (Light Version)
       color2: '#fcb480', // Slightly lighter Intense Orange
       speed: 0.7,
-      Image: '/img/58.jpg',
+      Image: '/img/zccard.png',
     },
     {
-      name: 'mountain echo',
+      name: 'profsafely',
       year: '2021',
       number: '03',
       type: 'image',
       color1: '#f3fced', // Lighter Green (Light Version)
       color2: '#97f791', // Slightly lighter Intense Green
       speed: 0.7,
-      Image: '/img/57.jpg',
+      Image: '/img/gncard.png',
     },
     {
-      name: 'nebula drift',
+      name: 'kingdom connect',
       year: '2022',
       number: '04',
       type: 'gradient',
       color1: '#ffebea', // Lighter Red (Light Version)
       color2: '#fc9185', // Slightly lighter Intense Red
       speed: 0.7,
-      Image: '/img/55.jpg',
+      Image: '/img/kccard.png',
     },
     {
-      name: 'city lights',
+      name: 'vienna vnwrapped',
       year: '2023',
       number: '05',
       type: 'image',
       color1: '#e0f3ff', // Lighter Blue (Light Version)
       color2: '#91cbf7', // Slightly lighter Intense Dark Blue
       speed: 0.7,
-      Image: '/img/54.jpg',
-    },
-    {
-      name: 'golden horizon',
-      year: '2021',
-      number: '06',
-      type: 'gradient',
-      color1: '#f7f2e1', // Lighter Gold (Light Version)
-      color2: '#f9c37c', // Slightly lighter Intense Gold
-      speed: 0.7,
-      Image: '/img/28.jpg',
+      Image: '/img/vucard.png',
     },
   ];
 
@@ -112,7 +103,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="w-full relative">
+    <div
+      className="w-full relative items-center justify-center flex scroll-boxx"
+      style={{ fontFamily: 'Safiro, sans-serif' }}
+    >
       <Canvas
         className="absolute top-0 left-0 w-full h-full -z-20"
         style={{ position: 'absolute' }}
@@ -127,24 +121,19 @@ const Home = () => {
         <link href="/css/new.css" rel="stylesheet" type="text/css" />
       </Head>
       {/* Header */}
-      <header className="p-6 flex justify-between items-center text-neutral-800 no-image-zone fixed w-full">
+      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-20">
         <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
-          <span>F</span>
-          <span className="text-gray-600 ">/</span>
-          <span>P</span>
-
+          <Link href="/" className="cursor-pointer">
+            WOLFIZ
+          </Link>
           <div className="text-sm ml-[8%] text-[#575757] font-light">
             UDINE, {currentTime} PST
           </div>
         </div>
-        <div className="flex gap-3 text-sm items-center">
-          <a href="#projects" className="hover:opacity-70">
-            PROJECTS
-          </a>
-          <span className="text-gray-600 ">/</span>
-
-          <a href="#about" className="hover:opacity-70">
-            ABOUT
+        <div className="flex gap-1 text-sm items-center cursor-pointer">
+          <MoveUpLeft className="size-4" />
+          <a href="/" className="hover:opacity-70 cupo">
+            GO BACK
           </a>
         </div>
       </header>
@@ -153,14 +142,9 @@ const Home = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`w-1/2 h-[50vh] flex flex-col items-center justify-center border border-black rounded-lg p-5 shadow-lg transition-transform mb-10 ${
+            className={`w-1/2 h-[50vh] flex flex-col items-center relative justify-center rounded-xl p-5   mb-10 ${
               index === 0 ? 'mt-52' : ''
             }`}
-            style={{
-              scrollSnapAlign: 'center',
-              backgroundColor: project.color1,
-              transition: 'transform 0.3s ease, opacity 0.3s ease',
-            }}
             onMouseEnter={() =>
               setShaderSettings({
                 color1: project.color1,
@@ -172,16 +156,77 @@ const Home = () => {
             <Image
               src={project.Image}
               alt={project.name}
-              width={200}
-              height={200}
-              className="object-cover rounded-lg shadow-md"
+              fill
+              className="object-contain rounded-lg cursor-pointer "
             />
-            <h2 className="text-2xl font-bold mt-4">{project.name}</h2>
+            {/* <h2 className="text-2xl font-bold mt-4">{project.name}</h2>
             <p className="text-lg">Year: {project.year}</p>
             <p className="text-lg">Number: {project.number}</p>
-            <p className="text-lg">Type: {project.type}</p>
+            <p className="text-lg">Type: {project.type}</p> */}
           </div>
         ))}
+
+        <div className="w-[95%] flex items-center justify-between fixed z-50 ">
+          <div className="fixed left-[3%] bottom-[4%] ">
+            <div className="relative w-[13vw] aspect-square">
+              <div className="absolute inset-0 rounded-full border border-neutral-600">
+                {/* Top label */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                  PROJECT
+                </div>
+
+                {/* Central content */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative text-7xl font-light w-full">
+                    {/* Counter for scrollDown div */}
+                    <span className="absolute bottom-3 left-[40%] font-medium">
+                      6
+                    </span>
+
+                    {/* Rotating line */}
+                    <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+
+                    {/* Counter for scrollUp div */}
+                    <span className="absolute top-4 left-1/2 font-medium">
+                      7
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom label */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                  NUMBER
+                </div>
+
+                {/* Navigation buttons */}
+                <button
+                  className="absolute left-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
+                  aria-label="Previous slide"
+                >
+                  ←
+                </button>
+                <button
+                  className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
+                  aria-label="Next slide"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <span className="fixed right-[3%] bottom-[4%] text-[#575757] text-lg uppercase font-medium leading-none not-italic ">
+            A Featured selection. <br />
+            the latest work
+            <br />
+            of the last 4 years
+          </span>
+        </div>
+        <style jsx>{`
+          .scroll-boxx:-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
       </main>
     </div>
   );

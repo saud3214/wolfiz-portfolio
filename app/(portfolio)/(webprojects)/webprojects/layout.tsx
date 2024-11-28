@@ -38,8 +38,8 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="flex items-center justify-center fixed lg:h-24 h-16 z-[2] w-full">
-        <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right">
+      <header className=" items-center justify-center fixed lg:h-24 h-16 w-full scroll-boxx hidden">
+        <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right scroll-boxx">
           {/* <Link href="/" className="w-full flex items-end justify-end ">
             <button
               className={`flex  items-center justify-center gap-1 px-3 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}

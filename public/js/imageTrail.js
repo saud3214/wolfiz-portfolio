@@ -152,7 +152,7 @@ export class ImageTrail {
           filter: 'brightness(250%)',
         },
         {
-          duration: 0.4,
+          duration: 0.8,
           ease: 'power1',
           scale: 1,
           filter: 'brightness(100%)',
@@ -164,7 +164,7 @@ export class ImageTrail {
       .to(
         img.DOM.el,
         {
-          duration: 0.4,
+          duration: 0.8,
           ease: 'power2',
           opacity: 0,
           scale: 0.2,
