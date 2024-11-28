@@ -22,17 +22,7 @@ const Home = () => {
         Image: '/img/6mgcard.png',
         Link: '/6ixmortgage',
       },
-      {
-        name: 'zar consultancy',
-        year: '2024',
-        number: '02',
-        type: 'gradient',
-        color1: '#c9fcf9', // Lighter Orange (Light Version)
-        color2: '#00a89d', // Slightly lighter Intense Orange
-        speed: 0.7,
-        Image: '/img/zccard.png',
-        Link: '/zarconsultancy',
-      },
+      
       {
         name: 'profsafely',
         year: '2021',

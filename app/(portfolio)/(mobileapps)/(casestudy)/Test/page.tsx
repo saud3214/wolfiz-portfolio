@@ -219,7 +219,7 @@ export default function Component() {
                 </div>
                 <div className="flex gap-3 text-sm items-center">
                   <a href="#projects" className="hover:opacity-70">
-                    PROJECTS
+                    PROJECT
                   </a>
                   <span className="text-gray-600 ">/</span>
 

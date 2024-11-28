@@ -18,7 +18,7 @@ const Component = () => {
         color1: '#fff5f2', // Lighter Aqua (Light Version)
         color2: '#f78965', // Slightly lighter Intense Aqua
         speed: 0.6,
-        Image: '/img/yalaxin.jpg',
+        Image: '/img/Yalaxin.jpg',
         link: '/yalaxi',
       },
       {
@@ -52,7 +52,7 @@ const Component = () => {
         color1: '#f9edf7', // Lighter Blue (Light Version)
         color2: '#ea5bcb', // Slightly lighter Intense Dark Blue
         speed: 0.7,
-        Image: '/img/simi.jpg',
+        Image: '/img/simin.jpg',
         link: '/simireizen',
       },
       {
@@ -63,7 +63,7 @@ const Component = () => {
         color1: '#d6fcf0           ', // Lighter Red (Light Version)
         color2: '#2d9382', // Slightly lighter Intense Red
         speed: 0.7,
-        Image: '/img/peptiden.jpg',
+        Image: '/img/Peptiden.jpg',
         link: '/doroos',
       },
     ],
