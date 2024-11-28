@@ -83,7 +83,7 @@ const ImageGallery: React.FC<ImageTrailProps> = ({ images }) => {
         }
 
         .content__img {
-          width: 300px;
+          width: 250px;
           height: 150px;
           aspect-ratio: var(--img-ratio);
           border-radius: 20px;
@@ -97,8 +97,8 @@ const ImageGallery: React.FC<ImageTrailProps> = ({ images }) => {
 
         .content__img-inner {
           background-position: 50% 50%;
-          width: 400px;
-          height: 200px;
+          width: 300px;
+          height: 150px;
           background-size: cover;
           position: absolute;
           top: calc(-1 * var(--img-offset-y) / 2);

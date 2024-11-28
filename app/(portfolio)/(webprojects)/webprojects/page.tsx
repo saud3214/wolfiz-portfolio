@@ -7,6 +7,8 @@ import ShaderBackground from '@/app/components/shadderplain';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MoveUpLeft } from 'lucide-react';
+import { simiReizen } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
+
 const Home = () => {
   const projects = [
     {
@@ -18,6 +20,7 @@ const Home = () => {
       color2: '#5fdafc', // Slightly lighter Intense Aqua
       speed: 1,
       Image: '/img/6mgcard.png',
+      Link: '/6ixmortgage',
     },
     {
       name: 'zar consultancy',
@@ -28,6 +31,7 @@ const Home = () => {
       color2: '#fcb480', // Slightly lighter Intense Orange
       speed: 0.7,
       Image: '/img/zccard.png',
+      Link: '/zarconsultancy',
     },
     {
       name: 'profsafely',
@@ -38,6 +42,7 @@ const Home = () => {
       color2: '#97f791', // Slightly lighter Intense Green
       speed: 0.7,
       Image: '/img/gncard.png',
+      Link: '/grammarnow',
     },
     {
       name: 'kingdom connect',
@@ -48,6 +53,7 @@ const Home = () => {
       color2: '#fc9185', // Slightly lighter Intense Red
       speed: 0.7,
       Image: '/img/kccard.png',
+      Link: '/kingdomconnect',
     },
     {
       name: 'vienna vnwrapped',
@@ -58,6 +64,7 @@ const Home = () => {
       color2: '#91cbf7', // Slightly lighter Intense Dark Blue
       speed: 0.7,
       Image: '/img/vucard.png',
+      Links: 'vienna',
     },
   ];
 
@@ -69,6 +76,8 @@ const Home = () => {
   const [currentTime, setCurrentTime] = useState('');
 
   useEffect(() => {
+    simiReizen();
+
     const lenis = new Lenis({
       duration: 1.8,
       easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
@@ -153,12 +162,17 @@ const Home = () => {
               })
             }
           >
-            <Image
-              src={project.Image}
-              alt={project.name}
-              fill
-              className="object-contain rounded-lg cursor-pointer "
-            />
+            <Link
+              href={project.Link || '#'} // Use a fallback URL when `project.Link` is undefined
+              className="cursor-pointer"
+            >
+              <Image
+                src={project.Image}
+                alt={project.name}
+                fill
+                className="object-contain rounded-lg cursor-pointer content1"
+              />
+            </Link>
             {/* <h2 className="text-2xl font-bold mt-4">{project.name}</h2>
             <p className="text-lg">Year: {project.year}</p>
             <p className="text-lg">Number: {project.number}</p>

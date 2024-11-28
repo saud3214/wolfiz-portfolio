@@ -16,9 +16,9 @@ const Component = () => {
         number: '01',
         type: 'image',
         color1: '#fff5f2', // Lighter Aqua (Light Version)
-        color2: '#FFA382', // Slightly lighter Intense Aqua
+        color2: '#f78965', // Slightly lighter Intense Aqua
         speed: 0.6,
-        Image: '/img/yalaxi.jpg',
+        Image: '/img/yalaxin.jpg',
         link: '/yalaxi',
       },
       {
@@ -27,25 +27,25 @@ const Component = () => {
         number: '02',
         type: 'gradient',
         color1: '#e0edf9     ', // Lighter Orange (Light Version)
-        color2: '#84c1f9', // Slightly lighter Intense Orange
-        speed: 0.7,
-        Image: '/img/avacon.jpg',
-        link: '/avacons',
+        color2: '#5798d1', // Slightly lighter Intense Orange
+        speed: 0.6,
+        Image: '/img/avaconn.jpg',
+        link: '/avcons',
       },
       {
-        name: 'peptide',
+        name: 'Peptide',
         year: '2021',
         number: '03',
         type: 'image',
         color1: '#ebf9e8', // Lighter Green (Light Version)
-        color2: '#6cce56', // Slightly lighter Intense Green
+        color2: '#61B97E', // Slightly lighter Intense Green
         speed: 0.7,
-        Image: '/img/medical.jpg',
-        link: '/yalaxi',
+        Image: '/img/medicaln.jpg',
+        link: '/peptide',
       },
 
       {
-        name: 'simi riezen',
+        name: 'Simi Riezen',
         year: '2023',
         number: '05',
         type: 'image',
@@ -56,14 +56,14 @@ const Component = () => {
         link: '/simireizen',
       },
       {
-        name: 'doroos',
+        name: 'Doroos',
         year: '2022',
         number: '04',
         type: 'gradient',
         color1: '#d6fcf0           ', // Lighter Red (Light Version)
-        color2: '#5edbc8', // Slightly lighter Intense Red
+        color2: '#2d9382', // Slightly lighter Intense Red
         speed: 0.7,
-        Image: '/img/peptide.jpg',
+        Image: '/img/peptiden.jpg',
         link: '/doroos',
       },
     ],
@@ -244,7 +244,7 @@ const Component = () => {
         />
       </Canvas>
 
-      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-20">
+      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-30">
         <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
           <Link href="/" className="cursor-pointer">
             WOLFIZ
@@ -256,9 +256,9 @@ const Component = () => {
         </div>
         <div className="flex gap-1 text-sm items-center cursor-pointer">
           <MoveUpLeft className="size-4" />
-          <a href="/" className="hover:opacity-70 cu">
+          <Link href="/" className="hover:opacity-70 cu">
             GO BACK
-          </a>
+          </Link>
         </div>
       </header>
       <div className="w-[93%] flex items-center justify-between fixed">
@@ -280,36 +280,40 @@ const Component = () => {
               data-original="true"
             >
               <div className="relative aspect-square   w-[13vw] overflow-hidden rounded-full cursor-pointer  ">
-                <Image
-                  src={project.Image}
-                  alt={project.name}
-                  width={250}
-                  height={250}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
-                />
-              </div>
-
-              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2 cursor-pointer  ">
-                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                <Link href={project.link}>
                   <Image
-                    src="/ring2.png"
-                    alt="ring"
-                    fill
-                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                    src={project.Image}
+                    alt={project.name}
+                    priority
+                    width={250}
+                    height={250}
+                    className="h-full w-full object-cover group-hover:scale-125 transition-all duration-700 ease-in-out content1"
                   />
-                </div>
-                <div className="flex h-full flex-col items-center justify-between">
-                  <div className=" text-[1.3rem] text-[#505050]">
-                    N. {project.number}
-                  </div>
-                  <span className="text-[2rem] font-medium leading-[70%] -tracking-normal text-[#27292b]">
-                    {project.name}
-                  </span>
-                  <p className="text-[1rem] text-[#505050]">
-                    Y. {project.year}
-                  </p>
-                </div>
+                </Link>
               </div>
+              <Link href={project.link}>
+                <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2 cursor-pointer  ">
+                  <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                    <Image
+                      src="/ring2.png"
+                      alt="ring"
+                      fill
+                      className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                    />
+                  </div>
+                  <div className="flex h-full flex-col items-center justify-between">
+                    <div className=" text-[1.3rem] text-[#505050]">
+                      N. {project.number}
+                    </div>
+                    <span className="text-[2rem] font-medium leading-[70%] -tracking-normal text-[#27292b]">
+                      {project.name}
+                    </span>
+                    <p className="text-[1rem] text-[#505050]">
+                      Y. {project.year}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -325,36 +329,39 @@ const Component = () => {
               data-original="true"
             >
               <div className="relative aspect-square  w-[13vw] overflow-hidden rounded-full">
-                <Image
-                  src={project.Image}
-                  alt={project.name}
-                  width={250}
-                  height={250}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
-                />
-              </div>
-
-              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/5 backdrop-blur-sm p-6 mt-2 ">
-                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                <Link href={project.link}>
                   <Image
-                    src="/ring2.png"
-                    alt="ring"
-                    fill
-                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                    src={project.Image}
+                    alt={project.name}
+                    width={250}
+                    height={250}
+                    className="h-full w-full object-cover group-hover:scale-125 transition-all duration-700 ease-in-out"
                   />
-                </div>
-                <div className="flex h-full flex-col items-center justify-between">
-                  <div className=" text-[1.3rem] text-[#505050]">
-                    N. {project.number}
-                  </div>
-                  <span className="text-[2rem] font-medium leading-[69%] -tracking-normal text-[#27292b]">
-                    {project.name}
-                  </span>
-                  <p className="text-[1rem] text-[#505050]">
-                    Y. {project.year}
-                  </p>
-                </div>
+                </Link>
               </div>
+              <Link href={project.link}>
+                <div className="relative aspect-square  w-[12vw] rounded-full bg-black/5 backdrop-blur-sm p-6 mt-2 ">
+                  <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                    <Image
+                      src="/ring2.png"
+                      alt="ring"
+                      fill
+                      className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                    />
+                  </div>
+                  <div className="flex h-full flex-col items-center justify-between">
+                    <div className=" text-[1.3rem] text-[#505050]">
+                      N. {project.number}
+                    </div>
+                    <span className="text-[2rem] font-medium leading-[69%] -tracking-normal text-[#27292b]">
+                      {project.name}
+                    </span>
+                    <p className="text-[1rem] text-[#505050]">
+                      Y. {project.year}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>

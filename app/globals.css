@@ -13,8 +13,7 @@
 
 @font-face {
   font-family: 'Safiro';
-  src: url('../public/fonts/safiro-regular-i.woff') format('woff'),
-    url('../public/fonts/safiro-regular.woff') format('woff'),
+  src: url('../public/fonts/safiro-regular.woff') format('woff'),
     url('../public/fonts/safiro-medium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;

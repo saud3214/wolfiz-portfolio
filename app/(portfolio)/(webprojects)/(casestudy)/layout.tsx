@@ -2,11 +2,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import Head from 'next/head';
-import Image from 'next/image';
 
+import Image from 'next/image';
+import { ArrowLeft, MoveUpLeft } from 'lucide-react';
 import { Poppins } from 'next/font/google';
-import { ArrowLeft } from 'lucide-react';
 
 const popins = Poppins({
   subsets: ['latin'], // Adjust the subsets according to your needs
@@ -38,17 +37,31 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="flex items-center justify-center fixed lg:h-24 h-16 z-[2] w-full">
-        <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right">
+      <header className="flex items-center justify-center fixed h-24 z-[2] w-full ">
+        <div className="font-bold fixed  flex items-end justify-end w-[93%] text-right ">
           <Link
             href="/webprojects"
             className="w-full flex items-end justify-end "
           >
+            {/* <div className=" relative w-[6%]  ">
+              <Image
+                className=" relativepos"
+                src="/backn.png"
+                alt="move down arrow"
+                fill
+              />
+            </div> */}
             <button
-              className={`flex  items-center justify-center gap-1 px-6 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-300 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
+              className={`flex  items-center justify-center gap-1 px-4 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
             >
-              <ArrowLeft className="size-4" />
-              <span className="font-medium text-xl ">Back</span>
+              <MoveUpLeft className="size-4" />
+
+              <span
+                className="font-medium  "
+                style={{ fontFamily: 'Safiro, sans-serif' }}
+              >
+                Back
+              </span>
             </button>
           </Link>
         </div>

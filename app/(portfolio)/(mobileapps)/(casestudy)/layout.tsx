@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import Image from 'next/image';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, MoveUpLeft } from 'lucide-react';
 import { Poppins } from 'next/font/google';
 
 const popins = Poppins({
@@ -37,9 +37,12 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="hidden items-center justify-center fixed h-24 z-[2] w-full ">
-        <div className="font-bold fixed  flex items-end justify-end w-[80%] text-right ">
-          <a href="/mobileapps" className="w-full flex items-end justify-end ">
+      <header className="flex items-center justify-center fixed h-24 z-[2] w-full ">
+        <div className="font-bold fixed  flex items-end justify-end w-[93%] text-right ">
+          <Link
+            href="/mobileapps"
+            className="w-full flex items-end justify-end "
+          >
             {/* <div className=" relative w-[6%]  ">
               <Image
                 className=" relativepos"
@@ -49,12 +52,18 @@ export default function CasestudyLayout({
               />
             </div> */}
             <button
-              className={`flex  items-center justify-center gap-1 px-6 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
+              className={`flex  items-center justify-center gap-1 px-4 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
             >
-              <ArrowLeft className="size-4" />
-              <span className="font-medium  text-xl">Back</span>
+              <MoveUpLeft className="size-4" />
+
+              <span
+                className="font-medium  "
+                style={{ fontFamily: 'Safiro, sans-serif' }}
+              >
+                Back
+              </span>
             </button>
-          </a>
+          </Link>
         </div>
       </header>
       <main>{children}</main>
