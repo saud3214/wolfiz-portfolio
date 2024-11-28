@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState, useMemo } from 'react';
+import { useRef, useEffect, useState, useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
@@ -80,7 +80,8 @@ const Component = () => {
   const scrollDownRef = useRef<HTMLDivElement>(null);
   const [scrollUpCounter, setScrollUpCounter] = useState(0);
   const [scrollDownCounter, setScrollDownCounter] = useState(0);
-  const updateCounters = () => {
+
+  const updateCounters = useCallback(() => {
     if (!scrollUpRef.current || !scrollDownRef.current) return;
 
     const totalProjects = projects2.length;
@@ -96,7 +97,8 @@ const Component = () => {
     // Update both counters (adding +1 for 1-based index display)
     setScrollUpCounter(currentIndexUp + 1);
     setScrollDownCounter(currentIndexDown + 1);
-  };
+  }, [scrollUpRef, scrollDownRef, projects2]);
+
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -204,7 +206,7 @@ const Component = () => {
       clearInterval(timer);
       // lenis.destroy();
     };
-  }, [projects2]);
+  }, [projects2, updateCounters]);
 
   const scrollWithAnimation = (direction: number) => {
     if (!scrollUpRef.current || !scrollDownRef.current) return; // Check if refs are not null

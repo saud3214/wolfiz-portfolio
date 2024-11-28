@@ -1,126 +1,96 @@
 'use client';
-
-import { useRef, useEffect, useState, useMemo } from 'react';
-import Image from 'next/image';
+import Head from 'next/head';
+import { useEffect, useMemo, useState } from 'react';
+import Lenis from 'lenis';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
-import useSmoothScroll from '@/app/components/ss';
-import Lenis from 'lenis';
-const Component = () => {
-  const projects2 = useMemo(
+import Image from 'next/image';
+import Link from 'next/link';
+import { MoveUpLeft } from 'lucide-react';
+
+const Home = () => {
+  const projects = useMemo(
     () => [
       {
-        name: 'yalaxi',
+        name: '6ix mortgage',
         year: '2023',
         number: '01',
         type: 'image',
-        color1: '#B9E1F3', // Lighter Aqua (Light Version)
-        color2: '#00799C', // Slightly lighter Intense Aqua
+        color1: '#fcf9ea', // Lighter Aqua (Light Version)
+        color2: '#796c30', // Slightly lighter Intense Aqua
         speed: 0.6,
-        Image: '/img/yalaxi.jpg',
+        Image: '/img/6mgcard.png',
+        Link: '/6ixmortgage',
       },
       {
-        name: 'avacons',
+        name: 'zar consultancy',
         year: '2024',
         number: '02',
         type: 'gradient',
-        color1: '#FFD8A1', // Lighter Orange (Light Version)
-        color2: '#FF8F3B', // Slightly lighter Intense Orange
+        color1: '#c9fcf9', // Lighter Orange (Light Version)
+        color2: '#00a89d', // Slightly lighter Intense Orange
         speed: 0.7,
-        Image: '/img/avcon.jpg',
+        Image: '/img/zccard.png',
+        Link: '/zarconsultancy',
       },
       {
-        name: 'peptide',
+        name: 'profsafely',
         year: '2021',
         number: '03',
         type: 'image',
-        color1: '#C9E6B4', // Lighter Green (Light Version)
-        color2: '#5C8E5A', // Slightly lighter Intense Green
+        color1: '#fcf5e3', // Lighter Green (Light Version)
+        color2: '#E7B639', // Slightly lighter Intense Green
         speed: 0.7,
-        Image: '/img/medical.jpg',
+        Image: '/img/gncard.png',
+        Link: '/grammarnow',
       },
       {
-        name: 'doroos',
+        name: 'kingdom connect',
         year: '2022',
         number: '04',
         type: 'gradient',
-        color1: '#F9C4C1', // Lighter Red (Light Version)
-        color2: '#B34A3D', // Slightly lighter Intense Red
+        color1: '#f7e2ff', // Lighter Red (Light Version)
+        color2: '#6E3385', // Slightly lighter Intense Red
         speed: 0.7,
-        Image: '/img/peptide.jpg',
+        Image: '/img/kccard.png',
+        Link: '/kingdomconnect',
       },
       {
-        name: 'simi riezen',
+        name: 'vienna vnwrapped',
         year: '2023',
         number: '05',
         type: 'image',
-        color1: '#A1B7C4', // Lighter Blue (Light Version)
-        color2: '#3B5264', // Slightly lighter Intense Dark Blue
+        color1: '#f9cfcf', // Lighter Blue (Light Version)
+        color2: '#EA0000', // Slightly lighter Intense Dark Blue
         speed: 0.7,
-        Image: '/img/simi.jpg',
-      },
-      {
-        name: 'golden horizon',
-        year: '2021',
-        number: '06',
-        type: 'gradient',
-        color1: '#F9E6A7', // Lighter Gold (Light Version)
-        color2: '#C5852F', // Slightly lighter Intense Gold
-        speed: 0.7,
-        Image: '/img/8.jpg',
-      },
-      {
-        name: 'lunar eclipse',
-        year: '2024',
-        number: '07',
-        type: 'image',
-        color1: '#D1B9E4', // Lighter Purple (Light Version)
-        color2: '#8E6C9E', // Slightly lighter Intense Purple
-        speed: 0.7,
-        Image: '/img/9.jpg',
-      },
-      {
-        name: 'ocean breeze',
-        year: '2022',
-        number: '08',
-        type: 'image',
-        color1: '#A9E2F3', // Lighter Ocean Blue (Light Version)
-        color2: '#2C7B94', // Slightly lighter Intense Ocean Blue
-        speed: 0.7,
-        Image: '/img/10.jpg',
+        Image: '/img/vucard.png',
+        Link: '/vienna',
       },
     ],
     [],
   );
 
   const [shaderSettings, setShaderSettings] = useState({
-    color1: projects2[1].color1,
-    color2: projects2[1].color2,
-    speed: projects2[1].speed,
+    color1: projects[0].color1,
+    color2: projects[0].color2,
+    speed: projects[0].speed,
   });
   const [currentTime, setCurrentTime] = useState('');
-  const scrollUpRef = useRef<HTMLDivElement>(null);
-  const scrollDownRef = useRef<HTMLDivElement>(null);
-  const [scrollUpCounter, setScrollUpCounter] = useState(0);
-  const [scrollDownCounter, setScrollDownCounter] = useState(0);
-  const updateCounters = () => {
-    if (!scrollUpRef.current || !scrollDownRef.current) return;
 
-    const totalProjects = projects2.length;
-    const scrollStep = scrollUpRef.current.clientHeight; // Height of one project
-
-    // Calculate the index of the visible project for scrollUpDiv
-    const currentIndexUp =
-      Math.round(scrollUpRef.current.scrollTop / scrollStep) % totalProjects;
-
-    // Calculate the reverse index for scrollDownDiv
-    const currentIndexDown = (totalProjects - currentIndexUp) % totalProjects;
-
-    // Update both counters (adding +1 for 1-based index display)
-    setScrollUpCounter(currentIndexUp + 1);
-    setScrollDownCounter(currentIndexDown + 1);
-  };
   useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.8,
+      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      gestureOrientation: 'both',
+      touchMultiplier: 2,
+    });
+    setShaderSettings({
+      color1: projects[0].color1,
+      color2: projects[0].color2,
+      speed: projects[0].speed,
+    });
+
     const updateTime = () => {
       const now = new Date();
       setCurrentTime(
@@ -134,241 +104,84 @@ const Component = () => {
     };
     updateTime();
     const timer = setInterval(updateTime, 60000);
-    const scrollUpDiv = scrollUpRef.current;
-    const scrollDownDiv = scrollDownRef.current;
-
-    if (!scrollUpDiv || !scrollDownDiv) return;
-
-    // Duplicate content for infinite scroll
-    scrollUpDiv.innerHTML += scrollUpDiv.innerHTML;
-    scrollDownDiv.innerHTML += scrollDownDiv.innerHTML;
-
-    const lenis = new Lenis({
-      duration: 1.8,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      smoothWheel: true,
-      gestureOrientation: 'both',
-      touchMultiplier: 2,
-    });
-
-    lenis.on('scroll', ({ scroll }: { scroll: number }) => {
-      const upHeight = scrollUpDiv.scrollHeight / 2;
-      const downHeight = scrollDownDiv.scrollHeight / 2;
-
-      // Handle infinite scroll for scrollUpDiv
-      if (scrollUpDiv.scrollTop >= upHeight) {
-        scrollUpDiv.scrollTop = 0; // Reset position
-      }
-
-      // Handle infinite scroll for scrollDownDiv
-      if (scrollDownDiv.scrollTop <= 0) {
-        scrollDownDiv.scrollTop = downHeight; // Reset position
-      }
-
-      // Sync scroll positions
-      scrollDownDiv.scrollTop =
-        scrollUpDiv.scrollHeight -
-        scrollUpDiv.scrollTop -
-        scrollDownDiv.clientHeight;
-    });
-
-    const initialCenterPosition = scrollUpDiv.scrollHeight / 4;
-    scrollUpDiv.scrollTop = initialCenterPosition;
-    scrollDownDiv.scrollTop = initialCenterPosition;
-
     const raf = (time: number) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
-
     requestAnimationFrame(raf);
-    // Event delegation for hover
-    const handleHover = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement).closest('.content1');
-      if (!target) return;
 
-      const index = (target as HTMLElement).dataset.index; // Use dataset to find original index
-      const isOriginal = (target as HTMLElement).dataset.original === 'true';
-
-      if (!isOriginal) return; // Only handle hover for original items
-
-      setShaderSettings({
-        color1: projects2[Number(index)].color1,
-        color2: projects2[Number(index)].color2,
-        speed: projects2[Number(index)].speed,
-      });
-      console.log('Hovering over project:', projects2[Number(index)].name);
-    };
-
-    // Add event listeners
-    scrollUpDiv.addEventListener('mouseover', handleHover);
-    scrollDownDiv.addEventListener('mouseover', handleHover);
-
-    // Cleanup
     return () => {
-      scrollUpDiv.removeEventListener('mouseover', handleHover);
-      scrollDownDiv.removeEventListener('mouseover', handleHover);
       clearInterval(timer);
-      lenis.destroy();
+      lenis.destroy(); // Clean up on unmount
     };
-  }, [projects2]);
+  }, [projects]);
 
-  const scrollWithAnimation = (direction: number) => {
-    if (!scrollUpRef.current || !scrollDownRef.current) return; // Check if refs are not null
-
-    const scrollStep = scrollUpRef.current.clientHeight / 40; // Smaller steps for smoothness
-    let steps = 40;
-
-    const interval = setInterval(() => {
-      if (steps === 0) {
-        clearInterval(interval); // Stop animation
-        updateCounters(); // Update counters after animation
-      } else {
-        if (scrollUpRef.current && scrollDownRef.current) {
-          // Check if refs are not null before accessing properties
-          scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
-          scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
-        }
-        steps--;
-      }
-    }, 20); // Adjust time interval for smoothness
-  };
-  const prevprojects = () => scrollWithAnimation(-1); // Scroll up
-  const nextprojects = () => scrollWithAnimation(1); // Scroll down
   return (
     <div
-      className="w-full flex items-center justify-center"
+      className="w-full relative items-center justify-center flex scroll-boxx"
       style={{ fontFamily: 'Safiro, sans-serif' }}
     >
-      <Canvas
+      {/* <Canvas
         className="absolute top-0 left-0 w-full h-full -z-20"
-        style={{ position: 'absolute', pointerEvents: 'none' }}
+        style={{ position: 'absolute' }}
       >
         <ShaderBackground
           color1={shaderSettings.color1}
           color2={shaderSettings.color2}
           speed={shaderSettings.speed}
         />
-      </Canvas>
+      </Canvas> */}
 
-      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[1%] w-[95%]">
+      {/* Header */}
+      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-20">
         <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
-          <span>F</span>
-          <span className="text-gray-600 ">/</span>
-          <span>P</span>
-
+          <Link href="/" className="cursor-pointer">
+            WOLFIZ
+          </Link>
           <div className="text-sm ml-[8%] text-[#575757] font-light">
             UDINE, {currentTime} PST
           </div>
         </div>
-        <div className="flex gap-3 text-sm items-center">
-          <a href="#projects" className="hover:opacity-70">
-            PROJECTS
-          </a>
-          <span className="text-gray-600 ">/</span>
-
-          <a href="#about" className="hover:opacity-70">
-            ABOUT
+        <div className="flex gap-1 text-sm items-center cursor-pointer">
+          <MoveUpLeft className="size-4" />
+          <a href="/" className="hover:opacity-70 cupo">
+            GO BACK
           </a>
         </div>
       </header>
-      <div className="w-[93%] flex items-center justify-between fixed">
-        <span className="text-lg  text-black font-light">
-          Featured <br></br>Projects
-        </span>
-        <span className="text-lg  text-black">2023 / 2024</span>
-      </div>
-      <div className="scroll-row w-full">
-        <div
-          ref={scrollDownRef}
-          className="scroll-box items-end transition-all duration-700 ease-in-out "
-        >
-          {projects2.map((project, index) => (
-            <div
-              key={`up-${index}`}
-              className="content1 group relative"
-              data-index={index}
-              data-original="true"
-            >
-              <div className="relative aspect-square   w-[13vw] overflow-hidden rounded-full  ">
-                <Image
-                  src={project.Image}
-                  alt={project.name}
-                  width={250}
-                  height={250}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
-                />
-              </div>
 
-              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2  ">
-                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
-                  <Image
-                    src="/ring2.png"
-                    alt="ring"
-                    fill
-                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-                <div className="flex h-full flex-col items-center justify-between">
-                  <div className=" text-[1.3rem] text-[#505050]">
-                    N. {project.number}
-                  </div>
-                  <span className="text-[2rem] font-medium leading-[70%] -tracking-normal text-[#27292b]">
-                    {project.name}
-                  </span>
-                  <p className="text-[1rem] text-[#505050]">
-                    Y. {project.year}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div
-          ref={scrollUpRef}
-          className="scroll-box items-start transition-all duration-700 ease-in-out "
-        >
-          {projects2.map((project, index) => (
-            <div
-              key={`down-${index}`}
-              className="content1 group relative"
-              data-index={index}
-              data-original="true"
+      <main className="page-wrapper w-full items-center justify-center flex flex-col ">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className={`w-1/2 h-[50vh] flex flex-col items-center relative justify-center rounded-xl p-5   mb-10 ${
+              index === 0 ? 'mt-52' : ''
+            }`}
+            onMouseEnter={() =>
+              setShaderSettings({
+                color1: project.color1,
+                color2: project.color2,
+                speed: project.speed,
+              })
+            }
+          >
+            <Link
+              href={project.Link || '#'} // Use a fallback URL when `project.Link` is undefined
+              className="cursor-pointer"
             >
-              <div className="relative aspect-square  w-[13vw] overflow-hidden rounded-full">
-                <Image
-                  src={project.Image}
-                  alt={project.name}
-                  width={250}
-                  height={250}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
-                />
-              </div>
-
-              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/5 backdrop-blur-sm p-6 mt-2 ">
-                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
-                  <Image
-                    src="/ring2.png"
-                    alt="ring"
-                    fill
-                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-                <div className="flex h-full flex-col items-center justify-between">
-                  <div className=" text-[1.3rem] text-[#505050]">
-                    N. {project.number}
-                  </div>
-                  <span className="text-[2rem] font-medium leading-[69%] -tracking-normal text-[#27292b]">
-                    {project.name}
-                  </span>
-                  <p className="text-[1rem] text-[#505050]">
-                    Y. {project.year}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              <Image
+                src={project.Image}
+                alt={project.name}
+                fill
+                className="object-contain rounded-lg cursor-pointer "
+              />
+            </Link>
+            {/* <h2 className="text-2xl font-bold mt-4">{project.name}</h2>
+            <p className="text-lg">Year: {project.year}</p>
+            <p className="text-lg">Number: {project.number}</p>
+            <p className="text-lg">Type: {project.type}</p> */}
+          </div>
+        ))}
 
         <div className="w-[95%] flex items-center justify-between fixed z-50 ">
           <div className="fixed left-[3%] bottom-[4%] ">
@@ -384,7 +197,7 @@ const Component = () => {
                   <div className="relative text-7xl font-light w-full">
                     {/* Counter for scrollDown div */}
                     <span className="absolute bottom-3 left-[40%] font-medium">
-                      {scrollDownCounter}
+                      6
                     </span>
 
                     {/* Rotating line */}
@@ -392,7 +205,7 @@ const Component = () => {
 
                     {/* Counter for scrollUp div */}
                     <span className="absolute top-4 left-1/2 font-medium">
-                      {scrollUpCounter}
+                      7
                     </span>
                   </div>
                 </div>
@@ -404,14 +217,12 @@ const Component = () => {
 
                 {/* Navigation buttons */}
                 <button
-                  onClick={prevprojects}
                   className="absolute left-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
                   aria-label="Previous slide"
                 >
                   ←
                 </button>
                 <button
-                  onClick={nextprojects}
                   className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
                   aria-label="Next slide"
                 >
@@ -428,50 +239,14 @@ const Component = () => {
             of the last 4 years
           </span>
         </div>
-      </div>
-      <style jsx>{`
-        .container {
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-
-        .scroll-row {
-          display: flex;
-          gap: 20px;
-          scroll-behavior: smooth;
-        }
-
-        .scroll-box {
-          display: flex;
-          flex-direction: column;
-          width: 50%;
-          z-index: 20;
-          height: 100vh;
-          overflow-y: scroll;
-          position: relative;
-          padding: 10px;
-          box-sizing: border-box;
-        }
-        .scroll-box::-webkit-scrollbar {
-          display: none;
-        }
-
-        .content1 {
-          padding: 10px;
-          margin-bottom: 10px;
-          text-align: center;
-        }
-        main {
-          justify-content: center;
-          display: flex;
-        }
-        .scroll-smooth {
-          scroll-behavior: smooth; /* Smooth scrolling only when this class is applied */
-        }
-      `}</style>
+        <style jsx>{`
+          .scroll-boxx:-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
+      </main>
     </div>
   );
 };
 
-export default Component;
+export default Home;

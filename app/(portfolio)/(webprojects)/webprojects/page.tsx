@@ -1,72 +1,74 @@
 'use client';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Lenis from 'lenis';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MoveUpLeft } from 'lucide-react';
-import { simiReizen } from '@/app/(portfolio)/(webprojects)/webprojects/animation';
 
 const Home = () => {
-  const projects = [
-    {
-      name: '6ix mortgage',
-      year: '2023',
-      number: '01',
-      type: 'image',
-      color1: '#def1f9', // Lighter Aqua (Light Version)
-      color2: '#5fdafc', // Slightly lighter Intense Aqua
-      speed: 1,
-      Image: '/img/6mgcard.png',
-      Link: '/6ixmortgage',
-    },
-    {
-      name: 'zar consultancy',
-      year: '2024',
-      number: '02',
-      type: 'gradient',
-      color1: '#fcedd9', // Lighter Orange (Light Version)
-      color2: '#fcb480', // Slightly lighter Intense Orange
-      speed: 0.7,
-      Image: '/img/zccard.png',
-      Link: '/zarconsultancy',
-    },
-    {
-      name: 'profsafely',
-      year: '2021',
-      number: '03',
-      type: 'image',
-      color1: '#f3fced', // Lighter Green (Light Version)
-      color2: '#97f791', // Slightly lighter Intense Green
-      speed: 0.7,
-      Image: '/img/gncard.png',
-      Link: '/grammarnow',
-    },
-    {
-      name: 'kingdom connect',
-      year: '2022',
-      number: '04',
-      type: 'gradient',
-      color1: '#ffebea', // Lighter Red (Light Version)
-      color2: '#fc9185', // Slightly lighter Intense Red
-      speed: 0.7,
-      Image: '/img/kccard.png',
-      Link: '/kingdomconnect',
-    },
-    {
-      name: 'vienna vnwrapped',
-      year: '2023',
-      number: '05',
-      type: 'image',
-      color1: '#e0f3ff', // Lighter Blue (Light Version)
-      color2: '#91cbf7', // Slightly lighter Intense Dark Blue
-      speed: 0.7,
-      Image: '/img/vucard.png',
-      Links: 'vienna',
-    },
-  ];
+  const projects = useMemo(
+    () => [
+      {
+        name: '6ix mortgage',
+        year: '2023',
+        number: '01',
+        type: 'image',
+        color1: '#fcf9ea', // Lighter Aqua (Light Version)
+        color2: '#796c30', // Slightly lighter Intense Aqua
+        speed: 0.6,
+        Image: '/img/6mgcard.png',
+        Link: '/6ixmortgage',
+      },
+      {
+        name: 'zar consultancy',
+        year: '2024',
+        number: '02',
+        type: 'gradient',
+        color1: '#c9fcf9', // Lighter Orange (Light Version)
+        color2: '#00a89d', // Slightly lighter Intense Orange
+        speed: 0.7,
+        Image: '/img/zccard.png',
+        Link: '/zarconsultancy',
+      },
+      {
+        name: 'profsafely',
+        year: '2021',
+        number: '03',
+        type: 'image',
+        color1: '#fcf5e3', // Lighter Green (Light Version)
+        color2: '#E7B639', // Slightly lighter Intense Green
+        speed: 0.7,
+        Image: '/img/gncard.png',
+        Link: '/grammarnow',
+      },
+      {
+        name: 'kingdom connect',
+        year: '2022',
+        number: '04',
+        type: 'gradient',
+        color1: '#f7e2ff', // Lighter Red (Light Version)
+        color2: '#6E3385', // Slightly lighter Intense Red
+        speed: 0.7,
+        Image: '/img/kccard.png',
+        Link: '/kingdomconnect',
+      },
+      {
+        name: 'vienna vnwrapped',
+        year: '2023',
+        number: '05',
+        type: 'image',
+        color1: '#f9cfcf', // Lighter Blue (Light Version)
+        color2: '#EA0000', // Slightly lighter Intense Dark Blue
+        speed: 0.7,
+        Image: '/img/vucard.png',
+        Link: '/vienna',
+      },
+    ],
+    [],
+  );
 
   const [shaderSettings, setShaderSettings] = useState({
     color1: projects[0].color1,
@@ -76,14 +78,17 @@ const Home = () => {
   const [currentTime, setCurrentTime] = useState('');
 
   useEffect(() => {
-    simiReizen();
-
     const lenis = new Lenis({
       duration: 1.8,
       easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       gestureOrientation: 'both',
       touchMultiplier: 2,
+    });
+    setShaderSettings({
+      color1: projects[0].color1,
+      color2: projects[0].color2,
+      speed: projects[0].speed,
     });
 
     const updateTime = () => {
@@ -109,7 +114,7 @@ const Home = () => {
       clearInterval(timer);
       lenis.destroy(); // Clean up on unmount
     };
-  }, []);
+  }, [projects]);
 
   return (
     <div
@@ -126,9 +131,7 @@ const Home = () => {
           speed={shaderSettings.speed}
         />
       </Canvas>
-      <Head>
-        <link href="/css/new.css" rel="stylesheet" type="text/css" />
-      </Head>
+
       {/* Header */}
       <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-20">
         <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
@@ -170,7 +173,7 @@ const Home = () => {
                 src={project.Image}
                 alt={project.name}
                 fill
-                className="object-contain rounded-lg cursor-pointer content1"
+                className="object-contain rounded-lg cursor-pointer "
               />
             </Link>
             {/* <h2 className="text-2xl font-bold mt-4">{project.name}</h2>
