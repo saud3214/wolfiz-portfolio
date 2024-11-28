@@ -4,59 +4,60 @@ import { useRef, useEffect, useState, useMemo } from 'react';
 import Image from 'next/image';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
-import useSmoothScroll from '@/app/components/ss';
+import Lenis from 'lenis';
 const Component = () => {
   const projects2 = useMemo(
     () => [
       {
-        name: 'aqua wave',
+        name: 'yalaxi',
         year: '2023',
         number: '01',
         type: 'image',
-        color1: '#B9E1F3', // Lighter Aqua (Light Version)
-        color2: '#00799C', // Slightly lighter Intense Aqua
+        color1: '#FBB79F', // Lighter Aqua (Light Version)
+        color2: '#FFA382', // Slightly lighter Intense Aqua
         speed: 0.6,
-        Image: '/img/3.jpg',
+        Image: '/img/yalaxi.jpg',
       },
       {
-        name: 'solar flare',
+        name: 'avacons',
         year: '2024',
         number: '02',
         type: 'gradient',
-        color1: '#FFD8A1', // Lighter Orange (Light Version)
-        color2: '#FF8F3B', // Slightly lighter Intense Orange
+        color1: '#C5C7C9     ', // Lighter Orange (Light Version)
+        color2: '#99A2AB', // Slightly lighter Intense Orange
         speed: 0.7,
-        Image: '/img/4.jpg',
+        Image: '/img/avacon.jpg',
       },
       {
-        name: 'mountain echo',
+        name: 'peptide',
         year: '2021',
         number: '03',
         type: 'image',
-        color1: '#C9E6B4', // Lighter Green (Light Version)
-        color2: '#5C8E5A', // Slightly lighter Intense Green
+        color1: '#C4DDBF', // Lighter Green (Light Version)
+        color2: '#94A7A1', // Slightly lighter Intense Green
         speed: 0.7,
-        Image: '/img/5.jpg',
+        Image: '/img/medical.jpg',
       },
+
       {
-        name: 'nebula drift',
-        year: '2022',
-        number: '04',
-        type: 'gradient',
-        color1: '#F9C4C1', // Lighter Red (Light Version)
-        color2: '#B34A3D', // Slightly lighter Intense Red
-        speed: 0.7,
-        Image: '/img/6.jpg',
-      },
-      {
-        name: 'city lights',
+        name: 'simi riezen',
         year: '2023',
         number: '05',
         type: 'image',
-        color1: '#A1B7C4', // Lighter Blue (Light Version)
-        color2: '#3B5264', // Slightly lighter Intense Dark Blue
+        color1: '#A6D9F0', // Lighter Blue (Light Version)
+        color2: '#6ED0FC', // Slightly lighter Intense Dark Blue
         speed: 0.7,
-        Image: '/img/7.jpg',
+        Image: '/img/simi.jpg',
+      },
+      {
+        name: 'doroos',
+        year: '2022',
+        number: '04',
+        type: 'gradient',
+        color1: '#ABB8B4           ', // Lighter Red (Light Version)
+        color2: '#94A7A1', // Slightly lighter Intense Red
+        speed: 0.7,
+        Image: '/img/peptide.jpg',
       },
       {
         name: 'golden horizon',
@@ -67,26 +68,6 @@ const Component = () => {
         color2: '#C5852F', // Slightly lighter Intense Gold
         speed: 0.7,
         Image: '/img/8.jpg',
-      },
-      {
-        name: 'lunar eclipse',
-        year: '2024',
-        number: '07',
-        type: 'image',
-        color1: '#D1B9E4', // Lighter Purple (Light Version)
-        color2: '#8E6C9E', // Slightly lighter Intense Purple
-        speed: 0.7,
-        Image: '/img/9.jpg',
-      },
-      {
-        name: 'ocean breeze',
-        year: '2022',
-        number: '08',
-        type: 'image',
-        color1: '#A9E2F3', // Lighter Ocean Blue (Light Version)
-        color2: '#2C7B94', // Slightly lighter Intense Ocean Blue
-        speed: 0.7,
-        Image: '/img/10.jpg',
       },
     ],
     [],
@@ -196,7 +177,6 @@ const Component = () => {
         color2: projects2[Number(index)].color2,
         speed: projects2[Number(index)].speed,
       });
-      console.log('Hovering over project:', projects2[Number(index)].name);
     };
 
     // Add event listeners
@@ -204,6 +184,19 @@ const Component = () => {
     scrollDownDiv.addEventListener('scroll', handleScrollDown);
     scrollUpDiv.addEventListener('mouseover', handleHover);
     scrollDownDiv.addEventListener('mouseover', handleHover);
+    // const lenis = new Lenis({
+    //   duration: 1.8,
+    //   easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    //   smoothWheel: true,
+    //   gestureOrientation: 'both',
+    //   touchMultiplier: 2,
+    // });
+
+    // const raf = (time: number) => {
+    //   lenis.raf(time);
+    //   requestAnimationFrame(raf);
+    // };
+    // requestAnimationFrame(raf);
 
     // Cleanup
     return () => {
@@ -212,6 +205,7 @@ const Component = () => {
       scrollUpDiv.removeEventListener('mouseover', handleHover);
       scrollDownDiv.removeEventListener('mouseover', handleHover);
       clearInterval(timer);
+      // lenis.destroy();
     };
   }, [projects2]);
 

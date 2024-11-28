@@ -5,58 +5,59 @@ import Image from 'next/image';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
 import useSmoothScroll from '@/app/components/ss';
+import Lenis from 'lenis';
 const Component = () => {
   const projects2 = useMemo(
     () => [
       {
-        name: 'aqua wave',
+        name: 'yalaxi',
         year: '2023',
         number: '01',
         type: 'image',
         color1: '#B9E1F3', // Lighter Aqua (Light Version)
         color2: '#00799C', // Slightly lighter Intense Aqua
         speed: 0.6,
-        Image: '/img/3.jpg',
+        Image: '/img/yalaxi.jpg',
       },
       {
-        name: 'solar flare',
+        name: 'avacons',
         year: '2024',
         number: '02',
         type: 'gradient',
         color1: '#FFD8A1', // Lighter Orange (Light Version)
         color2: '#FF8F3B', // Slightly lighter Intense Orange
         speed: 0.7,
-        Image: '/img/4.jpg',
+        Image: '/img/avcon.jpg',
       },
       {
-        name: 'mountain echo',
+        name: 'peptide',
         year: '2021',
         number: '03',
         type: 'image',
         color1: '#C9E6B4', // Lighter Green (Light Version)
         color2: '#5C8E5A', // Slightly lighter Intense Green
         speed: 0.7,
-        Image: '/img/5.jpg',
+        Image: '/img/medical.jpg',
       },
       {
-        name: 'nebula drift',
+        name: 'doroos',
         year: '2022',
         number: '04',
         type: 'gradient',
         color1: '#F9C4C1', // Lighter Red (Light Version)
         color2: '#B34A3D', // Slightly lighter Intense Red
         speed: 0.7,
-        Image: '/img/6.jpg',
+        Image: '/img/peptide.jpg',
       },
       {
-        name: 'city lights',
+        name: 'simi riezen',
         year: '2023',
         number: '05',
         type: 'image',
         color1: '#A1B7C4', // Lighter Blue (Light Version)
         color2: '#3B5264', // Slightly lighter Intense Dark Blue
         speed: 0.7,
-        Image: '/img/7.jpg',
+        Image: '/img/simi.jpg',
       },
       {
         name: 'golden horizon',
@@ -142,45 +143,45 @@ const Component = () => {
     scrollUpDiv.innerHTML += scrollUpDiv.innerHTML;
     scrollDownDiv.innerHTML += scrollDownDiv.innerHTML;
 
-    // Sync initial scroll position
+    const lenis = new Lenis({
+      duration: 1.8,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothWheel: true,
+      gestureOrientation: 'both',
+      touchMultiplier: 2,
+    });
+
+    lenis.on('scroll', ({ scroll }: { scroll: number }) => {
+      const upHeight = scrollUpDiv.scrollHeight / 2;
+      const downHeight = scrollDownDiv.scrollHeight / 2;
+
+      // Handle infinite scroll for scrollUpDiv
+      if (scrollUpDiv.scrollTop >= upHeight) {
+        scrollUpDiv.scrollTop = 0; // Reset position
+      }
+
+      // Handle infinite scroll for scrollDownDiv
+      if (scrollDownDiv.scrollTop <= 0) {
+        scrollDownDiv.scrollTop = downHeight; // Reset position
+      }
+
+      // Sync scroll positions
+      scrollDownDiv.scrollTop =
+        scrollUpDiv.scrollHeight -
+        scrollUpDiv.scrollTop -
+        scrollDownDiv.clientHeight;
+    });
+
     const initialCenterPosition = scrollUpDiv.scrollHeight / 4;
     scrollUpDiv.scrollTop = initialCenterPosition;
     scrollDownDiv.scrollTop = initialCenterPosition;
 
-    // Function to handle scroll for up-div and sync down-div
-    const handleScrollUp = () => {
-      if (scrollUpDiv && scrollDownDiv) {
-        if (scrollUpDiv.scrollTop >= scrollUpDiv.scrollHeight / 2) {
-          scrollUpDiv.scrollTop = 0; // Reset position
-        }
-
-        // Sync scrollDownDiv
-        scrollDownDiv.scrollTop =
-          scrollUpDiv.scrollHeight -
-          scrollUpDiv.scrollTop -
-          scrollDownDiv.clientHeight;
-
-        // Update counters
-        updateCounters();
-      }
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     };
 
-    const handleScrollDown = () => {
-      if (scrollUpDiv && scrollDownDiv) {
-        if (scrollDownDiv.scrollTop <= 0) {
-          scrollDownDiv.scrollTop = scrollDownDiv.scrollHeight / 2; // Reset position
-        }
-
-        // Sync scrollUpDiv
-        scrollUpDiv.scrollTop =
-          scrollDownDiv.scrollHeight -
-          scrollDownDiv.scrollTop -
-          scrollUpDiv.clientHeight;
-
-        // Update counters
-        updateCounters();
-      }
-    };
+    requestAnimationFrame(raf);
     // Event delegation for hover
     const handleHover = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest('.content1');
@@ -200,20 +201,17 @@ const Component = () => {
     };
 
     // Add event listeners
-    scrollUpDiv.addEventListener('scroll', handleScrollUp);
-    scrollDownDiv.addEventListener('scroll', handleScrollDown);
     scrollUpDiv.addEventListener('mouseover', handleHover);
     scrollDownDiv.addEventListener('mouseover', handleHover);
 
     // Cleanup
     return () => {
-      scrollUpDiv.removeEventListener('scroll', handleScrollUp);
-      scrollDownDiv.removeEventListener('scroll', handleScrollDown);
       scrollUpDiv.removeEventListener('mouseover', handleHover);
       scrollDownDiv.removeEventListener('mouseover', handleHover);
       clearInterval(timer);
+      lenis.destroy();
     };
-  });
+  }, [projects2]);
 
   const scrollWithAnimation = (direction: number) => {
     if (!scrollUpRef.current || !scrollDownRef.current) return; // Check if refs are not null

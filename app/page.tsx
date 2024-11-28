@@ -60,16 +60,15 @@ const slides = [
 ];
 const images = [
   [
-    '/img/50.jpg',
-    '/img/49.jpg',
-    '/img/48.jpg',
-    '/img/47.jpg',
-    '/img/46.jpg',
-    '/img/45.jpg',
-    '/img/44.jpg',
-    '/img/43.jpg',
-    '/img/42.jpg',
-    '/img/41.jpg',
+    '/img/w1.jpg',
+    '/img/w2.jpg',
+    '/img/w3.jpg',
+    '/img/w4.jpg',
+    '/img/w5.jpg',
+    '/img/w6.jpg',
+    '/img/w7.jpg',
+    '/img/w8.jpg',
+    '/img/w9.jpg',
   ],
   [
     '/img/1.jpg',

@@ -20,9 +20,10 @@ const handlePointerMove = (ev) => {
 };
 
 // Adding an event listener to the window to update mouse position on mousemove event
-window.addEventListener('mousemove', handlePointerMove);
-window.addEventListener('touchmove', handlePointerMove);
-
+if (typeof window !== 'undefined') {
+  window.addEventListener('mousemove', handlePointerMove);
+  window.addEventListener('touchmove', handlePointerMove);
+}
 export class ImageTrail {
   // Class properties initialization
   DOM = { el: null }; // Object to hold DOM elements
@@ -42,7 +43,7 @@ export class ImageTrail {
    */
   constructor(DOM_el) {
     // Store the reference to the parent DOM element.
-    this.DOM.el = DOM_el;
+    this.DOM = { el: DOM_el };
 
     // Create and store Image objects for each image element found within the parent DOM element.
     this.images = [...this.DOM.el.querySelectorAll('.content__img')].map(
@@ -56,15 +57,20 @@ export class ImageTrail {
       // Initialize cacheMousePos with the current mousePos values.
       // This is necessary to have a reference point for the initial mouse position.
       cacheMousePos = { ...mousePos };
+
       // Initiate the rendering loop.
       requestAnimationFrame(() => this.render());
+
       // Remove this mousemove event listener after it runs once to avoid reinitialization.
       window.removeEventListener('mousemove', onPointerMoveEv);
       window.removeEventListener('touchmove', onPointerMoveEv);
     };
-    // Set up an initial mousemove event listener to run onMouseMoveEv once.
-    window.addEventListener('mousemove', onPointerMoveEv);
-    window.addEventListener('touchmove', onPointerMoveEv);
+
+    // Add event listeners only if the environment is client-side
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', onPointerMoveEv);
+      window.addEventListener('touchmove', onPointerMoveEv);
+    }
   }
 
   /**

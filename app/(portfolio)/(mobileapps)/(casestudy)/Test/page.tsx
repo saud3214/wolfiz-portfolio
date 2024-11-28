@@ -179,7 +179,6 @@ export default function Component() {
         />
       </Canvas>
 
-      {/* Slide Content with Swiper */}
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;

@@ -71,10 +71,15 @@ float snoise(vec3 v) {
 }
 `;
 
+// Lazy initialization of `u_resolution` value to avoid SSR errors
+const isBrowser = typeof window !== 'undefined';
+
 const MyShaderMaterial = shaderMaterial(
   {
     u_time: 0,
-    u_resolution: new THREE.Vector2(window.innerWidth, window.innerHeight),
+    u_resolution: isBrowser
+      ? new THREE.Vector2(window.innerWidth, window.innerHeight)
+      : new THREE.Vector2(1, 1), // Default value to avoid SSR issues
     u_color1: new THREE.Color(1.0, 0.0, 0.0),
     u_color2: new THREE.Color(0.0, 0.0, 1.0),
   },

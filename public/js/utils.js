@@ -1,16 +1,27 @@
 import imagesLoaded from 'imagesloaded';
-const body = document.body;
-const docEl = document.documentElement;
 
+let body, docEl;
+
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  // Access `document` only in the client environment
+  body = document.body;
+  docEl = document.documentElement;
+}
 /**
  * Preloads images specified by the CSS selector.
  * @function
  * @param {string} [selector='img'] - CSS selector for target images.
  * @returns {Promise} - Resolves when all specified images are loaded.
  */
+
 const preloadImages = (selector = 'img') => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    // If running in SSR, return a resolved Promise to avoid errors.
+    return Promise.resolve();
+  }
+
   return new Promise((resolve) => {
-    // The imagesLoaded library is used to ensure all images (including backgrounds) are fully loaded.
+    // Use imagesLoaded only in the client-side environment.
     imagesLoaded(
       document.querySelectorAll(selector),
       { background: true },
@@ -18,6 +29,8 @@ const preloadImages = (selector = 'img') => {
     );
   });
 };
+
+export default preloadImages;
 
 /**
  * Performs linear interpolation between two numbers.
