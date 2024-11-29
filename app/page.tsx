@@ -13,11 +13,7 @@ import { Mousewheel, EffectFade } from 'swiper/modules';
 import ImageGallery from '@/app/components/hoverImage';
 import gsap from 'gsap';
 import SwiperCore from 'swiper';
-import { SrBottom } from '@/app/components/revealelement';
 import { motion } from 'framer-motion';
-import GradualSpacing from '@/components/magicui/gradual-spacing';
-import ClipTitle from '@/app/components/homeTextEffect';
-import useSmoothScroll from '@/app/components/ss';
 import Link from 'next/link';
 // Slide content with color and speed settings
 const slides = [
@@ -60,37 +56,41 @@ const slides = [
 ];
 const images = [
   [
-    '/img/w1.jpg',
+    '/img/w1.png',
     '/img/w2.jpg',
-    '/img/w3.jpg',
-    '/img/w4.jpg',
-    '/img/w5.jpg',
+    '/img/w3.png',
+    '/img/w4.png',
+    '/img/w5.png',
     '/img/w6.jpg',
+    '/img/w6.png',
     '/img/w7.jpg',
-    '/img/w8.jpg',
+    '/img/w8.png',
     '/img/w9.jpg',
+    '/img/w9.png',
   ],
   [
-    '/img/1.jpg',
-    '/img/2.jpg',
-    '/img/3.jpg',
+    '/img/1.png',
+    '/img/2.png',
+    '/img/3.png',
     '/img/4.jpg',
-    '/img/5.jpg',
+    '/img/5.png',
     '/img/6.jpg',
     '/img/7.jpg',
+    '/img/7.png',
     '/img/8.jpg',
-    '/img/9.jpg',
+    '/img/9.png',
     '/img/10.jpg',
   ],
   [
-    '/img/wa1.jpg',
-    '/img/wa2.jpg',
-    '/img/wa3.jpg',
-    '/img/wa4.jpg',
-    '/img/wa6.jpg',
-    '/img/wa7.jpg',
-    '/img/a8.jpg',
-    '/img/a9.jpg',
+    '/img/a1.jpg',
+    '/img/a2.jpg',
+    '/img/a3.jpg',
+    '/img/a4.png',
+    '/img/a5.jpg',
+    '/img/a6.png',
+    '/img/a10.png',
+    '/img/a11.png',
+
     '/img/a10.jpg',
   ],
 ];
@@ -231,20 +231,20 @@ export default function Home() {
               </header>
 
               {/* Main Slide Content */}
-              <div className="flex-1 px-6 flex flex-col justify-center xl:mb-40 mb-20">
+              <div className="flex-1 px-6 flex flex-col justify-center xl:mb-40 mb-20 ">
                 <div className="max-w-6xl mx-auto 2xl:gap-12 xl:gap-10 gap-5 flex flex-col  no-image-zone">
-                  <h1 className="text-[5vw] leading-none font-light italic text-neutral-800 cursor-pointer">
-                    {slide.title}
-                  </h1>
-
-                  <motion.div
+                  <motion.h1
                     key={currentSlide} // This ensures each change re-renders the motion.div to animate it
                     initial={{ y: 20, opacity: 0 }} // Start from below with zero opacity
                     animate={{ y: 0, opacity: 1 }} // Move up to its original position with full opacity
                     exit={{ y: -20, opacity: 0 }} // Exit animation (for smoother effect when switching slides)
                     transition={{ duration: 1, ease: 'easeInOut' }}
-                    className="flex flex-col items-start gap-6 text-[#575757] w-full "
+                    className="text-[5vw] leading-none font-light italic text-neutral-800 cursor-pointer "
                   >
+                    {slide.title}
+                  </motion.h1>
+
+                  <div className="flex flex-col items-start gap-6 text-[#575757] w-full  ">
                     <div className="flex gap-4 text-sm w-full items-center justify-center">
                       <span>AGENCY. {slides[currentSlide].agency}</span>
                       <span>YEAR. {slides[currentSlide].year}</span>
@@ -261,7 +261,7 @@ export default function Home() {
                         <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </Link>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
 

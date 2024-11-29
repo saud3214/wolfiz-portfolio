@@ -6,25 +6,28 @@ import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MoveUpLeft } from 'lucide-react';
+import { ArrowUpRight, MoveUpLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const projects = useMemo(
     () => [
       {
-        name: '6ix mortgage',
-        year: '2023',
+        name: '1947 partition archive',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '01',
         type: 'image',
         color1: '#fcf9ea', // Lighter Aqua (Light Version)
         color2: '#796c30', // Slightly lighter Intense Aqua
         speed: 0.6,
-        Image: '/img/6mgcard.png',
-        Link: '/6ixmortgage',
+        Image: '/img/1947card.png',
+        Link: '/1947partitionarchive',
       },
       {
         name: 'zar consultancy',
-        year: '2024',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '02',
         type: 'gradient',
         color1: '#c9fcf9', // Lighter Orange (Light Version)
@@ -34,8 +37,9 @@ const Home = () => {
         Link: '/zarconsultancy',
       },
       {
-        name: 'profsafely',
-        year: '2021',
+        name: 'proofsafely',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '03',
         type: 'image',
         color1: '#fcf5e3', // Lighter Green (Light Version)
@@ -46,7 +50,8 @@ const Home = () => {
       },
       {
         name: 'kingdom connect',
-        year: '2022',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '04',
         type: 'gradient',
         color1: '#f7e2ff', // Lighter Red (Light Version)
@@ -56,8 +61,9 @@ const Home = () => {
         Link: '/kingdomconnect',
       },
       {
-        name: 'vienna vnwrapped',
-        year: '2023',
+        name: 'vienna unwrapped',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '05',
         type: 'image',
         color1: '#f9cfcf', // Lighter Blue (Light Version)
@@ -76,14 +82,22 @@ const Home = () => {
     speed: projects[0].speed,
   });
   const [currentTime, setCurrentTime] = useState('');
+  const [currentProject, setCurrentProject] = useState(1);
+  const totalProjects = projects.length; // Total number of projects
+
+  const [projectDetails, setProjectDetails] = useState({
+    name: projects[0].name,
+    discription: projects[0].discription,
+    link: projects[0].Link,
+  });
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.8,
+      duration: 2.5,
       easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       gestureOrientation: 'both',
-      touchMultiplier: 2,
+      touchMultiplier: 1,
     });
     setShaderSettings({
       color1: projects[0].color1,
@@ -157,13 +171,19 @@ const Home = () => {
             className={`w-1/2 h-[50vh] flex flex-col items-center relative justify-center rounded-xl p-5   mb-10 ${
               index === 0 ? 'mt-52' : ''
             }`}
-            onMouseEnter={() =>
+            onMouseEnter={() => {
+              setCurrentProject(index + 1); // Update current project counter
+              setProjectDetails({
+                name: project.name,
+                discription: project.discription,
+                link: project.Link || '#', // Fallback link
+              });
               setShaderSettings({
                 color1: project.color1,
                 color2: project.color2,
                 speed: project.speed,
-              })
-            }
+              });
+            }}
           >
             <Link
               href={project.Link || '#'} // Use a fallback URL when `project.Link` is undefined
@@ -176,13 +196,26 @@ const Home = () => {
                 className="object-contain rounded-lg cursor-pointer "
               />
             </Link>
-            {/* <h2 className="text-2xl font-bold mt-4">{project.name}</h2>
-            <p className="text-lg">Year: {project.year}</p>
-            <p className="text-lg">Number: {project.number}</p>
-            <p className="text-lg">Type: {project.type}</p> */}
           </div>
         ))}
 
+        <div className=" flex items-center justify-between fixed z-50  ">
+          <motion.div
+            key={projectDetails.name}
+            initial={{ y: 20, opacity: 0 }} // Start from below with zero opacity
+            animate={{ y: 0, opacity: 1 }} // Move up to its original position with full opacity
+            exit={{ y: -20, opacity: 0 }} // Exit animation (for smoother effect when switching slides)
+            transition={{ duration: 1, ease: 'easeInOut' }}
+            className="fixed left-[3%] top-[23%] max-w-[25%] flex flex-col gap-5  "
+          >
+            <span className="text-6xl    ">{projectDetails.name}</span>
+            <span className="w-3/4">{projectDetails.discription}</span>
+            <button className="group flex text-sm items-center gap-2 px-4 py-2 rounded-xl border border-neutral-600 transition-colors h-fit w-1/5">
+              VISIT
+              <ArrowUpRight className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </motion.div>
+        </div>
         <div className="w-[95%] flex items-center justify-between fixed z-50 ">
           <div className="fixed left-[3%] bottom-[4%] ">
             <div className="relative w-[13vw] aspect-square">
@@ -197,15 +230,14 @@ const Home = () => {
                   <div className="relative text-7xl font-light w-full">
                     {/* Counter for scrollDown div */}
                     <span className="absolute bottom-3 left-[40%] font-medium">
-                      6
+                      {totalProjects}
                     </span>
 
                     {/* Rotating line */}
                     <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
 
-                    {/* Counter for scrollUp div */}
                     <span className="absolute top-4 left-1/2 font-medium">
-                      7
+                      {currentProject}
                     </span>
                   </div>
                 </div>
