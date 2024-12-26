@@ -34,7 +34,7 @@ const slides = [
     agency: 'DESIGNCO',
     year: '2024',
     description:
-      'An innovative mobile application solution designed to enhance user engagement and drive seamless connectivity across devices.',
+      'mobile application solution designed to enhance user engagement and drive seamless connectivity across devices.',
     decorativeImage: '/img/mad2.webp',
     color1: '#dffafd73', // Background color 1
     color2: '#37e6fa80', // Background color 2
@@ -46,7 +46,7 @@ const slides = [
     agency: 'TECHPRO',
     year: '2023',
     description:
-      'Intuitive web application services empowering businesses with seamless digital solutions for optimized performance and growth.',
+      'web application services empowering businesses with digital solutions for optimized performance and growth.',
     decorativeImage: '/img/wad2.webp',
     color1: '#FAEDE4', // Background color 1
     color2: '#ffbe5c80', // Background color 2
@@ -166,7 +166,7 @@ export default function Home() {
       className="w-screen h-screen relative overflow-hidden"
       style={{ fontFamily: 'Safiro, sans-serif' }}
     >
-      <div className="absolute w-full h-full -z-10">
+      <div className="absolute w-full h-full -z-10 hidden md:block">
         <ImageGallery images={trailImages} />
       </div>
       {/* Fullscreen Shader Background */}
@@ -210,20 +210,15 @@ export default function Home() {
           >
             <div className="relative z-20 w-[95%] h-screen flex flex-col justify-between py-[1%]">
               {/* Header */}
-              <header className="p-6 flex justify-between items-center text-neutral-800 no-image-zone">
+              <header className="lg:p-[1%] p-[2%] flex justify-between items-center text-neutral-800 no-image-zone">
                 <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
                   <Link href="/">WOLFIZ</Link>
 
-                  <div className="text-sm ml-[8%] text-[#575757] font-light">
+                  <div className="text-sm ml-[8%] text-[#575757] font-light lg:block hidden">
                     UDINE, {currentTime} PST
                   </div>
                 </div>
-                <div className="flex gap-3 text-sm items-center">
-                  <a href="#projects" className="hover:opacity-70">
-                    PROJECTS
-                  </a>
-                  <span className="text-gray-600 ">/</span>
-
+                <div className="flex gap-3 lg:text-sm text-xs items-center">
                   <a href="#about" className="hover:opacity-70">
                     ABOUT
                   </a>
@@ -239,18 +234,23 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }} // Move up to its original position with full opacity
                     exit={{ y: -20, opacity: 0 }} // Exit animation (for smoother effect when switching slides)
                     transition={{ duration: 1, ease: 'easeInOut' }}
-                    className="text-[5vw] leading-none font-light italic text-neutral-800 cursor-pointer "
+                    className="lg:text-[5vw] text-5xl leading-none font-light italic text-neutral-800 cursor-pointer text-center"
                   >
                     {slide.title}
                   </motion.h1>
 
-                  <div className="flex flex-col items-start gap-6 text-[#575757] w-full  ">
-                    <div className="flex gap-4 text-sm w-full items-center justify-center">
+                  <div className="flex flex-col items-start lg:gap-6 gap-4 text-[#575757] w-full  ">
+                    <div className="lg:flex hidden gap-4 text-sm w-full items-center justify-center">
                       <span>AGENCY. {slides[currentSlide].agency}</span>
                       <span>YEAR. {slides[currentSlide].year}</span>
                     </div>
-                    <div className="flex w-full justify-between">
-                      <p className="max-w-md text-lg text-[#575757]">
+                    <div className="flex lg:hidden gap-2 text-sm w-full items-center justify-center">
+                      <span>{slides[currentSlide].agency}</span>
+                      <span>/</span>
+                      <span>{slides[currentSlide].year}</span>
+                    </div>
+                    <div className="flex flex-col lg:flex-row w-full lg:justify-between items-center justify-center gap-3 lg:gap-0">
+                      <p className="max-w-md xl:text-lg text-base text-[#575757]">
                         {slides[currentSlide].description}
                       </p>
                       <Link
@@ -266,7 +266,7 @@ export default function Home() {
               </div>
 
               {/* Decorative Image */}
-              <div className="fixed bottom-[4%] right-[3%]  w-[14vw] aspect-square rounded-full overflow-hidden no-image-zone">
+              <div className="fixed lg:bottom-[4%] bottom-[8%] right-[3%]  lg:w-[14vw] w-[36vw] aspect-square rounded-full overflow-hidden no-image-zone">
                 <Image
                   src={slide.decorativeImage}
                   alt={`Decorative image for ${slide.title}`}
@@ -275,27 +275,27 @@ export default function Home() {
                   className="object-cover w-full h-full hover:scale-110 transition-all duration-700 ease-in-out cursor-pointer"
                 />
               </div>
-              <div className="fixed left-[4%] top-[37%] no-image-zone">
+              <div className="fixed left-[4%] lg:top-[37%] top-[10%] no-image-zone">
                 <span className="  text-xs  text-[#575757] ">
                   portfolio 2024
                 </span>
               </div>
-              <div className="fixed right-[4%] top-[37%] no-image-zone">
+              <div className="fixed right-[4%] lg:top-[37%]  top-[10%] no-image-zone">
                 <span className="  text-xs  text-[#575757] ">scroll</span>
               </div>
 
               {/* Project Counter with Navigation Arrows */}
-              <div className="fixed left-[4%] bottom-[4%] no-image-zone">
-                <div className="relative w-[14vw] aspect-square">
+              <div className="fixed left-[4%] lg:bottom-[4%] bottom-[8%]  no-image-zone">
+                <div className="relative lg:w-[14vw] w-[36vw] aspect-square">
                   <div className="absolute inset-0 rounded-full border border-neutral-600">
                     {/* Top Text */}
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm  text-[#575757]">
+                    <div className="absolute top-[4%] left-1/2 -translate-x-1/2 2xl:text-sm text-xs  text-[#575757]">
                       PROJECT
                     </div>
 
                     {/* Numbers Container */}
                     <div className="absolute inset-0 flex items-center justify-center ">
-                      <div className="relative text-7xl font-light w-full">
+                      <div className="relative 2xl:text-[4vw]  lg:text-5xl text-3xl font-light w-full">
                         {/* Diagonal Line */}
                         {/* Numbers */}
                         <span className="absolute bottom-3 left-[40%] ">3</span>
@@ -303,7 +303,7 @@ export default function Home() {
 
                         <span
                           ref={counterRef}
-                          className="absolute top-4 left-1/2 "
+                          className="absolute top-4 left-[40%]"
                         >
                           {currentSlide + 1}
                         </span>
@@ -311,7 +311,7 @@ export default function Home() {
                     </div>
 
                     {/* Bottom Text */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm  text-[#575757]">
+                    <div className="absolute bottom-[4%] left-1/2 -translate-x-1/2 2xl:text-sm text-xs  text-[#575757]">
                       NUMBER
                     </div>
 

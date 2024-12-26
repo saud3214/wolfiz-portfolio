@@ -1,122 +1,105 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { ArrowUpRight } from 'lucide-react';
+import { useRef, useEffect, useState, useMemo, useCallback } from 'react';
 import Image from 'next/image';
+import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/mousewheel';
-import { Mousewheel, EffectFade } from 'swiper/modules';
-import ImageGallery from '@/app/components/hoverImage';
-import gsap from 'gsap';
-import SwiperCore from 'swiper';
-import { SrBottom } from '@/app/components/revealelement';
-import { motion } from 'framer-motion';
-import GradualSpacing from '@/components/magicui/gradual-spacing';
-import ClipTitle from '@/app/components/homeTextEffect';
-import useSmoothScroll from '@/app/components/ss';
+import Lenis from 'lenis';
 import Link from 'next/link';
-// Slide content with color and speed settings
-const slides = [
-  {
-    title: 'website development',
-    agency: 'OVERPX',
-    year: '2023',
-    image: '/img/w1.png',
-    description:
-      'A dynamic website experience crafted to elevate your brand’s online presence and deliver impactful user interactions.',
-    decorativeImage: '/img/wd.webp',
-    color1: '#FAE8DF', // Background color 1
-    color2: '#EF858B', // Background color 2
-    speed: 0.7, // Speed of the shader animation
-    link: '/webprojects',
-  },
-  {
-    title: 'mobile applications',
-    agency: 'DESIGNCO',
-    image: '/img/w4.png',
-    year: '2024',
-    description:
-      'An innovative mobile application solution designed to enhance user engagement and drive seamless connectivity across devices.',
-    decorativeImage: '/img/mad2.webp',
-    color1: '#dffafd73', // Background color 1
-    color2: '#37e6fa80', // Background color 2
-    speed: 0.7, // Speed of the shader animation
-    link: '/mobileapps',
-  },
-  {
-    title: 'web applications',
-    agency: 'TECHPRO',
-    image: '/img/w2.png',
-    year: '2023',
-    description:
-      'Intuitive web application services empowering businesses with seamless digital solutions for optimized performance and growth.',
-    decorativeImage: '/img/wad2.webp',
-    color1: '#FAEDE4', // Background color 1
-    color2: '#ffbe5c80', // Background color 2
-    speed: 0.7, // Speed of the shader animation
-    link: '/webapps',
-  },
-];
-const images = [
-  [
-    '/img/w1.png',
-    '/img/w2.jpg',
-    '/img/w3.png',
-    '/img/w4.png',
-    '/img/w5.png',
-    '/img/w6.jpg',
-    '/img/w6.png',
-    '/img/w7.jpg',
-    '/img/w8.png',
-    '/img/w9.jpg',
-    '/img/w9.png',
-  ],
-  [
-    '/img/1.png',
-    '/img/2.png',
-    '/img/3.png',
-    '/img/4.jpg',
-    '/img/5.png',
-    '/img/6.jpg',
-    '/img/7.jpg',
-    '/img/7.png',
-    '/img/8.jpg',
-    '/img/9.png',
-    '/img/10.jpg',
-  ],
-  [
-    '/img/a1.jpg',
-    '/img/a2.jpg',
-    '/img/a3.jpg',
-    '/img/a4.png',
-    '/img/a5.jpg',
-    '/img/a6.png',
-    '/img/a10.png',
-    '/img/a11.png',
+import { MoveUpLeft } from 'lucide-react';
+const Component = () => {
+  const projects2 = useMemo(
+    () => [
+      {
+        name: 'Yalaxi',
+        year: '2023',
+        number: '01',
+        type: 'image',
+        color1: '#fff5f2', // Lighter Aqua (Light Version)
+        color2: '#f78965', // Slightly lighter Intense Aqua
+        speed: 0.6,
+        Image: '/img/Yalaxin.jpg',
+        link: '/yalaxi',
+      },
+      {
+        name: 'Avacons',
+        year: '2024',
+        number: '02',
+        type: 'gradient',
+        color1: '#e0edf9     ', // Lighter Orange (Light Version)
+        color2: '#5798d1', // Slightly lighter Intense Orange
+        speed: 0.6,
+        Image: '/img/avaconn.jpg',
+        link: '/avcons',
+      },
+      {
+        name: 'Peptide',
+        year: '2021',
+        number: '03',
+        type: 'image',
+        color1: '#ebf9e8', // Lighter Green (Light Version)
+        color2: '#61B97E', // Slightly lighter Intense Green
+        speed: 0.7,
+        Image: '/img/medicaln.jpg',
+        link: '/peptide',
+      },
 
-    '/img/a10.jpg',
-  ],
-];
-
-export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [trailImages, setTrailImages] = useState(images[0]);
+      {
+        name: 'Simi Riezen',
+        year: '2023',
+        number: '05',
+        type: 'image',
+        color1: '#f9edf7', // Lighter Blue (Light Version)
+        color2: '#ea5bcb', // Slightly lighter Intense Dark Blue
+        speed: 0.7,
+        Image: '/img/simin.jpg',
+        link: '/simireizen',
+      },
+      {
+        name: 'Doroos',
+        year: '2022',
+        number: '04',
+        type: 'gradient',
+        color1: '#d6fcf0           ', // Lighter Red (Light Version)
+        color2: '#2d9382', // Slightly lighter Intense Red
+        speed: 0.7,
+        Image: '/img/Peptiden.jpg',
+        link: '/doroos',
+      },
+    ],
+    [],
+  );
 
   const [shaderSettings, setShaderSettings] = useState({
-    color1: slides[0].color1,
-    color2: slides[0].color2,
-    speed: slides[0].speed,
+    color1: projects2[1].color1,
+    color2: projects2[1].color2,
+    speed: projects2[1].speed,
   });
   const [currentTime, setCurrentTime] = useState('');
-  const swiperRef = useRef<SwiperCore | null>(null);
-  const counterRef = useRef<HTMLDivElement>(null);
+  const scrollUpRef = useRef<HTMLDivElement>(null);
+  const scrollDownRef = useRef<HTMLDivElement>(null);
+  const [scrollUpCounter, setScrollUpCounter] = useState(0);
+  const [scrollDownCounter, setScrollDownCounter] = useState(0);
+
+  const updateCounters = useCallback(() => {
+    if (!scrollUpRef.current || !scrollDownRef.current) return;
+
+    const totalProjects = projects2.length;
+    const scrollStep = scrollUpRef.current.clientHeight; // Height of one project
+
+    // Calculate the index of the visible project for scrollUpDiv
+    const currentIndexUp =
+      Math.round(scrollUpRef.current.scrollTop / scrollStep) % totalProjects;
+
+    // Calculate the reverse index for scrollDownDiv
+    const currentIndexDown = (totalProjects - currentIndexUp) % totalProjects;
+
+    // Update both counters (adding +1 for 1-based index display)
+    setScrollUpCounter(currentIndexUp + 1);
+    setScrollDownCounter(currentIndexDown + 1);
+  }, [scrollUpRef, scrollDownRef, projects2]);
 
   useEffect(() => {
-    // Update time every minute
     const updateTime = () => {
       const now = new Date();
       setCurrentTime(
@@ -130,56 +113,118 @@ export default function Home() {
     };
     updateTime();
     const timer = setInterval(updateTime, 60000);
-    return () => clearInterval(timer);
-  }, []);
+    const scrollUpDiv = scrollUpRef.current;
+    const scrollDownDiv = scrollDownRef.current;
 
-  // Function to handle slide change and update shader settings
-  const handleSlideChange = (swiper: any) => {
-    const newSlideIndex = swiper.realIndex;
-    setCurrentSlide(newSlideIndex);
-    setTrailImages(images[newSlideIndex]);
+    if (!scrollUpDiv || !scrollDownDiv) return;
 
-    setShaderSettings({
-      color1: slides[newSlideIndex].color1,
-      color2: slides[newSlideIndex].color2,
-      speed: slides[newSlideIndex].speed,
-    });
+    // Duplicate content for infinite scroll
+    scrollUpDiv.innerHTML += scrollUpDiv.innerHTML;
+    scrollDownDiv.innerHTML += scrollDownDiv.innerHTML;
 
-    // Trigger a transition animation on the counter
-    if (counterRef.current) {
-      gsap.fromTo(
-        counterRef.current,
-        { y: 20 },
-        { y: 0, duration: 1, ease: 'power2.out' },
-      );
-    }
+    // Sync initial scroll position
+    const initialCenterPosition = scrollUpDiv.scrollHeight / 4;
+    scrollUpDiv.scrollTop = initialCenterPosition;
+    scrollDownDiv.scrollTop = initialCenterPosition;
+
+    // Function to handle scroll for up-div and sync down-div
+    const handleScrollUp = () => {
+      if (scrollUpDiv && scrollDownDiv) {
+        if (scrollUpDiv.scrollTop >= scrollUpDiv.scrollHeight / 2) {
+          scrollUpDiv.scrollTop = 0; // Reset position
+        }
+
+        // Sync scrollDownDiv
+        scrollDownDiv.scrollTop =
+          scrollUpDiv.scrollHeight -
+          scrollUpDiv.scrollTop -
+          scrollDownDiv.clientHeight;
+
+        // Update counters
+        updateCounters();
+      }
+    };
+
+    const handleScrollDown = () => {
+      if (scrollUpDiv && scrollDownDiv) {
+        if (scrollDownDiv.scrollTop <= 0) {
+          scrollDownDiv.scrollTop = scrollDownDiv.scrollHeight / 2; // Reset position
+        }
+
+        // Sync scrollUpDiv
+        scrollUpDiv.scrollTop =
+          scrollDownDiv.scrollHeight -
+          scrollDownDiv.scrollTop -
+          scrollUpDiv.clientHeight;
+
+        // Update counters
+        updateCounters();
+      }
+    };
+    // Event delegation for hover
+    const handleHover = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('.content1');
+      if (!target) return;
+
+      const index = (target as HTMLElement).dataset.index; // Use dataset to find original index
+      const isOriginal = (target as HTMLElement).dataset.original === 'true';
+
+      if (!isOriginal) return; // Only handle hover for original items
+
+      setShaderSettings({
+        color1: projects2[Number(index)].color1,
+        color2: projects2[Number(index)].color2,
+        speed: projects2[Number(index)].speed,
+      });
+    };
+
+    // Add event listeners
+    scrollUpDiv.addEventListener('scroll', handleScrollUp);
+    scrollDownDiv.addEventListener('scroll', handleScrollDown);
+    scrollUpDiv.addEventListener('mouseover', handleHover);
+    scrollDownDiv.addEventListener('mouseover', handleHover);
+
+    // Cleanup
+    return () => {
+      scrollUpDiv.removeEventListener('scroll', handleScrollUp);
+      scrollDownDiv.removeEventListener('scroll', handleScrollDown);
+      scrollUpDiv.removeEventListener('mouseover', handleHover);
+      scrollDownDiv.removeEventListener('mouseover', handleHover);
+      clearInterval(timer);
+      // lenis.destroy();
+    };
+  }, [projects2, updateCounters]);
+
+  const scrollWithAnimation = (direction: number) => {
+    if (!scrollUpRef.current || !scrollDownRef.current) return; // Check if refs are not null
+
+    const scrollStep = scrollUpRef.current.clientHeight / 40; // Smaller steps for smoothness
+    let steps = 40;
+
+    const interval = setInterval(() => {
+      if (steps === 0) {
+        clearInterval(interval); // Stop animation
+        updateCounters(); // Update counters after animation
+      } else {
+        if (scrollUpRef.current && scrollDownRef.current) {
+          // Check if refs are not null before accessing properties
+          scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
+          scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
+        }
+        steps--;
+      }
+    }, 20); // Adjust time interval for smoothness
   };
-
-  // Navigate to the previous slide
-  const prevSlide = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const nextSlide = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
-
+  const prevprojects = () => scrollWithAnimation(-1); // Scroll up
+  const nextprojects = () => scrollWithAnimation(1); // Scroll down
   return (
     <div
-      className="w-screen h-screen relative overflow-hidden"
+      className="w-full flex items-center justify-center"
       style={{ fontFamily: 'Safiro, sans-serif' }}
     >
-      {/* <div className="absolute w-full h-full -z-10">
-        <ImageGallery images={trailImages} />
-      </div> */}
-      {/* Fullscreen Shader Background */}
       <Canvas
         className="absolute top-0 left-0 w-full h-full -z-20"
-        style={{ position: 'absolute' }}
+        style={{ position: 'absolute', pointerEvents: 'none' }}
       >
         <ShaderBackground
           color1={shaderSettings.color1}
@@ -188,165 +233,229 @@ export default function Home() {
         />
       </Canvas>
 
-      {/* Slide Content with Swiper */}
-      <Swiper
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        direction="vertical"
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        loop={true} // Enable continuous looping of slides
-        modules={[Mousewheel, EffectFade]}
-        mousewheel={{
-          sensitivity: 0.3,
-          forceToAxis: true,
-          releaseOnEdges: true,
-        }}
-        speed={1000}
-        onSlideChange={handleSlideChange}
-        className="relative z-10 w-full h-full items-center justify-center flex"
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide
-            key={index}
-            className="flex items-center justify-center w-full h-full flex-col"
-            style={{
-              display: 'flex',
-            }}
-          >
-            <div className="relative z-20 w-[95%] h-screen flex flex-col justify-between py-[1%]">
-              {/* Header */}
-              <header className="p-6 flex justify-between items-center text-neutral-800 no-image-zone">
-                <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
-                  <Link href="/">WOLFIZ</Link>
+      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-30">
+        <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
+          <Link href="/" className="cursor-pointer">
+            WOLFIZ
+          </Link>
 
-                  <div className="text-sm ml-[8%] text-[#575757] font-light">
-                    UDINE, {currentTime} PST
-                  </div>
-                </div>
-                <div className="flex gap-3 text-sm items-center">
-                  <a href="#projects" className="hover:opacity-70">
-                    PROJECTS
-                  </a>
-                  <span className="text-gray-600 ">/</span>
-
-                  <a href="#about" className="hover:opacity-70">
-                    ABOUT
-                  </a>
-                </div>
-              </header>
-
-              {/* Main Slide Content */}
-              <div className="flex-1 px-6 flex flex-col justify-center items-end xl:mb-40 mb-20 w-11/12 ">
-                <motion.div
-                  key={currentSlide} // This ensures each change re-renders the motion.div to animate it
-                  initial={{ y: 20, opacity: 0 }} // Start from below with zero opacity
-                  animate={{ y: 0, opacity: 1 }} // Move up to its original position with full opacity
-                  exit={{ y: -20, opacity: 0 }} // Exit animation (for smoother effect when switching slides)
-                  transition={{ duration: 1, ease: 'easeInOut' }}
-                  className="w-[65%] gap-5 flex flex-col items-end   rounded-lg"
-                >
-                  <div className=" cursor-pointer relative w-[70%] rounded-lg flex items-center">
-                    {/* <h1 className="text-[2vw] leading-none font-light  text-neutral-800 cursor-pointer ">
-                      {slide.title}
-                    </h1> */}
+          <div className="text-sm ml-[8%] text-[#575757] font-light">
+            UDINE, {currentTime} PST
+          </div>
+        </div>
+        <div className="flex gap-1 text-sm items-center cursor-pointer">
+          <MoveUpLeft className="size-4" />
+          <Link href="/" className="hover:opacity-70 cu">
+            GO BACK
+          </Link>
+        </div>
+      </header>
+      <div className="w-[93%] flex items-center justify-between fixed top-[10%]">
+        <span className="text-lg  text-black font-light">
+          Featured <br></br>Projects
+        </span>
+        <span className="text-lg  text-black">2023 / 2024</span>
+      </div>
+      <div className="scroll-row w-full h-[100vh] flex items-center">
+        <div
+          ref={scrollDownRef}
+          className="scroll-box items-end transition-all duration-700 ease-in-out h-[50vh] "
+        >
+          {projects2.map((project, index) => (
+            <div
+              key={`up-${index}`}
+              className="content1 group relative "
+              data-index={index}
+              data-original="true"
+            >
+              <div className="relative aspect-square   w-[40vw] overflow-hidden rounded-full cursor-pointer  ">
+                <Link href={project.link}>
+                  <Image
+                    src={project.Image}
+                    alt={project.name}
+                    priority
+                    width={250}
+                    height={250}
+                    className="h-full w-full object-cover group-hover:scale-125 transition-all duration-700 ease-in-out content1"
+                  />
+                </Link>
+              </div>
+              <Link href={project.link}>
+                <div className="relative aspect-square  w-[40vw] rounded-full bg-black/10 backdrop-blur-sm lg:p-6 p3 mt-2 cursor-pointer  ">
+                  <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
                     <Image
-                      src={slides[currentSlide].image}
-                      alt="img"
+                      src="/ring2.png"
+                      alt="ring"
                       fill
-                      className="relativepos object-contain rounded-2xl"
-                    ></Image>
+                      className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                    />
                   </div>
-                  <div className="flex items-start  w-full">
-                    <p className="max-w-md text-lg text-[#575757]">
-                      {slides[currentSlide].description}
+                  <div className="flex h-full flex-col items-center justify-between">
+                    <div className=" text-[1.3rem] text-[#505050]">
+                      N. {project.number}
+                    </div>
+                    <span className="text-[2rem] font-medium leading-[70%] -tracking-normal text-[#27292b]">
+                      {project.name}
+                    </span>
+                    <p className="text-[1rem] text-[#505050]">
+                      Y. {project.year}
                     </p>
                   </div>
-                  <div className="flex flex-col items-end gap-6 text-[#575757] w-full  ">
-                    <Link
-                      href={slides[currentSlide].link}
-                      className="group flex text-sm items-center gap-2 px-4 py-2 rounded-xl border border-neutral-800 transition-colors h-fit"
-                    >
-                      VISIT
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </Link>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+        <div
+          ref={scrollUpRef}
+          className="scroll-box items-start transition-all duration-700 ease-in-out h-[50vh] "
+        >
+          {projects2.map((project, index) => (
+            <div
+              key={`down-${index}`}
+              className="content1 group relative"
+              data-index={index}
+              data-original="true"
+            >
+              <div className="relative aspect-square  w-[40vw] overflow-hidden rounded-full">
+                <Link href={project.link}>
+                  <Image
+                    src={project.Image}
+                    alt={project.name}
+                    width={250}
+                    height={250}
+                    className="h-full w-full object-cover group-hover:scale-125 transition-all duration-700 ease-in-out"
+                  />
+                </Link>
+              </div>
+              <Link href={project.link}>
+                <div className="relative aspect-square  w-[40vw] rounded-full bg-black/5 backdrop-blur-sm p-6 mt-2 ">
+                  <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
+                    <Image
+                      src="/ring2.png"
+                      alt="ring"
+                      fill
+                      className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
+                    />
                   </div>
-                </motion.div>
-              </div>
-
-              {/* Decorative Image */}
-              {/* <div className="fixed bottom-[4%] right-[3%]  w-[14vw] aspect-square rounded-full overflow-hidden no-image-zone">
-                <Image
-                  src={slide.decorativeImage}
-                  alt={`Decorative image for ${slide.title}`}
-                  width={320}
-                  height={320}
-                  className="object-cover w-full h-full hover:scale-110 transition-all duration-700 ease-in-out cursor-pointer"
-                />
-              </div> */}
-              <div className="fixed left-[4%] top-[37%] no-image-zone">
-                <span className="  text-xs  text-[#575757] ">
-                  portfolio 2024
-                </span>
-              </div>
-              <div className="fixed right-[4%] top-[37%] no-image-zone">
-                <span className="  text-xs  text-[#575757] ">scroll</span>
-              </div>
-
-              {/* Project Counter with Navigation Arrows */}
-              <div className="fixed left-[4%] bottom-[4%] no-image-zone">
-                <div className="relative w-[14vw] aspect-square">
-                  <div className="absolute inset-0 rounded-full border border-neutral-600">
-                    {/* Top Text */}
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm  text-[#575757]">
-                      PROJECT
+                  <div className="flex h-full flex-col items-center justify-between">
+                    <div className=" text-[1.3rem] text-[#505050]">
+                      N. {project.number}
                     </div>
-
-                    {/* Numbers Container */}
-                    <div className="absolute inset-0 flex items-center justify-center ">
-                      <div className="relative text-7xl font-light w-full">
-                        {/* Diagonal Line */}
-                        {/* Numbers */}
-                        <span className="absolute bottom-3 left-[40%] ">3</span>
-                        <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
-
-                        <span
-                          ref={counterRef}
-                          className="absolute top-4 left-1/2 "
-                        >
-                          {currentSlide + 1}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Bottom Text */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm  text-[#575757]">
-                      NUMBER
-                    </div>
-
-                    {/* Navigation Arrows */}
-                    <button
-                      onClick={prevSlide}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 hover:opacity-70"
-                      aria-label="Previous slide"
-                    >
-                      ←
-                    </button>
-                    <button
-                      onClick={nextSlide}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70"
-                      aria-label="Next slide"
-                    >
-                      →
-                    </button>
+                    <span className="text-[2rem] font-medium leading-[69%] -tracking-normal text-[#27292b]">
+                      {project.name}
+                    </span>
+                    <p className="text-[1rem] text-[#505050]">
+                      Y. {project.year}
+                    </p>
                   </div>
                 </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        <div className="w-[95%] flex items-center justify-between fixed z-50 ">
+          <div className="fixed left-[3%] bottom-[4%] ">
+            <div className="relative w-[13vw] aspect-square">
+              <div className="absolute inset-0 rounded-full border border-neutral-600">
+                {/* Top label */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                  PROJECT
+                </div>
+
+                {/* Central content */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative text-7xl font-light w-full">
+                    {/* Counter for scrollDown div */}
+                    <span className="absolute bottom-3 left-[40%] font-medium">
+                      {scrollDownCounter}
+                    </span>
+
+                    {/* Rotating line */}
+                    <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+
+                    {/* Counter for scrollUp div */}
+                    <span className="absolute top-4 left-1/2 font-medium">
+                      {scrollUpCounter}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom label */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                  NUMBER
+                </div>
+
+                {/* Navigation buttons */}
+                <button
+                  onClick={prevprojects}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
+                  aria-label="Previous slide"
+                >
+                  ←
+                </button>
+                <button
+                  onClick={nextprojects}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
+                  aria-label="Next slide"
+                >
+                  →
+                </button>
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          </div>
+
+          <span className="fixed right-[3%] bottom-[4%] text-[#575757] text-lg uppercase font-medium leading-none not-italic ">
+            A Featured selection. <br />
+            the latest work
+            <br />
+            of the last 4 years
+          </span>
+        </div>
+      </div>
+      <style jsx>{`
+        .container {
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+        .scroll-row {
+          display: flex;
+          gap: 20px;
+          scroll-behavior: smooth;
+        }
+
+        .scroll-box {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+          z-index: 20;
+          overflow-y: scroll;
+          position: relative;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        .scroll-box::-webkit-scrollbar {
+          display: none;
+        }
+
+        .content1 {
+          padding: 10px;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+        main {
+          justify-content: center;
+          display: flex;
+        }
+        .scroll-smooth {
+          scroll-behavior: smooth; /* Smooth scrolling only when this class is applied */
+        }
+      `}</style>
     </div>
   );
-}
+};
+
+export default Component;

@@ -1,125 +1,146 @@
 'use client';
-
-import { useRef, useEffect, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
+import Lenis from 'lenis';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Canvas } from '@react-three/fiber';
 import ShaderBackground from '@/app/components/shadderplain';
-import useSmoothScroll from '@/app/components/ss';
-const Component = () => {
-  const projects2 = useMemo(
+import { motion } from 'framer-motion';
+import { ArrowUpRight, MoveUpLeft } from 'lucide-react';
+
+const Home = () => {
+  const projects = useMemo(
     () => [
       {
-        name: 'aqua wave',
-        year: '2023',
+        name: '1947 partition archive',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '01',
         type: 'image',
-        color1: '#B9E1F3', // Lighter Aqua (Light Version)
-        color2: '#00799C', // Slightly lighter Intense Aqua
+        color1: '#fcf9ea', // Lighter Aqua (Light Version)
+        color2: '#796c30', // Slightly lighter Intense Aqua
         speed: 0.6,
-        Image: '/img/3.jpg',
+        Image: '/img/1947card.png',
+        Link: '/1947partitionarchive',
       },
       {
-        name: 'solar flare',
-        year: '2024',
+        name: 'zar consultancy',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '02',
         type: 'gradient',
-        color1: '#FFD8A1', // Lighter Orange (Light Version)
-        color2: '#FF8F3B', // Slightly lighter Intense Orange
-        speed: 0.7,
-        Image: '/img/4.jpg',
+        color1: '#c9fcf9', // Lighter Orange (Light Version)
+        color2: '#00a89d', // Slightly lighter Intense Orange
+        speed: 0.6,
+        Image: '/img/zccard.png',
+        Link: '/zarconsultancy',
       },
       {
-        name: 'mountain echo',
-        year: '2021',
+        name: 'proofsafely',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '03',
         type: 'image',
-        color1: '#C9E6B4', // Lighter Green (Light Version)
-        color2: '#5C8E5A', // Slightly lighter Intense Green
-        speed: 0.7,
-        Image: '/img/5.jpg',
+        color1: '#fcf5e3', // Lighter Green (Light Version)
+        color2: '#E7B639', // Slightly lighter Intense Green
+        speed: 0.6,
+        Image: '/img/gncard.png',
+        Link: '/grammarnow',
       },
       {
-        name: 'nebula drift',
-        year: '2022',
+        name: 'kingdom connect',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '04',
         type: 'gradient',
-        color1: '#F9C4C1', // Lighter Red (Light Version)
-        color2: '#B34A3D', // Slightly lighter Intense Red
-        speed: 0.7,
-        Image: '/img/6.jpg',
+        color1: '#f7e2ff', // Lighter Red (Light Version)
+        color2: '#6E3385', // Slightly lighter Intense Red
+        speed: 0.6,
+        Image: '/img/kccard.png',
+        Link: '/kingdomconnect',
       },
       {
-        name: 'city lights',
-        year: '2023',
+        name: 'vienna unwrapped',
+        discription:
+          'Studio focusing on designing and developing advanced and intuitive mobile ecosystems.',
         number: '05',
         type: 'image',
-        color1: '#A1B7C4', // Lighter Blue (Light Version)
-        color2: '#3B5264', // Slightly lighter Intense Dark Blue
-        speed: 0.7,
-        Image: '/img/7.jpg',
-      },
-      {
-        name: 'golden horizon',
-        year: '2021',
-        number: '06',
-        type: 'gradient',
-        color1: '#F9E6A7', // Lighter Gold (Light Version)
-        color2: '#C5852F', // Slightly lighter Intense Gold
-        speed: 0.7,
-        Image: '/img/8.jpg',
-      },
-      {
-        name: 'lunar eclipse',
-        year: '2024',
-        number: '07',
-        type: 'image',
-        color1: '#D1B9E4', // Lighter Purple (Light Version)
-        color2: '#8E6C9E', // Slightly lighter Intense Purple
-        speed: 0.7,
-        Image: '/img/9.jpg',
-      },
-      {
-        name: 'ocean breeze',
-        year: '2022',
-        number: '08',
-        type: 'image',
-        color1: '#A9E2F3', // Lighter Ocean Blue (Light Version)
-        color2: '#2C7B94', // Slightly lighter Intense Ocean Blue
-        speed: 0.7,
-        Image: '/img/10.jpg',
+        color1: '#f9cfcf', // Lighter Blue (Light Version)
+        color2: '#EA0000', // Slightly lighter Intense Dark Blue
+        speed: 0.6,
+        Image: '/img/vucard.png',
+        Link: '/vienna',
       },
     ],
     [],
   );
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const totalProjects = projects.length; // Total number of projects
+  const [currentProject, setCurrentProject] = useState(1);
 
   const [shaderSettings, setShaderSettings] = useState({
-    color1: projects2[1].color1,
-    color2: projects2[1].color2,
-    speed: projects2[1].speed,
+    color1: projects[0].color1,
+    color2: projects[0].color2,
+    speed: projects[0].speed,
   });
   const [currentTime, setCurrentTime] = useState('');
-  const scrollUpRef = useRef<HTMLDivElement>(null);
-  const scrollDownRef = useRef<HTMLDivElement>(null);
-  const [scrollUpCounter, setScrollUpCounter] = useState(0);
-  const [scrollDownCounter, setScrollDownCounter] = useState(0);
-  const updateCounters = () => {
-    if (!scrollUpRef.current || !scrollDownRef.current) return;
+  const [projectDetails, setProjectDetails] = useState({
+    name: projects[0].name,
+    description: projects[0].discription,
+    link: projects[0].Link,
+  });
 
-    const totalProjects = projects2.length;
-    const scrollStep = scrollUpRef.current.clientHeight; // Height of one project
-
-    // Calculate the index of the visible project for scrollUpDiv
-    const currentIndexUp =
-      Math.round(scrollUpRef.current.scrollTop / scrollStep) % totalProjects;
-
-    // Calculate the reverse index for scrollDownDiv
-    const currentIndexDown = (totalProjects - currentIndexUp) % totalProjects;
-
-    // Update both counters (adding +1 for 1-based index display)
-    setScrollUpCounter(currentIndexUp + 1);
-    setScrollDownCounter(currentIndexDown + 1);
-  };
+  // Initialize Lenis for smooth scrolling
   useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.8,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothWheel: true,
+      gestureOrientation: 'both',
+      touchMultiplier: 2,
+      wrapper: scrollContainerRef.current ?? undefined,
+      content: scrollContainerRef.current?.firstElementChild as HTMLElement,
+    });
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
+
+  // IntersectionObserver to track projects in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = projectRefs.current.indexOf(
+              entry.target as HTMLDivElement,
+            );
+            setCurrentProject(index + 1);
+            if (index !== -1) {
+              const project = projects[index];
+              setShaderSettings({
+                color1: project.color1,
+                color2: project.color2,
+                speed: project.speed,
+              });
+              setProjectDetails({
+                name: project.name,
+                description: project.discription,
+                link: project.Link || '#',
+              });
+            }
+          }
+        });
+      },
+      { threshold: 1 }, // Trigger when 50% of a project is visible
+    );
+
     const updateTime = () => {
       const now = new Date();
       setCurrentTime(
@@ -133,118 +154,27 @@ const Component = () => {
     };
     updateTime();
     const timer = setInterval(updateTime, 60000);
-    const scrollUpDiv = scrollUpRef.current;
-    const scrollDownDiv = scrollDownRef.current;
+    projectRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
 
-    if (!scrollUpDiv || !scrollDownDiv) return;
-
-    // Duplicate content for infinite scroll
-    scrollUpDiv.innerHTML += scrollUpDiv.innerHTML;
-    scrollDownDiv.innerHTML += scrollDownDiv.innerHTML;
-
-    // Sync initial scroll position
-    const initialCenterPosition = scrollUpDiv.scrollHeight / 4;
-    scrollUpDiv.scrollTop = initialCenterPosition;
-    scrollDownDiv.scrollTop = initialCenterPosition;
-
-    // Function to handle scroll for up-div and sync down-div
-    const handleScrollUp = () => {
-      if (scrollUpDiv && scrollDownDiv) {
-        if (scrollUpDiv.scrollTop >= scrollUpDiv.scrollHeight / 2) {
-          scrollUpDiv.scrollTop = 0; // Reset position
-        }
-
-        // Sync scrollDownDiv
-        scrollDownDiv.scrollTop =
-          scrollUpDiv.scrollHeight -
-          scrollUpDiv.scrollTop -
-          scrollDownDiv.clientHeight;
-
-        // Update counters
-        updateCounters();
-      }
-    };
-
-    const handleScrollDown = () => {
-      if (scrollUpDiv && scrollDownDiv) {
-        if (scrollDownDiv.scrollTop <= 0) {
-          scrollDownDiv.scrollTop = scrollDownDiv.scrollHeight / 2; // Reset position
-        }
-
-        // Sync scrollUpDiv
-        scrollUpDiv.scrollTop =
-          scrollDownDiv.scrollHeight -
-          scrollDownDiv.scrollTop -
-          scrollUpDiv.clientHeight;
-
-        // Update counters
-        updateCounters();
-      }
-    };
-    // Event delegation for hover
-    const handleHover = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement).closest('.content1');
-      if (!target) return;
-
-      const index = (target as HTMLElement).dataset.index; // Use dataset to find original index
-      const isOriginal = (target as HTMLElement).dataset.original === 'true';
-
-      if (!isOriginal) return; // Only handle hover for original items
-
-      setShaderSettings({
-        color1: projects2[Number(index)].color1,
-        color2: projects2[Number(index)].color2,
-        speed: projects2[Number(index)].speed,
-      });
-      console.log('Hovering over project:', projects2[Number(index)].name);
-    };
-
-    // Add event listeners
-    scrollUpDiv.addEventListener('scroll', handleScrollUp);
-    scrollDownDiv.addEventListener('scroll', handleScrollDown);
-    scrollUpDiv.addEventListener('mouseover', handleHover);
-    scrollDownDiv.addEventListener('mouseover', handleHover);
-
-    // Cleanup
     return () => {
-      scrollUpDiv.removeEventListener('scroll', handleScrollUp);
-      scrollDownDiv.removeEventListener('scroll', handleScrollDown);
-      scrollUpDiv.removeEventListener('mouseover', handleHover);
-      scrollDownDiv.removeEventListener('mouseover', handleHover);
-      clearInterval(timer);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      projectRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
     };
-  });
+  }, [projects]);
 
-  const scrollWithAnimation = (direction: number) => {
-    if (!scrollUpRef.current || !scrollDownRef.current) return; // Check if refs are not null
-
-    const scrollStep = scrollUpRef.current.clientHeight / 40; // Smaller steps for smoothness
-    let steps = 40;
-
-    const interval = setInterval(() => {
-      if (steps === 0) {
-        clearInterval(interval); // Stop animation
-        updateCounters(); // Update counters after animation
-      } else {
-        if (scrollUpRef.current && scrollDownRef.current) {
-          // Check if refs are not null before accessing properties
-          scrollUpRef.current.scrollTop += direction * scrollStep; // Increment scroll
-          scrollDownRef.current.scrollTop -= direction * scrollStep; // Decrement scroll
-        }
-        steps--;
-      }
-    }, 20); // Adjust time interval for smoothness
-  };
-  const prevprojects = () => scrollWithAnimation(-1); // Scroll up
-  const nextprojects = () => scrollWithAnimation(1); // Scroll down
   return (
     <div
-      className="w-full flex items-center justify-center"
+      className="w-full h-screen relative flex items-center justify-center"
       style={{ fontFamily: 'Safiro, sans-serif' }}
     >
+      {/* Shader Background */}
       <Canvas
-        className="absolute top-0 left-0 w-full h-full -z-20"
-        style={{ position: 'absolute', pointerEvents: 'none' }}
+        className="absolute top-0 left-0 w-full h-full -z-10"
+        style={{ position: 'absolute' }}
       >
         <ShaderBackground
           color1={shaderSettings.color1}
@@ -252,228 +182,120 @@ const Component = () => {
           speed={shaderSettings.speed}
         />
       </Canvas>
-
-      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[1%] w-[95%]">
-        <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
-          <span>F</span>
-          <span className="text-gray-600 ">/</span>
-          <span>P</span>
-
-          <div className="text-sm ml-[8%] text-[#575757] font-light">
+      <header className="lg:p-[1%]  p-[2%] flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-20">
+        <div className="flex gap-2 text-sm font-semibold w-1/2 items-center">
+          <Link href="/" className="cursor-pointer">
+            WOLFIZ
+          </Link>
+          <div className="text-sm ml-[8%] text-[#575757] font-light lg:block hidden">
             UDINE, {currentTime} PST
           </div>
         </div>
-        <div className="flex gap-3 text-sm items-center">
-          <a href="#projects" className="hover:opacity-70">
-            PROJECTS
-          </a>
-          <span className="text-gray-600 ">/</span>
-
-          <a href="#about" className="hover:opacity-70">
-            ABOUT
+        <div className="flex gap-1 2xl:text-sm text-xs items-center cursor-pointer">
+          <MoveUpLeft className="size-4" />
+          <a href="/" className="hover:opacity-70 cupo">
+            GO BACK
           </a>
         </div>
       </header>
-      <div className="w-[93%] flex items-center justify-between fixed">
-        <span className="text-lg  text-black font-light">
-          Featured <br></br>Projects
-        </span>
-        <span className="text-lg  text-black">2023 / 2024</span>
+      {/* Scrollable Content */}
+      <main
+        ref={scrollContainerRef}
+        className="page-wrapper flex flex-row flex-nowrap overflow-x-auto h-full w-[95%] no-scrollbar items-center gap-5 ps-2   "
+      >
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            ref={(el: HTMLDivElement | null) => {
+              projectRefs.current[index] = el;
+              return void 0;
+            }}
+            className="flex-shrink-0 w-[90%] flex flex-col items-center justify-center relative rounded-xl mt-5 "
+          >
+            <Link
+              href={project.Link || '#'}
+              className="cursor-pointer w-full relative"
+            >
+              <Image
+                src={project.Image}
+                alt={project.name}
+                fill
+                className="object-cover rounded-lg relativepos"
+              />
+            </Link>
+          </div>
+        ))}
+      </main>
+
+      {/* Dynamic Project Details */}
+      <div className="absolute  items-center justify-center  z-50 ">
+        <motion.div
+          key={projectDetails.name}
+          initial={{ y: 20, opacity: 0 }} // Start from below with zero opacity
+          animate={{ y: 0, opacity: 1 }} // Move up to its original position with full opacity
+          exit={{ y: -20, opacity: 0 }} // Exit animation (for smoother effect when switching slides)
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="fixed left-[4%] top-[14%] w-11/12 flex flex-col gap-3 items-center text-center "
+        >
+          <span className="2xl:text-[3vw] text-4xl leading-none">
+            {projectDetails.name}
+          </span>
+          <span className="w-10/12 2xl:text-base text-sm text-start">
+            {projectDetails.description}
+          </span>
+          <Link
+            href={projectDetails.link}
+            className="group flex text-sm items-center gap-2 px-4 py-2 rounded-xl border border-neutral-600 transition-colors h-fit w-fit"
+          >
+            VISIT
+            <ArrowUpRight className="size-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
-      <div className="scroll-row w-full">
-        <div
-          ref={scrollDownRef}
-          className="scroll-box items-end transition-all duration-700 ease-in-out "
-        >
-          {projects2.map((project, index) => (
-            <div
-              key={`up-${index}`}
-              className="content1 group relative"
-              data-index={index}
-              data-original="true"
-            >
-              <div className="relative aspect-square   w-[13vw] overflow-hidden rounded-full  ">
-                <Image
-                  src={project.Image}
-                  alt={project.name}
-                  width={250}
-                  height={250}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
-                />
+      <div className="w-[95%] flex items-center justify-between fixed z-50 ">
+        <div className="fixed left-[3%] bottom-[4%]">
+          <div className="relative lg:w-[14vw] w-[36vw] aspect-square">
+            <div className="absolute inset-0 rounded-full border border-neutral-600">
+              {/* Top Label */}
+              <div className="absolute top-[4%] left-1/2 -translate-x-1/2 2xl:text-sm text-xs text-[#575757]">
+                PROJECT
               </div>
-
-              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2  ">
-                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
-                  <Image
-                    src="/ring2.png"
-                    alt="ring"
-                    fill
-                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-                <div className="flex h-full flex-col items-center justify-between">
-                  <div className=" text-[1.3rem] text-[#505050]">
-                    N. {project.number}
-                  </div>
-                  <span className="text-[2rem] font-medium leading-[70%] -tracking-normal text-[#27292b]">
-                    {project.name}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative 2xl:text-[4vw] lg:text-5xl text-3xl font-light w-full">
+                  <span className="absolute bottom-3 left-[40%]">
+                    {totalProjects}
                   </span>
-                  <p className="text-[1rem] text-[#505050]">
-                    Y. {project.year}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div
-          ref={scrollUpRef}
-          className="scroll-box items-start transition-all duration-700 ease-in-out "
-        >
-          {projects2.map((project, index) => (
-            <div
-              key={`down-${index}`}
-              className="content1 group relative"
-              data-index={index}
-              data-original="true"
-            >
-              <div className="relative aspect-square  w-[13vw] overflow-hidden rounded-full">
-                <Image
-                  src={project.Image}
-                  alt={project.name}
-                  width={250}
-                  height={250}
-                  className="h-full w-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
-                />
-              </div>
-
-              <div className="relative aspect-square  w-[12vw] rounded-full bg-black/5 backdrop-blur-sm p-6 mt-2 ">
-                <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
-                  <Image
-                    src="/ring2.png"
-                    alt="ring"
-                    fill
-                    className="h-full w-full object-cover group-hover:rotate-90 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-                <div className="flex h-full flex-col items-center justify-between">
-                  <div className=" text-[1.3rem] text-[#505050]">
-                    N. {project.number}
-                  </div>
-                  <span className="text-[2rem] font-medium leading-[69%] -tracking-normal text-[#27292b]">
-                    {project.name}
+                  <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
+                  <span className="absolute top-4 left-[40%]">
+                    {currentProject}
                   </span>
-                  <p className="text-[1rem] text-[#505050]">
-                    Y. {project.year}
-                  </p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="w-[95%] flex items-center justify-between fixed z-50 ">
-          <div className="fixed left-[3%] bottom-[4%] ">
-            <div className="relative w-[13vw] aspect-square">
-              <div className="absolute inset-0 rounded-full border border-neutral-600">
-                {/* Top label */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
-                  PROJECT
-                </div>
-
-                {/* Central content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative text-7xl font-light w-full">
-                    {/* Counter for scrollDown div */}
-                    <span className="absolute bottom-3 left-[40%] font-medium">
-                      {scrollDownCounter}
-                    </span>
-
-                    {/* Rotating line */}
-                    <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
-
-                    {/* Counter for scrollUp div */}
-                    <span className="absolute top-4 left-1/2 font-medium">
-                      {scrollUpCounter}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Bottom label */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
-                  NUMBER
-                </div>
-
-                {/* Navigation buttons */}
-                <button
-                  onClick={prevprojects}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
-                  aria-label="Previous slide"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={nextprojects}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 cursor-pointer"
-                  aria-label="Next slide"
-                >
-                  →
-                </button>
+              <div className="absolute bottom-[4%] left-1/2 -translate-x-1/2 2xl:text-sm text-xs text-[#575757]">
+                NUMBER
               </div>
             </div>
           </div>
-
-          <span className="fixed right-[3%] bottom-[4%] text-[#575757] text-lg uppercase font-medium leading-none not-italic ">
-            A Featured selection. <br />
-            the latest work
-            <br />
-            of the last 4 years
-          </span>
         </div>
+
+        <span className="fixed right-[3%] bottom-[4%] text-[#575757]  2xl:text-base text-sm uppercase font-medium 2xl:leading-none leading-none not-italic ">
+          A Featured selection. <br />
+          the latest work
+          <br />
+          of the last 4 years
+        </span>
       </div>
       <style jsx>{`
-        .container {
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-
-        .scroll-row {
-          display: flex;
-          gap: 20px;
-          scroll-behavior: smooth;
-        }
-
-        .scroll-box {
-          display: flex;
-          flex-direction: column;
-          width: 50%;
-          z-index: 20;
-          height: 100vh;
-          overflow-y: scroll;
-          position: relative;
-          padding: 10px;
-          box-sizing: border-box;
-        }
-        .scroll-box::-webkit-scrollbar {
+        .scroll-box:-webkit-scrollbar {
           display: none;
         }
-
-        .content1 {
-          padding: 10px;
-          margin-bottom: 10px;
-          text-align: center;
-        }
-        main {
-          justify-content: center;
-          display: flex;
-        }
-        .scroll-smooth {
-          scroll-behavior: smooth; /* Smooth scrolling only when this class is applied */
+        .no-scrollbar {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
         }
       `}</style>
     </div>
   );
 };
 
-export default Component;
+export default Home;

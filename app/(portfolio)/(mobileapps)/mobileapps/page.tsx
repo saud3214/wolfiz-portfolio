@@ -183,19 +183,6 @@ const Component = () => {
     scrollDownDiv.addEventListener('scroll', handleScrollDown);
     scrollUpDiv.addEventListener('mouseover', handleHover);
     scrollDownDiv.addEventListener('mouseover', handleHover);
-    // const lenis = new Lenis({
-    //   duration: 1.8,
-    //   easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-    //   smoothWheel: true,
-    //   gestureOrientation: 'both',
-    //   touchMultiplier: 2,
-    // });
-
-    // const raf = (time: number) => {
-    //   lenis.raf(time);
-    //   requestAnimationFrame(raf);
-    // };
-    // requestAnimationFrame(raf);
 
     // Cleanup
     return () => {
@@ -236,8 +223,8 @@ const Component = () => {
       style={{ fontFamily: 'Safiro, sans-serif' }}
     >
       <Canvas
-        className="absolute top-0 left-0 w-full h-full -z-20"
-        style={{ position: 'absolute', pointerEvents: 'none' }}
+        className="absolute top-0 left-0 w-full  -z-20"
+        style={{ position: 'absolute', pointerEvents: 'none', height: '105vh' }}
       >
         <ShaderBackground
           color1={shaderSettings.color1}
@@ -246,13 +233,13 @@ const Component = () => {
         />
       </Canvas>
 
-      <header className="p-6 flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-30">
+      <header className="lg:p-[1%]  p-[2%] flex justify-between items-center text-neutral-800  fixed top-[2%] w-[95%] z-30">
         <div className="flex gap-2 text-base font-semibold w-1/2 items-center">
           <Link href="/" className="cursor-pointer">
             WOLFIZ
           </Link>
 
-          <div className="text-sm ml-[8%] text-[#575757] font-light">
+          <div className="text-sm ml-[8%] text-[#575757] font-light lg:block hidden">
             UDINE, {currentTime} PST
           </div>
         </div>
@@ -263,16 +250,16 @@ const Component = () => {
           </Link>
         </div>
       </header>
-      <div className="w-[93%] flex items-center justify-between fixed">
-        <span className="text-lg  text-black font-light">
+      <div className="w-[93%] flex items-center justify-between fixed top-[15%] lg:top-0">
+        <span className="lg:text-lg text-sm  text-black font-light">
           Featured <br></br>Projects
         </span>
         <span className="text-lg  text-black">2023 / 2024</span>
       </div>
-      <div className="scroll-row w-full">
+      <div className="scroll-row w-full lg:h-screen h-[105vh]  flex items-start">
         <div
           ref={scrollDownRef}
-          className="scroll-box items-end transition-all duration-700 ease-in-out "
+          className="scroll-box items-end transition-all duration-700 ease-in-out lg:h-full h-1/2 "
         >
           {projects2.map((project, index) => (
             <div
@@ -281,7 +268,7 @@ const Component = () => {
               data-index={index}
               data-original="true"
             >
-              <div className="relative aspect-square   w-[13vw] overflow-hidden rounded-full cursor-pointer  ">
+              <div className="relative aspect-square   lg:w-[13vw] w-[40vw] overflow-hidden rounded-full cursor-pointer  ">
                 <Link href={project.link}>
                   <Image
                     src={project.Image}
@@ -294,7 +281,7 @@ const Component = () => {
                 </Link>
               </div>
               <Link href={project.link}>
-                <div className="relative aspect-square  w-[12vw] rounded-full bg-black/10 backdrop-blur-sm p-6 mt-2 cursor-pointer  ">
+                <div className="relative aspect-square  lg:w-[12vw] w-[40vw] rounded-full bg-black/10 backdrop-blur-sm lg:p-6 p-3 mt-2 cursor-pointer  ">
                   <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
                     <Image
                       src="/ring2.png"
@@ -319,9 +306,10 @@ const Component = () => {
             </div>
           ))}
         </div>
+
         <div
           ref={scrollUpRef}
-          className="scroll-box items-start transition-all duration-700 ease-in-out "
+          className="scroll-box items-start transition-all duration-700 ease-in-out lg:h-full h-1/2"
         >
           {projects2.map((project, index) => (
             <div
@@ -330,7 +318,7 @@ const Component = () => {
               data-index={index}
               data-original="true"
             >
-              <div className="relative aspect-square  w-[13vw] overflow-hidden rounded-full">
+              <div className="relative aspect-square  lg:w-[13vw] w-[40vw] overflow-hidden rounded-full">
                 <Link href={project.link}>
                   <Image
                     src={project.Image}
@@ -342,7 +330,7 @@ const Component = () => {
                 </Link>
               </div>
               <Link href={project.link}>
-                <div className="relative aspect-square  w-[12vw] rounded-full bg-black/5 backdrop-blur-sm p-6 mt-2 ">
+                <div className="relative aspect-square  lg:w-[12vw] w-[40vw] rounded-full bg-black/5 backdrop-blur-sm lg:p-6 p-3 mt-2 ">
                   <div className="absolute aspect-square  w-[104%] left-[-2%] top-[-1.9%] ">
                     <Image
                       src="/ring2.png"
@@ -370,16 +358,16 @@ const Component = () => {
 
         <div className="w-[95%] flex items-center justify-between fixed z-50 ">
           <div className="fixed left-[3%] bottom-[4%] ">
-            <div className="relative w-[13vw] aspect-square">
+            <div className="relative lg:w-[14vw] w-[36vw] aspect-square">
               <div className="absolute inset-0 rounded-full border border-neutral-600">
                 {/* Top label */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                <div className="absolute top-[4%] left-1/2 -translate-x-1/2 2xl:text-sm text-xs text-[#575757]">
                   PROJECT
                 </div>
 
                 {/* Central content */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative text-7xl font-light w-full">
+                  <div className="relative 2xl:text-[4vw] lg:text-5xl text-3xl font-light w-full">
                     {/* Counter for scrollDown div */}
                     <span className="absolute bottom-3 left-[40%] font-medium">
                       {scrollDownCounter}
@@ -389,14 +377,14 @@ const Component = () => {
                     <div className="absolute top-1/2 left-1/2 w-10/12 h-[1px] bg-neutral-500 -translate-x-1/2 -translate-y-1/2 -rotate-45"></div>
 
                     {/* Counter for scrollUp div */}
-                    <span className="absolute top-4 left-1/2 font-medium">
+                    <span className="absolute top-4 left-[40%]">
                       {scrollUpCounter}
                     </span>
                   </div>
                 </div>
 
                 {/* Bottom label */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-[#575757]">
+                <div className="absolute bottom-[4%] left-1/2 -translate-x-1/2 2xl:text-sm text-xs text-[#575757]">
                   NUMBER
                 </div>
 
@@ -419,7 +407,7 @@ const Component = () => {
             </div>
           </div>
 
-          <span className="fixed right-[3%] bottom-[4%] text-[#575757] text-lg uppercase font-medium leading-none not-italic ">
+          <span className="fixed right-[3%] bottom-[4%] text-[#575757] lg:text-lg text-sm uppercase font-medium leading-none not-italic ">
             A Featured selection. <br />
             the latest work
             <br />
@@ -445,7 +433,7 @@ const Component = () => {
           flex-direction: column;
           width: 50%;
           z-index: 20;
-          height: 100vh;
+
           overflow-y: scroll;
           position: relative;
           padding: 10px;

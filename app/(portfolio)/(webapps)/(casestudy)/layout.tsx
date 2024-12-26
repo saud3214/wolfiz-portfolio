@@ -2,7 +2,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { GradientFlowTextRzfx } from '../../../components/animatedtext';
+
+import Image from 'next/image';
+import { ArrowLeft, MoveUpLeft } from 'lucide-react';
+import { Poppins } from 'next/font/google';
+
+const popins = Poppins({
+  subsets: ['latin'], // Adjust the subsets according to your needs
+  weight: ['400', '700', '600'], // Add the weights you need
+});
 export default function CasestudyLayout({
   children,
 }: Readonly<{
@@ -29,10 +37,29 @@ export default function CasestudyLayout({
 
   return (
     <>
-      <header className="flex items-center justify-center fixed h-28 z-[2] w-full">
-        <div className="font-bold fixed  flex items-center justify-end w-[80%] text-right">
-          <Link href="/webapps" className="w-full text-2xl ">
-            <GradientFlowTextRzfx text="Back" />
+      <header className="flex items-center justify-center fixed h-24 z-[2] w-full ">
+        <div className="font-bold fixed  flex items-end justify-end w-[93%] text-right ">
+          <Link href="/webapps" className="w-full flex items-end justify-end ">
+            {/* <div className=" relative w-[6%]  ">
+              <Image
+                className=" relativepos"
+                src="/backn.png"
+                alt="move down arrow"
+                fill
+              />
+            </div> */}
+            <button
+              className={`flex  items-center justify-center gap-1 px-4 py-1 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors shadow-sm border border-gray-200 ${popins.className}`}
+            >
+              <MoveUpLeft className="size-4" />
+
+              <span
+                className="font-medium  "
+                style={{ fontFamily: 'Safiro, sans-serif' }}
+              >
+                Back
+              </span>
+            </button>
           </Link>
         </div>
       </header>
