@@ -219,12 +219,12 @@ const Component = () => {
   const nextprojects = () => scrollWithAnimation(1); // Scroll down
   return (
     <div
-      className="w-full flex items-center justify-center"
+      className="w-full flex items-center justify-center h-screen"
       style={{ fontFamily: 'Safiro, sans-serif' }}
     >
       <Canvas
-        className="absolute top-0 left-0 w-full  -z-20"
-        style={{ position: 'absolute', pointerEvents: 'none', height: '105vh' }}
+        className="absolute  w-full  -z-20 "
+        style={{ position: 'absolute', pointerEvents: 'none', height: '100vh' }}
       >
         <ShaderBackground
           color1={shaderSettings.color1}
@@ -250,16 +250,19 @@ const Component = () => {
           </Link>
         </div>
       </header>
-      <div className="w-[93%] flex items-center justify-between fixed top-[15%] lg:top-0">
-        <span className="lg:text-lg text-sm  text-black font-light">
+      <div className="w-[93%] flex items-center justify-between fixed top-[15%] lg:top-[30%]">
+        <span className="lg:text-lg text-sm  text-[#575757] font-light">
           Featured <br></br>Projects
         </span>
-        <span className="text-lg  text-black">2023 / 2024</span>
+        <span className="text-lg  text-black hidden lg:block">2023 / 2024</span>
+        <span className="  text-sm  text-[#575757] block lg:hidden ">
+          scroll
+        </span>
       </div>
-      <div className="scroll-row w-full lg:h-screen h-[105vh]  flex items-start">
+      <div className="scroll-row w-full  h-auto  flex items-center lg:gap-5 gap-2 mb-14 lg:mb-0">
         <div
           ref={scrollDownRef}
-          className="scroll-box items-end transition-all duration-700 ease-in-out lg:h-full h-1/2 "
+          className="scroll-box   items-end transition-all duration-700 ease-in-out lg:h-[100vh] h-[50vh] "
         >
           {projects2.map((project, index) => (
             <div
@@ -309,7 +312,7 @@ const Component = () => {
 
         <div
           ref={scrollUpRef}
-          className="scroll-box items-start transition-all duration-700 ease-in-out lg:h-full h-1/2"
+          className="scroll-box items-start transition-all duration-700 ease-in-out lg:h-[100vh] h-[50vh]"
         >
           {projects2.map((project, index) => (
             <div
@@ -358,7 +361,7 @@ const Component = () => {
 
         <div className="w-[95%] flex items-center justify-between fixed z-50 ">
           <div className="fixed left-[3%] bottom-[4%] ">
-            <div className="relative lg:w-[14vw] w-[36vw] aspect-square">
+            <div className="relative lg:w-[14vw] w-[34vw] aspect-square">
               <div className="absolute inset-0 rounded-full border border-neutral-600">
                 {/* Top label */}
                 <div className="absolute top-[4%] left-1/2 -translate-x-1/2 2xl:text-sm text-xs text-[#575757]">
@@ -424,7 +427,6 @@ const Component = () => {
 
         .scroll-row {
           display: flex;
-          gap: 20px;
           scroll-behavior: smooth;
         }
 

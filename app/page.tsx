@@ -15,6 +15,7 @@ import gsap from 'gsap';
 import SwiperCore from 'swiper';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import GradualSpacing from '@/components/magicui/gradual-spacing';
 // Slide content with color and speed settings
 const slides = [
   {
@@ -90,8 +91,6 @@ const images = [
     '/img/a6.png',
     '/img/a10.png',
     '/img/a11.png',
-
-    '/img/a10.jpg',
   ],
 ];
 
@@ -230,13 +229,17 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto 2xl:gap-12 xl:gap-10 gap-5 flex flex-col  no-image-zone">
                   <motion.h1
                     key={currentSlide} // This ensures each change re-renders the motion.div to animate it
-                    initial={{ y: 20, opacity: 0 }} // Start from below with zero opacity
-                    animate={{ y: 0, opacity: 1 }} // Move up to its original position with full opacity
-                    exit={{ y: -20, opacity: 0 }} // Exit animation (for smoother effect when switching slides)
-                    transition={{ duration: 1, ease: 'easeInOut' }}
+                    // initial={{ y: 20, opacity: 0 }} // Start from below with zero opacity
+                    // animate={{ y: 0, opacity: 1 }} // Move up to its original position with full opacity
+                    // exit={{ y: -20, opacity: 0 }} // Exit animation (for smoother effect when switching slides)
+                    // transition={{ duration: 0.5, ease: 'easeInOut' }}
                     className="lg:text-[5vw] text-5xl leading-none font-light italic text-neutral-800 cursor-pointer text-center"
                   >
-                    {slide.title}
+                    <GradualSpacing
+                      text={slide.title}
+                      className="hidden lg:block"
+                    />
+                    <span className="lg:hidden block">{slide.title} </span>
                   </motion.h1>
 
                   <div className="flex flex-col items-start lg:gap-6 gap-4 text-[#575757] w-full  ">
@@ -267,13 +270,15 @@ export default function Home() {
 
               {/* Decorative Image */}
               <div className="fixed lg:bottom-[4%] bottom-[8%] right-[3%]  lg:w-[14vw] w-[36vw] aspect-square rounded-full overflow-hidden no-image-zone">
-                <Image
-                  src={slide.decorativeImage}
-                  alt={`Decorative image for ${slide.title}`}
-                  width={320}
-                  height={320}
-                  className="object-cover w-full h-full hover:scale-110 transition-all duration-700 ease-in-out cursor-pointer"
-                />
+                <Link href={slides[currentSlide].link}>
+                  <Image
+                    src={slide.decorativeImage}
+                    alt={`Decorative image for ${slide.title}`}
+                    width={320}
+                    height={320}
+                    className="object-cover w-full h-full hover:scale-110 transition-all duration-700 ease-in-out cursor-pointer"
+                  />
+                </Link>
               </div>
               <div className="fixed left-[4%] lg:top-[37%] top-[10%] no-image-zone">
                 <span className="  text-xs  text-[#575757] ">
