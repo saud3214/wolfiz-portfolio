@@ -13,14 +13,14 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       leave={(next) => {
         animate(
           wrapperRef.current,
-          { opacity: [1, 0], zoom: [1, 0] },
+          { opacity: [1, 0], scale: [1, 0] },
           { duration: 0.5, ease: 'easeInOut', onComplete: next },
         );
       }}
       enter={(next) => {
         animate(
           wrapperRef.current,
-          { opacity: [0, 1], zoom: [0, 1] },
+          { opacity: [0, 1], scale: [0, 1] },
           { duration: 0.5, ease: 'easeInOut', onComplete: next },
         );
       }}

@@ -65,7 +65,6 @@ const images = [
     '/img/w6.jpg',
     '/img/w6.png',
     '/img/w7.jpg',
-    '/img/w8.png',
     '/img/w9.jpg',
     '/img/w9.png',
   ],
