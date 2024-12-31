@@ -89,7 +89,7 @@ export default function PartitionArchive() {
                     muted
                   />
 
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full text-white w-full">
+                  <div className="relative  flex flex-col items-center justify-center h-full text-white w-full">
                     <div className="absolute top-[5%] lg:w-[10%] w-[35%] ">
                       <Image
                         className="relativepos object-cover"

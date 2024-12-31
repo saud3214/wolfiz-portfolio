@@ -328,6 +328,7 @@ const Component = () => {
                     alt={project.name}
                     width={250}
                     height={250}
+                    priority
                     className="h-full w-full object-cover group-hover:scale-125 transition-all duration-700 ease-in-out"
                   />
                 </Link>
