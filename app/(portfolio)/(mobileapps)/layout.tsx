@@ -26,15 +26,15 @@ export default function CasestudyLayout({
       overflowY: document.body.style.overflowY,
     };
 
-    // // Apply new styles
-    // document.body.style.height = 'auto';
-    // document.body.style.overflowY = 'auto';
+    // Apply new styles
+    document.body.style.height = 'auto';
+    document.body.style.overflowY = 'auto';
 
     // Clean up: restore the original styles when the component unmounts
-    // return () => {
-    //   document.body.style.height = originalStyles.height;
-    //   document.body.style.overflowY = originalStyles.overflowY;
-    // };
+    return () => {
+      document.body.style.height = originalStyles.height;
+      document.body.style.overflowY = originalStyles.overflowY;
+    };
   }, []);
 
   return (

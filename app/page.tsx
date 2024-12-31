@@ -14,7 +14,7 @@ import ImageGallery from '@/app/components/hoverImage';
 import gsap from 'gsap';
 import SwiperCore from 'swiper';
 import { motion } from 'framer-motion';
-import { Link } from 'next-view-transitions';
+import Link from 'next/link';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
 // Slide content with color and speed settings
 const slides = [

@@ -14,14 +14,14 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         animate(
           wrapperRef.current,
           { opacity: [1, 0], scale: [1, 0.5] },
-          { duration: 0.5, ease: 'easeInOut', onComplete: next },
+          { duration: 0.3, ease: 'easeInOut', onComplete: next },
         );
       }}
       enter={(next) => {
         animate(
           wrapperRef.current,
           { opacity: [0, 1], scale: [0.5, 1] },
-          { duration: 0.5, ease: 'easeInOut', onComplete: next },
+          { duration: 0.3, ease: 'easeInOut', onComplete: next },
         );
       }}
     >
