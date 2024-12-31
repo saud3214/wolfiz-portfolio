@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 import { Poppins } from 'next/font/google';
 import { ArrowLeft } from 'lucide-react';
+import Providers from '@/app/providers';
 
 const popins = Poppins({
   subsets: ['latin'], // Adjust the subsets according to your needs
@@ -25,15 +26,15 @@ export default function CasestudyLayout({
       overflowY: document.body.style.overflowY,
     };
 
-    // Apply new styles
-    document.body.style.height = 'auto';
-    document.body.style.overflowY = 'auto';
+    // // Apply new styles
+    // document.body.style.height = 'auto';
+    // document.body.style.overflowY = 'auto';
 
     // Clean up: restore the original styles when the component unmounts
-    return () => {
-      document.body.style.height = originalStyles.height;
-      document.body.style.overflowY = originalStyles.overflowY;
-    };
+    // return () => {
+    //   document.body.style.height = originalStyles.height;
+    //   document.body.style.overflowY = originalStyles.overflowY;
+    // };
   }, []);
 
   return (
@@ -50,7 +51,7 @@ export default function CasestudyLayout({
           </Link> */}
         </div>
       </header>
-      <main>{children}</main>
+      <Providers>{children}</Providers>
       <SpeedInsights />
     </>
   );

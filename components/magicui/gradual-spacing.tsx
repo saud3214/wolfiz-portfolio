@@ -18,7 +18,7 @@ export default function GradualSpacing({
   duration = 0.7,
   delayMultiple = 0.07,
   framerProps = {
-    hiddens: { opacity: 0, x: -30 },
+    hiddens: { opacity: 0.1, x: -30 },
     visible: { opacity: 1, x: 0 },
   },
   className,

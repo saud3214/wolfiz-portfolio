@@ -14,7 +14,7 @@ import ImageGallery from '@/app/components/hoverImage';
 import gsap from 'gsap';
 import SwiperCore from 'swiper';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Link } from 'next-view-transitions';
 import GradualSpacing from '@/components/magicui/gradual-spacing';
 // Slide content with color and speed settings
 const slides = [
@@ -232,14 +232,14 @@ export default function Home() {
                     // initial={{ y: 20, opacity: 0 }} // Start from below with zero opacity
                     // animate={{ y: 0, opacity: 1 }} // Move up to its original position with full opacity
                     // exit={{ y: -20, opacity: 0 }} // Exit animation (for smoother effect when switching slides)
-                    // transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    className="lg:text-[5vw] text-5xl leading-none font-light italic text-neutral-800 cursor-pointer text-center"
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className="lg:text-[5vw] text-5xl leading-none font-light italic text-neutral-800 cursor-pointer text-center min-h-28 "
                   >
-                    <GradualSpacing
+                    {/* <GradualSpacing
                       text={slide.title}
-                      className="hidden lg:block"
-                    />
-                    <span className="lg:hidden block">{slide.title} </span>
+                      className="hidden lg:block "
+                    /> */}
+                    <span className=" block">{slide.title} </span>
                   </motion.h1>
 
                   <div className="flex flex-col items-start lg:gap-6 gap-4 text-[#575757] w-full  ">

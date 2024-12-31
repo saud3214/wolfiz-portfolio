@@ -7,6 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Playfair_Display } from 'next/font/google';
 import Head from 'next/head';
+import Providers from './providers';
 
 const pridi = Playfair_Display({
   subsets: ['latin'], // Adjust the subsets according to your needs
@@ -46,7 +47,7 @@ export default function RootLayout({
             </Link>
           </div>
         </header>
-        <main>{children}</main>
+        <Providers>{children}</Providers>
         <SpeedInsights />
         <Analytics />
 
